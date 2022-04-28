@@ -7,17 +7,15 @@
 Secure Networking with Micro-Segmentation
 ========================================= 
 
-This topic will provide an overview of micro-segmentation and how it is configured. <double check how features are normally introduced>
-
-Micro-segmentation provides granular network security policy for distributed applications in the Cloud. Micro-segmentation enables network policy enforcement between application domains you define in a single cloud or across multiple clouds. Users can then configure policies between these application domains to filter traffic between the applications residing in these domains.
+Micro-segmentation provides granular network security policy for distributed applications in the Cloud. Micro-segmentation enables network policy enforcement between application domains (app domains) you define in a single cloud or across multiple clouds. Users can then configure policies between these app domains to filter traffic between the applications residing in these domains.
 
 |microseg_topology|
 
 Use cases where you might implement micro-segmentation are:
 
-- Workload isolation: in a typical tiered application, you may want to isolate tiers that do not require access to each other. For example, in a shopping portal application, there could be workloads for product inventory, billing, and logging servers. Since the shopping cart application does not need to communicate with the logging servers, this traffic should be blocked.
-- Quarantine compromised machines: You can isolate a compromised machine by placing it in its own application domain and blocking communication to that domain.
-- Network traffic monitoring: Watch network traffic between your app domains and choose to enforce policies as needed.
+- Workload isolation: in a typical tiered application, you may want to isolate tiers that do not require access to each other. For example, in a Shopping Cart application, there could be workloads for product inventory, billing, and a Product Logging app. Since the Shopping Cart application does not need to communicate with the Product Logging app, this traffic should be blocked.
+- Quarantine compromised machines: You can isolate a compromised machine by placing it in its own app domain and blocking communication to that domain.
+- Network traffic monitoring: Watch network traffic between your app domains and enforce policies as needed.
 
 
 Micro-Segmentation Components
@@ -27,7 +25,7 @@ Micro-segmentation introduces two important configuration components—-app doma
 
 App Domains
 --------------
-An app domain is a grouping of workloads, subnets, or VPC/VNets that require a uniform policy enforcement. For example, all servers running the inventory database (as per the above workload isolation use case) can form an app domain. A Cloud resource can be part of multiple app domains. 
+An app domain is a grouping of workloads, subnets, or VPC/VNets that require a uniform policy enforcement. For example, all servers running the product inventory database (as per the above workload isolation use case) can form an app domain. A Cloud resource can be part of multiple app domains. 
 
 When you create your app domains, you can classify them based on:
 
@@ -41,7 +39,7 @@ When you create your app domains, you can classify them based on:
 
 Policies
 ------------
-After creating app domains, you then create policies to define the access control to apply on the traffic between those app domains. In the above workload isolation use case, all traffic (i.e., ports and protocols) between the shopping cart application and the logging servers must be blocked (Denied). You can decide which policies to enforce, and if you want to log the actions related a policy so that the information is available in FlowIQ. These policies are enforced (if enabled) on your Spoke gateways, and are executed against the Spoke gateways in the order that they are shown in the policy list. 
+After creating app domains, you create policies to define the access control to apply on the traffic between those app domains. In the above workload isolation use case, all traffic (i.e., ports and protocols) between the ShoppingCart application and the Product Logging app must be blocked (Denied). You can decide which policies to enforce, and if you want to log the actions related a policy so that the information is available in FlowIQ. These policies are enforced (if enabled) on your Spoke gateways, and are executed against the Spoke gateways in the order that they are shown in the policy list. 
 
 Prerequisites
 -----------------
@@ -59,12 +57,10 @@ Configuring Micro-Segmentation
 
 This section describes the micro-segmentation functional area of Aviatrix CoPilot.
 
-For information about how micro-segmentation works in Aviatrix Secure Cloud Network Platform, see the discussion about secure networking with micro-segmentation in the Aviatrix product documentation. <Brenda can use this; then I'll take it out>
-
 
 Creating App Domains 
 -----------------------
-An app domain contains one or more filters to identify CSP endpoints that map to an app domain. A filter specifies resource matching criteria. Matching criteria could be a CSP tag or a resource attribute (such as account name or region) or a list of IP prefixes. All match conditions within the filter must be satisfied to be matched. A tag or resource attribute-based filter must be associated with a resource type (VPC/VNet, subnet, or VM). 
+An app domain contains one or more filters to identify CSP endpoints that map to an app domain. A filter specifies resource matching criteria. Matching criteria could be a CSP tag; a resource attribute (such as account name or region); or a list of IP prefixes. All conditions within the filter must be satisfied to be matched. A tag or resource attribute-based filter must be associated with a resource type (VPC/VNet, subnet, or VM). 
 
 1. In CoPilot, navigate to Security > Micro-Segmentation > App Domain.
 2. Click +ADD DOMAIN.
@@ -73,8 +69,8 @@ An app domain contains one or more filters to identify CSP endpoints that map to
 	a. Click +Resource Type and select VPC/VNet, Virtual Machines, or Subnet. 
 	b. Enter the matching criteria for resources that will be part of this app domain. 
 	c. All CSP tags that you have defined for your Cloud resources are present in the list for you to select from. Some examples of tags are: Backup, Controller, Aviatrix-Created-Resource, and Type.
-	e. If needed, add another resource type. Typically you will only have resources of the same type in an app domain (for example, you can have more than one VM based filter).
-	d. You can also select resource attributes (Account Name and Region) if you want to match against all resources within an account or region. The values for the selected condition(s) are populated automatically.
+	d. If needed, add another resource type. Typically you will only have resources of the same type in an app domain (for example, you can have more than one VM based filter).
+	e. You can also select resource attributes (Account Name and Region) if you want to match against all resources within an account or region. The values for the selected condition(s) are populated automatically.
 	f. After entering your resource type, you can use the Preview Resources toggle switch to see the selected resources that map to the app domain. 
 5. If you don’t want to use specific tags in your resources, enter the VPC/VNet IP addresses or CIDRs in the field provided. Traffic across CIDRs between two app domains in the same VPC/VNet is not subject to micro-segmentation policies.
 6. Click Save. The new app domain is now in the App Domain list.
@@ -94,27 +90,27 @@ An app domain traffic flow can belong to more than one policy. If this occurs, t
 
 1. In CoPilot, navigate to Security > Micro-Segmentation > Policies.
 2. On the Policies tab, click +POLICY.
-2. Enter a name for the policy.
-3. Select the Source App Domains (the app domains that originate traffic).
-4. Select the Destination App Domain (the app domains that terminate traffic).
-5. Select if the policy is allowed or denied. This determines the action to be taken on the traffic.
-6. If the Enforcement slider is On (the default), the policy is enforced in the data plane. If the Enforcement slider is off, the packets are only watched. This allows you to observe if the traffic impacted by this policy causes any inadvertent issues (such as traffic being dropped). 
-7. If the Logging slider is On, information (such as five-tuple, source/destination MAC address, etc.) related to the action is logged and made available in FlowIQ. Since logging uses a lot of disk space, be careful when enabling logging on your policies.
-8. Select the protocol used: TCP, UDP, ICMP, or Any. If you select TCP or UDP you can enter a port number or port range.
+3. Enter a name for the policy.
+4. Select the Source App Domains (the app domains that originate traffic).
+5. Select the Destination App Domain (the app domains that terminate traffic).
+6. Select if the policy is allowed or denied. This determines the action to be taken on the traffic.
+7. If the Enforcement slider is On (the default), the policy is enforced in the data plane. If the Enforcement slider is off, the packets are only watched. This allows you to observe if the traffic impacted by this policy causes any inadvertent issues (such as traffic being dropped). 
+8. If the Logging slider is On, information (such as five-tuple, source/destination MAC address, etc.) related to the action is logged and made available in FlowIQ. Since logging uses a lot of disk space, be careful when enabling logging on your policies.
+9. Select the protocol used: TCP, UDP, ICMP, or Any. If you select TCP or UDP you can enter a port number or port range.
 	
-As per the workload isolation use case above (blocking traffic between the shopping cart application and logging servers), the policy would look like this: <need to mention Product VPC>
-	- Source app domain: shopping cart application
-	- Destination app domain: logging servers
+As per the workload isolation use case above (blocking traffic between the Shopping Cart application and the Product Logging app), the policy would look like this:
+	- Source app domain: Shopping Cart application
+	- Destination app domain: Product Logging app
 	- Action: Deny
 	- Protocol: Any
 	- Ports: 0-65535 (Any)
 	- Logging: Off
 	- Enforcement: On
 
-9. Determine the policy order by selecting to insert the new policy above, below, or at the top or bottom of the policy list. If the policy is not at the top or bottom of the list, you must select the existing policy that is affected by the position of the new policy.
-10. Click Save in Drafts. 
-11. Make additional policy modifications as needed.
-12. You can then review, commit, or discard the policy changes. 
+10. Determine the policy order by selecting to insert the new policy above, below, or at the top or bottom of the policy list. If the policy is not at the top or bottom of the list, you must select the existing policy that is affected by the position of the new policy.
+11. Click Save in Drafts. 
+12. Make additional policy modifications as needed.
+13. You can then review, commit, or discard the policy changes. 
 
 Creating a Default Policy
 -------------------------
@@ -123,7 +119,7 @@ As a best zero trust security practice, you should add a deny policy that blocks
 
 Configuring the Polling Interval
 ---------------------------------
-The Aviatrix Controller periodically polls your CSPs to gather and inventory its resources. For example, if you modified your CSP tags, you may want to poll data more frequently for CoPilot to reflect those changes.
+The Aviatrix Controller periodically polls your CSPs to gather and inventory its resources. For example, if you modified your CSP tags, you may want to poll data more frequently so that CoPilot reflects those changes.
 
 In CoPilot navigate to Settings > Advanced Settings > Micro-Segmentation Settings and enter the desired polling interval in minutes (default is 60). This can be a value between 1-180.
 
