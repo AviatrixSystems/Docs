@@ -763,12 +763,12 @@ When a network domain is saved, the Aviatrix Controller dynamically programs and
 
 A network domain also applies to the hybrid connection from Aviatrix Transit Gateway to on-prem or remote sites. Each BGP peer or connection can be associated with one network domain.
 
-For a summary of steps for enabling network segmentation by using Aviatrix CoPilot, see "Enabling Network Segmentation for Inter-VPC/VNet Connectivity".
+For instructions on enabling network segmentation by using Aviatrix CoPilot, see `Enabling Network Segmentation for Inter-VPC/VNet Connectivity <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#enabling-network-segmentation-for-inter-vpc-vnet-connectivity>`_.
 
 Enabling Network Segmentation for Inter-VPC/VNet Connectivity
 --------------------------------------------------------------
 
-Enable network segmentation for inter-VPC/VNet connectivity using network domains (Aviatrix CoPilot instructions).
+Enable network segmentation for inter-VPC/VNet connectivity using network domains (**Aviatrix CoPilot instructions**).
 
 This section describes how to enable network segmentation for inter-VPC/VNet connectivity using network domains. See also "About network domains". 
 
@@ -782,11 +782,11 @@ To enable network segmentation for inter-VPC/VNet connectivity:
 
 3.  Enable network segmentation on each of the Aviatrix transit gateways in your network that will route traffic between network-domain members.
 
-    See the topic "Enable a transit gateway for network segmentation". 
+    See `Enable a transit gateway for network segmentation <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#enable-a-transit-gateway-for-network-segmentation>`_.
 
 4.  Create your network domains.
 
-    See the topic "Create a Network Domain".
+    See `Create a Network Domain <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#create-a-network-domain>`_.
 
 5.  Verify that your network segmentation configuration is implemented the way you want:
 
@@ -1747,7 +1747,7 @@ You can configure periodic snapshots, based on your preferred interval, to be ab
 
 
 ..  |transit_segmentation| image:: copilot_reference_guide_media/transit_segmentation.png
-    :scale: 70%
+    :scale: 60%
 
 
 ..  |dashboard_image| image:: CoPilot_reference_guide_media/CoPilot_dashboard.png

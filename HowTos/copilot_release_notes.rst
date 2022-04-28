@@ -22,7 +22,7 @@ CoPilot Release 1.9.0, 1.9.1 (4/27/2022)
     -   You can still enable network segmentation for inter-VPC/VNet connectivity using Aviatrix Controller (as in prior releases).
     -   The term *network domain* used in CoPilot is synonymous with *security domain* used in Controller (the term *security domain* will eventually be deprecated).
     -   The network segmentation configurations you set in Aviatrix Controller can be accessed and modified in Aviatrix CoPilot and vice versa.
-    -   When enabling network segmentation via CoPilot, you navigate to Security > Network Segmentation > Network Domain and click **Transit Gateways** to specify the Aviatrix transit gateways you want enabled for network segmentation. In the same view, you click **+ Network Domain** to create your network domains and specify how the resources you associate with them are allowed to communicate with each other. For detailed instructions, see the discussion about enabling network segmentation using CoPilot in *Aviatrix CoPilot User Reference Guide*.
+    -   When enabling network segmentation via CoPilot, you navigate to Security > Network Segmentation > Network Domain and click **Transit Gateways** to specify the Aviatrix transit gateways you want enabled for network segmentation. In the same view, you click **+ Network Domain** to create your network domains and specify how the resources you associate with them are allowed to communicate with each other. For detailed instructions, see the discussion about `enabling network segmentation using CoPilot <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#about-network-domains>`_ in *Aviatrix CoPilot User Reference Guide*.
 
 -   (Performance) Improvements to chart displays.
 
