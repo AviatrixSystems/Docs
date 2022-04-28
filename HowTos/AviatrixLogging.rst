@@ -467,7 +467,7 @@ Since Sumo agents on the controller and gateways tend to consume a lot of cpu/me
 ---------------------------------------------
   #. Go to Controller/Settings/Logging/Remote Syslog and enable the service
   #. Server: intake.logs.datadoghq.com
-  #. Port: 10516
+  #. Port: 10514
   #. Protocol: TCP
   #. For Optional Custom Template, copy the following string and replace the string DATADOG_API_KEY with your own key.
 
