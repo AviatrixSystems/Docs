@@ -471,7 +471,7 @@ Since Sumo agents on the controller and gateways tend to consume a lot of cpu/me
   #. Protocol: TCP
   #. For Optional Custom Template, copy the following string and replace the string DATADOG_API_KEY with your own key.
 
- .. note:: DATADOG_API_KEY %pri%%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - - %msg%\\n
+ .. note:: DATADOG_API_KEY <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - - %msg%\\n
 
 
 3.1.c Using Rsyslog to send logs to Splunk
