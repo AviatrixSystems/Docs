@@ -3,16 +3,12 @@
    :keywords: terraform, terraform provider, api, Transit network
 
 ============================================================
-Setup Transit Network using Aviatrix Terraform Provider
+Setting up a Transit Network using Aviatrix Terraform Provider
 ============================================================
-The Aviatrix Terraform Provider is used to interact with Aviatrix resources.
+The Aviatrix Terraform Provider is used to interact with Aviatrix resources. To learn more about Terraform, please see the `Terraform Registry <https://registry.terraform.io/>`_.
 
-You can read the `Aviatrix Terraform Tutorial <https://docs.aviatrix.com/HowTos/tf_aviatrix_howto.html>`_  to learn the steps on setting up the environment.
-
-Click `here <http://docs.aviatrix.com/HowTos/aviatrix_terraform.html>`_ to find more supported resources.
-
-Setup Terraform Provider
-========================
+Setting up a Terraform Provider
+=========================
 
 ::
 

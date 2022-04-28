@@ -13,6 +13,10 @@ The Aviatrix Controller sends alert emails for events such as:
 
 By default, the alert email is sent to the admin of the Controller. The email can be an individual email address or an email alias of a team. 
 
+.. important::
+
+  Aviatrix strongly recommends you use an email alias to notify a group of people rather than using an individual email address. If only one person receives the notifications, important alerts could be missed.
+
 By default, the source email address is no-reply@aviatrix.com. 
 
 By default, the SMTP service is provided by a third-party, Sendgrid. Even though Aviatrix implements third-party risk monitoring, we are not responsible for Sendgrid controls. Aviatrix recommend customer to configure your own SMTP service. 
