@@ -1,4 +1,4 @@
-﻿.. meta::
+.. meta::
   :description: ActiveMesh FAQ	
   :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, Firewall, DMZ, Cloud DMZ, Firewall Network, FireNet
 
@@ -48,13 +48,12 @@ In the current Release 5.0, VPC route table points to only one Spoke Gateway, so
 But once the traffic arrives at the gateway for transmission to the Spoke VPC/VNet, the traffic is load balanced across the ActiveMesh peering to the Spoke VPC/VNet Gateways. 
 
 
-
 What are the advantages of ActiveMesh?
 --------------------------------------------------------------------------------------
 
 The key benefits of ActiveMesh are improved network resiliency, failover convergence time and performance.
 
-How to enable ActiveMesh 1.0?
+How to enable ActiveMesh?
 --------------------------------
 
 ActiveMesh is enabled by default. For Aviatrix Transit or Spoke Gateway launched before ActiveMesh
@@ -128,10 +127,10 @@ it participates in packet forwarding again.
 To stop an ActiveMesh gateway, you should disable the Gateway Single AZ HA feature. Highlight the gateway at the Gateway page and 
 click **Edit**. Scroll down to Gateway Single AZ HA and click **Disable**. 
 
-What is ActiveMesh 2.0?
+What is ActiveMesh?
 ---------------------------------------
 
-ActiveMesh 2.0 is a new iteration of ActiveMesh. The main advancement of ActiveMesh 2.0 is its deterministic nature of Next Hop selection.
+ActiveMesh has a deterministic nature of Next Hop selection.
 
 Here is how Aviatrix Transit Gateway routing engine treats the following types of routes. 
 
@@ -161,7 +160,7 @@ The next hop best path selection follows the priorities listed below.
  #. For two identical ASN length and Metric Value routes, if ECMP is disabled (this is the default configuration), select the current best route. If there is no current best route, the next hop IP addresses are compared, the lower integer IP address is selected. 
  #. For two identical ASN length and Metric Value routes, if ECMP is enabled, traffic is distributed to both routes using ECMP. 
 
-How to migrate to ActiveMesh 2.0?
+How to migrate to ActiveMesh?
 --------------------------------------
 
 There are 3 scenarios:
@@ -171,7 +170,7 @@ There are 3 scenarios:
 =================================    ===============================================================================================  ==========
 Non ActiveMesh deployment            the Aviatrix Transit Gateway in the deployment has been launched before Release 5.1 (10/1/2019)  follow `this instructions <https://docs.aviatrix.com/HowTos/activemesh_migration.html>`_
 ActiveMesh 1.0 deployment            the Aviatrix Transit Gateway was launched with ActiveMesh option enabled prior to Release 6.0    migrate to ActiveMesh 2.0 by going to Settings -> Maintenance -> Migration -> ActiveMesh 2.0 Migration, click Migrate.
-New ActiveMesh 2.0 deployment        the Aviatrix Transit Gateway was launched with ActiveMesh option enabled after Release 6.0       ActiveMesh 2.0 is automatically enabled for brand new deployment on a Controller.
+New deployment                       the Aviatrix Transit Gateway was launched with ActiveMesh option enabled after Release 6.0       ActiveMesh is automatically enabled for brand new deployment on a Controller.
 =================================    ===============================================================================================  ==========
 
 
@@ -181,6 +180,8 @@ New ActiveMesh 2.0 deployment        the Aviatrix Transit Gateway was launched w
 .. |activemesh_transit_transit| image:: activemesh_faq_media/activemesh_transit_transit.png
    :scale: 30%
 
+.. |activemesh_tunnel_failures| image:: activemesh_faq_media/activemesh_tunnel_failures.png
+   :scale: 30%
 .. |activemesh_tunnel_failures| image:: activemesh_faq_media/activemesh_tunnel_failures.png
    :scale: 30%
 
