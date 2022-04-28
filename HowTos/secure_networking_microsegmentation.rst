@@ -7,7 +7,7 @@
 Secure Networking with Micro-Segmentation
 ========================================= 
 
-Micro-segmentation provides granular network security policy for distributed applications in the Cloud. Micro-segmentation enables network policy enforcement between application domains (app domains) you define in a single cloud or across multiple clouds. Users can then configure policies between these app domains to filter traffic between the applications residing in these domains.
+Micro-segmentation provides granular network security policy for distributed applications in the Cloud. Micro-segmentation enables network policy enforcement between application domains (app domains) you define in a single cloud or across multiple clouds. Users can configure policies to filter traffic between the applications residing in these domains.
 
 |microseg_topology|
 
