@@ -463,7 +463,7 @@ Working with Performance
 
 This section describes the Performance feature of Aviatrix CoPilot.
 
-In Performance, CoPilot displays the resource utilization (telemetry) data for all managed resources across your Aviatrix transit network (multi-cloud and single cloud). You can filter telemetry data based on one or more resources (hosts) located in any cloud. When choosing multiple resources, CoPilot displays the telemetry data for those resources in a comparative graph.
+In Performance, CoPilot displays the resource utilization (telemetry) data for all managed resources (your Aviatrix controller and gateways) across your Aviatrix transit network (multi-cloud and single cloud). You can filter telemetry data based on one or more resources (hosts) located in any cloud. When choosing multiple resources, CoPilot displays the telemetry data for those resources in a comparative graph.
 
 The telemetry data CoPilot displays for managed resources includes:
 
@@ -473,6 +473,8 @@ The telemetry data CoPilot displays for managed resources includes:
 - Rx rate of the interface 
 - Tx rate of the interface 
 - Rx Tx rate combined of the interfaces 
+
+The system and network metrics on which CoPilot reports telemetry data are the same as those used for triggering notifications. For descriptions of the metrics, see the topic "Metrics used for Triggering Notifications" in *Aviatrix CoPilot User Reference Guide*.
 
 Working with Cloud Routes
 =========================
@@ -518,26 +520,26 @@ This section describes the Notifications feature of Aviatrix CoPilot.
 
 In Notifications, you can configure alerts so that you can be notified about changes in your Aviatrix transit network. The alerts can be based on common telemetry data monitored in the network. For example, you can receive an alert when the status of any Aviatrix Gateway in your network changes.
 
-CoPilot supports Webhook alerts. Webhooks allow you to send notifications to third-party automation systems such as Slack. You can send a Webhook to any system that can take an HTTPS callback. A single alert can notify multiple systems/people.
+CoPilot supports webhook alerts. Webhooks allow you to send notifications to third-party automation systems such as Slack. You can send a Webhook to any system that can take an HTTPS callback. A single alert can notify multiple systems/people. For information on how to customize the webhooks CoPilot generates, see "CoPilot Webhooks" in *Aviatrix CoPilot User Reference Guide*.
 
 You can pause alerts. For example, if you are going to perform maintenance tasks on the network that you know will trigger pre-configured alerts, you can pause the alerts temporarily and unpause them when the maintenance is complete.
 
 In the Notification tab, CoPilot lists all alerts and shows if they are in a triggerd (open) or closed state. You can open an alert from the list to view its lifecycle. CoPilot closes the alert automatically when the alert metric no longer meets the condition to trigger the alert. The alert lifecycle provides a history for every alert that happens in your network environment.
 
-Configure Notifications 
+Configure Alerts 
 -----------------------
 
-Configure notifications in CoPilot so you can be alerted to events that occur in your network.
+Configure alerts in CoPilot so you can be notified to events that occur in your network.
 
-When configuring notifications, you can choose email or Webhook destinations. Before you begin, specify the email or Webhook addresses in the Notifications tab of CoPilot Settings. For more information about Webhooks, see `CoPilot Webhooks Customization  <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id1>`_.
+When configuring alerts, you can choose a notification channel of email or webhook destination. Before you begin, specify the email or webhook addresses in the Notifications tab of CoPilot Settings. For more information about webhooks, see `CoPilot Webhooks Customization  <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id1>`_.
 
 To configure notifications:
 
 1. From the sidebar, click Notifications.
 #. In Define Alert, type the name you want to use for the alert.
-#. In Condition, select the metric or condition that must be met to trigger the alert.
-#. Click Add Recipients and select the email address or Webhook destination where you want the alert to be sent. Repeat this step for each recipient you want to receive the alert.
-#. Click Save. The alert is enabled. When the condition is met for the metric you specified, CoPilot will now send an alert to the email or Webhook system you specified.
+#. In Condition, select the metric or condition that must be met to trigger the alert. For descriptions of the system and network metrics used for triggering alerts, see the topic "Metrics used for Triggering Notifications" in *Aviatrix CoPilot User Reference Guide*.
+#. Click Add Recipients and select the email address or Webhook destination where you want the alert to be sent. Repeat this step for each recipient you want to receive the notification.
+#. Click Save. The alert is enabled. When the condition is met for the metric you specified, CoPilot will now send a notification to the email or Webhook system you specified.
 
 Edit Notifications 
 --------------------
@@ -571,7 +573,7 @@ To edit a previously configured notification:
 Metrics used for Triggering Notifications
 ------------------------------------------
 
-For Aviatrix Controller and Aviatrix gateways, you can configure notifications to be alerted to events that occur in your network such as performance bottlenecks or other problems. You configure alerts and the channels to be notified using the notifications feature in Aviatrix Copilot. This section describes some of the system and network metrics on which notifications can be based. When alert conditions are met for a metric, Copilot sends a notification. How you set a condition threshold to trigger an alert will depend on different factors. For example, for system metrics, the instance size can influence the condition threshold that makes sense. For metrics associated with cloud provider-maintained infrastructure, the desired condition threshold may vary between cloud service providers. Work with your network operations team to determine the metric conditions that will trigger alerts in your environment.
+For Aviatrix Controller and Aviatrix gateways, you can configure alerts to be notified to events that occur in your network such as performance bottlenecks or other problems. You configure alerts and the channels to be notified using the notifications feature in Aviatrix Copilot. This section describes some of the system and network metrics on which notifications can be based. When alert conditions are met for a metric, Copilot sends a notification. How you set a condition threshold to trigger an alert will depend on different factors. For example, for system metrics, the instance size can influence the condition threshold that makes sense. For metrics associated with cloud provider-maintained infrastructure, the desired condition threshold may vary between cloud service providers. Work with your network operations team to determine the metric conditions that will trigger alerts in your environment.
 
 
 **System metrics for triggering notifications**
@@ -734,7 +736,141 @@ In AppIQ, you can generate a report that gives you visibility into security doma
 Working with Security
 =====================
 
-This section describes the Security feature of Aviatrix CoPilot.
+This section describes the Security functional area of Aviatrix CoPilot.
+
+The Security functional area of CoPilot provides the following:
+
+-   Ability to configure network segmentation for Aviatrix Multi-Cloud Transit Segmentation and view visualizations of your network domains and how they can or cannot connect to each other. See About network domains.
+-   Egress — Ability to view what sites are being accessed outside of your network.
+-   Audit View — Ability to view changes performed by users on your system.
+
+About Network Domains
+----------------------
+
+When you identify groups of spoke and edge VPC/VNets in your infrastructure with the same requirements from a networking point of view (network reachability), you may want to group them so that you can apply connection policies at the group level. You can group them as members of an Aviatrix network domain. A *network domain* is an Aviatrix enforced network of one or more spoke VPC/VNets. The key use case for building network domains is to segment traffic for an enhanced security posture. You use them in conjunction with connection policies to achieve the network isolation for inter-VPC/VNet connectivity that you want for your network.
+
+The following diagram shows two network domains, one named Blue and one named Red.
+
+|figure|
+
+The members of a given network domain can communicate with each other but cannot communicate with members of other network domains unless you allow them to do so by configuring a connection relationship. Two or more connected network domains means that the spoke VPC/VNets that are members of each one can communicate with each other.
+
+When you create a network domain, you give it a unique name, specify the spoke and edge VPC/VNets that are members of it, and specify any connection relationships you want it to have with other network domains.
+
+Spoke and edge VPC/VNets within a given network domain communicate with each other via an Aviatrix transit gateway that is enabled for network segmentation. You must enable transit gateways for network segmentation before creating network domains that will use those transits for communication.
+
+When a network domain is saved, the Aviatrix Controller dynamically programs and updates all of the applicable VPC/VNet route tables so that instances in different Spoke VPC/VNets in the same network domain can communicate with each other.
+
+A network domain also applies to the hybrid connection from Aviatrix Transit Gateway to on-prem or remote sites. Each BGP peer or connection can be associated with one network domain.
+
+For a summary of steps for enabling network segmentation by using Aviatrix CoPilot, see "Enabling Network Segmentation for Inter-VPC/VNet Connectivity".
+
+Enabling Network Segmentation for Inter-VPC/VNet Connectivity
+--------------------------------------------------------------
+
+Enable network segmentation for inter-VPC/VNet connectivity using network domains (Aviatrix CoPilot instructions).
+
+This section describes how to enable network segmentation for inter-VPC/VNet connectivity using network domains. See also "About network domains". 
+
+These instructions apply if you are using the Aviatrix CoPilot user interface to build network segmentation. To enable network segmentation using Aviatrix Controller, see the discussion about the Aviatrix multi-cloud transit segmentation workflow in the Aviatrix documentation.
+
+To enable network segmentation for inter-VPC/VNet connectivity:
+
+1.  Log in to CoPilot.
+
+2.  From the sidebar, select Security.
+
+3.  Enable network segmentation on each of the Aviatrix transit gateways in your network that will route traffic between network-domain members.
+
+    See the topic "Enable a transit gateway for network segmentation". 
+
+4.  Create your network domains.
+
+    See the topic "Create a Network Domain".
+
+5.  Verify that your network segmentation configuration is implemented the way you want:
+
+    -   In CoPilot, refer to the Security > Network Segmentation > Logical and Physical view visualizations. You should see your network domains. See "About network segmentation visualizations" for a description of the visualizations.
+    -   Log in to compute instances that are running in separate spoke VPC/VNets that are members of the same network domain and verify they are allowed to connect to each other and not allowed to connect to spoke VPC/VNets that are not members of the network domain.
+    -   Log in to compute instances that are running in different spoke VPC/VNets that are members of different network domains that have a connection relationship and verify they are allowed to connect to each other.
+
+6.  If needed, make changes to your network segmentation configuration.
+
+    Note the following points about changing a network segmentation configuration:
+
+    -   For transit gateways that route traffic in your segments, you can disable them from network segmentation. You should only do this if there are no longer network domains relying on them for connectivity.
+    -   For a given network domain, you can change its members (disassociate a spoke or edge gateway from it or associate new spoke or edge gateways to it) and connection relationships to other domains at any time.
+    -   If you decide to switch network domains for a given spoke or edge gateway, you must first disassociate the spoke/edge from the network domain it is currently a member of before associating it with another network domain. For example, if you want a spoke to be in Domain_Dev instead of Domain_Prod, you must first remove the spoke from the associations list of Domain_Prod and save the domain and then add the spoke to the associations list of Domain_Dev and save the domain.
+    -   Currently, you cannot change the name of a network domain after it has been saved. If you want to use a different name for an existing network segment, you must disassociate all spokes/edges and connection relationships from it and create a new network domain with those configurations with the new name.
+
+
+Enable a transit gateway for network segmentation
+---------------------------------------------------
+
+If you decide to build Aviatrix network segmentation in your network, you must enable network segmentation on all of the transit gateways that will route traffic between the Aviatrix network domains.
+
+To enable a transit gateway for network segmentation:
+
+1.  From the sidebar, select Security.
+
+2.  In the Network Segmentation > Network Domain view, click **Transit Gateway**.
+
+3.  In the transit gateway list, set the network segmentation option to **Enabled** for each transit gateway in your infrastructure that will route traffic for the spoke VPC/VNets that will be members of your network domains.
+
+4.  Click **Save**.
+
+    The transit gateway is now enabled for network segmentation.
+
+    ATTENTION: (**Disabled**) If you disable network segmentation on a transit gateway that connects spoke VPC/VNets that are members of a network domain, the spokes will no longer be able to communicate with each other using that transit gateway.
+
+
+Create a network domain
+------------------------
+
+Create a network domain to be used for network segmentation. See also "About network domains".
+
+**Pre-requisite Task:** Before creating an Aviatrix network domain, verify that you have enabled network segmentation on the transit gateways that will route traffic for its members.
+
+To create a network domain:
+
+1.  From the sidebar, select Security.
+
+2.  In the Network Segmentation > Network Domain view, click **+ Network Domain**.
+
+3.  In Name, specify a unique name for the network domain. For example, Dev\_Domain.
+
+    **Note:** After you create and save a network domain, you cannot change its name.
+
+4.  From the Associations list, select the spoke and edge VPC/VNets that are to be members of this network domain. Network-domain members can communicate with each other but cannot communicate with members of other network domains unless you configure them to do so in the next step.
+
+5.  From the Connect to Network Domain list, specify the connection relationship of this network domain to other network domains. When you specify a connection relationship, it means the spokes in this network domain can communicate with spokes of the other network domain.
+
+6.  Click **Save**.
+
+    When you save the network domain configuration, Aviatrix Controller dynamically programs and updates the applicable VPC/VNet route tables so that instances in different spoke VPC/VNets in the same network domain \(and in connected network domains, if applicable\) can communicate with each other.
+
+Network segmentation visualizations
+------------------------------------
+
+In Security, CoPilot uses visual elements to demonstrate the segments of your Aviatrix transit network that can and cannot communicate with each other if you created Aviatrix enforced network domains. The segments (*network domains*) and their ability to communicate with each other is dictated by the connection relationships you configure. You can enable network segmentation in Aviatrix Controller or in Aviatrix CoPilot. After your network segmentation configuration is enabled and saved, CoPilot dynamically shows the logical and physical view of your network-domain segments and their connection relationships in the network graph logical and physical views.
+
+In **Security Logical View**, CoPilot lists the network domains defined and shows how they can and cannot communicate with each other (Network Domain Relationships). CoPilot also shows the connectivity between gateway VPCs/VNets (spoke or Site2Cloud instances) based on their network domains (Multi Cloud Network Domain Connectivity). The thick colored lines on the circle's edge represent the network domain assigned to the gateway's nodes resting on them and the thin colored lines within the circle represent the connectivity between the gateways.
+
+In **Security Physical View**, CoPilot shows how spoke VPCs/VNets can communicate with other spoke VPCs/VNets based on their allowed network-domain connection relationships. When you hover over a spoke node on the circle, the thin colored lines within the circle represent the connectivity from that spoke to other spokes allowed to communicate with it.
+
+
+Egress
+--------
+
+In Security Egress view, CoPilot shows the URLs, domains, IP addresses that are being accessed outside of your Aviatrix transit network, including:
+
+-   The top ten visited URLs.
+-   The top 10 users (source IPs) that are accessing the top 10 visited URLs.
+-   The URLs that are being accessed that are not allowed to go through (violating egress rules).
+-   The countries that the top 10 visited URLs belong to.
+-   The Aviatrix gateways the egress traffic is traversing.
+-   The rules configured on the Egress Gateway.
+
 
 In Security, CoPilot uses visual elements to demonstrate the segments in your Aviatrix transit network that can and cannot communicate with each other. The segments are enabled by way of security domains and their ability to communicate with each other is dictated by security domain policies. You enable security domains and set security domain policies in Aviatrix Controller. CoPilot shows the logical and physical view of the domain segments and their connection relationships.
 
@@ -1592,9 +1728,9 @@ The amount of total memory used. CoPilot fetches the current value at your speci
 
 Licensing 
 -----------
-This page provides functionality for viewing your current license key or releasing the license. 
+This page shows information about your CoPilot customer ID and the Aviatrix license with which it is associated. 
 
-If you plan to terminate your current instance of CoPilot and deploy a new instance using the same license key, copy the Customer ID of the current instance first and save it for reuse later, and then release the CoPilot license of the current instance. To release the license, click the RESET button. After you deploy the new instance of CoPilot, you will be prompted to enter the customer ID during initial setup. Re-enter the same customer ID you copied.
+If you plan to terminate your current instance of CoPilot and deploy a new instance using the same license, copy the Customer ID of the current instance first and save it for reuse later, and then release the CoPilot license of the current instance. To release the license of the current instance, click the RESET button. After you deploy the new instance of CoPilot, you will be prompted to enter the customer ID during initial setup. Re-enter the same customer ID you copied.
 
 Index Management
 -----------------
