@@ -520,7 +520,7 @@ This section describes the Notifications feature of Aviatrix CoPilot.
 
 In Notifications, you can configure alerts so that you can be notified about changes in your Aviatrix transit network. The alerts can be based on common telemetry data monitored in the network. For example, you can receive an alert when the status of any Aviatrix Gateway in your network changes.
 
-CoPilot supports webhook alerts. Webhooks allow you to send notifications to third-party automation systems such as Slack. You can send a Webhook to any system that can take an HTTPS callback. A single alert can notify multiple systems/people. For information on how to customize the webhooks CoPilot generates, see "CoPilot Webhooks" in *Aviatrix CoPilot User Reference Guide*.
+CoPilot supports Webhook alerts. Webhooks allow you to send notifications to third-party automation systems such as Slack. You can send a Webhook to any system that can take an HTTPS callback. A single alert can notify multiple systems/people. For information on how to customize the webhooks CoPilot generates, see "CoPilot Webhooks" in *Aviatrix CoPilot User Reference Guide*.
 
 You can pause alerts. For example, if you are going to perform maintenance tasks on the network that you know will trigger pre-configured alerts, you can pause the alerts temporarily and unpause them when the maintenance is complete.
 
@@ -531,7 +531,7 @@ Configure Alerts
 
 Configure alerts in CoPilot so you can be notified to events that occur in your network.
 
-When configuring alerts, you can choose a notification channel of email or webhook destination. Before you begin, specify the email or webhook addresses in the Notifications tab of CoPilot Settings. For more information about webhooks, see `CoPilot Webhooks Customization  <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id1>`_.
+When configuring alerts, you can choose a notification channel of email or Webhook destinations. Before you begin, specify the email or Webhook addresses in the Notifications tab of CoPilot Settings. For more information about Webhooks, see `CoPilot Webhooks Customization  <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id1>`_.
 
 To configure notifications:
 
