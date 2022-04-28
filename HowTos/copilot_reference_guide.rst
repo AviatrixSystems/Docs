@@ -751,7 +751,7 @@ When you identify groups of spoke and edge VPC/VNets in your infrastructure with
 
 The following diagram shows two network domains, one named Blue and one named Red.
 
-|figure|
+|transit_segmentation|
 
 The members of a given network domain can communicate with each other but cannot communicate with members of other network domains unless you allow them to do so by configuring a connection relationship. Two or more connected network domains means that the spoke VPC/VNets that are members of each one can communicate with each other.
 
@@ -1745,6 +1745,9 @@ In order to provide backup to your data, you can leverage instance snapshot meth
 
 You can configure periodic snapshots, based on your preferred interval, to be able retain data in case of corruption or disk loss on EBS.  
 
+
+..  |transit_segmentation| image:: copilot_reference_guide_media/transit_segmentation.png
+    :scale: 70%
 
 
 ..  |dashboard_image| image:: CoPilot_reference_guide_media/CoPilot_dashboard.png
