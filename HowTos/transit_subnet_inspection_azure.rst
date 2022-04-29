@@ -62,7 +62,7 @@ Traffic between VMs in the same subnet or subnet group is not inspected. If you 
 
 |intraVNET_vm_segmentation|
 
-In the following four scenarios, the blue and green subnet groups have an inspection policy, while the orange subnet group does not. The blue -> green subnet group traffic traverses the NGFW on either side. Since the orange subnet group does not have an inspection policy, the orange -> green subnet group traffic is not inspected by the firewall connected to the transit FireNet to which the orange subnet group’s spoke is attached. However, since the green subnet group has an inspection policy, the orange -> green subnet group traffic traverses the firewall connected to the peer transit FireNet.
+
 
 .. note::
    The diagrams in the scenarios below show single gateways for brevity. High Availability (HA) configuration is supported for Spoke and Transit FireNet gateways.
@@ -79,6 +79,8 @@ Inter-VNet Subnet Inspection Over a Shared Transit FireNet
 
 Single Region Inter-VNet Subnet Inspection Over Transit Peering
 ---------------------------------------------------------------
+
+In this scenario, the blue and green subnet groups have an inspection policy, the orange subnet group does not. The traffic between the blue and green subnet groups traverses the NGFW on either side. Since the orange subnet group does not have an inspection policy, the traffic between the orange and green subnet groups is not inspected by the firewall connected to the Transit FireNet to which the orange subnet group’s Spoke is attached. However, since the green subnet group has an inspection policy, the traffic between the orange and green subnet group traverses the firewall connected to the peer Transit FireNet.
 
 |interVNET_transit_peering|
 
