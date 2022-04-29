@@ -127,7 +127,7 @@ In CoPilot navigate to Settings > Advanced Settings > Micro-Segmentation Setting
 Limitations
 -----------
 
-- Only supported on AWS and Azure.
+- In 6.7 micro-segmentation is only supported on AWS and Azure. Support for other clouds is not available in this release.
 - You can configure up to 500 app domains.
 - You can have up to 3000 CIDRs per app domain.
 - You can create up to 64 policies.
