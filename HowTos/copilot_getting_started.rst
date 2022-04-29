@@ -47,6 +47,23 @@ The configuration of the instance/virtual machine that you provision for your Co
 CoPilot supports automatic memory sizing for the ETL and datastore based on the physical memory of the instance at boot. Base images default to the automatic settings. This auto-scaling memory support became available with the release of Aviatrix CoPilot image version 1.5.1.
 
 
+CoPilot Customer IDs and Licensing
+-----------------------------------
+
+This section discusses Aviatrix CoPilot customer IDs and licensing.
+
+**NOTE:** The CoPilot customer ID is separate from the Aviatrix Controller customer ID.
+
+CoPilot is offered with a Bring Your Own License (BYOL) license model. If you are interested in a trial of CoPilot, contact us through the Aviatrix chat window of our doc website, or contact your Aviatrix Sales representative.
+
+With a BYOL license model, you need to have a customer ID provided by Aviatrix to be able to use the product. Your Aviatrix Sales representative will provide you with a customer ID. Customer IDs for CoPilot use the prefix `avx-cplt-`.
+
+When you perform the initial setup of CoPilot, you will be prompted to enter your customer ID and CoPilot will allocate a license to you based on your customer ID. You can view when the license will expire in the CoPilot Settings > Licensing page.
+
+Each CoPilot instance consumes one license from your customer ID. When your customer ID expires, you can ask for a license extension from your Sales representative. In this case, you must reset your customer ID for the extension by navigating to CoPilot Settings > Licensing and clicking the **RESET** button. 
+
+If you ever want to terminate your current instance of CoPilot and deploy a new instance using the same license associated with your customer ID, ensure you first release the CoPilot license of the current instance first by navigating to CoPilot Settings > Licensing and clicking the **RESET** button. After you deploy the new instance of CoPilot, you will be prompted to enter the customer ID during initial setup. Re-enter the same customer ID. 
+
 Subscribe to a CoPilot Offer
 ============================
 
@@ -106,7 +123,7 @@ To subscribe to a CoPilot offer:
 
     You should receive a message from the cloud provider stating that the instance of CoPilot software is launched/deployed.
 
-7.  Assign a static public IP address to the CoPilot software instance/virtual machine. For example, in the AWS EC2 console, you would go to the Elastic IP section and assign an EIP to the CoPilot instance.
+7.  Assign a static public IP address to the CoPilot software instance/virtual machine. For example, in the AWS EC2 console, you would go to the Elastic IP section, allocate a new EIP, and then associate it with your CoPilot instance.
 
     Take note of the IP address to use later during initial setup.
 
