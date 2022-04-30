@@ -749,7 +749,9 @@ About Network Domains
 
 When you identify groups of spoke and edge VPC/VNets in your infrastructure with the same requirements from a networking point of view (network reachability), you may want to group them so that you can apply connection policies at the group level. You can group them as members of an Aviatrix network domain. A *network domain* is an Aviatrix enforced network of one or more spoke VPC/VNets. The key use case for building network domains is to segment traffic for an enhanced security posture. You use them in conjunction with connection policies to achieve the network isolation for inter-VPC/VNet connectivity that you want for your network.
 
-The following diagram shows two network domains, one named Blue and one named Red.
+Note: The term *network domain* used in CoPilot is synonymous with *security domain* used in Controller (the term *security domain* will be deprecated).
+
+The following diagram shows two network domains, one named Blue and one named Green.
 
 |transit_segmentation|
 
