@@ -11,8 +11,11 @@ What is Multi-Cloud Transit Segmentation?
 --------------------------------------------------------
 
 Aviatrix Multi-Cloud Transit Segmentation provides network isolation through network domains and connection policies to Aviatrix Transit network
-where both Spoke and Transit networks deploy Aviatrix Gateways across multi-region and multi-cloud. The concept can be 
-described in the diagram below, 
+where both Spoke and Transit networks deploy Aviatrix Gateways across multi-region and multi-cloud. 
+
+In releases prior to 6.7, the term "security domain" was used. This has been renamed to "network domain".
+
+The concept is described in the below diagram. 
 
 |transit_segmentation|
 

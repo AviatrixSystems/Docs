@@ -9,6 +9,10 @@ Aviatrix Transit Network Segmentation Workflow
 
 For questions, refer to `Aviatrix Transit Segmentation FAQ. <https://docs.aviatrix.com/HowTos/transit_segmentation_faq.html>`_
 
+.. note::
+ 	In releases prior to 6.7, the term "security domain" was used. This has been renamed to "network domain". 
+
+
 1. Enable the Aviatrix Transit Gateway for segmentation.
 
 ==========================================      ==========
