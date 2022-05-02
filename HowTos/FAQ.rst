@@ -9,7 +9,7 @@ Frequently Asked Questions
 The Aviatrix product consists of a Controller and Gateways. When the product is deployed in the
 public cloud marketplace, what you launch is the Controller instance. From the Controller console, you launch gateways by using cloud provider APIs.
 
-When the product is deployed as a virtual appliance in a virtualized datacenter environment, the Controller and Gateway are bundled into one virtual image, such as OVF (Open Virtualization Format) and VHD (Virtual Hard Disk).
+When the product is deployed as a virtual appliance in a virtualized data center environment, the Controller and Gateway are bundled into one virtual image, such as OVF (Open Virtualization Format) and VHD (Virtual Hard Disk).
 
 The following FAQ discusses only the cloud deployment scenario.
 
@@ -30,7 +30,7 @@ where a user can access any instance/VM with a private IP address directly.
 No more bastion stations and jump hosts: the solution gives the user the
 seamless experience that they enjoy when using the on-prem network.
 
-For an Aviatrix overview, check out `this document. <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_ 
+For an Aviatrix overview, check out `this document <http://docs.aviatrix.com/StartUpGuides/aviatrix_overview.html>`_.
 
 In addition, the product interoperates with any third-party IPsec capable devices, including AWS VGW and Aviatrix's own on-prem virtual appliance CloudN.
 
@@ -52,11 +52,9 @@ The Controller is available in the AWS and Azure marketplace. It is also
 available as a GCloud community image. For marketplace launch, search
 for “Aviatrix” in marketplace.
 
-Follow `Getting Started on AWS <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_ instructions to launch the Controller on AWS.
-
-Follow `Getting Started on Azure <http://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_ instructions to launch the Controller on Azure. 
-
-Follow `Getting Started on Google <http://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_ instructions to launch the Controller on Google.
+* Follow `Getting Started on AWS <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_ instructions to launch the Controller on AWS.
+* Follow `Getting Started on Azure <http://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_ instructions to launch the Controller on Azure. 
+* Follow `Getting Started on Google <http://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_ instructions to launch the Controller on Google.
 
 What are the deployment requirements for the Aviatrix product?
 --------------------------------------------------------------------------------
@@ -98,7 +96,7 @@ communicate back to the Controller.
 
 You can use the Controller Security Management feature to automatically manage the Controller instance's inbound rules from gateways.  
 
-Go to Settings > Controller > Security Group Management, select the `primary account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#setup-primary-access-account-for-aws-cloud>`_, and click Enable. 
+Go to Settings > Controller > Security Group Management, select the `primary account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#setup-primary-access-account-for-aws-cloud>`_, and click **Enable**. 
 
 .. note::
 
@@ -125,14 +123,14 @@ When this feature is enabled, the Controller utilizes the associated network sec
 
 The Aviatrix Controller is shipped with a self-signed certificate. Therefore, there is a "Note Secure" warning sign shown on your browser console. 
 
-You can change that by importing your own signed certificate. To do so, go to Settings > Advanced > Security. At the panel "CERTIFICATE REQUEST - SEND TO CERTIFICATE AUTHORITY," send a CSR (certificate sign request), then follow the instructions to import CA and the signed Controller certificate. 
+You can change that by importing your own signed certificate. To do so, go to Settings > Advanced > Security. At the panel "Certificate Request - Send to Certificate Authority," send a CSR (certificate sign request), then follow the instructions to import CA and the signed Controller certificate. 
 
 You can also use an `ALB in front of the Controller <./controller_ssl_using_elb.html>`__.
 
 3. Removing Less Secure TLS Version(s)
 ####################################
 
-You can disable access from a browser that runs TLSv1 and TLSv1.1 and only supports TLSv1.2. To do so, go to Settings > Advanced > Security > TLS VERSIONS SUPPORT. Uncheck TLSv1 and TLSv1.1. 
+You can disable access from a browser that runs TLSv1 and TLSv1.1 and only supports TLSv1.2. To do so, go to Settings > Advanced > Security > TLS Versions Support. Uncheck TLSv1 and TLSv1.1. 
 
 4. Enabling LDAP or DUO Second Factor to Log in
 ################################################
@@ -146,7 +144,7 @@ To enable DUO authentication, go to Settings > Controller > 2FA Login and follow
 5. Creating Read-Only Accounts
 #############################
 
-You can create read_only accounts for your operations team. They can view and list pages but not making changes. Follow the `answer <http://docs.aviatrix.com/HowTos/FAQ.html#can-there-be-read-only-account-for-operation-team>`_ to have it setup.
+You can create read_only accounts for your operations team. They can view and list pages but not making changes. Follow the `answer <http://docs.aviatrix.com/HowTos/FAQ.html#can-there-be-read-only-account-for-operation-team>`_ to have it set up.
 
 6. Remove Admin Account Login
 ###############################
@@ -341,7 +339,7 @@ Starting from Release 4.2, SAML authentication is supported to login to the Cont
 Can there be read-only account for operation team?
 -----------------------------------------------------------------
 
-Yes. Navigate to Accounts > Account Users > Add A NEW USER, at Account Name field and select "read_only" from the dropdown menu. This user account will have views to all pages but cannot make changes to any configurations.
+Yes. Navigate to Accounts > Account Users > Add a New User, at Account Name field and select "read_only" from the dropdown menu. This user account will have views to all pages but cannot make changes to any configurations.
 
 Is Aviatrix FIPS 140-2 compliant?
 -------------------------------------------
@@ -391,7 +389,7 @@ You can follow the `instructions here <https://www.alienvault.com/documentation/
 
 For automation, you can reference our `python script on the Github repository. <https://github.com/AviatrixSystems/EBS-encryption>`_   
 
-Starting Release 4.2, Aviatrix gateway EBS volume can be encrypted from the Controller console. 
+Starting Release 4.2, Aviatrix gateway EBS volume can be encrypted from the Controller. 
 
 How do I launch the Controller by Terraform?
 -------------------------------------------------------
@@ -460,10 +458,10 @@ How can an account recover when a Controller software upgrade fails?
 Here is the best practice procedure to follow:
 
  1. Before a software upgrade, go to Settings > Maintenance > Backup & Restore > Backup Now. This will save a copy of the deployment configuration to your S3 bucket. 
- #. Do a dry run before upgrading. Go to Settings > Maintenance > Upgrade > UPGRADE TO THE LATEST > Dry Run. If the Dry Run is successful, proceed to the next step. If the Dry Run fails, do not proceed to the upgrade until you determine the root cause of the issue. 
- #. Upgrade. Go to Settings > Maintenance > Upgrade > UPGRADE TO THE LATEST > Upgrade. Wait for the process to finish.
- #. If Controller upgrade is successful and some gateways fail, you can 'force upgrade' the failed gateway again. Go to Troubleshoot > Gateway > FORCE UPGRADE. Select the gateway and click **Upgrade**. 
- #. If Gateway force upgrade fails, proceed to replace the gateway. Go to Troubleshoot > Gateway > GATEWAY REPLACE. Select the failed gateway and click **Replace**. 
+ #. Do a dry run before upgrading. Go to Settings > Maintenance > Upgrade > Upgrade to the Latest > Dry Run. If the Dry Run is successful, proceed to the next step. If the Dry Run fails, do not proceed to the upgrade until you determine the root cause of the issue. 
+ #. Upgrade. Go to Settings > Maintenance > Upgrade > Upgrade to the Latest > Upgrade. Wait for the process to finish.
+ #. If Controller upgrade is successful and some gateways fail, you can 'force upgrade' the failed gateway again. Go to Troubleshoot > Gateway > Force Upgrade. Select the gateway and click **Upgrade**. 
+ #. If Gateway force upgrade fails, proceed to replace the gateway. Go to Troubleshoot > Gateway > Gateway Replace. Select the failed gateway and click **Replace**. 
  #. If the Controller upgrade fails, follow `this document from Step 2 to the end <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#step-2-stop-the-current-aviatrix-controller-instance>`_. 
 
 What IP addresses does the Controller need to reach out to?
@@ -474,7 +472,7 @@ Please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/
 .. note::
 	You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
 
-What IP addresses does an Aviatrix gateway need to reach out to?
+What IP addresses does an Aviatrix Gateway need to reach out to?
 -----------------------------------------------------------------------------------
 Please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_. 
 
