@@ -25,66 +25,31 @@ By extending the Aviatrix data plane to the Edge of the network, you can use Avi
 
 What are the use cases for the Aviatrix Edge Gateway?
 -----------------------------------------------------
-You can deploy the Edge Gateway in an on-premises location with connectivity over a private network or as a secure gateway supporting locations at the Edge of your network. The diagrams below illustrate examples of Edge Gateway deployed in a private and public network.
+You can deploy the Edge Gateway in an on-premises location with connectivity over a private network or as a secure gateway supporting locations at the Edge of your network. 
 
-|image|
+This diagram illustrate Edge Gateway deployed in a private network.
 
-|image|
+|secure_edge_private_network|
+
+This diagram illustrate Edge Gateway deployed in a public network.
+
+|secure_edge_public_network|
 
 What are the requirements to run the Edge Gateway?
 --------------------------------------------------
 
-The Edge Gateway requires the following:
-
-- Aviatrix Controller 6.7
-- VMware vCenter Server (optional)
-- VMware ESXi OVA file (provided by Aviatrix)
-- VMware ESXi Versions: 6.7 or 7.0.1
-- VMware vSwitch: Standard is supported
-
-The Aviatrix Edge can run on the VMware ESXi Hypervisor. VMware ESXi runs on PCs with x86-based CPUs. You can use the same hypervisor to run several VMs.
-
-You can use the VMware vSphere Web Client to access the ESXi host directly or to access a vCenter Server. The vCenter Server can manage this ESXi host and can start/stop the Aviatrix Edge Gateway.
-
-.. note::
-   Oversubscription of host resources can lead to a reduction of performance and your instance could become unstable. We recommend that you follow the guidelines and the best practices for your host hypervisor.
-
-For more information about installing VMware vSphere products, refer to the VMware product documentation.
-
-CPU and Memory Configurations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-+-----------------+------------------+----------------------+
-| Deployment Type | Hardware Profile | Storage Requirements |
-+=================+==================+======================+
-| Small           | 2CPU - 4GB       | 64 GB                |
-+-----------------+------------------+----------------------+
-| Medium          | 4CPU - 8GB       | 64 GB                |
-+-----------------+------------------+----------------------+
-| Large           | 8CPU - 16GB      | 64 GB                |
-+-----------------+------------------+----------------------+
-| X-Large         | 16CPU - 32GB     | 64 GB                |
-+-----------------+------------------+----------------------+
-
-Additional Resources
-^^^^^^^^^^^^^^^^^^^^
-
-The following additional resources are needed for every Aviatrix Edge VM instance.
-
-- VMXNET3 driver for all interfaces
-- SATA disk controller
-- 64 GB data storage space
+Secure Edge 1.0 requires Aviatrix Controller 6.7. For additional requirements, refer to the Prerequisites section in `Deploying Aviatrix Secure Edge 1.0 for VMware ESXi <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html>`_.
 
 How do I deploy Secure Edge?
 ----------------------------
 
-To deploy Secure Edge, follow the workflow in `Deploying Aviatrix Secure Edge 1.0 for VMware ESXi <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html>`_.
+If you are using VMware ESXi to deploy the virtual machine, follow the workflow in `Deploying Aviatrix Secure Edge 1.0 for VMware ESXi <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html>`_.
 
 
-.. |interVNET_transit_peering| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/interVNET_transit_peering.png
+.. |secure_edge_private_network| image:: CloudN_workflow_media/secure_edge_private_network.png
    :scale: 40%
 
-.. |interVNET_transit_peering| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/interVNET_transit_peering.png
+.. |secure_edge_public_network| image:: CloudN_workflow_media/secure_edge_public_network.png
    :scale: 40%
 
 .. disqus::
