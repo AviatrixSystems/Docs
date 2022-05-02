@@ -1,6 +1,6 @@
 .. meta::
    :description: Secure Edge Deployment
-   :keywords: Edge, Edge Gateway, EaaG, Edge ZTP
+   :keywords: Edge, Edge Gateway, EaaG, Edge ZTP, VMware ESXi
 
 
 ==================================================
@@ -48,7 +48,7 @@ To deploy an Edge Gateway, perform these steps.
 
 #. `Configure an Edge Gateway in VMware ESXi <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#configuring-an-edge-gateway-in-vmware-esxi>`_.
 
-#. `Launch the Edge Gateway in Aviatrix Controller <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#launching-an-edge-gateway-in-aviatrix-controller>`_.
+#. `Setup the Edge Gateway in Aviatrix Controller <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#setting-up-an-edge-gateway-in-aviatrix-controller>`_.
 
 #. `Attach the ISO image to the Edge Virtual Machine <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#attaching-the-iso-image-to-the-edge-virtual-machine>`_.
 
@@ -114,12 +114,42 @@ Setting Up an Edge Gateway in Aviatrix Controller
 
 #. Click **Create**. Aviatrix Controller prompts you to download the ISO file.
 
+Attaching an Edge Gateway to a Transit Gateway
+----------------------------------------------
+
+Any time you deploy an Edge Gateway, you must attach it to a Transit Gateway. Follow these steps for an initial deployment or when you deploy an Edge Gateway that you reset.
+
+#. In Aviatrix Controller, go to **CLOUDN** > **List**.
+#. In Registered Devices, locate the Edge VM you created. Confirm the Edge VM was successfully registered. If the registration was successful, the status in the State column will show registered.
+
+   |secure_edge_registered_devices|
+
+#. To attach the Edge Gateway to the Transit Gateway, go to **Controller** > **CLOUDN** > **Attach**.
+#. In step 2, Attach Device to Cloud, complete the following fields:  
+
+   .. note::
+      If you are connecting over a public network, WAN discovery is currently mandatory.
+
+   a. For **Device Name**, select the registered Edge Gateway.
+   b. For **Aviatrix Transit Gateway**, select the transit gateway you want the Edge Gateway to connect to.
+   c. For **Connection Name**, enter the name for this connection.
+   d. For **Aviatrix Transit Gateway BGP ASN**, enter the ASN for your transit gateway.
+   e. For **Device’s BGP ASN**, enter the ASN for your Edge Gateway.
+   f. For **Device’s LAN Interface Neighbor’s IP**, enter the Neighbor’s LAN interface IP.
+   g. For **Device’s LAN Interface Neighbor’s BGP ASN**, enter the Neighbor’s LAN interface BGP ASN.
+   h. For **Over Private Network**, leave the box unchecked if you are building the tunnel over the public internet
+      
+      |secure_edge_attach_device|
+
+#. Click **Attach**.
+#. Navigate back to **CLOUDN** > **List**. Once the tunnel is successfully built, the Edge Gateway status in the **State** column changes from registered to attached. 
+
 Attaching the ISO Image to the Edge Virtual Machine
 ---------------------------------------------------
 
 .. note::
    * The ZTP ISO file can only be used for a single Edge VM instance, and only one time for that instance. 
-   * The ZTP token expires after 24 hours. If you wait too long to boot up the VM with the attached ISO image, it will not work.  In that case, delete the Edge in the Controller UI and create a brand-new Edge to receive a new ISO file.
+   * The ZTP token expires after 24 hours. If you wait too long to boot up the VM with the attached ISO image, it will not work.  In that case, delete the Edge Gateway in the Controller UI and create a brand-new Edge Gateway to receive a new ISO file.
 
 #. Upload the ISO file you downloaded from Aviatrix Controller to your VMware datastore.
 #. In vSphere, select the Edge VM you created and click **Edit settings**.
@@ -181,7 +211,41 @@ To deregister an Edge Gateway:
    
    |secure_edge_deregister|
 
+Register an Edge Gateway Again with the Aviatrix Controller
+-----------------------------------------------------------
 
+You can register an Edge virtual machine as a new Edge Gateway after it has been deregistered from the Aviatrix Controller or after you reset it to the factory settings.
+
+You must follow the steps in Launching an Edge Gateway in Aviatrix Controller and download the ISO file for your new Edge Gateway.
+
+#. To Attach the new ISO file to your Edge virtual machine, upload the ISO file to your VMware datastore.
+#. Power OFF the Edge virtual machine.
+#. In vSphere, select the Edge VM and click **Edit**.
+#. Select the Virtual Hardware tab.
+#. Expand the CD/DVD Drive 1 section.
+#. Next to CD/DVD Drive 1, click the down arrow and select **Datastore ISO file** from the pull-down menu.
+#. Next to the CD/DVD Media field, click **Browse**. Select the new ISO file that you uploaded to the datastore.
+#. Next to the Status field, check the box that says Connect at power on.
+#. Check the Connect box next to Datastore ISO file.
+
+   |secure_edge_attach_iso|
+
+#. Click Save to save this configuration and configure the Edge VM.
+#. Power ON the Edge VM.
+#. Make sure the new ISO file is connected to the CD/DVD Drive 1 of the Edge VM.
+
+   |secure_edge_hardware_config|
+
+#. Now the Edge VM is ready to be registered with the Aviatrix Controller.
+
+Register with the Aviatrix Controller by using the Clish Console
+----------------------------------------------------------------
+
+If you are reusing an Edge VM, ZTP will not be triggered automatically after you attach the new ISO file to the Edge VM. It needs to be triggered manually via Clish.
+
+#. Use the Edge VM’s vSphere serial console to log in to the Edge VM’s Clish command line interface.
+#. Execute the register command and wait for the command to complete. 
+#. If the Edge Gateway registration is successful, you should see a success message. If the gateway registration fails, you will see a message with the next steps to troubleshoot the failure.
 
 
 Access Requirements
@@ -189,43 +253,67 @@ Access Requirements
 
 The following access needs to be permitted from the Edge Gateway: 
 
-- TCP 443 access to the Aviatrix Controller’s public IP address 
-- TCP 443 access to the Aviatrix Controller’s private IP address (only if you selected Over Private Network for management IP connectivity) 
-- UPD 500/4500 access for the Transit Gateway’s public IP address
+- MGMT: TCP 443 access to the Aviatrix Controller’s public IP address 
+- MGMT: TCP 443 access to the Aviatrix Controller’s private IP address (only permit this access if you selected **Over Private Network** for management IP connectivity) 
+- WAN: UPD 500/4500 access 
 
-Attaching an Edge Gateway to a Transit Gateway
-----------------------------------------------
+Attaching a Reset Edge Gateway to a Transit Gateway
+---------------------------------------------------
 
-Follow these steps:
+Any time you deploy an Edge Gateway, you must attach it to a Transit Gateway. To attach the Edge Gateway you reset, follow the steps in `Attaching an Edge Gateway to a Transit Gateway <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#attaching-an-edge-gateway-to-a-transit-gateway>`_.
 
-#. In Aviatrix Controller, go to **CLOUDN** > **List**.
-#. In Registered Devices, locate the Edge VM you created. Confirm the Edge VM was successfully registered. If the registration was successful, the status in the State column will show registered.
+Troubleshooting
+---------------
 
-   |image|
+You can use the Clish commands below to troubleshoot the Edge Gateway.
 
-   |image|
+To run Clish on the Edge Gateway, log in with the username **admin**.
 
-#. To attach the Edge Gateway to the Transit Gateway, go to **Controller** > **CLOUDN** > **Attach**.
-#. In step 2, Attach Device to Cloud, complete the following fields:  
-
-   .. note::
-      If you are connecting over a public network, WAN discovery is currently mandatory.
-
-   a. For Device Name, select the registered Edge Gateway.
-   b. For Aviatrix Transit Gateway, select the transit gateway you want the Edge Gateway to connect to.
-   c. For Connection name, enter the name of this connection.
-   d. For Aviatrix Transit Gateway BGP ASN, enter the ASN for your transit gateway.
-   e. For Device’s BGP ASN, enter the ASN for your Edge Gateway.
-   f. For Device’s LAN Interface Neighbor’s IP, enter the Neighbor’s LAN Interface IP.
-   g. For Device’s LAN Interface Neighbor’s BGP ASN, enter the Neighbor’s LAN interface BGP ASN.
-   h. For Over Private Network, leave the box unchecked if you are building the tunnel over the public internet
-      
-      |image|
-
-#. Click **Attach**.
-#. Navigate back to **CLOUDN** > **List**. Once the tunnel is successfully built, the Edge GW status in the State column changes from registered to attached. 
-   
-
++-----------------------------------+--------------------------------------------------------+
+| Command                           | Description                                            |
++===================================+========================================================+
+| change_console_password           | Changes the password for the CLI login.                |
++-----------------------------------+--------------------------------------------------------+
+| diagnostics                       | Show gateway diagnostics from                          |
+|                                   | /home/ubuntu/cloudx-aws/avx_edge_status.json, which is |
+|                                   | written by register process or reset_config process.   |
++-----------------------------------+--------------------------------------------------------+
+| logout                            | Log out of the console.                                |
++-----------------------------------+--------------------------------------------------------+
+| ping [-c count] [dest]            | Ping destination, optional parameter ping packet count.|
+|                                   | The default is 5.                                      |
++-----------------------------------+--------------------------------------------------------+
+| reboot                            | Reboot the system.                                     |
++-----------------------------------+--------------------------------------------------------+
+| register                          | Register with the Controller.                          |
++-----------------------------------+--------------------------------------------------------+
+| reset_config                      | Deregister and reset to factory default.               |
++-----------------------------------+--------------------------------------------------------+
+| set_controller_ip [controller_ip] | Set controller ip, usually performed after controller  |
+|                                   | migration when controller ip changed.                  |
++-----------------------------------+--------------------------------------------------------+
+| set_lan addr [lan_cidr]           | Set LAN interface CIDR.                                |
++-----------------------------------+--------------------------------------------------------+
+| set_lan mtu [lan_mtu]             | Set LAN interface MTU.                                 |
++-----------------------------------+--------------------------------------------------------+
+| set_wan addr [wan_cidr]           | Set WAN interface CIDR.                                |
++-----------------------------------+--------------------------------------------------------+
+| set_wan gateway [gateway_ip]      | Set WAN gateway IP.                                    |
++-----------------------------------+--------------------------------------------------------+
+| set_wan mtu [wan_mtu]             | Set WAN interface MTU.                                 |
++-----------------------------------+--------------------------------------------------------+
+| show_interfaces                   | Show output from the command “ifconfig -a | more”.     |
++-----------------------------------+--------------------------------------------------------+
+| show_routes                       | Show output from the command “ip route show table all”.|
++-----------------------------------+--------------------------------------------------------+
+| test connect                      | Test TLS and port 443 connection to controller.        |
++-----------------------------------+--------------------------------------------------------+
+| test dns [host_name]              | Test DNS availability.                                 |
++-----------------------------------+--------------------------------------------------------+
+| test port                         | Test controller port 443 reachability.                 |
++-----------------------------------+--------------------------------------------------------+
+| unlock                            | Unlock console and enter Linux shell.                  |
++-----------------------------------+--------------------------------------------------------+
 
 .. |secure_edge_ova_load_file| image:: CloudN_workflow_media/secure_edge_ova_load_file.png
    :scale: 40%
@@ -254,13 +342,16 @@ Follow these steps:
 .. |secure_edge_deregister| image:: CloudN_workflow_media/secure_edge_deregister.png
    :scale: 40%
 
-.. |interVNET_transit_peering| image:: CloudN_workflow_media/transit_subnet_inspection_azure_media/interVNET_transit_peering.png
+.. |secure_edge_attach_iso| image:: CloudN_workflow_media/secure_edge_attach_iso.png
    :scale: 40%
 
-.. |interVNET_transit_peering| image:: CloudN_workflow_media/transit_subnet_inspection_azure_media/interVNET_transit_peering.png
+.. |secure_edge_registered_devices| image:: CloudN_workflow_media/secure_edge_registered_devices.png
    :scale: 40%
 
-.. |interVNET_transit_peering| image:: CloudN_workflow_media/transit_subnet_inspection_azure_media/interVNET_transit_peering.png
+.. |secure_edge_attach_device| image:: CloudN_workflow_media/secure_edge_attach_device.png
+   :scale: 40%
+
+.. |secure_edge_hardware_config| image:: CloudN_workflow_media/secure_edge_hardware_config.png
    :scale: 40%
 
 .. disqus::
