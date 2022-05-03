@@ -15,7 +15,6 @@ Use cases where you might implement micro-segmentation are:
 
 - Workload isolation: in a typical tiered application, you may want to isolate tiers that do not require access to each other. For example, in a Shopping Cart application, there could be workloads for product inventory, billing, and a Product Logging app. Since the Shopping Cart application does not need to communicate with the Product Logging app, this traffic should be blocked.
 - Quarantine compromised machines: You can isolate a compromised machine by placing it in its own app domain and blocking communication to that domain.
-- Network traffic monitoring: Watch network traffic between your app domains and enforce policies as needed.
 
 
 Micro-Segmentation Components
