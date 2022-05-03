@@ -82,7 +82,7 @@ From here you can:
 
 
 Creating Policies 
---------------------------------
+---------------------
 After creating your app domains, you create policies to filter traffic sent between the selected source and destination app domains. The policies are executed in the order they appear in the list.  
 
 An app domain traffic flow can belong to more than one policy. If this occurs, the priority of the policy determines the action that is taken first. 
@@ -111,6 +111,11 @@ As per the workload isolation use case above (blocking traffic between the Shopp
 12. Make additional policy modifications as needed.
 13. You can then review, commit, or discard the policy changes. 
 
+Viewing Policy Statistics
+-------------------------
+
+You can open a previously created policy to view the statistics related to the execution of that particular policy. You can view traffic statistics from the last hour, week, or month, or a custom time period. The resulting graph indicates if the traffic is Observed, Enforced & Allowed, or Enforced & Denied.
+
 Creating a Default Policy
 -------------------------
 As a best zero trust security practice, you should add a deny policy that blocks traffic from all app domains to the universal 0.0.0.0/0 app domain. For example, if app domains A and B are configured to talk to each other, you may not want app domain C to be able to talk to app domain A or B. Creating this default policy helps with locking down configured app domains. This should be the last policy in the list.
@@ -121,6 +126,8 @@ Configuring the Polling Interval
 The Aviatrix Controller periodically polls your CSPs to gather and inventory its resources. For example, if you modified your CSP tags, you may want to poll data more frequently so that CoPilot reflects those changes.
 
 In CoPilot navigate to Settings > Advanced Settings > Micro-Segmentation Settings and enter the desired polling interval in minutes (default is 60). This can be a value between 1-180.
+
+You can manually trigger a poll to fetch resources directly from your CSPs by clicking the Refetch CSP Resources button on the Micro-Segmentation tab. The poll may take several minutes to complete depending on the size of your environment. 
 
 
 Limitations
