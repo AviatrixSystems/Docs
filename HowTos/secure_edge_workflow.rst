@@ -26,10 +26,19 @@ The Aviatrix Edge can run on the VMware ESXi Hypervisor. VMware ESXi runs on x86
 
 For more information about installing VMware vSphere products, refer to the VMware product documentation.
 
+Access Requirements
+-------------------
+
+The Aviatrix Controller requires access to the following ports for Edge Gateway deployment. You must allow access on these ports on your firewall.
+
+- MGMT: TCP 443 access to the Aviatrix Controller’s public IP address 
+- MGMT: TCP 443 access to the Aviatrix Controller’s private IP address (only permit this access if you selected **Over Private Network** for management IP connectivity) 
+- WAN: UPD 500/4500
+
 Virtual Machine CPU and Memory Configurations
 ---------------------------------------------
 
-The following table lists the Virtual Machine CPU and memory configuration guidelines. 
+The following table provides CPU and memory configuration guidelines of the virtual machine instance for the Aviatrix Edge Gateway deployment. 
 
 +-----------------+------------------+----------------------+
 | Deployment Type | Hardware Profile | Storage Requirements |
@@ -43,8 +52,7 @@ The following table lists the Virtual Machine CPU and memory configuration guide
 | X-Large         | 16CPU - 32GB     | 64 GB                |
 +-----------------+------------------+----------------------+
 
-.. note::
-   Oversubscription of host resources can lead to a reduction of performance and your instance could become unstable. We recommend that you follow the guidelines and the best practices for your host hypervisor.
+Oversubscription of host resources can lead to a reduction of performance and your instance could become unstable. We recommend that you follow the guidelines and the best practices for your host hypervisor.
 
 Deploying an Edge Gateway in VMware ESXi
 ------------------------------------------
@@ -75,7 +83,7 @@ To deploy the Edge virtual machine in VMware ESXi, follow these steps.
 
    |secure_edge_ova_load_file|
 
-#. Select the storage device for the instance you created (the OVA is installed in this instance). Click **Next**.
+#. In the Select storage page, select the storage device for the instance you created (the OVA is installed in this instance). Click **Next**.
 #. In the Deployment options window, enter the network interface mappings and select the Deployment type (Refer to the pull-down menu or see `CPU and Memory Configuration <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#cpu-and-memory-configurations>`_.)
 
    |secure_edge_ova_deploy_options|
@@ -85,6 +93,9 @@ To deploy the Edge virtual machine in VMware ESXi, follow these steps.
 
 Setting Up an Edge Gateway in Aviatrix Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+   You must have port 443 open to the IP address of the Aviatrix Controller. For the required access for Edge Gateway deployment, refer to `Access Requirements <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#access-requirements>`_.
 
 To set up an Edge Gateway in Aviatrix Controller, follow these steps.
 
@@ -138,17 +149,28 @@ Attaching the ISO Image to the Edge Virtual Machine
 
    |secure_edge_edit_settings|
 
+   .. note::
+      **Connect at power on** (step 4) is required when you attach the ISO image to the VM for the first time. If the VM is powered on at the time you attach the ISO image, select the **Datastore ISO file** and save the configuration to make the ISO available to ZTP.
+
 #. Click **Save**.
 
 Attaching an Edge Gateway to a Transit Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After you deploy an Edge Gateway, you must attach it to a Transit Gateway. Follow these steps for an initial deployment or when you deploy an Edge Gateway that you reset.
+After you deploy an Edge Gateway, you must attach it to a Transit Gateway.
 
 #. In Aviatrix Controller, go to **CLOUDN** > **List**.
 #. In Registered Devices, locate the Edge VM you created. Confirm that the Edge VM was successfully registered. If the registration was successful, the status in the **State** column will show registered.
 
    |secure_edge_registered_devices|
+
+   If the VM was not successfully registered, follow these troubleshooting steps.
+
+   a. Confirm you have network connectivity from the Edge Gateway to the Controller.
+   b. Confirm any firewall and security rules (such as security groups) that allow traffic to and from the Controller.
+   c. If steps a) and b) do not resolve the issue, reset the Edge Gateway configuration and try again.
+
+   If these steps fail, contact Aviatrix Support at `Aviatrix Support Portal <https://support.aviatrix.com>`_.
 
 #. To attach the Edge Gateway to the Transit Gateway, go to **Controller** > **CLOUDN** > **Attach**.
 #. In step 2, **Attach Device to Cloud**, complete the following fields:  
@@ -267,14 +289,7 @@ Attaching a Reset Edge Gateway to a Transit Gateway
 After you deploy an Edge Gateway that you reset, you attach it to a Transit Gateway.
 To attach the Edge Gateway to a Transit Gateway, follow the steps in `Attaching an Edge Gateway to a Transit Gateway <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#attaching-an-edge-gateway-to-a-transit-gateway>`_.
 
-Access Requirements
--------------------
 
-The following access needs to be permitted from the Edge Gateway: 
-
-- MGMT: TCP 443 access to the Aviatrix Controller’s public IP address 
-- MGMT: TCP 443 access to the Aviatrix Controller’s private IP address (only permit this access if you selected **Over Private Network** for management IP connectivity) 
-- WAN: UPD 500/4500 access 
 
 Troubleshooting
 ---------------
@@ -328,6 +343,25 @@ To run Clish on the Edge Gateway, log in with the username **admin**.
 +-----------------------------------+--------------------------------------------------------+
 | unlock                            | Unlock console and enter Linux shell.                  |
 +-----------------------------------+--------------------------------------------------------+
+
+Tech Notes About BGP and Routing
+--------------------------------
+
+If the connectivity to the Cloud Service Provider (CSP) is over a private network:  
+
+- The edge (WAN) router runs a BGP session to VGW (AWS) where the edge router advertises an Edge Gateway WAN subnet network, and the VGW advertises the Transit VPC CIDR. 
+
+- The Edge Gateway LAN interface runs a BGP session to the edge router where the edge router advertises the on-prem network address range to Edge Gateway LAN interface. 
+
+- The Edge Gateway WAN interface runs a BGP session to the Transit Gateway in the Transit VPC where Transit Gateway advertises all Spoke VPC CIDRs to the Edge Gateway, and the Edge Gateway advertises on-prem network to the Transit Gateway. 
+
+If the connectivity to the CSP is over a public network: 
+
+- The Edge Gateway LAN and WAN interfaces do not use public IP addresses. The interfaces rely on the edge router or Firewall NAT function and Internet connectivity. 
+
+- The Edge Gateway LAN interface runs a BGP session to the edge router where the edge router advertises the on-prem network address range to the Edge Gateway LAN interface. 
+
+- The Edge Gateway WAN interface runs a BGP session to the Transit Gateway in the Transit VPC/VNET where the Transit Gateway advertises all Spoke VPC/VNET CIDRs to the Edge Gateway, and the Edge Gateway advertises the on-prem network to the Transit Gateway.
 
 .. |secure_edge_ova_load_file| image:: CloudN_workflow_media/secure_edge_ova_load_file.png
    :scale: 40%
