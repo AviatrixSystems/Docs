@@ -175,7 +175,7 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: CloudN
 
-  HowTos/CloudN_workflow
+   HowTos/CloudN_workflow
 
 .. _Security:
 
