@@ -22,7 +22,7 @@ Instance Configuration Details
 
 - Open your CoPilot security group for: 
 
-  - 443 from anywhere user access (User Interface)
+  - TCP port 443 from anywhere user access (to reach CoPilot via HTTPS connection using web browser)
 
   - UDP port 5000 from all of your Aviatrix gateway IPs (gateways send Remote Syslog to CoPilot)
 
@@ -111,11 +111,11 @@ To subscribe to a CoPilot offer:
 5.  In your cloud console, in the security group page of your CoPilot VM/instance, add entries FOR EACH of your Aviatrix gateways:
 
     -   For the UDP ports, change the default inbound rule of 0.0.0.0/0 to the IP addresses of your Aviatrix gateways: 
-        -   Open your CoPilot Security Group for UDP 31283 from all of your Aviatrix Gateways.
-        -   Open your CoPilot Security Group for UDP 5000 from all of your Aviatrix Gateways.
-        -   For port 443, you can allow only your and other trusted user's IP addresses.
+          -   Open your CoPilot Security Group for UDP 31283 from all of your Aviatrix Gateways.
+          -   Open your CoPilot Security Group for UDP 5000 from all of your Aviatrix Gateways.
+          -   For port 443, you can allow only your and other trusted user's IP addresses.
     .. note::
-        If you launch new gateways from your controller later, you must also add CIDR entries for them here at that time. 
+        Each time you launch a new gateway from your controller, you must also add a CIDR entry for it here. 
        
 6.  After specifying all values for the marketplace configuration prompts, deploy/launch the CoPilot instance/virtual machine.
 
@@ -473,7 +473,7 @@ Below is a summary of steps for a CoPilot instance launch via Terraform:
 
 1.  If you haven't already done so, subscribe to a CoPilot offer in the CSP marketplace. See "Subscribe to a CoPilot Offer".
 
-    You only need to subscribe, review the subscription pricing information, and accept the terms and conditions in the marketplace before proceeding to the next step. You would not need to move on to the configuration steps in the marketplace.
+    You only need to subscribe, review the subscription pricing information, and accept the terms and conditions in the marketplace before proceeding to the next step. You would not move on to the configuration steps in the marketplace.
 
 2.  Verify you have your CSP account credentials and you know which CSP region in which to launch CoPilot.
 
@@ -485,62 +485,91 @@ Below is a summary of steps for a CoPilot instance launch via Terraform:
 
 5.  The following is an example of the format to enter your CSP account credentials. You can refer to your CSP Terraform Registry to verify the latest information that is required.
 
-    ``` 
-    AZURE
-    
-    provider "azurerm" {
-    features {}
-    
-    subscription_id = ""
-    client_id    = ""
-    client_secret  = ""
-    tenant_id    = ""
-    }
-    
-    Refer to Terraform Registry for the latest information.
-    
-    GCP
-    
-    provider "google" {
-    project = ""
-    region = ""
-    zone  = ""
-    }
-    
-    Refer to Terraform Registry for the latest information.
-    
-    OCI
-    
-    provider "oci" {
-    tenancy_ocid   = ""
-    user_ocid    = ""
-    fingerprint   = ""
-    private_key_path = ""
-    region      = ""
-    }
-    
-    Refer to Terraform Registry for the latest information.
-    
-    AWS
-    
-    provider "aws" {
-    region   = ""
-    access_key = ""
-    secret_key = ""
-    }
-    
-    Refer to Terraform Registry  for the latest information.
-    ```
+    Example of the format to enter your CSP account credentials ::
+                
+      AZURE
+      
+      provider "azurerm" {
+      features {}
+      
+      subscription_id = ""
+      client_id    = ""
+      client_secret  = ""
+      tenant_id    = ""
+      }
+      
+      Refer to Terraform Registry for the latest information.
+      
+      GCP
+      
+      provider "google" {
+      project = ""
+      region = ""
+      zone  = ""
+      }
+      
+      Refer to Terraform Registry for the latest information.
+      
+      OCI
+      
+      provider "oci" {
+      tenancy_ocid   = ""
+      user_ocid    = ""
+      fingerprint   = ""
+      private_key_path = ""
+      region      = ""
+      }
+      
+      Refer to Terraform Registry for the latest information.
+      
+      AWS
+      
+      provider "aws" {
+      region   = ""
+      access_key = ""
+      secret_key = ""
+      }
+      
+      Refer to Terraform Registry  for the latest information.
+       
 
 6.  Ensure that you set the variable for the region in which to launch the instance in the provider block.
 
-7.  Specify at least 1 data disk (volume) that is already created in your CSP account for Terraform to attach to your CoPilot instance for data storage.
+7.  Specify at least 1 data disk (volume) that is already created in your CSP account for Terraform to attach to your CoPilot instance for data storage. 
 
-    For information about CoPilot storage, see "CoPilot Disk (Volume) Management".
+    Choose a disk that does not have data as the data will be deleted when CoPilot creates a logical data volume. For information about CoPilot storage, see "CoPilot Disk (Volume) Management".
+    
+    The following is sample code for building a single CoPilot instance (the variable default_data_volume_name is required to create the data volume) ::
+      
+      module "copilot_build_aws" {
+        source = "github.com/AviatrixSystems/terraform-modules-copilot.git//copilot_build_aws"
+        
+        allowed_cidrs = {
+          "tcp_cidrs" = {
+            protocol = "tcp"
+            port = "443"
+            cidrs = [“1.2.3.4/32"]
+          }
+          "udp_cidrs_1" = {
+            protocol = "udp"
+            port = "5000"
+            cidrs = ["0.0.0.0/0"]
+          }
+          "udp_cidrs_2" = {
+            protocol = "udp"
+            port = "31283"
+            cidrs = ["0.0.0.0/0"]
+          }
+        }
+        
+        keypair = "copilot_kp"
+        
+        default_data_volume_name = "/dev/sdf"
+      }
 
 8.  Run terraform (terraform apply).
 
-    The CoPilot instance is launched in the CSP as defined by the script's source field.
+    The CoPilot instance is launched in the CSP as defined by the script's source field. If you do not specify an availability zone (using the variable ``availability_zone``), an AZ that supports the instance type will be used. The AZ that is used will be listed in the output ``ec2-info``.
 
     The instance launched is the latest release version of CoPilot based on Aviatrix CoPilot image version 1.5.1.
 
@@ -548,9 +577,9 @@ Below is a summary of steps for a CoPilot instance launch via Terraform:
 
 10. Launch the CoPilot application in your web browser:
 
-    `https://*<copilot static ip address>*/`
+    https://`copilot static ip address`/
 
-    where *<copilot static ip address>* is the static IP address of your newly deployed CoPilot software instance/virtual machine.
+    where `copilot static ip address` is the static IP address of your newly deployed CoPilot software instance/virtual machine.
 
 11. Perform the initial setup of CoPilot.
 
