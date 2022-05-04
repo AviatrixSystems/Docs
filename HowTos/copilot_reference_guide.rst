@@ -474,7 +474,7 @@ The telemetry data CoPilot displays for managed resources includes:
 - Tx rate of the interface 
 - Rx Tx rate combined of the interfaces 
 
-The system and network metrics on which CoPilot reports telemetry data are the same as those used for triggering notifications. For descriptions of the metrics, see the topic "Metrics used for Triggering Notifications" in *Aviatrix CoPilot User Reference Guide*.
+The system and network metrics on which CoPilot reports telemetry data are the same as those used for triggering notifications. For descriptions of the metrics, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#metrics-used-for-triggering-notifications>`_ in *Aviatrix CoPilot User Reference Guide*.
 
 Working with Cloud Routes
 =========================
@@ -520,7 +520,7 @@ This section describes the Notifications feature of Aviatrix CoPilot.
 
 In Notifications, you can configure alerts so that you can be notified about changes in your Aviatrix transit network. The alerts can be based on common telemetry data monitored in the network. For example, you can receive an alert when the status of any Aviatrix Gateway in your network changes.
 
-CoPilot supports Webhook alerts. Webhooks allow you to send notifications to third-party automation systems such as Slack. You can send a Webhook to any system that can take an HTTPS callback. A single alert can notify multiple systems/people. For information on how to customize the webhooks CoPilot generates, see "CoPilot Webhooks" in *Aviatrix CoPilot User Reference Guide*.
+CoPilot supports Webhook alerts. Webhooks allow you to send notifications to third-party automation systems such as Slack. You can send a Webhook to any system that can take an HTTPS callback. A single alert can notify multiple systems/people. For information on how to customize the webhooks CoPilot generates, see `CoPilot Webhooks <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#copilot-webhooks>`_ in *Aviatrix CoPilot User Reference Guide*.
 
 You can pause alerts. For example, if you are going to perform maintenance tasks on the network that you know will trigger pre-configured alerts, you can pause the alerts temporarily and unpause them when the maintenance is complete.
 
@@ -649,13 +649,13 @@ pkt_tx_rate
     Packets Transmitted Rate — The total (transmitted) transmission in packet level per second.
 
 rate_bandwidth_egress_limit_exceeded
-    (AWS Only) Bandwidth Egress Limit Exceeded Rate — The number of tx packets dropped because the bandwidth allowance limit was exceeded.
+    (AWS Only) Bandwidth Egress Limit Exceeded Rate — The number of tx packets dropped because the bandwidth allowance limit was exceeded. This metric is supplied by the Elastic Network Adapter (ENA) driver only on AWS.
 
 rate_bandwidth_ingress_limit_exceeded
-    (AWS Only) Bandwidth Ingress Limit Exceeded Rate — The number of rx packets dropped because the bandwidth allowance limit was exceeded.
+    (AWS Only) Bandwidth Ingress Limit Exceeded Rate — The number of rx packets dropped because the bandwidth allowance limit was exceeded. This metric is supplied by the ENA driver only on AWS.
 
 rate_conntrack_limit_exceeded
-    (AWS Only) Conntrack Limit Exceeded Rate — The number of packets dropped because the connection count allowance limit was exceeded.
+    (AWS Only) Conntrack Limit Exceeded Rate — The number of packets dropped because the connection count allowance limit was exceeded. This metric is supplied by the ENA driver only on AWS.
 
 rate_peak_received
     Peak Received Rate — The highest bit rate that has been received by the interface on the Aviatrix gateway VM/instance.
