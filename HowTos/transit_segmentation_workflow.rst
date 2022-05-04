@@ -9,6 +9,10 @@ Aviatrix Transit Network Segmentation Workflow
 
 For questions, refer to `Aviatrix Transit Segmentation FAQ. <https://docs.aviatrix.com/HowTos/transit_segmentation_faq.html>`_
 
+.. note::
+ 	In releases prior to 6.7, the term "security domain" was used. This has been renamed to "network domain". 
+
+
 1. Enable the Aviatrix Transit Gateway for segmentation.
 
 ==========================================      ==========
@@ -17,12 +21,12 @@ For questions, refer to `Aviatrix Transit Segmentation FAQ. <https://docs.aviatr
 Aviatrix Transit Gateway Name                   An `Aviatrix Transit Gateway deployed in the Multi-Cloud Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_
 ==========================================      ==========
 
-2. Create a Multi-Cloud Security domain. You can make changes to your network segmentation at any time, simply come back to this page. 
+2. Create a Multi-Cloud Network domain. You can make changes to your network segmentation at any time, simply come back to this page. 
 
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
-Security Domain Name                            Specify a unique domain name. For example, Dev_Domain
+Network Domain Name                             Specify a unique domain name. For example, Dev_Domain
 ==========================================      ==========
 
 3. Add/modify connection policies. 
@@ -43,7 +47,7 @@ This section is to build the network segmentation by associating a Spoke.
 **Setting**                                     **Value**
 ==========================================      ==========
 Aviatrix Transit Gateway Name                   The name of the Aviatrix Transit Gateway
-Security Domain Name                            The name of the Security Domain
+Network Domain Name                             The name of the Network Domain
 Attachment Name                                 The name of a Spoke or edge connection to associate to the domain
 ==========================================      ==========
 
@@ -54,7 +58,7 @@ Attachment Name                                 The name of a Spoke or edge conn
 **Setting**                                     **Value**
 ==========================================      ==========
 Aviatrix Transit Gateway Name                   The name of the Aviatrix Transit Gateway
-Security Domain Name                            The name of the Security Domain
+Network Domain Name                             The name of the Network Domain
 Attachment Name                                 The name of a Spoke or edge connection to disassociate from the domain
 ==========================================      ==========
 
@@ -64,12 +68,12 @@ Attachment Name                                 The name of a Spoke or edge conn
 This section consists of the delete functions. 
 
 
-1. Delete Multi-Cloud Security domain.
+1. Delete Multi-Cloud Network domain.
 
 ==========================================      ==========
 **Setting**                                     **Value**
 ==========================================      ==========
-Security Domain Name                            The name of the Security Domain
+Network Domain Name                             The name of the Network Domain
 ==========================================      ==========
 
 2. Disable Aviatrix Transit Gateway for segmentation.
