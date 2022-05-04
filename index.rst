@@ -179,7 +179,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/secure_edge_workflow   
    HowTos/cloudn_faq
    HowTos/cloudn_workflow_
-   HowTos/CloudN_workflow
+
 
 .. _Security:
 
