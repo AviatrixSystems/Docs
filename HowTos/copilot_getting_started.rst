@@ -459,6 +459,105 @@ If deploying Pre-1.5.1 image releases:
 
 - Click the button "Deploy".
 
+
+(Terraform) CoPilot instance launch using Terraform
+==================================================== 
+
+This section provides a summary of steps for launching an Aviatrix CoPilot instance using Terraform.
+
+You can deploy Aviatrix CoPilot from the marketplace of any cloud service provider (CSP) that Aviatrix supports. The provisioning of the instance and instance launch via the CSP marketplace only takes a few steps as described in the topic "Subscribing to a CoPilot Offer". 
+
+If you are knowledgeable in deploying infrastructure-as-code using Terraform, you may prefer or find it more convenient in some circumstances to launch the CoPilot VM/instance using a Terraform script rather than via the CSP marketplace.
+
+Below is a summary of steps for a CoPilot instance launch via Terraform:
+
+1.  If you haven't already done so, subscribe to a CoPilot offer in the CSP marketplace. See "Subscribe to a CoPilot Offer".
+
+    You only need to subscribe, review the subscription pricing information, and accept the terms and conditions in the marketplace before proceeding to the next step. You would not need to move on to the configuration steps in the marketplace.
+
+2.  Verify you have your CSP account credentials and you know which CSP region in which to launch CoPilot.
+
+3.  Go to the Aviatrix repository GitHub - AviatrixSystems/terraform-modules-copilot (https://github.com/AviatrixSystems/terraform-modules-copilot) to access the sample code in the README file for the applicable CSP. The README file contains the variables that can be set for the CoPilot instance launch.
+
+4.  In the folder where you put your Terraform scripts based on the sample code, create a `.tf`file to provide your CSP account credentials (for example, provider block below). You can name the `.tf`file whatever you want.
+
+    **Important:** Ensure your CSP account credentials are always in a secure location.
+
+5.  The following is an example of the format to enter your CSP account credentials. You can refer to your CSP Terraform Registry to verify the latest information that is required.
+
+    ``` 
+    AZURE
+    
+    provider "azurerm" {
+    features {}
+    
+    subscription_id = ""
+    client_id    = ""
+    client_secret  = ""
+    tenant_id    = ""
+    }
+    
+    Refer to Terraform Registry for the latest information.
+    
+    GCP
+    
+    provider "google" {
+    project = ""
+    region = ""
+    zone  = ""
+    }
+    
+    Refer to Terraform Registry for the latest information.
+    
+    OCI
+    
+    provider "oci" {
+    tenancy_ocid   = ""
+    user_ocid    = ""
+    fingerprint   = ""
+    private_key_path = ""
+    region      = ""
+    }
+    
+    Refer to Terraform Registry for the latest information.
+    
+    AWS
+    
+    provider "aws" {
+    region   = ""
+    access_key = ""
+    secret_key = ""
+    }
+    
+    Refer to Terraform Registry  for the latest information.
+    ```
+
+6.  Ensure that you set the variable for the region in which to launch the instance in the provider block.
+
+7.  Specify at least 1 data disk (volume) that is already created in your CSP account for Terraform to attach to your CoPilot instance for data storage.
+
+    For information about CoPilot storage, see "CoPilot Disk (Volume) Management".
+
+8.  Run terraform (terraform apply).
+
+    The CoPilot instance is launched in the CSP as defined by the script's source field.
+
+    The instance launched is the latest release version of CoPilot based on Aviatrix CoPilot image version 1.5.1.
+
+9.  Wait to receive a success image message.
+
+10. Launch the CoPilot application in your web browser:
+
+    `https://*<copilot static ip address>*/`
+
+    where *<copilot static ip address>* is the static IP address of your newly deployed CoPilot software instance/virtual machine.
+
+11. Perform the initial setup of CoPilot.
+
+    See `Initial Setup of CoPilot <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#initial-setup-of-copilot>`_.
+
+
+
 .. |gcp_copilot_1| image:: copilot_getting_started_media/gcp_copilot_1.png
    :scale: 50%
    
