@@ -7,7 +7,7 @@
 Deploying Aviatrix Secure Edge 1.0 for VMware ESXi
 ==================================================
 
-Aviatrix Secure Edge has a virtual form factor that lets you deploy an Edge Gateway as a standard virtual machine (VM). This document provides step-by-step instructions for deploying Aviatrix Secure Edge in a private or public Cloud network.The instructions in this document show you how to set up an Edge Gateway in VMware ESXi. 
+Aviatrix Secure Edge has a virtual form factor that lets you deploy an Edge Gateway as a standard virtual machine (VM). This document provides step-by-step instructions for deploying Aviatrix Secure Edge in a private or public Cloud network. The instructions in this document show you how to set up an Edge Gateway in VMware ESXi. 
 
 For deployment diagrams and additional information, refer to `Aviatrix Secure Edge FAQ <http://docs.aviatrix.com/HowTos/secure_edge_faq.html>`_.
 
@@ -18,13 +18,31 @@ Aviatrix Secure Edge 1.0 requires the following:
 
 - Aviatrix Controller 6.7. For instructions on how to upgrade to Aviatrix Controller 6.7, refer to `Upgrading the Aviatrix Cloud Network Platform <http://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
 - VMware vCenter Server (optional)
-- VMware ESXi OVA file (provided by Aviatrix)
+- VMware ESXi OVA file
 - VMware ESXi Versions: 6.7 or 7.0.1
 
 
 The Aviatrix Edge can run on the VMware ESXi Hypervisor. VMware ESXi runs on x86-based CPU platforms.  
 
 For more information about installing VMware vSphere products, refer to the VMware product documentation.
+
+Requesting a VMware ESXi OVA File
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Before you begin the deployment of the Edge Gateway, submit a request to Aviatrix Support for a link to the VMware ESXi OVA file. You will use the OVA file to deploy the Edge virtual machine in VMware ESXi.
+
+#. Log in to the Aviatrix Support Portal: `<https://aviatrix.zendesk.com>`_.
+#. Select **Submit a request**.
+#. In the **Subject** field, enter **Requesting access to Edge image**.
+#. In the **Description** field, enter the physical address of the location where you will install the Edge VM(s), such as a data center, headend, co-location site, or office. If you are installing Edge VMs at more than one location, provide the following information for each physical location:
+
+    - Physical Address (Do not enter a P.O.Box.)
+    - City
+    - State or Locality
+    - Zip Code or Postal Code
+    - Country
+
+#. Click **Submit**. Aviatrix Support will respond with a link you can use to download the OVA file.
 
 Access Requirements
 -------------------
@@ -67,15 +85,13 @@ To deploy an Edge Gateway in VMware ESXi, follow these steps.
 
 #. `Attach the Edge Gateway to the Transit Gateway <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#attaching-an-edge-gateway-to-a-transit-gateway>`_.
 
-
 Deploying the Edge Virtual Machine in VMware ESXi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To deploy the Edge virtual machine in VMware ESXi, follow these steps.
+To deploy the Edge virtual machine in VMware ESXi, follow these steps. 
 
-#. Download the ESXi OVA file from Aviatrix Support: `<https://support.aviatrix.com/downloads>`_.
-   Use your login credentials to view the support download section or contact your Aviatrix account team.
-#. Log into VMware vSphere web client to access the ESXi host.
+#. Download the ESXi OVA file by using the link provided to you by Aviatrix Support. Refer to `Requesting a VMware ESXi OVA File <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#requesting-a-vmware-esxi-ova-file>`_.
+#. Log into VMware vSphere Web client to access the ESXi host.
    You can use vSphere Web client to manage ESXi host, launch a VM, mount ISO files, and start and stop the Aviatrix Edge Gateway.
 #. To load the OVA file into the ESXi using vSphere, go to: **ESXI** > **Virtual Machines** > **Create/Register VM**.
 #. Select **Deploy a virtual machine from an OVF or OVA file**. Click **Next**.
@@ -84,7 +100,7 @@ To deploy the Edge virtual machine in VMware ESXi, follow these steps.
    |secure_edge_ova_load_file|
 
 #. In the Select storage page, select the storage device for the instance you created (the OVA is installed in this instance). Click **Next**.
-#. In the Deployment options window, enter the network interface mappings and select the Deployment type (Refer to the pull-down menu or see `CPU and Memory Configuration <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#cpu-and-memory-configurations>`_.)
+#. In the Deployment options window, enter the network interface mappings and select the Deployment type. (Refer to the pull-down menu or see `CPU and Memory Configuration <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#cpu-and-memory-configurations>`_.)
 
    |secure_edge_ova_deploy_options|
 
@@ -113,19 +129,19 @@ To set up an Edge Gateway in Aviatrix Controller, follow these steps.
    d. For **Management Connection Type**, select DHCP or Static, depending on your environment. 
       
    .. note::
-      Steps (f-n) are applicable only for static IP configuration on the management interface.
-      For IP and DNS settings, enter using the applicable format. For example, if the Edge Gateway's WAN IP is 10.1.1.151, enter 10.1.1.151/24 or whatever your netmask is.
+      Steps (e-m) are applicable only for static IP configuration on the management interface.
+      For IP and DNS settings, enter using the applicable format. For example, if the Edge Gateway's WAN IP is 10.1.1.151, enter 10.1.1.151/24 or what your netmask is.
  
-   f. For **Management Interface IP/Mask**, enter the management interface IP/mask for the Edge VM.
-   g. For **Default Gateway IP**, enter the IP address of the Default Gateway for the Management Subnet.
-   h. For **Primary DNS Server**, enter the DNS server IP address.
-   i. For **Secondary DNS server**, enter the DNS server IP address, this field is optional.
-   j. For **Over Private Network**, check the box if the Edge management connection to Controller is over a private network. Leave it unchecked if the connection is over the public internet.
-   k. For **Management Egress Gateway IP**, enter the IP address  of the Edge VM visible to the Controller (this IP is optional and can be added later).
+   e. For **Management Interface IP/Mask**, enter the management interface IP/mask for the Edge VM.
+   f. For **Default Gateway IP**, enter the IP address of the Default Gateway for the Management Subnet.
+   g. For **Primary DNS Server**, enter the DNS server IP address.
+   h. For **Secondary DNS server**, enter the DNS server IP address, this field is optional.
+   i. For **Over Private Network**, check the box if the Edge management connection to Controller is over a private network. Leave it unchecked if the connection is over the public internet.
+   j. For **Management Egress Gateway IP**, enter the IP address  of the Edge VM visible to the Controller (this IP is optional and can be added later).
       This field adds a security bypass filter rule for the incoming traffic on TCP/443 to your Controller.
-   l. For **WAN Interface IP/Mask**, enter the interface IP/mask for the Edge VM.
-   m. For **WAN Default Gatewa**, enter the IP address of the Edge WAN interface.
-   n. For **LAN Interface IP/Mask**, enter the interface IP/mask for the Edge VM. 
+   k. For **WAN Interface IP/Mask**, enter the interface IP/mask for the Edge VM.
+   l. For **WAN Default Gatewa**, enter the IP address of the Edge WAN interface.
+   m. For **LAN Interface IP/Mask**, enter the interface IP/mask for the Edge VM. 
 
       The image below shows the Launch an Edge Gateway configuration when you do not select **Over Private Network**.
 
@@ -210,7 +226,7 @@ Editing or Viewing an Edge Gateway Configuration
 Deregistering and Reregistering an Edge Gateway
 -----------------------------------------------
 
-An Edge Gateway can be deregistered from the Aviatrix Controller only when it is in the **registered** state. If the gateway is in any other state, its configuration needs to be reset first, to remove it from the Aviatrix Controller.
+An Edge Gateway can be deregistered from the Aviatrix Controller only when it is in the **registered** state. If the gateway is in any other state, its configuration needs to be reset first to remove it from the Aviatrix Controller.
 
 Deregistering an Edge Gateway from Aviatrix Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -295,8 +311,6 @@ Selective Gateway Upgrade for Secure Edge
 The Aviatrix Secure Edge base OS is not upgradeable. To update the base OS to a newer version, you can only deploy a newer version of the Secure Edge image to a new VM to replace it.
 
 As Secure Edge base OS is not field upgradeable, Secure Edge does not support selective gateway image update and software rollback.
-
-To perform a selective gateway software upgrade on the Edge Gateway, refer to `Upgrading the Gateway Software <http://docs.aviatrix.com/HowTos/secure_edge_selective_upgrade.html>`_.
 
 Troubleshooting
 ---------------
