@@ -31,10 +31,13 @@ Requesting a VMware ESXi OVA File
 
 Before you begin the deployment of the Edge Gateway, submit a request to Aviatrix Support for a link to the VMware ESXi OVA file. You will use the OVA file to deploy the Edge virtual machine in VMware ESXi.
 
-#. Log in to the Aviatrix Support Portal: `<https://aviatrix.zendesk.com>`_.
-#. Select **Submit a request**.
-#. In the **Subject** field, enter **Requesting access to Edge image**.
-#. In the **Description** field, enter the physical address of the location where you will install the Edge VM(s), such as a data center, headend, co-location site, or office. If you are installing Edge VMs at more than one location, provide the following information for each physical location:
+1. Log in to the Aviatrix Support Portal: `<https://aviatrix.zendesk.com>`_.
+
+2. Select **Submit a request**.
+
+3. In the **Subject** field, enter **Requesting access to Edge image**.
+
+4. In the **Description** field, enter the physical address of the location where you will install the Edge VM(s), such as a data center, headend, co-location site, or office. If you are installing Edge VMs at more than one location, provide the following information for each physical location:
 
     - Physical Address (Do not enter a P.O.Box.)
     - City
@@ -42,7 +45,7 @@ Before you begin the deployment of the Edge Gateway, submit a request to Aviatri
     - Zip Code or Postal Code
     - Country
 
-#. Click **Submit**. Aviatrix Support will respond with a link you can use to download the OVA file.
+5. Click **Submit**. Aviatrix Support will respond with a link you can use to download the OVA file.
 
 Access Requirements
 -------------------
@@ -77,35 +80,42 @@ Deploying an Edge Gateway in VMware ESXi
 
 To deploy an Edge Gateway in VMware ESXi, follow these steps.
 
-#. `Deploy the Edge virtual machine in VMware ESXi <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#deploying-an-edge-gateway-in-vmware-esxi>`_.
+1. `Deploy the Edge virtual machine in VMware ESXi <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#deploying-an-edge-gateway-in-vmware-esxi>`_.
 
-#. `Set up the Edge Gateway in Aviatrix Controller <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#setting-up-an-edge-gateway-in-aviatrix-controller>`_.
+2. `Set up the Edge Gateway in Aviatrix Controller <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#setting-up-an-edge-gateway-in-aviatrix-controller>`_.
 
-#. `Attach the ISO image to the Edge virtual machine <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#attaching-the-iso-image-to-the-edge-virtual-machine>`_.
+3. `Attach the ISO image to the Edge virtual machine <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#attaching-the-iso-image-to-the-edge-virtual-machine>`_.
 
-#. `Attach the Edge Gateway to the Transit Gateway <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#attaching-an-edge-gateway-to-a-transit-gateway>`_.
+4. `Attach the Edge Gateway to the Transit Gateway <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#attaching-an-edge-gateway-to-a-transit-gateway>`_.
 
 Deploying the Edge Virtual Machine in VMware ESXi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To deploy the Edge virtual machine in VMware ESXi, follow these steps. 
 
-#. Download the ESXi OVA file by using the link provided to you by Aviatrix Support. Refer to `Requesting a VMware ESXi OVA File <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#requesting-a-vmware-esxi-ova-file>`_.
-#. Log into VMware vSphere Web client to access the ESXi host.
+1. Download the ESXi OVA file by using the link provided to you by Aviatrix Support. Refer to `Requesting a VMware ESXi OVA File <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#requesting-a-vmware-esxi-ova-file>`_.
+
+2. Log into VMware vSphere Web client to access the ESXi host.
+
    You can use vSphere Web client to manage ESXi host, launch a VM, mount ISO files, and start and stop the Aviatrix Edge Gateway.
-#. To load the OVA file into the ESXi using vSphere, go to: **ESXI** > **Virtual Machines** > **Create/Register VM**.
-#. Select **Deploy a virtual machine from an OVF or OVA file**. Click **Next**.
-#. Enter a name for the Edge VM and drag the OVA file into the blue pane. Click **Next**.
+
+3. To load the OVA file into the ESXi using vSphere, go to: **ESXI** > **Virtual Machines** > **Create/Register VM**.
+
+4. Select **Deploy a virtual machine from an OVF or OVA file**. Click **Next**.
+
+5. Enter a name for the Edge VM and drag the OVA file into the blue pane. Click **Next**.
 
    |secure_edge_ova_load_file|
 
-#. In the Select storage page, select the storage device for the instance you created (the OVA is installed in this instance). Click **Next**.
-#. In the Deployment options window, enter the network interface mappings and select the Deployment type. (Refer to the pull-down menu or see `CPU and Memory Configuration <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#cpu-and-memory-configurations>`_.)
+6. In the Select storage page, select the storage device for the instance you created (the OVA is installed in this instance). Click **Next**.
+
+7. In the Deployment options window, enter the network interface mappings and select the Deployment type. (Refer to the pull-down menu or see `CPU and Memory Configuration <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#cpu-and-memory-configurations>`_.)
 
    |secure_edge_ova_deploy_options|
 
-#. Click **Next**.
-#. In the Ready to complete page, click **Finish**.
+8. Click **Next**.
+
+9. In the Ready to complete page, click **Finish**.
 
 Setting Up an Edge Gateway in Aviatrix Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -162,14 +172,6 @@ To set up an Edge Gateway in Aviatrix Controller, follow these steps.
 
 4. Click **Create**. Aviatrix Controller prompts you to download the ISO file.
 
-2.  (Optional) Launch CoPilot from Aviatrix Controller:
-
-    a.  In Aviatrix Controller, under Settings, select CoPilot.
-
-    b.  For the CoPilot Association, set the status to **Enabled** and enter the static IP address for your running CoPilot instance.
-
-    c.  From the controller homepage, click the CoPilot button in the action bar.
-
 
 Attaching the ISO Image to the Edge Virtual Machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -178,70 +180,87 @@ Attaching the ISO Image to the Edge Virtual Machine
    * The ZTP ISO file can only be used for a single Edge VM instance, and only one time for that instance. 
    * The ZTP token expires after 24 hours. If you wait too long to boot up the VM with the attached ISO image, it will not work.  In that case, delete the Edge Gateway in the Controller UI and create a new Edge Gateway to receive a new ISO file.
 
-#. Upload the ISO file you downloaded from Aviatrix Controller to your VMware datastore.
-#. In vSphere, select the Edge VM you created and click **Edit settings**.
-#. Select the **Virtual Hardware** tab.
-#. Next to CD/DVD Drive 1, click the down arrow and select **Datastore ISO file** from the pull-down menu.
-#. To load the ISO to the virtual CD drive, next to **Status**, check **Connect at power on**. 
-#. Next to the CD/DVD Media field, click **Browse**. Select the ISO file you downloaded.
+1. Upload the ISO file you downloaded from Aviatrix Controller to your VMware datastore.
+
+2. In vSphere, select the Edge VM you created and click **Edit settings**.
+
+3. Select the **Virtual Hardware** tab.
+
+4. Next to CD/DVD Drive 1, click the down arrow and select **Datastore ISO file** from the pull-down menu.
+
+5. To load the ISO to the virtual CD drive, next to **Status**, check **Connect at power on**.
+ 
+6. Next to the CD/DVD Media field, click **Browse**. Select the ISO file you downloaded.
 
    |secure_edge_edit_settings|
 
    .. note::
       **Connect at power on** (step 4) is required when you attach the ISO image to the VM for the first time. If the VM is powered on at the time you attach the ISO image, select the **Datastore ISO file** and save the configuration to make the ISO available to ZTP.
 
-#. Click **Save**.
+7. Click **Save**.
 
 Attaching an Edge Gateway to a Transit Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After you deploy an Edge Gateway, you must attach it to a Transit Gateway.
 
-#. In Aviatrix Controller, go to **CLOUDN** > **List**.
-#. In Registered Devices, locate the Edge VM you created. Confirm that the Edge VM was successfully registered. If the registration was successful, the status in the **State** column will show registered.
+1. In Aviatrix Controller, go to **CLOUDN** > **List**.
+
+2. In Registered Devices, locate the Edge VM you created. Confirm that the Edge VM was successfully registered. If the registration was successful, the status in the **State** column will show registered.
 
    |secure_edge_registered_devices|
 
    If the VM was not successfully registered, follow these troubleshooting steps.
 
       a. Confirm you have network connectivity from the Edge Gateway to the Controller.
+
       b. Confirm any firewall and security rules (such as security groups) that allow traffic to and from the Controller.
+
       c. If steps a) and b) do not resolve the issue, reset the Edge Gateway configuration and try again.
 
       If these steps fail, contact Aviatrix Support at `Aviatrix Support Portal <https://support.aviatrix.com>`_.
 
-#. To attach the Edge Gateway to the Transit Gateway, go to **Controller** > **CLOUDN** > **Attach**.
-#. In step 2, **Attach Device to Cloud**, complete the following fields:  
+3. To attach the Edge Gateway to the Transit Gateway, go to **Controller** > **CLOUDN** > **Attach**.
+
+4. In step 2, **Attach Device to Cloud**, complete the following fields:  
 
    .. note::
       If you are connecting over a public network, WAN discovery is currently mandatory.
 
    a. For **Device Name**, select the registered Edge Gateway.
+
    b. For **Aviatrix Transit Gateway**, select the Transit Gateway you want the Edge Gateway to connect to.
+
    c. For **Connection Name**, enter a name for this connection.
+
    d. For **Aviatrix Transit Gateway BGP ASN**, enter the ASN for your Transit Gateway.
+
    e. For **Device’s BGP ASN**, enter the ASN for your Edge Gateway.
+
    f. For **Device’s LAN Interface Neighbor’s IP**, enter the Neighbor’s LAN interface IP.
+
    g. For **Device’s LAN Interface Neighbor’s BGP ASN**, enter the Neighbor’s LAN interface BGP ASN.
+
    h. For **Over Private Network**, leave the box unchecked if you are building the tunnel over the public internet.
       
       |secure_edge_attach_device|
 
-#. Click **Attach**.
-#. Navigate back to **CLOUDN** > **List**. Once the tunnel is successfully built, the Edge Gateway status in the **State** column changes from registered to attached. 
+5. Click **Attach**.
+
+6. Navigate back to **CLOUDN** > **List**. Once the tunnel is successfully built, the Edge Gateway status in the **State** column changes from registered to attached. 
 
 Editing or Viewing an Edge Gateway Configuration
 ------------------------------------------------
 
-#. To edit the Management Egress IP, select the Edge Gateway and click **EDIT**.
+1. To edit the Management Egress IP, select the Edge Gateway and click **EDIT**.
 
    |secure_edge_mgmt_egress_ip|
 
-#. Update the Egress Management IP and click **SAVE**.
+2. Update the Egress Management IP and click **SAVE**.
 
    |secure_edge_update_egress_ip|
 
-#. To run and show diagnostics, upload Tracelog, download Syslog, and reset configuration, select the Edge Gateway and click **DIAG**.
+3. To run and show diagnostics, upload Tracelog, download Syslog, and reset configuration, select the Edge Gateway and click **DIAG**.
 
    |secure_edge_run_diag|
 
@@ -257,8 +276,9 @@ To deregister an Edge Gateway from the Aviatrix Controller, the Edge Gateway mus
 
 To deregister an Edge Gateway:
 
-#. Navigate to **CLOUDN** > **List**.
-#. Select the Edge Gateway, and click **DEREGISTER**.
+1. Navigate to **CLOUDN** > **List**.
+
+2. Select the Edge Gateway, and click **DEREGISTER**.
    
    |secure_edge_deregister|
 
@@ -267,8 +287,9 @@ Resetting an Edge Gateway's Configuration from Aviatrix Controller
 
 To reset an Edge Gateway's configuration:
 
-#. Navigate to **CLOUDN** > **List**. 
-#. Select the Edge Gateway. Click **DIAG**. In the drop-down list of options, select **Reset Configuration**.
+1. Navigate to **CLOUDN** > **List**.
+
+2. Select the Edge Gateway. Click **DIAG**. In the drop-down list of options, select **Reset Configuration**.
 
    |secure_edge_reset_config|
 
@@ -281,30 +302,42 @@ You can register an Edge virtual machine as a new Edge Gateway after it has been
 
 To reregister an Edge Gateway, do the following.
 
-#. `Download and attach the ISO file to the Edge virtual machine <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#downloading-and-attaching-the-iso-file-to-the-edge-virtual-machine>`_.
-#. `Register the Edge virtual machine with the Aviatrix Controller <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#registering-the-edge-virtual-machine-with-the-aviatrix-controller>`_.
-#. `Attach the Edge Gateway to the Transit Gateway <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#attaching-a-reset-edge-gateway-to-a-transit-gateway>`_.
+1. `Download and attach the ISO file to the Edge virtual machine <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#downloading-and-attaching-the-iso-file-to-the-edge-virtual-machine>`_.
+
+2. `Register the Edge virtual machine with the Aviatrix Controller <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#registering-the-edge-virtual-machine-with-the-aviatrix-controller>`_.
+
+3. `Attach the Edge Gateway to the Transit Gateway <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#attaching-a-reset-edge-gateway-to-a-transit-gateway>`_.
 
 Downloading and Attaching the ISO file to the Edge Virtual Machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To register an Edge Gateway after it has been deregistered from the Aviatrix Controller, do the following.
 
-#. Download the ISO file for your new Edge Gateway by following the steps in `Setting up an Edge Gateway in Aviatrix Controller <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#setting-up-an-edge-gateway-in-aviatrix-controller>`_.
-#. To Attach the new ISO file to your Edge virtual machine, upload the ISO file to your VMware datastore.
-#. Power OFF the Edge virtual machine.
-#. In vSphere, select the Edge VM and click **Edit**.
-#. Select the Virtual Hardware tab.
-#. Expand the CD/DVD Drive 1 section.
-#. Next to **CD/DVD Drive 1**, click the down arrow and select **Datastore ISO file** from the pull-down menu. Check the **Connect** box next to Datastore ISO file.
-#. Next to the **Status** field, check the **Connect at power on** box.
-#. Next to the **CD/DVD Media** field, click **Browse**. Select the new ISO file that you uploaded to the datastore.
+1. Download the ISO file for your new Edge Gateway by following the steps in `Setting up an Edge Gateway in Aviatrix Controller <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#setting-up-an-edge-gateway-in-aviatrix-controller>`_.
+
+2. To Attach the new ISO file to your Edge virtual machine, upload the ISO file to your VMware datastore.
+
+3. Power OFF the Edge virtual machine.
+
+4. In vSphere, select the Edge VM and click **Edit**.
+
+5. Select the Virtual Hardware tab.
+
+6. Expand the CD/DVD Drive 1 section.
+
+7. Next to **CD/DVD Drive 1**, click the down arrow and select **Datastore ISO file** from the pull-down menu. Check the **Connect** box next to Datastore ISO file.
+
+8. Next to the **Status** field, check the **Connect at power on** box.
+
+9. Next to the **CD/DVD Media** field, click **Browse**. Select the new ISO file that you uploaded to the datastore.
 
    |secure_edge_attach_iso|
 
-#. Click **Save** to save this configuration and configure the Edge VM.
-#. Power ON the Edge VM.
-#. Ensure the new ISO file is connected to the CD/DVD Drive 1 of the Edge VM.
+10. Click **Save** to save this configuration and configure the Edge VM.
+
+11. Power ON the Edge VM.
+
+12. Ensure the new ISO file is connected to the CD/DVD Drive 1 of the Edge VM.
 
    |secure_edge_hardware_config|
 
@@ -315,9 +348,11 @@ Registering the Edge Virtual Machine with the Aviatrix Controller
 
 If you are reusing an Edge VM, ZTP is not triggered automatically after you attach the new ISO file to the Edge VM. It must be triggered manually by using the Clish console.
 
-#. Use the Edge VM’s vSphere serial console to log in to the Edge VM’s Clish command line interface.
-#. Execute the **register** command and wait for the command to complete. 
-#. If the Edge Gateway registration is successful, you should see a success message. If the gateway registration fails, you will see a message with the next steps to troubleshoot the failure.
+1. Use the Edge VM’s vSphere serial console to log in to the Edge VM’s Clish command line interface.
+
+2. Execute the **register** command and wait for the command to complete.
+ 
+3. If the Edge Gateway registration is successful, you should see a success message. If the gateway registration fails, you will see a message with the next steps to troubleshoot the failure.
    
    The Edge Gateway can now be attached to the Transit Gateway.
 
