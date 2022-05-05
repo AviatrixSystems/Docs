@@ -289,7 +289,14 @@ Attaching a Reset Edge Gateway to a Transit Gateway
 After you deploy an Edge Gateway that you reset, you attach it to a Transit Gateway.
 To attach the Edge Gateway to a Transit Gateway, follow the steps in `Attaching an Edge Gateway to a Transit Gateway <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#attaching-an-edge-gateway-to-a-transit-gateway>`_.
 
+Selective Gateway Upgrade for Secure Edge
+-----------------------------------------
 
+The Aviatrix Secure Edge base OS is not upgradeable. To update the base OS to a newer version, you can only deploy a newer version of the Secure Edge image to a new VM to replace it.
+
+As Secure Edge base OS is not field upgradeable, Secure Edge does not support selective gateway image update and software rollback.
+
+To perform a selective gateway software upgrade on the Edge Gateway, refer to `Upgrading the Gateway Software <http://docs.aviatrix.com/HowTos/secure_edge_selective_upgrade.html>`_.
 
 Troubleshooting
 ---------------
