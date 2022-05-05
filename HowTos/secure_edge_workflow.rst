@@ -115,9 +115,11 @@ Setting Up an Edge Gateway in Aviatrix Controller
 
 To set up an Edge Gateway in Aviatrix Controller, follow these steps.
 
-#. Log in to Aviatrix Controller 6.7.
-#. Go to **CLOUDN** > **Setup**.
-#. In the Launch an Edge Gateway page, enter the following Edge name and IP information:
+1. Log in to Aviatrix Controller 6.7.
+
+2. Go to **CLOUDN** > **Setup**.
+
+3. In the Launch an Edge Gateway page, enter the following Edge name and IP information:
 
    a. Cloud Type is always set to **Aviatrix**.
  
@@ -158,7 +160,7 @@ To set up an Edge Gateway in Aviatrix Controller, follow these steps.
 
       |secure_edge_launch_gateway|
 
-#. Click **Create**. Aviatrix Controller prompts you to download the ISO file.
+4. Click **Create**. Aviatrix Controller prompts you to download the ISO file.
 
 Attaching the ISO Image to the Edge Virtual Machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
