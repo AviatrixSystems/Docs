@@ -115,46 +115,46 @@ Setting Up an Edge Gateway in Aviatrix Controller
 
 To set up an Edge Gateway in Aviatrix Controller, follow these steps.
 
-1. Log in to Aviatrix Controller 6.7.
+1.  Log in to Aviatrix Controller 6.7.
 
-2. Go to **CLOUDN** > **Setup**.
+2.  Go to **CLOUDN** > **Setup**.
 
-3. In the Launch an Edge Gateway page, enter the following Edge name and IP information:
+3.  In the Launch an Edge Gateway page, enter the following Edge name and IP information:
 
-   a. Cloud Type is always set to **Aviatrix**.
+    a.  Cloud Type is always set to **Aviatrix**.
  
-   b. In **Gateway Name**, enter a name for the new Edge Gateway.
+    b.  In **Gateway Name**, enter a name for the new Edge Gateway.
 
-   c. For **ZTP File Type**, select **ISO**.
+    c.  For **ZTP File Type**, select **ISO**.
 
-      .. note::
+        .. note::
          The ISO file is the equivalent of the Zero-Touch Provisioning (ZTP) token. ZTP allows network engineers to remotely deploy and provision network devices at remote locations.
 
-   d. For **Management Connection Type**, select DHCP or Static, depending on your environment. 
+    d.  For **Management Connection Type**, select DHCP or Static, depending on your environment. 
       
-   .. note::
+    .. note::
       Steps (e-m) are applicable only for static IP configuration on the management interface.
       For IP and DNS settings, enter using the applicable format. For example, if the Edge Gateway's WAN IP is 10.1.1.151, enter 10.1.1.151/24 or what your netmask is.
  
-   e. For **Management Interface IP/Mask**, enter the management interface IP/mask for the Edge VM.
+    e.  For **Management Interface IP/Mask**, enter the management interface IP/mask for the Edge VM.
 
-   f. For **Default Gateway IP**, enter the IP address of the Default Gateway for the Management Subnet.
+    f.  For **Default Gateway IP**, enter the IP address of the Default Gateway for the Management Subnet.
 
-   g. For **Primary DNS Server**, enter the DNS server IP address.
+    g.  For **Primary DNS Server**, enter the DNS server IP address.
 
-   h. For **Secondary DNS server**, enter the DNS server IP address, this field is optional.
+    h.  For **Secondary DNS server**, enter the DNS server IP address, this field is optional.
 
-   i. For **Over Private Network**, check the box if the Edge management connection to Controller is over a private network. Leave it unchecked if the connection is over the public internet.
+    i.  For **Over Private Network**, check the box if the Edge management connection to Controller is over a private network. Leave it unchecked if the connection is over the public internet.
 
-   j. For **Management Egress Gateway IP**, enter the IP address  of the Edge VM visible to the Controller (this IP is optional and can be added later).
+    j.  For **Management Egress Gateway IP**, enter the IP address  of the Edge VM visible to the Controller (this IP is optional and can be added later).
 
-      This field adds a security bypass filter rule for the incoming traffic on TCP/443 to your Controller.
+       This field adds a security bypass filter rule for the incoming traffic on TCP/443 to your Controller.
 
-   k. For **WAN Interface IP/Mask**, enter the interface IP/mask for the Edge VM.
+    k.  For **WAN Interface IP/Mask**, enter the interface IP/mask for the Edge VM.
 
-   l. For **WAN Default Gatewa**, enter the IP address of the Edge WAN interface.
+    l.  For **WAN Default Gatewa**, enter the IP address of the Edge WAN interface.
 
-   m. For **LAN Interface IP/Mask**, enter the interface IP/mask for the Edge VM. 
+    m.  For **LAN Interface IP/Mask**, enter the interface IP/mask for the Edge VM. 
 
       The image below shows the Launch an Edge Gateway configuration when you do not select **Over Private Network**.
 
