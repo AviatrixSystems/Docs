@@ -162,6 +162,15 @@ To set up an Edge Gateway in Aviatrix Controller, follow these steps.
 
 4. Click **Create**. Aviatrix Controller prompts you to download the ISO file.
 
+2.  (Optional) Launch CoPilot from Aviatrix Controller:
+
+    a.  In Aviatrix Controller, under Settings, select CoPilot.
+
+    b.  For the CoPilot Association, set the status to **Enabled** and enter the static IP address for your running CoPilot instance.
+
+    c.  From the controller homepage, click the CoPilot button in the action bar.
+
+
 Attaching the ISO Image to the Edge Virtual Machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
