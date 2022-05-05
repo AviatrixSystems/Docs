@@ -119,8 +119,10 @@ To set up an Edge Gateway in Aviatrix Controller, follow these steps.
 #. Go to **CLOUDN** > **Setup**.
 #. In the Launch an Edge Gateway page, enter the following Edge name and IP information:
 
-   a. Cloud Type is always set to **Aviatrix**. 
+   a. Cloud Type is always set to **Aviatrix**.
+ 
    b. In **Gateway Name**, enter a name for the new Edge Gateway.
+
    c. For **ZTP File Type**, select **ISO**.
 
       .. note::
@@ -133,14 +135,23 @@ To set up an Edge Gateway in Aviatrix Controller, follow these steps.
       For IP and DNS settings, enter using the applicable format. For example, if the Edge Gateway's WAN IP is 10.1.1.151, enter 10.1.1.151/24 or what your netmask is.
  
    e. For **Management Interface IP/Mask**, enter the management interface IP/mask for the Edge VM.
+
    f. For **Default Gateway IP**, enter the IP address of the Default Gateway for the Management Subnet.
+
    g. For **Primary DNS Server**, enter the DNS server IP address.
+
    h. For **Secondary DNS server**, enter the DNS server IP address, this field is optional.
+
    i. For **Over Private Network**, check the box if the Edge management connection to Controller is over a private network. Leave it unchecked if the connection is over the public internet.
+
    j. For **Management Egress Gateway IP**, enter the IP address  of the Edge VM visible to the Controller (this IP is optional and can be added later).
+
       This field adds a security bypass filter rule for the incoming traffic on TCP/443 to your Controller.
+
    k. For **WAN Interface IP/Mask**, enter the interface IP/mask for the Edge VM.
+
    l. For **WAN Default Gatewa**, enter the IP address of the Edge WAN interface.
+
    m. For **LAN Interface IP/Mask**, enter the interface IP/mask for the Edge VM. 
 
       The image below shows the Launch an Edge Gateway configuration when you do not select **Over Private Network**.
@@ -182,11 +193,11 @@ After you deploy an Edge Gateway, you must attach it to a Transit Gateway.
 
    If the VM was not successfully registered, follow these troubleshooting steps.
 
-   a. Confirm you have network connectivity from the Edge Gateway to the Controller.
-   b. Confirm any firewall and security rules (such as security groups) that allow traffic to and from the Controller.
-   c. If steps a) and b) do not resolve the issue, reset the Edge Gateway configuration and try again.
+      a. Confirm you have network connectivity from the Edge Gateway to the Controller.
+      b. Confirm any firewall and security rules (such as security groups) that allow traffic to and from the Controller.
+      c. If steps a) and b) do not resolve the issue, reset the Edge Gateway configuration and try again.
 
-   If these steps fail, contact Aviatrix Support at `Aviatrix Support Portal <https://support.aviatrix.com>`_.
+      If these steps fail, contact Aviatrix Support at `Aviatrix Support Portal <https://support.aviatrix.com>`_.
 
 #. To attach the Edge Gateway to the Transit Gateway, go to **Controller** > **CLOUDN** > **Attach**.
 #. In step 2, **Attach Device to Cloud**, complete the following fields:  
