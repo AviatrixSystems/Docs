@@ -30,7 +30,7 @@ Prerequisite
 2. Create and launch the Aviatrix Transit Gateways with HA and Insane Mode enabled in the clouds where you want to establish peered transit connection and attach the Spoke Gateways to the Transit Gateways. Refer to `Multi-cloud Transit Network Workflow Instructions (AWS/Azure/GCP/OCI) <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.
 
 .. note::
-   - Aviatrix Transit Gateway peering over public network solution requires high-performance encryption. Aviatrix Transit Gateways must have Insane Mode Encryption enabled for peered connection over the internet.
+   - Aviatrix Transit Gateway peering over public network solution requires high-performance encryption. Aviatrix Transit Gateways must have Insane Mode Encryption enabled when the Transit Gateway is created for peered connection over the internet.
    - This solution requires ActiveMesh 2.0. To migrate to AcitveMesh 2.0, refer to `How to migrate to ActiveMesh 2.0 <https://docs.aviatrix.com/HowTos/activemesh_faq.html#how-to-migrate-to-activemesh-2-0>`_ .
 
 Establishing Transit Gateway Peering over Public Internet
@@ -58,7 +58,6 @@ To establish transit gateway peering across cloud service providers over the int
    |transit_gateway_peering_status|
 
 .. |transit_gateway_peering_over_internet_topology| image:: transit_gateway_peering_over_public_network_workflow_media/transit_gateway_peering_over_internet_topology.png
-   :scale: 30%
 
 .. |transit_gateway_peering_status| image:: transit_gateway_peering_over_public_network_workflow_media/transit_gateway_peering_status.png
    :scale: 30%
