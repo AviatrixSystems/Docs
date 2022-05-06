@@ -109,7 +109,7 @@ To deploy the Edge virtual machine in VMware ESXi, follow these steps.
 
 6. In the Select storage page, select the storage device for the instance you created (the OVA is installed in this instance). Click **Next**.
 
-7. In the Deployment options window, enter the network interface mappings and select the Deployment type. (Refer to the pull-down menu or see `CPU and Memory Configuration <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#cpu-and-memory-configurations>`_.)
+7. In the Deployment options window, enter the network interface mappings and select the Deployment type. (Refer to the pull-down menu or see `Virtual Machine CPU and Memory Configurations <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#virtual-machine-cpu-and-memory-configurations>`_.)
 
    |secure_edge_ova_deploy_options|
 
@@ -272,7 +272,7 @@ An Edge Gateway can be deregistered from the Aviatrix Controller only when it is
 Deregistering an Edge Gateway from Aviatrix Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To deregister an Edge Gateway from the Aviatrix Controller, the Edge Gateway must be in **registered** state. To reset Edge Gateway configuration, refer to `Resetting an Edge Gateway's Configuration from Aviatrix Controller <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#resetting-an-edge-gateways-configuration-from-aviatrix-controller>`_.
+To deregister an Edge Gateway from the Aviatrix Controller, the Edge Gateway must be in **registered** state. To reset Edge Gateway configuration, refer to `Resetting an Edge Gateway's Configuration from Aviatrix Controller <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#resetting-edge-gateway-configuration-from-aviatrix-controller>`_.
 
 To deregister an Edge Gateway:
 
@@ -282,8 +282,8 @@ To deregister an Edge Gateway:
    
    |secure_edge_deregister|
 
-Resetting an Edge Gateway's Configuration from Aviatrix Controller
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Resetting Edge Gateway Configuration from Aviatrix Controller
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To reset an Edge Gateway's configuration:
 
