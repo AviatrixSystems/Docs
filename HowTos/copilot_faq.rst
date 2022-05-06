@@ -13,7 +13,7 @@ What is the default login for CoPilot?
 
 CoPilot authenticates against the Aviatrix Controller list of local users.  
 
-Are the traffic flow records coming from controller or gateways?  
+Are the traffic flow records coming from Aviatrix Controller or the gateways?  
 ===============================================================================
 
 The flows are sent from the Aviatrix gateways directly to CoPilot's instance.
