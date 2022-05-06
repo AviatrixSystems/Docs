@@ -229,7 +229,7 @@ Select a subnet group from the **Not Inspected list** and click **ADD** to move 
 In the figure above, the Transit FireNet Gateway will redirect traffic from SPOKE_SUBNET_GROUP:spoke-east-us-a~~sg-blue to the NGFW. In the NGFW, you configure the firewall policies to either drop, log, or allow the traffic flow from the subnets in the group.
 
 .. |interVNET_transit_peering| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/interVNET_transit_peering.png
-   :scale: 40%
+   :width: 500
 
 .. |intraVNET_vm_segmentation| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/intraVNET_vm_segmentation.png
    :scale: 40%
@@ -244,7 +244,7 @@ In the figure above, the Transit FireNet Gateway will redirect traffic from SPOK
    :scale: 40%
 
 .. |create_subnet_group| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/create_subnet_group.png
-   :scale: 40%
+   :width: 500
 
 .. |modify_subnet_group| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/modify_subnet_group.png
    :scale: 40%
