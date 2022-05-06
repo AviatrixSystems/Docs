@@ -232,30 +232,31 @@ In the figure above, the Transit FireNet Gateway will redirect traffic from SPOK
    :width: 500
 
 .. |intraVNET_vm_segmentation| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/intraVNET_vm_segmentation.png
-   :scale: 40%
+   :width: 500
 
 .. |interVNET_shared_FireNet| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/interVNET_shared_FireNet.png
-   :scale: 40%
+   :width: 500
 
 .. |intraVNET| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/intraVNET.png
-   :scale: 40%
+   :width: 500
 
 .. |multiregionVNET| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/multiregionVNET.png
-   :scale: 40%
+   :width: 500
 
 .. |create_subnet_group| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/create_subnet_group.png
    :width: 500
 
 .. |modify_subnet_group| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/modify_subnet_group.png
-   :scale: 40%
+   :width: 500
 
 .. |delete_subnet_group| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/delete_subnet_group.png
+   :width: 500
 
 .. |configure_subnet_group| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/configure_subnet_group.png
-   :scale: 10%
+   :width: 500
 
 .. |configure_inspection_policy| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/configure_inspection_policy.png
-   :scale: 40%
+   :width: 500
 
 
 .. disqus::
