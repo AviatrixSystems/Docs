@@ -84,13 +84,6 @@ One of the use cases is two Aviatrix Transit Gateways deployed in two different 
 
 For example configuration workflow, check out this doc `Aviatrix Transit Gateway Peering over Private Network Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_peering_with_private_network_workflow.html>`_.
 
-
-Peering over Public Network or Internet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Use the Insane Mode High Performance Encryption (HPE) option to create peered transit connections between Cloud Service Providers (CSPs) over the public internet. The transit gateways must be in Insane Mode to use this option. Currently, only intercloud connections between AWS and Azure are supported.
-By default, the gateways create 4 HPE tunnels. The supported range is 2 to 20 HPE tunnels for each transit gateway.
-
 Peering over Public Network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -98,7 +91,7 @@ Aviatrix Transit Gateway Peering over the public network expands transit gateway
 
 For more information about Insane Mode HPE tunneling, refer to `Insane Mode Encryption FAQ  <https://docs.aviatrix.com/HowTos/insane_mode.html>`_.
 
-To establish peered transit gateways over the internet, refer to `Multi-cloud Transit Gateway Peering over Public Network Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_peering_over_internet_workflow.html>`_. 	
+To establish peered transit gateways over the internet, refer to `Multi-cloud Transit Gateway Peering over Public Network Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_peering_over_public_network_workflow.html>`_. 	
 
 
 Single-Tunnel mode
