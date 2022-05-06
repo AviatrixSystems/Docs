@@ -839,7 +839,9 @@ To create a network domain:
 
 2.  In the Network Segmentation > Network Domain view, click **+ Network Domain**.
 
-3.  In Name, specify a unique name for the network domain. For example, Dev\_Domain.
+3.  In Name, specify a unique name for the network domain. 
+
+    A network-domain name can only have letters, digits, a hyphen (-), and an underscore (_). The name must start with a letter and must have 2-27 characters. For example, **Dev_Domain**.
 
     **Note:** After you create and save a network domain, you cannot change its name.
 
