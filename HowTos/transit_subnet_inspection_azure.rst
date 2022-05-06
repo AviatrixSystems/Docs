@@ -250,10 +250,9 @@ In the figure above, the Transit FireNet Gateway will redirect traffic from SPOK
    :scale: 40%
 
 .. |delete_subnet_group| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/delete_subnet_group.png
-   :scale: 40%
 
 .. |configure_subnet_group| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/configure_subnet_group.png
-   :scale: 40%
+   :scale: 10%
 
 .. |configure_inspection_policy| image:: transit_firenet_workflow_media/transit_subnet_inspection_azure_media/configure_inspection_policy.png
    :scale: 40%
