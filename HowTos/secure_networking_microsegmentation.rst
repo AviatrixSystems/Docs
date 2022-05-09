@@ -142,6 +142,6 @@ Limitations
 
 
 
-..  |name_image1| image:: microseg_media/microseg_topology.png
+..  |microseg_topology| image:: microseg_media/microseg_topology.png
     :width: 200
 
