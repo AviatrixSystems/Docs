@@ -489,6 +489,7 @@ When configured alarms are triggered based on the monitored telemetry data, CoPi
 -   When choosing the instance size to scale up or down, the instance sizes displayed are those that are supported for gateways in their respective clouds and CoPilot will use their default configurations for resource settings during launch.
 -   The sizes listed do not represent the recommended sizes for your specific scaling needs. It is recommended that you work with your performance team to determine the instance size that best suits the requirements of your network infrastructure prior to scaling.
 -   If you resize a gateway that does not have a high availability gateway (HA Gateway does not exist because HA was not enabled on that gateway), a network downtime will occur until the gateway restarts with its new instance size.
+-   After you resize a gateway based on a resource-scale alert, it is recommended that you review the resource-scale policy associated with the alert and determine if you want to make any changes to it.
 
 An audit log is kept so you can get a holistic view of how many times your resource-scale policies have been triggered. The audit log is under Performance > Scaling > Events.
 
@@ -532,6 +533,7 @@ To create a resource-scale policy:
     -   When choosing the instance size to scale up or down, the instance sizes displayed are those that are supported for gateways in their respective clouds and CoPilot will use their default configurations for resource settings during launch.
     -   The sizes listed do not represent the recommended sizes for your specific scaling needs. It is recommended that you work with your performance team to determine the instance size that best suits the requirements of your network infrastructure prior to scaling.
     -   If you resize a gateway that does not have a high availability gateway (HA Gateway does not exist because HA was not enabled on that gateway), a network downtime will occur until the gateway restarts with its new instance size.
+    -   After you resize a gateway based on a resource-scale alert, it is recommended that you review the resource-scale policy associated with the alert and determine if you want to make any changes to it.
 
 
 Working with Cloud Routes
@@ -798,9 +800,11 @@ This section describes the Security functional area of Aviatrix CoPilot.
 
 The Security functional area of CoPilot provides the following:
 
--   Ability to configure network segmentation for Aviatrix Multi-Cloud Transit Segmentation and view visualizations of your network domains and how they can or cannot connect to each other. See About network domains.
--   Egress — Ability to view what sites are being accessed outside of your network.
--   Audit View — Ability to view changes performed by users on your system.
+-   Network Segmentation — Ability to configure network segmentation for Aviatrix Multi-Cloud Transit Segmentation and view visualizations of your network domains and how they can or cannot connect to each other. See `About Network Domains`_.
+-   Micro-Segmentation — (If enabled) Ability to create app domains that are used for micro-segmentation. For information about micro-segmentation, see the release notes for Aviatrix Controller 6.7 in `Aviatrix Controller and Gateway Release Notes <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_ and the discussion about `secure networking with micro-segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
+-   Egress — Ability to view what sites are being accessed outside of your network. See `Egress`_.
+-   Audit — Ability to view changes performed by users on your system.
+
 
 About Network Domains
 ----------------------
@@ -934,7 +938,11 @@ In Security Egress view, CoPilot shows the URLs, domains, IP addresses that are 
 -   The rules configured on the Egress Gateway.
 
 
-In Security, CoPilot uses visual elements to demonstrate the segments in your Aviatrix transit network that can and cannot communicate with each other. The segments are enabled by way of security domains and their ability to communicate with each other is dictated by security domain policies. You enable security domains and set security domain policies in Aviatrix Controller. CoPilot shows the logical and physical view of the domain segments and their connection relationships.
+About App Domains
+----------------------
+
+An *app domain* is a grouping of workloads, subnets, or VPC/VNets that require a uniform policy enforcement. When the micro-segmentation feature is enabled, you can create app domains in CoPilot under Security > Micro-segmentation. For detailed information about micro-segmentation and app domains, see the discussion about `secure networking with micro-segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
+
 
 Working with ThreatIQ
 =====================
