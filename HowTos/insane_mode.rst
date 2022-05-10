@@ -15,7 +15,7 @@ Why is Transit VPC/VNet performance capped at 1.25Gbps?
 In the current Transit VPC/VNet solution, the throughput is capped at 1.25Gbps regardless if you have a 10Gbps connection between an on-prem network and the cloud (Direct Connect (DX)/ExpressRoute/FastConnect/InterConnect) link. The reason is that in the Transit VPC/VNet deployment there is
 an IPsec session between VGW/VPN Gateway and Transit Gateway and VGW/VPN Gateway has a performance limitation.
 
-`AWS VGW <https://aws.amazon.com/vpc/faqs/>`_ and other Cloud Service Providers' IPsec VPN solutions have a published performance cap of 1.25Gbps <https://aws.amazon.com/vpc/faqs/>`_.
+`AWS VGW <https://aws.amazon.com/vpc/faqs/>`_ and other Cloud Service Providers' IPsec VPN solutions have a `published performance cap <https://aws.amazon.com/vpc/faqs/>`_ of 1.25Gbps.
 Why is that?
 
 Most virtual routers or software-based routers are built with general purpose CPUs. Despite the vast CPU technology advancement, why doesn't IPsec performance scale further?
