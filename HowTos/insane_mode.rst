@@ -94,6 +94,8 @@ Aviatrix Insane Mode over the internet builds high-performance encryption (HPE) 
 
 Insane Mode over the internet for GCP transit gateway peering configuration differs from AWS, Azure, and OCI. Because GCP Ethernet interface supports only one public IP address, HPE tunnels are built to the same public IP address on the GCP transit gateway, establishing one-to-many connections.
 
+To establish peered transit gateways over the internet, refer to `Multi-cloud Transit Gateway Peering over Public Network Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_peering_over_public_network_workflow.html>`_. 
+
 
 What are the performance benchmarks for Insane Mode over the internet? 
 ----------------------------------------------------------------------
