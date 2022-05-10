@@ -442,13 +442,13 @@ If the connectivity to the CSP is over a public network:
 - The Edge Gateway WAN interface runs a BGP session to the Transit Gateway in the Transit VPC/VNET where the Transit Gateway advertises all Spoke VPC/VNET CIDRs to the Edge Gateway, and the Edge Gateway advertises the on-prem network to the Transit Gateway.
 
 .. |secure_edge_ova_load_file| image:: CloudN_workflow_media/secure_edge_ova_load_file.png
-   :scale: 40%
+   :scale: 60%
 
 .. |secure_edge_ova_deploy_options| image:: CloudN_workflow_media/secure_edge_ova_deploy_options.png
-   :scale: 40%
+   :scale: 60%
 
 .. |secure_edge_launch_gateway| image:: CloudN_workflow_media/secure_edge_launch_gateway.png
-   :scale: 40%
+   :scale: 60%
 
 .. |secure_edge_edit_settings| image:: CloudN_workflow_media/secure_edge_edit_settings.png
    :scale: 40%
