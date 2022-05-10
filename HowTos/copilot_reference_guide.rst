@@ -474,7 +474,7 @@ The telemetry data CoPilot displays for managed resources includes:
 - Tx rate of the interface 
 - Rx Tx rate combined of the interfaces 
 
-The system and network metrics on which CoPilot reports telemetry data are the same as those used for triggering notifications. For descriptions of the metrics, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id1>`_ in *Aviatrix CoPilot User Reference Guide*.
+The system and network metrics on which CoPilot reports telemetry data are the same as those used for triggering notifications. For descriptions of the metrics, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id3>`_ in *Aviatrix CoPilot User Reference Guide*.
 
 
 Resizing managed resources (gateways) based on policies
@@ -493,7 +493,7 @@ When configured alarms are triggered based on the monitored telemetry data, CoPi
 
 An audit log is kept so you can get a holistic view of how many times your resource-scale policies have been triggered. The audit log is under Performance > Scaling > Events.
 
-For instructions on creating a resource-scale policy, see “Create a resource-scale policy” in Aviatrix CoPilot User Reference Guide.
+For instructions on creating a resource-scale policy, see “Create a resource-scale policy” in *Aviatrix CoPilot User Reference Guide*.
 
 Create a resource-scale policy
 --------------------------------
@@ -512,7 +512,7 @@ To create a resource-scale policy:
 
 5.  In Trigger Condition, configure the alarms you want this policy to raise based on the monitored telemetry data:
 
-    -   Select the metric and the condition for it that must be met to raise an alarm. You can specify multiple alarm conditions. For information about each metric, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id1>`_ in *Aviatrix CoPilot User Reference Guide*.
+    -   Select the metric and the condition for it that must be met to raise an alarm. You can specify multiple alarm conditions. For information about each metric, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id3>`_ in *Aviatrix CoPilot User Reference Guide*.
     -   When multiple alarm conditions are specified, CoPilot generates a resource-scale alert when all the conditions are met.
     -   When the policy alarm condition(s) are met on any gateway in the monitored VPC/VNet(s), CoPilot generates a resource-scale alert.
 
@@ -597,7 +597,7 @@ To configure notifications:
 
 1. From the sidebar, click Notifications.
 #. In Define Alert, type the name you want to use for the alert.
-#. In Condition, select the metric or condition that must be met to trigger the alert. For descriptions of the system and network metrics used for triggering alerts, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id1>`_ in *Aviatrix CoPilot User Reference Guide*.
+#. In Condition, select the metric or condition that must be met to trigger the alert. For descriptions of the system and network metrics used for triggering alerts, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id3>`_ in *Aviatrix CoPilot User Reference Guide*.
 #. Click Add Recipients and select the email address or Webhook destination where you want the alert to be sent. Repeat this step for each recipient you want to receive the notification.
 #. Click Save. The alert is enabled. When the condition is met for the metric you specified, CoPilot will now send a notification to the email or Webhook system you specified.
 
