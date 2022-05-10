@@ -10,15 +10,102 @@ If you are upgrading from release 6.5.x or later, follow the guidelines and proc
 
 If you deploy your Aviatrix platform with Terraform, see the `Aviatrix Terraform Release Notes <https://registry.terraform.io/providers/AviatrixSystems/aviatrix/latest/docs/guides/release-notes>`_. 
 
-Preview Features
-=================
 
-Aviatrix releases features in preview mode to offer you the opportunity to experiment with concepts and features that may develop into official product offerings. Your valuable feedback helps shape and improve the experience for everyone.
+Public Preview Features 
+========================
+
+Aviatrix releases features in public preview mode to offer you the opportunity to experiment with concepts and features that may develop into official product offerings. Your valuable feedback helps shape and improve the experience for everyone.
+
+- Features in public preview mode are fully tested and safe for deployment in production environments.
+- Public preview mode feature options, performance, and scalability may be limited compared to the final feature.
+- Aviatrix does not charge for using features in public preview mode. You could be charged if the public preview feature is promoted to an officially supported feature. 
+- If a feature in public preview mode is promoted to an officially supported product it will be announced in the product release notes.
+- Public preview mode features are clearly marked in the UI.
+
+Private Preview Features
+=========================
+
+Aviatrix releases features in private preview mode to offer you the opportunity to experiment with concepts and features that may develop into official product offerings. Your valuable feedback helps shape and improve the experience for everyone.
+
+- Features in private preview mode should not be deployed in production environments.
+- Features in private preview mode may have undergone limited testing.
+- Support for features in private preview mode may be limited and handled with low priority.  
+- Aviatrix does not charge for using features in private preview mode. You could be charged if the private preview feature is promoted to an officially supported feature. 
+- If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
+- Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
+
+
+6.7.1185 (05/09/2022) 
+=======================
+
+**New Features in Aviatrix Release 6.7.1185** 
+
+* **Aviatrix Secure Edge** – Aviatrix Secure Edge has a virtual from factor that lets you deploy an Edge Gateway as a standard virtual machine (VM). It is designed to enable enterprises migrating to the cloud to integrate their on-premises footprint as spokes into the enterprise cloud backbone. For more information about Secure Edge, refer to `Secure Edge FAQ <http://docs.aviatrix.com/HowTos/secure_edge_faq.html>`_. 
+* **Deploy CoPilot from your controller UI (AWS cloud only)** – If you deployed Aviatrix Controller in AWS, you now have the option to deploy Aviatrix CoPilot directly from your controller UI. This eliminates the need to go to the AWS marketplace and simplifies a few steps for provisioning the CoPilot instance. When deploying this way, the controller deploys CoPilot in the same region/availability zone where it is homed. For instructions, see the discussion about launching a CoPilot instance from the Controller UI in Aviatrix CoPilot Deployment Guide. 
+
+  Note: If you want to deploy CoPilot in a different AWS region/availability zone than where your controller is homed or in a different cloud, please deploy CoPilot manually from the CSP marketplace.
+
+**Enhanced Features in Aviatrix Release 6.7.1185** 
+
+* **Transit Peering over Public Network** – Aviatrix Transit Gateway peering over public network now supports Transit Gateway peering over the internet using Insane Mode High-Performance Encryption (HPE) between GCP and Azure, AWS, OCI. `<http://docs.aviatrix.com/HowTos/transit_gateway_peering.html#peering-over-public-network>`_. 
+* **Subnet-Level Inspection in Azure** – Subnet-Level inspection in Azure is enhanced to optimize intra-VNet traffic behavior. With this optimization, traffic between VMs in the same subnet and intra-VNet traffic between VMs in different subnets and the same subnet group is routed through the Azure native Virtual Network instead of the Aviatrix Spoke Gateway. If traffic inspection is desired between subnets in a Vnet, the subnets must be in different subnet groups. For more information, refer to Using Subnet Inspection in Azure to Redirect Subnet-Level Traffic to `Aviatrix Transit FireNet and NGFW <http://docs.aviatrix.com/HowTos/transit_subnet_inspection_azure.html>`_. 
+
+**UI enhancements in Aviatrix Release 6.7.1185** 
+
+- Added support for CoPilot deployment. 
+
+**Terminology Changes in Aviatrix Release 6.7.1185** 
+
+- Renamed "Security Domains" to "Network Domain" 
+
+In releases prior to Controller 6.7, the term security domain was used to refer to the segments you define for Aviatrix network segmentation. Security domain is renamed network domain in the controller UI and documentation. 
+
+- Renamed "Peering Menu" to "Native Peering"
+
+**Known Issues in Aviatrix Release 6.7.1185** 
+
+* **AVX-22184** – When an Edge Gateway expires, its state is listed as “waiting” on the Upgrade page. This “waiting” Gateway prevents the Controller from successfully upgrading. The actual state of the edge is “Expired,” which is shown in the CloudN > List. 
  
-- Features in preview mode are fully tested and safe for deployment in production environments.  
-- Preview mode feature options, performance, and scalability may be limited compared to the final feature.
-- Aviatrix does not charge for using features in preview mode. You could be charged if the preview feature is promoted to an officially supported feature. If a feature in preview mode is promoted to an officially supported product it is announced in the product release notes. 
-- Preview mode features are clearly marked in the UI.  
+If an Edge Gateway is expired in your Controller, navigate to CloudN > List on the left sidebar. On the Registered Devices page, select the Edge Gateway with the state “waiting,” click the Diag dropdown menu, and select Reset Configuration. Then, your Controller can successfully upgrade.
+
+* **AVX-22810** – After the platform upgrades are successful, the gateway status is showing up before the user finishes creating the process.
+* **AVX-22851** – During the rare telemetry-related timing issue, gateway deletion and gateway creation may experience with exception and the admin user may be notified with an exception email. This was due to the software code that tries to access a gateway object which doesn’t exist.  
+
+**Workaround**: If the newly created gateway is not up because of this issue, the workaround is a gateway image upgrade, and this should bring the gateway up. 
+
+**Issues Corrected in Aviatrix Release 6.7.1185** 
+
+* **AVX-10577** – Licensing metrics were not visible. 
+* **AVX-16122** – The Packet Logging toggle switch on the Stateful Firewall > Policy tab page was not working. 
+* **AVX-17174** – Controller traceroute utility not showing first-hop when HPE is enabled between spoke and transit. 
+* **AVX-18291** – Failed daily and manual controller backups due to a rare corner case condition. 
+* **AVX-18700** – When the Stateful firewall rules reach above 500 rows of rules during add/insert/delete the firewall rule, it will throw error as “Command to execute is too long.” 
+* **AVX-18796** – The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction. 
+
+  Note that after this fix, the certificate’s validity changes from 60 days to 30 days. The rotation frequency also changes from 30 days to 15 days. 
+
+* **AVX-18876** – For BGP connections associated with the domain, "seen" routes learned from this connection got re-advertised back to the same connection when these BGP routes are in the best DB. 
+* **AVX-19811** – You can now insert a stateful firewall policy by specifying the position where you want to insert the policy. This feature is presently available through “Insert Stateful Firewall Rules” API using “position” param. The “position” param is 1 indexed. 
+* **AVX-20022** – You can now configure the gateway interfaces to enable or disable generic receive offload (GRO) and generic segmentation offload (GSO). 
+* **AVX-20173** – Incorrect gateways configured when disabling Transit FireNet on the gateway. 
+* **AVX-20271** – Restricted concurrent uploads to make it harder for a remote attacker to fill the disk to defend against a denial-of-service attack. The check was too restrictive and causing concurrent uploads to overwrite each other. We reworked the feature to allow for concurrency without sacrificing the original defense. 
+* **AVX-20616** – Supported filtering and pagination of security domain policies. This change makes the Add/Modify Connection Policy feature easier to use, especially in accounts that have a large number of policies. 
+* **AVX-20706** – While configuring the Panorama integration for FireNet on the vendor integration page, selecting “FW to show” caused an exception. 
+* **AVX-20970** – Ignore the default RFC1918 routes check in the unselected route tables when you attach a Spoke Gateway with the selective route tables. 
+* **AVX-21215** – Changed the terms “RBAC Group” and “Permission Group“ to “Permission Group“ on the “Account User” page to avoid confusion. 
+* **AVX-21332** – You can now use "insert_stateful_firewall_rules" API command to insert stateful firewall rules, even when the table is empty. 
+* **AVX-21740** – Terraform error prevented an interface from being specified for SNAT and DNAT policies when using policy-based connections. 
+* **AVX-22040** – Exception seen when disconnecting a firewall domain from Aviatrix edge domain on an AWS Transit Gateway. 
+* **AVX-22443** – In order for 6.7 to rollback back to 6.6 correctly, upgrade controllers to any 6.6 release after 6.6.5545 before upgrading to 6.7.
+* **AVX-22808** – Insert_stateful_firewall_rules now inserts the rule in a correct order both in the control plane and the IP tables when it is done using the reference rule.
+* **AVX-22847** – The gateway is stuck in an upgrade "initializing" state and needs ways to recover effectively during scaling.
+
+**Private Preview Features in Release 6.7.1185**
+
+The following `Private Preview Features`_ are available in this release:
+
+* **Micro-segmentation** – Micro-segmentation provides granular network security policy enforcement for distributed applications in the cloud. It enables a unified network access policy model for your applications with distributed points of policy enforcement throughout your network. For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
+* **Web Application Firewall** - The Aviatrix Web Application Firewall (WAF) feature detects and blocks malicious traffic before it reaches your controller. Enabling the Aviatrix WAF helps protect your applications from malicious activity by filtering the HTTP and HTTPS traffic. The WAF is enabled by with a button on the WAF tab in the Aviatrix Controller settings.
 
 6.4.3049 (04/08/2022) 
 =======================
@@ -53,7 +140,7 @@ Aviatrix releases features in preview mode to offer you the opportunity to exper
 * **AVX-17650** – CloudN custom upgrade dry run GUI hanging at 99%, but commands.log showing succeeded. 
 * **AVX-18796** – The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction. 
 
-   Note that after this fix, the certificate’s validity changes from 60 days to 30 days. The rotation frequency also changes from 30 days to 15 days. 
+ Note that after this fix, the certificate’s validity changes from 60 days to 30 days. The rotation frequency also changes from 30 days to 15 days. 
 
 * **AVX-18878** – Sessions may be prevented from getting immediately logged out after certain API calls. 
 * **AVX-20159** – When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback. 
@@ -63,11 +150,11 @@ Aviatrix releases features in preview mode to offer you the opportunity to exper
 6.6.5545 (03/31/2022)
 =======================
 
-**New Features in Release 6.6**
+**New Features in Release 6.6.5545**
 
 - **AVX-14021** – The Aviatrix Controller now supports OCI Gov Cloud accounts. To onboard these accounts, find the Aviatrix image in the OCI Gov Marketplace and subscribe. Then, open the Onboarding page in your Aviatrix Controller and use the `Oracle Onboarding Guide <https://docs.aviatrix.com/HowTos/oracle-aviatrix-cloud-controller-onboard.html>`_ to begin onboarding.
 
-**Enhanced Features in Release 6.6**
+**Enhanced Features in Release 6.6.5545**
 
 - **AVX-14100** – Added support for c2-standard-60 instance type for Aviatrix Insane Mode on GCP. For Insane Mode on GCP performance throughput, refer to `GCP Performance Test Results <https://docs.aviatrix.com/HowTos/insane_mode_perf.html?highlight=gcp%20performance%20test%20results#gcp-performance-test-results>`_.
 - **AVX-15117** – Large (4G+) tracelog uploads consumed excessive CPU, which caused gateway flapping. 
@@ -84,18 +171,18 @@ Note: This option is only available for Aviatrix Transit gateways deployed in AW
 - **AVX-20022** – You can now configure the gateway interfaces to enable or disable generic receive offload (GRO) and generic segmentation offload (GSO).
 - **AVX-20383** – Added support for updating the secondary CIDRs in firewall-related VPC route tables for Azure FireNet gateways. The secondary CIDRs are usually added by user OOB (Out of Band) in a CSP. Then, an API needs to be called to manually update the changed CIDR set normally to the gateway route tables. However, for an Azure cloud case, the firewall-related VPC route tables also need to be updated. This product enhancement ensures that update. The API involved is “update_encrypted_spoke_vpc_cidrs”.
 
-**UI Enhancements in Release 6.6**
+**UI Enhancements in Release 6.6.5545**
 
 - **AVX-15459** – Replaced ‘vpc_id with ‘OCID’ for OCI Gateways to make sure these values are unique. Now, every OCI vpc_id value has been migrated from vpc_name to OCID. For example, “vpc-oracle-test” is migrated to “ocid1.vcn.oc1.iad.aaaaaaaaba3pv6wkcr4jqae5f44n2b2m2yt2j6rx32uzr4h25vqstifsfdsq.”  The Controller UI will display <vpc_id>~~<vpc_name> in the VPC ID field for better readability: for example, “ocid1.vcn.oc1.iad.aaaaaaaaba3pv6wkcr4jqae5f44n2b2m2yt2j6rx32uzr4h25vqstifsfdsq~~vpc-oracle-test.”
 - **AVX-18941** – Removed the Site2Cloud Standalone CloudN feature to improve routing functionality for Controllers upgraded to release 6.6 or above. Customers running Standalone CloudN in earlier releases (6.4 or below) can upgrade existing CloudN hardware or plan for an upgrade to Aviatrix Edge.
 - **AVX-20616** – Supported filtering and pagination of security domain policies. This change makes the Add/Modify Connection Policy feature easier to use, especially in accounts that have large number of policies.
 
-**Known Issues**
+**Known Issues in Release 6.6.5545**
 
 - **AVX-20656** – If you have AWS CloudWatch enabled in your deployment, disable it before upgrading from 6.5 to any 6.6 release.
 If you upgrade while AWS CloudWatch is still enabled, the system will enter a config fail state and the network will go down. You can return the system to sane condition by using Disable/Enable CloudWatch.
 
-**Issues Corrected in Aviatrix Release 6.6**
+**Issues Corrected in Aviatrix Release 6.6.5545**
 
 - **AVX-14253** – An Azure Transit Gateway took excessive time to advertise a newly attached Spoke Gateway's CIDRs over BGP.
 - **AVX-16122** – After successfully enabling packet logging for either allow all or deny all base policy for stateful firewalls, packet logging was automatically removed.
@@ -117,7 +204,7 @@ If you upgrade while AWS CloudWatch is still enabled, the system will enter a co
 6.6.5413 (03/18/2022)  
 ====================== 
 
-**Issues Corrected in Release 6.6** 
+**Issues Corrected in Release 6.6.5413** 
 
 - **AVX-20271** – Restricted concurrent uploads to make it harder for a remote attacker to fill the disk and better defend against denial of service attacks. Overly restrictive checks allowed concurrent uploads to overwrite each other. This update allows for concurrency without sacrificing the original defensive goals.
 
@@ -130,7 +217,7 @@ If you upgrade while AWS CloudWatch is still enabled, the system will enter a co
 6.5.3012 (03/17/2022)
 ===================================
 
-**Issues Corrected in Aviatrix Release 6.5**
+**Issues Corrected in Aviatrix Release 6.5.3012**
 
 - **AVX-18796** – The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
 
@@ -142,14 +229,14 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 #. If you see an “Archive is too short” message of any given gateway during the platform upgrade, you need to perform step 3. Otherwise, you can skip step 3.
 #. After the Upgrade is done, go to Settings > Maintenance > Selective upgrade and select the gateways listed in the “Archive is too short” message. Perform the gateway software upgrade again.
 
-**Known Issues in Aviatrix Release 6.5**
+**Known Issues in Aviatrix Release 6.5.3012**
 
 - **AVX-20201** - Controller sends false alert email about CloudN after upgrading or rebooting Managed CloudN configurations. You can ignore this false alert email.
 
 6.4.3015 (03/17/2022)  
 =====================================
 
-**Issues Corrected in Aviatrix Release 6.4**
+**Issues Corrected in Aviatrix Release 6.4.3015**
 
 - **AVX-18796** – The Controller to Gateway control channel uses certificate based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
 - **AVX-20109** – Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
@@ -158,14 +245,14 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 #. If you see an “Archive is too short” message of any given gateway during the platform upgrade, you need to perform step 3. Otherwise, you can skip step 3.
 #. After the Upgrade is done, go to Settings > Maintenance > Selective upgrade and select the gateways listed in the “Archive is too short” message. Perform the gateway software upgrade again.
 
-**Known Issues in Aviatrix Release 6.4**
+**Known Issues in Aviatrix Release 6.4.3015**
 
 - **AVX-20201** - Controller sends false alert email about CloudN after upgrading or rebooting Managed CloudN configurations. You can ignore this false alert email.
 
 6.6.5409 (03/13/2022)  
 ====================== 
 
-**Issues Corrected in Release 6.6** 
+**Issues Corrected in Release 6.6.5409** 
 
 - **AVX-18796** – The Controller to Gateway control channel uses certificate based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
 - **AVX-20109** – Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
@@ -173,8 +260,8 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 #. From the Aviatrix Controller, go to Settings > Maintenance > Selective upgrade and perform a Platform Upgrade to 6.6 with all gateways selected. For more information, see `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
 #. If you see an “Archive is too short” message of any given gateway during the platform upgrade, you need to perform step 3. Otherwise, you can skip step 3.
 #. After the Upgrade is done, go to Settings > Maintenance > Selective upgrade and select the gateways listed in the “Archive is too short” message. Perform the gateway software upgrade again.
-
-**Known Issues in Aviatrix Release 6.6**
+.
+**Known Issues in Aviatrix Release 6.6.5409**
 
 - **AVX-20201** - Controller sends false alert email about CloudN after upgrading or rebooting Managed CloudN configurations. You can ignore this false alert email.
 - **AVX-20502** - Controller upgrade from 6.5 to 6.6 causes BGP to go down on Aviatrix Transit FireNet. The issue occurs when the following conditions are met:
@@ -185,22 +272,24 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 6.6.5404 (02/28/2022)  
 ====================== 
 
-**Enhanced Features in Release 6.6**
+**Enhanced Features in Release 6.6.5404**
 
 - Added support for gateway rollback from 6.6.a to versions 6.6 and 6.5. 
 - Added new option for users to select between preemptive or non-preemptive failover behavior for Active/Standby deployments for S2C connections. 
 - Added support for BGP on Spoke route propagation control to transit. 
 - Added support for BGP MD5 authentication. 
 
-**Preview Features in Release 6.6**
+**Public Preview Features in Release 6.6.5404**
+
+The following `Public Preview Features`_ are available in this release:
 
 - Azure Subnet-Level Inspection enables inspection by Aviatrix Transit FireNet solution for traffic flowing between subnets within a VNet or in different VNets. For more information, refer to `Using Subnet Inspection in Azure to Redirect Subnet-Level Traffic to Aviatrix Transit FireNet and NGFW <https://docs.aviatrix.com/HowTos/transit_subnet_inspection_azure.html>`_. 
 
-**UI Enhancements in Release 6.6**
+**UI Enhancements in Release 6.6.5404**
 
 - Improved the sub-menu BGP located under Transit FireNet on the left sidebar in the Aviatrix Controller.
 
-**Known Issues in Release 6.6**
+**Known Issues in Release 6.6.5404**
 
 - **AVX-10002** - Firewall's URL inspection rules are dropping packets with controller(or spire).aviatrixnetwork.com and showing failed registration.
 - **AVX-16838** - Release server API showing an error during IP update.
@@ -210,7 +299,7 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 #. The Transit FireNet gateway is attached to the AWS transit gateway as an edge gateway.
 #. The AWS transit gateway is added to the Transit FireNet inspection list.
 
-**Issues Corrected in Release 6.6** 
+**Issues Corrected in Release 6.6.5404** 
 
 - **AVX-18803** - Unable to detach external device connection from Transit due to Exception Error.
 - **AVX-18845** - Exception is seen while "adding/deleting" routes on Stand-Alone CloudN.
@@ -220,13 +309,13 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 6.6.5230 (02/09/2022)  
 ====================== 
 
-**Issues Corrected in Release 6.6**  
+**Issues Corrected in Release 6.6.5230 **  
 
 - **AVX-14504** - Terraform relies on the API get_instance_by_id / CLI "firewall_instance get instance --instance_id <ID>" to refresh the state of the aviatrix_firewall_instance resource. However, in some Azure FireNet deployments the API returns the incorrect value for the attached transit gateway. 
 - **AVX-18700** - When the stateful firewall rules configured on a gateway reaches a limit of 500 and above, while performing "Add/Delete/Insert" operations the following error may be encountered - "Command to execute too long".
 
 
-**Known Issues in Release 6.6** 
+**Known Issues in Release 6.6.5230 ** 
 
 - **AVX-20502** - Controller upgrade from 6.5 to 6.6 causes BGP to go down on Aviatrix Transit FireNet. The issue occurs when the following conditions are met:
 #. The AWS transit FireNet is enabled.
@@ -237,7 +326,7 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 6.5.3006 (02/09/2022)  
 ====================== 
 
-**Issues Corrected in Release 6.5** 
+**Issues Corrected in Release 6.5.3006** 
 
 - **AVX-14504** - Terraform relies on the API get_instance_by_id / CLI "firewall_instance get instance --instance_id <ID>" to refresh the state of the aviatrix_firewall_instance resource. However, in some Azure FireNet deployments the API returns the incorrect value for the attached transit gateway. 
 - **AVX-17620** - Improved stateful firewall duplicate rule checks if duplicate rules are already present in the system. 
@@ -249,14 +338,14 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 6.4.3008 (02/09/2022)  
 ===================== 
 
-**Issues Corrected in Release 6.4** 
+**Issues Corrected in Release 6.4.3008** 
 
 - **AVX-17620** - Improved stateful firewall duplicate rule checks if duplicate rules are already present in the system. 
 
 6.6.5224 (01/23/2022) 
 =====================
 
-**Enhanced Features in Release 6.6**
+**Enhanced Features in Release 6.6.5224**
 
 - Added support for Aviatrix Spoke Gateway to External Device (BGP-Enabled Spoke). Introduced in Aviatrix release 6.6, you can now create spoke gateways that are BGP-enabled and NAT-enabled. Aviatrix Cloud Network Platform has always supported NAT in a way that most enterprises need in order to meet their business and technical requirements. Using BGP-enabled and NAT-enabled spoke gateways gives you yet more capabilities to implement policy based SNAT/DNAT functions in strategic places in your network architecture. For more information, see the discussion about `Aviatrix Spoke Gateway to External Device <https://docs.aviatrix.com/HowTos/spokegw_external.html>`_. 
 - Added support for Google Cloud Platform (GCP) BGP over LAN to support multi peer instance. This allows Aviatrix Transit Gateways to communicate with a pair of instances in the same VPC in GCP without running any tunneling protocol such as IPSec or GRE. For more information, see the discussion about `GCP Multi-cloud Transit BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_gcp_workflow.html>`_. 
@@ -265,7 +354,7 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 - Added support for FireNet with PAN in AWS China. 
 - Added support for Checkpoint integration with private SSH keys. 
 
-**UI Enhancements in Release 6.6**
+**UI Enhancements in Release 6.6.5224**
 
 - Improved FireNet and Multi-Cloud Transit workflows reducing clicks and navigation steps.
 - Decommissioning and Renaming of CLOUDWAN to CLOUDN.
@@ -275,18 +364,18 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 - Enable daily backup added to notification menu.
 - Use consistent naming in action menu and config box for the list view of Transit Gateway.
 
-**Changed Behaviors in Release 6.6**
+**Changed Behaviors in Release 6.6.5224**
 
 - The 6.6 release introduces a behavior change in the Multi-Cloud Transit Active-Standby Site2Cloud behavior, if the setting is enabled. After a failover, when the primary gateway is back up, the traffic is switched over automatically back to the primary Site2Cloud connection. This brings more predictability and fits into the model of most on-prem firewalls. In 6.6, this behavior cannot be adjusted. If Active-Standby is disabled (which is the default setting), there is no behavior change. If you have questions about this behavior, please contact your Aviatrix account team.
 - Before 6.6, when BGP ECMP is enabled, routes from different domain can be combined to form ECMP at gateway. This is incorrect behavior and is fixed in 6.6, such that only BGP routes from the same domain can be combined for ECMP. 
 - Aviatrix no longer supports non-ActiveMesh transit network configurations beginning in release 6.6. Aviatrix recommends that if you are running version 6.5 or earlier, you upgrade to version 6.5.1922 or a higher 6.5 version before upgrading to 6.6.
 
-**Upgrade Behaviors and Restrictions in Release 6.6**
+**Upgrade Behaviors and Restrictions in Release 6.52246**
 
 - To upgrade to 6.6, you must manually enter “6.6” in the Aviatrix Controller upgrade window. 
 - You cannot rollback to Aviatrix version 6.5 after upgrading to 6.6.
 
-**Known Issues in Release 6.6**
+**Known Issues in Release 6.6.5224**
 
 - Cannot add more than 2 remote and 2 local subnet pair tunnels to a Site2Cloud policy based connection with the Aviatrix Controller.
 
@@ -298,7 +387,7 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 
 - The controller's database version and schema are changed in 6.6. You might notice that there will be a brief period of error messages in the controller's log while this change is happening. The errors should stop without user intervention after the upgrade is complete. 
 
-**Issues Corrected in Release 6.6**
+**Issues Corrected in Release 6.6.5224**
 
 - **AVX-14515** - Exception seen when configuring vendor integration with a Palo Alto Firewall VM which has no route tables.
 - **AVX-14568** - If there are any GWs that are not reachable by the controller before the Controller HA Migration starts, the control planes of these GWs will be out of sync because there will be an implicit control-plane certificate re-bootstrap as a part of Control HA Migration process. The issue exists before 6.5.2835 (exclusive) and all 6.4 releases. 
@@ -337,7 +426,7 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 6.5.2898 (01/11/2022)
 =====================
 
-**Issues Corrected in Aviatrix Release 6.5**
+**Issues Corrected in Aviatrix Release 6.5.2898**
  
 - **AVX-9033** - Some logs are too big on CloudN.
 - **AVX-14426** - Tunnels take a long time to become established and on occasion can flap even during establishment in IPSEC IKE interoperability.
@@ -350,7 +439,7 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 - **AVX-17740** - Launching a gateway on a Native GWLB FireNet VPC was incorrectly allowed. Disabling Native GWLB FireNet before detaching the VPC from its TGW (if it was attached to one) was incorrectly allowed.
 - **AVX-18149** - Controller becoming slow or non-responsive when executing large number of certain API requests.
 
-**Known Behaviors in Aviatrix Release 6.5**
+**Known Behaviors in Aviatrix Release 6.5.2898**
 
 - If your Controller is running 6.4 and you have ControllerHA enabled, there is a very small chance that your HA recovery might fail if your Controller goes down by any chance. If that happens, you can manually restore the backup on your new Controller. To avoid this, please upgrade to the 6.5 release.
 - **AVX-16496** - When upgrading a standalone CloundN implementation:
@@ -376,7 +465,7 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 6.4.2995 (01/11/2022) 
 =====================
 
-**Issues Corrected in Aviatrix Release 6.4** 
+**Issues Corrected in Aviatrix Release 6.4.2995** 
 
 - **AVX-14537** - Error establishing Raccoon native CaaG attachment with larger transit instance size (Ex: c5.4xlarge, Standard_D8_v3) and number of IPSec Tunnels > 32. 
 - **AVX-17349** – Closed vulnerability AVI-2021-0008, allowing an unauthenticated attacker partial access to configuration information on controllers and an unauthenticated network-adjacent attacker API access on gateways. 
@@ -384,7 +473,7 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 6.5.2835 (12/10/2021) 
 =====================
 
-**Issues Corrected in Aviatrix Release 6.5** 
+**Issues Corrected in Aviatrix Release 6.5.2835** 
 
 - **AVX-9033** - The routing logs are not rotated on CloudN and are not included in the trace logs. 
 - **AVX-14298** - The following CVEs were addressed in this release: `CVE-2007-2243 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2243>`_ and `CVE-2004-1653 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1653>`_. 
@@ -395,7 +484,7 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 - **AVX-16967** - Deleting one or more Customized SNATs generates a “route already exists in route table” error. 
 - **AVX-17489** - When deleting one CIDR from the spoke customized advertise CIDR list, the CIDR should only be removed from the transit gateway and the rest of the network. However, during deletion the CIDR was removed from the spoke itself, which deletes the routes added for static S2c. 
  
-**Known Issues in Aviatrix Release 6.5**
+**Known Issues in Aviatrix Release 6.5.2835**
 
 - If your Controller is running 6.4 and you have ControllerHA enabled, there is a very small chance that your HA recovery might fail if your Controller goes down by any chance. If that happens, you can manually restore the backup on your new Controller. To avoid this, please upgrade to the 6.5 release.
 - **AVX-16121** - In Aviatrix version 5.x, Logstash Forwarder was replaced by `Filebeat Forwarder <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#filebeat-forwarder>`_ in the supported logging services. If you enabled logstash before this switch, please disable/enable logstash on the Filebeat Forwarder in “Controller/Logging” before upgrading your Aviatrix Controller, otherwise your Gateways might come up in the “config_fail” state after the upgrade. You might need to update your configuration on your collection side to accommodate this change. If you already upgraded and have Gateways in the “config_fail” state, you can do an “Image Upgrade” on the impacted Gateway to resolve the issue. 
@@ -433,14 +522,14 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 6.5.2721 (11/18/2021)
 =====================
 
-**Issues Corrected in Aviatrix Release 6.5**
+**Issues Corrected in Aviatrix Release 6.5.2721**
 
 - **AVX-15735** - CoPilot unable to display gateway active sessions from the Aviatrix Controller.
 - **AVX-16494** - CPU overconsumption by IP processes on gateways.
 - **AVX-16572** - Listing interfaces on a gateway takes a long time with large number of Site2Cloud connections.
 - **AVX-16601** - In some corner cases, if the API enable_gateway_auto_recovery option is used on the Controller to overcome the Azure maintenance windows it causes the ethernet interfaces on the gateways to go missing. In some cases, the API failed to stop and start the affected gateways. If you have this feature enabled, please disable it and then enable it again after the upgrade or open a Support ticket at https://support.Aviatrix.com to get assistance.
 
-**Feature Enhancements in Aviatrix Release 6.5**
+**Feature Enhancements in Aviatrix Release 6.5.2721**
 
 - **AVX-9927** - Added message for unstable network connectivity prompting user to refresh page to reconnect.
 - **AVX-10080** - Added support for Transit Firenet in AWS China for Checkpoint.
@@ -448,14 +537,14 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 6.3.2551 (11/12/2021)
 =====================
 
-**Issues Corrected in Aviatrix Release 6.3**
+**Issues Corrected in Aviatrix Release 6.3.2551**
 
 - **AVX-16569** - Controller image migration fails to progress past the initialization state.
 
 6.3.2548 (11/04/2021)
 =====================
 
-**Issues Corrected in Aviatrix Release 6.3**
+**Issues Corrected in Aviatrix Release 6.3.2548**
 
 - **AVX-15897** - Fixed an issue for Gateway Replace/Create/ForceUpgrade operations if Splunk logging was enabled on it, which was seen on all releases after 10/13/2021 (when Splunk behavior changed).
 - **AVX-15985** - Fixed the issue where the Controller get_gateway_stats API was returning stats for deleted interfaces.

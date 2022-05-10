@@ -474,7 +474,67 @@ The telemetry data CoPilot displays for managed resources includes:
 - Tx rate of the interface 
 - Rx Tx rate combined of the interfaces 
 
-The system and network metrics on which CoPilot reports telemetry data are the same as those used for triggering notifications. For descriptions of the metrics, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#metrics-used-for-triggering-notifications>`_ in *Aviatrix CoPilot User Reference Guide*.
+The system and network metrics on which CoPilot reports telemetry data are the same as those used for triggering notifications. For descriptions of the metrics, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id3>`_ in *Aviatrix CoPilot User Reference Guide*.
+
+
+Resizing managed resources (gateways) based on policies
+--------------------------------------------------------
+
+CoPilot monitors the resource utilization (telemetry) data for all *managed resources* (your gateways and controller) across your Aviatrix transit network (multi-cloud and single cloud). You can create policies that guide you on when to replace or *scale* the managed resources up or down based on the telemetry data. When virtual machines/instances on which your Aviatrix gateways run exceed your policy thresholds, CoPilot generates an alert with the recommended action to take for scaling the resource. You set resource-scale policies on a per VPC/VNet level. All gateways within the given VPC/VNet are monitored.
+
+When configured alarms are triggered based on the monitored telemetry data, CoPilot generates a resource-scale alert and you can take the recommended action to scale the gateways up or down directly from CoPilot.
+
+**ATTENTION:** Consider the following when resizing:
+
+-   When choosing the instance size to scale up or down, the instance sizes displayed are those that are supported for gateways in their respective clouds and CoPilot will use their default configurations for resource settings during launch.
+-   The sizes listed do not represent the recommended sizes for your specific scaling needs. It is recommended that you work with your performance team to determine the instance size that best suits the requirements of your network infrastructure prior to scaling.
+-   If you resize a gateway that does not have a high availability gateway (HA Gateway does not exist because HA was not enabled on that gateway), a network downtime will occur until the gateway restarts with its new instance size.
+-   After you resize a gateway based on a resource-scale alert, it is recommended that you review the resource-scale policy associated with the alert and determine if you want to make any changes to it.
+
+An audit log is kept so you can get a holistic view of how many times your resource-scale policies have been triggered. The audit log is under Performance > Scaling > Events.
+
+For instructions on creating a resource-scale policy, see “Create a resource-scale policy” in *Aviatrix CoPilot User Reference Guide*.
+
+Create a resource-scale policy
+--------------------------------
+
+Create policies that guide you on when to replace or *scale* your managed resources (gateways) up or down based on resource utilization (telemetry) data.
+
+To create a resource-scale policy:
+
+1.  Log in to CoPilot.
+
+2.  In Performance > Scaling > Policies, click **+ Scaling Policy**.
+
+3.  In Name, enter the name of your policy. You can enter any value you like.
+
+4.  In VPC/VNets, select the VPC/VNet(s) on which to apply the policy. All gateways within the specified VPC/VNet(s) will be monitored to check if their telemetry data should trigger a resource-scale alert.
+
+5.  In Trigger Condition, configure the alarms you want this policy to raise based on the monitored telemetry data:
+
+    -   Select the metric and the condition for it that must be met to raise an alarm. You can specify multiple alarm conditions. For information about each metric, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id3>`_ in *Aviatrix CoPilot User Reference Guide*.
+    -   When multiple alarm conditions are specified, CoPilot generates a resource-scale alert when all the conditions are met.
+    -   When the policy alarm condition(s) are met on any gateway in the monitored VPC/VNet(s), CoPilot generates a resource-scale alert.
+
+6.  In Action, for the Wait Duration, specify the duration of time an alarm condition (or group of conditions) must be sustained for CoPilot to generate a resource-scale alert. This setting is to avoid raising alarms for network behavior that causes brief spikes in telemetry data.
+
+7.  In Action, for Operation, specify the action you will want to take when alarm conditions are met for this policy.
+
+    -   Select **Scale Up** if you will want to increase the size of the gateway virtual machine/instance(s). When you receive a resource-scale alert based on this policy, you will have the option to increase the size.
+    -   Select **Scale Down** if you will want to decrease the size of the gateway virtual machine/instance(s). When you receive a resource-scale alert based on this policy, you will have the option to decrease the size.
+8.  (Optional) If you want to notifiy people via email when resource-scale alerts are generated for this policy, toggle the **Configure Alerts** slider and specify the email recipient(s) to notify.
+
+9.  Click **Save**.
+
+    After you save the policy, CoPilot begins to monitor the VPC/VNets for any resource-scale policy alarms that get triggered. When an alarm is triggered, CoPilot generates an alert in the Performance > Scaling > Recommendations page. You can choose to scale the resource up or down directly from the Recommendations page by clicking on the link in the Recommendation column and specifying the size to use.
+
+    **ATTENTION:** Consider the following when resizing:
+
+    -   When choosing the instance size to scale up or down, the instance sizes displayed are those that are supported for gateways in their respective clouds and CoPilot will use their default configurations for resource settings during launch.
+    -   The sizes listed do not represent the recommended sizes for your specific scaling needs. It is recommended that you work with your performance team to determine the instance size that best suits the requirements of your network infrastructure prior to scaling.
+    -   If you resize a gateway that does not have a high availability gateway (HA Gateway does not exist because HA was not enabled on that gateway), a network downtime will occur until the gateway restarts with its new instance size.
+    -   After you resize a gateway based on a resource-scale alert, it is recommended that you review the resource-scale policy associated with the alert and determine if you want to make any changes to it.
+
 
 Working with Cloud Routes
 =========================
@@ -520,7 +580,7 @@ This section describes the Notifications feature of Aviatrix CoPilot.
 
 In Notifications, you can configure alerts so that you can be notified about changes in your Aviatrix transit network. The alerts can be based on common telemetry data monitored in the network. For example, you can receive an alert when the status of any Aviatrix Gateway in your network changes.
 
-CoPilot supports Webhook alerts. Webhooks allow you to send notifications to third-party automation systems such as Slack. You can send a Webhook to any system that can take an HTTPS callback. A single alert can notify multiple systems/people. For information on how to customize the webhooks CoPilot generates, see `CoPilot Webhooks <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#copilot-webhooks>`_ in *Aviatrix CoPilot User Reference Guide*.
+CoPilot supports Webhook alerts. Webhooks allow you to send notifications to third-party automation systems such as Slack. You can send a Webhook to any system that can take an HTTPS callback. A single alert can notify multiple systems/people. For information on how to customize the webhooks CoPilot generates, see `CoPilot Webhooks <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id8>`_ in *Aviatrix CoPilot User Reference Guide*.
 
 You can pause alerts. For example, if you are going to perform maintenance tasks on the network that you know will trigger pre-configured alerts, you can pause the alerts temporarily and unpause them when the maintenance is complete.
 
@@ -531,13 +591,13 @@ Configure Alerts
 
 Configure alerts in CoPilot so you can be notified to events that occur in your network.
 
-When configuring alerts, you can choose a notification channel of email or Webhook destinations. Before you begin, specify the email or Webhook addresses in the Notifications tab of CoPilot Settings. For more information about Webhooks, see `CoPilot Webhooks Customization  <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id1>`_.
+When configuring alerts, you can choose a notification channel of email or Webhook destinations. Before you begin, specify the email or Webhook addresses in the Notifications tab of CoPilot Settings. For more information about Webhooks, see `CoPilot Webhooks Customization  <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id9>`_.
 
 To configure notifications:
 
 1. From the sidebar, click Notifications.
 #. In Define Alert, type the name you want to use for the alert.
-#. In Condition, select the metric or condition that must be met to trigger the alert. For descriptions of the system and network metrics used for triggering alerts, see the topic "Metrics used for Triggering Notifications" in *Aviatrix CoPilot User Reference Guide*.
+#. In Condition, select the metric or condition that must be met to trigger the alert. For descriptions of the system and network metrics used for triggering alerts, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id3>`_ in *Aviatrix CoPilot User Reference Guide*.
 #. Click Add Recipients and select the email address or Webhook destination where you want the alert to be sent. Repeat this step for each recipient you want to receive the notification.
 #. Click Save. The alert is enabled. When the condition is met for the metric you specified, CoPilot will now send a notification to the email or Webhook system you specified.
 
@@ -740,9 +800,11 @@ This section describes the Security functional area of Aviatrix CoPilot.
 
 The Security functional area of CoPilot provides the following:
 
--   Ability to configure network segmentation for Aviatrix Multi-Cloud Transit Segmentation and view visualizations of your network domains and how they can or cannot connect to each other. See About network domains.
--   Egress — Ability to view what sites are being accessed outside of your network.
--   Audit View — Ability to view changes performed by users on your system.
+-   Network Segmentation — Ability to configure network segmentation for Aviatrix Multi-Cloud Transit Segmentation and view visualizations of your network domains and how they can or cannot connect to each other. See `About Network Domains`_.
+-   Micro-Segmentation — (If enabled) Ability to create app domains that are used for micro-segmentation. For information about micro-segmentation, see the release notes for Aviatrix Controller 6.7 in `Aviatrix Controller and Gateway Release Notes <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_ and the discussion about `secure networking with micro-segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
+-   Egress — Ability to view what sites are being accessed outside of your network. See `Egress`_.
+-   Audit — Ability to view changes performed by users on your system.
+
 
 About Network Domains
 ----------------------
@@ -876,7 +938,11 @@ In Security Egress view, CoPilot shows the URLs, domains, IP addresses that are 
 -   The rules configured on the Egress Gateway.
 
 
-In Security, CoPilot uses visual elements to demonstrate the segments in your Aviatrix transit network that can and cannot communicate with each other. The segments are enabled by way of security domains and their ability to communicate with each other is dictated by security domain policies. You enable security domains and set security domain policies in Aviatrix Controller. CoPilot shows the logical and physical view of the domain segments and their connection relationships.
+About App Domains
+----------------------
+
+An *app domain* is a grouping of workloads, subnets, or VPC/VNets that require a uniform policy enforcement. When the micro-segmentation feature is enabled, you can create app domains in CoPilot under Security > Micro-segmentation. For detailed information about micro-segmentation and app domains, see the discussion about `secure networking with micro-segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
+
 
 Working with ThreatIQ
 =====================
