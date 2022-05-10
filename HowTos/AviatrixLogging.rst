@@ -1,4 +1,4 @@
-﻿.. meta::
+.. meta::
    :description: Data Analytics with Aviatrix Logs
    :keywords: Rsyslog, Datadog, Splunk, Elastic Filebeat, Sumo, Netflow, Cloudwatch, aviatrix logs, data analytics
 
@@ -14,11 +14,11 @@
 ================
 
 The Aviatrix Controller and all of its managed gateways can be configured to forward logs to well known log management systems.
-The controller and all of the managed gateways will forward the logs directly to the logging server and hence each of them need network connectivity
+The Controller and all of the managed gateways will forward the logs directly to the logging server and hence each of them need network connectivity
 to the logging server. Out of box integration is supported for the following logging service or systems.
 
 
- - Remote syslog (recommended to use)
+ - Remote syslog (recommended)
  - Elastic Filebeat
  - Splunk Enterprise/Cloud
  - Sumo Logic
@@ -26,8 +26,7 @@ to the logging server. Out of box integration is supported for the following log
  - Netflow
  - AWS CloudWatch
 
-.. note:: We highly recommend user to use remote syslog (rsyslog) as log forwarder which is both efficient and the industry standard.
-   Most log collectors support rsyslog as forwarder. We may only add new features to rsyslog going forward.
+.. note:: Aviatrix highly recommends using the remote syslog (rsyslog) log forwarder.
 
 
 In addition to standard information on syslog, Aviatrix also provides
@@ -35,7 +34,7 @@ capability for user VPN connections, VPN user TCP sessions, security
 rule violation statistics, Gateway stats and FQDN filter violations.
 
 The Log Management System can be used to sift through the Aviatrix logs and
-get the meaningful trend charts that helps monitor the network
+get the meaningful trend charts that help monitor the network
 connectivity and user VPN sessions. The following sections provide a
 list of useful Aviatrix logs which can be parsed on Splunk, Sumo Logic
 and other log management systems to display relevant analytics of data
@@ -140,7 +139,6 @@ One example log:
 
   Sep 25 23:40:19 ip-10-40-0-133 cloudxd: AviatrixLicsenseVPNUsers: users=2
 
-.. note:: There is a typo in some versions (as noted in the above example) that incorrectly shows this entry as `AviatrixLicsenseVPNUsers` instead of `AviatrixLicenseVPNUsers`.
 
 AviatrixRule:
 --------------
@@ -454,8 +452,12 @@ Since Sumo agents on the controller and gateways tend to consume a lot of cpu/me
   #. Keep the Protocol set to TCP
   #. For Optional Custom Template, copy the following string and replace the string ADD_YOUR_SUMO_TOKEN_HERE with the token you received in the first step. Please do keep the square brackets around the token.
 
- .. note:: <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [YOUR_TOKEN] %msg%\\n
- .. note:: The Aviatrix Controller expects certificates in PEM format. Attempting to upload the wrong format may return an Exception Error. To convert the DigiCert certificate downloaded from SumoLogic's documentation into PEM format, use the following command: openssl x509 -in DigiCertHighAssuranceEVRootCA.crt -inform der -outform pem -out DigiCertHighAssuranceEVRootCA.pem
+ .. code-block:: json
+
+<%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [ADD_YOUR_SUMO_TOKEN_HERE] %msg%\\n
+
+ .. note:: 
+	The Aviatrix Controller expects certificates in PEM format. Attempting to upload the wrong format may return an Exception Error. To convert the DigiCert certificate downloaded from SumoLogic's documentation into PEM format, use the following command: openssl x509 -in DigiCertHighAssuranceEVRootCA.crt -inform der -outform pem -out DigiCertHighAssuranceEVRootCA.pem
  
 |rsyslog_template|
 
