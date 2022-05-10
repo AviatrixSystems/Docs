@@ -145,5 +145,5 @@ Limitations
 
 
 ..  |microseg_topology| image:: microseg_media/microseg_topology.png
-    :scale: 30%
+    :scale: 60%
 
