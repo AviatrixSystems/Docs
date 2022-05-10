@@ -19,7 +19,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`CloudN`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
-* :ref: `Monitoring`
+* :ref:`Monitoring`
 * :ref:`Copilot`
 * :ref:`OpenVPN® <OpenVPN>`
 * :ref:`Security`
