@@ -30,7 +30,7 @@ The following monitoring capabilities provide visibility into the status and res
 
 - Operational status of cloud resources (`dashboard <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#copilot-dashboard>`_)
 - Network traffic flows, top talkers/receivers, and geographic origin of traffic (`FlowIQ <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-flowiq>`_)
-- Status of connections for Aviatrix gateways, Site2Cloud (data center connections into the cloud) and BGP (Border Gateway Patrol) connections from on-prem to the cloud (Cloud Routes) <any links for this?>
+- Status of connections for Aviatrix gateways, Site2Cloud (data center connections into the cloud) and BGP (Border Gateway Patrol) connections from on-prem to the cloud (Cloud Routes)
 - Notifications of changes in your Aviatrix Controller and Aviatrix Gateways based on system or network metrics (Notifications); see below for more details on the Notifications feature.
 
 System Notifications Feature
@@ -62,7 +62,7 @@ Click `here <https://docs.aviatrix.com/HowTos/alert_and_email.html#how-to-manage
 Monitoring Gateways
 ====================
 
-When heartbeat information from any gateway fails, Aviatrix Controller restarts these gateways and sends an email to the administrator. <is this right? If so I'll keep it. If this action doesn't send an email I won't include it.>
+When heartbeat information from any gateway fails, Aviatrix Controller restarts these gateways and sends an email to the administrator. 
 
 You can also `monitor gateway subnets <https://docs.aviatrix.com/HowTos/gateway.html#monitor-gateway-subnet>`_ to ensure that no unauthorized virtual machines are being launched. When enabled, Controller periodically monitors the selected subnet where the gateway was launched. An alert mail is sent to admin, and the instance is immediately stopped. 
 
@@ -77,7 +77,7 @@ Logging
 
 In Aviatrix Controller you can select a logging management system to receive data from the Controller and its managed gateways. Logs sent to these systems can be parsed to display relevant analytics of collected data and to evaluate the trends that help monitor network connectivity and user VPN sessions. 
 
-You can enable Remote Syslog logging and send the information to CoPilot by entering CoPilot’s IP address and UDP port 5000. If using Remote Syslog to send information to other applications, see `here <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#remote-syslog>`_. <right spot?>
+You can enable Remote Syslog logging and send the information to CoPilot by entering CoPilot’s IP address and UDP port 5000. If using Remote Syslog to send information to other applications, see `here <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#remote-syslog>`_. 
 
 Click `here <https://docs.aviatrix.com/HowTos/AviatrixLogging.html>`_ for more information on configuring logging options, and keywords that the logging management system can flag.
 
