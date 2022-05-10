@@ -66,12 +66,12 @@ In releases prior to Controller 6.7, the term security domain was used to refer 
 
 * **AVX-22184** – When an Edge Gateway expires, its state is listed as “waiting” on the Upgrade page. This “waiting” Gateway prevents the Controller from successfully upgrading. The actual state of the edge is “Expired,” which is shown in the CloudN > List. 
  
-If an Edge Gateway is expired in your Controller, navigate to CloudN > List on the left sidebar. On the Registered Devices page, select the Edge Gateway with the state “waiting,” click the Diag dropdown menu, and select Reset Configuration. Then, your Controller can successfully upgrade.
+   If an Edge Gateway is expired in your Controller, navigate to CloudN > List on the left sidebar. On the Registered Devices page, select the Edge Gateway with the state “waiting,” click the Diag dropdown menu, and select Reset Configuration. Then, your Controller can successfully upgrade.
 
-* **AVX-22810** – After the platform upgrades are successful, the gateway status is showing up before the user finishes creating the process.
-* **AVX-22851** – During the rare telemetry-related timing issue, gateway deletion and gateway creation may experience with exception and the admin user may be notified with an exception email. This was due to the software code that tries to access a gateway object which doesn’t exist.  
+* **AVX-22810** – After a successful platform upgrade, the gateway status indicates the operation is complete before the operation actually completes.
+* **AVX-22851** – During a rare telemetry related timing issue, gateway deletion and creation operations may experience exceptions that send the admin an exception email. This was caused by the software attempting to access a gateway object that does not exist.
 
-**Workaround**: If the newly created gateway is not up because of this issue, the workaround is a gateway image upgrade, and this should bring the gateway up. 
+  **Workaround**: If the newly created gateway does not come up because of this issue, the workaround is to upgrade the gateway image.
 
 **Issues Corrected in Aviatrix Release 6.7.1185** 
 
@@ -180,7 +180,7 @@ Note: This option is only available for Aviatrix Transit gateways deployed in AW
 **Known Issues in Release 6.6.5545**
 
 - **AVX-20656** – If you have AWS CloudWatch enabled in your deployment, disable it before upgrading from 6.5 to any 6.6 release.
-If you upgrade while AWS CloudWatch is still enabled, the system will enter a config fail state and the network will go down. You can return the system to sane condition by using Disable/Enable CloudWatch.
+   If you upgrade while AWS CloudWatch is still enabled, the system will enter a config fail state and the network will go down. You can return the system to sane condition by using Disable/Enable CloudWatch.
 
 **Issues Corrected in Aviatrix Release 6.6.5545**
 
