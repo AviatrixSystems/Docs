@@ -181,6 +181,7 @@ Note: This option is only available for Aviatrix Transit gateways deployed in AW
 
 - **AVX-20656** – If you have AWS CloudWatch enabled in your deployment, disable it before upgrading from 6.5 to any 6.6 release.
    If you upgrade while AWS CloudWatch is still enabled, the system will enter a config fail state and the network will go down. You can return the system to sane condition by using Disable/Enable CloudWatch.
+- **AVX-20978** – Only one active profile rsyslog config shows up in gateways, even when the gateway has multiple profiles. A workaround for this issue is to remove the entire Syslog profile index and then add them back using Terraform. Then, the rsyslog configs appears in all gateways.
 
 **Issues Corrected in Aviatrix Release 6.6.5545**
 
@@ -298,6 +299,7 @@ The following `Public Preview Features`_ are available in this release:
 #. The AWS transit FireNet is enabled.
 #. The Transit FireNet gateway is attached to the AWS transit gateway as an edge gateway.
 #. The AWS transit gateway is added to the Transit FireNet inspection list.
+- **AVX-20978** – Only one active profile rsyslog config shows up in gateways, even when the gateway has multiple profiles. A workaround for this issue is to remove the entire Syslog profile index and then add them back using Terraform. Then, the rsyslog configs appears in all gateways.
 
 **Issues Corrected in Release 6.6.5404** 
 
