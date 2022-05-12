@@ -39,25 +39,25 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Important Notices in Aviatrix Release 6.6.5612** 
 
-**AVX-20579** – In order for release 6.7 to roll back to 6.6 correctly, the Controller and gateways must be running official **6.6.5612** or a release after **6.6.5612** before moving to 6.7. 
-**AVX-22443** – For a rollback from 6.7 to **6.6.5612** to run successfully, upgrade from ** 6.6.5404** or **6.6.5545** to **6.6.5612** before upgrading to 6.7. 
+- **AVX-20579** – In order for release 6.7 to roll back to 6.6 correctly, the Controller and gateways must be running official **6.6.5612** or a release after **6.6.5612** before moving to 6.7. 
+- **AVX-22443** – For a rollback from 6.7 to **6.6.5612** to run successfully, upgrade from **6.6.5404** or **6.6.5545** to **6.6.5612** before upgrading to 6.7. 
 
 **Issues Corrected in Aviatrix Release 6.6.5612** 
 
-**AVX-10577** – Licensing metrics were not visible. 
-**AVX-20408** – Added an extra check to prevent an exception that can occur while adding a VPC object. The exception caused the VPC to unexpectedly become unavailable from a Spoke Gateway. 
-**AVX-20485** – When you added a Site2Cloud Connection with HA that had Local/Remote Tunnel IP (Primary) settings, but the connection was missing Local/Remote Tunnel IP (Backup), the configuration failed with an error.  
-**AVX-20978** – Only one active profile rsyslog config showed up in gateways, even when the gateway had multiple profiles.  
-**AVX-21238** – High Performance Encryption (HPE) Gateways with many HPE peerings that have transit segmentation enabled encountered an Out of Memory (OOM) issue. The gateway failed to recover even after a reboot. 
-**AVX-21332** – You can now use “insert_stateful_firewall_rules” API command to insert stateful firewall rules, even when the table is empty. 
-**AVX-22040** – Exception seen when disconnecting a firewall domain from an Aviatrix Edge domain on an AWS Transit Gateway. 
-**AVX-22396** – Due to a VPC ID exception, upgrading an OCI Transit FireNet Gateway failed if the gateway had an associated firewall and an HAGW (High Availability Gateway). 
+- **AVX-10577** – Licensing metrics were not visible. 
+- **AVX-20408** – Added an extra check to prevent an exception that can occur while adding a VPC object. The exception caused the VPC to unexpectedly become unavailable from a Spoke Gateway. 
+- **AVX-20485** – When you added a Site2Cloud Connection with HA that had Local/Remote Tunnel IP (Primary) settings, but the connection was missing Local/Remote Tunnel IP (Backup), the configuration failed with an error.  
+- **AVX-20978** – Only one active profile rsyslog config showed up in gateways, even when the gateway had multiple profiles.  
+- **AVX-21238** – High Performance Encryption (HPE) Gateways with many HPE peerings that have transit segmentation enabled encountered an Out of Memory (OOM) issue. The gateway failed to recover even after a reboot. 
+- **AVX-21332** – You can now use “insert_stateful_firewall_rules” API command to insert stateful firewall rules, even when the table is empty. 
+- **AVX-22040** – Exception seen when disconnecting a firewall domain from an Aviatrix Edge domain on an AWS Transit Gateway. 
+- **AVX-22396** – Due to a VPC ID exception, upgrading an OCI Transit FireNet Gateway failed if the gateway had an associated firewall and an HAGW (High Availability Gateway). 
 
 **Known Issues in Release 6.6.c** 
 
-**AVX-20656** – If you have AWS CloudWatch enabled in your deployment, disable it before upgrading from 6.5 to any 6.6 release. 
-**AVX-22630** – If you are running an older Controller image, you may experience an error (*pymongo.errors.OperationFailure: exception: invalid operator '$filter'*) while trying to view the transit tunnel status. A workaround for this issue is to migrate to the latest Controller image. 
-**AVX-22976** – When you roll back a non-AWS primary and HA gateway together in any of the following patterns, one of the rollbacks fails:  
+- **AVX-20656** – If you have AWS CloudWatch enabled in your deployment, disable it before upgrading from 6.5 to any 6.6 release. 
+- **AVX-22630** – If you are running an older Controller image, you may experience an error (*pymongo.errors.OperationFailure: exception: invalid operator '$filter'*) while trying to view the transit tunnel status. A workaround for this issue is to migrate to the latest Controller image. 
+- **AVX-22976** – When you roll back a non-AWS primary and HA gateway together in any of the following patterns, one of the rollbacks fails:  
 
 * 6.6.5612 to 6.6. 
 * 6.6.5612 to 6.5. 
@@ -65,13 +65,20 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 To avoid this issue, roll back one gateway at a time between primary and HA gateways.   
 If you experience a configuration failure, roll back the config_fail gateway again. 
 
-**AVX-23006** – When you create a regular gateway immediately after creating a Public Subnet Filtering (PSF) gateway with GuardDuty enabled, a RACE occurs. The RACE can accidentally block the newly created gateway, which is front ended by this PSF gateway. Please wait for the PSF Gateway to finish creation before creating the regular gateway. 
+- **AVX-23006** – When you create a regular gateway immediately after creating a Public Subnet Filtering (PSF) gateway with GuardDuty enabled, a RACE occurs. The RACE can accidentally block the newly created gateway, which is front ended by this PSF gateway. Please wait for the PSF Gateway to finish creation before creating the regular gateway. 
 
 **Feature Upgrade Notice**
 
-**AVX-22884** – The Standalone CloudN workflow is not supported for releases later than 6.5. Plan to migrate your Standalone CloudN deployment to Managed CloudN before upgrading your Controller to 6.6. 
+- **AVX-22884** – The Standalone CloudN workflow is not supported for releases later than 6.5. Plan to migrate your Standalone CloudN deployment to Managed CloudN before upgrading your Controller to 6.6. 
 
 For the already deployed Managed CloudN, as long as your Controller was upgraded, Managed CloudN will be upgraded to the same version. 
+
+6.7.1186 (05/11/2022) 
+=======================
+
+**Issues Corrected in Aviatrix Release 6.7.1186** 
+
+* **AVX-22903** – After a new controller is launched for the first time, there are no routes from the transit gateway to the spoke gateway. 
 
 6.7.1186 (05/11/2022) 
 =======================
