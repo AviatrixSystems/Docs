@@ -53,7 +53,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - **AVX-22040** – Exception seen when disconnecting a firewall domain from an Aviatrix Edge domain on an AWS Transit Gateway. 
 - **AVX-22396** – Due to a VPC ID exception, upgrading an OCI Transit FireNet Gateway failed if the gateway had an associated firewall and an HAGW (High Availability Gateway). 
 
-**Known Issues in Release 6.6.c** 
+**Known Issues in Release 6.6.5612** 
 
 - **AVX-20656** – If you have AWS CloudWatch enabled in your deployment, disable it before upgrading from 6.5 to any 6.6 release. 
 - **AVX-22630** – If you are running an older Controller image, you may experience an error (*pymongo.errors.OperationFailure: exception: invalid operator '$filter'*) while trying to view the transit tunnel status. A workaround for this issue is to migrate to the latest Controller image. 
