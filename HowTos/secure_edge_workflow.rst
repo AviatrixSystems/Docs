@@ -262,7 +262,7 @@ Editing or Viewing an Edge Gateway Configuration
 
 3. To run and show diagnostics, upload Tracelog, download Syslog, and reset configuration, select the Edge Gateway and click **DIAG**.
 
-   |secure_edge_run_diag|
+   |secure_edge_run_diag_a|
 
 Deregistering and Reregistering an Edge Gateway
 -----------------------------------------------
@@ -447,34 +447,34 @@ If the connectivity to the CSP is over a public network:
 .. |secure_edge_ova_deploy_options| image:: CloudN_workflow_media/secure_edge_ova_deploy_options.png
    :scale: 80%
 
-.. |secure_edge_launch_gateway_a| image:: CloudN_workflow_media/secure_edge_launch_gateway.png
+.. |secure_edge_launch_gateway_a| image:: CloudN_workflow_media/secure_edge_launch_gateway_a.png
    :scale: 80%
 
 .. |secure_edge_edit_settings| image:: CloudN_workflow_media/secure_edge_edit_settings.png
    :scale: 50%
 
-.. |secure_edge_mgmt_egress_ip_a| image:: CloudN_workflow_media/secure_edge_mgmt_egress_ip.png
+.. |secure_edge_mgmt_egress_ip_a| image:: CloudN_workflow_media/secure_edge_mgmt_egress_ip_a.png
    :scale: 50%
 
-.. |secure_edge_update_egress_ip_a| image:: CloudN_workflow_media/secure_edge_update_egress_ip.png
+.. |secure_edge_update_egress_ip_a| image:: CloudN_workflow_media/secure_edge_update_egress_ip_a.png
    :scale: 50%
 
-.. |secure_edge_run_diag| image:: CloudN_workflow_media/secure_edge_run_diag.png
+.. |secure_edge_run_diag_a| image:: CloudN_workflow_media/secure_edge_run_diag_a.png
    :scale: 40%
 
-.. |secure_edge_reset_config_a| image:: CloudN_workflow_media/secure_edge_reset_config.png
+.. |secure_edge_reset_config_a| image:: CloudN_workflow_media/secure_edge_reset_config_a.png
    :scale: 40%
 
-.. |secure_edge_deregister_a| image:: CloudN_workflow_media/secure_edge_deregister.png
+.. |secure_edge_deregister_a| image:: CloudN_workflow_media/secure_edge_deregister_a.png
    :scale: 50%
 
 .. |secure_edge_attach_iso| image:: CloudN_workflow_media/secure_edge_attach_iso.png
    :scale: 40%
 
-.. |secure_edge_registered_devices_a| image:: CloudN_workflow_media/secure_edge_registered_devices.png
+.. |secure_edge_registered_devices_a| image:: CloudN_workflow_media/secure_edge_registered_devices_a.png
    :scale: 50%
 
-.. |secure_edge_attach_device_a| image:: CloudN_workflow_media/secure_edge_attach_device.png
+.. |secure_edge_attach_device_a| image:: CloudN_workflow_media/secure_edge_attach_device_a.png
    :scale: 50%
 
 .. |secure_edge_hardware_config| image:: CloudN_workflow_media/secure_edge_hardware_config.png
