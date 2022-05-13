@@ -454,28 +454,28 @@ If the connectivity to the CSP is over a public network:
    :scale: 50%
 
 .. |secure_edge_mgmt_egress_ip_a| image:: CloudN_workflow_media/secure_edge_mgmt_egress_ip_a.png
-   :scale: 50%
+   :scale: 70%
 
 .. |secure_edge_update_egress_ip_a| image:: CloudN_workflow_media/secure_edge_update_egress_ip_a.png
-   :scale: 50%
+   :scale: 70%
 
 .. |secure_edge_run_diag_a| image:: CloudN_workflow_media/secure_edge_run_diag_a.png
-   :scale: 40%
+   :scale: 60%
 
 .. |secure_edge_reset_config_a| image:: CloudN_workflow_media/secure_edge_reset_config_a.png
-   :scale: 40%
+   :scale: 60%
 
 .. |secure_edge_deregister_a| image:: CloudN_workflow_media/secure_edge_deregister_a.png
-   :scale: 50%
+   :scale: 60%
 
 .. |secure_edge_attach_iso| image:: CloudN_workflow_media/secure_edge_attach_iso.png
    :scale: 40%
 
 .. |secure_edge_registered_devices_a| image:: CloudN_workflow_media/secure_edge_registered_devices_a.png
-   :scale: 50%
+   :scale: 60%
 
 .. |secure_edge_attach_device_a| image:: CloudN_workflow_media/secure_edge_attach_device_a.png
-   :scale: 50%
+   :scale: 70%
 
 .. |secure_edge_hardware_config| image:: CloudN_workflow_media/secure_edge_hardware_config.png
    :scale: 40%
