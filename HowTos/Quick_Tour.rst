@@ -25,17 +25,6 @@ using our user VPN capability. To configure a Cloud VPN:
 6. For a multi-VPC/VNet user VPN solution, open this `reference
    design <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`__
 
-Encrypted Peering
-----------------------------
-
-1. At the Gateway menu, create a gateway in an
-   existing VPC/VNet.
-2. Repeat step 1 for a different VPC/VNet.
-3. At Peering > Encrypted Peering, click **New Peering** to peer the two
-   gateways.
-4. For a complete end-to-end solution, see this `reference
-   design <http://docs.aviatrix.com/HowTos/Cloud_Networking_Ref_Des.html>`__.
-
 Geo VPN
 --------------------
 
