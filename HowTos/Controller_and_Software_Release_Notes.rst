@@ -55,7 +55,6 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Known Issues in Release 6.6.5612** 
 
-- **AVX-20656** – If you have AWS CloudWatch enabled in your deployment, disable it before upgrading from 6.5 to any 6.6 release. 
 - **AVX-22630** – If you are running an older Controller image, you may experience an error (*pymongo.errors.OperationFailure: exception: invalid operator '$filter'*) while trying to view the transit tunnel status. A workaround for this issue is to migrate to the latest Controller image. 
 - **AVX-22976** – When you roll back a non-AWS primary and HA gateway together in any of the following patterns, one of the rollbacks fails:  
 
