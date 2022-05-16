@@ -6,13 +6,13 @@
 Aviatrix China Overview
 =============================================
 
-What Features Are Supported in Which China Region Cloud?
-========================================================
+Features Supported in AWS China, Azure China, and Alibaba China Regions
+===============================================================
 
 +------------------------------------------------------------------------+---------------+-----------------+---------------------------+
 | **Feature**                                                            | **AWS China** | **Azure China** | **Alibaba China Regions** |
 +------------------------------------------------------------------------+---------------+-----------------+---------------------------+
-| Controller Marketplace Launch                                          | Yes           | No              | No                        |
+| Controller Marketplace Launch                                          | Yes           | Yes             | No                        |
 +------------------------------------------------------------------------+---------------+-----------------+---------------------------+
 | CoPilot Marketplace Launch                                             | Yes           | No              | No                        |
 +------------------------------------------------------------------------+---------------+-----------------+---------------------------+
@@ -77,82 +77,85 @@ What Features Are Supported in Which China Region Cloud?
 | Logging Service Integration (Splunk, Firebeat, Sumologic, and Datadog) | No            | No              | No                        |
 +------------------------------------------------------------------------+---------------+-----------------+---------------------------+
 
-What is Aviatrix China Design Assumption?
+Aviatrix China Design Assumptions
 ============================================
 
-- Aviatrix Controller in Global cannot deploy China gateway
+- The Aviatrix Controller in Global cannot deploy a China gateway.
+- The Aviatrix Controller in China cannot deploy a Global gateway.
 
-- Aviatrix Controller in China cannot deploy Global gateway
-
-
-What is China Multi-Cloud Network Coverage?
+China Multi-Cloud Network Coverage
 ============================================
 
 You must overcome performance limitations and satisfy government requirements to create a global multi-cloud network that includes the China region. 
 Slow connection speeds and high-latency associated with the China region can be overcome by using a dedicated line to create an Aviatrix transit connection 
-and deploying services close to the China region. To satisfy legal regulations in China you must have an Internet Content Provider (ICP) license.
+and deploying services close to the China region. To satisfy legal regulations in China, you must have an Internet Content Provider (ICP) license.
 
-For more information, see What is a China ICP License.
+For more information, see the "Acquiring a China ICP License" section below.
 
-What is a China ICP License?
+Acquiring a China ICP License
 ============================
 
 Regulations in China require you to acquire an Internet Content Provider (ICP) license from the government and register the license with your CSP 
-to provide internet services in China. In China, an ICP license is required to establish SSL connections between different regions, ISPs, CSPs, or to 
+to provide Internet services in China. In China, an ICP license is required to establish SSL connections between different regions, ISPs, CSPs, or to 
 cross national borders. Aviatrix supports transit gateways using AWS China, Azure China, and Alibaba multi-cloud networks in the China region.
-Obtaining and implementing an ICP is a process and you should follow the directions of your compliance experts. 
+Obtaining and implementing an ICP is a process, and you should follow the directions of your compliance experts. 
 
-There are some general guidelines Aviatrix recommends following to implement a multi-cloud network in the China region.
+Here are some general guidelines Aviatrix recommends to implement a multi-cloud network in the China region:
  
  - Create or use a Legal Entity in China to apply for the ICP license.
- 
  - Apply for a Legal Domain name in the China Registration.
- 
  - Acquire the ICP certificate from the China Ministry of Industry and Information Technology (MIIT).
- 
  - Register the ICP certificate with your to CSP in the China region.
- 
  - Use dedicated lines from certified telecom carries for connections between China and the rest of the world.
- 
- - Deploy the Aviatrix Controller, CoPilot, and Multi-Cloud Network in China.
+ - Deploy the Aviatrix Controller, CoPilot (for AWS China only), and Multi-Cloud Network in China.
 
-What issue will hit if the company doesn't follow China Regulation?
-===================================================================
+.. Warning:: If your company doesn't follow China's regulations, both the Aviatrix Controller and Gateway in the China region cannot communicate to each other properly.
+..
 
-Both Aviatrix Controller and Gateway in the China region cannot communicate to each other properly.
+Launching a Controller in AWS China
+================================
 
-How to find Aviatrix Controller and CoPilot on China Marketplace?
-===================================================================
+The Aviatrix Controller and CoPilot are available on the AWS China Marketplace. Use the following steps to launch a Controller in AWS China.
 
-- Login AWS China Portal
-
-- Navigate to AWS marketplace for Ningxia and Beijing Region
-
-- Search for the keyword "Aviatrix"
+1. Log into the AWS China Portal.
+2. Navigate to the AWS marketplace for the Ningxia and Beijing Region.
+3. Search for the keyword "Aviatrix."
 
   |aviatrix_aws_china_marketplace|
   
-.. Note:: Both Aviatrix Controller and CoPilot are published on AWS China Marketplace only.
+.. Note:: The Aviatrix Controller is available on both the AWS China and Azure China Marketplaces. Aviatrix CoPilot is published on AWS China Marketplace only.
 ..
 
-Where is the URL for Aviatrix Controller and CoPilot on China Marketplace?
-===========================================================================
-
+Use the following URLs to find the Controller and CoPilot on the AWS China Marketplace: 
 - `Aviatrix Secure Networking Platform - BYOL <https://awsmarketplace.amazonaws.cn/marketplace/pp/prodview-tr55yz2zpuzlo>`_
-
 - `Aviatrix CoPilot - BYOL <https://awsmarketplace.amazonaws.cn/marketplace/pp/prodview-m73cvirso7uu6>`_
 
-Where is the URL to launch Aviatrix Controller from AWS CloudFormation in AWS China?
-=====================================================================================
-
+Use the following URL to launch the Aviatrix Controller from the AWS CloudFormation in AWS China: 
 - `aws-china-cloudformation-aviatrix-controller-and-IAM-setup-BYOL.template <https://cn-northwest-1.console.amazonaws.cn/cloudformation/home?region=cn-northwest-1#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-public-download.s3.cn-north-1.amazonaws.com.cn/aws-china/cloudformation-templates/aviatrix-controller-and-IAM-setup-CFT/aviatrix-controller-and-IAM-setup-cft-BYOL.template>`_
 
-What is the design recommendation for China region?
+Launching a Controller in Azure China
+=================================
+
+The Aviatrix Controller and CoPilot are available on the Azure China Marketplace. Use the following steps to launch a Controller in Azure China.
+
+1. Log in to the Azure China Portal.
+2. Navigate to the Azure marketplace for the Ningxia and Beijing Region.
+3. Search for the keyword "Aviatrix."
+
+  |aviatrix_azure_china_marketplace|
+  
+.. Note:: The Aviatrix Controller is available on both the AWS China and Azure China Marketplaces. However, Aviatrix CoPilot is published on AWS China Marketplace **only**.
+..
+
+Use the following URL to find the Controller on the Azure China Marketplace. Note that you can only launch CoPilot from AWS China.
+`Aviatrix Secure Networking Platform - BYOL <https://market.azure.cn/>`_
+
+Design Recommendation for the China Region
 ====================================================
 
   |aviatrix_design_recommendation_china|
 
-What is the design recommendation to build connectivity between China and Global regions?
+Design Recommendation to Build Connectivity between the China and Global Regions
 =========================================================================================
 
   |aviatrix_design_recommendation_china_global|
@@ -164,6 +167,9 @@ What is the design recommendation to build connectivity between China and Global
    :scale: 50%
    
 .. |aviatrix_aws_china_marketplace| image:: aviatrix_china_overview_media/aviatrix_aws_china_marketplace.png
+   :scale: 50%
+
+.. |aviatrix_azure_china_marketplace| image:: aviatrix_china_overview_media/aviatrix_azure_china_marketplace.png
    :scale: 50%
    
 .. disqus::
