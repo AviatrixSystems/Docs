@@ -169,7 +169,7 @@ Design Recommendation to Build Connectivity between the China and Global Regions
 .. |aviatrix_aws_china_marketplace| image:: aviatrix_china_overview_media/aviatrix_aws_china_marketplace.png
    :scale: 50%
 
-.. |aviatrix_azure_china_marketplace| image:: aviatrix_china_overview_media/aviatrix_aws_china_marketplace.png
+.. |aviatrix_azure_china_marketplace| image:: aviatrix_china_overview_media/aviatrix_azure_china_marketplace.png
    :scale: 50%
    
 .. disqus::
