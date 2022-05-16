@@ -79,13 +79,6 @@ For the already deployed Managed CloudN, as long as your Controller was upgraded
 
 * **AVX-22903** – After a new controller is launched for the first time, there are no routes from the transit gateway to the spoke gateway. 
 
-6.7.1186 (05/11/2022) 
-=======================
-
-**Issues Corrected in Aviatrix Release 6.7.1186** 
-
-* **AVX-22903** – After a new controller is launched for the first time, there are no routes from the transit gateway to the spoke gateway. 
-
 6.7.1185 (05/09/2022) 
 =======================
 
