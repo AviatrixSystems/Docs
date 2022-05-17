@@ -72,9 +72,7 @@ If you experience a configuration failure, roll back the config_fail gateway aga
 
 You should plan to migrate your Standalone CloudN deployment to Managed CloudN. To migrate to Managed CloudN, see `this document <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#migrating-a-standalone-cloudn-to-a-managed-cloudn>`_.
 
-..Note::
-
-  From Release 6.6.5404 onwards, registering CloudN with the Controller does not require the CloudN and the Controller to be the same version. You can register CloundN version 6.6 with Controller version 6.7.
+**Note**: From Release 6.6.5404 onwards, registering CloudN with the Controller does not require the CloudN and the Controller to be the same version. You can register CloundN version 6.6 with Controller version 6.7.
 
 6.7.1186 (05/11/2022) 
 =======================
