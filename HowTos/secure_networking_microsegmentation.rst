@@ -124,12 +124,16 @@ As a best zero trust security practice, you should add a deny policy that blocks
 
 
 Configuring the Polling Interval
----------------------------------
+================================
 The Aviatrix Controller periodically polls your CSPs to gather and inventory its resources. For example, if you modified your CSP tags, you may want to poll data more frequently so that CoPilot reflects those changes.
 
 In CoPilot navigate to Settings > Advanced Settings > Micro-Segmentation Settings and enter the desired polling interval in minutes (default is 60). This can be a value between 1-180.
 
 You can manually trigger a poll to fetch resources directly from your CSPs by clicking the Refetch CSP Resources button on the Micro-Segmentation tab. The poll may take several minutes to complete depending on the size of your environment. 
+
+Logging
+=======
+Micro-segmentation supports per-packet logging when logging is enabled. These logs contain information about the source and destination IP of a policy, if a policy was enforced, and more. For more information click `here <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#micro-segmentation-logging>_.
 
 
 Limitations
