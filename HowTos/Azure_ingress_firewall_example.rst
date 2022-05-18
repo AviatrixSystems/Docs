@@ -216,9 +216,7 @@ Run a http request targeting on the Azure Application Gateway Public IP or DNS n
 	
 	|azure_application_server_tcpdump|
 	
-- Furthermore, Azure Application Gateway automatically preserves client original IP address in the HTTP header field "X-Forwarded-For (XFF)". Here is an HTTP packet example which is opened with Wireshark tool for your reference:
-
-	|azure_application_server_wireshark|
+- The Azure Application Gateway automatically preserves client original IP address in the HTTP header field "X-Forwarded-For (XFF)".
 
 .. note::
 
