@@ -59,7 +59,7 @@ The Aviatrix Controller requires access to the following ports for Edge Gateway 
 Virtual Machine CPU and Memory Configurations
 ---------------------------------------------
 
-The following table provides CPU and memory configuration guidelines of the virtual machine instance for the Aviatrix Edge Gateway deployment. 
+The following table provides CPU and memory configurations of the virtual machine instance supported for the Aviatrix Edge Gateway deployment.
 
 +-----------------+------------------+----------------------+
 | Deployment Type | Hardware Profile | Storage Requirements |
@@ -72,6 +72,8 @@ The following table provides CPU and memory configuration guidelines of the virt
 +-----------------+------------------+----------------------+
 | X-Large         | 16CPU - 32GB     | 64 GB                |
 +-----------------+------------------+----------------------+
+
+We recommend that you not change the Edge VM resource allocation after deploying it. Aviatrix support may not be able to assist with any issue that occurs on a system with customized resource allocation.
 
 Oversubscription of host resources can lead to a reduction of performance and your instance could become unstable. We recommend that you follow the guidelines and the best practices for your host hypervisor.
 
