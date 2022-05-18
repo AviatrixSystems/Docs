@@ -55,7 +55,6 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Known Issues in Release 6.6.5612** 
 
-- **AVX-20656** – If you have AWS CloudWatch enabled in your deployment, disable it before upgrading from 6.5 to any 6.6 release. 
 - **AVX-22630** – If you are running an older Controller image, you may experience an error (*pymongo.errors.OperationFailure: exception: invalid operator '$filter'*) while trying to view the transit tunnel status. A workaround for this issue is to migrate to the latest Controller image. 
 - **AVX-22976** – When you roll back a non-AWS primary and HA gateway together in any of the following patterns, one of the rollbacks fails:  
 
@@ -69,16 +68,11 @@ If you experience a configuration failure, roll back the config_fail gateway aga
 
 **Feature Upgrade Notice**
 
-- **AVX-22884** – The Standalone CloudN workflow is not supported for releases later than 6.5. Plan to migrate your Standalone CloudN deployment to Managed CloudN before upgrading your Controller to 6.6. 
+- **AVX-22884** – The Standalone CloudN workflow is not supported for releases later than 6.5. A Standalone CloudN upgrade from Release 6.5 to 6.6 or from Release 6.6 to 6.7 is not supported.
 
-For the already deployed Managed CloudN, as long as your Controller was upgraded, Managed CloudN will be upgraded to the same version. 
+You should plan to migrate your Standalone CloudN deployment to Managed CloudN. To migrate to Managed CloudN, see `this document <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#migrating-a-standalone-cloudn-to-a-managed-cloudn>`_.
 
-6.7.1186 (05/11/2022) 
-=======================
-
-**Issues Corrected in Aviatrix Release 6.7.1186** 
-
-* **AVX-22903** – After a new controller is launched for the first time, there are no routes from the transit gateway to the spoke gateway. 
+**Note**: From Release 6.6.5404 onwards, registering CloudN with the Controller does not require the CloudN and the Controller to be the same version. You can register CloundN version 6.6 with Controller version 6.7.
 
 6.7.1186 (05/11/2022) 
 =======================
