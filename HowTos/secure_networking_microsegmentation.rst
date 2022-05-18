@@ -133,7 +133,7 @@ You can manually trigger a poll to fetch resources directly from your CSPs by cl
 
 Logging
 =======
-Micro-segmentation supports per-packet logging when logging is enabled on a policy. For more information on the information in these logs, click `here <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#micro-segmentation-logging>_.
+Micro-segmentation supports per-packet logging when logging is enabled on a policy. For more information on what is contained in these logs, click `here <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#micro-segmentation-logging>_.
 
 
 Limitations
