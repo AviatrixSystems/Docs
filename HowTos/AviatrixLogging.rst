@@ -645,10 +645,11 @@ Micro-segmentation Logging
 ===========================
 Micro-segmentation log files include the following information:
 
-- date
+- timestamp
 - source IP
 - destination IP
 - protocol (for example, ICMP or TCP)
+- port number
 - if a policy is enforced
 - if a policy was allowed or denied
 - gateway name
