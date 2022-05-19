@@ -73,11 +73,6 @@ When complete, you'll be ready to deploy use cases.
 
   |3-step|
 
-.. Note::
-
-    You can also `watch a video <https://youtu.be/ltL_dWjjV0w>`_ for this startup guide. 
-
-
 .. important::
 
  The Aviatrix Controller must be launched by a Cloudformation script provided by Aviatrix. Follow the instructions in this document to launch the Controller. Do not launch the Controller instance from the AWS Console. 
@@ -127,7 +122,6 @@ to run the Cloudformation script.
 CloudFormation for Aviatrix Secure Networking Platform Metered with Copilot
 
 * `Aviatrix Secure Networking Platform - BYOL <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/avx-awsmp-BYOL.template>`_
-* `Aviatrix Secure Networking Platform - Enterprise Subscription <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=avx-awsmp-5tunnel.template>`_
 * `Aviatrix Secure Networking Platform Metered - Copilot & 24x7 Support <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-cloudformation-aviatrix-metered-controller-copilot-24x7-support.template>`_
 
 2. If you have not logged in, you will be prompted to log in to the AWS console. 
