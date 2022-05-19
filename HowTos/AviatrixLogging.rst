@@ -643,7 +643,7 @@ Please follow this link `Netflow Integration <https://docs.aviatrix.com/HowTos/n
 
 Micro-segmentation Logging
 ===========================
-Micro-segmentation log files include the following information:
+Raw micro-segmentation log files include the following information:
 
 - timestamp
 - source IP
@@ -654,7 +654,6 @@ Micro-segmentation log files include the following information:
 - if a policy was allowed or denied
 - gateway name
 - policy ID
-- payload data: this data can be parsed to show what traffic was blocked (especially if a protocol is not recognized), or if there are fields from the packet that micro-segmentation does not display
 
 Click `here <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ for more information on micro-segmentation.
 
