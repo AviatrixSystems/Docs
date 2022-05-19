@@ -36,6 +36,14 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
 
+CoPilot Release 1.11.0, 1.11.1, 1.11.2 (5/20/2022)
+---------------------------------------------------
+
+-   (ThreatIQ) **GeoBlocking** — You can now select a country to block IP traffic coming into and coming from the country. You enable GeoBlocking in CoPilot under ThreatIQ > GeoBlocking. From the list of countries, select the country to block or unblock and click **Save**. For more information about GeoBlocking, see `Enable GeoBlocking <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#enable-geoblocking>`_ in *Aviatrix CoPilot User Reference Guide*.  
+
+-   Minor bug fixes.
+
+
 CoPilot Release 1.10.0, 1.10.1 (5/09/2022)
 ---------------------------------------------
 

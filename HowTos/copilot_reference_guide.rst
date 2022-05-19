@@ -1130,6 +1130,30 @@ Descriptions of the properties in the CoPilot ThreatIQ ThreatGuard view listed i
 
     The View Rules dialog shows the ThreatGuard firewall rules that are applied on Aviatrix gateways.
 
+
+Enable GeoBlocking
+--------------------
+
+Enable GeoBlocking to block IP traffic coming into and coming from a country. When GeoBlocking is enabled for a country, a tag-based security policy is implemented on each gateway to deny traffic for IP addresses associated with the country. When you unblock a country, the IP addresses are removed from the tag. All gateways in your VPC/VNets will block.
+
+To enable GeoBlocking, you must log in to CoPilot with a user account that belongs to a group that has either ``all_write`` or ``all_security_write`` permissions.
+
+To enable GeoBlocking:
+
+1. Log in to CoPilot.
+
+2. From the sidebar, click ThreatIQ, and then click the GeoBlocking tab.
+
+   A list of the countries you can block and unblock displays. The IPs Observed column shows you the number of IP addresses CoPilot observed from each country when scanning Netflow records over the last seven days. If you click on a country name, you can set a custom time period for viewing the IPs CoPilot observed from that country over time.
+
+3. In the Status column, toggle the switch to **Blocked** for each country for which you want to block IP traffic. 
+
+4. Click **Save**. 
+
+   IP traffic coming into and coming from that country will be blocked on each Aviatrix gateway.
+
+   **NOTE:** Each time you toggle the switch for a country to block or unblock, you must click **Save** for your changes to take effect. 
+
  
 Working with Reports
 =====================
