@@ -40,13 +40,13 @@ Instance System Requirements
 ------------------------------
 The configuration of the instance/virtual machine that you provision for your CoPilot deployment depends on the scale and the kind of networking infrastructure you have planned according to your business requirements. Work with your performance team to determine your sizing requirements.
 
-- For the instance/VM size, CoPilot requires:
+- For the instance/VM size, CoPilot requires a minimum of:
 
-  - 4 GB of RAM (or more)
+  - 16 GB of RAM (or more)
 
   - 1 attached disk/volume for storage (see `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#id4>`_)
 
-  - 2 vCPUs (or more)
+  - 4 vCPUs (or more)
 
 CoPilot supports automatic memory sizing for the ETL and datastore based on the physical memory of the instance at boot. Base images default to the automatic settings. This auto-scaling memory support became available with the release of Aviatrix CoPilot image version 1.5.1.
 
