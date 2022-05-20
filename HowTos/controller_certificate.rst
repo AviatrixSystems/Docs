@@ -91,8 +91,6 @@ When the deployment completes, go to your Gateway list and display the column na
 
 
 
-
-
 .. |gen_csr| image::  controller_certificate_media/gen_csr.png
     :scale: 30%
 
