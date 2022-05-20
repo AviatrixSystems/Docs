@@ -1153,6 +1153,8 @@ Enable GeoBlocking to block IP traffic coming into and coming from a country.
 
 When GeoBlocking is enabled for a country, a tag-based security policy is implemented on each gateway to deny traffic for IP addresses associated with the country. All gateways in your VPC/VNets will block. When you unblock a country, the tag is removed from all gateways and the stateful firewall rules instantiated on them for that country are removed. 
 
+**Attention**: A CSP-region IP may be blocked if that region is in the blocked country. For example, if the public IP for your service is registered in a specific country by the CSP and you block that country.
+
 By clicking on the country name, you can view recent IP traffic going to or coming from that selected country in the time range you specify.
 
 To enable GeoBlocking, you must log in to CoPilot with a user account that belongs to a group that has either ``all_write`` or ``all_security_write`` permissions.
