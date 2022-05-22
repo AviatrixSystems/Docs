@@ -10,8 +10,7 @@ Using Subnet Inspection in Azure to Redirect Subnet-Level Traffic to Aviatrix Tr
 Aviatrix’s subnet inspection feature allows you to redirect subnet-level traffic to the Aviatrix Transit FireNet Gateway for inspection by a next-generation firewall (NGFW) appliance such as Checkpoint, Palo Alto Firewall, or Fortinet. Previously, traffic inspection policy could only be applied at the VNet level, which meant that traffic from all subnets in a VNet would be inspected by the NGFW. With this feature, you can assign subnets to a subnet group and specify an inspection policy for the subnet group. Traffic between subnets in different subnet groups with an inspection policy is redirected to the NGFW for inspection.
 
 .. note::
-   * Currently, the subnet inspection feature is only available in Azure.
-   * The subnet inspection feature is in Public Preview. For more information about Public Preview, refer to `Aviatrix Controller and Gateway Release Notes <http://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html#preview-features>`_.
+   Currently, the subnet inspection feature is only available in Azure.
 
 Supported Features
 ==================

@@ -15,7 +15,7 @@ Why is Transit VPC/VNet performance capped at 1.25Gbps?
 In the current Transit VPC/VNet solution, the throughput is capped at 1.25Gbps regardless if you have a 10Gbps connection between an on-prem network and the cloud (Direct Connect (DX)/ExpressRoute/FastConnect/InterConnect) link. The reason is that in the Transit VPC/VNet deployment there is
 an IPsec session between VGW/VPN Gateway and Transit Gateway and VGW/VPN Gateway has a performance limitation.
 
-`AWS VGW <https://aws.amazon.com/vpc/faqs/>`_ and other Cloud Service Providers' IPsec VPN solutions have a published performance cap of 1.25Gbps <https://aws.amazon.com/vpc/faqs/>`_.
+`AWS VGW <https://aws.amazon.com/vpc/faqs/>`_ and other Cloud Service Providers' IPsec VPN solutions have a `published performance cap <https://aws.amazon.com/vpc/faqs/>`_ of 1.25Gbps.
 Why is that?
 
 Most virtual routers or software-based routers are built with general purpose CPUs. Despite the vast CPU technology advancement, why doesn't IPsec performance scale further?
@@ -93,6 +93,8 @@ What is Aviatrix Insane Mode High-Performance Encryption over the internet?
 Aviatrix Insane Mode over the internet builds high-performance encryption (HPE) tunnels over public IP addresses between two intercloud transit peering gateways. For instance, when a transit gateway peering is established between AWS and Azure, the Aviatrix Controller allocates EIP addresses then builds the HPE tunnels over the public IP addresses between the two transit gateways, establishing one-to-one connections.
 
 Insane Mode over the internet for GCP transit gateway peering configuration differs from AWS, Azure, and OCI. Because GCP Ethernet interface supports only one public IP address, HPE tunnels are built to the same public IP address on the GCP transit gateway, establishing one-to-many connections.
+
+To establish peered transit gateways over the internet, refer to `Multi-cloud Transit Gateway Peering over Public Network Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_peering_over_public_network_workflow.html>`_. 
 
 
 What are the performance benchmarks for Insane Mode over the internet? 

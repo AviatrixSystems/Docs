@@ -19,6 +19,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`CloudN`
 * :ref:`Peering`
 * :ref:`Site2Cloud`
+* :ref:`Monitoring`
 * :ref:`Copilot`
 * :ref:`OpenVPN® <OpenVPN>`
 * :ref:`Security`
@@ -178,7 +179,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/secure_edge_faq
    HowTos/secure_edge_workflow   
    HowTos/cloudn_faq
-   HowTos/cloudn_workflow_
+   HowTos/CloudN_workflow
 
 
 .. _Security:
@@ -243,6 +244,14 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/connect_overlap_cidrs
    HowTos/connect_overlap_vpc_via_VGW
    HowTos/periodic_ping
+
+.. _Monitoring:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Monitoring
+
+   HowTos/Monitoring_Your_Network
    
 .. _CoPilot:
 

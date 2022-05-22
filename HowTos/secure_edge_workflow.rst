@@ -59,7 +59,7 @@ The Aviatrix Controller requires access to the following ports for Edge Gateway 
 Virtual Machine CPU and Memory Configurations
 ---------------------------------------------
 
-The following table provides CPU and memory configuration guidelines of the virtual machine instance for the Aviatrix Edge Gateway deployment. 
+The following table provides CPU and memory configurations of the virtual machine instance supported for the Aviatrix Edge Gateway deployment.
 
 +-----------------+------------------+----------------------+
 | Deployment Type | Hardware Profile | Storage Requirements |
@@ -72,6 +72,8 @@ The following table provides CPU and memory configuration guidelines of the virt
 +-----------------+------------------+----------------------+
 | X-Large         | 16CPU - 32GB     | 64 GB                |
 +-----------------+------------------+----------------------+
+
+We recommend that you not change the Edge VM resource allocation after deploying it. Aviatrix support may not be able to assist with any issue that occurs on a system with customized resource allocation.
 
 Oversubscription of host resources can lead to a reduction of performance and your instance could become unstable. We recommend that you follow the guidelines and the best practices for your host hypervisor.
 
@@ -168,7 +170,7 @@ To set up an Edge Gateway in Aviatrix Controller, follow these steps.
 
       The image below shows the Launch an Edge Gateway configuration when you do not select **Over Private Network**.
 
-      |secure_edge_launch_gateway|
+      |secure_edge_launch_gateway_a|
 
 4. Click **Create**. Aviatrix Controller prompts you to download the ISO file.
 
@@ -208,7 +210,7 @@ After you deploy an Edge Gateway, you must attach it to a Transit Gateway.
 
 2. In Registered Devices, locate the Edge VM you created. Confirm that the Edge VM was successfully registered. If the registration was successful, the status in the **State** column will show registered.
 
-   |secure_edge_registered_devices|
+   |secure_edge_registered_devices_a|
 
    If the VM was not successfully registered, follow these troubleshooting steps.
 
@@ -243,7 +245,7 @@ After you deploy an Edge Gateway, you must attach it to a Transit Gateway.
 
    h. For **Over Private Network**, leave the box unchecked if you are building the tunnel over the public internet.
       
-      |secure_edge_attach_device|
+      |secure_edge_attach_device_a|
 
 5. Click **Attach**.
 
@@ -254,15 +256,15 @@ Editing or Viewing an Edge Gateway Configuration
 
 1. To edit the Management Egress IP, select the Edge Gateway and click **EDIT**.
 
-   |secure_edge_mgmt_egress_ip|
+   |secure_edge_mgmt_egress_ip_a|
 
 2. Update the Egress Management IP and click **SAVE**.
 
-   |secure_edge_update_egress_ip|
+   |secure_edge_update_egress_ip_a|
 
 3. To run and show diagnostics, upload Tracelog, download Syslog, and reset configuration, select the Edge Gateway and click **DIAG**.
 
-   |secure_edge_run_diag|
+   |secure_edge_run_diag_a|
 
 Deregistering and Reregistering an Edge Gateway
 -----------------------------------------------
@@ -280,7 +282,7 @@ To deregister an Edge Gateway:
 
 2. Select the Edge Gateway, and click **DEREGISTER**.
    
-   |secure_edge_deregister|
+   |secure_edge_deregister_a|
 
 Resetting Edge Gateway Configuration from Aviatrix Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -291,7 +293,7 @@ To reset an Edge Gateway's configuration:
 
 2. Select the Edge Gateway. Click **DIAG**. In the drop-down list of options, select **Reset Configuration**.
 
-   |secure_edge_reset_config|
+   |secure_edge_reset_config_a|
 
 If you reset an Edge Gateway when it is in the **check** state, you also need to reset its configuration on the Edge virtual machine. To do this, log in to the Edge Gateway’s Clish command line interface and execute the **reset_config** command. This resets the Edge virtual machine to its factory settings. The Edge virtual machine can now be treated as a new Edge virtual machine.
 
@@ -442,40 +444,40 @@ If the connectivity to the CSP is over a public network:
 - The Edge Gateway WAN interface runs a BGP session to the Transit Gateway in the Transit VPC/VNET where the Transit Gateway advertises all Spoke VPC/VNET CIDRs to the Edge Gateway, and the Edge Gateway advertises the on-prem network to the Transit Gateway.
 
 .. |secure_edge_ova_load_file| image:: CloudN_workflow_media/secure_edge_ova_load_file.png
-   :scale: 40%
+   :scale: 80%
 
 .. |secure_edge_ova_deploy_options| image:: CloudN_workflow_media/secure_edge_ova_deploy_options.png
-   :scale: 40%
+   :scale: 80%
 
-.. |secure_edge_launch_gateway| image:: CloudN_workflow_media/secure_edge_launch_gateway.png
-   :scale: 40%
+.. |secure_edge_launch_gateway_a| image:: CloudN_workflow_media/secure_edge_launch_gateway_a.png
+   :scale: 80%
 
 .. |secure_edge_edit_settings| image:: CloudN_workflow_media/secure_edge_edit_settings.png
-   :scale: 40%
+   :scale: 50%
 
-.. |secure_edge_mgmt_egress_ip| image:: CloudN_workflow_media/secure_edge_mgmt_egress_ip.png
-   :scale: 40%
+.. |secure_edge_mgmt_egress_ip_a| image:: CloudN_workflow_media/secure_edge_mgmt_egress_ip_a.png
+   :scale: 70%
 
-.. |secure_edge_update_egress_ip| image:: CloudN_workflow_media/secure_edge_update_egress_ip.png
-   :scale: 40%
+.. |secure_edge_update_egress_ip_a| image:: CloudN_workflow_media/secure_edge_update_egress_ip_a.png
+   :scale: 70%
 
-.. |secure_edge_run_diag| image:: CloudN_workflow_media/secure_edge_run_diag.png
-   :scale: 40%
+.. |secure_edge_run_diag_a| image:: CloudN_workflow_media/secure_edge_run_diag_a.png
+   :scale: 60%
 
-.. |secure_edge_reset_config| image:: CloudN_workflow_media/secure_edge_reset_config.png
-   :scale: 40%
+.. |secure_edge_reset_config_a| image:: CloudN_workflow_media/secure_edge_reset_config_a.png
+   :scale: 60%
 
-.. |secure_edge_deregister| image:: CloudN_workflow_media/secure_edge_deregister.png
-   :scale: 40%
+.. |secure_edge_deregister_a| image:: CloudN_workflow_media/secure_edge_deregister_a.png
+   :scale: 60%
 
 .. |secure_edge_attach_iso| image:: CloudN_workflow_media/secure_edge_attach_iso.png
    :scale: 40%
 
-.. |secure_edge_registered_devices| image:: CloudN_workflow_media/secure_edge_registered_devices.png
-   :scale: 40%
+.. |secure_edge_registered_devices_a| image:: CloudN_workflow_media/secure_edge_registered_devices_a.png
+   :scale: 60%
 
-.. |secure_edge_attach_device| image:: CloudN_workflow_media/secure_edge_attach_device.png
-   :scale: 40%
+.. |secure_edge_attach_device_a| image:: CloudN_workflow_media/secure_edge_attach_device_a.png
+   :scale: 70%
 
 .. |secure_edge_hardware_config| image:: CloudN_workflow_media/secure_edge_hardware_config.png
    :scale: 40%

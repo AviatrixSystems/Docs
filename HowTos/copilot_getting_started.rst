@@ -16,6 +16,10 @@ It can be launched as an EC2 instance in AWS, a virtual machine in Azure, or a V
 After successfully launching the instance, follow these steps to configure CoPilot instance parameters and launch. 
 Please note that you will need an Aviatrix Controller to use CoPilot. CoPilot works in tandem with Aviatrix Controller. Aviatrix Controller and CoPilot are not required to be collocated. It is possible to run them in separate VPCs/VNets or separate cloud providers (in multi-cloud environments).
 
+CoPilot Deployment Methods
+---------------------------
+
+You can deploy Aviatrix CoPilot directly from any supported cloud service provider (CSP) marketplace, by using Terraform scripts, or by using the Aviatrix Controller user interface (available for AWS from Controller release 6.7). Deploying from the CSP marketplace takes only a few clicks to provision and launch the instance. Since you must subscribe to a CoPilot offer at a marketplace as a first step for all deployment methods, this method is commonly used right after subscribing (see "Subscribe to a CoPilot Offer"). If you are knowledgeable in deploying infrastructure-as-code using Terraform, you might find it convenient in some circumstances to launch CoPilot using a Terraform script (see "CoPilot instance launch using Terraform"). Starting from Aviatrix Controller release 6.7, you can deploy CoPilot from the controller UI. This method can be used if you deployed your controller in AWS and will deploy CoPilot in AWS also in the same region/AZ as the controller (see "CoPilot instance launch from the Controller UI)".
 
 Instance Configuration Details
 ------------------------------
@@ -67,7 +71,7 @@ If you ever want to terminate your current instance of CoPilot and deploy a new 
 Subscribe to a CoPilot Offer
 ============================
 
-Subscribe to an Aviatrix CoPilot offer in a cloud provider marketplace.
+Subscribe to an Aviatrix CoPilot offer in a cloud provider marketplace and provision and launch your CoPilot instance.
 
 For licensing and trials, CoPilot is offered with a BYOL model. Before subscribing to CoPilot in a cloud marketplace, obtain a license key for CoPilot by contacting your Aviatrix Sales representative. Since CoPilot works in tandem with Aviatrix Controller to provide visibility into your cloud resources managed by the controller, it is assumed that you already have a controller.
 
@@ -460,6 +464,112 @@ If deploying Pre-1.5.1 image releases:
 - Click the button "Deploy".
 
 
+CoPilot instance launch using Controller UI (AWS Only)
+======================================================
+
+This feature is available starting from Aviatrix Controller release 6.7. If you deployed Aviatrix Controller in AWS and you want to deploy Aviatrix CoPilot in AWS in the same region/AZ as the controller, you can deploy CoPilot directly from the controller UI by following these instructions. 
+
+The instance will be launched in the same AWS region/availability zone as your controller. If you want to deploy CoPilot in a different AWS region/availability zone or in a different cloud, follow the instructions in "Subscribe to a CoPilot Offer" to perform the CoPilot instance launch from your cloud provider marketplace.
+
+Your controller instance must have the `aviatrix-role-ec2` IAM role attached for the deployment to succeed. 
+
+After you deploy a CoPilot instance from your controller, if you decide to terminate the instance, you must terminate it from the AWS environment.
+
+Obtain the following information before you begin. You will need it for the initial setup of CoPilot after instance launch:
+
+-   The login credentials of your Aviatrix Controller user account.
+-   The login credentials for the user account to be used as the CoPilot service account. See "About CoPilot User Accounts".
+-   The CoPilot customer ID obtained from your Aviatrix Sales representative.
+-   Verify that your AWS account has been created in your controller (you create your AWS account by navigating to Controller > Account > Access Accounts > +Add New).
+
+To deploy CoPilot from the controller UI (AWS Only):
+
+1.  If you haven't already done so, subscribe to a CoPilot offer:
+
+    a.  Log in to your account at the Amaazon Web Services (AWS) Marketplace. If your company has multiple AWS accounts, be sure to log in to the same AWS account that you registered (onboarded) in your controller.
+
+    b.  Locate the Aviatrix CoPilot software offer you want to subscribe to and click **Subscribe**.
+
+    c.  When prompted, review the subscription pricing information and accept the terms and conditions.
+
+        You only need to subscribe, review the subscription pricing information, and accept the terms and conditions in the marketplace before proceeding to the next step. You would not move on to the configuration steps in the marketplace.
+
+2.  In Aviatrix Controller, do one of the following to begin the deployment process:
+
+    -   From the onboarding page, click the Aviatrix CoPilot tile.
+    -   From the action bar, click the app icon and select **Deploy CoPilot**.
+3.  In the Deploy CoPilot dialog, do one of the following to provision your CoPilot instance:
+
+    -   To deploy CoPilot with the AWS recommended instance configuration, click **Deploy**
+
+        The recommended is:
+       
+        VM Size: t2large
+        Data Volume(GB): 100
+        
+        The configuration of the instance/virtual machine that you provision for your CoPilot deployment depends on the scale and the kind of networking infrastructure you have planned according to your business requirements. Work with your performance team to determine your sizing requirements. You can add more storage later. See "CoPilot Disk (Volume) Management" in *Aviatrix CoPilot Deployment Guide*.
+
+    -   To specify a custom instance configuration, tick the **Customize Configuration** check box, select the instance size you want, and then click **Deploy**.
+
+4.  Wait until the deployment progress indicator reads **Complete** and then click **Close**.
+
+    **TIP**: During the deployment process, the background task dialog and Deploy CoPilot status dialog show the details of your CoPilot instance including the instance size, VPC name, region, and associated AWS account number. You can copy the information from the task or status dialog to take note of it.
+
+5.  **Wait for approximately 15 minutes.** It takes about fifteen minutes for the CoPilot application to initialize and upgrade.
+
+6.  From the controller action bar, click the app icon and select **CoPilot**.
+
+7.  When prompted, enter the login and password of your Aviatrix Controller user account.
+
+8.  When prompted for a **CoPilot Service Account**, enter the login credentials of the user account you created previously on the controller to be the service account.
+
+9.  When prompted, enter your **CoPilot customer ID**.
+
+    This is the customer ID obtained from your Aviatrix Sales representative. Note that the CoPilot customer ID is separate from the Aviatrix Controller customer ID.
+
+10. When prompted to add a data disk, select the disk/volume to be used for CoPilot storage and click **START**.
+
+11. After the data disk setup completes, click **Finish**.
+
+    CoPilot opens to the Dashboard page.
+
+12. (Verify connectivity with your controller) You are now successfully logged into CoPilot. To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see your resource inventory across all clouds in your multi-cloud network that is managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VNets are represented on the geographic map.
+
+13. After deployment, the CoPilot virtual machine ports 31283 and 5000 will be open for any IP (0.0.0.0/0). It is strongly recommended to remove the 0.0.0.0 entry from the CoPilot security group for these ports and add entries for all of your gateway IP addresses as described in the next steps.
+
+14. (For FlowIQ feature) To use the FlowIQ feature in CoPilot, ensure that the controller is configured to forward NetFlow logs to CoPilot.
+
+    a.  Log in to Aviatrix Controller.
+
+    b.  Go to Settings -> Logging -> NetFlow Agent.
+
+    c.  Use the static IP address of CoPilot as the Netflow server IP and UDP port 31283 (default, port is configurable).
+
+    d.  Use version 9.
+
+    e.  Tick the Advanced check box. In Gateways, verify all of your Aviatrix gateways are in the Include List.
+
+    f.  Click **Enable**.
+
+        Note that if you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List here. In addition, in your native cloud console, you must open your CoPilot security group for UDP 31283 from each newly launched gateway.
+
+15. (For Security audit page feature) Remote syslog index 9 is used for the CoPilot > Security audit page. Ensure the controller is configured to specify CoPilot as the loghost server.
+
+    a.  Log in to Aviatrix Controller.
+
+    b.  Go to Settings -> Logging -> Remote Syslog.
+
+    c.  Choose Profile Index 9.
+
+    d.  In Enable Remote Syslog, enter the profile name you want to use, the static IP address of CoPilot as the server, and UDP port 5000 (default).
+
+    e.  Tick the Advanced check box. In Gateways, verify all of your Aviatrix gateways are in the Include List.
+
+    f.  Click **Enable**.
+
+        Note that if you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List here. In addition, in your native cloud console, you must open your CoPilot security group for UDP 5000 from each newly launched gateway.
+
+
 (Terraform) CoPilot instance launch using Terraform
 ==================================================== 
 
@@ -467,7 +577,7 @@ This section provides a summary of steps for launching an Aviatrix CoPilot insta
 
 You can deploy Aviatrix CoPilot from the marketplace of any cloud service provider (CSP) that Aviatrix supports. The provisioning of the instance and instance launch via the CSP marketplace only takes a few steps as described in the topic "Subscribing to a CoPilot Offer". 
 
-If you are knowledgeable in deploying infrastructure-as-code using Terraform, you may prefer or find it more convenient in some circumstances to launch the CoPilot VM/instance using a Terraform script rather than via the CSP marketplace.
+If you are knowledgeable in deploying infrastructure-as-code using Terraform, you may prefer or find it more convenient in some circumstances to launch the CoPilot VM/instance using a Terraform script rather than via the CSP marketplace. The instance launched using Terraform is the latest release version of CoPilot based on Aviatrix CoPilot image version 1.5.1.
 
 Below is a summary of steps for a CoPilot instance launch via Terraform:
 
@@ -535,11 +645,11 @@ Below is a summary of steps for a CoPilot instance launch via Terraform:
 
 6.  Ensure that you set the variable for the region in which to launch the instance in the provider block.
 
-7.  Specify at least 1 data disk (volume) that is already created in your CSP account for Terraform to attach to your CoPilot instance for data storage. 
+7.  Specify at least 1 data disk (volume) for Terraform to attach to your CoPilot instance for data storage. 
 
-    Choose a disk that does not have data as the data will be deleted when CoPilot creates a logical data volume. For information about CoPilot storage, see "CoPilot Disk (Volume) Management".
+    For information about CoPilot storage, see "CoPilot Disk (Volume) Management".
     
-    The following is sample code for building a single CoPilot instance (the variable default_data_volume_name is required to create the data volume) ::
+    The following is sample code for building a single CoPilot instance. The variable default_data_volume_name is required to create the data volume ::
       
       module "copilot_build_aws" {
         source = "github.com/AviatrixSystems/terraform-modules-copilot.git//copilot_build_aws"
@@ -584,6 +694,42 @@ Below is a summary of steps for a CoPilot instance launch via Terraform:
 11. Perform the initial setup of CoPilot.
 
     See `Initial Setup of CoPilot <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#initial-setup-of-copilot>`_.
+
+12. (Verify connectivity with your controller) You are now successfully logged into CoPilot. To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see your resource inventory across all clouds in your multi-cloud network that is managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VNets are represented on the geographic map.
+
+13. After deployment, the CoPilot virtual machine ports 31283 and 5000 will be open for any IP (0.0.0.0/0). It is strongly recommended to remove the 0.0.0.0 entry from the CoPilot security group for these ports and add entries for all of your gateway IP addresses as described in the next steps.
+
+14. (For FlowIQ feature) To use the FlowIQ feature in CoPilot, ensure that the controller is configured to forward NetFlow logs to CoPilot.
+
+    1.  Log in to Aviatrix Controller.
+
+    2.  Go to Settings -> Logging -> NetFlow Agent.
+
+    3.  Use the static IP address of CoPilot as the Netflow server IP and UDP port 31283 (default, port is configurable).
+
+    4.  Use version 9.
+
+    5.  Tick the Advanced check box. In Gateways, verify all of your Aviatrix gateways are in the Include List.
+
+    6.  Click Enable.
+
+        Note that if you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List here. In addition, in your native cloud console, you must open your CoPilot security group for UDP 31283 from each newly launched gateway.
+
+15. (For Security audit page feature) Remote syslog index 9 is used for the CoPilot > Security audit page. Ensure the controller is configured to specify CoPilot as the loghost server.
+
+    1.  Log in to Aviatrix Controller.
+
+    2.  Go to Settings -> Logging -> Remote Syslog.
+
+    3.  Choose Profile Index 9.
+
+    4.  In Enable Remote Syslog, enter the profile name you want to use, the static IP address of CoPilot as the server, and UDP port 5000 (default).
+
+    5.  Tick the Advanced check box. In Gateways, verify all of your Aviatrix gateways are in the Include List.
+
+    6.  Click Enable.
+
+        Note that if you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List here. In addition, in your native cloud console, you must open your CoPilot security group for UDP 5000 from each newly launched gateway.
 
 
 

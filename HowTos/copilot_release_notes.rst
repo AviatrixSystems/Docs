@@ -12,6 +12,44 @@ This section describes new features and enhancements for Aviatrix CoPilot softwa
 For information about Aviatrix CoPilot image releases, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
 
 
+Public Preview Features 
+-------------------------
+
+Aviatrix releases features in public preview mode to offer you the opportunity to experiment with concepts and features that may develop into official product offerings. Your valuable feedback helps shape and improve the experience for everyone.
+
+- Features in public preview mode are fully tested and safe for deployment in production environments.
+- Public preview mode feature options, performance, and scalability may be limited compared to the final feature.
+- Aviatrix does not charge for using features in public preview mode. You could be charged if the public preview feature is promoted to an officially supported feature. 
+- If a feature in public preview mode is promoted to an officially supported product it will be announced in the product release notes.
+- Public preview mode features are clearly marked in the UI.
+
+Private Preview Features
+-------------------------
+
+Aviatrix releases features in private preview mode to offer you the opportunity to experiment with concepts and features that may develop into official product offerings. Your valuable feedback helps shape and improve the experience for everyone.
+
+- Features in private preview mode should not be deployed in production environments.
+- Features in private preview mode may have undergone limited testing.
+- Support for features in private preview mode may be limited and handled with low priority.  
+- Aviatrix does not charge for using features in private preview mode. You could be charged if the private preview feature is promoted to an officially supported feature. 
+- If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
+- Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
+
+
+CoPilot Release 1.10.0, 1.10.1 (5/09/2022)
+---------------------------------------------
+
+-   (Performance) **Create Policies for Scaling Managed Resources** — As in prior releases, CoPilot monitors the resource utilization (telemetry) data for all managed resources — gateways and controller — across your Aviatrix transit network (multi-cloud and single cloud). You can now create policies based on the telemetry data that guide you on when to replace or *scale* the managed resources up or down. When gateway virtual machines/instances exceed your policy thresholds, CoPilot generates a resource-scale alert. From the alerts page, you can scale up or down directly from CoPilot. When choosing the instance size, CoPilot displays the supported instance sizes for Aviatrix gateways in their respective cloud service provider. Policies are set on a per VPC/VNet basis. All gateways within the given VPC/VNet are monitored. You create the policies in CoPilot under Performance > Scaling > Policies. For information about creating resource-scale policies, see `Resizing managed resources (gateways) based on policies <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#resizing-managed-resources-gateways-based-on-policies>`_ in *Aviatrix CoPilot User Reference Guide*.  
+
+-   (`Private Preview Features`_ in Release 1.10.0) The following private preview feature is available in this release:
+
+    -   **Micro-segmentation** – Micro-segmentation provides granular network security policy enforcement for distributed applications in the cloud. It enables a unified network access policy model for your applications with distributed points of policy enforcement throughout your network. The micro-segmentation private preview feature is available starting from Controller release 6.7. For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
+
+-   Performance improvements.
+
+-   Minor bug fixes.
+
+
 CoPilot Release 1.9.0, 1.9.1 (4/27/2022)
 ---------------------------------------------------------------------------
 

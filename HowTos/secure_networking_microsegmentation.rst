@@ -65,12 +65,14 @@ An app domain contains one or more filters to identify CSP endpoints that map to
 2. Click +ADD DOMAIN.
 3. Enter a name for the app domain.
 4. If you want to add a resource type (VPC/VNet, virtual machine, or subnet), follow the below steps. If you want to enter IP addresses or CIDR ranges for your app domain, go to step 5.
+
 	a. Click +Resource Type and select VPC/VNet, Virtual Machines, or Subnet. 
 	b. Enter the matching criteria for resources that will be part of this app domain. 
 	c. All CSP tags that you have defined for your Cloud resources are present in the list for you to select from. Some examples of tags are: Backup, Controller, Aviatrix-Created-Resource, and Type.
 	d. If needed, add another resource type. Typically you will only have resources of the same type in an app domain (for example, you can have more than one VM based filter).
 	e. You can also select resource attributes (Account Name and Region) if you want to match against all resources within an account or region. The values for the selected condition(s) are populated automatically.
 	f. After entering your resource type, you can use the Preview Resources toggle switch to see the selected resources that map to the app domain. 
+
 5. If you don’t want to use specific tags in your resources, enter the VPC/VNet IP addresses or CIDRs in the field provided. Traffic across CIDRs between two app domains in the same VPC/VNet is not subject to micro-segmentation policies.
 6. Click Save. The new app domain is now in the App Domain list.
 
@@ -98,6 +100,7 @@ An app domain traffic flow can belong to more than one policy. If this occurs, t
 9. Select the protocol used: TCP, UDP, ICMP, or Any. If you select TCP or UDP you can enter a port number or port range.
 	
 As per the workload isolation use case above (blocking traffic between the Shopping Cart application and the Product Logging app), the policy would look like this:
+
 	- Source app domain: Shopping Cart application
 	- Destination app domain: Product Logging app
 	- Action: Deny
@@ -113,7 +116,6 @@ As per the workload isolation use case above (blocking traffic between the Shopp
 
 Viewing Policy Statistics
 -------------------------
-
 You can open a previously created policy to view the statistics related to the execution of that particular policy. You can view traffic statistics from the last hour, week, or month, or a custom time period. The resulting graph indicates if the traffic is Observed, Enforced & Allowed, or Enforced & Denied.
 
 Creating a Default Policy
@@ -122,12 +124,16 @@ As a best zero trust security practice, you should add a deny policy that blocks
 
 
 Configuring the Polling Interval
----------------------------------
+================================
 The Aviatrix Controller periodically polls your CSPs to gather and inventory its resources. For example, if you modified your CSP tags, you may want to poll data more frequently so that CoPilot reflects those changes.
 
 In CoPilot navigate to Settings > Advanced Settings > Micro-Segmentation Settings and enter the desired polling interval in minutes (default is 60). This can be a value between 1-180.
 
 You can manually trigger a poll to fetch resources directly from your CSPs by clicking the Refetch CSP Resources button on the Micro-Segmentation tab. The poll may take several minutes to complete depending on the size of your environment. 
+
+Logging
+=======
+Micro-segmentation supports per-packet logging when logging is enabled on a policy. For more information on what is contained in these logs, click `here <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#micro-segmentation-logging>_.
 
 
 Limitations
@@ -142,6 +148,6 @@ Limitations
 
 
 
-..  |name_image1| image:: microseg_media/microseg_topology.png
-    :width: 200
+..  |microseg_topology| image:: microseg_media/microseg_topology.png
+    :scale: 60%
 
