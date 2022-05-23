@@ -1163,7 +1163,7 @@ To enable GeoBlocking:
 
 1. Log in to CoPilot.
 
-2. From the sidebar, click ThreatIQ, and then click the GeoBlocking tab.
+2. From the sidebar, click Security, and then click the GeoBlocking tab.
 
    A list of the countries you can block and unblock displays. The IPs Observed column shows you the number of IP addresses CoPilot observed from each country when scanning Netflow records over the last seven days. If you click on a country name, you can view recent IP traffic going to or coming from that selected country in the time range you specify.
 
