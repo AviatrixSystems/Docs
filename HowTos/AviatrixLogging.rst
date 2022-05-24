@@ -643,7 +643,7 @@ Please follow this link `Netflow Integration <https://docs.aviatrix.com/HowTos/n
 
 Micro-segmentation Logging
 ===========================
-Raw micro-segmentation log files include the following information:
+If Remote Syslog is enabled, you can consume the raw micro-segmentation data (as files that are saved to a predetermined location; or that are sent to a remote host that can parse the data and then perform actions on it, such as sending it to a printer or saving it as a file). Micro-segmentation data includes the following information:
 
 - timestamp
 - source IP
