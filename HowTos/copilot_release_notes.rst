@@ -39,7 +39,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 CoPilot Release 1.11.3 (5/23/2022)
 ------------------------------------
 
--   (ThreatIQ) **GeoBlocking** — You can now select a country to block IP traffic coming into and coming from the country. When GeoBlocking is enabled for a country, a tag-based security policy is implemented on each gateway to deny traffic for IP addresses associated with the country. All gateways in your VPC/VNets will block. When you unblock a country, the tag is removed from all gateways and the stateful firewall rules instantiated on them for that country are removed. For more information about GeoBlocking and how to enable it, see `Enable GeoBlocking <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#enable-geoblocking>`_ in *Aviatrix CoPilot User Reference Guide*. 
+-   (Security) **GeoBlocking** — You can now select a country to block IP traffic coming into and coming from the country. When GeoBlocking is enabled for a country, a tag-based security policy is implemented on each gateway to deny traffic for IP addresses associated with the country. All gateways in your VPC/VNets will block. When you unblock a country, the tag is removed from all gateways and the stateful firewall rules instantiated on them for that country are removed. For more information about GeoBlocking and how to enable it, see `Enable GeoBlocking <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#enable-geoblocking>`_ in *Aviatrix CoPilot User Reference Guide*. 
 
     -  **Attention**: A CSP-region IP may be blocked if that region is in the blocked country. For example, if the public IP for your service is registered in a specific country by the CSP and you block that country.   
 
