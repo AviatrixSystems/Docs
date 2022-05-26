@@ -36,6 +36,18 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
 
+CoPilot Release 1.11.3 (5/23/2022)
+------------------------------------
+
+-   (Security) **GeoBlocking** — You can now select a country to block IP traffic coming into and coming from the country. When GeoBlocking is enabled for a country, a tag-based security policy is implemented on each gateway to deny traffic for IP addresses associated with the country. All gateways in your VPC/VNets will block. When you unblock a country, the tag is removed from all gateways and the stateful firewall rules instantiated on them for that country are removed. For more information about GeoBlocking and how to enable it, see `Enable GeoBlocking <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#enable-geoblocking>`_ in *Aviatrix CoPilot User Reference Guide*. 
+
+    -  **Attention**: A CSP-region IP may be blocked if that region is in the blocked country. For example, if the public IP for your service is registered in a specific country by the CSP and you block that country.   
+
+-   Performance improvements.
+
+-   Minor bug fixes.
+
+
 CoPilot Release 1.10.0, 1.10.1 (5/09/2022)
 ---------------------------------------------
 
@@ -78,6 +90,7 @@ CoPilot Releases 1.8.0, 1.8.1, 1.8.2, 1.8.3 (4/05/2022), 1.8.4 (4/11/2022)
 -   (FlowIQ) **FlowIQ Filter by CSP Tags** — You can now search for traffic using your cloud-native instance tags and VPC tags. Use the tags in FlowIQ filters that take an address field like Source Address or Destination Address. For example, to see traffic flows between business units, this filter group with the AND operand will show traffic flows between accounting and engineering resources where the CSP tag associated with each resource is Name = `department` and Value = `accounting` or `engineering` respectively ::
 
   Source Address is equal to department accounting
+  
   Destination Address is equal to department engineering
 
 -   (ThreatIQ with ThreatGuard) **Prepend/Append ThreatGuard Rules** — By default, ThreatGuard firewall rules *append* instantiated rules — Aviatrix Controller adds the ThreatGuard rule to the end of the rules list at the time the threat triggered the rule. You can now choose to have ThreatGuard firewall rules *prepend* instantiated rules where Aviatrix Controller adds the ThreatGuard rule to the beginning of the rules list at the time the threat triggered the rule. The prepend feature is available starting from Controller release 6.6.5544. From the ThreatIQ > ThreatGuard page, select the prepend option when configuring ThreatGuard blocking. For more information, see `About ThreatGuard Firewall Rules <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#about-threatguard-firewall-rules>`_.

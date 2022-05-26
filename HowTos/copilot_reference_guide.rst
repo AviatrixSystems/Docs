@@ -785,6 +785,88 @@ BGPpeeringStatus
 
   
 
+CoPilot Alert Condition Display Names
+--------------------------------------
+
+The following is a list of all alert condition display names shown by CoPilot. 
+
+Many of the alerts are associated with detecting changes in resource utilization (telemetry) data for managed resources as described in `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id3>`_. 
+
+Some alerts are associated with enhanced security services like `Network Behavior Analytics <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-anomalies>`_ (detecting network traffic finterprint anomalies) and `ThreatIQ with ThreatGuard <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-threatiq>`_ (detecting threat IPs identified by a well known threat-IP source).  
+
+"Processes Waiting To Be Run"
+"Processes Uninterruptible Sleep"
+"System Interrupts"
+"System Context Switches"
+"Swaps To Disk"
+"Swaps From Disk"
+"IO Blocks IN"
+"IO Blocks OUT"
+"Memory Cache"
+"Memory Buffer"
+"Memory Swapped"
+"Memory Free"
+"CPU Idle"
+"CPU Wait"
+"CPU User Space"
+"CPU Kernel Space"
+"Disk Free"
+"Disk Total"
+"CPU Steal"
+"Transmitted Rate"
+"Received Rate"
+"Total Rate"
+"Peak Transmitted Rate"
+"Peak Received Rate"
+"Peak Total Rate"
+"Received Bytes"
+"Compressed Packets Received"
+"Packets Dropped While Receiving"
+"Errored Packets Received"
+"Receiver FIFO Frames"
+"Received Frames"
+"Multicast Packets Received"
+"Received Packets"
+"Transmitted Bytes"
+"Transmitted Carrier Frames"
+"Collisions during Transmission"
+"Compressed Packets Transmitted"
+"Packets Dropped during Transmission"
+"Errored Packets Transmitted"
+"Transmission FIFO Frames"
+"Transmitted Packets"
+"Bandwidth Ingress Limit Exceeded"
+"Bandwidth Egress Limit Exceeded"
+"PPS Limit Exceeded"
+"Conntrack Limit Exceeded"
+"Linklocal Limit Exceeded"
+"Packets Transmitted Rate"
+"Packets Received Rate"
+"Total Rate (in packets)"
+"Compressed Packets Received Rate"
+"Rate of Packets Dropped While Receiving"
+"Errored Packets Received Rate"
+"Receiver FIFO Frames Rate"
+"Received Frames Rate"
+"Multicast Packets Received Rate"
+"Transmitted Carrier Frames Rate"
+"Collisions Rate during Transmission"
+"Compressed Packets Transmitted Rate"
+"Rate of Packets Dropped during Transmission"
+"Errored Packets Transmitted Rate"
+"Transmission FIFO Frames Rate"
+"Bandwidth Ingress Limit Exceeded Rate"
+"Bandwidth Egress Limit Exceeded Rate"
+"PPS Limit Exceeded Rate"
+"Conntrack Limit Exceeded Rate"
+"Linklocal Limit Exceeded Rate"
+"Gateway Status"
+"Tunnel Status"
+"BGP Peering Status"
+"Threat IP Detected"
+"Anomaly Detected"
+"Scaling Recommendation triggered"
+
 
 Working with AppIQ
 ==================
@@ -1006,19 +1088,34 @@ When a ThreatGuard firewall rule is newly applied on a gateway that has existing
 Enable ThreatGuard Blocking 
 ---------------------------
 
-Enable ThreatGuard blocking to block traffic at Aviatrix Gateways where threat IPs have traversed. When blocking is enabled, Aviatrix Controller pushed down firewall policies to block threat-IP associated traffic as soon as it is detected. All gateways in the VPC/VNET/VCN will block.
+Enable ThreatGuard blocking to block traffic at Aviatrix Gateways where threat IPs have traversed. When blocking is enabled, Aviatrix Controller pushes down firewall policies to block threat-IP associated traffic as soon as it is detected. All gateways in the VPC/VNet will block when threat IPs traverse them.
 
 To enable ThreatGuard blocking, you must log in to CoPilot with a user account that belongs to a group that has either ``all_write`` or ``all_security_write`` permissions.
 
 To enable ThreatGuard blocking:
 
-1. Log in to CoPilot.
-2. From the sidebar, click ThreatIQ, and then click the ThreatGuard tab.
-3. Verify that ThreatGuard alerts are enabled. The alerts are enabled when the Send Alert status has a green checkmark. ThreatGuard alerts must be enabled before blocking can be enabled. See *Enable ThreatGuard Alerts* for instructions.
-4. Click the **Block Traffic** button and then click the Block Threats slider so that it slides to the right. ThreatGuard blocking is enabled. Aviatrix Controller now enforces firewall policies to block threat-IP associated traffic as soon as it is detected. Each time a different IP threat is detected, a new firewall rule is instantiated on the gateway. By default, all gateways in a VPC/VNet will block the associated traffic. You can be selective about which VPC/VNets block threat IPs in the next step.
-5. (Optional - Deny ThreatGuard protection) Select VPC/VNets for which you do not want ThreatGuard blocking enabled. For Configure Exclusion List for VPCs, click the pen icon. In the Protected with ThreatGuard list, tick the check box of each VPC/VNet for which you do not want ThreatGuard blocking enabled. Transfer the VPC/VNets to the Not Protected list and click **Save**. For any VPC/VNets listed in the Not Protected list, the gateways in them will not block threat IPs when detected.
-6. (Optional - Prepend ThreatGuard rules) By default, ThreatGuard firewall rules *append* instantiated rules — Aviatrix Controller adds the ThreatGuard rule to the end of the rules list at the time the threat triggered the rule. If you want Controller to add the ThreatGuard rule to the beginning of the rules list, select the Prepend radio button. For more information, see "About ThreatGuard Firewall Rules". 
-7. (Optional - Disable blocking) **Note:** When you disable ThreatGuard blocking, the action removes all existing ThreatGuard firewall rules instantiated by Aviatrix Controller for all threats detected up to that point. To disable blocking, in ThreatGuard view, click the Block Traffic check and then click the Block Threats slider. Click **Confirm** to disable all ThreatGuard firewall rules and stop ThreatGuard blocking. 
+1.  Log in to CoPilot.
+
+2.  From the sidebar, click ThreatIQ, and then click the ThreatGuard tab.
+
+3.  Verify that ThreatGuard alerts are enabled. The alerts are enabled when the Send Alert status has a green checkmark. ThreatGuard alerts must be enabled before blocking can be enabled. See *Enable ThreatGuard Alerts* for instructions.
+
+4.  Click the **Block Traffic** button and then click the Block Threats slider so that it slides to the right. 
+
+    ThreatGuard blocking is enabled. Aviatrix Controller now enforces firewall policies to block threat-IP associated traffic as soon as it is detected. Each time a different IP threat is detected, a new firewall rule is instantiated on the gateway. By default, all gateways in a VPC/VNet will block the associated traffic. You can be selective about which VPC/VNets block threat IPs in the next step.
+
+5.  (Optional - Deny ThreatGuard protection) Select VPC/VNets for which you do not want ThreatGuard blocking enabled. 
+
+    -   For Configure Exclusion List for VPCs, click the pen icon. 
+    -   In the Protected with ThreatGuard list, tick the check box of each VPC/VNet for which you do not want ThreatGuard blocking enabled. 
+    -   Transfer the VPC/VNets to the Not Protected list and click **Save**. 
+    -   For any VPC/VNets listed in the Not Protected list, the gateways in them will not block threat IPs when detected.
+
+6.  (Optional - Prepend ThreatGuard rules) By default, ThreatGuard firewall rules *append* instantiated rules — Aviatrix Controller adds the ThreatGuard rule to the end of the rules list at the time the threat triggered the rule. If you want Controller to add the ThreatGuard rule to the beginning of the rules list, select the Prepend radio button. For more information, see "About ThreatGuard Firewall Rules". 
+
+7.  (Optional - Disable blocking) **ATTENTION:** When you disable ThreatGuard blocking, the action removes all existing ThreatGuard firewall rules instantiated by Aviatrix Controller for all threats detected up to that point. 
+
+    -   To disable blocking, in ThreatGuard view, click the Block Traffic check and then click the Block Threats slider. Click **Confirm** to disable all ThreatGuard firewall rules and stop ThreatGuard blocking. 
 
 Add a Custom ThreatIQ IP List 
 -----------------------------
@@ -1129,6 +1226,36 @@ Descriptions of the properties in the CoPilot ThreatIQ ThreatGuard view listed i
 -   **View Rules dialog**
 
     The View Rules dialog shows the ThreatGuard firewall rules that are applied on Aviatrix gateways.
+
+
+Enable GeoBlocking
+--------------------
+
+Enable GeoBlocking to block IP traffic coming into and coming from a country. 
+
+When GeoBlocking is enabled for a country, a tag-based security policy is implemented on each gateway to deny traffic for IP addresses associated with the country. All gateways in your VPC/VNets will block. When you unblock a country, the tag is removed from all gateways and the stateful firewall rules instantiated on them for that country are removed. 
+
+**Attention**: A CSP-region IP may be blocked if that region is in the blocked country. For example, if the public IP for your service is registered in a specific country by the CSP and you block that country.
+
+By clicking on the country name, you can view recent IP traffic going to or coming from that selected country in the time range you specify.
+
+To enable GeoBlocking, you must log in to CoPilot with a user account that belongs to a group that has either ``all_write`` or ``all_security_write`` permissions.
+
+To enable GeoBlocking:
+
+1. Log in to CoPilot.
+
+2. From the sidebar, click Security, and then click the GeoBlocking tab.
+
+   A list of the countries you can block and unblock displays. The IPs Observed column shows you the number of IP addresses CoPilot observed from each country when scanning Netflow records over the last seven days. If you click on a country name, you can view recent IP traffic going to or coming from that selected country in the time range you specify.
+
+3. In the Status column, toggle the switch to **Blocked** for each country you want to block IP traffic. 
+
+4. Click **Save**. 
+
+   IP traffic coming into and coming from that country will be blocked on each Aviatrix gateway.
+
+   **NOTE:** Each time you toggle the switch for a country to block or unblock, you must click **Save** for your changes to take effect. 
 
  
 Working with Reports
