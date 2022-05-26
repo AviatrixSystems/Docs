@@ -56,7 +56,7 @@ Management System for further analysis:
 - `AviatrixTunnelStatusChange <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id10>`_
 - `AviatrixCMD <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id11>`_
 - `AviatrixBGPOverlapCIDR <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id12>`_
-- `AviatrixBGPRouteLimitThreashold <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixbgproutelimitthreshold>`_
+- `AviatrixBGPRouteLimitThreshold <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixbgproutelimitthreshold>`_
 - `AviatrixGuardDuty <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id13>`_
 - `AviatrixFireNet <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id14>`_
 - `AviatrixVPNVersion <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id15>`_
@@ -639,25 +639,6 @@ Netflow
 Aviatrix gateways support Netflow protocol v5 and v9.
 
 Please follow this link `Netflow Integration <https://docs.aviatrix.com/HowTos/netflow.html#netflow-integration>`_ to enable it.
-
-
-Micro-segmentation Logging
-===========================
-Micro-segmentation log files include the following information:
-
-- timestamp
-- source IP
-- destination IP
-- protocol (for example, ICMP or TCP)
-- port number
-- if a policy is enforced
-- if a policy was allowed or denied
-- gateway name
-- policy ID
-- payload data: this data can be parsed to show what traffic was blocked (especially if a protocol is not recognized), or if there are fields from the packet that micro-segmentation does not display
-
-Click `here <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ for more information on micro-segmentation.
-
 
 
 .. disqus::

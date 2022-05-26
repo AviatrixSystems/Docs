@@ -131,19 +131,17 @@ In CoPilot navigate to Settings > Advanced Settings > Micro-Segmentation Setting
 
 You can manually trigger a poll to fetch resources directly from your CSPs by clicking the Refetch CSP Resources button on the Micro-Segmentation tab. The poll may take several minutes to complete depending on the size of your environment. 
 
-Logging
-=======
-Micro-segmentation supports per-packet logging when logging is enabled on a policy. For more information on what is contained in these logs, click `here <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#micro-segmentation-logging>_.
-
 
 Limitations
------------
+===========
 
 - In 6.7 micro-segmentation is only supported on AWS and Azure. Support for other clouds is not available in this release.
 - You can configure up to 500 app domains.
-- You can have up to 3000 CIDRs per app domain.
+- You can have up to 3000 unique CIDRs per app domain.
+- You can configure up to 20 filters per app domain (OR/ANY filters that are not the CIDR type).
+- You can configure up to ten ALL/AND match criteria per filter.
 - You can create up to 64 policies.
-- Up to 10,000 CIDRs can be supported by the Aviatrix Controller.
+- The total number of CIDRs in all app domains cannot exceed 10,000.
 - Traffic between two app domains in the same VPC/VNet is not subject to micro-segmentation policies.
 
 
