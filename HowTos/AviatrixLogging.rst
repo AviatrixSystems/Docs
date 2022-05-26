@@ -56,7 +56,7 @@ Management System for further analysis:
 - `AviatrixTunnelStatusChange <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id10>`_
 - `AviatrixCMD <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id11>`_
 - `AviatrixBGPOverlapCIDR <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id12>`_
-- `AviatrixBGPRouteLimitThreashold <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixbgproutelimitthreshold>`_
+- `AviatrixBGPRouteLimitThreshold <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixbgproutelimitthreshold>`_
 - `AviatrixGuardDuty <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id13>`_
 - `AviatrixFireNet <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id14>`_
 - `AviatrixVPNVersion <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id15>`_
@@ -639,24 +639,6 @@ Netflow
 Aviatrix gateways support Netflow protocol v5 and v9.
 
 Please follow this link `Netflow Integration <https://docs.aviatrix.com/HowTos/netflow.html#netflow-integration>`_ to enable it.
-
-
-Micro-segmentation Logging
-===========================
-If Remote Syslog is enabled, you can consume the raw micro-segmentation data (as files that are saved to a predetermined location; or that are sent to a remote host that can parse the data and then perform actions on it, such as sending it to a printer or saving it as a file). Micro-segmentation data includes the following information:
-
-- timestamp
-- source IP
-- destination IP
-- protocol (for example, ICMP or TCP)
-- port number
-- if a policy is enforced
-- if a policy was allowed or denied
-- gateway name
-- policy ID
-
-Click `here <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ for more information on micro-segmentation.
-
 
 
 .. disqus::
