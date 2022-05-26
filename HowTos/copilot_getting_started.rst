@@ -40,13 +40,13 @@ Instance System Requirements
 ------------------------------
 The configuration of the instance/virtual machine that you provision for your CoPilot deployment depends on the scale and the kind of networking infrastructure you have planned according to your business requirements. Work with your performance team to determine your sizing requirements.
 
-- For the instance/VM size, CoPilot requires:
+- For the instance/VM size, CoPilot requires a minimum of:
 
-  - 4 GB of RAM (or more)
+  - 16 GB of RAM (or more)
 
   - 1 attached disk/volume for storage (see `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#id4>`_)
 
-  - 2 vCPUs (or more)
+  - 4 vCPUs (or more)
 
 CoPilot supports automatic memory sizing for the ETL and datastore based on the physical memory of the instance at boot. Base images default to the automatic settings. This auto-scaling memory support became available with the release of Aviatrix CoPilot image version 1.5.1.
 
@@ -62,11 +62,11 @@ CoPilot is offered with a Bring Your Own License (BYOL) license model. If you ar
 
 With a BYOL license model, you need to have a customer ID provided by Aviatrix to be able to use the product. Your Aviatrix Sales representative will provide you with a customer ID. Customer IDs for CoPilot use the prefix `avx-cplt-`.
 
-When you perform the initial setup of CoPilot, you will be prompted to enter your customer ID and CoPilot will allocate a license to you based on your customer ID. You can view when the license will expire in the CoPilot Settings > Licensing page.
+When you perform the initial setup of CoPilot, you will be prompted to enter your customer ID and CoPilot will allocate a license to you based on your customer ID. Your customer ID can be associated with more than one license. The license key has the quantity or *allocation count* for the number of CoPilot instances that can use the license at a given time (the default count is 2). If the license key is greater than one, the key can be used by more than one instance. You can see when the license will expire and see the used and total allocation count of your license in CoPilot Settings > Licensing.
 
-Each CoPilot instance consumes one license from your customer ID. When your customer ID expires, you can ask for a license extension from your Sales representative. In this case, you must reset your customer ID for the extension by navigating to CoPilot Settings > Licensing and clicking the **RESET** button. 
+When your customer ID expires, you can ask for a license extension from your Sales representative. In this case, you must reset your customer ID for the extension by navigating to CoPilot Settings > Licensing and clicking the **RESET** button. 
 
-If you ever want to terminate your current instance of CoPilot and deploy a new instance using the same license associated with your customer ID, ensure you first release the CoPilot license of the current instance first by navigating to CoPilot Settings > Licensing and clicking the **RESET** button. After you deploy the new instance of CoPilot, you will be prompted to enter the customer ID during initial setup. Re-enter the same customer ID. 
+If you need to terminate your current instance of CoPilot and deploy a new instance using the same license associated with your customer ID, first release the CoPilot license of the current instance by navigating to CoPilot Settings > Licensing and clicking the **RESET** button. After you deploy the new instance of CoPilot, you will be prompted to enter the customer ID during initial setup. Re-enter the same customer ID. 
 
 Subscribe to a CoPilot Offer
 ============================
@@ -321,7 +321,7 @@ After you allocate new disks (volumes), you can only increase storage (you canno
 
 For data disks you already allocated to your CoPilot deployment, you can increase their size. For instructions, see Expand a Disk (Volume) for CoPilot Storage.
 
-Disk (volume) management for expandable storage became available with the release of Aviatrix CoPilot image version 1.5.1. Prior to CoPilot image version 1.5.1, images had a static disk of 2 TB.
+Disk (volume) management for expandable storage became available with the release of Aviatrix CoPilot image version 1.5.1. Prior to CoPilot image version 1.5.1, images required a static disk of 2 TB. To use the expandable storage feature and leverage additional disks/volumes, you must launch a new CoPilot instance from the marketplace based on CoPilot image version 1.5.1.
 
 
 Add a Disk (Volume) for CoPilot Storage after Deployment

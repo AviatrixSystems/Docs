@@ -191,7 +191,7 @@ What are the features supported with GCP Insane Mode?
 Because GCP network infrastructure/concept is different than AWS/Azure, Aviatrix GCP Insane Mode behavior differs from AWS/Azure support in the following ways:
 
 - Only Spoke and Transit Gateway types are supported.
-- Only Multi-Cloud Transit functionality is supported with Insane Mode gateways; encrypted peering <https://docs.aviatrix.com/HowTos/Quick_Tour.html#encrypted-peering>`_ is not supported.
+- Only Multi-Cloud Transit functionality is supported with Insane Mode gateways; `encrypted peering <https://docs.aviatrix.com/HowTos/Quick_Tour.html#encrypted-peering>`_ is not supported.
 - The Advertise Transit VPC Network CIDR(s) feature is not supported with an Insane Mode Gateway.
 - Aviatrix will support Managed CloudN connecting to Aviatrix Transit Gateway in GCP soon; Standalone/unmanaged CloudN connecting to Aviatrix Transit Gateway is not supported in GCP.
 
