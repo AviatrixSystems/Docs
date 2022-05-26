@@ -90,6 +90,7 @@ CoPilot Releases 1.8.0, 1.8.1, 1.8.2, 1.8.3 (4/05/2022), 1.8.4 (4/11/2022)
 -   (FlowIQ) **FlowIQ Filter by CSP Tags** — You can now search for traffic using your cloud-native instance tags and VPC tags. Use the tags in FlowIQ filters that take an address field like Source Address or Destination Address. For example, to see traffic flows between business units, this filter group with the AND operand will show traffic flows between accounting and engineering resources where the CSP tag associated with each resource is Name = `department` and Value = `accounting` or `engineering` respectively ::
 
   Source Address is equal to department accounting
+  
   Destination Address is equal to department engineering
 
 -   (ThreatIQ with ThreatGuard) **Prepend/Append ThreatGuard Rules** — By default, ThreatGuard firewall rules *append* instantiated rules — Aviatrix Controller adds the ThreatGuard rule to the end of the rules list at the time the threat triggered the rule. You can now choose to have ThreatGuard firewall rules *prepend* instantiated rules where Aviatrix Controller adds the ThreatGuard rule to the beginning of the rules list at the time the threat triggered the rule. The prepend feature is available starting from Controller release 6.6.5544. From the ThreatIQ > ThreatGuard page, select the prepend option when configuring ThreatGuard blocking. For more information, see `About ThreatGuard Firewall Rules <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#about-threatguard-firewall-rules>`_.

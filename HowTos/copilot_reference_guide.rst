@@ -785,6 +785,88 @@ BGPpeeringStatus
 
   
 
+CoPilot Alert Condition Display Names
+--------------------------------------
+
+The following is a list of all alert condition display names shown by CoPilot. 
+
+Many of the alerts are associated with detecting changes in resource utilization (telemetry) data for managed resources as described in `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id3>`_. 
+
+Some alerts are associated with enhanced security services like `Network Behavior Analytics <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-anomalies>`_ (detecting network traffic finterprint anomalies) and `ThreatIQ with ThreatGuard <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-threatiq>`_ (detecting threat IPs identified by a well known threat-IP source).  
+
+"Processes Waiting To Be Run"
+"Processes Uninterruptible Sleep"
+"System Interrupts"
+"System Context Switches"
+"Swaps To Disk"
+"Swaps From Disk"
+"IO Blocks IN"
+"IO Blocks OUT"
+"Memory Cache"
+"Memory Buffer"
+"Memory Swapped"
+"Memory Free"
+"CPU Idle"
+"CPU Wait"
+"CPU User Space"
+"CPU Kernel Space"
+"Disk Free"
+"Disk Total"
+"CPU Steal"
+"Transmitted Rate"
+"Received Rate"
+"Total Rate"
+"Peak Transmitted Rate"
+"Peak Received Rate"
+"Peak Total Rate"
+"Received Bytes"
+"Compressed Packets Received"
+"Packets Dropped While Receiving"
+"Errored Packets Received"
+"Receiver FIFO Frames"
+"Received Frames"
+"Multicast Packets Received"
+"Received Packets"
+"Transmitted Bytes"
+"Transmitted Carrier Frames"
+"Collisions during Transmission"
+"Compressed Packets Transmitted"
+"Packets Dropped during Transmission"
+"Errored Packets Transmitted"
+"Transmission FIFO Frames"
+"Transmitted Packets"
+"Bandwidth Ingress Limit Exceeded"
+"Bandwidth Egress Limit Exceeded"
+"PPS Limit Exceeded"
+"Conntrack Limit Exceeded"
+"Linklocal Limit Exceeded"
+"Packets Transmitted Rate"
+"Packets Received Rate"
+"Total Rate (in packets)"
+"Compressed Packets Received Rate"
+"Rate of Packets Dropped While Receiving"
+"Errored Packets Received Rate"
+"Receiver FIFO Frames Rate"
+"Received Frames Rate"
+"Multicast Packets Received Rate"
+"Transmitted Carrier Frames Rate"
+"Collisions Rate during Transmission"
+"Compressed Packets Transmitted Rate"
+"Rate of Packets Dropped during Transmission"
+"Errored Packets Transmitted Rate"
+"Transmission FIFO Frames Rate"
+"Bandwidth Ingress Limit Exceeded Rate"
+"Bandwidth Egress Limit Exceeded Rate"
+"PPS Limit Exceeded Rate"
+"Conntrack Limit Exceeded Rate"
+"Linklocal Limit Exceeded Rate"
+"Gateway Status"
+"Tunnel Status"
+"BGP Peering Status"
+"Threat IP Detected"
+"Anomaly Detected"
+"Scaling Recommendation triggered"
+
 
 Working with AppIQ
 ==================
