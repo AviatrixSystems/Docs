@@ -90,7 +90,7 @@ After creating your app domains, you create policies to filter traffic sent betw
 An app domain traffic flow can belong to more than one policy. If this occurs, the priority of the policy determines the action that is taken first. 
 
 1. In CoPilot, navigate to Security > Micro-Segmentation > Policies.
-2. On the Policies tab, click +POLICY.
+2. On the Policies tab, click +RULE.
 3. Enter a name for the policy.
 4. Select the Source App Domains (the app domains that originate traffic).
 5. Select the Destination App Domain (the app domains that terminate traffic).
@@ -121,6 +121,10 @@ You can open a previously created policy to view the statistics related to the e
 Creating a Default Policy
 -------------------------
 As a best zero trust security practice, you should add a deny policy that blocks traffic from all app domains to the universal 0.0.0.0/0 app domain. For example, if app domains A and B are configured to talk to each other, you may not want app domain C to be able to talk to app domain A or B. Creating this default policy helps with locking down configured app domains. This should be the last policy in the list.
+
+Viewing Raw Logs
+----------------
+Micro-segmentation supports per-packet logging when logging is enabled on a policy. For more information on consuming the raw logs, click `here <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#micro-segmentation-logging>`_.
 
 
 Configuring the Polling Interval
