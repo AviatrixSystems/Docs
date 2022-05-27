@@ -9,14 +9,14 @@ CloudFormation Condition Function Example
 
 AWS CloudFormation is a popular tool to automate AWS resource management. There are situations
 when you need to create a resource or specify a property based on the value of input parameters. 
-You may use `Condition Functions <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html>`_ to address such types of requirement. 
+You may use `Condition Functions <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html>`_ to address such types of requirements. 
 
 Here is an example of how to use Conditions in a CloudFormation script. 
 
 In this example, we want to specify "unlimited", a CPU credit property that only applies to t2/t3 
 series instances when a user selects such instance type. If the user input is not t2 series, for example, m4 series, the CPU credit property cannot be specified as it does not exist. 
 
-The code to define a condition that tests if the input parameter is t2.large, t2.xlarge or 
+The code to define a condition that tests if the input parameter is t2.large, t2.xlarge, or 
 t2.2xlarge is as follows.
 
 :: 
@@ -41,8 +41,8 @@ t2.2xlarge is as follows.
     }, 
 
 Where T2SeriesTrue is the condition to test out if input parameter InstanceTypeParam is one 
-of the t2 series. Note "Fn::Or" is used to allow multiple choices, if any of them is True, the 
-condition returns True. 
+of the t2 series. Note "Fn::Or" is used to allow multiple choices, if any of them is "True", the 
+condition returns "True". 
 
 The code to use the condition to specify the CPU Credit type is as follows:
 
@@ -56,7 +56,7 @@ The code to use the condition to specify the CPU Credit type is as follows:
           ]
       }
 
-where if condition T2SeriesTrue is True, CPUCredits will be set to "unlimited", otherwise
+where if condition T2SeriesTrue is "True", CPUCredits will be set to "unlimited", otherwise
 it is not specified. 
 
 To view the entire CloudFormation script that is used to launch the Aviatrix Controller, 
