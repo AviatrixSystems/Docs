@@ -15,7 +15,7 @@ Please note the below Aviatrix Security recommendations and communication plans:
 
 **Date** 05/27/2022
 
-**Risk Rating** Critical (CVSS v3: 10.0)
+**Risk Rating** `AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H (10.0) <https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H&version=3.1>`_ 
 
 **Description** Several vulnerabilities could be combined by an attacker to abuse a Gateway command mechanism that would allow arbitrary remote code execution. This vulnerability is not known to be exploited.
 
