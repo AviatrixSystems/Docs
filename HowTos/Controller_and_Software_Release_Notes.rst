@@ -3627,7 +3627,7 @@ UserConnect-032315
 
 -  Support LDAP integration.
 
--  Support for Windows, MAC OS and Chromebook clients.
+-  Support for Windows, MAC OS, and Chromebook clients.
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.
