@@ -80,11 +80,15 @@ New Customer Installation Procedures
 Existing Customers - Controller Image upgrade (Migration) 
 =========================================================
 
-- Customer is responsible for migrating their existing Controller to the latest image. See image list below.  
+- Each customer is responsible for migrating their existing Controller to the latest image. See the image list below.  
 
-- To implement the **latest Controller image**, perform the following steps: 
+- To implement the **latest Controller image**, perform the following steps.
 
-  #. Go to your Controller management console 
+.. note::
+
+  Because `HA (High Availability) <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ ensures that your Controller is consistently available through any change or loss of service, HA is not compatible with image migration. If your account uses an HA configuration, `disable HA <https://docs.aviatrix.com/HowTos/controller_ha.html#steps-to-disable-controller-ha>`_ before using the following steps to do an image migration.
+
+  #. Go to your Controller management console.
 
   #. Go to Settings > Maintenance > Software Upgrade.  Make sure you are on the right software version for the migration. If not, upgrade your software version.  
 
