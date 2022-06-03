@@ -34,6 +34,36 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
+6.4.3057 (05/26/2022) 
+=======================
+
+Issues Corrected in Aviatrix Release 6.4.3057
+
+**AVI-2022-0002** – A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
+
+6.5.3233 (05/26/2022) 
+=======================
+
+Issues Corrected in Aviatrix Release 6.5.3233
+
+- **AVI-2022-0002** – A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
+- **AVX-10577** – Licensing metrics were not visible. 
+- **AVX-19811** – You can now insert a stateful firewall policy by specifying the position where you want to insert the policy. This feature is presently available through **Insert Stateful Firewall Rules** API using **position** param. The **position** param is 1 indexed. 
+- **AVX-20271** – Restricted concurrent uploads to make it harder for a remote attacker to fill the disk to defend against a denial-of-service attack. The check was too restrictive and causing concurrent uploads to overwrite each other. We enhanced the feature to allow for concurrency without sacrificing the original defense. 
+- **AVX-21238** – High Performance Encryption (HPE) Gateways with many HPE peerings that have transit segmentation enabled would encounter an Out of Memory (OOM) issue. The gateway failed to recover even after a reboot.  
+- **AVX-21332** – You can now use “insert_stateful_firewall_rules” API to insert stateful firewall rules, even when the table is empty. 
+- **AVX-22040** – Exception seen when disconnecting a firewall domain from Aviatrix edge domain on an AWS Transit Gateway.  
+
+Known Issues in Release 6.5.3233
+
+- **AVX-22976** – When you roll back a non-AWS primary and HA gateway together in any of the following patterns, one of the rollbacks fails:  
+
+* 6.6.5612 to 6.6
+* 6.6.5612 to 6.5
+* 6.5.3233 to 6.5
+
+To avoid this issue, roll back one gateway at a time between primary and HA gateways. If you experience a configuration failure, roll back the gateway for which the configuration failed again. 
+
 6.6.5612 (05/12/2022) 
 =======================
 
@@ -44,6 +74,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Issues Corrected in Aviatrix Release 6.6.5612** 
 
+- **AVI-2022-0002** – A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
 - **AVX-10577** – Licensing metrics were not visible. 
 - **AVX-20408** – Added an extra check to prevent an exception that can occur while adding a VPC object. The exception caused the VPC to unexpectedly become unavailable from a Spoke Gateway. 
 - **AVX-20485** – When you added a Site2Cloud Connection with HA that had Local/Remote Tunnel IP (Primary) settings, but the connection was missing Local/Remote Tunnel IP (Backup), the configuration failed with an error.  
@@ -79,7 +110,7 @@ You should plan to migrate your Standalone CloudN deployment to Managed CloudN. 
 
 **Issues Corrected in Aviatrix Release 6.7.1186** 
 
-* **AVX-22903** – After a new controller is launched for the first time, there are no routes from the transit gateway to the spoke gateway. 
+- **AVX-22903** – After a new controller is launched for the first time, there are no routes from the transit gateway to the spoke gateway. 
 
 6.7.1185 (05/09/2022) 
 =======================
@@ -110,88 +141,89 @@ In releases prior to Controller 6.7, the term security domain was used to refer 
 
 **Known Issues in Aviatrix Release 6.7.1185** 
 
-* **AVX-22184** – When an Edge Gateway expires, its state is listed as “waiting” on the Upgrade page. This “waiting” Gateway prevents the Controller from successfully upgrading. The actual state of the edge is “Expired,” which is shown in the CloudN > List. 
+- **AVI-2022-0002** – A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
+- **AVX-22184** – When an Edge Gateway expires, its state is listed as “waiting” on the Upgrade page. This “waiting” Gateway prevents the Controller from successfully upgrading. The actual state of the edge is “Expired,” which is shown in the CloudN > List. 
  
    If an Edge Gateway is expired in your Controller, navigate to CloudN > List on the left sidebar. On the Registered Devices page, select the Edge Gateway with the state “waiting,” click the Diag dropdown menu, and select Reset Configuration. Then, your Controller can successfully upgrade.
-
-* **AVX-22810** – After a successful platform upgrade, the gateway status indicates the operation is complete before the operation actually completes.
-* **AVX-22851** – During a rare telemetry related timing issue, gateway deletion and creation operations may experience exceptions that send the admin an exception email. This was caused by the software attempting to access a gateway object that does not exist.
+- **AVX-22810** – After a successful platform upgrade, the gateway status indicates the operation is complete before the operation actually completes.
+- **AVX-22851** – During a rare telemetry related timing issue, gateway deletion and creation operations may experience exceptions that send the admin an exception email. This was caused by the software attempting to access a gateway object that does not exist.
 
   **Workaround**: If the newly created gateway does not come up because of this issue, the workaround is to upgrade the gateway image.
 
 **Issues Corrected in Aviatrix Release 6.7.1185** 
 
-* **AVX-10577** – Licensing metrics were not visible. 
-* **AVX-16122** – The Packet Logging toggle switch on the Stateful Firewall > Policy tab page was not working. 
-* **AVX-17174** – Controller traceroute utility not showing first-hop when HPE is enabled between spoke and transit. 
-* **AVX-18291** – Failed daily and manual controller backups due to a rare corner case condition. 
-* **AVX-18700** – When the Stateful firewall rules reach above 500 rows of rules during add/insert/delete the firewall rule, it will throw error as “Command to execute is too long.” 
-* **AVX-18796** – The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction. 
+- **AVI-2022-0002** – A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
+- **AVX-10577** – Licensing metrics were not visible. 
+- **AVX-16122** – The Packet Logging toggle switch on the Stateful Firewall > Policy tab page was not working. 
+- **AVX-17174** – Controller traceroute utility not showing first-hop when HPE is enabled between spoke and transit. 
+- **AVX-18291** – Failed daily and manual controller backups due to a rare corner case condition. 
+- **AVX-18700** – When the Stateful firewall rules reach above 500 rows of rules during add/insert/delete the firewall rule, it will throw error as “Command to execute is too long.” 
+- **AVX-18796** – The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction. 
 
   Note that after this fix, the certificate’s validity changes from 60 days to 30 days. The rotation frequency also changes from 30 days to 15 days. 
 
-* **AVX-18876** – For BGP connections associated with the domain, "seen" routes learned from this connection got re-advertised back to the same connection when these BGP routes are in the best DB. 
-* **AVX-19811** – You can now insert a stateful firewall policy by specifying the position where you want to insert the policy. This feature is presently available through “Insert Stateful Firewall Rules” API using “position” param. The “position” param is 1 indexed. 
-* **AVX-20022** – You can now configure the gateway interfaces to enable or disable generic receive offload (GRO) and generic segmentation offload (GSO). 
-* **AVX-20173** – Incorrect gateways configured when disabling Transit FireNet on the gateway. 
-* **AVX-20271** – Restricted concurrent uploads to make it harder for a remote attacker to fill the disk to defend against a denial-of-service attack. The check was too restrictive and causing concurrent uploads to overwrite each other. We reworked the feature to allow for concurrency without sacrificing the original defense. 
-* **AVX-20616** – Supported filtering and pagination of security domain policies. This change makes the Add/Modify Connection Policy feature easier to use, especially in accounts that have a large number of policies. 
-* **AVX-20706** – While configuring the Panorama integration for FireNet on the vendor integration page, selecting “FW to show” caused an exception. 
-* **AVX-20970** – Ignore the default RFC1918 routes check in the unselected route tables when you attach a Spoke Gateway with the selective route tables. 
-* **AVX-21215** – Changed the terms “RBAC Group” and “Permission Group“ to “Permission Group“ on the “Account User” page to avoid confusion. 
-* **AVX-21332** – You can now use "insert_stateful_firewall_rules" API command to insert stateful firewall rules, even when the table is empty. 
-* **AVX-21740** – Terraform error prevented an interface from being specified for SNAT and DNAT policies when using policy-based connections. 
-* **AVX-22040** – Exception seen when disconnecting a firewall domain from Aviatrix edge domain on an AWS Transit Gateway. 
-* **AVX-22443** – In order for 6.7 to rollback back to 6.6 correctly, upgrade controllers to any 6.6 release after 6.6.5545 before upgrading to 6.7.
-* **AVX-22808** – Insert_stateful_firewall_rules now inserts the rule in a correct order both in the control plane and the IP tables when it is done using the reference rule.
-* **AVX-22847** – The gateway is stuck in an upgrade "initializing" state and needs ways to recover effectively during scaling.
+- **AVX-18876** – For BGP connections associated with the domain, "seen" routes learned from this connection got re-advertised back to the same connection when these BGP routes are in the best DB. 
+- **AVX-19811** – You can now insert a stateful firewall policy by specifying the position where you want to insert the policy. This feature is presently available through “Insert Stateful Firewall Rules” API using “position” param. The “position” param is 1 indexed. 
+- **AVX-20022** – You can now configure the gateway interfaces to enable or disable generic receive offload (GRO) and generic segmentation offload (GSO). 
+- **AVX-20173** – Incorrect gateways configured when disabling Transit FireNet on the gateway. 
+- **AVX-20271** – Restricted concurrent uploads to make it harder for a remote attacker to fill the disk to defend against a denial-of-service attack. The check was too restrictive and causing concurrent uploads to overwrite each other. We reworked the feature to allow for concurrency without sacrificing the original defense. 
+- **AVX-20616** – Supported filtering and pagination of security domain policies. This change makes the Add/Modify Connection Policy feature easier to use, especially in accounts that have a large number of policies. 
+- **AVX-20706** – While configuring the Panorama integration for FireNet on the vendor integration page, selecting “FW to show” caused an exception. 
+- **AVX-20970** – Ignore the default RFC1918 routes check in the unselected route tables when you attach a Spoke Gateway with the selective route tables. 
+- **AVX-21215** – Changed the terms “RBAC Group” and “Permission Group“ to “Permission Group“ on the “Account User” page to avoid confusion. 
+- **AVX-21332** – You can now use "insert_stateful_firewall_rules" API command to insert stateful firewall rules, even when the table is empty. 
+- **AVX-21740** – Terraform error prevented an interface from being specified for SNAT and DNAT policies when using policy-based connections. 
+- **AVX-22040** – Exception seen when disconnecting a firewall domain from Aviatrix edge domain on an AWS Transit Gateway. 
+- **AVX-22443** – In order for 6.7 to rollback back to 6.6 correctly, upgrade controllers to any 6.6 release after 6.6.5545 before upgrading to 6.7.
+- **AVX-22808** – Insert_stateful_firewall_rules now inserts the rule in a correct order both in the control plane and the IP tables when it is done using the reference rule.
+- **AVX-22847** – The gateway is stuck in an upgrade "initializing" state and needs ways to recover effectively during scaling.
 
 **Private Preview Features in Release 6.7.1185**
 
 The following `Private Preview Features`_ are available in this release:
 
-* **Micro-segmentation** – Micro-segmentation provides granular network security policy enforcement for distributed applications in the cloud. It enables a unified network access policy model for your applications with distributed points of policy enforcement throughout your network. For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
-* **Web Application Firewall** - The Aviatrix Web Application Firewall (WAF) feature detects and blocks malicious traffic before it reaches your controller. Enabling the Aviatrix WAF helps protect your applications from malicious activity by filtering the HTTP and HTTPS traffic. The WAF is enabled by with a button on the WAF tab in the Aviatrix Controller settings.
+- **Micro-segmentation** – Micro-segmentation provides granular network security policy enforcement for distributed applications in the cloud. It enables a unified network access policy model for your applications with distributed points of policy enforcement throughout your network. For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
+- **Web Application Firewall** - The Aviatrix Web Application Firewall (WAF) feature detects and blocks malicious traffic before it reaches your controller. Enabling the Aviatrix WAF helps protect your applications from malicious activity by filtering the HTTP and HTTPS traffic. The WAF is enabled by with a button on the WAF tab in the Aviatrix Controller settings.
 
 6.4.3049 (04/08/2022) 
 =======================
 
 **Issues Corrected in Aviatrix Release 6.4.3049**
 
-* **AVX-16838** – A newly created Controller failed to get its public IP, causing some gateways to fail to start. 
-* **AVX-18878** – Sessions may be prevented from getting immediately logged out after certain API calls. 
-* **AVX-19811** – You can now insert a stateful firewall policy by specifying the position where you want to insert the policy. This feature is presently available through “Insert Stateful Firewall Rules” API using “position” param. The “position” param is 1 indexed. 
-* **AVX-20064** – Enabled users to insert a Force Drop rule on the top of the list of Stateful Firewall rules without changing the order of the rules in the table. 
-* **AVX-20159** – When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback. 
-* **AVX-20271** – Restricted concurrent uploads to make it harder for a remote attacker to fill the disk to defend against a denial-of-service attack. The check was too restrictive and causing concurrent uploads to overwrite each other. We reworked the feature to allow for concurrency without sacrificing the original defense. 
-* **AVI-2022-0004** – Fixed an internally-reported vulnerability that would allow an authenticated user to gain command line privileges on the controller. This is not known to be exploited. 
+- **AVX-16838** – A newly created Controller failed to get its public IP, causing some gateways to fail to start. 
+- **AVX-18878** – Sessions may be prevented from getting immediately logged out after certain API calls. 
+- **AVX-19811** – You can now insert a stateful firewall policy by specifying the position where you want to insert the policy. This feature is presently available through “Insert Stateful Firewall Rules” API using “position” param. The “position” param is 1 indexed. 
+- **AVX-20064** – Enabled users to insert a Force Drop rule on the top of the list of Stateful Firewall rules without changing the order of the rules in the table. 
+- **AVX-20159** – When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback. 
+- **AVX-20271** – Restricted concurrent uploads to make it harder for a remote attacker to fill the disk to defend against a denial-of-service attack. The check was too restrictive and causing concurrent uploads to overwrite each other. We reworked the feature to allow for concurrency without sacrificing the original defense. 
+- **AVI-2022-0004** – Fixed an internally-reported vulnerability that would allow an authenticated user to gain command line privileges on the controller. This is not known to be exploited. 
 
 6.5.3166 (04/06/2022) 
 =======================
 
 **Enhanced Features in Release 6.5.3166**
 
-* **AVX-15117** – Large (4G+) tracelog uploads consumed excessive CPU, which caused gateway flapping. Optimized performance for launching gateways, viewing tunnel status, and uploading trace logs in large deployments. 
-* **AVX-16906** – Extended support for AES-256-GCM encryption for Site2Cloud IPsec tunnels. 
-* **AVX-20064** – Enabled users to insert a Force Drop rule on the top of the list of Stateful Firewall rules without changing the order of the rules in the table. 
+- **AVX-15117** – Large (4G+) tracelog uploads consumed excessive CPU, which caused gateway flapping. Optimized performance for launching gateways, viewing tunnel status, and uploading trace logs in large deployments. 
+- **AVX-16906** – Extended support for AES-256-GCM encryption for Site2Cloud IPsec tunnels. 
+- **AVX-20064** – Enabled users to insert a Force Drop rule on the top of the list of Stateful Firewall rules without changing the order of the rules in the table. 
 
 **UI Enhancements in Release 6.5.3166**
 
-* **AVX-19672** – Added an error message when adding a new Site2Cloud connection to warn users that AES-256-GCM encryption algorithms are not supported on older gateway images. 
+- **AVX-19672** – Added an error message when adding a new Site2Cloud connection to warn users that AES-256-GCM encryption algorithms are not supported on older gateway images. 
 
 **Issues Corrected in Aviatrix Release 6.5.3166**
 
-* **AVX-16122** – The Packet Logging toggle switch on the Stateful Firewall > Policy tab page was not working.
-* **AVX-16838** – A newly created Controller failed to get its public IP, causing some gateways to fail to start. 
-* **AVX-17650** – CloudN custom upgrade dry run GUI hanging at 99%, but commands.log showing succeeded. 
-* **AVX-18796** – The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction. 
+- **AVX-16122** – The Packet Logging toggle switch on the Stateful Firewall > Policy tab page was not working.
+- **AVX-16838** – A newly created Controller failed to get its public IP, causing some gateways to fail to start. 
+- **AVX-17650** – CloudN custom upgrade dry run GUI hanging at 99%, but commands.log showing succeeded. 
+- **AVX-18796** – The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction. 
 
  Note that after this fix, the certificate’s validity changes from 60 days to 30 days. The rotation frequency also changes from 30 days to 15 days. 
 
-* **AVX-18878** – Sessions may be prevented from getting immediately logged out after certain API calls. 
-* **AVX-20159** – When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback. 
-* **AVI-2022-0004** – Fixed an internally-reported vulnerability which would allow an authenticated user to gain command line privileges on the controller. This is not known to be exploited. 
-* **AVX-20970** – Ignore the default RFC1918 routes check in the unselected route tables when you attach a Spoke Gateway with the selective route tables. 
+- **AVX-18878** – Sessions may be prevented from getting immediately logged out after certain API calls. 
+- **AVX-20159** – When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback. 
+- **AVI-2022-0004** – Fixed an internally-reported vulnerability which would allow an authenticated user to gain command line privileges on the controller. This is not known to be exploited. 
+- **AVX-20970** – Ignore the default RFC1918 routes check in the unselected route tables when you attach a Spoke Gateway with the selective route tables. 
 
 6.6.5545 (03/31/2022)
 =======================
@@ -3627,7 +3659,7 @@ UserConnect-032315
 
 -  Support LDAP integration.
 
--  Support for Windows, MAC OS and Chromebook clients.
+-  Support for Windows, MAC OS, and Chromebook clients.
 
 
 OpenVPN is a registered trademark of OpenVPN Inc.

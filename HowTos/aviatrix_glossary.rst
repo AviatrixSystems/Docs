@@ -46,15 +46,22 @@ Aviatrix Edge
 
 The hardware/virtual appliance provided by Aviatrix as an alternative to SDWAN solutions (formerly known as CloudN or ExoGateway). Aviatrix Edge connects different CSP (Cloud Service Provider) networks in its multi-cloud networking architecture framework. 
 
-Aviatrix Spoke Gateway	
+
+Aviatrix Gateway	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In Aviatrix’s Hub-and-Spoke topology, a Spoke Gateway connects components within the same CSP (Cloud Service Provider) main account or tenancy. 
+An Aviatrix gateway is a virtual router you deploy in your network to route traffic in accordance with the connection and security policies you define in Aviatrix Secure Cloud Network Platform.  Aviatrix gateways support the connectivity requirements of cloud networks that use a transit hub-and-spoke architecture and are available in different types: Transit, Spoke, Egress, VPN, and NAT.
 
-Aviatrix Transit Gateway	
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Transit**: Connectivity between on-prem and the cloud. Site-to-cloud single region or multiple region and site-to-cloud single cloud or multiple cloud. For advanced transit networking, connectivity between one region to another or one cloud to another. 
 
-In Aviatrix’s Hub-and-Spoke Topology, a Transit Gateway connects a company’s subnets across the main Cloud Service Providers: AWS, Azure, GCP & OCI. This Transit Gateway connection provides high-speed and secure data transfers between networks while allowing for traffic engineering and multi-account subscription monitoring.
+**Spoke**: Connectivity between the Spoke VPC/VNet to the Transit. Deployed on the Spoke VPC/VNet. A spoke gateway can also be a site-to-cloud landing option.      
+
+**Egress**: An Aviatrix gateway that performs the function of cloud-to-Internet egress filtering and egress security. Connectivity between a VPC/VNet and the Internet. 
+
+**VPN**: An Aviatrix gateway that performs the function of VPN connectivity. Connectivity between your partners/branches and your cloud services for site-to-cloud VPN access (deployed on the partner/branch side). Also connectivity between your remote users and the cloud for dynamic enforcement to differentiate the different users connecting into the cloud. Useful for companies that have no on-prem data center (all resources are in the cloud). 
+
+**NAT**: An Aviatrix gateway that performs the NAT function. 
+
 
 Egress FQDN Filtering	
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

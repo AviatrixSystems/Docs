@@ -50,17 +50,19 @@ Management System for further analysis:
 - `AviatrixUser <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id2>`_
 - `AviatrixLicenseVPNUsers <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id4>`_ 
 - `AviatrixRule <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id6>`_
-- `AviatrixGwNetStats <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id7>`_
-- `AviatrixGwSysStats <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id8>`_
-- `AviatrixFQDNRule <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id9>`_
-- `AviatrixTunnelStatusChange <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id10>`_
-- `AviatrixCMD <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id11>`_
-- `AviatrixBGPOverlapCIDR <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id12>`_
-- `AviatrixBGPRouteLimitThreashold <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixbgproutelimitthreshold>`_
-- `AviatrixGuardDuty <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id13>`_
-- `AviatrixFireNet <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id14>`_
-- `AviatrixVPNVersion <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id15>`_
-- `AviatrixGatewayStatusChanged <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id16>`_
+- `AviatrixGwMicrosegPacket <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id7>`_
+- `AviatrixGwNetStats <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id8>`_
+- `AviatrixGwSysStats <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id9>`_
+- `AviatrixFQDNRule <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id10>`_
+- `AviatrixTunnelStatusChange <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id11>`_
+- `AviatrixCMD <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id12>`_
+- `AviatrixBGPOverlapCIDR <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id13>`_
+- `AviatrixBGPRouteLimitThreshold <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixbgproutelimitthreshold>`_
+- `AviatrixGuardDuty <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id14>`_
+- `AviatrixFireNet <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id15>`_
+- `AviatrixVPNVersion <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id16>`_
+- `AviatrixGatewayStatusChanged <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id17>`_
+
 
 Below are the details of each log keyword. 
 
@@ -165,6 +167,31 @@ where the gateway name is StatefulGW2, "A" represents Accept.
 ::
 
  2019-04-10T23:34:47.602166+00:00 ip-10-240-0-44 kernel: [ 5036.705845] AvxRl StatfulGW2 A:IN=eth0 OUT=eth0 MAC=02:bd:e5:4f:d0:e2:02:d8:14:81:fc:48:08:00 SRC=10.240.1.60 DST=10.230.1.23 LEN=84 TOS=0x00 PREC=0x00 TTL=63 ID=48453 DF PROTO=ICMP TYPE=8 CODE=0 ID=2834 SEQ=1
+
+AviatrixGwMicrosegPacket:
+-------------------------
+
+You need to configure `micro-segmentation policies <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ to see AviatrixGwMicrosegPacket logs.
+
+Logs with this prefix come from your configured micro-segmentation policies. These logs contain the following information: 
+
+- timestamp
+- source IP
+- destination IP
+- protocol (for example, ICMP or TCP)
+- port number
+- if a policy is enforced
+- if a policy was allowed or denied
+- gateway name
+- policy ID
+
+A micro-segmentation log example is shown below:
+
+::
+
+  2022-05-25T15:57:43.088860+00:00 ip-10-4-179-71 /usr/local/bin/avx-gw-state-sync[1168]: 2022/05/25 15:57:43 AviatrixGwMicrosegPacket:
+  POLICY=54ea65c4-313e-4b3d-8db3-1ecc4f0981db SRC_MAC=16:06:11:d7:a1:11 DST_MAC=16:54:ec:50:09:17 IP_SZ=84 SRC_IP=10.4.187.253 DST_IP=10.5.144.38
+  PROTO=ICMP SRC_PORT=0 DST_PORT=0 DATA=0x ACT=PERMIT ENFORCED=true
 
 
 AviatrixGwNetStats:
@@ -639,25 +666,6 @@ Netflow
 Aviatrix gateways support Netflow protocol v5 and v9.
 
 Please follow this link `Netflow Integration <https://docs.aviatrix.com/HowTos/netflow.html#netflow-integration>`_ to enable it.
-
-
-Micro-segmentation Logging
-===========================
-Micro-segmentation log files include the following information:
-
-- timestamp
-- source IP
-- destination IP
-- protocol (for example, ICMP or TCP)
-- port number
-- if a policy is enforced
-- if a policy was allowed or denied
-- gateway name
-- policy ID
-- payload data: this data can be parsed to show what traffic was blocked (especially if a protocol is not recognized), or if there are fields from the packet that micro-segmentation does not display
-
-Click `here <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ for more information on micro-segmentation.
-
 
 
 .. disqus::
