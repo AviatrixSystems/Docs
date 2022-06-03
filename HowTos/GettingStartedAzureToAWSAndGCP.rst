@@ -1,4 +1,4 @@
-﻿.. meta::
+.. meta::
     :description: Using Aviatrix to Connect Azure to AWS or GCP
     :keywords: Aviatrix, Azure, AWS, GCP, multi cloud
 
@@ -428,7 +428,7 @@ Head back over to the Gateways section in the Aviatrix Controller and click on *
 
 |imageAviatrixGWCreateGCP|
 
-Peeing the Gateways
+Peering the Gateways
 ^^^^^^^^^^^^^^^^^^^^^
 
 1. Click on the **Peering** navigation link on the Controller.
