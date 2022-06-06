@@ -142,7 +142,7 @@ Enjoy!
 .. |license_key| image:: AzureAviatrixCloudControllerStartupGuide_media/license_key.png
    :scale: 90%
 
-.. |aviatrix_byol_offer_azure_marketplace| image:: AzureAviatrixCloudControllerStartupGuide_media/click_byol.png
+.. |aviatrix_byol_offer_azure_marketplace| image:: AzureAviatrixCloudControllerStartupGuide_media/aviatrix_byol_offer_azure_marketplace.png
    :scale: 70%
 
 .. |static_ip| image:: AzureAviatrixCloudControllerStartupGuide_media/static_ip.png
