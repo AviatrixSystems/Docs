@@ -10,6 +10,25 @@ Please note the below Aviatrix Security recommendations and communication plans:
 - All known software vulerabilities are submitted to Mitre for CVE-ID references by Aviatrix Systems
 - Avitrix publish Field Notices and send alerts to Controller Admin in the Controller console when security related issues are published
 
+22. Remote Code Execution
+----------------------------------------
+
+**Date** 05/27/2022
+
+**Risk Rating** Critical
+
+**Description** Several vulnerabilities could be combined by an attacker to abuse a Gateway command mechanism that would allow arbitrary remote code execution. This vulnerability is not known to be exploited.
+
+**Impact** An unauthenticated attacker to run arbitrary commands against Aviatrix gateways.
+
+**Affected Products** Aviatrix Controller and Gateways.
+
+**Solution: Upgrade your controller and gateway software to:** 
+  - 6.4.3057
+  - 6.5.3233
+  - 6.6.5612
+  - 6.7.1185
+
 21. Post-Auth Remote Code Execution
 ----------------------------------------
 
