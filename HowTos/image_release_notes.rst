@@ -2,6 +2,28 @@
 Aviatrix Controller and Gateway Image Release Notes
 ====================================================
 
+Controller Images: AWS AMI - 05112022 (6/2/2022)
+=============================================
+
+The Aviatrix Product Security team has released the following AWS image of our software:
+
+* 05112022_AWS_utility_controller
+
+This image addresses multiple public vulnerabilities impacting Apache, LibNSS3, OpenSSL, Zlib, and Rsync which is included on our Controller: `CVE-2022-22719 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22719>`_, `CVE-2022-22720 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22720>`_, `CVE-2021-43527 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-43527>`_, `CVE-2022-0778 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778>`_, and `CVE-2018-25032 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-25032>`_.
+
+This image replaces the 122520, 100621, and 110421 BYOL Controller versions, which were removed from the AWS marketplace on May 26 and are no longer installable.
+
+Controller Images: AWS AMI - 05112022 (6/2/2022)
+===========================================
+
+The Aviatrix Product Security team has released the following AWS image of our software:
+
+* 05112022_AWS_metered_controller
+
+This image addresses multiple public vulnerabilities impacting Apache, LibNSS3, OpenSSL, Zlib, and Rsync which is included on our Controller: `CVE-2022-22719 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22719>`_, `CVE-2022-22720 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22720>`_, `CVE-2021-43527 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-43527>`_, `CVE-2022-0778 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778>`_, and `CVE-2018-25032 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-25032>`_.
+
+This image replaces the 122520, 100621, and 110421 BYOL Controller versions, which were removed from the AWS marketplace on May 26 and are no longer installable.
+
 Controller Images: AWS AMI – Version 110421 (11/8/2021)
 ======================================================
 
@@ -20,7 +42,6 @@ This release addresses vulnerabilities fixed by Apache version 2.4.51.
  
 - Controller image version 100621 closes a potential denial-of-service vulnerability and corrects an issue with launching controller HA.
 
-
 Gateway Images: hvm-cloudx-aws- 022021, hvm-cloudx-aliyun-122520 (5/10/2021) 
 ============================================================================
 
@@ -33,7 +54,6 @@ Gateway Images: hvm-cloudx-aws- 022021, hvm-cloudx-aliyun-122520 (5/10/2021)
 - Introduced the gateway in AWS China and Ali Cloud
 
 - Fix and pass vulnerabilities scan to Feb/2021
-
 
 Controller Images: AWS AMI – 050120 (8/17/2020) 
 ===============================================
