@@ -62,7 +62,7 @@ Launching the Controller VM from the Azure Marketplace Portal
 
 |aviatrix_byol_offer_azure_marketplace|
 
-#. On the Create a virtual machine page, under Basics, create new Resource Group titled "aviatrix." The virtual machine name can be "aviatrixController." For the instance size, we recommend at least 8GB of RAM so B2ms should be sufficient. 
+#. Create new Resource Group titled "aviatrix." The virtual machine name can be "aviatrixController." For the instance size, at least 8GB of RAM is recommended; B2ms should be sufficient. 
 #. Next, enter a username, password, and Resource group. Please do **not** use "ubuntu" as username if you use password as the authentication type.
 
     |Azure_Basics|
