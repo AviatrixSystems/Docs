@@ -58,11 +58,11 @@ Click the link to return to the Azure Portal to launch the Controller.
 Launching the Controller VM from the Azure Marketplace Portal
 -------------------------------------------------------------------------------
 
-#. Search the Azure Marketplace to find and subscribe to the actual BYOL Controller. 
+#. In your Azure account, navigate to the Marketplace. Enter "Aviatrix Secure Networking Platform BYOL" into the search bar to find the correct subscription. Select this subscription and click **Create**.
 
-    |click_byol|
+|aviatrix_byol_offer_azure_marketplace|
 
-#.  Under Basics, create new Resource Group titled "aviatrix." The virtual machine name can be "aviatrixController." For the instance size, we recommend at least 8GB of RAM so B2ms should be sufficient. 
+#. On the Create a virtual machine page, under Basics, create new Resource Group titled "aviatrix." The virtual machine name can be "aviatrixController." For the instance size, we recommend at least 8GB of RAM so B2ms should be sufficient. 
 #. Next, enter a username, password, and Resource group. Please do **not** use "ubuntu" as username if you use password as the authentication type.
 
     |Azure_Basics|
@@ -142,8 +142,8 @@ Enjoy!
 .. |license_key| image:: AzureAviatrixCloudControllerStartupGuide_media/license_key.png
    :scale: 90%
 
-.. |click_byol| image:: AzureAviatrixCloudControllerStartupGuide_media/click_byol.png
-   :scale: 90%
+.. |aviatrix_byol_offer_azure_marketplace| image:: AzureAviatrixCloudControllerStartupGuide_media/click_byol.png
+   :scale: 70%
 
 .. |static_ip| image:: AzureAviatrixCloudControllerStartupGuide_media/static_ip.png
    :scale: 30%
