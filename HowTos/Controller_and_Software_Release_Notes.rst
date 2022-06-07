@@ -37,14 +37,14 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 6.4.3057 (05/26/2022) 
 =======================
 
-Issues Corrected in Aviatrix Release 6.4.3057
+**Issues Corrected in Aviatrix Release 6.4.3057**
 
 **AVI-2022-0002** – A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
 
 6.5.3233 (05/26/2022) 
 =======================
 
-Issues Corrected in Aviatrix Release 6.5.3233
+**Issues Corrected in Aviatrix Release 6.5.3233**
 
 - **AVI-2022-0002** – A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
 - **AVX-10577** – Licensing metrics were not visible. 
@@ -54,7 +54,7 @@ Issues Corrected in Aviatrix Release 6.5.3233
 - **AVX-21332** – You can now use “insert_stateful_firewall_rules” API to insert stateful firewall rules, even when the table is empty. 
 - **AVX-22040** – Exception seen when disconnecting a firewall domain from Aviatrix edge domain on an AWS Transit Gateway.  
 
-Known Issues in Release 6.5.3233
+**Known Issues in Release 6.5.3233**
 
 - **AVX-22976** – When you roll back a non-AWS primary and HA gateway together in any of the following patterns, one of the rollbacks fails:  
 
@@ -141,7 +141,6 @@ In releases prior to Controller 6.7, the term security domain was used to refer 
 
 **Known Issues in Aviatrix Release 6.7.1185** 
 
-- **AVI-2022-0002** – A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
 - **AVX-22184** – When an Edge Gateway expires, its state is listed as “waiting” on the Upgrade page. This “waiting” Gateway prevents the Controller from successfully upgrading. The actual state of the edge is “Expired,” which is shown in the CloudN > List. 
  
    If an Edge Gateway is expired in your Controller, navigate to CloudN > List on the left sidebar. On the Registered Devices page, select the Edge Gateway with the state “waiting,” click the Diag dropdown menu, and select Reset Configuration. Then, your Controller can successfully upgrade.

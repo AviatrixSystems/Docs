@@ -5,10 +5,10 @@ PSIRT Advisories
 Aviatrix Product Security Team continually tests the software product, looking for vulnerabilities and weaknesses. If you have a security issue to report, please open a support ticket at Aviatrix Support Portal at https://support.aviatrix.com. Any such findings are fed back to Aviatrix's development teams and serious issues are described along with protective solutions in the advisories below. 
 
 Please note the below Aviatrix Security recommendations and communication plans:
-- Aviatrix strongly recommend customers to stay on the latest release to resolve features and bug issues. All fixes are in the new release; we do not patch older release versions. 
-- Customers are strongly recommended to perform image migration 2x a year. The migration process provides the latest system level security patch
-- All known software vulerabilities are submitted to Mitre for CVE-ID references by Aviatrix Systems
-- Avitrix publish Field Notices and send alerts to Controller Admin in the Controller console when security related issues are published
+  - Aviatrix strongly recommend customers to stay on the latest release to resolve features and bug issues. All fixes are in the new release; we do not patch older release versions. 
+  - Customers are strongly recommended to perform image migration 2x a year. The migration process provides the latest system level security patch
+  - All known software vulerabilities are submitted to Mitre for CVE-ID references by Aviatrix Systems
+  - Aviatrix publishes Field Notices and send alerts to Controller Admin in the Controller console when security related issues are published
 
 
 Most Recent IR
