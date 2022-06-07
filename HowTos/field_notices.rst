@@ -7,8 +7,35 @@ Field Notices
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
  
 
+Field Notice 0038 (2022/06/07)
+--------------------------------
 
 
+**Severity: HIGH** 
+
+Issue: New Controller Images have been made available in AWS Marketplace and all old Controller Images are no longer available.  
+
+Impact: If you have deployed Controller HA in AWS (https://docs.aviatrix.com/HowTos/controller_ha.html), the Controller HA may not work reliably unless you take the following actions.  
+
+Actions necessary: We are requesting you to take the following actions, as soon as possible, for all Controller instances you have deployed in AWS 
+
+Perform the following tasks during a maintenance window 
+
+Take a backup, https://docs.aviatrix.com/HowTos/controller_backup.html 
+
+If you are running Controller HA, please disable it (https://docs.aviatrix.com/HowTos/controller_ha.html)  
+
+Upgrade to the latest build in the current release you are running. For example, if you are running 6.6.5224, please set “Target Release Version” to “6.6” and upgrade.  
+
+Please go through the relevant upgrade instructions: Releases 6.4 and earlier or Releases 6.5 and later 
+
+Take a backup again. 
+
+Perform Controller Image Migration at “Controller UI > Settings > Maintenance > Migration > Controller Migration”. Look to https://docs.aviatrix.com/HowTos/controller_migration.html for more information on Controller Migration 
+
+If you would like to, Enable Controller HA by following instructions at https://docs.aviatrix.com/HowTos/controller_ha.html 
+
+Contacts for more information: If you run into any issues with the above procedure, please reach out to Aviatrix Support by opening a new ticket at Aviatrix Support Portal https://support.aviatrix.com 
 
 
 
