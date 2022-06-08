@@ -36,6 +36,38 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
 
+CoPilot Release 2.0.2 (6/09/2022)
+---------------------------------------------
+
+-   (Application Administration) **Data Migration** — Starting with CoPilot release 2.0.1, you can now migrate data from one (source) CoPilot instance to another (destination) CoPilot instance. 
+
+      CoPilot data migration is supported in any cloud or across clouds.
+
+      You would migrate CoPilot data in the following scenarios:
+
+      -   If you want to uptake a new (later version) CoPilot *image release*. You launch a new CoPilot instance based on the new image release version and then migrate data from the old instance to the new instance. 
+
+      -   If you decide to terminate your current CoPilot instance after deploying a new one; for example, to launch in a different cloud.  You launch the new instance and then migrate your data from the old instance to the new instance.
+
+      You can launch the new instance through any supported CSP marketplace portal, by using the controller UI (starting from Controller 6.7.1185 for AWS Cloud only), or by using Terraform scripts. For instructions on migrating CoPilot data from one CoPilot instance to another, see `CoPilot Data Migration <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#copilot-data-migration>`_ in *Aviatrix CoPilot Deployment Guide*.
+
+-   (Permissions) **Improved read-only access views** — CoPilot now hides/disables some actions in the UI for users logging in with a read-only account. Controller user accounts that belong to a group that have read_only permissions will no longer be able to perform certain actions: Saving and deleting filter groups (FlowIQ), saving and deleting topology layouts (Topology), deleting change-set data (Topology Replay), creating and deleting scaling policies (Performance), resolving and deleting alerts (Notifications), creating and deleting network domains (Security), and many more actions that are reserved for groups with all_write and all_security_write permissions.
+
+-   (Login Page) **New login page** — The CoPilot login page now has a new look and feel and includes options for remembering your login credentials and resetting your password.  
+
+-   (Security - `Private Preview Features`_) The **Micro-segmentation** private preview feature has the following enhancements. Please note that private preview features are not meant for production environments. 
+
+      -   **Micro-segmentation logging** – For the micro-segmentation rules with logging enabled, a policy monitor is now introduced that shows which rules were hit by network traffic. The policy monitor displays logs that meet the criteria configured in your rules. You can filter the information by timestamp, related rule, and more criteria. You can also configure a retention period for how long to store the logs.
+
+      -   **Micro-segmentation rule priority** – You can now specify a priority number to the micro-segmentation rules you create. The priority number determines the order in which your rules are applied. A lower priority number indicates higher precedence, with the highest priority being 0.
+
+      -   **Micro-segmentation system messages** – You can now view a list of system messages about your micro-segmentation configurations by clicking the bell icon in the CoPilot action bar.
+
+      -   For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
+
+(Note: CoPilot versions 2.0, 2.0.1 were internal releases)
+
+
 CoPilot Release 1.11.3 (5/23/2022)
 ------------------------------------
 
