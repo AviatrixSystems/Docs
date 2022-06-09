@@ -95,7 +95,7 @@ An app domain traffic flow can belong to more than one rule. If this occurs, the
 4. Select the Source App Domains -- these domains originate (bi-directional) traffic.
 5. Select the Destination App Domains -- these domains terminate (bi-directional) traffic.
 
-A micro-segmentation rule is inherently bi-directional, which means that traffic originating from source app domains can reach destination app domains, and vice versa. An exception to this rule is that TCP connections initiated from the destination to the source will be blocked.
+A micro-segmentation rule is inherently bi-directional, which means that traffic originating from source app domains can reach destination app domains, and vice versa. An exception to this rule is that TCP connections initiated from the destination to the source will be matched.
 
 6. Select if the rule is allowed or denied. This determines the action to be taken on the traffic.
 7. If the Enforcement slider is On (the default), the rule is enforced in the data plane. If the Enforcement slider is off, the packets are only watched. This allows you to observe if the traffic impacted by this rule causes any inadvertent issues (such as traffic being dropped). 
