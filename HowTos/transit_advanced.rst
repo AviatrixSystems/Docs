@@ -146,6 +146,21 @@ To enable this option on software version 6.3,
 
 To disable the option, leave the field blank and click **Change**.
 
+
+Preserve AS Path
+-----------------
+
+This field is applicable to both Gateway Manual BGP Advertised Network List and Connection Manual BGP Advertised Network List. When disabled, the behavior defaults to the AS path being stripped during BGP route advertisements from transit or spoke gateways to neighboring gateways. When enabled, the AS path is preserved.
+
+To enable AS path preservation for a transit gateway:
+
+#. Click Multi-Cloud Transit > Advanced Config on the left sidebar.
+#. On the Edit Transit tab, in the Transit Gateway list select the transit gateway on which to enable this feature.
+#. Scroll down to Preserve AS Path and set the toggle switch to Enabled.
+
+Similarly, to enable AS path preservation for a spoke gateway, follow the same procedure as above but select the spoke gateway on which to enable this feature from the Edit Spoke tab. Scroll down to Preserve AS Path and set the toggle switch to Enabled.
+
+
 Gateway AS Path Prepend
 -------------------------------------------
 
