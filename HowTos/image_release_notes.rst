@@ -2,7 +2,7 @@
 Aviatrix Controller and Gateway Image Release Notes
 ====================================================
 
-Controller Images: AWS AMI - 05112022 (6/2/2022)
+Controller Images: AWS AMI - Version 05112022 (6/2/2022)
 =============================================
 
 The Aviatrix Product Security team has released the following AWS image of our software:
@@ -13,7 +13,7 @@ This image addresses multiple public vulnerabilities impacting Apache, LibNSS3, 
 
 This image replaces the 122520, 100621, and 110421 BYOL Controller versions, which were removed from the AWS marketplace on May 26 and are no longer installable.
 
-Controller Images: AWS AMI - 05112022 (6/2/2022)
+Controller Images: AWS AMI - Version 05112022 (6/2/2022)
 ===========================================
 
 The Aviatrix Product Security team has released the following AWS image of our software:
@@ -27,10 +27,10 @@ This image replaces the 122520, 100621, and 110421 BYOL Controller versions, whi
 Controller Images: AWS AMI – Version 110421 (11/8/2021)
 ======================================================
 
-- Added support for AWS IMDSv2.
- 
-- Corrected issue with the Aviatrix Controller initialization hanging after image migrating to a new image.
+Release version 110421 includes the following updates:
 
+- Added support for AWS IMDSv2.
+- Corrected issue with the Aviatrix Controller initialization hanging after image migrating to a new image.
 - Closed potential vulnerability in Ubuntu.
 
 Controller Images: AWS AMI – Version 100621 (10/13/2021)
@@ -39,48 +39,40 @@ Controller Images: AWS AMI – Version 100621 (10/13/2021)
 This release addresses vulnerabilities fixed by Apache version 2.4.51.
 
 - Controller image version 100621 includes Apache version 2.4.51 which closed vulnerabilities `CVE-2021-40438 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40438>`_, `CVE-2021-33193 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33193>`_ and vulnerabilities closed in previous Apache releases.
- 
 - Controller image version 100621 closes a potential denial-of-service vulnerability and corrects an issue with launching controller HA.
 
-Gateway Images: hvm-cloudx-aws- 022021, hvm-cloudx-aliyun-122520 (5/10/2021) 
+Gateway Images: hvm-cloudx-aws- Version 022021, hvm-cloudx-aliyun-122520 (5/10/2021) 
 ============================================================================
 
+Both release versions include the following updates:
+
 - R6.4.2499 Software Version is required
-
 - Support new IPSec encryption mechanism
-
 - Update security patches to date 
-
 - Introduced the gateway in AWS China and Ali Cloud
-
 - Fix and pass vulnerabilities scan to Feb/2021
 
-Controller Images: AWS AMI – 050120 (8/17/2020) 
+Controller Images: AWS AMI – Version 050120 (8/17/2020) 
 ===============================================
 
+Release version 050120 includes the following updates:
+
 - R6.1.1280 Software Version is required
-
 - Update Linux kernel and packages versions 
-
 - Remove packages no longer used by the product 
-
 - Set X-XSS-Protection and X-Content-Type-Options by default 
-
 - Fix all vulnerabilities up to Jun/2020 (mid ref: 15727) 
 
 Gateway Images: hvm-cloudx-aws-102320 (11/10/2020)
 ==================================================
 
+Release version 102320 includes the following updates:
+
 - R6.2.1837 Software Version is required
-
 - New image fetch mechanism 
-
 - Update security patches to date 
-
 - Linux Kernel update and package upgrade 
-
 - New network drivers 
-
 - Fix and pass vulnerabilities scan to Sep/2020 (mid ref: 18262) 
 
 Overview
@@ -94,14 +86,12 @@ New Customer Installation Procedures
 ====================================
 
 - Customer launches the Aviatrix Controller image instance in the AWS, Azure, or respective cloud marketplace.  
-
 - Customer launches new gateways from the Controller. The Controller will automatically pull the latest compatible Gateway version.   
 
 Existing Customers - Controller Image upgrade (Migration) 
 =========================================================
 
 - Each customer is responsible for migrating their existing Controller to the latest image. See the image list below.  
-
 - To implement the **latest Controller image**, perform the following steps.
 
 .. note::
