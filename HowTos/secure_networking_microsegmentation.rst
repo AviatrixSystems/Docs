@@ -40,6 +40,7 @@ Policies
 ------------
 After creating app domains, you create policies that consist of rules, to define the access control to apply on the traffic between those app domains. In the above workload isolation use case, all traffic (i.e., ports and protocols) between the ShoppingCart application and the Product Logging app must be blocked (Denied). You can decide which rules to enforce, and if you want to log the actions related to a rule. These rules are enforced (if enabled) on your Spoke gateways, and are executed against the Spoke gateways in the order that they are shown in the rule list. 
 
+
 Prerequisites
 -----------------
 Before applying micro-segmentation:
@@ -92,8 +93,11 @@ An app domain traffic flow can belong to more than one rule. If this occurs, the
 1. In CoPilot, navigate to Security > Micro-Segmentation > Policies.
 2. On the Policies tab, click +RULE. 
 3. Enter a name for the rule.
-4. Select the Source App Domains (the app domains that originate traffic).
-5. Select the Destination App Domain (the app domains that terminate traffic).
+4. Select the Source App Domains -- these domains originate (bi-directional) traffic.
+5. Select the Destination App Domains -- these domains terminate (bi-directional) traffic.
+
+A micro-segmentation rule is inherently bi-directional, which means that rules for app domains will match both traffic from source to destination, as well as destination to source. An exception to this rule is that TCP connections initiated from the destination to the source will not be matched.
+
 6. Select if the rule is allowed or denied. This determines the action to be taken on the traffic.
 7. If the Enforcement slider is On (the default), the rule is enforced in the data plane. If the Enforcement slider is off, the packets are only watched. This allows you to observe if the traffic impacted by this rule causes any inadvertent issues (such as traffic being dropped). 
 8. If the Logging slider is On, information (such as five-tuple, source/destination MAC address, etc.) related to the action is logged. Since logging uses a lot of disk space, be careful when enabling logging on your rules. It is best to enable logging for a short period of time while you are debugging, and then disable logging again when you are finished.
@@ -123,6 +127,10 @@ After the rule is created you can click the arrow icon next to that rule in the 
 Retaining Log Files
 -------------------
 To configure how many days to keep your micro-segmentation logs, in CoPilot navigate to Settings > Advanced Settings and scroll down to Index Retention Manager. Use the slider next to Micro-segmentation Logs to select the number of days to retain your logs (default is five days).
+
+Viewing Raw Logs
+----------------
+Micro-segmentation supports per-packet logging when logging is enabled on a policy. For more information on consuming the raw logs, click `here <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id7>`_.
 
 
 Viewing Rule Statistics

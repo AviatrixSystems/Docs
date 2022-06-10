@@ -10,7 +10,7 @@
 
 
 
-1. Introduction
+Introduction
 ================
 
 The Aviatrix Controller and all of its managed gateways can be configured to forward logs to well known log management systems.
@@ -40,7 +40,7 @@ list of useful Aviatrix logs which can be parsed on Splunk, Sumo Logic
 and other log management systems to display relevant analytics of data
 collected from Aviatrix Controller and gateways.
 
-2. Aviatrix Log Format for Log Management Systems
+Aviatrix Log Format for Log Management Systems
 ==================================================
 
 The following types of Aviatrix log keywords can be identified by the Log
@@ -50,17 +50,19 @@ Management System for further analysis:
 - `AviatrixUser <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id2>`_
 - `AviatrixLicenseVPNUsers <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id4>`_ 
 - `AviatrixRule <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id6>`_
-- `AviatrixGwNetStats <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id7>`_
-- `AviatrixGwSysStats <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id8>`_
-- `AviatrixFQDNRule <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id9>`_
-- `AviatrixTunnelStatusChange <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id10>`_
-- `AviatrixCMD <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id11>`_
-- `AviatrixBGPOverlapCIDR <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id12>`_
-- `AviatrixBGPRouteLimitThreashold <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixbgproutelimitthreshold>`_
-- `AviatrixGuardDuty <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id13>`_
-- `AviatrixFireNet <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id14>`_
-- `AviatrixVPNVersion <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id15>`_
-- `AviatrixGatewayStatusChanged <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id16>`_
+- `AviatrixGwMicrosegPacket <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id7>`_
+- `AviatrixGwNetStats <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id8>`_
+- `AviatrixGwSysStats <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id9>`_
+- `AviatrixFQDNRule <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id10>`_
+- `AviatrixTunnelStatusChange <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id11>`_
+- `AviatrixCMD <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id12>`_
+- `AviatrixBGPOverlapCIDR <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id13>`_
+- `AviatrixBGPRouteLimitThreshold <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#aviatrixbgproutelimitthreshold>`_
+- `AviatrixGuardDuty <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id14>`_
+- `AviatrixFireNet <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id15>`_
+- `AviatrixVPNVersion <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id16>`_
+- `AviatrixGatewayStatusChanged <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#id17>`_
+
 
 Below are the details of each log keyword. 
 
@@ -165,6 +167,31 @@ where the gateway name is StatefulGW2, "A" represents Accept.
 ::
 
  2019-04-10T23:34:47.602166+00:00 ip-10-240-0-44 kernel: [ 5036.705845] AvxRl StatfulGW2 A:IN=eth0 OUT=eth0 MAC=02:bd:e5:4f:d0:e2:02:d8:14:81:fc:48:08:00 SRC=10.240.1.60 DST=10.230.1.23 LEN=84 TOS=0x00 PREC=0x00 TTL=63 ID=48453 DF PROTO=ICMP TYPE=8 CODE=0 ID=2834 SEQ=1
+
+AviatrixGwMicrosegPacket:
+-------------------------
+
+You need to configure `micro-segmentation policies <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ to see AviatrixGwMicrosegPacket logs.
+
+Logs with this prefix come from your configured micro-segmentation policies. These logs contain the following information: 
+
+- timestamp
+- source IP
+- destination IP
+- protocol (for example, ICMP or TCP)
+- port number
+- if a policy is enforced
+- if a policy was allowed or denied
+- gateway name
+- policy ID
+
+A micro-segmentation log example is shown below:
+
+::
+
+  2022-05-25T15:57:43.088860+00:00 ip-10-4-179-71 /usr/local/bin/avx-gw-state-sync[1168]: 2022/05/25 15:57:43 AviatrixGwMicrosegPacket:
+  POLICY=54ea65c4-313e-4b3d-8db3-1ecc4f0981db SRC_MAC=16:06:11:d7:a1:11 DST_MAC=16:54:ec:50:09:17 IP_SZ=84 SRC_IP=10.4.187.253 DST_IP=10.5.144.38
+  PROTO=ICMP SRC_PORT=0 DST_PORT=0 DATA=0x ACT=PERMIT ENFORCED=true
 
 
 AviatrixGwNetStats:
@@ -345,10 +372,10 @@ Example log:
   
   
 
-3. Logging Configuration at Aviatrix Controller
+Logging Configuration at Aviatrix Controller
 ================================================
 
-To enable logging at the Aviatrix Controller, go to Settings->Logging page. Once logging is enabled, both the Controller and all gateways will forward logs directly to the logging server.
+To enable logging from the Aviatrix Controller, go to Settings > Logging. Once logging is enabled, both the Controller and all gateways will forward logs directly to the logging server.
 
  .. note::  A total of 10 profiles from index 0 to 9 are supported for remote syslog, while index 9 is reserved for CoPilot.
 
@@ -359,7 +386,7 @@ To enable logging at the Aviatrix Controller, go to Settings->Logging page. Once
             However newly deployed gateway will always be added to profile 9 which is reserved for Copilot to monitor.
 
 
-3.1 Remote Syslog
+Remote Syslog
 ------------------
 On the Aviatrix Controller:
   a. Profile Index: select a profile to edit
@@ -439,8 +466,8 @@ Then
 
 
 
-3.1.a Using Rsyslog to send logs to Sumo
--------------------------------------------
+Using Rsyslog to send logs to Sumo
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Since Sumo agents on the controller and gateways tend to consume a lot of cpu/memory resources, we strongly suggest that rsyslog is used instead to send logs to Sumo. This is `documented by Sumo <https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source>`_. Follow the following instructions:
 
@@ -465,8 +492,8 @@ Since Sumo agents on the controller and gateways tend to consume a lot of cpu/me
    :width: 6.50500in
    :height: 6.20500in
 
-3.1.b Using Rsyslog to send logs to Datadog
----------------------------------------------
+Using Rsyslog to send logs to Datadog
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   #. Go to Controller/Settings/Logging/Remote Syslog and enable the service
   #. Server: intake.logs.datadoghq.com
   #. Port: 10514
@@ -476,8 +503,8 @@ Since Sumo agents on the controller and gateways tend to consume a lot of cpu/me
  .. note:: DATADOG_API_KEY <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - - %msg%\\n
 
 
-3.1.c Using Rsyslog to send logs to Splunk
----------------------------------------------
+Using Rsyslog to send logs to Splunk
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   #. Follow the directions in `Splunk Monitornetworkports <https://docs.splunk.com/Documentation/Splunk/latest/Data/Monitornetworkports>`_ to create a listener in Splunk.
   #. Go to Controller/Settings/Logging/Remote Syslog and enable the service
   #. Server: your Splunk server fqdn or ip
@@ -486,8 +513,8 @@ Since Sumo agents on the controller and gateways tend to consume a lot of cpu/me
   #. Optional Custom Template: (leave blank)
 
 
-3.1.d Using Rsyslog to send logs to Logstash (ElasticSearch/Kibana/ELK stack)
---------------------------------------------------------------------------------
+Using Rsyslog to send logs to Logstash (ElasticSearch/Kibana/ELK stack)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   #. Follow the directions in `Logstash TCP input <https://www.elastic.co/guide/en/logstash/current/plugins-inputs-tcp.html>`_ to create a tcp listener in Logstash.
   #. Go to Controller/Settings/Logging/Remote Syslog and enable the service
   #. Server: your Logstash server fqdn or ip
@@ -511,7 +538,7 @@ A sample config of Logstash to work with Rsyslog in ELK stack v7 is
     }
 
 
-3.2 Filebeat Forwarder
+Filebeat Forwarder
 -----------------------
 On the Aviatrix Controller:
   a. Server:	FQDN or IP address of logstash server
@@ -543,7 +570,7 @@ A sample config of Logstash to work with Filebeat in ELK stack v7 is
     }
 
 
-3.3 Splunk Logging
+Splunk Logging
 -------------------
 On the Aviatrix Controller:
   a. How to configure:	Manual Input or Import File
@@ -555,7 +582,7 @@ Note:
 If "Import File" is selected for "How to configure", please provide the Splunk configuration file. 
 
 
-3.4 Sumo Logic
+Sumo Logic
 -------------------
 On the Aviatrix Controller:
    a. Access ID : ID of SumoLogic server
@@ -569,7 +596,7 @@ Sumologic Collectors(eg: Controllers/Gateways) from SumoLogic servers.
 Please note that Sumo collector is memory intensive and needs instances with at least 2GB of memory - for AWS, t3.small, or higher depending on features deployed.
 
 
-3.5 DataDog Agent
+DataDog Agent
 -------------------
 You may refer to this link, `DatadogIntegration <https://docs.aviatrix.com/HowTos/DatadogIntegration.html>`_ to set up. However, based on the past year experience, the vendor has changed the client root certificates for a few times.
    a. You may disable DataDog Agent and re-enable it to fetch the current new root certificate.
@@ -578,15 +605,15 @@ You may refer to this link, `DatadogIntegration <https://docs.aviatrix.com/HowTo
 Before 5.3 release, DataDog agent woulld only upload metrics from the Aviatrix Controller and Gateways - from release 5.3, we also upload syslogs to bring it on par with Sumo and Splunk agent behavior.
 
 
-3.6 Cloudwatch
+Cloudwatch
 -------------------
 Please follow this link `AWS CloudWatch Integration <https://docs.aviatrix.com/HowTos/cloudwatch.html>`_ for instruction.
 
 
-4. Log management system Apps
+Log Management System Apps
 ====================================
 
-The Aviatrix controller can be configured to forward logs to various log
+The Aviatrix Controller can be configured to forward logs to various log
 management systems. Aviatrix also provides apps with prebuilt dashboards
 for popular log management systems like Splunk and Sumo Logic.
 
@@ -621,7 +648,7 @@ The Sumo Logic app installation guide is also available on
    :height: 6.20500in
 
 
-5. Loggly integration via Syslog
+Loggly integration via Syslog
 ====================================
 
 To configure Loggly integration through an intermediary syslog server relay:
@@ -633,14 +660,12 @@ To configure Loggly integration through an intermediary syslog server relay:
 3. Follow `this document <https://www.loggly.com/docs/network-devices-and-routers/>`_ to configure the relay to send to Loggly
 
 
-6. Netflow
+Netflow
 =============
 
 Aviatrix gateways support Netflow protocol v5 and v9.
 
 Please follow this link `Netflow Integration <https://docs.aviatrix.com/HowTos/netflow.html#netflow-integration>`_ to enable it.
-
-
 
 
 .. disqus::
