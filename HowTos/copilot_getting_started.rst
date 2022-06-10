@@ -777,6 +777,7 @@ Before you begin the data migration process, perform the following tasks. Prereq
 
 -   The size of the disk/volume you specify for the Instance is the same size or larger than the *storage used* in your *old copilot*. If you deploy in AWS using the controller UI deploy process, you specify the size in the "Data Disk" column for the instance.
 -   Take note of your *new copilot* IP address. The new copilot IP address can be the private IP, public IP, or Elastic IP address (EIP) used for reachability of the instance.
+-   NOTE: After launch, your *new copilot* will take about an hour to automatically update to the latest software release version. Your *new copilot* and *old copilot* must be the same software version before starting data migration. You will verify this later when following the data migration procedure.
 
 **Open required ports on each CoPilot instance:**
 

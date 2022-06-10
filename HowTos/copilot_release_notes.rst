@@ -47,7 +47,11 @@ CoPilot Release 2.0.2 (6/10/2022)
 
 -   (Login Page) **New login page** — The CoPilot login page now has a new look and feel and includes options for remembering your login credentials and resetting your password.  
 
--   (Security - `Private Preview Features`_) The **Micro-segmentation** private preview feature has the following enhancements. Please note that private preview features are not meant for production environments. 
+-   (`Public Preview Features`_ in Release 2.0.2) The following public preview feature is available in this release:
+
+    -   **Micro-segmentation** – Micro-segmentation provides granular network security policy enforcement for distributed applications in the cloud. It enables a unified network access policy model for your applications with distributed points of policy enforcement throughout your network. The micro-segmentation public preview feature is available starting from Controller release 6.7.1319. For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
+
+-   (Security - `Public Preview Features`_) The **Micro-segmentation** public preview feature has the following enhancements (starting from Controller release 6.7.1319):
 
       -   **Micro-segmentation logging** – For the micro-segmentation rules with logging enabled, a policy monitor is now introduced that shows which rules were hit by network traffic. The policy monitor displays logs that meet the criteria configured in your rules. You can filter the information by timestamp, related rule, and more criteria. You can also configure a retention period for how long to store the logs.
 
@@ -56,7 +60,6 @@ CoPilot Release 2.0.2 (6/10/2022)
       -   **Micro-segmentation system messages** – You can now view a list of system messages about your micro-segmentation configurations by clicking the bell icon in the CoPilot action bar.
 
       -   For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
-
 
 
 
@@ -79,7 +82,7 @@ CoPilot Release 1.10.0, 1.10.1 (5/09/2022)
 
 -   (`Private Preview Features`_ in Release 1.10.0) The following private preview feature is available in this release:
 
-    -   **Micro-segmentation** – Micro-segmentation provides granular network security policy enforcement for distributed applications in the cloud. It enables a unified network access policy model for your applications with distributed points of policy enforcement throughout your network. The micro-segmentation private preview feature is available starting from Controller release 6.7. For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
+    -   **Micro-segmentation** – Micro-segmentation provides granular network security policy enforcement for distributed applications in the cloud. It enables a unified network access policy model for your applications with distributed points of policy enforcement throughout your network. The micro-segmentation private preview feature is available starting from Controller release 6.7.1185. For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
 
 -   Performance improvements.
 
