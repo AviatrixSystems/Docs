@@ -754,7 +754,7 @@ For instructions on migrating CoPilot data from a source to a destination instan
 Migrate data from one CoPilot instance to another
 =========================================================== 
 
-This sections provides instructions for migrating CoPilot data from one CoPilot instance to another CoPilot instance. See also "About migrating data from one CoPilot instance to another".
+This section provides instructions for migrating CoPilot data from one CoPilot instance to another CoPilot instance. See also "About migrating data from one CoPilot instance to another".
 
 **Important:** The migration of CoPilot data may take a few hours for small environments and a few days for large environments. The migration process is not expected to cause down time but it is best practice to plan the migration during a maintenance window. You can perform prerequisite tasks outside your maintenance window to save valuable time during the maintenance window. Please note that while you can use your *old copilot* during the migration process, any changes you make there will NOT be updated on the *new copilot*.
 
