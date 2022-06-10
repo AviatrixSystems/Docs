@@ -42,9 +42,8 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-21263** – Improved email notifications. When a GRE tunnel in your account goes down or up, the Aviatrix Controller sends the GRE tunnel status change to the registered-email-address(es). This email notification contains the timestamp for the tunnel status change. 
 * **AVX-23069** – Added a new toggle switch, “Preserve AS Path,” to Multi-Cloud Transit > Advanced Config. This option allows you to preserve an AS Path during manual BGP route advertisements, which reduces the chances of routing loops and wrong route selection on the peer side. 
 
-You can enable this option in both the Gateway Manual BGP Advertised Network List and the Connection Manual BGP Advertised Network List, and on transit and spoke gateways.  
-
-When the “Preserve AS Path” option is disabled, the AS path is stripped during BGP route advertisements from transit or spoke gateways to neighbors. 
+* You can enable this option in both the Gateway Manual BGP Advertised Network List and the Connection Manual BGP Advertised Network List, and on transit and spoke gateways.  
+* When the “Preserve AS Path” option is disabled, the AS path is stripped during BGP route advertisements from transit or spoke gateways to neighbors. 
 
 * **AVX-23105** – Enhanced Controller validation for micro-segmentation. The Controller now checks that gateway kernel version is greater or equal to 5.4.0 before allowing you to configure micro-segmentation. Micro-segmentation requires this minimum kernel for data plane enforcement. 
 * **AVX-23163** – The account/gateway auditing interval has been changed from every hour to every 24 hours. This change improves the memory performance of the Controller. 
