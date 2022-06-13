@@ -20,12 +20,12 @@ Alert emails are sent to the admin of the Controller. To avoid having too many n
   Aviatrix strongly recommends you use an email alias to notify a group of people rather than using an individual email address. If only one person receives the notifications, important alerts could be missed.
 
 * By default, the source email address is no-reply@aviatrix.com. 
-* By default, the SMTP service is provided by a third-party, Sendgrid. Even though Aviatrix implements third-party risk monitoring, we are not responsible for Sendgrid controls. Aviatrix recommend customer to configure your own SMTP service. 
+* By default, the SMTP service is provided by a third-party, Sendgrid. Even though Aviatrix implements third-party risk monitoring, we are not responsible for Sendgrid controls. Aviatrix recommends that you configure your own SMTP service. 
 
 Selecting or Changing the Email Recipients of Alert Email Notifications
 ----------------------------------------------------------------------------------------
 
-When you first launch your Aviatrix Controller for the first time or log in after an upgrade, please provide the addresses for at least four new email accounts or email aliases that can receive important notification emails.
+When you launch your Aviatrix Controller for the first time or log in after an upgrade, please provide the addresses for at least four new email accounts or email aliases that can receive important notification emails.
 
 1. Go to Settings > Controller > select the **Email** tab. 
 2. Use the four fields on the page to enter the **new** email addresses or aliases of team members who should receive these emails: 
@@ -72,11 +72,14 @@ Create SMTP Credentials:
 
 |aws_ses|
 
- 5. Click **Download Credentials** **as the password will not be shown again**.
+ 5. Click **Download Credentials**.
 
+ .. important::
+
+  Download these credentials now, as this password will not display again.
 
 Verify an Email Address: 
-1. Log into the Amazon SES Console. Go to SESHome/IdentityManagement/EmailAddresses.
+1. Log into the Amazon SES Console > SESHome > IdentityManagement > EmailAddresses.
 2. Click **Verify a New Email Address**.
 3. In Verify a New Email Address, enter an email address you want to send messages from. Note this *must* be a valid email address.
 
