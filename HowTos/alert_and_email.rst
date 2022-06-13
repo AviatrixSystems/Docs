@@ -13,16 +13,12 @@ To help you manage important events in your account, the Aviatrix Controller sen
 - Account information changes
 - Other critical events, such as a full disk
 
-Alert emails are sent to the admin of the Controller. To avoid having too many notification emails sent to one email address, you can set up multiple email accounts to make sure members of DevOps Engineering, IT, or other teams can also receive these emails. The email can be an individual email address or an email alias of a team. 
-
-.. important::
-
-  Aviatrix strongly recommends you use an email alias to notify a group of people rather than using an individual email address. If only one person receives the notifications, important alerts could be missed.
+By default, alert emails are sent to the administrator of the Controller. Aviatrix strongly recommends that you use an email alias to notify a group of people rather then using an individual email address. If only one person receives the notifications, important alerts could be missed. To change the default email for alert notifications, see the section below.
 
 * By default, the source email address is no-reply@aviatrix.com. 
 * By default, the SMTP service is provided by a third-party, Sendgrid. Even though Aviatrix implements third-party risk monitoring, we are not responsible for Sendgrid controls. Aviatrix recommends that you configure your own SMTP service. 
 
-Selecting or Changing the Email Recipients of Alert Email Notifications
+Changing the Email Recipients of Alert Email Notifications
 ----------------------------------------------------------------------------------------
 
 When you launch your Aviatrix Controller for the first time or log in after an upgrade, please provide the addresses for at least four new email accounts or email aliases that can receive important notification emails.
