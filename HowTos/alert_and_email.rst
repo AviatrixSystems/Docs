@@ -30,7 +30,6 @@ When you launch your Aviatrix Controller for the first time or log in after an u
 
 * Administrator email alias (named something like "aviatrix_administators@yourcompany.com")  - Set up this email account to receive important account and certification information.
 * Security Admin Email Alias (named something like "aviatrix_securitynotices@yourcompany.com")  - Set up this email account receive security and CVE (Common Vulnerabilities and Exposures) notification emails.
-Set up this email to receive system/tunnel status notification emails.
 * IT Admin Email Alias (named something like "aviatrix_criticalnotices@yourcompany.com")  - Set up this email account to receive field notices and critical notices.
 * IT Admin Email Alias (named something like "aviatrix_ statuschangenotifications@yourcompany.com")  - Set up this email to receive system/tunnel status notification emails.
 
@@ -48,7 +47,7 @@ By default, Alert Bell notification is enabled for the following features:
     #. **Reach of Route Limit Check** - Alert when VPC and BGP route limits reach a threshold.
     #. **Blackhole Route Entry Check** - Alert when VPC route table has inactive routes. To learn more about Blackhole Routes click `here <https://docs.aviatrix.com/Support/support_center_controller.html?highlight=bell#what-are-blackholes-on-alert-bell>`_.
 
-|alert_bell_notify|
+|alert_bell_notify_|
 
 To change these Alert Bell settings, navigate to Settings > Controller > select the **Alert Bell* tab.
 
@@ -117,7 +116,7 @@ Use the **Software exception notification** option to disable exception emails s
 .. |email_notifications_page| image:: alert_and_email_media/email_notifications_page.png
    :scale: 60%
 
-.. |alert_bell_notify| image:: alert_and_email_media/alert_bell_notify.png
+.. |alert_bell_notify_| image:: alert_and_email_media/alert_bell_notify_.png
    :scale: 60%
 
 .. disqus::
