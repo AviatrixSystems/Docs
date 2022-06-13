@@ -6,38 +6,44 @@
 Emails and Alert Configuration 
 ###################################
 
-The Aviatrix Controller sends alert emails for events such as:
+To help you manage important events in your account, the Aviatrix Controller sends alert emails for events such as:
 
  - Tunnel status change
  - Gateway status change
+- Account information changes
+- Other critical events, such as a full disk
 
-By default, the alert email is sent to the admin of the Controller. The email can be an individual email address or an email alias of a team. 
+Alert emails are sent to the admin of the Controller. To avoid having too many notification emails sent to one email address, you can set up multiple email accounts to make sure members of DevOps Engineering, IT, or other teams can also receive these emails. The email can be an individual email address or an email alias of a team. 
 
 .. important::
 
   Aviatrix strongly recommends you use an email alias to notify a group of people rather than using an individual email address. If only one person receives the notifications, important alerts could be missed.
 
-By default, the source email address is no-reply@aviatrix.com. 
+* By default, the source email address is no-reply@aviatrix.com. 
+* By default, the SMTP service is provided by a third-party, Sendgrid. Even though Aviatrix implements third-party risk monitoring, we are not responsible for Sendgrid controls. Aviatrix recommend customer to configure your own SMTP service. 
 
-By default, the SMTP service is provided by a third-party, Sendgrid. Even though Aviatrix implements third-party risk monitoring, we are not responsible for Sendgrid controls. Aviatrix recommend customer to configure your own SMTP service. 
+Selecting or Changing the Email Recipients of Alert Email Notifications
+----------------------------------------------------------------------------------------
 
-How to change alert email configuration
-----------------------------------------
+When you first launch your Aviatrix Controller for the first time or log in after an upgrade, please provide the addresses for at least four new email accounts or email aliases that can receive important notification emails.
 
-If you would like the alert messages to be sent to a different email, 
+1. Go to Settings > Controller > select the **Email** tab. 
+2. Use the four fields on the page to enter the **new** email addresses or aliases of team members who should receive these emails: 
 
-::
+    |email_notifications_page|
 
-  go to Settings -> Controller -> STATUS CHANGE EVENT EMAIL, 
-  fill in a new email address and click Save. 
+* Administrator email alias (named something like "aviatrix_administators@yourcompany.com")  - Set up this email account to receive important account and certification information.
+* Security Admin Email Alias (named something like "aviatrix_securitynotices@yourcompany.com")  - Set up this email account receive security and CVE (Common Vulnerabilities and Exposures) notification emails.
+Set up this email to receive system/tunnel status notification emails.
+* IT Admin Email Alias (named something like "aviatrix_criticalnotices@yourcompany.com")  - Set up this email account to receive field notices and critical notices.
+* IT Admin Email Alias (named something like "aviatrix_ statuschangenotifications@yourcompany.com")  - Set up this email to receive system/tunnel status notification emails.
 
-|change_alert_email|
+3. Click **Save** to save your changes.
 
-
-How to manage Alert Bell notification?
+Managing Alert Bell Notifications
 ------------------------------------------------------
 
-The Alert Bell notification can be managed under Settings -> Controller -> Alert Bell.
+The Alert Bell is in the top right of your Controller. This Bell provides notifications about the following features:
 
 By default, Alert Bell notification is enabled for the following features:
     1. **Overlapped CIDR Check** - Alert when BGP routes overlap in Site2Cloud.
@@ -48,55 +54,55 @@ By default, Alert Bell notification is enabled for the following features:
 
 |alert_bell_notify|
 
+To change these Alert Bell settings, navigate to Settings > Controller > select the **Alert Bell* tab.
 
-How to Change Email Notification Source
------------------------------------------
+
+Changing the Email Notification Source (AWS)
+----------------------------------------------------------
 
 The following example uses Amazon Simple Email Service (SES):
 Note that newly created SES accounts are placed in an "AWS SES Sandbox" and will not be able to send emails to unverified domains/addresses until they have been removed from the Sandbox: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html
 
-1.	Create SMTP Credentials
-    a.	Log into AWS Console
-    b.	Click “SES Email Service”
-    c.	Click “SMTP Settings”
-    d.	Click “Create My SMTP Credentials”
+Create SMTP Credentials:
+ 
+1. Log into the AWS Console.
+2. Click **SES Email Service**.
+3. Click **SMTP Settings**.
+4. Click **Create My SMTP Credentials**.
 
 |aws_ses|
 
-    e.	Click “Download Credentials” **as the password will not be shown again**
+ 5. Click **Download Credentials** **as the password will not be shown again**.
 
 
-2.	Verify an Email Address
-    a.	Log into Amazon SES Console. Go to SESHome/IdentityManagement/EmailAddresses
-    b.	Click “Verify a New Email Address”
-    c.	In “Verify a New Email Address” dialog, enter an email address you want to send messages from. Note this *must* be a valid email address
+Verify an Email Address: 
+1. Log into the Amazon SES Console. Go to SESHome/IdentityManagement/EmailAddresses.
+2. Click **Verify a New Email Address**.
+3. In Verify a New Email Address, enter an email address you want to send messages from. Note this *must* be a valid email address.
 
 |aws_verify_email|
 
-    d.	You will receive a verification email from AWS SES asking you to confirm that you are the owner of the email address. Click the verification link in the message.
+4. You will receive a verification email from AWS SES asking you to confirm that you are the owner of the email address. Click the verification link in the message.
     
     
-3.	Configure Aviatrix Controller to use AWS SMTP email server
-    a.	SMTP Server: email-smtp.us-east-1.amazonaws.com <note that this value is regional and may differ based on the region of your verified address(es). You can confirm this from AWS Console > Services > SES > SMTP Settings > Server Name>
-    b.	Port: 587 
-    c.	Sender Email: <From Step 2: your verified email>
-    d.	Sender Login: <From Step 1e: your SMTP Username>
-    e.	Sender Password: <From step 1e: your SMTP Password>
-    f.	Test Email: <From Step 2: your verified email>
-    g.	Protocol: TLS
-    h.	Click “Save”
+Configure the Aviatrix Controller to use AWS SMTP email server:
+1. SMTP Server: email-smtp.us-east-1.amazonaws.com <note that this value is regional and may differ based on the region of your verified address(es). You can confirm this from AWS Console > Services > SES > SMTP Settings > Server Name>
+2. Port: 587 
+3. Sender Email: <From Step 2: your verified email>
+4. Sender Login: <From Step 1e: your SMTP Username>
+5. Sender Password: <From step 1e: your SMTP Password>
+6. Test Email: <From Step 2: your verified email>
+7. Protocol: TLS
+8. Click **Save**.
 
-How to not send exception notification to Aviatrix
+Disabling Exception Notification Emails to Aviatrix
 -------------------------------------------------------------
 
-Software exception notification button gives an ability to customers to disable exception emails send to Aviatrix. To disable notification, go to Settings -> Controller -> Email, scroll down to find the software exception field and click Disable.
+Use the **Software exception notification** option to disable exception emails send to Aviatrix. To disable these notifications, go to Settings > Controller > Email, scroll down to find the software exception field, and click **Disable**.
  
 
 
-
-.. |change_alert_email| image:: alert_and_email_media/change_alert_email.png
-   :scale: 30%
-   
+ 
 .. |AwsEmailVerification| image:: alert_and_email_media/AwsEmailVerification.PNG
    :scale: 30%
    
@@ -109,7 +115,10 @@ Software exception notification button gives an ability to customers to disable 
 .. |aws_verify_email| image:: alert_and_email_media/aws_verify_email.png
    :scale: 30%
 
+.. |email_notifications_page| image:: alert_and_email_media/email_notifications_page.png
+   :scale: 60%
+
 .. |alert_bell_notify| image:: alert_and_email_media/alert_bell_notify.png
-   :scale: 30%
+   :scale: 60%
 
 .. disqus::
