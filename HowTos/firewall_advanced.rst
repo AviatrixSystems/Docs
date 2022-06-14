@@ -35,21 +35,6 @@ Egress Static CIDRs
 You can allow egress to a subset of your IP address space from your on-prem data center to the Internet with Aviatrix Egress FireNet. Static CIDR egress is supported on Aviatrix Transit and AWS Transit Gateways (TGW). Up to 20 subnets are supported.
 
 
-Fail Close
--------------
-
-Fail Close feature applies to the scenario where there are no firewalls attached to the FireNet Gateways. Fail Close
-is disabled by default. 
-
-When Fail Close is disabled, east-west traffic that requires inspection  
-can pass through the FireNet Gateways without having any attached firewalls, making the FireNet Gateway behave
-as a lookback interface. This is useful as it allows you  to isolate and test network connectivity 
-during troubleshooting.  
-
-When Fail Close is enabled, FireNet Gateway drops all traffic when there are no firewalls 
-attached to the FireNet Gateways. 
-
-
 Network List Excluded From East-West Inspection
 -------------------------------------------------------------------
 
