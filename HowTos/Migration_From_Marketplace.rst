@@ -166,20 +166,20 @@ Set up Aviatrix Customer ID (Again) and AWS Account Number
 Check Security Groups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Make sure the Security Groups of the new Controller match those of the previous Controller. Then, backup the configuration again.
+Make sure the Security Groups of the new Controller match those of the previous Controller. Then, back up the configuration again.
 
 .. tip::
    Optional: After confirming everything is running correctly, delete the previous Aviatrix AWS Marketplace Controller instance.
 
-.. |controller_versions| image:: Migration_From_Marketplace/controller_versions.png
+.. |controller_versions| image:: Migration_From_Marketplace_media/controller_versions.png
    :scale: 60%
-.. |controller_migration| image:: Migration_From_Marketplace/controller_migration.png
+.. |controller_migration| image:: Migration_From_Marketplace_media/controller_migration.png
    :scale: 60%
-.. |enable_backup| image:: Migration_From_Marketplace/enable_backup.png
+.. |enable_backup| image:: Migration_From_Marketplace_media/enable_backup.png
    :scale: 60%
-.. |customer_id| image:: Migration_From_Marketplace/customer_id.png
+.. |customer_id| image:: Migration_From_Marketplace_media/customer_id.png
    :scale: 60%
-.. |restore| image:: Migration_From_Marketplace/restore.png
+.. |restore| image:: Migration_From_Marketplace_media/restore.png
    :scale: 60%
 
 .. disqus::
