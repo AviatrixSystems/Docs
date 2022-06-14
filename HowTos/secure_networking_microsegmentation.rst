@@ -44,9 +44,7 @@ Prerequisites
 -----------------
 Before applying micro-segmentation:
 
-- Your version of CoPilot must be 2.0 or greater.
-- Your version of Aviatrix Controller must be 6.7 or greater.
-- Gateways must have their image updated to version 6.7 or greater.
+- Verify you have the required software versions of Aviatrix CoPilot, Aviatrix Controller, and gateways to use the micro-segmentation feature. See `Aviatrix Controller and Gateway Release Notes <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_ for details.
 - Network reachability should be configured between the VPCs that contain applications that require connectivity. You configure network reachability using Connected Transit/MCNS. See `here <https://docs.aviatrix.com/HowTos/transit_advanced.html#connected-transit>`_ for more information.
 - If you plan to use CSP tags in your app domains, Cloud resources must be tagged appropriately.
 
