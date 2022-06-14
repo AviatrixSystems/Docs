@@ -20,7 +20,7 @@ For customers who launched a Controller through AWS, this document outlines the 
 
 There are two methods you can use to migrate your Controller AMI:
 
-1. **Controller-driven method** (simplest method)  - You can easily migrate your AMI directly from the Controller through clicking one button. Note that you can only migrate between AMIs with the same license (BYOL, Metered, or another license) using this method.
+1. **Controller-driven method** (simplest method)  - You can easily migrate your AMI directly from the Controller. Note that you can only migrate between AMIs with the same license (BYOL, Metered, or another license) using this method.
 2. **Manual method** (longer method, but offers more visibility)  - You can migrate your Controller by going through the AWS marketplace and stopping your Controller instance, disassociating your EIP, and so on. This method requires more steps but allows you to see the network and account changes involved in each step. You can also use this method to change licenses if needed.
 
 .. note::
