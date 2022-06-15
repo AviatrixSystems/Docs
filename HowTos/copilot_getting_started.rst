@@ -743,13 +743,13 @@ The data migrated includes the indexes shown in Settings > Index Management. The
 
 You would migrate CoPilot data when uptaking a new CoPilot *image release* version. After launching a new CoPilot instance based on the new image release version, you would migrate data from the old instance to the new instance. You would also migrate CoPilot data any time you want to deploy a new instance of CoPilot and retain your data from the old instance. You can launch the new instance through the same CSP marketplace portal as your existing instance, by using the controller UI (starting from Controller 6.7.1185 for AWS Cloud only), or by using Terraform scripts.
 
-For instructions on migrating CoPilot data from a source to a destination instance, see "Migrate data from one CoPilot instance to another".
+For instructions on migrating CoPilot data from a source to a destination instance, see `Migrate data from one CoPilot instance to another`_.
 
 
 Migrate data from one CoPilot instance to another
 =========================================================== 
 
-This section provides instructions for migrating CoPilot data from one CoPilot instance to another CoPilot instance. See also "About Migrating Data to a CoPilot Instance".
+This section provides instructions for migrating CoPilot data from one CoPilot instance to another CoPilot instance. See also `About Migrating CoPilot Data`_.
 
 The following terms are used in these instructions:
 
@@ -809,15 +809,15 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
 
 1.  Open the *new copilot* application in your web browser:
 
-    `https://<copilot_eip>`
+    `https://<copilot_ip>`
 
-    where *<copilot_eip>* is the Elastic IP address of your *new copilot* instance.
+    where *<copilot_ip>* is the IP address of your *new copilot* instance. For AWS clouds, this would be your Elastic IP (EIP) address.
 
 2.  Go through the initial setup process to enter information about your *new copilot* when prompted (see "Initial Setup of CoPilot" for information about each prompt). When prompted to enter the IP address of your controller, make sure you enter the IP address of the same controller your *old copilot* is pointing to.
 
-3.  Verify the software version of your *new copilot*and *old copilot* are the same (they should both be software version 2.0.2 or later).
+3.  Verify the software version of your *new copilot* and *old copilot* are the same (they should both be software version 2.0.2 or later).
 
-4.  Verify the Performance feature version on your *new copilot*and *old copilot* are the same (they should both use Performance v2 or v1).
+4.  Verify the Performance feature version on your *new copilot* and *old copilot* are the same (they should both use Performance v2 or v1).
 
     It is likely your *old copilot* is already using Performance v2 (the **Switch to v2** option in the Performance page was activated). In this case, on your *new copilot*, select the Performance sidebar option, and when prompted, click **Switch to v2**. If your *old copilot* is using Performance v1 and your *new copilot* is using v2, click **Switch to v2** on your *old copilot*.
 
@@ -827,7 +827,7 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
 
 7.  Click **Migrate**.
 
-    Migrating CoPilot data may take a few hours for small environments and a few days for large environments. Environments with 500 GB of data may take 3 to 4 days to complete data migration. If you use your *old copilot* during the migration process, changes you make there will NOT be updated on the *new copilot*. The netflow and syslog data sent by your Aviatrix gateways is now being sent to your *new copilot*.
+    Migrating CoPilot data may take a few hours for small environments and a few days for large environments. Environments with 500 GB of data may take 3 to 4 days to complete data migration. If you use your *old copilot* during the migration process, changes you make during migration will NOT be reflected in the *new copilot*. The netflow and syslog data sent by your Aviatrix gateways is now being sent to your *new copilot*.
 
 8.  **If data migration succeeds (Migration Complete):**
 
