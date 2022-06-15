@@ -15,7 +15,7 @@ Aviatrix CoPilot is available as an all-in-one virtual appliance that is hosted 
 It can be launched as an EC2 instance in AWS, a virtual machine in Azure, or a VM instance in GCP and OCI. Please make sure default configurations for resources settings that are recommended by marketplaces are applied during launch.
 After successfully launching the instance, follow the procedures in this section to configure CoPilot instance parameters and launch. 
 Please note that you will need an Aviatrix Controller to use CoPilot. CoPilot works in tandem with Aviatrix Controller. Aviatrix Controller and CoPilot are not required to be collocated. It is possible to run them in separate VPCs/VNets or separate cloud providers (in multi-cloud environments). Typically, Aviatrix Controller and Aviatrix CoPilot are run in the same VPC/VNet.
-If you are launching a new instance of CoPilot and need to migrate CoPilot data from an existing (source) CoPilot to a newly launched (destination) CoPilot, see "About migrating data from one CoPilot instance to another" in *Aviatrix CoPilot Deployment Guide*.
+If you are launching a new instance of CoPilot and need to migrate CoPilot data from an existing (source) CoPilot to a newly launched (destination) CoPilot, see "About Migrating CoPilot Data" in *Aviatrix CoPilot Deployment Guide*.
 
 CoPilot Deployment Methods
 ---------------------------
@@ -732,21 +732,16 @@ Below is a summary of steps for a CoPilot instance launch via Terraform:
 
         Note that if you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List here. In addition, in your native cloud console, you must open your CoPilot security group for UDP 5000 from each newly launched gateway.
 
-About migrating data from one CoPilot instance to another
+About Migrating CoPilot Data
 =========================================================== 
 
-Starting with CoPilot release 2.0 or later, you can migrate data from one (source) CoPilot instance to another (destination) CoPilot instance.
+Starting with CoPilot release 2.0.2, you can migrate data from one (source) CoPilot instance to another (destination) CoPilot instance.
 
-CoPilot data can be migrated within supported clouds and across clouds.
+Data migration is supported across regions, availability zones, and VPCs/VNets within the same cloud. In the current release, migration of CoPilot data is not supported across clouds.
 
 The data migrated includes the indexes shown in Settings > Index Management. The indexes are migrated from the data disk (volume) of the source instance to the data disk (volume) of the destination instance. Configuration data for CoPilot functions are also migrated, including but not limited to data for notifications, alerts, network behavior analytics configurations, threat IP configurations, and GeoBlocking configurations.
 
-You would migrate CoPilot data when uptaking a new CoPilot *image release* version. After launching a new CoPilot instance based on the new image release version, you would migrate data from the old instance to the new instance. You would also migrate CoPilot data any time you want to deploy a new instance of CoPilot and retain your data from the old instance. You can launch the new instance through any supported CSP marketplace portal, by using the controller UI (starting from Controller 6.7.1185 for AWS Cloud only), or by using Terraform scripts.
-
-Data migration is supported:
-
--   From a single **pre-1.5.1-image** deployment to a new **1.5.1-image** single deployment
--   From a single **1.5.1-image** deployment to a new **1.5.1-image** single deployment
+You would migrate CoPilot data when uptaking a new CoPilot *image release* version. After launching a new CoPilot instance based on the new image release version, you would migrate data from the old instance to the new instance. You would also migrate CoPilot data any time you want to deploy a new instance of CoPilot and retain your data from the old instance. You can launch the new instance through the same CSP marketplace portal as your existing instance, by using the controller UI (starting from Controller 6.7.1185 for AWS Cloud only), or by using Terraform scripts.
 
 For instructions on migrating CoPilot data from a source to a destination instance, see "Migrate data from one CoPilot instance to another".
 
@@ -754,36 +749,50 @@ For instructions on migrating CoPilot data from a source to a destination instan
 Migrate data from one CoPilot instance to another
 =========================================================== 
 
-This section provides instructions for migrating CoPilot data from one CoPilot instance to another CoPilot instance. See also "About migrating data from one CoPilot instance to another".
-
-**Important:** The migration of CoPilot data may take a few hours for small environments and a few days for large environments. The migration process is not expected to cause down time but it is best practice to plan the migration during a maintenance window. You can perform prerequisite tasks outside your maintenance window to save valuable time during the maintenance window. Please note that while you can use your *old copilot* during the migration process, any changes you make there will NOT be updated on the *new copilot*.
+This section provides instructions for migrating CoPilot data from one CoPilot instance to another CoPilot instance. See also "About Migrating Data to a CoPilot Instance".
 
 The following terms are used in these instructions:
 
--   *old copilot* — Refers to your current (source) CoPilot instance that you want to migrate data from.—
+-   *old copilot* — Refers to your current (source) CoPilot instance that you want to migrate data from.
 -   *new copilot* — Refers to your newly deployed (destination) CoPilot instance that you want to migrate data to.
+
+**Important:** Please consider the following points about the data migration process in the current release:
+
+-   A backup and restore solution for CoPilot data is currently not available.
+-   Migration of CoPilot data is not supported across clouds. Data migration is supported across regions, availability zones, and VPCs/VNets of the same cloud.
+-   Aviatrix has tested data migration for infrastructures with up to a total of 500 GB of data. If you have a much larger infrastructure, please contact Aviatrix Support for more information about how to migrate your data.
+-   If data migration fails and you want to retry the migration, please contact Aviatrix Support for assistance.
+-   If the data migration utility fails to migrate all indexes, you cannot revert the migration but the data remains intact on the old copilot.
+-   During the migration process, you cannot make configuration changes to the *old copilot*. Also, all netflow and syslog data will be directed to your *new copilot* after data migration begins. If the migration fails, and you must terminate your *new copilot*, the netflow and syslog data direted there during migration will be lost.
+-   If data migration fails and you decide to cancel the data migration, you can terminate your *new copilot* and continue to use your *old copilot* (by following the instructions indicated in the procedure).
+
+CoPilot data may take a few hours for small environments and a few days for large environments. Environments with 500 GB of data may take 3 to 4 days to complete data migration.
+
+The migration process will not cause down time in your data plane but your CoPilot will not be available to receive new data for about 10 minutes after migration begins and 5 minutes after migration succeeds or fails. It is best practice to plan the migration during a maintenance window.
+
+You can perform prerequisite tasks outside your maintenance window to save valuable time during the maintenance window. Please note that while you can use your *old copilot* during the migration process, any changes you make during the migration will NOT be reflected on the *new copilot*.
 
 **Prerequisite Tasks**
 
-Before you begin the data migration process, perform the following tasks. Prerequisite tasks can be performed outside your maintenance window.
+Before you begin the data migration process, perform the following tasks. Prerequisite tasks can be performed outside your maintenance window. When logging in to CoPilot, use a controller user account that has full admin permissions.
 
 **Obtain the following information:**
 
 -   The IP address of your Aviatrix Controller.
 -   The IP address of your *old copilot*. The *old copilot* IP address can be the private IP, public IP, or Elastic IP address (EIP) used for reachability of the instance.
--   The amount of *storage used* on your *old copilot* for the data volume containing CoPilot data. To look up the storage used, navigate to Settings > Resources and refer to the Used column of the volume. If your CoPilot is based on the CoPilot image release version 1.5.1, refer to the Used column of the cpltLV volume.
+-   The amount of *storage used* on your *old copilot* for the data volume containing CoPilot data. To look up the storage used, navigate to CoPilot > Settings > Resources and refer to the Used column of the volume. If your CoPilot is based on CoPilot image release version 1.5.1, you will see a **cpltLV** volume listed on the Resources page. In that case, refer to the Used column of the cpltLV volume to take note of the storage used.
 
-**Launch your *new copilot*where:**
+**Launch your *new copilot* where:**
 
 -   The size of the disk/volume you specify for the Instance is the same size or larger than the *storage used* in your *old copilot*. If you deploy in AWS using the controller UI deploy process, you specify the size in the "Data Disk" column for the instance.
 -   Take note of your *new copilot* IP address. The new copilot IP address can be the private IP, public IP, or Elastic IP address (EIP) used for reachability of the instance.
--   NOTE: After launch, your *new copilot* will take about an hour to automatically update to the latest software release version. Your *new copilot* and *old copilot* must be the same software version before starting data migration. You will verify this later when following the data migration procedure.
+-   After launch, your *new copilot* will take about an hour to automatically update to the latest software release version. Your *new copilot* and *old copilot* must be the same software version before starting data migration. You will verify this later when following the data migration procedure.
 
 **Open required ports on each CoPilot instance:**
 
 At the applicable CSP portal, on the ***new copilot*** VM:
 
--   Open port 443 to receive TCP traffic from the old copilot (old copilot IP address).
+-   Open port 443 to receive TCP traffic from the *old copilot* (*old copilot* IP address).
 -   Open port 31283 to receive UDP traffic from each of your Aviatrix gateways.
 -   Open port 5000 to receive UDP traffic from each of your Aviatrix gateways.
 -   **Note:** After deployment, your *new copilot* ports 31283 and 5000 will be open for any IP (0.0.0.0/0) . It is strongly recommended to remove the 0.0.0.0 entry from the inbound access rules for these ports and add entries for all your gateway IP addresses.
@@ -810,7 +819,7 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
 
 4.  Verify the Performance feature version on your *new copilot*and *old copilot* are the same (they should both use Performance v2 or v1).
 
-    It is likely your old CoPilot is already using Performance v2 (the **Switch to v2** option in the Performance page was activated). In this case, on your *new copilot*, select the Performance sidebar option, and when prompted, click **Switch to v2**. If your *old copilot* is using Performance v1 and your *new copilot* is using v2, click **Switch to v2** on your *old copilot*.
+    It is likely your *old copilot* is already using Performance v2 (the **Switch to v2** option in the Performance page was activated). In this case, on your *new copilot*, select the Performance sidebar option, and when prompted, click **Switch to v2**. If your *old copilot* is using Performance v1 and your *new copilot* is using v2, click **Switch to v2** on your *old copilot*.
 
 5.  In the *new copilot* UI, from the side bar, select **Settings** and then click the **Migration** tab.
 
@@ -818,24 +827,43 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
 
 7.  Click **Migrate**.
 
-    The data migration may take a few hours for small environments and a few days for large environments. If you use your *old copilot* during the migration process, changes you make there will NOT be updated on the *new copilot*.
+    Migrating CoPilot data may take a few hours for small environments and a few days for large environments. Environments with 500 GB of data may take 3 to 4 days to complete data migration. If you use your *old copilot* during the migration process, changes you make there will NOT be updated on the *new copilot*. The netflow and syslog data sent by your Aviatrix gateways is now being sent to your *new copilot*.
 
-    After the data is migrated, you will see a Migration Complete message.
+8.  **If data migration succeeds (Migration Complete):**
 
-8.  (**Verify data migration**) To verify the data are migrated on the *new copilot*:
+    If all data indices migrate successfully, you will get a Migration Complete message. Go to step 10 to verify data migration.
+
+9.  **If data migration fails (**Migration Failed**):**
+
+    If one or more data indices do not migrate, you will get a Migration Failed message followed by a list of failed indices in the error message.
+
+    If you decide the indices that failed to migrate are not important (for example, they are very old records you no longer need), you can choose to use the *new copilot*. In this case, go to step 10 to verify the important data you want is indeed in your *new copilot* before deleting your *old copilot*.
+
+    If you decide you want to retry the data migration, contact Aviatrix Support.
+
+    If you decide to cancel the data migration and continue to use your *old copilot*, do the following:
+
+    a.  At the applicable CSP portal for the *new copilot*, stop the instance/virtual machine.
+    b.  Turn on the Task Server on your *old copilot* (CoPilot > Settings > Services > Task Server).
+    c.  Configure your controller to send netflow data to your *old copilot* (Controller > Settings > Logging > Netflow Agent. See "Enable Netflow for CoPilot FlowIQ Data" for details.
+    d.  Configure your controller to send syslog data to your *old copilot*(Controller > Settings > Logging > Remote Syslog. See "Enable Syslog for CoPilot Security Audit Data" for details.
+    e.  At the applicable CSP portal for the *old copilot* VM, you can remove the access rules that were added to open TCP ports 9200 and 443 from *new copilot* source IP.
+
+10. (**Verify data migration**) To verify the data are migrated on the *new copilot*:
 
     -   Navigate to the Settings > Index Management page and verify all indexes are visible.
     -   Navigate to the CoPilot functional screens and verify you can see your configuration data for notifications, alerts, anomalies, threat IPs, GeoBlocking, and other configurations.
-9.  (**Post-migration tasks**) After your new instance is running with your migrated data intact, you can perform the following tasks:
+
+11. (**Post-migration tasks**) After your *new copilot* is running with your migrated data intact, you can perform the following tasks:
 
     -   On your *new copilot*, if you use your own SSL certificate (rather than the CoPilot self signed certificate), update the DNS servers associated with your certificate in Settings > Configuration.
     -   On your *old copilot*, release the license in Settings > Licensing by clicking the **RESET** button.
-    -   Delete your old copilot and associated cloud resources:
+    -   Delete your *old copilot* and associated cloud resources:
         -   EIP
         -   Access/security groups
         -   Disks/Volumes
         -   VM/Instance
-    -   On your Aviatrix Controller, update the CoPilot association (Controller > Settings > CoPilot) to point to your *new copilot*. If you used the controller UI to launch your *new copilot*, this was automatically done for you.
+    -   On your Aviatrix Controller, verify that the CoPilot association (Controller > Settings > CoPilot) is pointing to your *new copilot*. If you used the controller UI to launch your *new copilot*, this was automatically done for you.
 
 .. |gcp_copilot_1| image:: copilot_getting_started_media/gcp_copilot_1.png
    :scale: 50%

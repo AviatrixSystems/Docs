@@ -36,12 +36,12 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
 
-CoPilot Release 2.0.2 (6/10/2022)
+CoPilot Release 2.0.2 (6/15/2022)
 ---------------------------------------------
 
 (Note: The following releases were built for internal use only: 2.0.0, 2.0.1)
 
--   (Application Administration) **Data Migration** — Starting with CoPilot release 2.0.2, you can now migrate data from one (source) CoPilot instance to another (destination) CoPilot instance. CoPilot data migration is supported in any cloud or across clouds. You would migrate CoPilot data when uptaking a new CoPilot *image release* version, where you would launch a new CoPilot instance based on the new image release version and then migrate data from the old instance to the new instance. You would also migrate CoPilot data any time you want to deploy a new instance of CoPilot and keep your data from the old instance. You can launch the new instance through any supported CSP marketplace portal, by using the controller UI (starting from Controller 6.7.1185 for AWS Cloud only), or by using Terraform scripts. For instructions on migrating CoPilot data from one CoPilot instance to another, see `CoPilot Data Migration <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#about-migrating-data-from-one-CoPilot-instance-to-another>`_ in *Aviatrix CoPilot Deployment Guide*.
+-   (Application Administration) **Data Migration** — Starting with CoPilot release 2.0.2, you can now migrate data from one (source) CoPilot instance to another (destination) CoPilot instance. Migration of CoPilot data is not supported across clouds. Data migration is supported across regions, availability zones, and VPCs/VNets within the same cloud. For instructions on migrating CoPilot data from one CoPilot instance to another, see `About Migrating CoPilot Data <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#about-migrating-copilot-data>`_ in *Aviatrix CoPilot Deployment Guide*.
 
 -   (Permissions) **Improved read-only access views** — CoPilot now hides/disables some actions in the UI for users logging in with a read-only account. Controller user accounts that belong to a group that have read_only permissions will no longer be able to perform certain actions: Saving and deleting filter groups (FlowIQ), saving and deleting topology layouts (Topology), deleting change-set data (Topology Replay), creating and deleting scaling policies (Performance), resolving and deleting alerts (Notifications), creating and deleting network domains (Security), and many more actions that are reserved for groups with all_write and all_security_write permissions.
 
