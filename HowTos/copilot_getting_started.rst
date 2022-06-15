@@ -827,7 +827,7 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
 
 7.  Click **Migrate**.
 
-    Migrating CoPilot data may take a few hours for small environments and a few days for large environments. Environments with 500 GB of data may take 3 to 4 days to complete data migration. If you use your *old copilot* during the migration process, changes you make during migration will NOT be reflected in the *new copilot*. The netflow and syslog data sent by your Aviatrix gateways is now being sent to your *new copilot*.
+    Migrating CoPilot data may take a few hours for small environments and a few days for large environments. Environments with 500 GB of data may take 3 to 4 days to complete data migration. If you use your *old copilot* during the migration process, changes you make during migration will NOT be reflected in the *new copilot*. Upon starting the data migration, the netflow and syslog data sent by your Aviatrix gateways is automatically switched to be sent to your *new copilot*.
 
 8.  **If data migration succeeds (Migration Complete):**
 
@@ -848,6 +848,7 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
     c.  Configure your controller to send netflow data to your *old copilot* (Controller > Settings > Logging > Netflow Agent. See "Enable Netflow for CoPilot FlowIQ Data" for details.
     d.  Configure your controller to send syslog data to your *old copilot*(Controller > Settings > Logging > Remote Syslog. See "Enable Syslog for CoPilot Security Audit Data" for details.
     e.  At the applicable CSP portal for the *old copilot* VM, you can remove the access rules that were added to open TCP ports 9200 and 443 from *new copilot* source IP.
+    f.  Remove your new copilot and its associated cloud resources.   
 
 10. (**Verify data migration**) To verify the data are migrated on the *new copilot*:
 
@@ -858,7 +859,7 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
 
     -   On your *new copilot*, if you use your own SSL certificate (rather than the CoPilot self signed certificate), update the DNS servers associated with your certificate in Settings > Configuration.
     -   On your *old copilot*, release the license in Settings > Licensing by clicking the **RESET** button.
-    -   Delete your *old copilot* and associated cloud resources:
+    -   Remove your *old copilot* and associated cloud resources:
         -   EIP
         -   Access/security groups
         -   Disks/Volumes
