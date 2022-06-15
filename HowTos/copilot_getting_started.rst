@@ -763,7 +763,8 @@ The following terms are used in these instructions:
 -   Aviatrix has tested data migration for infrastructures with up to a total of 500 GB of data. If you have a much larger infrastructure, please contact Aviatrix Support for more information about how to migrate your data.
 -   If data migration fails and you want to retry the migration, please contact Aviatrix Support for assistance.
 -   If the data migration utility fails to migrate all indexes, you cannot revert the migration but the data remains intact on the old copilot.
--   During the migration process, you cannot make configuration changes to the *old copilot*. Also, all netflow and syslog data will be directed to your *new copilot* after data migration begins. If the migration fails, and you must terminate your *new copilot*, the netflow and syslog data directed there during migration will be lost.
+-   During the migration process, you cannot make configuration changes to the *old copilot*. 
+-   Upon starting the data migration, the netflow and syslog data sent by your Aviatrix gateways is automatically switched to be sent to your *new copilot*. If the migration fails, and you decide to terminate your *new copilot*, the netflow and syslog data that was directed to the *new copilot* during migration will be lost.
 -   If data migration fails and you decide to cancel the data migration, you can terminate your *new copilot* and continue to use your *old copilot* (by following the instructions indicated in the procedure).
 
 CoPilot data may take a few hours for small environments and a few days for large environments. Environments with 500 GB of data may take 3 to 4 days to complete data migration.
