@@ -834,13 +834,17 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
 
     If all data indices migrate successfully, you will get a Migration Complete message. Go to step 10 to verify data migration.
 
-9.  **If data migration fails (**Migration Failed**):**
+9.  **If data migration fails (**Error: Failed to migrate. Please check the log below.**):**
 
-    If one or more data indices do not migrate, you will get a Migration Failed message followed by a list of failed indices in the error message.
+    If one or more data indices do not migrate, you will get an **Error: Failed to migrate.** message followed by a list of failed indices in the error message.
+
+    Retry the migration at least once by doing the following: 1) Click the *Clear Migration" button. 2) In the **Migrate Data from Old CoPilot** dialog, re-enter the IP address of your *old copilot* and tick the checkbox for acknowledging prerequisites. 3) Click **Migrate**. The migration process will continue to migrate data from where it left off. 
+
+    If the migration process continues to fail, you have the following options:
+
+    If you decide you want to continue to retry the data migration, please contact Aviatrix Support.
 
     If you decide the indices that failed to migrate are not important (for example, they are very old records you no longer need), you can choose to use the *new copilot*. In this case, go to step 10 to verify the important data you want is indeed in your *new copilot* before deleting your *old copilot*.
-
-    If you decide you want to retry the data migration, contact Aviatrix Support.
 
     If you decide to cancel the data migration and continue to use your *old copilot*, do the following:
 
