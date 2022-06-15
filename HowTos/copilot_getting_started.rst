@@ -735,7 +735,7 @@ Below is a summary of steps for a CoPilot instance launch via Terraform:
 About Migrating CoPilot Data
 =========================================================== 
 
-Starting with CoPilot release 2.0.2, you can migrate data from one (source) CoPilot instance to another (destination) CoPilot instance.
+Starting with CoPilot release 2.0.3, you can migrate data from one (source) CoPilot instance to another (destination) CoPilot instance.
 
 Data migration is supported across regions, availability zones, and VPCs/VNets within the same cloud. In the current release, migration of CoPilot data is not supported across clouds.
 
@@ -816,7 +816,7 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
 
 2.  Go through the initial setup process to enter information about your *new copilot* when prompted (see "Initial Setup of CoPilot" for information about each prompt). When prompted to enter the IP address of your controller, make sure you enter the IP address of the same controller your *old copilot* is pointing to.
 
-3.  Verify the software version of your *new copilot* and *old copilot* are the same (they should both be software version 2.0.2 or later).
+3.  Verify the software version of your *new copilot* and *old copilot* are the same (they should both be software version 2.0.3 or later).
 
 4.  Verify the Performance feature version on your *new copilot* and *old copilot* are the same (they should both use Performance v2 or v1).
 
