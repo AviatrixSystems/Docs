@@ -838,7 +838,7 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
 
     If one or more data indices do not migrate, you will get an **Error: Failed to migrate.** message followed by a list of failed indices in the error message.
 
-    Retry the migration at least once by doing the following: 1) Click the *Clear Migration" button. 2) In the **Migrate Data from Old CoPilot** dialog, re-enter the IP address of your *old copilot* and tick the checkbox for acknowledging prerequisites. 3) Click **Migrate**. The migration process will continue to migrate data from where it left off. 
+    Retry the migration at least once by doing the following: 1) Click the **Clear Migration** button. 2) In the **Migrate Data from Old CoPilot** dialog, re-enter the IP address of your *old copilot* and tick the checkbox for acknowledging prerequisites. 3) Click **Migrate**. The migration process will continue to migrate data from where it left off. 
 
     If the migration process continues to fail, you have the following options:
 
