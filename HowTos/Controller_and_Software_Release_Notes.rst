@@ -45,7 +45,6 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Issues Corrected in Aviatrix Release 6.6.5662** 
 
-- **AVX-21652** – You can now successfully insert a stateful Firewall Rule using a reference rule from previously existing rules. 
 - **AVX-21823** – Image upgrade causing incorrect firewall_rtb config on AWS Transit FireNet with network exclude list. 
 - **AVX-21889** – You can now successfully insert a stateful Firewall Rule using a reference rule from previously existing rules. 
 - **AVX-22791** – Starting with release 6.6, the Controller consolidates emails so that emails with the same email address and subject line are combined (helping limit the number of emails while still delivering important status notifications). These email notifications were being consolidated incorrectly. 
@@ -80,7 +79,7 @@ The **Micro-segmentation** public preview feature has the following enhancements
 
 **Issues Corrected in Aviatrix Release 6.7.1319** 
 
-* **AVX-21652, AVX-21889** – You can now successfully insert a stateful Firewall Rule using a reference rule from previously existing rules. 
+* **AVX-21889** – You can now successfully insert a stateful Firewall Rule using a reference rule from previously existing rules. 
 * **AVX-21946** – Micro-segmentation policy logging could display the incorrect policy UUID. 
 * **AVX-22110** – Micro-segmentation policy statistics could be overcounted. 
 * **AVX-22181** – The Controller crashed when using an Azure API to get VNet routing tables. The crash occurred because the system did not consider the possibility of a failure case in which “NoneType” is returned. 
