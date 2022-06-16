@@ -737,7 +737,7 @@ About Migrating CoPilot Data
 
 Starting with CoPilot release 2.0.3, you can migrate data from one (source) CoPilot instance to another (destination) CoPilot instance.
 
-Data migration is supported across regions, availability zones, and VPCs/VNets within the same cloud. In the current release, migration of CoPilot data is not supported across clouds.
+Data migration is supported across regions, availability zones, and VPCs/VNets within the same CSP (migration is not supported across CSPs).
 
 The data migrated includes the indexes shown in Settings > Index Management. The indexes are migrated from the data disk (volume) of the source instance to the data disk (volume) of the destination instance. Configuration data for CoPilot functions are also migrated, including but not limited to data for notifications, alerts, network behavior analytics configurations, threat IP configurations, and GeoBlocking configurations.
 
@@ -759,7 +759,7 @@ The following terms are used in these instructions:
 **Important:** Please consider the following points about the data migration process in the current release:
 
 -   A backup and restore solution for CoPilot data is currently not available.
--   Migration of CoPilot data is not supported across clouds. Data migration is supported across regions, availability zones, and VPCs/VNets of the same cloud.
+-   Migration of CoPilot data is not supported across CSPs. Data migration is supported across regions, availability zones, and VPCs/VNets of the same CSP.
 -   Aviatrix has tested data migration for infrastructures with up to a total of 500 GB of data. If you have a much larger infrastructure, please contact Aviatrix Support for more information about how to migrate your data.
 -   If data migration fails and you want to retry the migration, please contact Aviatrix Support for assistance.
 -   If the data migration utility fails to migrate all indexes, you cannot revert the migration but the data remains intact on the old copilot.
@@ -775,7 +775,7 @@ You can perform prerequisite tasks outside your maintenance window to save valua
 
 **Prerequisite Tasks**
 
-Before you begin the data migration process, perform the following tasks. Prerequisite tasks can be performed outside your maintenance window. When logging in to CoPilot, use a controller user account that has full admin permissions.
+Before you begin the data migration process, perform the following tasks. Prerequisite tasks can be performed outside your maintenance window. When logging in to CoPilot, use a controller user account that has full admin permissions. To confirm that the user account has full admin permissions, log in to your Controller, go to Accounts > Account Users, and verify the "Permissions Groups" column is set to **admin** for the account in question.
 
 **Obtain the following information:**
 
@@ -786,17 +786,17 @@ Before you begin the data migration process, perform the following tasks. Prereq
 **Launch your *new copilot* where:**
 
 -   The size of the disk/volume you specify for the Instance is the same size or larger than the *storage used* in your *old copilot*. If you deploy in AWS using the controller UI deploy process, you specify the size in the "Data Disk" column for the instance.
--   Take note of your *new copilot* IP address. The new copilot IP address can be the private IP, public IP, or Elastic IP address (EIP) used for reachability of the instance.
+-   Take note of your *new copilot* IP address. The new copilot IP address can be the private IP, public IP, or Elastic IP address (EIP) used for reachability of the instance. It is highly recommended that a persistent IP is used such as an EIP or statically assigned private IP.
 -   After launch, your *new copilot* will take about an hour to automatically update to the latest software release version. Your *new copilot* and *old copilot* must be the same software version before starting data migration. You will verify this later when following the data migration procedure.
 
 **Open required ports on each CoPilot instance:**
 
 At the applicable CSP portal, on the ***new copilot*** VM:
 
+-   **Note:** After initial deployment, your *new copilot* ports 31283 and 5000 will be open for any IP (0.0.0.0/0) . It is strongly recommended to remove the 0.0.0.0 entry from the inbound access rules for these ports and add entries for all your gateway IP addresses.
 -   Open port 443 to receive TCP traffic from the *old copilot* (*old copilot* IP address).
 -   Open port 31283 to receive UDP traffic from each of your Aviatrix gateways.
 -   Open port 5000 to receive UDP traffic from each of your Aviatrix gateways.
--   **Note:** After deployment, your *new copilot* ports 31283 and 5000 will be open for any IP (0.0.0.0/0) . It is strongly recommended to remove the 0.0.0.0 entry from the inbound access rules for these ports and add entries for all your gateway IP addresses.
 
 
 At the applicable CSP portal, on the ***old copilot*** VM:
@@ -850,9 +850,9 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
 
     a.  At the applicable CSP portal for the *new copilot*, stop the instance/virtual machine.
     b.  Turn on the Task Server on your *old copilot* (CoPilot > Settings > Services > Task Server).
-    c.  Configure your controller to send netflow data to your *old copilot* (Controller > Settings > Logging > Netflow Agent. See "Enable Netflow for CoPilot FlowIQ Data" for details.
-    d.  Configure your controller to send syslog data to your *old copilot*(Controller > Settings > Logging > Remote Syslog. See "Enable Syslog for CoPilot Security Audit Data" for details.
-    e.  At the applicable CSP portal for the *old copilot* VM, you can remove the access rules that were added to open TCP ports 9200 and 443 from *new copilot* source IP.
+    c.  Configure your controller to send netflow data to your *old copilot* (Controller > Settings > Logging > Netflow Agent. See "Enable Netflow for CoPilot FlowIQ Data" for details.)
+    d.  Configure your controller to send syslog data to your *old copilot*(Controller > Settings > Logging > Remote Syslog. See "Enable Syslog for CoPilot Security Audit Data" for details.)
+    e.  At the applicable CSP portal for the *old copilot* VM, you can remove the access rules that were added to open TCP ports 9200 and 443 from the *new copilot* source IP.
     f.  Remove your new copilot and its associated cloud resources.   
 
 10. (**Verify data migration**) To verify the data are migrated on the *new copilot*:
@@ -869,7 +869,7 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
         -   Access/security groups
         -   Disks/Volumes
         -   VM/Instance
-    -   On your Aviatrix Controller, verify that the CoPilot association (Controller > Settings > CoPilot) is pointing to your *new copilot*. If you used the controller UI to launch your *new copilot*, this was automatically done for you.
+    -   On your Aviatrix Controller, verify that the CoPilot association (Controller > Settings > CoPilot) is pointing to your *new copilot* IP. If you used the controller UI to launch your *new copilot*, this was automatically done for you. Additionally, verify that the Remote Syslog and Netflow Agent (Controller > Settings > Logging) are pointing to your *new copilot* IP.
 
 .. |gcp_copilot_1| image:: copilot_getting_started_media/gcp_copilot_1.png
    :scale: 50%
