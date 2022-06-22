@@ -34,7 +34,23 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
-6.7.1319 (6/10/2022) 
+
+6.6.5662 (06/15/2022) 
+========================= 
+
+**Feature Enhancements in 6.6.5662** 
+
+- **AVX-21263** – Improved email notifications. When a GRE tunnel in your account goes down or up, the Aviatrix Controller sends the GRE tunnel status change to the registered email address(es). This email notification contains the timestamp for the tunnel status change. 
+- **AVX-23383** – Improved the function of Aviatrix gateways in High-Performance Encryption (HPE) mode by increasing the number of interfaces an NTP service can handle from 1024 to 4096. 
+
+**Issues Corrected in Aviatrix Release 6.6.5662** 
+
+- **AVX-21823** – Image upgrade causing incorrect firewall_rtb config on AWS Transit FireNet with network exclude list. 
+- **AVX-21889** – You can now successfully insert a stateful Firewall Rule using a reference rule from previously existing rules. 
+- **AVX-22791** – Starting with release 6.6, the Controller consolidates emails so that emails with the same email address and subject line are combined (helping limit the number of emails while still delivering important status notifications). These email notifications were being consolidated incorrectly. 
+- **AVX-23407** – The best route may not have been selected correctly based on the AS path lengths and metric values among routes of the same BGP connection. When this route was used to represent the BGP source and compared with route from other sources, the result could be incorrect. 
+
+6.7.1319 (06/10/2022) 
 ========================= 
 
 **Feature Enhancements in 6.7.1319** 
@@ -63,7 +79,7 @@ The **Micro-segmentation** public preview feature has the following enhancements
 
 **Issues Corrected in Aviatrix Release 6.7.1319** 
 
-* **AVX-21652, AVX-21889** – You can now successfully insert a stateful Firewall Rule using a reference rule from previously existing rules. 
+* **AVX-21889** – You can now successfully insert a stateful Firewall Rule using a reference rule from previously existing rules. 
 * **AVX-21946** – Micro-segmentation policy logging could display the incorrect policy UUID. 
 * **AVX-22110** – Micro-segmentation policy statistics could be overcounted. 
 * **AVX-22181** – The Controller crashed when using an Azure API to get VNet routing tables. The crash occurred because the system did not consider the possibility of a failure case in which “NoneType” is returned. 
