@@ -115,9 +115,9 @@ Is Aviatrix FedRamp compliant?
 Aviatrix is not in-scope for FedRamp compliance because it is not a SaaS product and Aviatrix software is installed in the federal network. However, Aviatrix is currently certified for SOC2 and we are also working on additional readiness for other frameworks such as NIST 800-171, ISO 27002, HIPAA and PCI.
 
 Is Aviatrix software in compliance with Section 508, IT Accessibility Standards?
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 
-Aviatrix covers Level A ready under the VPAT (Voluntary Product Accessibility Template) standards.   
+Aviatrix covers Level AA ready under the VPAT (Voluntary Product Accessibility Template) standards. You can access the Accessibility Conformance Report `here <https://aviatrix.com/wp-content/uploads/2022/06/2022-Aviatrix-VPAT2.4-RevINT-1.pdf>`_.
 
 Is Aviatrix FIPS 140-2 certified?  
 ---------------------------------
