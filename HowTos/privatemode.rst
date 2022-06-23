@@ -11,10 +11,22 @@ Private Mode is a global setting that offers secure orchestrated intra- and mult
 
 After Private Mode is configured you can create gateways using `Multi-Cloud Transit <https://https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.
 
+|topology-private-mode|
+
 Cloud environments that support this feature are AWS, AWS GovCloud, Azure, and Azure Government. 
 
-|topology-private-mode|
- 
++-----------------------+-------------------------------+
+|Controller Location    | Gateways                      |   
+|                       |                               |
++=======================+===============================+
+|AWS GovCloud	       | AWS			     |
++-----------------------+-------------------------------+
+|AWS		       | AWS GovCloud	     	     |	                
++-----------------------+-------------------------------+
+|AWS GovCloud	       | Azure or Azure Government     |
++-----------------------+-------------------------------+
+|AWS		       | Azure or Azure Government.    |
++-----------------------+-------------------------------+
 
 Prerequisites
 --------------
@@ -25,7 +37,7 @@ Prerequisites
 - If you want to associate a CoPilot instance, it must be in the same VPC as the Controller.
 - If setting up Private Mode in a multi-cloud deployment, a private underlay between the CSPs must exist (Direct Connect for AWS or Express Route for Azure). 
 
-Preparing Your Single Cloud Private Mode Environment <should this be a H1?>
+Preparing Your Single Cloud Private Mode Environment 
 ----------------------------------------------------
 
 When you prepare your single cloud Private Mode environment, you are building a Link Service; creating subnets for the Link Service; and attaching Controller/CoPilot/proxy to the Link Service target.
@@ -72,9 +84,9 @@ If you are configuring Private Mode in a single cloud, the process is now comple
 Preparing Your Multi-Cloud Environment
 --------------------------------------
 
-You must have completed the steps under “Preparing Your Single Cloud Private Mode Environment”. Since you will most likely create your Controller in AWS or AWS GovCloud, the other CSPs you can use in your multi-cloud environment are Azure or Azure Government. You can have connections among these CSPs. <have to get this reviewed>
+You must have completed the steps under “Preparing Your Single Cloud Private Mode Environment”. See the table at the beginning of this document for where you can create your endpoints.
 
-In a multi-cloud Private Mode environment, you are creating endpoints in a multi-cloud access VPC attached to the intra-cloud Link Service; building a multi-cloud Load Balancer; attaching a multi-cloud proxy (Azure only) to the Load Balancer target; and creating a link service to attach to the Load Balancer front end. <okay to use LB here?>
+In a multi-cloud Private Mode environment, you are creating endpoints in a multi-cloud access VPC attached to the intra-cloud Link Service; building a multi-cloud Link Service; and attaching a multi-cloud proxy (Azure only) to the Link Service target. 
 
 #. On the Multi-Cloud Access tab, enter the Access Account Name, Region, VPC ID of the multi-cloud access VPC, and the Intra-Cloud Link VPC ID you want to connect to. Click Create. This launches an endpoint in the new multi-cloud access VPC for Direct Connect/Express Route to connect to. It also creates the necessary subnets, route tables, and endpoint security groups.
 
@@ -95,8 +107,9 @@ In a multi-cloud Private Mode environment, you are creating endpoints in a multi
 	c. For the TCP proxy, you need to map incoming requests on port 443. Also map ports 31283 (Netflow data) and 5000 (remote syslog) if you want this information to be visible in CoPilot.
 	d. For the TCP proxy, the ports should forward requests for ports 443, 31283 and 5000 to the DNS entry for the multi-cloud access endpoint that the proxy is communicating to on the Controller cloud. The DNS entry is located under Settings > Private Mode > List > Multi-Cloud Access Endpoint List.
 
-4. On the Multi-Cloud Link tab under Attach/Update Proxy, enter the Cloud Type, Access Account Name, and Load Balancer. Only instances that are in the same VNet as the Load Balancer are listed. 
+If your proxy has a public IP, make sure the SKU is Standard and not Basic. <add as a note>
 
+4. On the Multi-Cloud Link tab under Attach/Update Proxy, enter the Cloud Type, Access Account Name, and Link Service. Only instances that are in the same VNet as the Link Service are listed. 
 
 5. Attach the proxy you just created by clicking Attach and then Update. This proxy server is the Link Service target for traffic from Azure gateways. Only do this if you had to create a proxy for Azure/Azure Government.
 
