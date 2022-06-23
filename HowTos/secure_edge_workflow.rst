@@ -1,20 +1,20 @@
 .. meta::
-   :description: Secure Edge Deployment
+   :description: Aviatrix Edge Deployment
    :keywords: Edge, Edge Gateway, EaaG, Edge ZTP, VMware ESXi
 
 
 ==================================================
-Deploying Aviatrix Secure Edge 1.0 for VMware ESXi
+Deploying Aviatrix Edge 1.0 for VMware ESXi
 ==================================================
 
-Aviatrix Secure Edge has a virtual form factor that lets you deploy an Edge Gateway as a standard virtual machine (VM). This document provides step-by-step instructions for deploying Aviatrix Secure Edge in a private or public Cloud network. The instructions in this document show you how to set up an Edge Gateway in VMware ESXi. 
+Aviatrix Edge has a virtual form factor that lets you deploy an Edge Gateway as a standard virtual machine (VM). This document provides step-by-step instructions for deploying Aviatrix Edge in a private or public Cloud network. The instructions in this document show you how to set up an Edge Gateway in VMware ESXi. 
 
-For deployment diagrams and additional information, refer to `Aviatrix Secure Edge FAQ <http://docs.aviatrix.com/HowTos/secure_edge_faq.html>`_.
+For deployment diagrams and additional information, refer to `Aviatrix Edge FAQ <http://docs.aviatrix.com/HowTos/secure_edge_faq.html>`_.
 
 Prerequisites
 -------------
 
-Aviatrix Secure Edge 1.0 requires the following:
+Aviatrix Edge 1.0 requires the following:
 
 - Aviatrix Controller 6.7. For instructions on how to upgrade to Aviatrix Controller 6.7, refer to `Upgrading the Aviatrix Cloud Network Platform <http://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
 - VMware vCenter Server (optional)
@@ -364,12 +364,12 @@ Attaching a Reset Edge Gateway to a Transit Gateway
 After you deploy an Edge Gateway that you reset, you attach it to a Transit Gateway.
 To attach the Edge Gateway to a Transit Gateway, follow the steps in `Attaching an Edge Gateway to a Transit Gateway <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#attaching-an-edge-gateway-to-a-transit-gateway>`_.
 
-Selective Gateway Upgrade for Secure Edge
+Selective Gateway Upgrade for Aviatrix Edge
 -----------------------------------------
 
-The Aviatrix Secure Edge base OS is not upgradeable. To update the base OS to a newer version, you can only deploy a newer version of the Secure Edge image to a new VM to replace it.
+The Aviatrix Edge base OS is not upgradeable. To update the base OS to a newer version, you can only deploy a newer version of the Aviatrix Edge image to a new VM to replace it.
 
-As Secure Edge base OS is not field upgradeable, Secure Edge does not support selective gateway image update and software rollback.
+As Aviatrix Edge base OS is not field upgradeable, Aviatrix Edge does not support selective gateway image update and software rollback.
 
 Troubleshooting
 ---------------
