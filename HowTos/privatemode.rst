@@ -25,7 +25,7 @@ Cloud environments that support this feature are AWS, AWS GovCloud, Azure, and A
 +-----------------------+-------------------------------+
 |AWS GovCloud	       | Azure or Azure Government     |
 +-----------------------+-------------------------------+
-|AWS		       | Azure or Azure Government.    |
+|AWS		       | Azure or Azure Government     |
 +-----------------------+-------------------------------+
 
 Prerequisites
@@ -33,7 +33,7 @@ Prerequisites
 
 - Upgrade to 6.8.
 - A Controller in AWS or AWS GovCloud. It is best to set up Private Mode from a new Controller that does not have any previously deployed gateways. Private Mode will not work if you already have gateways deployed in your Controller.
-- A version of CoPilot that supports Private Mode (?), if you want to send syslog or Netflow data to CoPilot from the gateways.
+- A version of CoPilot that supports Private Mode, if you want to send syslog or Netflow data to CoPilot from the gateways.
 - If you want to associate a CoPilot instance, it must be in the same VPC as the Controller.
 - If setting up Private Mode in a multi-cloud deployment, a private underlay between the CSPs must exist (Direct Connect for AWS or Express Route for Azure). 
 
@@ -67,8 +67,8 @@ Creating AWS Proxy for Single Cloud Private Mode
 
 #. You must create a proxy that will sit behind the Link Service and securely direct traffic to the internet. This proxy must be in the same VPC as the Controller where Private Mode is enabled. You must launch this proxy virtual machine in AWS/AWS GovCloud. To create the AWS/AWS GovCloud proxy do the following:
 	
-	a. Launch your preferred HTTPS proxy and make sure it is listening on port 3128.
-	b. Make sure your proxy security group is open to the the IPs of the Link Service (created in step 3 above). This ensures that the Link Service IPs have access to the proxy. You can find the IP addresses under Settings > Private Mode > List > Load Balancer List.
+	a. Launch your preferred HTTPS proxy; it must be listening on port 3128.
+	b. Make sure your proxy security group is open to the the IPs of the Link Service (created in step 3 above). This ensures that the Link Service IPs have access to the proxy. You can find the IP addresses under Settings > Private Mode > List > Link Service List.
 	c. Make sure the proxy has access to the internet.
 
 #. After creating this proxy:
@@ -84,7 +84,7 @@ If you are configuring Private Mode in a single cloud, the process is now comple
 Preparing Your Multi-Cloud Environment
 --------------------------------------
 
-You must have completed the steps under “Preparing Your Single Cloud Private Mode Environment”. See the table at the beginning of this document for where you can create your endpoints.
+You must have completed the steps under “Preparing Your Single Cloud Private Mode Environment”. See the table at the beginning of this document for where you can create your multi-cloud endpoints.
 
 In a multi-cloud Private Mode environment, you are creating endpoints in a multi-cloud access VPC attached to the intra-cloud Link Service; building a multi-cloud Link Service; and attaching a multi-cloud proxy (Azure only) to the Link Service target. 
 
@@ -107,7 +107,8 @@ In a multi-cloud Private Mode environment, you are creating endpoints in a multi
 	c. For the TCP proxy, you need to map incoming requests on port 443. Also map ports 31283 (Netflow data) and 5000 (remote syslog) if you want this information to be visible in CoPilot.
 	d. For the TCP proxy, the ports should forward requests for ports 443, 31283 and 5000 to the DNS entry for the multi-cloud access endpoint that the proxy is communicating to on the Controller cloud. The DNS entry is located under Settings > Private Mode > List > Multi-Cloud Access Endpoint List.
 
-If your proxy has a public IP, make sure the SKU is Standard and not Basic. <add as a note>
+ .. note::
+	If your proxy has a public IP, make sure the SKU is Standard and not Basic.
 
 4. On the Multi-Cloud Link tab under Attach/Update Proxy, enter the Cloud Type, Access Account Name, and Link Service. Only instances that are in the same VNet as the Link Service are listed. 
 
