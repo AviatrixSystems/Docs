@@ -30,6 +30,31 @@ CoPilot supports automatic memory sizing for the ETL and datastore based on the 
 
 Prior to CoPilot image version 1.5.1, CoPilot required a minimum of 8 vCPUs and 32 GB Memory.
 
+FAQs about CoPilot licenses and licensing
+====================================================
+
+Frequently asked questions about CoPilot licenses and licensing.
+
+What is a CoPilot Customer ID? 
+-------------------------------------------------
+
+This is the customer ID or license obtained from your Aviatrix Sales representative. Note that the CoPilot customer ID is separate from the Aviatrix Controller customer ID. When you perform the initial setup of CoPilot, you will be prompted to enter your customer ID and CoPilot will allocate a license to you based on your customer ID. For more information about CoPilot licensing, see `CoPilot Customer IDs and Licensing <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#copilot-customer-ids-and-licensing>`_.
+
+How can I extend or renew my CoPilot license?
+---------------------------------------------------
+
+If your CoPilot customer ID is set to expire, ask for a license extension from your Sales representative. In this case, you must reset your customer ID for the extension. For details, see `CoPilot Customer IDs and Licensing <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#copilot-customer-ids-and-licensing>`_.
+
+If my CoPilot license expires, will I lose data?
+---------------------------------------------------
+
+No. If your CoPilot license expires, you will be unable to log in to CoPilot but your data will remain intact. Contact your Sales representative to request a license extension and obtain instructions for logging back in to your instance. For more information about CoPilot licensing, see `CoPilot Customer IDs and Licensing <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#copilot-customer-ids-and-licensing>`_.
+
+Can my CoPilot customer ID be associated with more than one license?
+---------------------------------------------------------------------
+
+Yes. The license key has the quantity or allocation count for the number of CoPilot instances that can use the license at a given time (the default count is 2). If the license key is greater than one, the key can be used by more than one instance. You can see when the license will expire and see the used and total allocation count of your license in CoPilot Settings > Licensing. For more information about CoPilot licensing, see `CoPilot Customer IDs and Licensing <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#copilot-customer-ids-and-licensing>`_.
+
 FAQs about CoPilot login 
 ====================================================
 
