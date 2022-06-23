@@ -470,7 +470,7 @@ CoPilot instance launch using Controller UI (AWS Only)
 
 This feature is available starting from Aviatrix Controller release 6.7.1185. If you deployed Aviatrix Controller in AWS and you want to deploy Aviatrix CoPilot in AWS in the same region/AZ as the controller, you can deploy CoPilot directly from the controller UI by following these instructions. 
 
-The instance will be launched in the same AWS region/availability zone as your controller. If you want to deploy CoPilot in a different AWS region/availability zone or in a different cloud, follow the instructions in "Subscribe to a CoPilot Offer" to perform the CoPilot instance launch from your cloud provider marketplace.
+The instance will be launched in the same AWS region/availability zone as your controller. If you want to deploy CoPilot in a different AWS region/availability zone or in a different cloud, follow the instructions in `Subscribe to a CoPilot Offer <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#subscribe-to-a-copilot-offer>`_ to perform the CoPilot instance launch from your cloud provider marketplace.
 
 Your controller instance must have the `aviatrix-role-ec2` IAM role attached for the deployment to succeed. 
 
@@ -479,7 +479,7 @@ After you deploy a CoPilot instance from your controller, if you decide to termi
 Obtain the following information before you begin. You will need it for the initial setup of CoPilot after instance launch:
 
 -   The login credentials of your Aviatrix Controller user account.
--   The login credentials for the user account to be used as the CoPilot service account. See "About CoPilot User Accounts".
+-   The login credentials for the user account to be used as the CoPilot service account. See `About CoPilot User Accounts <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#id3>`_.
 -   The CoPilot customer ID obtained from your Aviatrix Sales representative.
 -   Verify that your AWS account has been created in your controller (you create your AWS account by navigating to Controller > Account > Access Accounts > +Add New).
 
