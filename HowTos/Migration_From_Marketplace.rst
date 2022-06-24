@@ -168,6 +168,10 @@ Check Security Groups
 
 Make sure the Security Groups of the new Controller match those of the previous Controller. Then, back up the configuration again.
 
+.. note::
+
+If you used an ELB (Elastic Load Balancer) for your old Controller, remove the old Controller instance from the ELB's target group. Then, register the new Controller instance to the target group.
+
 .. tip::
    Optional: After confirming everything is running correctly, delete the previous Aviatrix AWS Marketplace Controller instance.
 
