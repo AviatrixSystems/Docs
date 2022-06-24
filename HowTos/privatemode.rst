@@ -31,6 +31,7 @@ Cloud environments that support this feature are AWS, AWS GovCloud, Azure, and A
 Prerequisites
 --------------
 
+- `Configure the permissions for Private Mode and GWLB-Based FireNet <https://docs.aviatrix.com/HowTos/aviatrix_iam_policy_requirements.html>`_. This is very important; you cannot deploy your Private Mode resources without these permissions. Please see sections 6 and 15 in the referenced document.
 - Upgrade to 6.8.
 - A Controller in AWS or AWS GovCloud. It is best to set up Private Mode from a new Controller that does not have any previously deployed gateways. Private Mode will not work if you already have gateways deployed in your Controller.
 - A version of CoPilot that supports Private Mode, if you want to send syslog or Netflow data to CoPilot from the gateways.
@@ -120,6 +121,9 @@ Creating Gateways
 -----------------
 
 After completing your single cloud or multi-cloud configuration, you can launch transit or spoke gateways from Multi-Cloud Transit. 
+
+.. note::
+	In Private Mode, transit peering always occurs over a private network. If your transit gateway and its backup use HPE/Insane Mode, transmission will always occur over a private network regardless of whether you enable Peering Over Private Networks.
 
 In the Controller, navigate to Multi-Cloud Transit > Setup. On the Transit/Spoke tabs, enter the information required to launch your gateways. For more information see:
 
