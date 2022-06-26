@@ -34,6 +34,87 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
+
+6.6.5662 (06/15/2022) 
+========================= 
+
+**Feature Enhancements in 6.6.5662** 
+
+- **AVX-21263** – Improved email notifications. When a GRE tunnel in your account goes down or up, the Aviatrix Controller sends the GRE tunnel status change to the registered email address(es). This email notification contains the timestamp for the tunnel status change. 
+- **AVX-23383** – Improved the function of Aviatrix gateways in High-Performance Encryption (HPE) mode by increasing the number of interfaces an NTP service can handle from 1024 to 4096. 
+
+**Issues Corrected in Aviatrix Release 6.6.5662** 
+
+- **AVX-21823** – Image upgrade causing incorrect firewall_rtb config on AWS Transit FireNet with network exclude list. 
+- **AVX-21889** – You can now successfully insert a stateful Firewall Rule using a reference rule from previously existing rules. 
+- **AVX-22791** – Starting with release 6.6, the Controller consolidates emails so that emails with the same email address and subject line are combined (helping limit the number of emails while still delivering important status notifications). These email notifications were being consolidated incorrectly. 
+- **AVX-23407** – The best route may not have been selected correctly based on the AS path lengths and metric values among routes of the same BGP connection. When this route was used to represent the BGP source and compared with route from other sources, the result could be incorrect. 
+
+6.7.1319 (06/10/2022) 
+========================= 
+
+**Feature Enhancements in 6.7.1319** 
+
+* **AVX-21263** – Improved email notifications. When a GRE tunnel in your account goes down or up, the Aviatrix Controller sends the GRE tunnel status change to the registered-email-address(es). This email notification contains the timestamp for the tunnel status change. 
+* **AVX-23069** – Added a new toggle switch, “Preserve AS Path,” to Multi-Cloud Transit > Advanced Config. This option allows you to preserve an AS Path during manual BGP route advertisements, which reduces the chances of routing loops and wrong route selection on the peer side. 
+
+* You can enable this option in both the Gateway Manual BGP Advertised Network List and the Connection Manual BGP Advertised Network List, and on transit and spoke gateways.  
+* When the “Preserve AS Path” option is disabled, the AS path is stripped during BGP route advertisements from transit or spoke gateways to neighbors. 
+
+* **AVX-23105** – Enhanced Controller validation for micro-segmentation. The Controller now checks that gateway kernel version is greater or equal to 5.4.0 before allowing you to configure micro-segmentation. Micro-segmentation requires this minimum kernel for data plane enforcement. 
+* **AVX-23163** – The account/gateway auditing interval has been changed from every hour to every 24 hours. This change improves the memory performance of the Controller. 
+* **AVX-23383** – Improved the function of Aviatrix gateways in High Performance Encryption (HPE) mode by increasing the number of interfaces an NTP service can handle from 1024 to 4096. 
+* **AVX-23725** – Improved the storage methods for FQDN tags. The domain names in FQDN tags for Egress FQDN Filter will now be stored in a case insensitive manner. For example, tag1: www.Google.com, tcp, 443 and tag2: www.google.com, tcp, 443 will be stored as one tag (www.google.com, tcp, 443). 
+
+**Public Preview Features in 6.7.1319** 
+
+The following Public Preview Features are available in this release: 
+
+* **Micro-segmentation** – Micro-segmentation provides granular network security policy enforcement for distributed applications in the cloud. It enables a unified network access policy model for your applications with distributed points of policy enforcement throughout your network. For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation. 
+
+The **Micro-segmentation** public preview feature has the following enhancements:
+
+* AVX-23249  - **Micro-segmentation rule priority** – You can now specify a priority number to the micro-segmentation rules you create. The priority number determines the order in which your rules are applied. A lower priority number indicates higher precedence, with the highest priority being 0.
+* AVX-23536  - **Micro-segmentation system messages** – You can now view a list of system messages about your micro-segmentation configurations by clicking the bell icon in the CoPilot action bar.
+
+**Issues Corrected in Aviatrix Release 6.7.1319** 
+
+* **AVX-21889** – You can now successfully insert a stateful Firewall Rule using a reference rule from previously existing rules. 
+* **AVX-21946** – Micro-segmentation policy logging could display the incorrect policy UUID. 
+* **AVX-22110** – Micro-segmentation policy statistics could be overcounted. 
+* **AVX-22181** – The Controller crashed when using an Azure API to get VNet routing tables. The crash occurred because the system did not consider the possibility of a failure case in which “NoneType” is returned. 
+* **AVX-22184** – When an Edge Gateway expires, its state is listed as “waiting” on the Upgrade page. This “waiting” Gateway prevents the Controller from successfully upgrading. The actual state of the edge is “Expired,” which is shown in the CloudN > List.  
+
+   If an Edge Gateway is expired in your Controller, navigate to CloudN > List on the left sidebar. On the Registered Devices page, select the Edge Gateway with the state “waiting,” click the Diag dropdown menu, and select Reset Configuration. Then, your Controller can successfully upgrade. 
+
+* **AVX-22208** – Launching a new GCP Gateway with Insane Mode and peering it with another GCP Insane Mode Gateway failed to program the Linux route table correctly. This issue is caused by GCE HPE Gateways with HA pairs to have incorrect entries for secondary IP addresses. The gateway could not recover from this error; you had to terminate the existing gateway and launch a new one. 
+* **AVX-22504** – An error displayed when the Alibaba Cloud subnet list was empty: “TypeError: 'NoneType' object is not subscriptable.” Now, the Controller resolves the error automatically without displaying an error message.  
+* **AVX-22791** – Starting with release 6.6, the Controller consolidates emails so that emails with the same email address and subject line are combined (helping limit the number of emails while still delivering important status notifications). These email notifications were being consolidated incorrectly. 
+* **AVX-22903** – After a new Controller was launched for the first time, there were no routes from the transit gateway to the spoke gateway. 
+* **AVX-22929** – Potential micro-segmentation app domain filter issue: If an account ID was associated with more than one account name, an app domain may have shown an empty list of resolved CIDRs when one of those account names was used as match criteria for a VM or VPC/VNet filter. 
+* **AVX-22934** – ICMP packets could have nonfunctioning associated ports. 
+* **AVX-23077** – A gateway would continue trying to enforce micro-segmentation policies on deleted network interfaces. 
+* **AVX-23187** – On the Selective Gateway Upgrade page (available in your Controller through Settings > Maintenance), the table has been improved to display more information about your gateways. The table has two new columns: State and Update Status.  
+
+1. **State** - This column displays the state of a gateway: up, down, waiting (for a newly launched gateway waiting to go up), and config_fail (if the gateway configuration failed). 
+2. **Update Status** - This column displays the status of a gateway that you just updated:  
+
+* **upgrading** - The update is processing and sending a message to the gateway. 
+* **downloading** - The gateway received the upgrade request and is downloading the gwsw.tgz. 
+* **downloaded** - The gateway has downloaded the information and preparing to install. 
+* **installing** - The gateway is installing the update. 
+* **initializing** - The gateway is running the gateway upgrade service which includes initializing modules and restarting services.
+* **complete** - The latest update is complete. 
+* **upgrade_fail** - The upgrade failed due to a gateway being stopped, a hardware failure, network reachability, or another issue. Try restarting the gateway from your Controller or directly from the related CSP, and then redo the software upgrade. If the “upgrade_fail” status persists, please do an image upgrade. 
+
+* **AVX-23407** – The best route may not have been selected correctly based on the AS path lengths and metric values among routes of the same BGP connection. When this route was used to represent the BGP source and compared with route from other sources, the result could be incorrect. 
+* **AVX-23437** – A packet that matched both a source and a destination app domain could be misclassified. 
+* **AVX-23925** – Having many micro-segmentation policies (the maximum is 64 policies) might result in performance degradation. 
+
+**Known Issues in 6.7.1319** 
+
+* **AVX-21307** – In the 6.7 release, when you create a large number of gateways using Terraform, some gateways may end in a config_fail state. This rare issue may be related to a transient network or release server connectivity (too many gateways’ connections for download of packages). To resolve this issue, replace the gateways that show the “config_fail” state. 
+
 6.4.3057 (05/26/2022) 
 =======================
 

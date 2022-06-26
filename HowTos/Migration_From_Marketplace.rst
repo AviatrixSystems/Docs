@@ -4,127 +4,182 @@ Migration Guide Update:
    :description: Migration from AWS Marketplace Licensing Model to BYOL Licensing Model
    :keywords: Marketplace, migration, licensing, Aviatrix, AWS
 
-==============================================================================
-Migrating Aviatrix Controller AMI 
-==============================================================================
+============================================================
+Migrating Your Aviatrix Controller AMI (AWS)
+============================================================
 
 Introduction
 ==============
 
-This document outlines the steps to migrate from one type of Aviatrix Controller AMI to another. The use case may be 
-migrating from Metered AMI to BYOL AMI or vice versa. You can also use this procedure to migrate to a newer Controller AMI.
+The Aviatrix multi-cloud networking platform is delivered via two images, a Controller image and a gateway image. Both should be maintained with the latest version for managing security and support for the product. Aviatrix intends to publish 2 new images per year.
 
+For customers who launched a Controller through AWS, this document outlines the steps to migrate from one type of Aviatrix Controller Amazon Machine Image (AMI) to another.
 
 .. note::
-      For migration to a BYOL license model, please contact your Aviatrix Sales Account Manager or email sales@aviatrix.com to acquire the appropriate BYOL license.  Make sure you already have subscribed to the BYOL AMI. 
-      
+      To migrate to a BYOL license model, please contact your Aviatrix Sales Account Manager or email sales@aviatrix.com to acquire the appropriate BYOL license. Make sure you already have subscribed to the BYOL AMI. 
+
+There are two methods you can use to migrate your Controller AMI:
+
+1. **Controller-driven method** (simplest method)  - You can easily migrate your AMI directly from the Controller. Note that you can only migrate between AMIs with the same license (BYOL, Metered, or another license) using this method.
+2. **Manual method** (longer method, but offers more visibility)  - You can migrate your Controller by going through the AWS marketplace and stopping your Controller instance, disassociating your EIP, and so on. This method requires more steps but allows you to see the network and account changes involved in each step. You can also use this method to change licenses if needed.
+
+.. note::
+      The Controller-driven method can only migrate between AMIs using the same license. To change your license, use the manual method.
+
 Prerequisites
 =============
 
 * Existing Aviatrix Controller instance deployed
 * Aviatrix Controller running latest version of software
 
-  #. Login to your existing Aviatrix Controller
-  #. If you are using a BYOL image, please get your CustomerID either through **Controller** > **Settings** > **Controller** > **License** or from your Aviatrix Account Manager
-  #. Navigate to **Settings** > **Maintenance** > **Upgrade tab**
-  #. Make sure you are running the **latest** version. If it is not the latest version, please `upgrade <inline_upgrade.html>`__ before proceeding. Note that Aviatrix software version upgrade is a version-to-version upgrade. Therefore you may need to perform multiple upgrades until you reach the latest version on your existing controller. 
+  #. Log in to your existing Aviatrix Controller.
+  #. If you are using a BYOL image, please get your CustomerID either through Controller > Settings > Controller > License or from your Aviatrix Account Manager.
+  #. Navigate to Settings > Maintenance > Upgrade tab.
+  #. Make sure you are running the **latest** version. If it is not the latest version, please `upgrade <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`__ before proceeding. Note that Aviatrix software version upgrade is a version-to-version upgrade. Therefore, you may need to perform multiple upgrades until you reach the latest version on your existing Controller. 
 
-     |image1|
+     |controller_versions|
 
 * An S3 bucket in the AWS account linked to your Aviatrix Controller (will be used for backups).
 * Your IAM policy must be updated in all your AWS accounts. Please refer the instructions `here <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`__ to update your IAM policies.
-* Make sure you delete the controller HA cloud formation stack. This is important to avoid the backup configuration being corrupted which may result in controller migration failure.
+* Make sure you **delete the Controller HA cloud formation stack**. 
 
-Step 1 - Enable Backup
-======================
+.. warning::
+
+  Deleting your HA configuration is crucial. If you do not delete your HA configuration before migration, the backup configuration may become corrupted, and the migration may fail.
+
+Method 1: Migrating your Controller AMI and Gateway Image Directly from Your Controller
+==========================================================================
+
+To migrate to the most current AMI directly from your Controller, use the following steps. 
+
+.. note::
+
+  Because `HA (High Availability) <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ ensures that your Controller is consistently available through any change or loss of service, HA is not compatible with image migration. If your account uses an HA configuration, `disable HA <https://docs.aviatrix.com/HowTos/controller_ha.html#steps-to-disable-controller-ha>`_ before using the following steps to do an image migration.
+
+
+
+1. Go to your Controller > Settings > Maintenance > Software Upgrade. Make sure you are on the right software version for the migration. If not, upgrade your software version.
+2. Go to Settings > Maintenance > Backup & Restore. Make sure you have a backup of your current settings.
+3. Go to Settings > Maintenance > Migration. Click **Migrate** to migrate your Controller to the latest image.
+
+  |controller_migration|
+
+.. note::
+
+  Migrating your Controller does not impact your network data plane. Your existing Gateways should continue operating during migration.  
+
+Upgrading Your Gateway Image from Your Controller
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To implement the **latest Gateway image**: 
+
+1. Go to your Controller > Troubleshoot > Diagnostics > Gateway > Gateway Replace. 
+2. Select each Gateway and click **Replace**. (`More info on Gateway Replace operation <https://docs.aviatrix.com/HowTos/Troubleshoot_Diagnostics.html#gateway-replace>`_.)
+
+Method 2: Manually Migrating Your Controller
+============================================
+
+The steps below describe how to manually migrate your Controller. The Controller-driven and manual methods for migration are the same, but the manual method allows you to see each step of the process.
+
+Enable Backup
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tip::
    If you already have backup enabled, click **Backup Now** to make sure you have the latest backup.
    Once complete, confirm in your S3 bucket that the backup file has been updated with the latest timestamp.
 
-#. Login to your existing Aviatrix Controller
-#. Navigate to **Settings** > **Maintenance** > **Backup & Restore tab**
-#. Click **Enable**
+#. Log in to your existing Aviatrix Controller.
+#. Navigate to Settings > Maintenance > Backup & Restore tab.
+#. Click **Enable**.
 
-|image2|
+|enable_backup|
 
-Step 2 - Stop the Current Aviatrix Controller Instance
-======================================================
+Stop the Current Aviatrix Controller Instance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. important::
    If the Controller has `HA enabled <controller_ha.html#enable-controller-ha>`__, you must first `disable the Controller HA <controller_ha.html#disable-controller-ha>`__.
 
 .. note::
-   To make best use of time, it is encouraged to launch the new Controller (as per **Step 4**) before stopping the old Controller.
+   To make best use of time, it is encouraged to launch the new Controller before stopping the old Controller.
 
-On the AWS console proceed to **Stop** the existing Aviatrix Controller instance.
+In AWS, proceed to **Stop** the existing Aviatrix Controller instance.
 
-Step 3 - Disassociate EIP
-=========================
+Disassociate EIP
+^^^^^^^^^^^^^^^^^^^^^^^
 
-On the AWS console, go to **EC2** > **Network & Security** > **Elastic IPs**.  Disassociate the EIP from the existing Aviatrix AWS Marketplace Controller instance.
+On the AWS console, go to EC2 > Network & Security > Elastic IPs.  Disassociate the EIP from the existing Aviatrix AWS Marketplace Controller instance.
 
 .. note::
    Make sure your browser cache is cleared before the next step to avoid connecting to an old stale session.
 
-Step 4 - Launch new Aviatrix Controller
-=======================================
-
-Launch new Aviatrix Controller.  Please refer to the `AWS Startup Guide </StartUpGuides/aviatrix-cloud-controller-startup-guide.html#step-1-subscribe-to-an-aviatrix-ami>`__ for steps.
-
+Launch the New Aviatrix Controller
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   
-   .. note::
-   	  To make best use of time, it is encouraged to launch the new Controller before stopping the old Controller in Step 2.    
-      
-   .. attention::
+ .. attention::
       Make sure you already have subscribed to the AMI that you want to migrate to. Please refer to the `Subscribe to an Aviatrix AMI </StartUpGuides/aviatrix-cloud-controller-startup-guide.html#step-1-subscribe-to-an-aviatrix-ami>`__  for details.
 
-Step 5 - Associate EIP
-======================
+Launch a new Aviatrix Controller.  Please see the `AWS Startup Guide </StartUpGuides/aviatrix-cloud-controller-startup-guide.html#step-1-subscribe-to-an-aviatrix-ami>`__ for instructions.
+  
+.. note::
 
-On the AWS console, go to **EC2** > **Network & Security** > **Elastic IPs**, and associate the same EIP from step 3 to the new Aviatrix Controller.
+  To make best use of time, it is encouraged to launch the new Controller before stopping the old Controller.    
+      
+Associate EIP
+^^^^^^^^^^^^^^^^^^^^^^^
 
-If you have your old `controller behind an ELB <https://docs.aviatrix.com/HowTos/controller_ssl_using_elb.html>`_, please note that you would have to remove the old controller instance from the listening group and add the new controller instance in its place.
+In AWS, go to **EC2** > **Network & Security** > **Elastic IPs**, and associate the same EIP from step 3 to the new Aviatrix Controller.
 
-Step 6 - Upgrade Controller
-===========================
+If you have your old `Controller behind an ELB <https://docs.aviatrix.com/HowTos/controller_ssl_using_elb.html>`_, please note that you would have to remove the old Controller instance from the listening group and add the new Controller instance in its place.
 
-Login to the new Controller and perform the initialization. Make sure your new Aviatrix Controller is upgraded to same version (latest) by validating it at **Settings** > **Maintenance** > **Upgrade tab**. Please note that Aviatrix only supports Controller backup and restore within the same software version. In this example, the previous controller is upgraded to the latest 5.2.2153 at the time of this writing. The following screenshot shows that the new controller is running the latest 5.2.2153 as well.
+Upgrade Controller
+^^^^^^^^^^^^^^^^^^^^^^^
 
-|image3|
+Log in to the new Controller and perform the initialization. Make sure your new Aviatrix Controller is upgraded to same version (latest) by validating it at Settings > Maintenance > Upgrade tab. Please note that Aviatrix only supports Controller backup and restore within the same software version. 
 
-Step 7 - Setup Aviatrix Customer ID (Not required if you are migrating to a Metered AMI Controller)
-================
-On the new Aviatrix Controller, go to **Settings** > **Controller** and select the **License**.
-Fill your Aviatrix License ID into the field of Customer ID in the panel "SETUP AVIATRIX CUSTOMER ID".
+Set up Aviatrix Customer ID (Not required if you are migrating to a Metered AMI Controller)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|image6|
+On the new Aviatrix Controller, go to Settings > Controller and select the **License**.
+Enter your Aviatrix License ID into the Customer ID field in Set up Aviatrix Customer ID.
 
-Step 8 - Restore
-================
-On the new Aviatrix Controller, go to **Settings** > **Maintenance** and select the **Backup & Restore tab**.
+|customer_id|
+
+Restore
+^^^^^^^^^^^^^^^^^^^^^^^
+
+On the new Aviatrix Controller, go to Settings > Maintenance and select the Backup & Restore tab.
 Insert the details about your S3 bucket name and execute a restore.
 
-|image4|
+|restore|
 
 
-Step 9 - Setup Aviatrix Customer ID Again (Not required if you are migrating to a Metered AMI controller) and AWS Account Number
-================
-On the new Aviatrix Controller, go to **Settings** > **Controller** and select the **License**.
-Fill your Aviatrix License ID into the field of Customer ID in the panel "SETUP AVIATRIX CUSTOMER ID".
+Set up Aviatrix Customer ID (Again) and AWS Account Number
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|image6|
+.. note::
+      You do not need to set up the Aviatrix Customer ID again if you are migrating to a Metered AMI Controller.
 
-Step 10 - Make sure the Security Groups of the new controller match the old controller's.  After modification, backup the configuration again.
-================
+1. On the new Aviatrix Controller, go to Settings > Controller and select the **License**.
+2. Enter your Aviatrix License ID into the Customer ID field in Set up Aviatrix Customer ID.
+
+Check Security Groups
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Make sure the Security Groups of the new Controller match those of the previous Controller. Then, back up the configuration again.
+
 .. tip::
    Optional: After confirming everything is running correctly, delete the previous Aviatrix AWS Marketplace Controller instance.
 
-.. |image1| image:: Migration_From_Marketplace/image1-3.3.png
-.. |image2| image:: Migration_From_Marketplace/image2-3.3.png
-.. |image3| image:: Migration_From_Marketplace/latestrelease-3.3.png
-.. |image4| image:: Migration_From_Marketplace/image4-3.3.png
-.. |image5| image:: Migration_From_Marketplace/image5-3.3.png
-.. |image6| image:: Migration_From_Marketplace/image6.png
+.. |controller_versions| image:: Migration_From_Marketplace_media/controller_versions.png
+   :scale: 60%
+.. |controller_migration| image:: Migration_From_Marketplace_media/controller_migration.png
+   :scale: 60%
+.. |enable_backup| image:: Migration_From_Marketplace_media/enable_backup.png
+   :scale: 60%
+.. |customer_id| image:: Migration_From_Marketplace_media/customer_id.png
+   :scale: 60%
+.. |restore| image:: Migration_From_Marketplace_media/restore.png
+   :scale: 60%
 
 .. disqus::

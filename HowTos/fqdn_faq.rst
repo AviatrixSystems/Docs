@@ -165,7 +165,7 @@ When enabling egress filtering on a VPC/VNet, each subnet's route table is revie
   .. note::
      If the Gateway is detached from the VPC/VNet (via the egress configuration page), the route table will be updated with the original values.
 
-Can FQDN gateway be deployed in central place?
+Can FQDN gateway be deployed in a central place?
 -----------------------------------------------------------------
 
 Yes. Available in Release 5.0 and later, Aviatrix FQDN gateway can be deployed centrally in the TGW environment as shown in the diagram below. 
@@ -174,7 +174,7 @@ Yes. Available in Release 5.0 and later, Aviatrix FQDN gateway can be deployed c
 
 One use case is if you need to limit the public IP addresses to a third-party public service. Follow the `Firewall Network  workflow <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html#c-launch-associate-aviatrix-fqdn-gateway>`_ to deploy. 
 
-How does FQDN and Stateful Firewall work together?
+How do FQDN and Stateful Firewall work together?
 -------------------------------------------------------------------
 
 If FQDN service is enabled on a gateway for any TCP port 80 and 443 traffic, all forwarding traffic to destination 
@@ -182,7 +182,7 @@ TCP port 80 and 443 are processed by FQDN engine
 and the decision to drop or accept the session is reached by FQDN engine. Stateful firewall can only process traffic destined 
 to non TCP port 80 and 443. 
 
-How does FQDN rules are processed in order?
+In what order are the FQDN rules processed?
 --------------------------------------------------------------
 
 Since you can create multiple tags with each consisting of a list of FQDN rules, the Controller must merge these rules in a specific order before sending these rules to FQDN gateway for processing. 

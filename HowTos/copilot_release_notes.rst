@@ -36,6 +36,49 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
 
+CoPilot Release 2.0.6 (6/24/2022)
+---------------------------------------------
+
+-   Bug fix that resolves available disk space issues for customers who were previously impacted by issue **AVX-24966**.
+   
+
+CoPilot Release 2.0.5 (6/23/2022)
+---------------------------------------------
+
+-   Minor bug fixes.
+
+**Issue Corrected in CoPilot release 2.0.5**
+
+    -   **AVX-24966** — After the release of CoPilot 2.0.4, some disk cleanup policies were not enforced. This issue has been fixed. If you observed that available disk space was lower than the ``Free disk threshold`` set in Settings > Advanced Settings and you cannot start CoPilot, please contact Aviatrix Support for assistance.
+   
+   
+CoPilot Release 2.0.4 (6/17/2022)
+---------------------------------------------
+
+(Note: The following releases were built for internal use only: 2.0.0, 2.0.1, 2.0.2, 2.0.3)
+
+-   (Application Administration) **Data Migration** — Starting with CoPilot release 2.0.4, you can now migrate data from one (source) CoPilot instance to another (destination) CoPilot instance. Migration of CoPilot data is not supported across clouds. Data migration is supported across regions, availability zones, and VPCs/VNets within the same cloud. For instructions on migrating CoPilot data from one CoPilot instance to another, see `About Migrating CoPilot Data <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#about-migrating-copilot-data>`_ in *Aviatrix CoPilot Deployment Guide*.
+
+-   (Permissions) **Improved read-only access views** — CoPilot now hides/disables some actions in the UI for users logging in with a read-only account. Controller user accounts that belong to a group that have read_only permissions will no longer be able to perform certain actions: Saving and deleting filter groups (FlowIQ), saving and deleting topology layouts (Topology), deleting change-set data (Topology Replay), creating and deleting scaling policies (Performance), resolving and deleting alerts (Notifications), creating and deleting network domains (Security), and many more actions that are reserved for groups with all_write and all_security_write permissions.
+
+-   (Login Page) **New login page** — The CoPilot login page now has a new look and feel and includes options for remembering your login credentials and resetting your password.  
+
+-   (`Public Preview Features`_ in Release 2.0.4) The following public preview feature is available in this release:
+
+    -   **Micro-segmentation** – Micro-segmentation provides granular network security policy enforcement for distributed applications in the cloud. It enables a unified network access policy model for your applications with distributed points of policy enforcement throughout your network. The micro-segmentation public preview feature is available starting from Controller release 6.7.1319. For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
+
+-   (Security - `Public Preview Features`_) The **Micro-segmentation** public preview feature has the following enhancements (starting from Controller release 6.7.1319):
+
+      -   **Micro-segmentation logging** – For the micro-segmentation rules with logging enabled, a policy monitor is now introduced that shows which rules were hit by network traffic. The policy monitor displays logs that meet the criteria configured in your rules. You can filter the information by timestamp, related rule, and more criteria. You can also configure a retention period for how long to store the logs.
+
+      -   **Micro-segmentation rule priority** – You can now specify a priority number to the micro-segmentation rules you create. The priority number determines the order in which your rules are applied. A lower priority number indicates higher precedence, with the highest priority being 0.
+
+      -   **Micro-segmentation system messages** – You can now view a list of system messages about your micro-segmentation configurations by clicking the bell icon in the CoPilot action bar.
+
+      -   For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
+
+
+
 CoPilot Release 1.11.3 (5/23/2022)
 ------------------------------------
 
@@ -55,7 +98,7 @@ CoPilot Release 1.10.0, 1.10.1 (5/09/2022)
 
 -   (`Private Preview Features`_ in Release 1.10.0) The following private preview feature is available in this release:
 
-    -   **Micro-segmentation** – Micro-segmentation provides granular network security policy enforcement for distributed applications in the cloud. It enables a unified network access policy model for your applications with distributed points of policy enforcement throughout your network. The micro-segmentation private preview feature is available starting from Controller release 6.7. For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
+    -   **Micro-segmentation** – Micro-segmentation provides granular network security policy enforcement for distributed applications in the cloud. It enables a unified network access policy model for your applications with distributed points of policy enforcement throughout your network. The micro-segmentation private preview feature is available starting from Controller release 6.7.1185. For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
 
 -   Performance improvements.
 
