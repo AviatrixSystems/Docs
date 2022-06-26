@@ -106,9 +106,9 @@ For more information, see `CVE-2021-40870 <https://cve.mitre.org/cgi-bin/cvename
 
 Mitigation: Please upgrade to the latest release. For detailed instructions related to this security upgrade, please see https://aviatrix.zendesk.com/hc/en-us/articles/4410621458317.
 
--If you are running 6.2, upgrade to 6.2.2052 or later. Aviatrix strongly recommends you upgrade to 6.4.2869 or later, 6.2 `EoL <https://aviatrix.com/wp-content/uploads/2021/08/Aviatrix-EOL-Policy.pdf>`_ is 10/15/2021. 
+-If you are running 6.2, upgrade to 6.2.2052 or later. Aviatrix strongly recommends you upgrade to 6.4.2869 or later, 6.2 `EoL <https://support.aviatrix.com/Aviatrix-EOL-Policy>`_ is 01/23/2022. 
 
--If you are running 6.3, upgrade to 6.3.2526 or later. Aviatrix strongly recommends you upgrade to 6.4.2869 or later, 6.3 `EoE <https://aviatrix.com/wp-content/uploads/2021/08/Aviatrix-EOL-Policy.pdf>`_ was 7/31/2021.
+-If you are running 6.3, upgrade to 6.3.2526 or later. Aviatrix strongly recommends you upgrade to 6.4.2869 or later, 6.3 `EoE <https://support.aviatrix.com/Aviatrix-EOL-Policy>`_ was 01/31/2022.
 
 -If you are running 6.4, upgrade to 6.4.2869 or later. 
 
@@ -128,8 +128,8 @@ Security Note 6.2.2043, 6.3.2490, 6.4.2838, and 6.5.1922 (9/11/2021)
 **Mitigation**: Please upgrade to the latest release. For instructions, go to `support.aviatrix.com <https://support.aviatrix.com/>`_ and search for *Aviatrix Controller Upgrade*.
 
 
-- If you are running 6.2, upgrade to 6.2.2043 or later. Aviatrix strongly recommends you upgrade to 6.4.2838 or later, 6.2 `EoL <https://aviatrix.com/wp-content/uploads/2021/08/Aviatrix-EOL-Policy.pdf>`_ is 10/15/2021.
-- If you are running 6.3, upgrade to 6.3.2490 or later. Aviatrix strongly recommends you upgrade to 6.4.2838 or later, 6.3 `EoE <https://aviatrix.com/wp-content/uploads/2021/08/Aviatrix-EOL-Policy.pdf>`_ was 7/31/2021.
+- If you are running 6.2, upgrade to 6.2.2043 or later. Aviatrix strongly recommends you upgrade to 6.4.2838 or later, 6.2 `EoL <https://support.aviatrix.com/Aviatrix-EOL-Policy>`_ is 01/23/2022.
+- If you are running 6.3, upgrade to 6.3.2490 or later. Aviatrix strongly recommends you upgrade to 6.4.2838 or later, 6.3 `EoE <https://support.aviatrix.com/Aviatrix-EOL-Policy>`_ was 01/31/2022.
 - If you are running 6.4, upgrade to 6.4.2838 or later.
 - If you are running 6.5, upgrade to 6.5.1922 or later.
 

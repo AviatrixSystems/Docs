@@ -36,6 +36,22 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
 
+CoPilot Release 2.0.6 (6/24/2022)
+---------------------------------------------
+
+-   Bug fix that resolves available disk space issues for customers who were previously impacted by issue **AVX-24966**.
+   
+
+CoPilot Release 2.0.5 (6/23/2022)
+---------------------------------------------
+
+-   Minor bug fixes.
+
+**Issue Corrected in CoPilot release 2.0.5**
+
+    -   **AVX-24966** — After the release of CoPilot 2.0.4, some disk cleanup policies were not enforced. This issue has been fixed. If you observed that available disk space was lower than the ``Free disk threshold`` set in Settings > Advanced Settings and you cannot start CoPilot, please contact Aviatrix Support for assistance.
+   
+   
 CoPilot Release 2.0.4 (6/17/2022)
 ---------------------------------------------
 
