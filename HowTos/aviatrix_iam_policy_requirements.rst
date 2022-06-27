@@ -1,4 +1,4 @@
-﻿
+
 .. meta::
    :description: Aviatrix IAM Policy Requirements
    :keywords: AWS, IAM, Policy, Aviatrix, Requirement
@@ -14,7 +14,7 @@ Introduction
 
 This documentation explains how and why AWS IAM permissions are needed by Aviatrix.
 
-.. Note:: Since Aviatrix IAM Policy, **aviatrix-app-policy** has reached the max-character-limitation. In order to provide simplicity, we have combined some of IAM permissions. And this document provides exact AWS APIs being invoked by Aviatrix features.
+.. Note:: Since Aviatrix IAM Policy, **aviatrix-app-policy** has reached the max-character-limitation. In order to provide simplicity, we have combined some of IAM permissions. This document provides exact AWS APIs being invoked by Aviatrix features.
 ..
 
 
@@ -234,7 +234,7 @@ An Aviatrix gateway needs to be in the STOP state before the instance type/size 
 |
 
 
-6. VPN Gateway & LoadBalance Requirement
+6. VPN Gateway & Load Balancer Requirement
 ------------------------------------------------------------
 
 * Aviatrix VPN feature requires the following (and gateway creation) permissions if the user chooses to create an NLB/ELB along with the VPN gateway creation.
@@ -242,6 +242,7 @@ An Aviatrix gateway needs to be in the STOP state before the instance type/size 
     + `AWS Doc 1 <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-service-linked-roles.html#service-linked-role-permissions>`__    
     + `AWS Doc 2 <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-service-linked-roles.html#create-service-linked-role>`__    
     + `AWS Doc 3 <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-api-permissions.html#required-permissions-v2>`__    
+* These permissions also apply to Private Mode and GWLB-based FireNet.
 
 ::
 
@@ -464,5 +465,31 @@ In order to enable the UDP Load-Balancer feature, the following permissions are 
 
 |
 
+
+15. Private Mode and GWLB-Based FireNet Requirement
+----------------------------------------------------
+
+In order to enable Private Mode usage and GWLB-based FireNet, the following permissions are needed:
+
+::
+
+
+        {
+            "Effect": "Allow",
+            "Action": [
+                "elasticloadbalancing:DescribeTargetHealth",
+	        "ec2:CreateVpcEndpointServiceConfiguration",
+                "ec2:DeleteVpcEndpointServiceConfigurations",
+                "ec2:CreateVpcEndpoint",
+	        "ec2:DeleteVpcEndpoints",
+	        "ec2:ModifyVpcEndpointServicePermissions",
+	        "ec2:DescribeVpcEndpointServicePermissions",
+	        "ec2:DescribeVpcEndpoints"
+            ]
+        }
+
+
+|
+  
 
 .. disqus::
