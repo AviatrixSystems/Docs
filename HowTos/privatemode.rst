@@ -15,18 +15,14 @@ After Private Mode is configured you can create gateways using `Multi-Cloud Tran
 
 Cloud environments that support this feature are AWS, AWS GovCloud, Azure, and Azure Government. 
 
-+-----------------------+-------------------------------+
-|Controller Location    | Gateways                      |   
-|                       |                               |
-+=======================+===============================+
-|AWS GovCloud	       | AWS			     |
-+-----------------------+-------------------------------+
-|AWS		       | AWS GovCloud	     	     |	                
-+-----------------------+-------------------------------+
-|AWS GovCloud	       | Azure or Azure Government     |
-+-----------------------+-------------------------------+
-|AWS		       | Azure or Azure Government     |
-+-----------------------+-------------------------------+
++-----------------------+--------------------------------------+
+|Controller Location    | Gateways                             |  
++=======================+======================================+
+|AWS GovCloud.          | AWS, Azure, Azure Government         |
++-----------------------+--------------------------------------+
+|AWS                    | AWS GovCloud, Azure, Azure Government|	                
++-----------------------+--------------------------------------+
+
 
 Prerequisites
 --------------
