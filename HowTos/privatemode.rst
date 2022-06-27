@@ -18,7 +18,7 @@ Cloud environments that support this feature are AWS, AWS GovCloud, Azure, and A
 +-----------------------+--------------------------------------+
 |Controller Location    | Gateways                             |  
 +=======================+======================================+
-|AWS GovCloud.          | AWS, Azure, Azure Government         |
+|AWS GovCloud           | AWS, Azure, Azure Government         |
 +-----------------------+--------------------------------------+
 |AWS                    | AWS GovCloud, Azure, Azure Government|	                
 +-----------------------+--------------------------------------+
