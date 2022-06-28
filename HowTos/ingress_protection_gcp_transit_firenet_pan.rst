@@ -16,7 +16,7 @@ The solution described below shows how to implement NLB based ingress with Palo 
 
 .. note::
 
-  In this NLB based deployment in GCP the original source address is preserved. The firewall then has to NAT the traffic source to its LAN interface IP, so that’s where the original source IP is rewritten (SNAT).
+  In this NLB based deployment in Google Cloud the original source address is preserved. The firewall then has to NAT the traffic source to its LAN interface IP, so that’s where the original source IP is rewritten (SNAT).
 
 This document describes a step-by-step guide for application ingress protection via Aviatrix Transit FireNet using Palo Alto firewalls for controller version R6.6 and later. 
 
