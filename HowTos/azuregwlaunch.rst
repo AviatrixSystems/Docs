@@ -9,7 +9,7 @@ How to Troubleshoot Azure RM Gateway Launch Failure
 Before you launch an Aviatrix gateway in Azure RM, you must first subscribe to the Aviatrix Companion Gateway in Azure marketplace. 
 
 To check if you have done so, follow these steps.
-  1. Login in to Azure Portal.
+  1. Log in to Azure Portal.
   #. Click More Services.
   #. Click Subscriptions.
   #. Click the subscription in which you wish to launch an Aviatrix gateway.
@@ -47,7 +47,7 @@ From the Controller console, launch the gateway again and observe the failure.
 
 4. Get Help from Aviatrix Support
 ---------------------------------
-If you still cannot figure out the problem, lease open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ to get help.
+If you still cannot figure out the problem, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ to get help.
 
 .. |image0| image:: azuregwlaunch_media/azuregwlaunch.png
 

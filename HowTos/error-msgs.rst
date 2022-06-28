@@ -93,7 +93,7 @@ Follow the instructions `here <https://docs.aviatrix.com/HowTos/iam_policies.htm
   [Aviatrix Error] oregon-transit with size t2.micro only support 2 interfaces. Cannot create DMZ interface. Please increase gateway size (suggest t3.medium) 
 
 Transit DMZ deployment requires 3 Ethernet interfaces. t2.micro has only 2. 
-At the Aviatrix Controller console, go to Gateway. Highlight the transit gateway with the size error, click Edit. Scroll down to Gateway Resize. In the drop down menu, select t2.small or a more powerful instance size. For instance size charts, refer to `this AWS guide <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html>`_.
+At the Aviatrix Controller console, go to Gateway. Highlight the transit gateway with the size error, click Edit. Scroll down to Gateway Resize. In the drop down menu, select t3.large or a more powerful instance size. For instance size charts, refer to `this AWS guide <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html>`_.
 
 ------------------------------------------------------------------------------------
 

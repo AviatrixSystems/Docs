@@ -1,4 +1,4 @@
-﻿.. meta::
+.. meta::
    :description: UCC Frequently Asked Questions
    :keywords: ucc, faq, frequently asked questions, ucc faq, aviatrix faq
 
@@ -476,11 +476,11 @@ How to recover when a Controller software upgrade fails?
 Here is the best practice procedure to follow:
 
  1. Before a software upgrade, go to Settings -> Maintenance -> Backup & Restore -> Backup Now. This will save a copy of the deployment configuration to your S3 bucket. 
- #. Do a try dun before upgrade. Go to Settings -> Maintenance -> Upgrade -> UPGRADE TO THE LATEST -> Dry Run. If Dry Run is successful, proceed to the next step. If Dry Run fail, do not proceed to upgrade until you root cause the issue. 
+ #. Do a dry run before upgrading. Go to Settings -> Maintenance -> Upgrade -> UPGRADE TO THE LATEST -> Dry Run. If the Dry Run is successful, proceed to the next step. If the Dry Run fails, do not proceed to the upgrade until you determine the root cause of the issue. 
  #. Upgrade. Go to Settings -> Maintenance -> Upgrade -> UPGRADE TO THE LATEST -> Upgrade. Wait for the process to finish.
- #. If Controller upgrade is successful and some gateways fail, you can force upgrade the failed gateway again. Go to Troubleshoot -> Gateway -> FORCE UPGRADE. Select the gateway and click Upgrade. 
- #. If gateway force upgrade fail, proceed to replace the gateway. Go to Troubleshoot -> Gateway -> GATEWAY REPLACE. Select the failed gateway and click Replace. 
- #. If Controller upgrade fails, follow `this document from Step 2 to the end <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#step-2-stop-the-current-aviatrix-controller-instance>`_. 
+ #. If Controller upgrade is successful and some gateways fail, you can 'force upgrade' the failed gateway again. Go to Troubleshoot -> Gateway -> FORCE UPGRADE. Select the gateway and click Upgrade. 
+ #. If gateway force upgrade fails, proceed to replace the gateway. Go to Troubleshoot -> Gateway -> GATEWAY REPLACE. Select the failed gateway and click Replace. 
+ #. If the Controller upgrade fails, follow `this document from Step 2 to the end <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#step-2-stop-the-current-aviatrix-controller-instance>`_. 
 
 What IP addresses does Controller need to reach out to?
 ---------------------------------------------------------

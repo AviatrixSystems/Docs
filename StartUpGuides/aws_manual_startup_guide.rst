@@ -33,7 +33,7 @@ click at a region where you wish to launch the controller.
 
 Once you are at AWS EC2 console, follow the steps below:
 
-1.  Select the instance size “t2.large” of 8GB of memory, which is the minimum instance
+1.  Select the instance size “t3.large” of 8GB of memory, which is the minimum instance
     required.
 
 2.  Select the VPC where the controller will be launched.

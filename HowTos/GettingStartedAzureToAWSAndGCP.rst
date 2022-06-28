@@ -299,7 +299,7 @@ Head back over to the `Gateways` section in the Aviatrix Controller and click on
 1. Select `AWS` for `Cloud Type`
 2. Enter a Gateway name
 3. Select the appropriate values for `Region`, `VPC ID`, and `Public Subnet`.
-4. Keep the default `Gateway Size` at `t2.micro`.
+4. Set the default `Gateway Size` at `t3.large`.
 5. Check `Allocate New EIP` so a new Elastic IP will be allocated on creation.
 6. Click `OK` when ready.  
 

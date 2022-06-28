@@ -88,11 +88,6 @@ Add the management profile you have updated to the WAN interface of the firewall
 
 |palo_alto_mgmt_profile|
 
-Step 4.2. Update firewall policy
------------------------------------------------------------------
-
-Update the security policy on the firewall to enable access to the WAN interface of the firewall from the health probe address (169.254.169.254) using HTTP.
-
 Step 5. Create ingress load balancer in Google Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -126,6 +121,9 @@ Click Frontend configuration on the Load Balancer Page and set up a frontend for
 Step 6. Set up firewalls for ingress application traffic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Step 6.1. Create NAT rules
+-----------------------------------------------------------------
+
 The load balancer is now created, but health probes will fail as we need to set up a NAT rule for the firewall to answer those probes destined to the frontend IP address of the load balancer.
 On the firewall create a DNAT rule for each frontend IP for the health check to work and create a DNAT/SNAT rule for each application to DNAT/SNAT traffic to the actual application IP in the Spoke. The following screenshot shows an example for these rules.
 
@@ -140,7 +138,13 @@ This example uses the following parameters:
 
 |palo_alto_dnat_1|
 
+Step 6.2. Update firewall policy
+-----------------------------------------------------------------
+
+Update the security policy on the firewall to enable access to the Fontend IP address of your load balancer from the health probe address (169.254.169.254) using HTTP (this will be the original healthprobe packet).
+
 Set up the firewall's security policy to enable the application ingress traffic.
+
 
 Step 7. Set up Google Cloud firewall rules for ingress
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
