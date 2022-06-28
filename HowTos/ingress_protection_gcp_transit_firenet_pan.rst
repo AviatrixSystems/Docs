@@ -6,9 +6,9 @@
 Ingress Protection via Aviatrix Transit FireNet with Palo Alto in GCP
 ==============================================================
 
-There are two fundamental ways of doing ingress in GCP with traffic inspection using Transit Firenet. One of them is doing it in a load balancer deployed in a spoke, while the other way is doing it directly in the Firenet.
+There are two fundamental ways of doing ingress in GCP with traffic inspection using Transit FireNet. One of them is doing it in a load balancer deployed in a spoke, while the other way is doing it directly in the FireNet.
 
-In GCP, cloud native network load balancers deliver traffic directly to the target interfaces, so for the spoke-based inspection you need third-party load balancers, like F5 in order to make sure that traffic will get routed through the Firenet. This spoke-based ingress option is somewhat easier to implement, however you need to manage those load balancers yourself which adds cost and complexity. This article talks about the second option where you are using GCP native load balancer in the Firenet directly.
+In GCP, cloud native network load balancers deliver traffic directly to the target interfaces, so for the spoke-based inspection you need third-party load balancers, like F5 in order to make sure that traffic will get routed through the FireNet. This spoke-based ingress option is somewhat easier to implement, however you need to manage those load balancers yourself which adds cost and complexity. This article talks about the second option where you are using GCP native load balancer in the FireNet directly.
 
 The solution described below shows how to implement NLB based ingress with Palo Alto firewalls in Google Cloud.
 
