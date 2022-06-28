@@ -1,10 +1,14 @@
 .. meta::
-  :description: Ingress Protection via Aviatrix Transit FireNet with Fortigate
+  :description: Ingress Protection via Aviatrix Transit FireNet with Palo Alto
   :keywords: AVX Transit Architecture, Aviatrix Transit network, Transit DMZ, Ingress, Firewall, Palo Alto
 
 ==============================================================
 Ingress Protection via Aviatrix Transit FireNet with Palo Alto in GCP
 ==============================================================
+
+There are two fundamental ways of doing ingress in GCP with traffic inspection using Transit Firenet. One of them is doing it in a load balancer deployed in a spoke, while the other way is doing it directly in the Firenet.
+
+In GCP, cloud native network load balancers deliver traffic directly to the target interfaces, so for the spoke-based inspection you need third-party load balancers, like F5 in order to make sure that traffic will get routed through the Firenet. This spoke-based ingress option is somewhat easier to implement, however you need to manage those load balancers yourself which adds cost and complexity. This article talks about the second option where you are using GCP native load balancer in the Firenet directly.
 
 The solution described below shows how to implement NLB based ingress with Palo Alto firewalls in Google Cloud.
 
@@ -12,7 +16,7 @@ The solution described below shows how to implement NLB based ingress with Palo 
 
 .. note::
 
-  In this NLB based deployment in GCP the original source address is preserved. The firewall then has to NAT the traffic source to its LAN interface IP, so that’s where the original source IP is lost.
+  In this NLB based deployment in GCP the original source address is preserved. The firewall then has to NAT the traffic source to its LAN interface IP, so that’s where the original source IP is rewritten (SNAT).
 
 This document describes a step-by-step guide for application ingress protection via Aviatrix Transit FireNet using Palo Alto firewalls for controller version R6.6 and later. 
 
@@ -119,7 +123,7 @@ Click Frontend configuration on the Load Balancer Page and set up a frontend for
 |gcp_create_lb_6|
 
 
-Step 6. Set up firewalls for ingress appliaction traffic
+Step 6. Set up firewalls for ingress application traffic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The load balancer is now created, but health probes will fail as we need to set up a NAT rule for the firewall to answer those probes destined to the frontend IP address of the load balancer.
@@ -184,7 +188,7 @@ Initiate traffic from the internet towards you application hosted in the spoke V
 .. |gcp_create_lb_5| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_create_lb_5.png
    :scale: 50% 
 
-.. |gcp_creae_lb_6| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_create_lb_6.png
+.. |gcp_create_lb_6| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_create_lb_6.png
    :scale: 50% 
 
 .. |gcp_fwrule_ingress| image:: ingress_protection_gcp_transit_firenet_pan_media/gcp_fwrule_ingress.png
