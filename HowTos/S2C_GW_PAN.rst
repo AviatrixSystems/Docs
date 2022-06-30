@@ -33,14 +33,66 @@ The network setup is as follows:
     *VPC2 Private Subnet CIDR: 10.13.1.0/24*
 
 
+Certificate-Based Authentication
+================================
+
+If you want to use certificate-based authentication when establishing a Site2Cloud connection with your Palo Alto VM-Series firewall, you must do the following:
+
+1. Generate a certificate from your Palo Alto VM-Series firewall. See steps here xxx
+#. Export your certificate in PEM format. See steps here xxx
+#. In the Aviatrix Controller, upload the CA certificate generated from your Palo Alto VM-Series firewall under Site2Cloud > Certificate > CA Certificate. 
+#. Create your Site2Cloud connection as described `here (selecting the cert-based authentication type) <https://docs.aviatrix.com/HowTos/site2cloud.html>`_.	
+#. After creating the Site2Cloud connection, `download the resulting configuration <https://docs.aviatrix.com/HowTos/site2cloud.html#download-configuration>`_.
+#. In the Palo Alto VM-Series UI, upload this configuration (how?) and configure your tunnels/interfaces. See steps here xxx
+#. In the Palo Alto VM-Series UI, configure the IKE Gateway depending on if you are using PSK or certificate-based authentication. See steps here xxx
+#. In the Aviatrix Controller, navigate to Site2Cloud > Certificate > AVX CA Certificate and download the Aviatrix CA certificate. 
+#. Upload the Aviatrix CA certificate to your on-prem Palo Alto VM-Series firewall. See steps here xxx
+
 Configuration Workflow
 ======================
 
-#. Launch a Palo Alto Networks VM-series with at least two network interfaces - One interface serves as a WAN port and is in VPC2's public subnet. The other interface serves as a LAN port and is in VPC2's private subnet. Collect the public IP address of the WAN port.
+Need blurb here
 
-#. At the Aviatrix Controller, go to Gateway > New Gateway to launch an Aviatrix Gateway at VPC1's public subnet. Collect both the public and private IP address of the Gateway.
+Creating and Generating a Self-Signed Root Certificate
+------------------------------------------------------
 
-#. At the Aviatrix Controller, go to Site2Cloud and click **Add New** to create a Site2Cloud connection:
+If you are creating a Site2Cloud connection between your Palo Alto VM-Series firewall and your Aviatrix gateway in the cloud and want to use cert-based authentication, you must generate a CA certificate that you will upload to the Aviatrix Controller under Site2Cloud > CA Certificate.
+
+See `this URL <https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/certificate-management/obtain-certificates/create-a-self-signed-root-ca-certificate>`_ for more information on certificates in Palo Alto.
+
+1. Navigate to Device > Certificate Management > Certificates > Device Certificates.
+#. Click Generate at the bottom of the window. The Generate Certificate dialog displays.
+#. Fill out the following information: 
+
+- Certificate Name: a name that makes sense to you, such as PAN-CA
+- Common Name: a descriptor that makes sense to you, such as pan-to-avx.com
+- Signed By: select ‘Certificate Authority’
+- Cryptographic Settings: 
+  - Select Elliptic Curve DSA (ECDSA); this is currently the only algorithm supported by Site2Cloud cert-based authentication.
+  - Select 256 bits
+  - Select sha256 digest
+
+|generate-cert|
+
+#. Click Generate. This creates (?) the root CA certificate that will be used to sign the PAN to Aviatrix certificate you will create in the next step.
+#. Under Device > Certificate Management > Certificates > Device Certificates, generate another certificate (that uses the root?) and populate as follows:
+
+- Certificate Name: a name that makes sense to you, such as pan-to-avx-cert
+- Common Name: a name that makes sense to you, such as pan-device.com
+- Signed by: PAN-CA (created in above steps)
+- Cryptographic Settings: Elliptic Curve DSA algorithm; 256 bits; sha256 digest
+- Certificate Attributes: Host Name = “DNS” from Subject Alternative Name (SAN) field (do you fill this in or is it populated automatically with the common name?); Host Name = “DNS” from Subject Alternative Name (SAN) field
+
+#. Click Generate.
+#. Do you then select it and Export HA Key?
+#. See the `CA Certificate page <https://docs.aviatrix.com/HowTos/site2cloud_cert.html>`_ for details on uploading this certificate.
+
+
+#. Launch a Palo Alto Networks VM-series with at least two network interfaces. One interface serves as a WAN port and is in VPC2's public subnet. The other interface serves as a LAN port and is in VPC2's private subnet. Collect the public IP address of the WAN port.
+
+#. In the Aviatrix Controller, go to Gateway > New Gateway to launch an Aviatrix Gateway at VPC1's public subnet. Collect both the public and private IP address of the Gateway.
+
+#. In the Aviatrix Controller, go to Site2Cloud > Setup and click **Add New** to create a Site2Cloud connection:
 
    ===============================     =========================================
      **Field**                         **Value**
@@ -60,9 +112,11 @@ Configuration Workflow
      Local Subnet                      10.0.2.0/24 (VPC1 private subnet)
    ===============================     =========================================
 
-#. At the Aviatrix Controller, go to the Site2Cloud page. From the Site2Cloud connection table, select the connection created above (e.g. avx-pan-s2c). Select **Generic** from the **Vendor** dropdown list and click the **Download Configuration** button to download the Site2Cloud configuration. Save the configuration file for configuring a Palo Alto Network VM.
+#. After the connection is created, select the connection you just created in the table on the Site2Cloud Setup page (for example, ave-pan-s2c).
 
-#. Log into the Palo Alto Networks VM Series and configure it as following:
+#. Select **Generic** from the **Vendor** dropdown list and click the **Download Configuration** button to download the Site2Cloud configuration. Save the configuration file for configuring a Palo Alto Network VM.
+
+#. Log into the Palo Alto Networks VM Series and configure it as follows:
 
    a. Go to Network > Interface > Tunnel and click **Add** to create a new tunnel interface and assign the following parameters.
 
@@ -162,6 +216,10 @@ For troubleshooting, go to Site2Cloud > Diagnostics and select various commands 
 
 |image9|
 
+
+.. |image0| image:: s2c_gw_pan_media/generate-cert.PNG
+    :width: 5.55625in
+    :height: 3.26548in
 
 .. |image0| image:: s2c_gw_pan_media/Create_Tunnel_Interface.PNG
     :width: 5.55625in

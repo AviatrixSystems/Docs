@@ -18,9 +18,12 @@ Site2Cloud IPsec VPN Instructions
 Overview
 ========
 
-Aviatrix supports connectivity between its Gateways in the cloud and on-premise routers using a feature called `Site2Cloud`, as shown below.  This document outlines how to get connectivity established between an Aviatrix Gateway in AWS, Azure, or GCP and your on-premise router or firewall.
+The Aviatrix Site2Cloud feature supports connectivity between its Gateways in the cloud and on-premise routers, as shown below.  This document outlines how to establish connectivity between an Aviatrix Gateway in AWS, Azure, or GCP and your on-premise router or firewall.
 
 |site2cloud_new|
+
+.. note::
+	If you are planning to use certificate-based authentication for your Site2Cloud connection, ensure that you have already generated and exported the external device CA certificate `as described here <https://docs.aviatrix.com/HowTos/site2cloud_cacert.html>`_.
 
 
 Configuration Workflow
@@ -30,175 +33,33 @@ Create Site2Cloud Connection
 ----------------------------
 
 #. Log in to your Aviatrix Controller.
-#. Select the Site2Cloud navigation item on the left navigation bar.
-#. Click on **+ Add New** near the top of the Site2Cloud tab.
-#. Under **Add a New Connection**, enter the following:
-   
-   +-------------------------------+----------------------------------------------+
-   | Field                         | Description                                  |
-   +===============================+==============================================+
-   | VPC ID / VNet Name            | Select the VPC or VNet where this tunnel     |
-   |                               | will terminate in the cloud.                 |
-   +-------------------------------+----------------------------------------------+
-   | Connection Type               | Unmapped unless Local Subnet and Remote    |
-   |                               |  Subnet are overlapped.                      |
-   +-------------------------------+----------------------------------------------+
-   | Connection Name               | Name this connection.  This connection       |
-   |                               | represents the connectivity to the edge      |
-   |                               | device.                                      |
-   +-------------------------------+----------------------------------------------+
-   | Remote Gateway Type           | Generic, AWS VGW, Azure VPN,           |
-   |                               | Aviatrix, or SonicWall.                  |
-   |                               | See below for additional details.            |
-   +-------------------------------+----------------------------------------------+
-   | Tunnel Type                   | Route-based or Policy-based              |
-   |                               |                                              |
-   |                               | .. note::                                    |
-   |                               |    If Connection Type Mapped is selected   |
-   |                               |    only Route-based is supported.          |
-   |                               |                                              |
-   +-------------------------------+----------------------------------------------+
-   | Algorithms                    | Defaults will be used if unchecked. See      |
-   |                               | below for more details.                      |
-   +-------------------------------+----------------------------------------------+
-   | IKEv2                         | Select the option to connect to the remote   |
-   |                               | site using IKEv2 protocol.                   |
-   +-------------------------------+----------------------------------------------+
-   | Encryption over ExpressRoute/ | An additional field will be displayed if     |
-   | DirectConnect                 | checked.                                     |
-   +-------------------------------+----------------------------------------------+
-   | Route Tables to Modify        | Only displayed if Encrypting over            |
-   |                               | Direct Connect/ExpressRoute is selected.      |
-   |                               | Select the specific routes tables to be      |
-   |                               | programmed with remote CIDR routes.          |
-   +-------------------------------+----------------------------------------------+
-   | Enable HA                     | Enable High Availability. Additional fields  |
-   |                               | are displayed when checked.                  |
-   +-------------------------------+----------------------------------------------+
-   | Enable Single IP HA           | HA gateway failover solution using Single     |
-   |                               | Public IP on Aviatrix Regular gateway        | 
-   |                               | allows you to reuse the same EIP to bring up |
-   |                               | the backup tunnel.                           |
-   |                               | Supported for AWS and Azure only             |
-   +-------------------------------+----------------------------------------------+
-   | Over Private Network          | Select this option if your underlying        |
-   |                               | infrastructure is private network, such as   |
-   |                               | AWS Direct Connect and Azure Express Rout.   |
-   |                               | See “How does it work” section for more      |
-   |                               | details. When this option is selected, BGP   |
-   |                               | and IPSEC run over private IP addresses.     |
-   |                               | terminate in this VPC.                       |
-   +-------------------------------+----------------------------------------------+
-   | Primary Cloud Gateway         | Select the Gateway where the tunnel will     |
-   |                               | terminate in this VPC.                       |
-   +-------------------------------+----------------------------------------------+
-   | Remote Gateway IP Address     | IP address of the device.                    |
-   +-------------------------------+----------------------------------------------+
-   | Pre-shared Key                | Optional.  Enter the pre-shared key for this |
-   |                               | connection.  If nothing is entered, one will |
-   |                               | be generated for you.                        |
-   +-------------------------------+----------------------------------------------+
-   | Remote Subnet (Real)          | Specify a list of the destination network    |
-   |                               | CIDRs, separated by comma, that will         |
-   |                               | be encrypted. For example, 10.10.1.0/24, 10. |
-   |                               | 10.2.0./24                                   |
-   +-------------------------------+----------------------------------------------+
-   | Remote Subnet (Virtual)       | Only applicable when Connection Type is      |
-   |                               | Mapped. Specify a list of virtual remote   |
-   |                               | network                                      |
-   |                               | CIDRs that is 1-1 mapped to the Remote       |
-   |                               | Subnet Real. For example, if the real        |
-   |                               | subnets are 10.10.1.0/24, 10.10.2.0/24       |
-   |                               | 24, you can specify the virtual remote       |
-   |                               | subnets as                                   |
-   |                               | 192.168.1.0/24, 192.168.2.0/24               |
-   +-------------------------------+----------------------------------------------+
-   | Local Subnet (Real)           | Specify a list of the source network CIDRs   |
-   |                               | , separated by comma, that will be encrypted.|
-   |                               | For example, 172.16.1.0/24, 172.16.2.0/24    |
-   +-------------------------------+----------------------------------------------+
-   | Local Subnet (Virtual)        | Only applicable when Connection Type is      |
-   |                               | Mapped. Specify a list of virtual local    |
-   |                               | network                                      |
-   |                               | CIDRs that are 1-1 mapped to the Local       |
-   |                               | Subnet Real. For example, if the real        |
-   |                               | subnets are 172.16.1.0/24, 172.16.2.0/24,    |
-   |                               | you can specify the virtual local            |
-   |                               | subnets as                                   |
-   |                               | 192.168.7.0/24, 192.168.8.0/24               |
-   +-------------------------------+----------------------------------------------+
-   | Backup Gateway                | Only available when Enable HA is selected. |
-   |                               | Backup Gateway should be the .hagw created   |
-   |                               | at Gateway > Edit > Gateway for High      |
-   |                               | Availability Peering                        |
-   +-------------------------------+----------------------------------------------+
-   | Remote Gateway IP Address     | Only available when Enable HA is selected. |
-   | (Backup)                      | IP address of the backup gateway (.hagw)     |
-   +-------------------------------+----------------------------------------------+
-   | Same Pre-Shared Key as Primary| Check the option if the backup tunnel uses   |
-   |                               | the same pre-shared key as the primary       |
-   +-------------------------------+----------------------------------------------+
-   | Pre-shared Key (Backup)       | Only available when Enable HA is selected. |
-   |                               | Optional. Enter the pre-shared key for this  |
-   |                               | backup connection. If nothing is entered,    |
-   |                               | one will be generated for you.               |
-   +-------------------------------+----------------------------------------------+
+#. Select SITE2CLOUD in the left navigation bar.
+#. Click **+ Add New** near the top of the SITE2CLOUD tab.
+#. Under Add a new connection, select the VPC ID where this tunnel will terminate in the cloud.
+#. See the below sections for information on configuring the connection.
+
+Connection Type
+^^^^^^^^^^^^^^^
+
+Select Mapped or Unmapped as the Connection Type. You should select Unmapped unless the Local Subnet and the Remote Subnet overlap.
+
+<what is Custom Mapped? Check box displays if you select Mapped. If you select this three other check boxes display: Remote Initiated Traffic, Local Initiated Traffic, Save Template. Looks like if you don't select that check box you have to enter the remote subnet real and virtual, local subnet real and virtual.>
+
+If you select Mapped, configure the following:
+
+- remote Subnet (real): specify a list of the destination network CIDRs, separated by comma, that will be encrypted (for example, 10.10.1.0/24, 10.10.2.0/24).
+- Remote Subnet (virtual): specify a list of virtual remote network CIDRs that are mapped to the real remote subnet (for example, for the real CIDRs listed above, you can have these virtual remote subnets: 192.168.1.0/24, 192.168.2.0/24).
+- Local Subnet (real): specify a list of the source network CIDRs, separated by comma, that will be encrypted. If left blank, the full CIDR is used. If you enter a value, make sure you include the VPC/VNet as well. These Local Subnets are advertised to Remote Subnets that the Site2Cloud connection can reach. Examples of real local subnets are 172.16.1.0/24, 172.16.2.0/24.
+- Local Subnet (virtual): specify a list of virtual local network CIDRs that are mapped to the real local subnet (for example, for the real CIDRs listed above for the real local subnet, you can have these virtual local subnets: 192.168.7.0/24, 192.168.8.0/24).
 
 .. important::
 
   If the Local Subnet field is outside of gateway VPC/VNet, you need to open the gateway inbound security groups to allow the Local Subnet network CIDR ranges. 
 
+.. note::
+	If you enter multiple real subnets, you must configure an equal number of virtual subnets. One-to-one mapping is supported if both sides are configured properly. The Remote and Local Subnet fields can contain multiple values. Use a comma to separate the values. If the Local Subnet field is outside the gateway VPC/VNet, you must open the gateway inbound security groups to allow the Local Subnet network CIDR ranges.
 
-Connection Type: Unmapped
-+++++++++++++++++++++++++
-
-For unmapped connections, the following two fields will be displayed:
-
-   +-------------------------------+------------------------------------------+
-   | Field                         | Description                              |
-   +===============================+==========================================+
-   | Remote Subnet                 | Enter the CIDR representing the remote   |
-   |                               | network.                                 |
-   +-------------------------------+------------------------------------------+
-   | Local Subnet                  | The CIDR block of the local VPC/VNet     |
-   |                               | subnet.  If left blank, Aviatrix will    |
-   |                               | use the full VPC/VNet CIDR.              |
-   +-------------------------------+------------------------------------------+
-
-   .. tip::
-      The remote and local subnet fields can contain multiple values.  Use a comma (,) to separate the values.
-
-   
-Connection Type: Mapped
-+++++++++++++++++++++++++
-
-For mapped connections, the following four fields will be displayed:
-
-   +-------------------------------+------------------------------------------+
-   | Field                         | Description                              |
-   +===============================+==========================================+
-   | Remote Subnet(Real)           | Enter the real CIDR of the               |
-   |                               | remote network.                          |
-   +-------------------------------+------------------------------------------+
-   | Remote Subnet(Virtual)        | Enter a virtual CIDR that will represent |
-   |                               | the real subnet.                         |
-   +-------------------------------+------------------------------------------+
-   | Local Subnet(Real)            | The real CIDR block of the local VPC/VNet|
-   |                               | subnet.  If left blank, Aviatrix will    |
-   |                               | the full VPC/VNet CIDR.                  |
-   +-------------------------------+------------------------------------------+
-   | Local Subnet(Virtual)         | Enter a virtual CIDR that will represent |
-   |                               | the real subnet.                         |
-   +-------------------------------+------------------------------------------+
-
-   .. tip::
-      The remote and local subnet fields can contain multiple values.  Use a comma (,) to separate the values.
-
-   .. tip::
-      If you use multiple values for the real subnets, you must use an equal number of subnets in the virtual field.
-
-   .. note::
-      1:1 mapping is supported if both sides are configured properly.  For example, you can configure:
+Here is an example of one-to-one mapping:
 
       | Remote Subnet(Real): 10.1.7.10/32      
       | Remote Subnet(Virtual): 172.16.7.10/32
@@ -206,16 +67,10 @@ For mapped connections, the following four fields will be displayed:
       | Local Subnet(Real): 10.1.7.15/32
       | Local Subnet(Virtual): 192.168.7.45/32
 
-#. Click **OK**.
-
-
-Configuration Details
----------------------
-
-.. _remote_gateway_type:
+Enter the Connection Name and click OK.
 
 Remote Gateway Type
-+++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^
 
    +-------------------------------+------------------------------------------+
    | Type                          | Description                              |
@@ -234,8 +89,35 @@ Remote Gateway Type
    | SonicWall                     |                                          |
    +-------------------------------+------------------------------------------+
 
+Authentication Type
+^^^^^^^^^^^^^^^^^^^
+
+You can authenticate the connection using PSK or certificate-based authentication.
+
+PSK-Based 
++++++++++
+
+If you select PSK-based authentication, you can provide the Pre-shared Key when prompted (this is optional). This key comes from your firewall UI.
+
+Certificate-Based
++++++++++++++++++
+
+If you select Cert-based authentication:
+
+- In the Remote CA Certificate field select the certificate you uploaded from your Palo Alto VM-Series firewall as per `these instructions <https://docs.aviatrix.com/HowTos/site2cloud-cacert.html>`_.
+- Enter the SAN/Remote Identifier. The format depends on the device you are connecting to. For example, for an on-prem Aviatrix gateway the format will be the DNS from the server certificate (such as gw-54-210-118-19).
+
+See `here <https://docs.aviatrix.com/HowTos/site2cloud-cacert.html>`_ for more details on Site2Cloud certificate-based authentication.
+
+Tunnel Type
+^^^^^^^^^^^
+
+Select Policy-based or Route-based. If you select the latter, you must enter the local and remote tunnel IP.
+If you selected the Mapped Connection Type, only Route-based is supported. 
+
+
 Algorithms
-++++++++++
+^^^^^^^^^^
 
 If the Algorithms checkbox is unmarked, the default values will be used.  If it is checked, you can set any of the fields defined below.
 
@@ -255,49 +137,100 @@ If the Algorithms checkbox is unmarked, the default values will be used.  If it 
    | Phase 2 Encryption            |
    +-------------------------------+
 
-Remote and Local Subnet(s)
-++++++++++++++++++++++++++
+IKEv2
+^^^^^
 
-Enter the subnet(s) using a comma to delimit more than one CIDR.
+Select the option to connect to the remote site using IKEv2 protocol.   
 
-If you leave the local subnet field blank, the default value is the VPC/VNet CIDR.  If you enter a value, make sure you include the VPC/VNet as well.
+Enabling HA
+^^^^^^^^^^^
 
-These Local Subnets are advertised to Remote Subnets that the site2cloud connection can reach.
+Select this option to to create a backup/failover connection in case the primary connection fails. If you select this option you can also select the Enable Single IP HA check box, which allows you to use the same EIP to bring up the backup tunnel (supported for AWS and Azure only).
 
-You can change these settings later.
+If mapped NAT is enabled, HA in Site2Cloud is not supported.
 
-Edit Connection
-=================
+If you have the following configuration you can select the Same Pre-shared Key as primary check box, which means the backup tunnel uses the same pre-shared key as the primary <primary what?>.
 
-Once a connection is created, you can download the configuration or edit parameters.
-To do this, select **Site2Cloud** from the navigation menu and select the connection you just created.
+- Enable HA check box selected
+- Enable Single IP HA check box not selected
+- PSK-based authentication selected
 
-Download Configuration
-----------------------------------
+If the Enable HA check box is selected, you can enter a Pre-shared Key backup? Format?
 
-You can generate remote site configuration template. 
+If the Enable HA check box is selected, you must enter the backup IP address of the backup gateway (.hagw). 
 
-Select the remote site device from the dropdowns provided.  If your remote site device is not listed in the dropdown menu, simply select an available one in the menu or use the **Generic**/**Vendor Independent** template.
+Enable Single IP HA
+^^^^^^^^^^^^^^^^^^^
 
-This template file contains the gateway public IP address, VPC CIDR, pre-shared secret and encryption algorithm. Incorporate the information to your remote router/firewall configuration. If the remote gateway is an Aviatrix CloudN, go to Site2Cloud and simply import the downloaded configuration file and click OK. 
+When you select the Enable Single IP HA check box, you also need to select the Backup Gateway. The backup gateway should be the .hagw created at Gateway > Edit > Gateway for High Availability Peering.  
+
+Over Private Network
+^^^^^^^^^^^^^^^^^^^^
+
+Select this option if your underlying infrastructure is a private network, such as AWS Direct Connect or Azure Express Route. When this option is selected, BGP and IPSEC run over private IP addresses.
+
+Primary Cloud Gateway
+^^^^^^^^^^^^^^^^^^^^^
+
+Select the Gateway where the tunnel will terminate in this VPC. 
+
+Remote Gateway IP address
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enter the IP address of the device.
+
+Remote Network?
+^^^^^^^^^^^^^^^
+
+Does this only show up if you selected an Insane Mode gateway earlier in this procedure (that was initially set up under Gateway > New in the Controller)?
+
+
+Editing the Site2Cloud Connection
+=================================
+
+Once a connection is created, you can download the configuration or edit parameters. To do this, select SITE2CLOUD in the left pane and select the connection you just created.
 
 Local Identifier
 ---------------------
 
-By default, Aviatrix configures gateway's public IP as Local Identifier. User can adjust these settings to the gateway's private IP.
+By default, Aviatrix configures gateway's public IP as the Local Identifier. User can adjust these settings to the gateway's private IP.
 
 Remote Identifier
 -------------------------
 
-By default, Aviatrix configures public IP of peer device as Remote Identifier. User can adjust these settings to the private IP of peer device.
+By default, Aviatrix configures public IP of peer device as the Remote Identifier. User can adjust these settings to the private IP of peer device.
+
+Download Configuration
+------------------------
+
+You can generate a remote site configuration template. This template file contains the gateway public IP address, VPC CIDR, pre-shared secret and encryption algorithm. You can import the information to your remote router/firewall configuration. 
+
+.. note::
+	If the remote gateway is an Aviatrix CloudN, go to the Site2Cloud Setup page in the Controller, import the downloaded configuration file, and click OK.
+
+
+To download a configuration:
+
+1. After creating a Site2Cloud connection, select the remote site device from the table on the Setup Site2Cloud Connection page and click EDIT.
+#. <do you have to select a local/remote identifier first?>
+#. In the DOWNLOAD CONFIGURATION area, select your remote site device from the Vendor menu, or use the Generic/Vendor Independent template (you select Generic for anything that is not an Aviatrix gateway. If you are connecting two Aviatrix gateways, you select Aviatrix as the vendor).
+
+- If you select a Generic vendor, the Platform field is populated as Generic, and the Software field is populated with Vendor Independent.
+- If you select the Aviatrix vendor, the Platform is populated with UCC, and the Software version is 1.0?
+- If you select a specific hardware vendor (such as Cisco), available platforms belonging to that vendor are displayed in the Platform field, and the Software field is populated with related software versions.
+
+How to use this downloaded configuration:
+
+- If connecting two Aviatrix gateways, you import the downloaded configuration when creating the other side of the tunnel. Gateways can be in different Controllers or the same Controller). See `here <https://docs.aviatrix.com/HowTos/site2cloud_aviatrix.html#configure-tunnel-from-gateway-a-to-gateway-b>`_ for more information. 
+- If connecting an Aviatrix gateway to a firewall or other on-prem vendor, use the downloaded configuration information to populate the necessary information in your firewall UI. 
+
 
 Dead Peer Detection
------------------------------
+---------------------
 
-This field is not applicable to Site2Cloud connection established by `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_. 
+This field is not applicable to a Site2Cloud connection established by `Transit Network workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_. 
 
-Dead Peer Detection (DPD) is a standard mechanism (RFC 3706) between IPsec tunnels to 
-send periodic messages to ensure the remote site is up. 
+Dead Peer Detection (DPD) is a standard mechanism (RFC 3706) between IPsec tunnels to send periodic messages to ensure the remote site is up. 
 
 By default, DPD detection is enabled. 
 
@@ -311,25 +244,25 @@ Maxfail            >= 1               Number of tries before considering the pee
 
 
 Active Active HA
----------------------------
+-------------------
 
 Allow Site2Cloud gateways to support Active-Active mode where both tunnels are up and packets are routed to both gateways via respective VPC/VNet route tables. 
 
 To enable this, go to Site2Cloud, edit the connection on the Setup page, scroll down to Active Active HA, and click **Enable**.
 
 Forward Traffic to Transit Gateway
-----------------------------------------------
+-----------------------------------
 
 This configuration option applies to a use case where an Aviatrix Spoke gateway connects to on-prem routers via Site2Cloud IPsec connections. 
 
 Event Triggered HA
----------------------------
+-------------------
 
 Event Trigger HA is a new mechanism to reduce the convergence time. To configure, go to Site2Cloud > select a connection, click **Edit**. 
 Scroll down to Event Triggered HA and click **Enable**. 
 
 Jumbo Frame
--------------------
+-------------
 
 Jumbo Frame improves the performance between Aviatrix Transit gateway  or an OCI Transit Gateway and CloudN. This feature is only supported for AWS and OCI; Azure and GCP do not support Jumbo frame. To configure, go to Site2Cloud > select a connection and click **Edit**. 
 Scroll down to Jumbo Frame and click **Enable**. 
@@ -337,8 +270,8 @@ Scroll down to Jumbo Frame and click **Enable**.
 Clear Sessions
 -------------------
 
-Clear Session allows to reset all the active sessions on a selected Site2Cloud connection. To clear, go to Site2Cloud > select a connection and click **Edit**. 
-Scroll down to Clear Sessions and click **Clear**.
+Clear Session allows to reset all the active sessions on a selected Site2Cloud connection. To clear, navigate to SITE2CLOUD > select a connection and click EDIT. 
+Scroll down to Clear Sessions and click CLEAR.
 
 
 Periodic Ping
