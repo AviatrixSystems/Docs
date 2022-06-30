@@ -36,6 +36,16 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
 
+CoPilot Release 2.1 (7/05/2022)
+---------------------------------------------
+
+-   (Anomalies) **New Anomaly Charts** — For a given anomaly, you can now view a 24-hour chart showing the time of day each metric within the anomaly deviated from its fingerprinted behavior. The chart also shows the severity of the full anomaly at the time the metric deviated. You can also indicate whether the fingerprint deviation of an individual metric is NOT an anomaly. If marked as not an anomaly, CoPilot will consider the new data point in addition to the existing fingerprinted baseline and update all charts in the anomalies dashboard to reflect it.
+
+-   (Reports) **New FlightCheck Report** — Create a report showing the results of validation checks run on your Aviatrix platform. The report will alert you if: 1) your CSP account status is not intact (the IAM policy deviates from the Aviatrix default policy), 2) backups are not configured, 3) gateways are down, 4) syslog is not configured, 5) SAML login is not enabled, and 6) connections are down.
+
+-   (Syslog) **TCP Support for syslog** — For environments where UDP is not supported, you can now enable Syslog for CoPilot egress FQDN & audit data by using TCP port 5000 (default). 
+
+
 CoPilot Release 2.0.6 (6/24/2022)
 ---------------------------------------------
 
