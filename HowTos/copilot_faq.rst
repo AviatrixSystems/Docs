@@ -20,15 +20,23 @@ The configuration of the instance/virtual machine that you provision for your Co
 
 - For the instance/VM size, CoPilot requires a minimum of:
 
-  - 16 GB of RAM (or more)
+  - 32 GB of RAM (or more)
 
   - 1 attached disk/volume for storage (see `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#id4>`_)
 
-  - 4 vCPUs (or more)
+  - 8 vCPUs (or more)
+
+(For example, the c5n.2xlarge Amazon EC2 instance type.)
+
+**NOTE:** Please note the following:
+
+- For a simple deployment, the single instance must meet the minimum requirements. 
+
+- For a fault tolerant (clustered) deployment, each instance in the cluster must meet the minimum requirements. In addition, each cluster instance must use the same instance sizing.
+
+- (AWS) For CoPilot ARM-based images, Amazon EC2 A1 instances are currently not supported.
 
 CoPilot supports automatic memory sizing for the ETL and datastore based on the physical memory of the instance at boot. Base images default to the automatic settings. This auto-scaling memory support became available with the release of Aviatrix CoPilot image version 1.5.1. 
-
-Prior to CoPilot image version 1.5.1, CoPilot required a minimum of 8 vCPUs and 32 GB Memory.
 
 FAQs about CoPilot licenses and licensing
 ====================================================
