@@ -12,44 +12,70 @@ Launch CoPilot
 ==================
 
 Aviatrix CoPilot is available as an all-in-one virtual appliance that is hosted in a user's own IaaS cloud environment. 
-It can be launched as an EC2 instance in AWS, a virtual machine in Azure, or a VM instance in GCP and OCI. Please make sure default configurations for resources settings that are recommended by marketplaces are applied during launch.
-After successfully launching the instance, follow the procedures in this section to configure CoPilot instance parameters and launch. 
-Please note that you will need an Aviatrix Controller to use CoPilot. CoPilot works in tandem with Aviatrix Controller. Aviatrix Controller and CoPilot are not required to be collocated. It is possible to run them in separate VPCs/VNets or separate cloud providers (in multi-cloud environments). Typically, Aviatrix Controller and Aviatrix CoPilot are run in the same VPC/VNet.
-If you are launching a new instance of CoPilot and need to migrate CoPilot data from an existing (source) CoPilot to a newly launched (destination) CoPilot, see "About Migrating CoPilot Data" in *Aviatrix CoPilot Deployment Guide*.
+It can be launched as an EC2 instance in AWS, a virtual machine in Azure, or a VM instance in GCP and OCI. 
+
+Typically, you can apply the default configurations for resources settings that are recommended by marketplaces during launch. Take note of the `Minimum Instance System Requirements`_. 
+
+You can deploy CoPilot in different ways. See `CoPilot Deployment Methods`_. 
+
+Please note that you will need an Aviatrix Controller to use CoPilot. CoPilot works in tandem with Aviatrix Controller. Each one requires a separate license. See `CoPilot Customer IDs and Licensing`_.
+
+Aviatrix Controller and CoPilot are not required to be collocated. It is possible to run them in separate VPCs/VNets or separate cloud providers (in multi-cloud environments). Typically, Aviatrix Controller and Aviatrix CoPilot are run in the same VPC/VNet.
+
+After launching CoPilot, you must configure integration points for CoPilot to connect and communication with other components in the Aviatrix platform. See `Instance Configuration Details`_.
+
+If you are launching a new instance of CoPilot and need to migrate CoPilot data from an existing (source) CoPilot to a newly launched (destination) CoPilot, see `About Migrating CoPilot Data`_.
 
 CoPilot Deployment Methods
 ---------------------------
 
-You can deploy Aviatrix CoPilot directly from any supported cloud service provider (CSP) marketplace, by using Terraform scripts, or by using the Aviatrix Controller user interface (available for AWS from Controller release 6.7.1185). Deploying from the CSP marketplace takes only a few clicks to provision and launch the instance. Since you must subscribe to a CoPilot offer at a marketplace as a first step for all deployment methods, this method is commonly used right after subscribing (see "Subscribe to a CoPilot Offer"). If you are knowledgeable in deploying infrastructure-as-code using Terraform, you might find it convenient in some circumstances to launch CoPilot using a Terraform script (see "CoPilot instance launch using Terraform"). Deploying CoPilot from the controller UI can be done if you deployed your controller in AWS and will deploy CoPilot in AWS in the same region/AZ as the controller (see "CoPilot instance launch from the Controller UI)".
+You can deploy Aviatrix CoPilot directly from any supported cloud service provider (CSP) marketplace, by using Terraform scripts, or by using the Aviatrix Controller user interface (available for AWS from Controller release 6.7.1185). 
+
+Deploying from the CSP marketplace takes only a few clicks to provision and launch the instance. This deploy method can be used for a CoPilot simple (single instance) deployment. Since you must subscribe to a CoPilot offer at a marketplace as a first step for all deployment methods, this method is commonly used right after subscribing. See `Subscribe to a CoPilot Offer`_.
+
+For a CoPilot fault tolerant (clustered) deployment, you can deploy CoPilot from the Aviatrix Controller user interface. This feature is currently available only for AWS. Deploying CoPilot from the controller UI can be done if you deployed your controller in AWS and will deploy CoPilot in AWS in the same region/AZ as the controller (see `CoPilot instance launch from the Controller UI`_. You can deploy a simple deployment or clustered deployment from the controller user interface in AWS.
+
+If you are knowledgeable in deploying infrastructure-as-code using Terraform, you might find it convenient to launch CoPilot by using Terraform scripts. See `CoPilot instance launch using Terraform`_. 
+
 
 Instance Configuration Details
 ------------------------------
 
-- Open your CoPilot security group for: 
+- Open your CoPilot access (security group) for: 
 
   - TCP port 443 from anywhere user access (to reach CoPilot via HTTPS connection using web browser)
 
-  - UDP port 5000 from all of your Aviatrix gateway IPs (gateways send Remote Syslog to CoPilot)
+  - UDP port 5000 (default) — Enable Syslog for CoPilot Egress FQDN & Audit Data (from each gateway). Gateways send remote syslog to CoPilot.
 
-  - UDP port 31283 from all of your Aviatrix gateway IPs (gateways send Netflow to CoPilot)
+  - TCP port 5000 (default) — For private mode, enable Syslog for CoPilot Egress FQDN & Audit Data (from each gateway). Gateways send remote syslog to CoPilot.
+
+  - UDP port 31283 (default, port is configurable) — Enable Netflow for CoPilot FlowIQ Data (from each gateway). Gateways send Netflow to CoPilot. 
 
 .. tip::
-  In Controller you can view the IP addresses of all your gateways from the Gateways page. 
+  After launching your CoPilot instance, you can enable the "CoPilot Security Group Management" option in Controller to automate the configuration of integration points between CoPilot and Aviatrix Gateways such as those for syslog and Netflow listed above. In Controller, you can view the IP addresses of all your gateways from the Gateways page. 
 
 
-Instance System Requirements
-------------------------------
-The configuration of the instance/virtual machine that you provision for your CoPilot deployment depends on the scale and the kind of networking infrastructure you have planned according to your business requirements. Work with your performance team to determine your sizing requirements.
+Minimum Instance System Requirements
+-------------------------------------
+The configuration of the instance/virtual machine that you provision for your CoPilot deployment depends on the scale and the kind of networking infrastructure you have planned according to your business requirements. Work with your Aviatrix Sales representative to determine your sizing requirements.
 
 - For the instance/VM size, CoPilot requires a minimum of:
 
-  - 16 GB of RAM (or more)
+  - 32 GB of RAM (or more)
 
   - 1 attached disk/volume for storage (see `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#id4>`_)
 
-  - 4 vCPUs (or more)
+  - 8 vCPUs (or more)
 
-CoPilot supports automatic memory sizing for the ETL and datastore based on the physical memory of the instance at boot. Base images default to the automatic settings. This auto-scaling memory support became available with the release of Aviatrix CoPilot image version 1.5.1.
+(For example, the c5n.2xlarge Amazon EC2 instance type.)
+
+**NOTE:** Please note the following:
+
+- For a simple deployment, the single instance must meet the minimum requirements. 
+
+- For a fault tolerant (clustered) deployment, each instance in the cluster must meet the minimum requirements. In addition, each cluster instance must use the same instance sizing.
+
+- (AWS) For CoPilot ARM-based images, Amazon EC2 A1 instances are currently not supported.
 
 
 CoPilot Customer IDs and Licensing
