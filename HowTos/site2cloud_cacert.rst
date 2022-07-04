@@ -17,16 +17,18 @@ The external device CA certificates must be available before you `configure the 
 
 On the external device side, you:
 
-- generate a CA certificate
-- export the certificate for use in the Site2Cloud configuration 
+- obtain the IPsec VPN gateway device certificate 
+- export the Trusted Root CA certificate for use in the Site2Cloud configuration 
 - import the Aviatrix CA certificate (downloaded from the CA Certificate tab)
 - use the information in the downloaded Site2Cloud configuration file to configure your tunnels/interfaces
 
 On the Aviatrix side, you:
 
 - configure the Site2Cloud connection
+
   - select the remote certificate (generated from the external device) when prompted
-  - enter the remote identifier when prompted (depends on the external device; for example, for Palo Alto VM-Series firewall it could be the text in the Local Identification field) 
+  - enter the remote identifier when prompted (depends on the external device; typically the Remote Identifier is the value of the common name or subject field in the device) 
+
 - export the Aviatrix CA certificate 
 - download the Site2Cloud configuration you just created, to use when configuring tunnels/interfaces on your external device
  
@@ -40,11 +42,12 @@ For information on using certificate-based authentication between two Aviatrix g
 Adding a CA Certificate 
 -----------------------
 
-After you generate a certificate from your external device, you must upload it on the CA Certificate tab before creating your Site2Cloud connection.
+After you obtain the CA certificate from your external device, you must upload it on the CA Certificate tab before creating your Site2Cloud connection.
 
 1. In the Aviatrix Controller, navigate to SITE2CLOUD > CA Certificate.
 #. On the CA Certificate tab, click ADD.
-#. Under Add Certificate, enter a Tag Name for the certificate, and select the CA certificate to upload.
+#. Under Add Certificate, in the Tag Name field, enter a unique name for the certificate. 
+#. Select the CA certificate to upload.
 #. Click OK.
 
 If you have received an email notification that a CA certificate is about to expire, or one of the certificates is showing as Invalid on the CA Certificate list, you use the above procedure to add the new certificate. You must then delete the expired certificate.
@@ -81,7 +84,8 @@ Limitations
 - Only the Palo Alto VM-Series firewall is supported in this version of Site2Cloud cert-based authentication.
 - Only the Elliptic Curve DSA algorithm is supported in this version when creating a certificate in the Palo Alto VM-Series UI.
 - Only the PEM certificate file type is supported in this version. 
-- You cannot roll back the platform version if certificate-based authentication is used on the gateways.
+- You can only use one certificate per Site2Cloud connection.
+- You can only roll back the platform version if the previous version supports certificate-based authentication (not supported prior to 6.8).
 - The Aviatrix OpenVPN® feature cannot be used in conjunction with Site2Cloud certificate-based authentication.
 
 .. |site2cloud| image:: site2cloud_cacert_media/ca-cert.png
