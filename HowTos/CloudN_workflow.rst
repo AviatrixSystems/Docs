@@ -47,7 +47,7 @@ Benefits:
 	
 	- This solution in GCP supports only one tunnel per transit gateway for over Internet scenario.
 
-For more information and benefits about CloudN, please check out the below documents:
+For more information and benefits about CloudN, please see the below documents:
 
 	`Insane Mode CloudN Deployment Checklist <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html>`_
 	
@@ -100,7 +100,7 @@ Workflow on Aviatrix CloudN
 Opening Controller Inbound Ports
 ------------------------------------------------
 
-CloudN is deployed inside a data center. It does not require any public IP addressees. However, you need to collect the public IP for 
+CloudN is deployed inside a data center. It does not require any public IP addresses. However, you need to collect the public IP for 
 the management interface (The ISP provided pubic IP) and open port 443 on the Controller for that public IP.  
 
 For AWS accounts, update the Aviatrix Controller's inbound security group to allow TCP 443 from public IP address of the router of CloudN's MGMT interface.
@@ -291,7 +291,7 @@ Check Transit Gateway BGP status
 Traffic Flow Verification
 =========================
 
-Traffic Flow Verification example was exercised after S2C connection(s) is up and BGP connection(s) is established. The on-premise router is Cisco IOS with network loopback address 2.2.2.2/32. Aviatrix Transit VPC/VNet is 10.1.0.0/16. Aviatrix Spoke VPC/VNet is 192.168.1.0/24 and the private IP of the testing VM is 192.168.1.36/32.
+In this example traffic flow verification is performed after the Site2Cloud connection(s) is up and the BGP connection(s) is established. The on-premise router is Cisco IOS with network loopback address 2.2.2.2/32. Aviatrix Transit VPC/VNet is 10.1.0.0/16. Aviatrix Spoke VPC/VNet is 192.168.1.0/24 and the private IP of the testing VM is 192.168.1.36/32.
 
 	- Traffic from on-premise router Cisco IOS to cloud VM
 
@@ -309,11 +309,36 @@ Traffic Flow Verification example was exercised after S2C connection(s) is up an
 
 			|managed_cloudn_traffic_flow_verification_cloud_vm_issue_icmp|
 
+
+CloudN States
+==============
+
+The State Reason column in the Registered Devices table on the CLOUDN > List tab shows the state of the CloudN device and the reason for that state.
+
+- Waiting <may not be relevant>: The CloudN gateway is in the process of being registered. You cannot reset the configuration unless the CloudN gateway is registered. 
+- Registered: 
+
+   - The CloudN gateway is registered to the Controller and ready for attachment to a transit gateway. You can deregister the CloudN gateway if desired. 
+   - You can `reset the CloudN gateway to factory defaults <#workflow-on-reset-configuration>`_
+   - You can run diagnostics on a registered CloudN gateway.  
+
+- Attach:
+   - The CloudN gateway is attached to a transit gateway. This status only reflects the management operation state; it does not reflect the attached connection state in real time. To check connectivity, you can check connection status on the `Site2Cloud page <#check-whether-the-connection-status-is-up>`_; `check the BGP connection <#check-transit-gateway-bgp-status>`_; and `verify the traffic flow <#traffic-flow-verification>`_. 
+   - You can run diagnostics on an attached CloudN gateway.
+   - You cannot deregister unless you detach the gateway first.
+   - You can `reset the CloudN gateway to factory defaults <#workflow-on-reset-configuration>`_
+- Check: The CloudN gateway is not connected to the Controller. You cannot run diagnostics, or deregister the gateway. You can check `here <https://docs.aviatrix.com/HowTos/gateway.html#gateway-state>`_ for information on how to restore a gateway.  
+
+.. note::
+
+	Aviatrix recommends upgrading to version 6.7 to ensure the CloudN states are rendered accurately.
+
+
+
 Troubleshooting Tips
 ====================
 
-When an CloudN registers with an Aviatrix Controller properly as a Managed CloudN device, users can perform troubleshooting on a Managed CloudN device the same way as 
-an Aviatrix Gateway in the cloud via Aviatrix Controller GUI. 
+When an CloudN registers with an Aviatrix Controller properly as a Managed CloudN device, users can perform troubleshooting on a Managed CloudN device the same way as an Aviatrix Gateway in the cloud via Aviatrix Controller GUI. 
 
 .. note::
 	
