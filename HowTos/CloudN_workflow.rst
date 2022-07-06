@@ -313,9 +313,8 @@ In this example traffic flow verification is performed after the Site2Cloud conn
 CloudN States
 ==============
 
-The State Reason column in the Registered Devices table on the CLOUDN > List tab shows the state of the CloudN device and the reason for that state.
+The Registered Devices table on the CLOUDN > List tab shows the state of the CloudN device and the reason for that state.
 
-- Waiting <may not be relevant>: The CloudN gateway is in the process of being registered. You cannot reset the configuration unless the CloudN gateway is registered. 
 - Registered: 
 
    - The CloudN gateway is registered to the Controller and ready for attachment to a transit gateway. You can deregister the CloudN gateway if desired. 
@@ -334,7 +333,6 @@ The State Reason column in the Registered Devices table on the CLOUDN > List tab
 	Aviatrix recommends upgrading to version 6.7 to ensure the CloudN states are rendered accurately.
 
 
-
 Troubleshooting Tips
 ====================
 
@@ -347,8 +345,8 @@ When an CloudN registers with an Aviatrix Controller properly as a Managed Cloud
 Running Diagnostics
 --------------------
 	
-#. Navigate to CloudN > List/Edit in the Aviatrix Controller.
-#. Search for the Managed CloudN device and select it.
+#. Navigate to CLOUDN > List/Edit in the Aviatrix Controller.
+#. Select the Managed CloudN device.
 #. Click **Diag** to display a dropdown menu.
 #. Click **Run**.
 #. Wait for a couple of minutes to complete the running diagnostics process.
