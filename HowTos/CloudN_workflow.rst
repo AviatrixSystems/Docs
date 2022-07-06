@@ -318,14 +318,14 @@ The Registered Devices table on the CLOUDN > List tab shows the state of the Clo
 - Registered: 
 
    - The CloudN gateway is registered to the Controller and ready for attachment to a transit gateway. You can deregister the CloudN gateway if desired. 
-   - You can `reset the CloudN gateway to factory defaults <#workflow-on-reset-configuration>`_
+   - You can `reset the CloudN gateway to factory defaults <#workflow-on-reset-configuration>`_.
    - You can run diagnostics on a registered CloudN gateway.  
 
 - Attach:
    - The CloudN gateway is attached to a transit gateway. This status only reflects the management operation state; it does not reflect the attached connection state in real time. To check connectivity, you can check connection status on the `Site2Cloud page <#check-whether-the-connection-status-is-up>`_; `check the BGP connection <#check-transit-gateway-bgp-status>`_; and `verify the traffic flow <#traffic-flow-verification>`_. 
    - You can run diagnostics on an attached CloudN gateway.
    - You cannot deregister unless you detach the gateway first.
-   - You can `reset the CloudN gateway to factory defaults <#workflow-on-reset-configuration>`_
+   - You can `reset the CloudN gateway to factory defaults <#workflow-on-reset-configuration>`_.
 - Check: The CloudN gateway is not connected to the Controller. You cannot run diagnostics, or deregister the gateway. You can check `here <https://docs.aviatrix.com/HowTos/gateway.html#gateway-state>`_ for information on how to restore a gateway.  
 
 .. note::
