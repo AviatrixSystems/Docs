@@ -322,6 +322,7 @@ The Registered Devices table on the CLOUDN > List tab shows the state of the Clo
    - You can run diagnostics on a registered CloudN device.  
 
 - Attached:
+
    - The CloudN device is attached to a transit gateway. This status only reflects the management operation state; it does not reflect the attached connection state in real time. To check connectivity, you can check connection status on the `Site2Cloud page <#check-whether-the-connection-status-is-up>`_; `check the BGP connection <#check-transit-gateway-bgp-status>`_; and `verify the traffic flow <#traffic-flow-verification>`_. 
 
    - You can run diagnostics on an attached CloudN device.
