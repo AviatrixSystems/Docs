@@ -317,20 +317,24 @@ The Registered Devices table on the CLOUDN > List tab shows the state of the Clo
 
 - Registered: 
 
-   - The CloudN gateway is registered to the Controller and ready for attachment to a transit gateway. You can deregister the CloudN gateway if desired. 
-   - You can `reset the CloudN gateway to factory defaults <#workflow-on-reset-configuration>`_.
-   - You can run diagnostics on a registered CloudN gateway.  
+   - The CloudN device is registered to the Controller and ready for attachment to a transit gateway. You can deregister the CloudN gateway if desired. 
+   - You can `reset the CloudN device to factory defaults <#workflow-on-reset-configuration>`_.
+   - You can run diagnostics on a registered CloudN device.  
 
-- Attach:
-   - The CloudN gateway is attached to a transit gateway. This status only reflects the management operation state; it does not reflect the attached connection state in real time. To check connectivity, you can check connection status on the `Site2Cloud page <#check-whether-the-connection-status-is-up>`_; `check the BGP connection <#check-transit-gateway-bgp-status>`_; and `verify the traffic flow <#traffic-flow-verification>`_. 
-   - You can run diagnostics on an attached CloudN gateway.
+- Attached:
+   - The CloudN device is attached to a transit gateway. This status only reflects the management operation state; it does not reflect the attached connection state in real time. To check connectivity, you can check connection status on the `Site2Cloud page <#check-whether-the-connection-status-is-up>`_; `check the BGP connection <#check-transit-gateway-bgp-status>`_; and `verify the traffic flow <#traffic-flow-verification>`_. 
+   - You can run diagnostics on an attached CloudN device.
    - You cannot deregister unless you detach the gateway first.
-   - You can `reset the CloudN gateway to factory defaults <#workflow-on-reset-configuration>`_.
-- Check: The CloudN gateway is not connected to the Controller. You cannot run diagnostics, or deregister the gateway. You can check `here <https://docs.aviatrix.com/HowTos/gateway.html#gateway-state>`_ for information on how to restore a gateway.  
+   - You can `reset the CloudN device to factory defaults <#workflow-on-reset-configuration>`_.
+- Check: The CloudN device is not connected to the Controller. You cannot run diagnostics, or deregister the device. You can investigate by doing the following:
+
+   - `Restore the device <https://docs.aviatrix.com/HowTos/gateway.html#gateway-state>`_
+   - Verify that the Controller Security Group allowed TCP 443 from CloudN's management interface. See `here <#opening-controller-inbound-ports>`_ for more information.
+   - Check basic connectivity to the internet from the CloudN device. See `here <#managed-cloudn-management-port-outbound-access>`_ for more information.  
 
 .. note::
 
-	Aviatrix recommends upgrading to version 6.7 to ensure the CloudN states are rendered accurately.
+	Aviatrix recommends upgrading the Controller to version 6.7 with a CloudN base image of version 6.6 to ensure that the CloudN states are rendered accurately.
 
 
 Troubleshooting Tips
@@ -563,7 +567,7 @@ Ans:
 4. Click **OK**.
 
 Migrating a Standalone CloudN to a Managed CloudN
-==============================================
+=================================================
 
 1. To upgrade a Standalone CloudN to a Managed CloudN, `upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ the Aviatrix Controller and CloudN appliance to the latest version.
 
