@@ -1,125 +1,97 @@
 ﻿.. meta::
    :description: controller Migration
-   :keywords: controller high availability, controller HA, AWS VPC peering, auto scaling
+   :keywords: controller high availability, controller HA, auto scaling, Azure, GCP
 
-Controller Migration in AWS
-##################################
-
-
-Introduction
---------------
-
-
-This feature is released in 5.3. It consists of 2 sub-features:
-
- * Migrate
- * Restore
- 
-This feature will migrate your controller to run from the latest AMI. A controller migration might be needed for the following reasons:
-
-  * If your controller is running an old AMI and you are trying to upgrade to version 5.4, your upgrade will be blocked as a new AMI is required for 5.4
-  * If you are looking to move to a newer AMI for your controller on recommendation from Aviatrix Support to pick up any new fixes
-
-
-Migrate
-###########
-
+=====================================
+Controller Migration in Azure, GCP, and OCI
+=====================================
 
 Introduction
---------------
+^^^^^^^^^^^^^^^
 
-+ This feature mainly is to perform one click "Migrate" operation under "Settings->Maintenance->Migration" tab to migrate the current Aviatrix controller to a new one.
-+ The EIP will be migrated from old controller to the new controller.
-+ The whole migration process will take around 10 to 15 minutes.
+You may need to migrate your Aviatrix Controller in the following situations:
 
+  * If your Controller uses an old machine image and you are trying to upgrade to a new software version that requires the latest image. 
+  * If you need to transition to a newer machine image for your Controller based on a recommendation from Aviatrix Support.
+
+.. note::
+
+  A machine image is named a "VM image" (Virtual Machine Image) in Azure, a "machine image" in GCP, and a "custom image" in OCI.
+
+The Controller Migration process involves three main steps:
+
+* Fulfill the prerequisites, including backing up your old Controller.
+* Delete your old Controller in the CSP Account from which you originally launched it: Azure, GCP, or OCI.
+* Launch a new Controller from the relevant CSP marketplace.
+* Restore the data from your old Controller to your new Controller.
+
+.. important::
+
+  The **Migrate** button under Settings > Maintenance > Migration tab only migrates Controllers that were launched from AWS. Controllers launched from Azure, GCP, or OCI need to be migrated manually, as shown below. To migrate a Controller that was launched from AWS, please see `this document <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_.
 
 Prerequisites
------------------
+^^^^^^^^^^^^^^^^^
 
-+ The feature is supported in AWS and AWS-Gov for the "BYOL" and "Metered" AMI's.
-+ An `account audit <https://docs.aviatrix.com/HowTos/account_audit.html>`_ on the controller account and all secondary accounts also should be done to make sure that the `IAM roles and policies <https://docs.aviatrix.com/HowTos/iam_policies.html>`_ are setup as suggested.
-+ User needs to `enable controller backup <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ using an AWS based access-account.
-+ User should not make any config change during the migration as these config will be lost once new controller takes over.
-+ This activity should be scheduled during a maintenance window and a walk through `pre-op checklist <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_ is highly recommended.
-+ Please upgrade to the latest build of your current release. For example, if running 5.3, goto "Settings/Maintenance/Upgrade/UpgradeToACustomRelease" and enter "5.3" and click on "Upgrade to a custom release". Please follow the `upgrade instructions <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_.
-+ **PLEASE NOTE:** User must `disable controller HA <https://docs.aviatrix.com/HowTos/controller_ha.html#steps-to-disable-controller-ha>`_. (User can `enable HA again <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ on the new controller once migration is fully completed)
-+ **PLEASE NOTE:** If you are using SAML login for either the controller login(Settings/Controller/SAMLLogin) and/or for openvpn authentication(OpenVPN/Advanced/SAML), the newer AMI's are much more stricter in validating the EntityId - please make sure that they are configured to be exactly same on the endpoints configured on the controller and the SAML applications in the IdP
+* Run an `account audit <https://docs.aviatrix.com/HowTos/account_audit.html>`_ on the Controller account and all secondary accounts to make sure that the `IAM roles and policies <https://docs.aviatrix.com/HowTos/iam_policies.html>`_ are set up as suggested.
+* Enable a `Controller backup <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ using the access account for the CSP from which you launched the Controller (Azure, GCP, or OCI).
+* Schedule the migration during a maintenance window and a walk through the `pre-op checklist <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_.
+* `Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ to the latest build of your current release.
+* `Disable <https://docs.aviatrix.com/HowTos/controller_ha.html#steps-to-disable-controller-ha>`_ your Controller's HA configuration if HA is set up. You can `reenable <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ HA on the new Controller once migration is complete.
+* If you are using SAML login for either the Controller login (Settings/Controller/SAMLLogin) and/or for openvpn authentication (OpenVPN/Advanced/SAML), please make sure that the endpoints configured on the Controller and the SAML applications in the IdP match exactly.
 
+.. note::
 
-Controller Migration feature does the following in sequence
----------------------------------------------------------------
+Do not add any new configurations to your old Controller before migrating, as those updates may be lost in the migration process.
 
-1. User executes the "Migrate" feature on old controller
-2. Old controller executes "Controller/Settings/Maintenance/Backup&Restore/BackUpNow" to take a new backup to ensure that the backup is up-to-date
-3. Old controller creates a new Aviatrix Controller using the latest Aviatrix controller AMI
-4. New controller extends disk partition to the max of the disk space available
-5. New controller initializes itself to match the software version of old controller
-6. New controller restores configuration file from backup of step 2
-7. New controller invokes cloud API to transfer its old controller's EIP to itself
-8. New controller invokes cloud API to stop old controller
+.. important::
 
-Note: A temparory EIP is created for business continuity during migration.  A new private IP will be created on the new controller.
+`Disabling <https://docs.aviatrix.com/HowTos/controller_ha.html#steps-to-disable-controller-ha>`_ HA configuration is critical.
 
-Status
----------
-+ The migration status will be displayed in a tag named "MigrationStatus" of the new controller instance on AWS console.  Sample status messages are "Initializing", "Migrating", "Successful".  After "Successful" appears around 15 minutes of migration, you may prepare to access the same EIP.
+Migrate
+^^^^^^^^^^^^^^
 
+.. note::
 
-Post Migration Tasks
----------------------------
-
-* If you have your old `controller behind an ELB <https://docs.aviatrix.com/HowTos/controller_ssl_using_elb.html>`_, please note that you would have to remove the old controller's instance from the ELB's listening group and add the new controller's  instance in its place.
-
-* Once all the tests are done to ensure that the controller migration is complete and successful, you can delete the old controller. It can be left in "stopped" status for a while, but it should never be started - else, it will reach out to the gateways and the network could have issues with two controllers trying to monitor/modify the gateways. 
-
-
-Restore
-############
-
-Intro
---------------------------------------------------------------------------------
-
-+ This feature is being performed in the new controller.
-+ This feature mainly is to perform one click "Restore" operation under "Settings->Maintenance->Migration" tab to restore EIP from new controller back to the old controller if user decides to revert the "Migration" process.
-
-
-
-
-
-Logic Workflow
---------------------------------------------------------------------------------
-
-1. New controller invokes cloud API to "Start" the old controller from "STOP" state
-2. New controller waits until old controller virtual machine is ready
-3. New controller invokes cloud API to transfer EIP back to old controller
-4. New controller invokes cloud API to stop itself
-
-
+  A temporary EIP is created for business continuity during migration.  A new private IP will be created on the new Controller.
 
 Controller Migration in Azure
 ##################################
 
-Workflow
-
-1. Old controller perform "Settings->Maintenance->Backup&Restore->Backup->Backup Now"
-2. Launch the new controller(for 5.3 to 5.4 controller migration, , when prompted to upgrade to "latest", replace latest with 5.3)
-   New controller perform "Settings->Maintenance->Backup&Restore->Restore->Restore(with latest backed up file)
-3. Skip this step if you are NOT migrating from 5.3 to 5.4, but for 5.3 to 5.4 controller migration, upgrade new controller to 5.4
-4. If you want to keep the old controller public ip, detach it from the old controller and reattch to new controller. Otherwise perform "Troubleshoot->Diagnostics->Network->Controller IP Migration->Migrate"
+1. In your old Controller, navigate to Settings > Maintenance > Backup & Restore tab > Backup and click **Backup Now**.
+2. Launch the new Controller from the Azure marketplace. Use `these instructions <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_.
 
 Controller Migration in GCP
 ##################################
-GCP controller image in 5.3 and previous releases are based of 14.04 ubuntu distribution. 5.4 versions and higher versions of controller image will be based of 18.04 ubuntu distribution. Controller upgrade from 5.3 to 5.4 is not supported, instead the following workflow needs to be used.
 
-Controller Migration from 5.3 to 5.4
+.. note::
 
-1. On old controller (with version 5.3) perform "Settings->Maintenance->Backup&Restore->Backup->Backup Now"
-2. Create a new controller based of latest GCP controller image  following instructions at 
-   https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html   
-3.   When prompted to upgrade to "latest", replace latest with 5.3
-4. On the new controller perform "Settings->Maintenance->Backup&Restore->Restore->Restore(with latest backed up file)
-5. If you want to keep the old controller public ip, detach it from the old controller and reattach to new controller. 
-   Otherwise perform "Troubleshoot->Diagnostics->Network->Controller IP Migration->Migrate"
-6. Upgrade new controller to 5.4.
+GCP Controller image in 5.4 versions and higher versions of the Controller image are based on the 18.04 ubuntu distribution.
+
+1. In your old Controller, navigate to Settings > Maintenance > Backup & Restore tab > Backup and click **Backup Now**.
+2. Create a new Controller based on the latest GCP Controller image. Use `these instructions <https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_.
+
+Controller Migration in OCI
+##########################
+
+1. In your old Controller, navigate to Settings > Maintenance > Backup & Restore tab > Backup and click **Backup Now**.
+2. Create a new Controller based on the latest OCI Controller image. Use `these instructions <https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_.
+
+Post Migration Tasks
+---------------------------
+
+After testing to ensure that the Controller migration is complete and successful, you can delete the old Controller. It can be left in "Stopped" status for a while, but it should never be started. If it is started, this old Controller will reach out to the gateways and the network could have issues with two Controllers trying to monitor/modify the gateways. 
+
+Migrating the Controller IP Address
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+After migrating to a new Controller, make sure you have migrated your public IP address as well. 
+
+1. In Azure, GCP, or OCI, disassociate the Static Public IP or Elastic IP address from your old Controller and associate it with your new Controller.
+2. In your new Controller, in the left sidebar, go to Troubleshoot > Diagnostics > scroll down to the Controller IP Address Migration section. If two IPs display under Controller Public IP, click **Migrate**.
+
+Restore
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Restore the data from your old Controller. In your new Controller, go to Settings > Maintenance > Backup & Restore tab > Restore and click **Restore**.
 
 .. disqus::
