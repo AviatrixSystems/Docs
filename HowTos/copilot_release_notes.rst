@@ -36,7 +36,20 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
 
-CoPilot Release 2.1 (7/06/2022)
+
+CoPilot Release 2.1.1 (7/07/2022)
+---------------------------------------------
+
+-   Bug fixes.
+
+**Issues Corrected in CoPilot release 2.1.1**
+
+    -   **AVX-25643** — CoPilot was logging users out after every page reload.
+
+    -   **AVX-24413** — ThreatGuard: When notifications were enabled for ThreatGuard, the Block Threats slider was automatically switching back to Enabled.
+   
+
+CoPilot Release 2.1.0 (7/06/2022)
 ---------------------------------------------
 
 -   (Anomalies) **New Anomaly Charts** — For a given anomaly, you can now view a 24-hour chart showing the time of day each metric within the anomaly deviated from its fingerprinted behavior. The chart also shows the severity of the full anomaly at the time the metric deviated. You can mark the full anomaly as not an anomaly from inside the chart dialog. If marked as not an anomaly, CoPilot will learn the new data point for all the deviated metrics in addition to the existing fingerprinted baseline and update all charts in the anomalies dashboard to reflect the learning.
