@@ -40,20 +40,25 @@ If you want to use certificate-based authentication when establishing a Site2Clo
 
 1. Generate a certificate from your Palo Alto VM-Series firewall. See steps `here <#creating-and-generating-a-self-signed-root-certificate>`_. 
 #. Export your certificate in PEM format. See steps `here <#creating-and-generating-a-self-signed-root-certificate>`_.
-#. In the Aviatrix Controller, upload the CA certificate generated from your Palo Alto VM-Series firewall under Site2Cloud > Certificate > CA Certificate. See `here <https://docs.aviatrix.com/HowTos/site2cloud_cacert.html>`_ for details.
+#. In the Aviatrix Controller, upload the CA certificate generated from your Palo Alto VM-Series firewall under SITE2CLOUD > Certificate > CA Certificate. See `here <https://docs.aviatrix.com/HowTos/site2cloud_cacert.html>`_ for details.
 #. Create your Site2Cloud connection as described `here <#setting-up-site2cloud-connection>`_.	
 #. After creating the Site2Cloud connection, `download the resulting configuration <https://docs.aviatrix.com/HowTos/site2cloud.html#download-configuration>`_.
+#. Download the Aviatrix CA certificate from SITE2CLOUD > CA Certificate.
 #. Upload the Aviatrix CA certificate to your on-prem Palo Alto VM-Series firewall. See steps `here <#importing-the-aviatrix-ca-certificate>`_.
 #. In the Palo Alto VM-Series UI, use the information from the downloaded configuration file to configure your tunnels/interfaces. See steps `here <#adding-a-tunnel-interface>`_.
 #. In the Palo Alto VM-Series UI, configure the `IKE Gateway <#setting-up-ike-crypto-profile-and-ike-gateways>`_ depending on if you are using PSK or certificate-based authentication.
 #. In the Aviatrix Controller, navigate to SITE2CLOUD > Certificate > AVX CA Certificate and download the Aviatrix CA certificate.
-#. `Upload the Aviatrix CA certificate <https://docs.aviatrix.com/HowTos/site2cloud_cacert.html>`_ to your on-prem Palo Alto VM-Series firewall.
  
 
 Configuration Workflow
 ======================
 
-Need blurb here
+If you are not using certificate-based authentication in your Site2Cloud connection with your Palo Alto firewall, you can skip the following sections below:
+
+- Creating and Generating a Self-Signed Root Certificate
+- Importing the Aviatrix CA Certificate 
+
+Also, in the "Setting up IKE Crypto Profile and Gateways" section, you follow the PSK configuration steps instead of the certificate-based authentication steps. 
 
 Creating and Generating a Self-Signed Root Certificate 
 ------------------------------------------------------
@@ -77,16 +82,16 @@ See `this URL <https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/certifi
 |image11|
 
 4. Click Generate. This creates the root CA certificate that will be used to sign the PAN to Aviatrix certificate you will create in the next step.
-#. Under Device > Certificate Management > Certificates > Device Certificates, generate another certificate (that uses the root?) and populate as follows:
+#. Under Device > Certificate Management > Certificates > Device Certificates, generate another certificate (signed by the PAN-CA root you created) and populate as follows:
 
 - Certificate Name: a name that makes sense to you, such as pan-to-avx-cert
 - Common Name: a name that makes sense to you, such as pan-device.com
 - Signed by: PAN-CA (created in above steps)
 - Cryptographic Settings: Elliptic Curve DSA algorithm; 256 bits; sha256 digest
-- Certificate Attributes: Host Name = “DNS” from Subject Alternative Name (SAN) field (do you fill this in or is it populated automatically with the common name?); Host Name = “DNS” from Subject Alternative Name (SAN) field
+- Certificate Attributes: refer to the aforementioned URL for information on attributes to use for device certificate creation
 
 6. Click Generate.
-#. Do you then select it and Export HA Key? 
+#. Export the PAN-CA certificate for uploading to the SITE2CLOUD > CA Certificate page in the Aviatrix Controller.
 #. See the `CA Certificate page <https://docs.aviatrix.com/HowTos/site2cloud_cert.html>`_ for details on uploading this certificate.
 
 Setting up Site2Cloud Connection
@@ -131,18 +136,17 @@ If you are creating a Site2Cloud connection between your Palo Alto VM-Series fir
 
 - Certificate Name: a name that makes sense to you
 - Certificate File: click Browse to navigate to the location of the Aviatrix CA certificate
-- File Format: select Base64 Encoded Certificate (PEM). When you select PEM (the only certificate type supported in S2C cert-based authentication currently) you must import the key separately.
+- File Format: select Base64 Encoded Certificate (PEM). 
 
 4. Click OK.
-#. I think you now have to create the Certificate Profile. Have this as a subsection here? Navigate to Device > Certificate Management > Certificate Profile. In the Certificate Profile dialog enter the following:
+#. Navigate to Device > Certificate Management > Certificate Profile. In the Certificate Profile dialog enter the following:
 
 - Name: enter a name for the profile (such as AVX-CA)
-- CA Certificates: click Add and select AVX-CERT (or whatever name you gave to the imported Aviatrix CA certificate) from the CA Certificate list (may need a screenshot here). 
+- CA Certificates: click Add and select AVX-CERT (or whatever name you gave to the imported Aviatrix CA certificate) from the CA Certificate list. 
 
 6. Click OK.
 #. Click OK again on the main Certificate Profile dialog.
 
-Anything else?
 
 Adding a Tunnel Interface
 -------------------------
@@ -246,7 +250,7 @@ Setting up IKE Crypto Profile and IKE Gateways
 	  
 3. If using certificate-based authentication with Site2Cloud:
 
-   a. Go to Network > Network Profiles > IKE Gateways. These parameters should match the Site2Cloud configuration downloaded at Step 5 under "Setting up Site2Cloud Connection". <I copied the latter sentence from the PSK step. But don't know if it is right to mention it.
+   a. Go to Network > Network Profiles > IKE Gateways. These parameters should match the Site2Cloud configuration downloaded at Step 5 under "Setting up Site2Cloud Connection". 
    b. In the IKE Gateway dialog enter the following:
 
 	+----------------------+-------------------------------------------------------+
@@ -254,7 +258,7 @@ Setting up IKE Crypto Profile and IKE Gateways
 	+----------------------+-------------------------------------------------------+
 	| Name                 | A name that makes sense to you                        |
 	+----------------------+-------------------------------------------------------+
-	| Version              | IKEv3 only mode (right?)                              |
+	| Version              | IKEv2 only mode                                       |
 	+----------------------+-------------------------------------------------------+
         | Interface            | ethernet 1/1                                          |
 	+----------------------+-------------------------------------------------------+
@@ -266,7 +270,7 @@ Setting up IKE Crypto Profile and IKE Gateways
         +----------------------+-------------------------------------------------------+
         | Authentication       | Certificate                                           |
         +----------------------+-------------------------------------------------------+
-        | Local Certificate    | root certificate created earlier?                     |
+        | Local Certificate    | the device certificate you created earlier            |
         +----------------------+-------------------------------------------------------+
         | Local Identification | FQDN (hostname) such as pan-device.com                |
         +----------------------+-------------------------------------------------------+

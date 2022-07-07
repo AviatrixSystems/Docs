@@ -27,7 +27,7 @@ On the Aviatrix side, you:
 - configure the Site2Cloud connection
 
   - select the remote certificate (generated from the external device) when prompted
-  - enter the remote identifier when prompted (depends on the external device; typically the Remote Identifier is the value of the common name or subject field in the device) 
+  - enter the remote identifier when prompted (depends on the external device; typically the Remote Identifier is the value of the common name or subject field in the VPN gateway device certificate) 
 
 - export the Aviatrix CA certificate 
 - download the Site2Cloud configuration you just created, to use when configuring tunnels/interfaces on your external device
@@ -84,7 +84,7 @@ Limitations
 - Only the Palo Alto VM-Series firewall is supported in this version of Site2Cloud cert-based authentication.
 - Only the Elliptic Curve DSA algorithm is supported in this version when creating a certificate in the Palo Alto VM-Series UI.
 - Only the PEM certificate file type is supported in this version. 
-- You can only use one certificate per Site2Cloud connection.
+- You can only use one certificate group (all the certificates with the same tag name) per Site2Cloud connection.
 - You can only roll back the platform version if the previous version supports certificate-based authentication (not supported prior to 6.8).
 - The Aviatrix OpenVPN® feature cannot be used in conjunction with Site2Cloud certificate-based authentication.
 
