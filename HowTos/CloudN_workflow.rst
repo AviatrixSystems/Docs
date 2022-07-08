@@ -317,7 +317,7 @@ The Registered Devices table on the CLOUDN > List tab shows the state of the Clo
 
 - Registered: 
 
-   - The CloudN device is registered to the Controller and ready for attachment to a transit gateway. You can deregister the CloudN gateway if desired. 
+   - The CloudN device is registered to the Aviatrix Controller and ready for attachment to a transit gateway. You can deregister the CloudN gateway if desired. 
    - You can `reset the CloudN device to factory defaults <#workflow-on-reset-configuration>`_.
    - You can run diagnostics on a registered CloudN device.  
 
@@ -329,12 +329,11 @@ The Registered Devices table on the CLOUDN > List tab shows the state of the Clo
    - You cannot deregister unless you detach the gateway first.
    - You can `reset the CloudN device to factory defaults <#workflow-on-reset-configuration>`_.
 
-- Check: The CloudN device is not connected to the Controller. You cannot run diagnostics, or deregister the device. You can investigate by doing the following:
+- Check: The CloudN device is not connected to the Aviatrix Controller. You cannot run diagnostics, or deregister the device. You can investigate by doing the following:
 
-   - Examine the security policy of the Aviatrix Controller instance and ensure that TCP port 443 is opened to traffic originating from the device public IP address.
-   - Examine the security policy of the CloudN device and make sure that TCP port 443 is opened to traffic originating from the Aviatrix Controller public IP address. This rule is inserted by the Controller during device creation. Please restore if it was removed.
-   - Make sure network ACLs or other firewall rules are not configured to block traffic between the Controller and the device over TCP port 443.
-   - Verify that the Controller Security Group allows TCP 443 from CloudN's management interface. See `here <#opening-controller-inbound-ports>`_ for more information.
+   - Examine the security policy of the Controller instance and ensure that TCP port 443 is opened to traffic originating from the CloudN device public IP address. See `here <#opening-controller-inbound-ports>`_ for more information.
+   - Examine the security policy of the CloudN device and make sure that TCP port 443 is opened to traffic originating from the Controller public IP address. This rule is inserted by the Controller during device creation. Please restore if it was removed.
+   - Make sure network ACLs or other firewall rules are not configured to block traffic between the Aviatrix Controller and the CloudN device over TCP port 443.
    - Check basic connectivity to the internet from the CloudN device. See `here <#managed-cloudn-management-port-outbound-access>`_ for more information.  
 
 .. note::
