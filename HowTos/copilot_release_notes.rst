@@ -36,6 +36,15 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
 
+CoPilot Release 2.2.0 (7/10/2022)
+---------------------------------------------
+
+-   (CostIQ) **New function!** — CostIQ shows you an aggregate cost of your managed resources across the spokes in clouds and regions. You can create cost domains that are split into separate cloud domains. A cost domain shows percentages of your total cost. For information about creating, editing, and deleting cost domains, see "Working with CostIQ" in *Aviatrix CoPilot User Reference Guide*. 
+
+-   (FlowIQ Records) **Layer7 application information** — CoPilot now shows Layer7 application-level fields in the FLowIQ Records table. Included are traffic records from clients that use JA3 fingerprinting. Well-known JA3 hashes used to fingerprint the packet are mapped to their human readable application names in a newly introduced JA3 Dictionary. You can add custom JA3 entries to the JA3 dictionary.
+
+-   (Performance
+   
 
 CoPilot Release 2.1.1 (7/07/2022)
 ---------------------------------------------
