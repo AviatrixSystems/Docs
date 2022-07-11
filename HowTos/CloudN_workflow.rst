@@ -25,7 +25,7 @@ Benefits:
 
 - Enhanced visibility and troubleshooting:
 
-	- Perform running diagnostics, upload tracelog and upgrade on Managed CloudN device the same way as an Aviatrix Gateway. 
+	- Perform running diagnostics, upload tracelog and upgrade on Managed CloudN device the same way as an Aviatrix gateway. 
 
 	- Support backup/restore function
 	
@@ -45,7 +45,7 @@ Benefits:
 	
 	- This solution applies to over GCP InterConnect starting from 6.3. 
 	
-	- This solution in GCP supports only one tunnel per transit gateway for over Internet scenario.
+	- This solution in GCP supports only one tunnel per Transit Gateway for over Internet scenario.
 
 For more information and benefits about CloudN, please see the below documents:
 
@@ -83,9 +83,9 @@ Prerequisites
 2. (Optional) Create and register an FQDN Name for Aviatrix Controller public IP. This is useful if the Controller has HA configured. 
 3. Remove the current connection. Skip this step if this is a brand new deployment. Remove/delete any Site2Cloud (IPsec) connection between Aviatrix Transit Gateway and Standalone CloudN if you have any in your existing Standalone CloudN deployment.
 4. `Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ Aviatrix Controller to the latest version, at least version 6.2.
-5. Deploy VPC/VNets, Aviatrix Multi-Cloud Transit Gateways, and Spoke Gateways. Follow this `step <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch Aviatrix Transit gateway with insane mode enabled. The recommended minimum size for Transit in AWS is c5n.4xlarge. Please refer to this `doc <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_ for performance details.
+5. Deploy VPC/VNets, Aviatrix Multi-Cloud Transit Gateways, and Spoke Gateways. Follow this `step <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_ to launch Aviatrix Transit Gateway with insane mode enabled. The recommended minimum size for Transit in AWS is c5n.4xlarge. Please refer to this `doc <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_ for performance details.
 	
-* (Optional) Follow this `step <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_ to launch Aviatrix Spoke gateway with insane mode enabled. The recommended minimum size for Spoke with Insane Mode in AWS is c5.2xlarge. Please refer to this `doc <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_ for performance details. Notes: Users has option to attach non-Insane Mode Spoke gateway to Insane Mode Transit Gateway.
+* (Optional) Follow this `step <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_ to launch Aviatrix Spoke Gateway with insane mode enabled. The recommended minimum size for Spoke with Insane Mode in AWS is c5.2xlarge. Please refer to this `doc <https://docs.aviatrix.com/HowTos/insane_mode_perf.html>`_ for performance details. Notes: Users has option to attach non-Insane Mode Spoke gateway to Insane Mode Transit Gateway.
 * (Optional) Follow this `step <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#join-a-spoke-gw-to-transit-gw-group>`_ to attach Aviatrix Spoke Gateway to Aviatrix Transit Gateway
 	
 
@@ -317,13 +317,13 @@ The Registered Devices table on the CLOUDN > List tab shows the state of the Clo
 
 - Registered: 
 
-   - The CloudN device is registered to the Aviatrix Controller and ready for attachment to a transit gateway. You can deregister the CloudN gateway if desired. 
+   - The CloudN device is registered to the Aviatrix Controller and ready for attachment to a Transit Gateway. You can deregister the CloudN gateway if desired. 
    - You can `reset the CloudN device to factory defaults <#workflow-on-reset-configuration>`_.
    - You can run diagnostics on a registered CloudN device.  
 
 - Attached:
 
-   - The CloudN device is attached to a transit gateway. This status only reflects the management operation state; it does not reflect the attached connection state in real time. To check connectivity, you can check connection status on the `Site2Cloud page <#check-whether-the-connection-status-is-up>`_; `check the BGP connection <#check-transit-gateway-bgp-status>`_; and `verify the traffic flow <#traffic-flow-verification>`_. 
+   - The CloudN device is attached to a Transit Gateway. This status only reflects the management operation state; it does not reflect the attached connection state in real time. To check connectivity, you can check connection status on the `Site2Cloud page <#check-whether-the-connection-status-is-up>`_; `check the BGP connection <#check-transit-gateway-bgp-status>`_; and `verify the traffic flow <#traffic-flow-verification>`_. 
 
    - You can run diagnostics on an attached CloudN device.
    - You cannot deregister unless you detach the gateway first.
@@ -344,7 +344,7 @@ The Registered Devices table on the CLOUDN > List tab shows the state of the Clo
 Troubleshooting Tips
 ====================
 
-When an CloudN registers with an Aviatrix Controller properly as a Managed CloudN device, users can perform troubleshooting on a Managed CloudN device the same way as an Aviatrix Gateway in the cloud via Aviatrix Controller GUI. 
+When an CloudN registers with an Aviatrix Controller properly as a Managed CloudN device, users can perform troubleshooting on a Managed CloudN device the same way as an Aviatrix gateway in the cloud via Aviatrix Controller GUI. 
 
 .. note::
 	
@@ -399,7 +399,7 @@ Upgrade
 =======
 
 When a CloudN registers with an Aviatrix Controller properly as a Managed CloudN device, the upgrade process on the Managed CloudN device is treated the same way 
-as an Aviatrix Gateway in the cloud when Aviatrix Controller is upgraded. Please refer to `Inline Software Upgrade doc <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ for upgrading a Managed CloudN device from Aviatrix Controller.
+as an Aviatrix gateway in the cloud when Aviatrix Controller is upgraded. Please refer to `Inline Software Upgrade doc <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ for upgrading a Managed CloudN device from Aviatrix Controller.
 
 .. important::
 	
@@ -532,7 +532,7 @@ Ans: Yes. While this is not recommended practice, you should be able to convert 
 
 Q: Does Managed CloudN have Aviatrix High-Performance (Insane) mode supported?
 
-Ans: Yes. When a Managed CloudN device attaches to an Aviatrix Transit gateway with HA function enabled, High-Performance (Insane) mode tunnels to both primary and backup transit gateways are built automatically.
+Ans: Yes. When a Managed CloudN device attaches to an Aviatrix Transit Gateway with HA function enabled, High-Performance (Insane) mode tunnels to both primary and backup Transit Gateways are built automatically.
 
 Q: Can Managed CloudN solution support Azure ExpressRoute?
 
