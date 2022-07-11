@@ -36,12 +36,22 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
 
-CoPilot Release 2.2.0 (7/10/2022)
+CoPilot Release 2.2.0 (7/13/2022)
 ---------------------------------------------
 
--   (CostIQ) **New function!** — CostIQ shows you an aggregate cost of your managed resources across the spokes in clouds and regions. You can create cost domains that are split into separate cloud domains. A cost domain shows percentages of your total cost. For information about creating, editing, and deleting cost domains, see "Working with CostIQ" in *Aviatrix CoPilot User Reference Guide*. 
+-   (CostIQ) **New function!** — CostIQ shows you an aggregate cost of your managed resources across the spokes in clouds and regions. Cost domains are split into separate cloud domains. A cost domain shows percentages of your total cost. For information about creating, editing, and deleting cost domains, see "Working with CostIQ" in *Aviatrix CoPilot User Reference Guide*. 
 
--   (FlowIQ Records) **Layer7 application information** — CoPilot now shows Layer7 application-level fields in the FLowIQ Records table. Included are traffic records from clients that use JA3 fingerprinting. Well-known JA3 hashes used to fingerprint the packet are mapped to their human readable application names in a newly introduced JA3 Dictionary. You can add custom JA3 entries to the JA3 dictionary.
+-   (FlowIQ) **Layer-7 Visibility** — CoPilot can now report on the following L7 attributes for Layer 7 application visibility in flow records (FlowIQ Records tab):
+
+    -   APPL_LATENCY_MS: After a connection is established (e.g., TCP) , the time it takes to receive the first incoming packet of a flow after the first outgoing packet of the same flow is sent (in msec). The latency is calculated on the first packet only.
+    -   L7_PROTO : Layer 7 protocol (numeric). For example, “124” for YouTube service.
+    -   L7_PROTO_NAME: Layer 7 protocol name. For example, “TLS.Google” for Google service.
+    -   L7_PROTO_CATEGORY: Layer 7 protocol category. For example, “Social network” for Facebook.
+    -   L7_RISK_SCORE: Flow risk score of a flow.
+    -   L7_FQDN: The fully qualified domain name of the host or IP address
+    -   JA3S_HASH: The TLS fingerprint.
+
+      CoPilot also includes a JA3 Dictionary that maps L7-application JA3S hashes to application names. You can add custom entries to the dictionary to map human readable names to your application hash fingerprints.
 
 -   (Performance
    
