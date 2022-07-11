@@ -30,7 +30,7 @@ Prerequisites
 - `Configure the permissions for Private Mode and GWLB-Based FireNet <https://docs.aviatrix.com/HowTos/aviatrix_iam_policy_requirements.html>`_. This is very important; you cannot deploy your Private Mode resources without these permissions. Please see sections 6 and 15 in the referenced document.
 - Upgrade to 6.8.
 - A Controller in AWS or AWS GovCloud. It is best to set up Private Mode from a new Controller that does not have any previously deployed gateways. Private Mode will not work if you already have gateways deployed in your Controller.
-- A version of CoPilot that supports Private Mode, if you want to send syslog or Netflow data to CoPilot from the gateways.
+- A version of CoPilot that supports Private Mode, if you want to send syslog or Netflow data to CoPilot from the gateways. 
 - If you want to associate a CoPilot instance, it must be in the same VPC as the Controller.
 - If setting up Private Mode in a multi-cloud deployment, a private underlay between the CSPs must exist (Direct Connect for AWS or Express Route for Azure). 
 
@@ -52,7 +52,9 @@ When you prepare your single cloud Private Mode environment, you are building a 
 
 |private-mode-intracloud|
 
-This creates a Link Service in the selected region that endpoints in that cloud can connect with. It also attaches the CoPilot instance (if configured) and proxy (configured in the following section; you can configure the AWS proxy first if you like). You are only allowed to create one Link Service per region (AWS and Azure).
+This creates a Link Service in the selected region that endpoints in that cloud can connect with. It also attaches the CoPilot instance (if configured) and proxy (configured in the following section; you can configure the AWS proxy first if you like). You are only allowed to create one Link Service per region (AWS and Azure). 
+
+If you associated a CoPilot instance in step 2 above, you must ensure that your CoPilot Security Group is open to the IP addresses you configure when creating the Link Service.
 
   .. note::
 	The expected Link Service configuration for AWS/AWS GovCloud is having one Link Service in each region where you want to launch gateways. However, if you have two AWS/AWS GovCloud accounts, you can have one Link Service used by both accounts in the same region, or you can have a Link Service in each account in the same region.
