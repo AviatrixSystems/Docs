@@ -68,10 +68,11 @@ Most accounts use an EIP or FQDN and therefore do not need to use the Controller
 Remote Support 
 ~~~~~~~~~~~~~~~~~
 
-By enable Remote Support, you grant permission for Aviatrix support team to access the Controller for debugging 
-purpose. 
+By enabling Remote Support, you grant privileged level access to your Aviatrix Controller and any connected Aviatrix gateways to the Aviatrix Support team. This establishes a trusted connection between your Controller and the Aviatrix diagnostic server for diagnostic purposes.
 
-Make sure you disable the option when the debugging session is complete. 
+When Remote Support is enabled, an Aviatrix software engineer may run scripts and CLI debugging commands on the Controller and on any connected gateways, to triage issues. This access persists until you disable Remote Support. 
+
+You must disable the Remote Support option when the debugging session is complete. When Remote Support is disabled, all trusted sessions and the underlying process enabling the trusted connection are immediately terminated on your Controller and gateways. This prevents further access to your Controller and gateways. 
 
 Controller Public IP
 ~~~~~~~~~~~~~~~~~~~~~~
