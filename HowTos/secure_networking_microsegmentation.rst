@@ -83,8 +83,8 @@ After creating your app domains, you create policies (that consist of rules) to 
 
 An app domain traffic flow can belong to more than one rule. If this occurs, the priority of the rule determines the action that is taken first. 
 
-1. In CoPilot, navigate to Security > Micro-Segmentation > Policies.
-2. On the Policies tab, click +RULE. 
+1. In CoPilot, navigate to Security > Micro-Segmentation > Policy.
+2. On the Policy tab, click +RULE. 
 3. Enter a name for the rule.
 4. Select the Source App Domains -- these domains originate (bi-directional) traffic.
 5. Select the Destination App Domains -- these domains terminate (bi-directional) traffic.
@@ -111,7 +111,7 @@ As per the workload isolation use case above (blocking traffic between the Shopp
 - Above, Below, Top, or Bottom. If you select Above or Below, you must select the existing rule that is affected by the position of the new rule.
 - Priority; you then enter a Priority Number for the rule. If an existing rule already has that priority, it is bumped down in the list. Zero (0) is the highest priority number. 
 
-After the rule is created you can click the arrow icon next to that rule in the Policies table to change the priority.
+After the rule is created you can click the arrow icon next to that rule in the Policy table to change the priority.
 
 11. Click Save in Drafts. 
 12. Make additional modifications as needed by clicking the pencil icon next to the rule.
@@ -136,7 +136,7 @@ As a best zero trust security practice, you should add a deny rule that blocks t
 
 Policy Monitor
 --------------
-Under Security > Micro-segmentation > Policies > Policy Monitor, you can filter packet logs for rules with logging enabled to determine why a rule may not be working as intended. You can filter based on the following information: timestamp, rule, source/destination IPs, protocol, source/destination port, action (allowed or dropped), and if the rule is enforced. The table refreshes every 15 seconds, and you can also refresh the table manually.
+Under Security > Micro-segmentation > Policy > Policy Monitor, you can filter packet logs for rules with logging enabled to determine why a rule may not be working as intended. You can filter based on the following information: timestamp, rule, source/destination IPs, protocol, source/destination port, action (allowed or dropped), and if the rule is enforced. The table refreshes every 15 seconds, and you can also refresh the table manually.
 
 CoPilot throttles the logs for each connection shown in Policy Monitor to one packet per minute in each direction.
 
