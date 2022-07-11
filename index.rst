@@ -153,6 +153,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/paloalto_API_setup
    HowTos/ingress_firewall_example
    HowTos/Azure_ingress_firewall_example
+   HowTos/ingress_protection_firenet_paloaltogcp
    HowTos/config_paloaltoVM
    HowTos/config_PaloAltoAzure.rst
    HowTos/config_paloaltoGCP
