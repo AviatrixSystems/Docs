@@ -6,7 +6,7 @@
 Ingress Protection via Aviatrix Transit FireNet with Palo Alto in GCP
 =====================================================================
 
-This document describes how to do ingress in GCP with traffic inspection, deployed directly in FireNet. In this configuration you use the native GCP load balancer in FireNet.
+This document describes how to configure ingress in GCP with traffic inspection, deployed directly in FireNet. In this configuration you use the native GCP load balancer in FireNet.
 
 The solution described below shows how to implement NLB based ingress with Palo Alto firewalls in GCP.
 
@@ -63,10 +63,11 @@ The following screenshots show how to enable egress:
 
 |enable_egress2|
 
+
 Step 3. Verify health probe status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the GCP console open the Load balancing menu and check the health of the load balancers used by the Transit FireNet. There will be one UDP and one TCP load balancer. Backends should show as healthy.
+In the GCP console open the Load balancing menu and check the health of the load balancers used by the Transit FireNet. These load balancers are created during the Transit FireNet setup for GCP. There will be one UDP and one TCP load balancer. Backends should show as healthy.
 
 |gcp_be_lb_health|
 

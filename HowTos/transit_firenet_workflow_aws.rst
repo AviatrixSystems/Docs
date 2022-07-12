@@ -54,11 +54,10 @@ Make sure the deployment meets the following specifications:
 Procedure
 ~~~~~~~~~~~~~~~~~~~~~
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Setup -> #1 Launch an Aviatrix Transit Gateway**
+1.	Navigate to Multi-Cloud Transit -> Setup -> Transit -> #1 Launch an Aviatrix Transit Gateway.
 #.	Choose instance size **C5x.large**
-#.	Enable **ActiveMesh Mode (Mandatory)**
-#.	Enable InsaneMode for higher throughputs (optional)
-#.	Enable Transit VPC GW HA by navigating to **MULTI-CLOUD TRANSIT -> Setup -> #2 (Optional) Enable HA to an Aviatrix Transit Gateway**
+#.	Enable Insane Mode Encryption for higher throughputs (optional)
+#.	Enable Transit VPC GW HA by navigating to Multi-Cloud Transit -> Setup -> #2 (Optional) Enable HA to an Aviatrix Transit Gateway.
 
 .. note::
     Instance size of c5.xlarge will be required for Insane Mode Encryption for higher throughput.
@@ -72,9 +71,9 @@ Step 3: Deploy Spoke Gateways
 
 Now that we have Aviatrix Transit Gateway, we can deploy Aviatrix Spoke Gateways in the spoke VPCs using `Aviatrix Spoke Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_.
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Setup -> #4 Launch an Aviatrix Spoke Gateway**
+1.	Navigate to Multi-Cloud Transit -> Setup -> Spoke -> #1 Launch an Aviatrix Spoke Gateway.
 #.	Deploy a Spoke Gateway (GW) in each of the spoke VPCs using defaults while choose correct Account and VPC info
-#.	Choose the Public Subnet
+#.	Choose the Public Subnet.
 #.	Enable Spoke Gateway HA by navigating to Transit network -> Setup -> #5 (Optional) Enable/Disable HA at Spoke GW
 
 .. note::
@@ -85,9 +84,9 @@ Now that we have Aviatrix Transit Gateway, we can deploy Aviatrix Spoke Gateways
 Step 4: Attach Spoke Gateways to Transit Network
 *******************************************************
 
-Transit and spoke gateways are deployed, next step is to connect them.
+Now that the Transit and spoke gateways are deployed, the next step is to connect them.
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Setup -> #6a Attach Spoke Gateway to Transit Network**
+1.	Navigate to Multi-Cloud Transit -> Setup -> Attach/Detach -> #1 Attach Spoke Gateway to Transit Network.
 #.	Select one spoke at a time and attach to the Transit Gateway.
 
 |attach_spk_trgw|
@@ -100,7 +99,7 @@ Step 5: Enable Connected Transit
 
 By default, spoke VPCs are in isolated mode where the Transit will not route traffic between them. To allow the Spoke VPCs to communicate with each other, we need to enable Connected Transit
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Advanced Config**, select the right Transit Gateway and enable **“Connected Transit”**
+1.	Navigate to Multi-Cloud Transit -> Advanced Config, select the right Transit Gateway and enable **“Connected Transit”**.
 
 |connected_transit|
 
@@ -111,13 +110,13 @@ Transit and Spoke Gateways have now been deployed, next step is to deploy and en
 
 Let’s start with enabling the firewall function and configure the FireNet policy.
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Transit FireNet -> #1 Enable Transit FireNet on Aviatrix Transit Gateway**
-#.	Choose the Aviatrix Transit Gateway and Click **“Enable”**
+1.	Navigate to Firewall Network -> Setup -> #3a Enable Transit FireNet on Aviatrix Transit Gateway.
+#.	Choose the Aviatrix Transit Gateway and Click **“Enable”**.
 
 |en_tr_firenet|
 
-3.	Navigate to **MULTI-CLOUD TRANSIT -> Transit FireNet -> #2 Manage FireNet Policy**
-#.	Add spokes to the Inspected box for traffic inspection
+3.	Navigate to Firewall Network -> Policy -> Manage FireNet Policy.
+#.	Add spokes to the Inspected box for traffic inspection.
 
 .. note::
     By default, FireNet inspects ingress (INET to VPC) and east-west traffic (VPC to VPC) only.
@@ -125,20 +124,19 @@ Let’s start with enabling the firewall function and configure the FireNet poli
 |tr_firenet_policy|
 
 
-Step 7: Subscribe Firewall Vendor in AWS Marketplace
+Step 7: Subscribe to Firewall Vendor in AWS Marketplace
 *************************************************************
 
-At this point, FireNet functionality on Transit Gateway is enabled and FireNet policy is created for spokes. It is time to subscribe the firewall vendor and deploy the firewall.
+At this point, FireNet functionality on Transit Gateway is enabled and FireNet policy is created for spokes. It is time to subscribe to the firewall vendor and deploy the firewall.
 
-1.	Navigate to **Firewall Network -> Setup -> #2 Subscribe to Firewall Vendor Product** in AWS Marketplace
-#.	Follow the link to subscribe to Check Point, Palo Alto or Fortinet in AWS Marketplace.
+In your AWS marketplace, subscribe to the supported firewall vendor using an access account onboarded to the Controller.
 
 .. note::
     Please subscribe the firewall but do not launch the firewall.
 
 |subscribe_firewall|
 
-Step 8a: Launch and Associate Firewall Instance
+Step 2a: Launch and Associate Firewall Instance
 *****************************************************************
 
 This approach is recommended if this is the first Firewall instance to be attached to the gateway.
@@ -153,10 +151,10 @@ This step launches a Firewall instance and associates it with one of the FireNet
 7a.1 Launch and Attach
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Go to Aviatrix Controller's console and navigate to **Firewall Network -> Setup -> Step 7a** and provide all the required input as shown in a table and click **"Launch"** button.
+Go to Aviatrix Controller's console and navigate to Firewall Network -> Setup -> Step 2a. Provide all the required input as shown in the table and click **"Launch"**.
 
 .. important::
-    Vendor's firewall may take some time after launch to be available.
+    The vendor's firewall may take some time after launch to be available.
 
 
 ==========================================      ==========
@@ -179,10 +177,10 @@ IAM Role                                        In advanced mode, create an IAM 
 Bootstrap Bucket Name                           In advanced mode, specify a bootstrap bucket name where the initial configuration and policy file is stored.
 ==========================================      ==========
 
-1. CheckPoint Specification
+1. Check Point Specification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-CheckPoint Firewall instance has 2 interfaces as described below.
+The Check Point Firewall instance has two interfaces as described below.
 
 ========================================================         ===============================          ================================
 **CheckPoint VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
@@ -199,11 +197,11 @@ Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 i
 
 .. important::
 
-     Starting from Release 5.4, launching CheckPoint firewall instances from the Aviatrix Controller automatically initiates its onboarding process. For initial login information, go to `Credentials for Checkpoint Initial Login <https://aviatrix.zendesk.com/hc/en-us/articles/4417552852109>`_. You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
+     Starting from Release 5.4, launching Check Point firewall instances from the Aviatrix Controller automatically initiates its onboarding process. For initial login information, go to `Credentials for Checkpoint Initial Login <https://aviatrix.zendesk.com/hc/en-us/articles/4417552852109>`_. You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
 
 
 .. note::
-    Repeat Step 8a to launch the second firewall instance to associate with the HA FireNet gateway. Or repeat this step to launch more firewall instances to associate with the same FireNet gateway.
+    Repeat Step 2a to launch the second firewall instance to associate with the HA FireNet gateway. Or repeat this step to launch more firewall instances to associate with the same FireNet gateway.
 
 
 Follow `Check Point Example <https://docs.aviatrix.com/HowTos/config_CheckPointVM.html#example-config-for-check-point-vm-in-aws>`_ to launch Check Point security gateway in AWS and for more details.
@@ -212,7 +210,7 @@ Follow `Check Point Example <https://docs.aviatrix.com/HowTos/config_CheckPointV
 2. Palo Alto VM-Series Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Palo instance has 3 interfaces as described below.
+Palo instance has three interfaces as described below.
 
 ========================================================         ===============================          ================================
 **Palo Alto VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
@@ -236,10 +234,10 @@ Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 i
 Follow `Palo Alto Network (VM Series) Example <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html#example-config-for-palo-alto-network-vm-series>`_ to launch VM Series firewall in AWS and for more details.
 
 
-3. Fortigate Specifications
+3. FortiGate Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Fortigate Next Generation Firewall instance has 2 interfaces as described below.
+FortiGate Next Generation Firewall instance has 2 interfaces as described below.
 
 ========================================================         ===============================          ================================
 **Fortigate VM instance interfaces**                             **Description**                          **Inbound Security Group Rule**
@@ -259,10 +257,10 @@ Follow `Fortigate Example <https://docs.aviatrix.com/HowTos/config_FortiGateVM.h
 
 
 
-Step 8b: Associate an Existing Firewall Instance
+Step 2b: Associate an Existing Firewall Instance
 *******************************************************
 
-This step is the alternative step to Step 8a. If you already launched the firewall (Check Point, Palo Alto Network or Fortinet) instance from AWS Console, you can still associate it with the FireNet gateway.
+This step is the alternative step to Step 2a. If you already launched the firewall (Check Point, Palo Alto Network or Fortinet) instance from AWS Console, you can still associate it with the FireNet gateway.
 
 Go to Aviatrix Controller's console and navigate to **Firewall Network -> Setup -> Step 7b** and associate a firewall with right FireNet Gateway.
 

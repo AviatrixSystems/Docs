@@ -57,7 +57,7 @@ Make sure the deployment meets the following specifications:
 Procedure
 ~~~~~~~~~~~~~~~~~~~~~
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Setup -> #1 Launch an Aviatrix Transit Gateway**
+1.	Navigate to Multi-Cloud Transit -> Setup -> Transit -> #1 Launch an Aviatrix Transit Gateway.
 #.	Choose virtual machine size **Standard_B2ms**
 #.	Enable **ActiveMesh Mode (Mandatory)**
 #.	Enable InsaneMode for higher throughputs (optional)
@@ -76,7 +76,7 @@ Step 3: Deploy Spoke Gateways
 
 Now that we have Aviatrix Transit Gateway, we can deploy Aviatrix Spoke Gateways in the spoke VNET using `Aviatrix Spoke Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_.
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Setup -> #4 Launch an Aviatrix Spoke Gateway**
+1.	Navigate to Multi-Cloud Transit -> Setup -> Spoke ->  #1 Launch an Aviatrix Spoke Gateway.
 #.	Deploy a Spoke Gateway (GW) in each of the spoke VNETs using defaults while choose correct Account and VNET info
 #.	Choose the Public Subnet
 #.	Enable Spoke Gateway HA by navigating to Transit network -> Setup -> #5 (Optional) Enable/Disable HA at Spoke GW
@@ -88,7 +88,7 @@ Step 4: Attach Spoke Gateways to Transit Network
 
 Transit and spoke gateways are deployed, next step is to connect them.
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Setup -> #6a Attach Spoke Gateway to Transit Network**
+1.	Navigate to Multi-Cloud Transit -> Setup -> Attach/Detach -> #1 Attach Spoke Gateway to Transit Network.
 #.	Select one spoke at a time and attach to the Transit Gateway.
 
 |attach_spk_trgw|
@@ -101,7 +101,7 @@ Step 5: Enable Connected Transit
 
 By default, spoke VNETs are in isolated mode where the Transit will not route traffic between them. To allow the Spoke VNETs to communicate with each other, we need to enable Connected Transit
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Advanced Config**, select the right Transit Gateway and enable **“Connected Transit”**
+1.	Navigate to Multi-Cloud Transit -> Advanced Config, select the right Transit Gateway and enable **“Connected Transit”**.
 
 |connected_transit|
 
@@ -112,13 +112,13 @@ Transit and Spoke Gateways have now been deployed, next step is to deploy and en
 
 Let’s start with enabling the firewall function and configure the FireNet policy.
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Transit FireNet -> #1 Enable Transit FireNet on Aviatrix Transit Gateway**
-#.	Choose the Aviatrix Transit Gateway and Click **“Enable”**
+1.	Navigate to Firewall Network -> Setup -> #3a Enable Transit FireNet on Aviatrix Transit Gateway.
+#.	Choose the Aviatrix Transit Gateway and Click **“Enable”**.
 
 |en_tr_firenet|
 
-3.	Navigate to **MULTI-CLOUD TRANSIT -> Transit FireNet -> #2 Manage FireNet Policy**
-#.	Add spokes to the Inspected box for traffic inspection
+3.	Navigate to Firewall Network -> Policy -> Manage FireNet Policy.
+#.	Add spokes to the Inspected Policies box for traffic inspection.
 
 .. note::
     By default, FireNet inspects ingress (INET to VNET) and east-west traffic (VNET to VNET) only.
@@ -126,7 +126,7 @@ Let’s start with enabling the firewall function and configure the FireNet poli
 |tr_firenet_policy|
 
 
-Step 7a: Launch and Associate Firewall Instance
+Step 2a: Launch and Associate Firewall Instance
 *****************************************************************
 
 This approach is recommended if this is the first Firewall instance to be attached to the gateway.
@@ -141,10 +141,10 @@ This step launches a Firewall instance and associates it with one of the FireNet
 .. note::
     By default, Aviatrix Transit Firenet uses 5 tuple hashing algorithm but that can be changed to 2 or 3 tuple as per requirement. Please check transit `firenet FAQs <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html#azure>`_ for more details.
 
-7a.1 Launch and Attach
+2a.1 Launch and Attach
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Go to Aviatrix Controller's console and navigate to **Firewall Network -> Setup -> Step 7a** and provide all the required input as shown in a table and click **"Launch"** button.
+Go to Aviatrix Controller's console and navigate to **Firewall Network -> Setup -> Firewall -> Step 2a** and provide all the required input as shown in a table and click **"Launch"** button.
 
 .. important::
     Vendor's firewall may take some time after launch to be available.
