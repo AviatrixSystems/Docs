@@ -29,8 +29,8 @@ Generate CSR and Import Certificate
 
 In this approach, you generate a .csr file, get it signed, and then import it to the Aviatrix Controller. 
 
-Step 1. Generate the CSR File
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Generate the CSR File
+^^^^^^^^^^^^^^^^^^^^^
 
 1. In the left pane of the Aviatrix Controller, select Settings > Controller, and then click the Certificate tab. 
 #. On the Controller Certificate Management page, select the Generate CSR and Import Certificate option.
@@ -45,8 +45,8 @@ Step 1. Generate the CSR File
 #. Click Import Server Public Certificate.
 
 
-Step 2. Import CA Certificate and Server Certificate 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Import CA Certificate and Server Certificate 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After you obtain the CA certificate and Server Public Certificate, click the Import Certificate with Key option to import/upload the files to the Controller. 
 
@@ -69,8 +69,8 @@ Setting up the Custom Gateway Certificate
 
 Make sure that all gateways are green/running before you proceed.
 
-1. Go to Settings > Advanced > Gateway > Gateway Certificate Management.
-#. The Import CA Certificate with Key option is selected by default. Click Choose File and navigate to the locations of the CA Certificate and the CA Private Key.
+1. In the left pane of the Aviatrix Controller, select Settings > Advanced and click the Gateway tab.
+#. Under Gateway Certificate Management, the Import CA Certificate with Key option is selected by default. Click Choose File and navigate to the locations of the CA Certificate and the CA Private Key.
 #. Click OK. 
 
 
