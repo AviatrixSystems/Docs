@@ -16,27 +16,81 @@ Frequently asked questions about initial deployment size for CoPilot.
 What is the minimum instance/VM size for CoPilot?
 ---------------------------------------------------
 
-The configuration of the instance/virtual machine that you provision for your CoPilot deployment depends on the scale and the kind of networking infrastructure you have planned according to your business requirements. Work with your performance team to determine your sizing requirements.
+The configuration of the virtual machine that you provision for your CoPilot deployment depends on the scale and the kind of networking infrastructure you have planned according to your business requirements. Work with your Aviatrix Sales representative to determine your sizing requirements. While this section provides minimum requirements and guidelines for minimum sizing based on a number of gateways, it is recommended to reach out to your Aviatrix Sales representative to discuss your specific sizing needs. 
 
 - For the instance/VM size, CoPilot requires a minimum of:
 
   - 32 GB of RAM (or more)
 
-  - 1 attached disk/volume for storage (see `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#id4>`_)
+  - 1 attached disk/volume for storage — See `CoPilot Disk (Volume) Management`_.
 
   - 8 vCPUs (or more)
 
-(For example, the c5n.2xlarge Amazon EC2 instance type.)
+Examples: 
 
-**NOTE:** Please note the following:
+Amazon EC2 instance type: m5n.2xlarge
 
-- For a simple deployment, the single instance must meet the minimum requirements. 
+Googld Cloud: n2-standard-8
 
-- For a fault tolerant (clustered) deployment, each instance in the cluster must meet the minimum requirements. In addition, each cluster instance must use the same instance sizing.
+Oracle Cloud Infrastructure: VM.Standard3.Flex (8core x 32G mem)
+
+
+If you are deploying CoPilot for the first time (new launch) and have existing gateways, below are general guidelines for a minimum VM size *based on the number of existing gateways* in an infrastructure. 
+
+The information is intended as a general guide only. After you deploy CoPilot, you will be able to monitor the indexing of data for traffic in your specific environment and tune configuration settings, such as index retention periods, that will help determine the best instance size for your business needs.
+
+For infrastructures with **< 500 GWs**, the minimum instance/VM size guideline:
+
+  - 32 GB of RAM (or more)
+
+  - 8 vCPUs (or more)
+
+Examples:
+
+Amazon EC2 instance type: 			m5n.2xlarge
+
+Googld Cloud: 			                n2-standard-8
+
+Oracle Cloud Infrastructure: 			VM.Standard3.Flex (8core x 32G mem)
+
+Microsoft Azure virtual machine:                Standard_D8_v4
+
+
+For infrastructures with **> 500 but < 1000 GWs**, the minimum instance/VM size guideline:
+
+  - 64 GB of RAM (or more)
+
+  - 16 vCPUs (or more)
+
+Example:
+
+Amazon EC2 instance type: 			m5n.4xlarge
+
+
+For infrastructures with **>=1000 GWs**, the minimum instance/VM size guideline:
+
+  - 128 GB of RAM (or more)
+
+  - 32 vCPUs (or more)
+
+Example:
+
+Amazon EC2 instance type: 			m5n.8xlarge
+
+
+**Note the following points**:
 
 - (AWS) For CoPilot ARM-based images, Amazon EC2 A1 instances are currently not supported.
 
+- For a simple deployment, the single instance (VM) must meet the minimum requirements. 
+
+- For a fault tolerant (clustered) deployment, each instance (VM) in the cluster must meet the minimum requirements. In addition, each cluster instance must use the same instance sizing. In a cluster, the data instances will have a disk/volume attached for storage in the size you specify during your launch process. Data volume sizes must be the same across all data instances. 
+
+- If you already have a CoPilot simple deployment (single instance) and you are planning on migrating your data from the simple deployment to a new clustered deployment, the size of the disk volume you specify for each data instance should be the same size or larger than the storage used in your old single copilot. See `CoPilot Disk (Volume) Management`_ in Aviatrix CoPilot Deployment Guide for more information and CoPilot storage.
+
+
 CoPilot supports automatic memory sizing for the ETL and datastore based on the physical memory of the instance at boot. Base images default to the automatic settings. This auto-scaling memory support became available with the release of Aviatrix CoPilot image version 1.5.1. 
+
 
 FAQs about CoPilot licenses and licensing
 ====================================================
