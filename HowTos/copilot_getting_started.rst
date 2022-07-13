@@ -27,59 +27,110 @@ After launching CoPilot, you must configure integration points for CoPilot to co
 If you are launching a new instance of CoPilot and need to migrate CoPilot data from an existing (source) CoPilot to a newly launched (destination) CoPilot, see `About Migrating CoPilot Data`_.
 
 CoPilot Deployment Methods
----------------------------
+===========================
 
 You can deploy Aviatrix CoPilot directly from any supported cloud service provider (CSP) marketplace, by using Terraform scripts, or by using the Aviatrix Controller user interface (available for AWS from Controller release 6.7.1185). 
 
-Deploying from the CSP marketplace takes only a few clicks to provision and launch the instance. This deploy method can be used for a CoPilot simple (single instance) deployment. Since you must subscribe to a CoPilot offer at a marketplace as a first step for all deployment methods, this method is commonly used right after subscribing. See `Subscribe to a CoPilot Offer`_.
+Deploying from the CSP marketplace takes only a few clicks to provision and launch the instance. Since you must subscribe to a CoPilot offer at a marketplace as a first step for all deployment methods, this method is commonly used right after subscribing. This deploy method is often used for a CoPilot simple (single instance) deployment. See `Subscribe to a CoPilot Offer`_. If your controller is in AWS, you can also conveniently launch a CoPilot simple or clustered deployment from the Aviatrix Controller user interface. See `CoPilot instance launch from the Controller UI`_ and `CoPilot cluster launch from the Controller UI`_.
 
-For a CoPilot fault tolerant (clustered) deployment, you can deploy CoPilot from the Aviatrix Controller user interface. This feature is currently available only for AWS. Deploying CoPilot from the controller UI can be done if you deployed your controller in AWS and will deploy CoPilot in AWS in the same region/AZ as the controller (see `CoPilot instance launch from the Controller UI`_. You can deploy a simple deployment or clustered deployment from the controller user interface in AWS.
+For a CoPilot fault tolerant (clustered) deployment, you can deploy CoPilot from the Aviatrix Controller user interface. This feature is currently available only for AWS. Deploying CoPilot from the controller UI can be done if your controller is in AWS. See `CoPilot instance launch from the Controller UI`_. You can deploy a simple deployment or clustered deployment from the controller user interface in AWS.
 
-If you are knowledgeable in deploying infrastructure-as-code using Terraform, you might find it convenient to launch CoPilot by using Terraform scripts. See `CoPilot instance launch using Terraform`_. The Aviatrix Terraform Module for CoPilot is avaiable on GitHub here: https://github.com/AviatrixSystems/terraform-modules-copilot.
+If you are knowledgeable in deploying infrastructure-as-code using Terraform, you might find it convenient to launch CoPilot by using Terraform scripts. A summary of steps for launching a single instance using Terraform is provided at `CoPilot instance launch using Terraform`_ but it is recommended to refer to the Terraform documentation for the most current instructions and samples. You can launch a simple or clustered deployment using Terraform scripts. At this time only AWS is supported for launching a CoPilot clustered deployment using Terraform. The Aviatrix Terraform Module for CoPilot is avaiable on GitHub here: https://github.com/AviatrixSystems/terraform-modules-copilot.
 
 
-Instance Configuration Details
-------------------------------
-
+Instance (VM) Configuration Details for CoPilot
+================================================
 - Open your CoPilot access (security group) for: 
 
   - TCP port 443 from anywhere user access (to reach CoPilot via HTTPS connection using web browser)
 
   - UDP port 5000 (default) — Enable Syslog for CoPilot Egress FQDN & Audit Data (from each gateway). Gateways send remote syslog to CoPilot.
 
-  - TCP port 5000 (default) — For private mode, enable Syslog for CoPilot Egress FQDN & Audit Data (from each gateway). Gateways send remote syslog to CoPilot.
+  - TCP port 5000 (default) — **For private mode**, enable Syslog for CoPilot Egress FQDN & Audit Data (from each gateway). Gateways send remote syslog to CoPilot.
 
   - UDP port 31283 (default, port is configurable) — Enable Netflow for CoPilot FlowIQ Data (from each gateway). Gateways send Netflow to CoPilot. 
 
 .. tip::
-  After launching your CoPilot instance, you can enable the "CoPilot Security Group Management" option in Controller to automate the configuration of integration points between CoPilot and Aviatrix Gateways such as those for syslog and Netflow listed above. In Controller, you can view the IP addresses of all your gateways from the Gateways page. 
+  After launching your CoPilot instance, you can enable the "CoPilot Security Group Management" option in Controller to automate the configuration of integration points between CoPilot and Aviatrix Gateways such as those for syslog and Netflow listed above. Tip: If you need to manually add IPs for gateways, in Controller, you can view the IP addresses of all your gateways from the Gateways page. 
 
 
-Minimum Instance System Requirements
--------------------------------------
-The configuration of the instance/virtual machine that you provision for your CoPilot deployment depends on the scale and the kind of networking infrastructure you have planned according to your business requirements. Work with your Aviatrix Sales representative to determine your sizing requirements.
+Minimum Instance (VM) System Requirements for CoPilot
+=======================================================
+The configuration of the virtual machine that you provision for your CoPilot deployment depends on the scale and the kind of networking infrastructure you have planned according to your business requirements. Work with your Aviatrix Sales representative to determine your sizing requirements. While this section provides minimum requirements and guidelines for minimum sizing based on a number of gateways, it is strongly recommended to reach out to your Aviatrix Sales representative to discuss your specific sizing needs. 
 
 - For the instance/VM size, CoPilot requires a minimum of:
 
   - 32 GB of RAM (or more)
 
-  - 1 attached disk/volume for storage (see `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#id4>`_)
+  - 1 attached disk/volume for storage — See `CoPilot Disk (Volume) Management`_.
 
   - 8 vCPUs (or more)
 
-(For example, the c5n.2xlarge Amazon EC2 instance type.)
+Examples: 
 
-**NOTE:** Please note the following:
+Amazon EC2 instance type: m5n.2xlarge
 
-- For a simple deployment, the single instance must meet the minimum requirements. 
+Googld Cloud: n2-standard-8
 
-- For a fault tolerant (clustered) deployment, each instance in the cluster must meet the minimum requirements. In addition, each cluster instance must use the same instance sizing.
+Oracle Cloud Infrastructure: VM.Standard3.Flex (8core x 32G mem)
+
+
+If you are deploying CoPilot for the first time (new launch) and have existing gateways, below are general guidelines for a minimum VM size *based on the number of existing gateways* in an infrastructure. 
+
+The information is intended as a general guide only. After you deploy CoPilot, you will be able to monitor the indexing of data for traffic in your specific environment and tune configuration settings, such as index retention periods, that will help determine the best instance size for your business needs.
+
+For infrastructures with **< 500 GWs**, the minimum instance/VM size guideline:
+
+  - 32 GB of RAM (or more)
+
+  - 8 vCPUs (or more)
+
+Examples:
+
+Amazon EC2 instance type: 			m5n.2xlarge
+
+Googld Cloud: 			                n2-standard-8
+
+Oracle Cloud Infrastructure: 			VM.Standard3.Flex (8core x 32G mem)
+
+Microsoft Azure virtual machine:                Standard_D8_v4
+
+
+For infrastructures with **> 500 but < 1000 GWs**, the minimum instance/VM size guideline:
+
+  - 64 GB of RAM (or more)
+
+  - 16 vCPUs (or more)
+
+Example:
+
+Amazon EC2 instance type: 			m5n.4xlarge
+
+
+For infrastructures with **>=1000 GWs**, the minimum instance/VM size guideline:
+
+  - 128 GB of RAM (or more)
+
+  - 32 vCPUs (or more)
+
+Example:
+
+Amazon EC2 instance type: 			m5n.8xlarge
+
+
+**Note the following points**:
 
 - (AWS) For CoPilot ARM-based images, Amazon EC2 A1 instances are currently not supported.
 
+- For a simple deployment, the single instance (VM) must meet the minimum requirements. 
+
+- For a fault tolerant (clustered) deployment, each instance (VM) in the cluster must meet the minimum requirements. In addition, each cluster instance must use the same instance sizing. In a cluster, the data instances will have a disk/volume attached for storage in the size you specify during your launch process. Data volume sizes must be the same across all data instances. 
+
+- If you already have a CoPilot simple deployment (single instance) and you are planning on migrating your data from the simple deployment to a new clustered deployment, the size of the disk volume you specify for each data instance should be the same size or larger than the storage used in your old single copilot. See `CoPilot Disk (Volume) Management`_ in Aviatrix CoPilot Deployment Guide for more information and CoPilot storage.
+
 
 CoPilot Customer IDs and Licensing
------------------------------------
+====================================
 
 This section discusses Aviatrix CoPilot customer IDs and licensing.
 
@@ -87,9 +138,11 @@ This section discusses Aviatrix CoPilot customer IDs and licensing.
 
 CoPilot is offered with a Bring Your Own License (BYOL) license model. If you are interested in a trial of CoPilot, contact us through the Aviatrix chat window of our doc website, or contact your Aviatrix Sales representative.
 
-With a BYOL license model, you need to have a customer ID provided by Aviatrix to be able to use the product. Your Aviatrix Sales representative will provide you with a customer ID. Customer IDs for CoPilot use the prefix `avx-cplt-`.
+With a BYOL license model, you need to have a customer ID provided by Aviatrix to be able to use the product. Your Aviatrix Sales representative will provide you with a customer ID. Customer IDs for CoPilot contain the letters `-cplt-`.
 
 When you perform the initial setup of CoPilot, you will be prompted to enter your customer ID and CoPilot will allocate a license to you based on your customer ID. Your customer ID can be associated with more than one license. The license key has the quantity or *allocation count* for the number of CoPilot instances that can use the license at a given time (the default count is 2). If the license key is greater than one, the key can be used by more than one instance. You can see when the license will expire and see the used and total allocation count of your license in CoPilot Settings > Licensing.
+
+If you plan to launch a CoPilot clustered deployment, your Aviatrix Sales representative will provide an ID associated with the number of licenses you require for each cluster instance.  
 
 When your customer ID expires, you can ask for a license extension from your Sales representative. In this case, you must reset your customer ID for the extension by navigating to CoPilot Settings > Licensing and clicking the **RESET** button. 
 
@@ -118,14 +171,16 @@ To subscribe to a CoPilot offer:
 
 3.  When prompted, review the subscription pricing information and accept the terms and conditions. You may be prompted to confirm your subscription before moving on to configuration.
 
-4.  Each marketplace will prompt you to configure and launch the CoPilot software. Apply the default configurations for resource settings that are recommmended by your chosen marketplace. For CoPilot instance configurations, you can accept the defaults or change them to suit your business needs. Note the following required CoPilot instance specifications:
+    -   If you want to deploy CoPilot via the Controller UI or via Terraform scripts, you can stop here and refer to the instructions for each deploy method. If you want to deploy CoPilot from your CSP marketplace, you can continue with the rest of the steps.
+
+4.  Each marketplace will prompt you to configure and launch the CoPilot software. Apply the default configurations for resource settings that are recommmended by your chosen marketplace. For CoPilot instance (VM) configurations, you can accept the defaults or change them to suit your business needs. Note the following required CoPilot instance specifications:
 
     -   (Storage & Instance)
 
         When deploying the Aviatrix CoPilot 1.5.1 image release:
 
-        -   For the minimum supported instance/VM size for CoPilot, see `Instance System Requirements <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#instance-system-requirements>`_.
-        -   You must attach at least one data disk (data volume) to your CoPilot instance to be used for expandable storage; this is a secondary data storage separate from the root disk that comes with CoPilot. For more information, see `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#id4>`_. Create your disk (volume) and attach the disk (volume) to your CoPilot instance. You can choose the disk type (volume type) that meets your business needs given the size of your environment and performance requirements. There is no minimum requirement for the storage you add at this stage.
+        -   For the minimum supported instance/VM size for CoPilot, see `Minimum Instance (VM) System Requirements for CoPilot`_.
+        -   You must attach at least one data disk (data volume) to your CoPilot instance to be used for expandable storage; this is a secondary data storage separate from the root disk that comes with CoPilot. For more information, see `CoPilot Disk (Volume) Management`_. Create your disk (volume) and attach the disk (volume) to your CoPilot instance. You can choose the disk type (volume type) that meets your business needs given the size of your environment. See 
 
         When deploying Pre-1.5.1 image releases:
 
@@ -135,9 +190,11 @@ To subscribe to a CoPilot offer:
     -   CoPilot requires a static public IP address (for example, an Elastic IP address in AWS)
     -   Copilot requires the following service ports:
 
-        -   TCP port 443 for Web UI (to reach CoPilot public IP via HTTPS using your web browser)
-        -   UDP port 31283 for CoPilot FlowIQ data (port is configurable)
-        -   UDP port 5000 for CoPilot Security audit data (Remote Syslog Service)
+        - TCP port 443 from anywhere user access (to reach CoPilot via HTTPS connection using web browser)
+        - UDP port 5000 (default) — Enable Syslog for CoPilot Egress FQDN & Audit Data (from each gateway). Gateways send remote syslog to CoPilot.
+        - TCP port 5000 (default) — **For private mode**, enable Syslog for CoPilot Egress FQDN & Audit Data (from each gateway). Gateways send remote syslog to CoPilot.
+        - UDP port 31283 (default, port is configurable) — Enable Netflow for CoPilot FlowIQ Data (from each gateway). Gateways send Netflow to CoPilot. 
+
         
 5.  In your cloud console, in the security group page of your CoPilot VM/instance, add entries FOR EACH of your Aviatrix gateways:
 
@@ -342,11 +399,11 @@ When you initially provision CoPilot (from your cloud service provider), you mus
 
 When you newly launch the CoPilot instance, the initial setup process automatically detects the disk/volume you attached during instance provisioning. An add-disk process prompts you to confirm the disk/volume to use and then formats and attaches your disk(s). A logical disk/volume is created from all physical disks (volumes) you added during provisioning. For example, if you launch Copilot and you added two physical disks that are 8G each, CoPilot will form a 16G volume.
 
-The storage you need for CoPilot can increase based on several factors including the number of Aviatrix gateways launched and the type and volume of traffic in your network. When you need more storage, you can add additional disks (volumes) by using the CoPilot > Settings > Resources page (Add Additional Disks). For instructions, see `Add a Disk (Volume) for CoPilot Storage after Deployment <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#id5>`_.
+The storage you need for CoPilot can increase based on several factors including the number of Aviatrix gateways launched and the type and volume of traffic in your network. When you need more storage, you can add additional disks (volumes) by using the CoPilot > Settings > Resources page (Add Additional Disks). For instructions, see `Add a Disk (Volume) for CoPilot Storage after Deployment <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#id5>`_. Adding additional disks applies to simple deployments (not clustered deployments).
 
-After you allocate new disks (volumes), you can only increase storage (you cannot decrease storage).
+After you allocate new disks (volumes), you can only increase storage (you cannot decrease storage). 
 
-For data disks you already allocated to your CoPilot deployment, you can increase their size. For instructions, see Expand a Disk (Volume) for CoPilot Storage.
+For data disks you already allocated to your CoPilot deployment, you can increase their size. For instructions, see Expand a Disk (Volume) for CoPilot Storage. This applies only to simple deployments (not clustered deployments).
 
 Disk (volume) management for expandable storage became available with the release of Aviatrix CoPilot image version 1.5.1. Prior to CoPilot image version 1.5.1, images required a static disk of 2 TB. To use the expandable storage feature and leverage additional disks/volumes, you must launch a new CoPilot instance from the marketplace based on CoPilot image version 1.5.1.
 
@@ -354,7 +411,7 @@ Disk (volume) management for expandable storage became available with the releas
 Add a Disk (Volume) for CoPilot Storage after Deployment
 ========================================================
 
-Add a data disk (volume) to your Aviatrix CoPilot deployment to be used for expandable storage. For information about expandable storage, see `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#id4>`_.
+Add a data disk (volume) to your Aviatrix CoPilot deployment to be used for expandable storage. For information about expandable storage, see `CoPilot Disk (Volume) Management`_. Adding additional disks applies to simple deployments (not clustered deployments).
 
 This procedure assumes you have a running CoPilot and want to add more storage (add a data disk/volume) above and beyond the storage you added when you first provisioned the CoPilot instance (from your CSP).
 
@@ -376,7 +433,7 @@ To add a data disk (volume) for CoPilot expandable storage after deployment:
 Expand a Disk (Volume) for CoPilot Storage
 ==========================================
 
-For data disks you already allocated to your CoPilot deployment, increase their size.
+For data disks you already allocated to your CoPilot deployment, increase their size. Increasing the disk size applies to simple deployments (not clustered deployments).
 
 To expand a disk (volume) that is allocated to your CoPilot deployment:
 
@@ -468,9 +525,9 @@ Example - Deploy CoPilot in Google Cloud Platform
 
 If deploying the Aviatrix CoPilot 1.5.1 image release:
 
-- For the minimum supported instance/VM size for CoPilot, see `Instance System Requirements <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#instance-system-requirements>`_.
+- For the minimum supported instance/VM size for CoPilot, see `Minimum Instance (VM) System Requirements for CoPilot`_.
 
-- You must attach at least one data disk (data volume) to your CoPilot instance to be used for expandable storage; this is a secondary data storage separate from the root disk that comes with CoPilot. For more information, see `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#id4>`_. Create your disk (volume) and attach the disk (volume) to your CoPilot instance. You can choose the disk type (volume type) that meets your business needs given the size of your environment and performance requirements. There is no minimum requirement for the storage you add at this stage.
+- You must attach at least one data disk (data volume) to your CoPilot instance to be used for expandable storage; this is a secondary data storage separate from the root disk that comes with CoPilot. For more information, see `CoPilot Disk (Volume) Management`_. Create your disk (volume) and attach the disk (volume) to your CoPilot instance. You can choose the disk type (volume type) that meets your business needs given the size of your environment and performance requirements. There is no minimum requirement for the storage you add at this stage.
 
 If deploying Pre-1.5.1 image releases:
 
@@ -485,6 +542,7 @@ If deploying Pre-1.5.1 image releases:
 - UDP port 31283 from specific gateway IPs (remove 0.0.0.0/0).
 
 - UDP port 5000 from specific gateway IPs (remove 0.0.0.0/0).
+
 
 |gcp_copilot_3|
 
@@ -525,18 +583,8 @@ To deploy CoPilot from the controller UI (AWS Only):
 
     -   From the onboarding page, click the Aviatrix CoPilot tile.
     -   From the action bar, click the app icon and select **Deploy CoPilot**.
-3.  In the Deploy CoPilot dialog, do one of the following to provision your CoPilot instance:
-
-    -   To deploy CoPilot with the AWS recommended instance configuration, click **Deploy**
-
-        The recommended is:
-       
-        VM Size: t2large
-        Data Volume(GB): 100
+3.  In the Deploy CoPilot dialog, to specify a custom instance configuration, tick the **Customize Configuration** check box, select the instance size you want. See `Minimum Instance (VM) System Requirements for CoPilot`_ for information about instance sizing. The default is a recommended minimum VM size only. You can accept the default disk volume size or specify the size you want. See `CoPilot Disk (Volume) Management`_. Click **Deploy**.  
         
-        The configuration of the instance/virtual machine that you provision for your CoPilot deployment depends on the scale and the kind of networking infrastructure you have planned according to your business requirements. Work with your performance team to determine your sizing requirements. You can add more storage later. See "CoPilot Disk (Volume) Management" in *Aviatrix CoPilot Deployment Guide*.
-
-    -   To specify a custom instance configuration, tick the **Customize Configuration** check box, select the instance size you want, and then click **Deploy**.
 
 4.  Wait until the deployment progress indicator reads **Complete** and then click **Close**.
 
@@ -625,8 +673,8 @@ Before you begin, obtain the following information and perform the tasks indicat
 -   Obtain the login credentials of your Aviatrix Controller user account; the account must have admin permissions.
 -   Obtain the login credentials of the user account to be used as the CoPilot service account. See `About CoPilot User Accounts`_.
 -   Obtain the CoPilot customer ID provided by your Aviatrix Sales representative. See `CoPilot Customer IDs and Licensing`_.
--   Obtain the number of *data instances* to deploy for your cluster. Work with your Aviatrix Sales representative to determine the minimum data instances you should deploy in the cluster for your specific environment. For more information, see `Minimum Instance System Requirements`_.
--   Obtain the VM size to be used for *data instances* in the cluster. Each data instance must use the same VM sizing. The size of the VM you provision for your data instances depends on the scale and the kind of networking infrastructure you have planned according to your business requirements. Work with your Aviatrix Sales representative to determine your VM sizing requirements. For more information, see `Minimum Instance System Requirements`_.
+-   Obtain the number of *data instances* to deploy for your cluster. Work with your Aviatrix Sales representative to determine the minimum data instances you should deploy in the cluster for your specific environment. For more information, see `Minimum Instance (VM) System Requirements for CoPilot`_.
+-   Obtain the VM size to be used for *data instances* in the cluster. Each data instance must use the same VM sizing. The size of the VM you provision for your data instances depends on the scale and the kind of networking infrastructure you have planned according to your business requirements. Work with your Aviatrix Sales representative to determine your VM sizing requirements. For more information, see `Minimum Instance (VM) System Requirements for CoPilot`_.
 -   Obtain the size to be used for the data volumes attached to *data instance*s for CoPilot storage. The deploy process will attach a data volume of the size specified to each data instance. Data volume sizes must be the same across all data instances.
 -   Note the following points when considering storage size for your cluster data instances:
 
@@ -665,7 +713,7 @@ To launch a CoPilot cluster (fault tolerant deployment) from the controller UI (
 
     d.  In **Subnet**, specify the subnet (availability zone) in which to deploy the *server instance*. In the next steps, you can specify to deploy each data instance in a different availability zone. It is recommended to deploy each cluster instance in a different availability zone so the cluster can tolerate an AZ failure.
 
-    e.  In **CoPilot Server VM Size**, specify the VM size you want to provision for your *server instance.* The default is a recommended minimum VM size for a *server instance*. See `Minimum Instance System Requirements`_ for information about instance sizing. You can accept the default or specify a custom instance configuration by ticking the **Customize Deployment** check box.
+    e.  In **CoPilot Server VM Size**, specify the VM size you want to provision for your *server instance.* The default is a recommended minimum VM size for a *server instance*. See `Minimum Instance (VM) System Requirements for CoPilot`_ for information about instance sizing. You can accept the default or specify a custom instance configuration by ticking the **Customize Deployment** check box.
 
     f.  Click **Next**.
 
@@ -683,7 +731,7 @@ To launch a CoPilot cluster (fault tolerant deployment) from the controller UI (
 
         *subnet_cidr3*~~**us-east-1c**~~...
 
-    c.  In**Size**, specify the VM size to be used for all *data instances* in the cluster. Each data instance must use the same VM sizing. The default is a recommended minimum VM size for a *data instance*. See `Minimum Instance System Requirements`_ for information about instance sizing. You can accept the default or specify a custom instance configuration.
+    c.  In**Size**, specify the VM size to be used for all *data instances* in the cluster. Each data instance must use the same VM sizing. The default is a recommended minimum VM size for a *data instance*. See `Minimum Instance (VM) System Requirements for CoPilot`_ for information about instance sizing. You can accept the default or specify a custom instance configuration.
 
     d.  In **Disk(GB)**, specify the size to be used for the data volumes attached to the *data instance*s for CoPilot storage. You can accept the default minimum storage size or choose a custom size. Data volume sizes must be the same across all data instances.
 
@@ -837,7 +885,7 @@ Below is a summary of steps for a CoPilot instance launch via Terraform:
 
 7.  Specify at least 1 data disk (volume) for Terraform to attach to your CoPilot instance for data storage. 
 
-    For information about CoPilot storage, see "CoPilot Disk (Volume) Management".
+    For information about CoPilot storage, see `CoPilot Disk (Volume) Management`_.
     
     The following is sample code for building a single CoPilot instance. The variable default_data_volume_name is required to create the data volume ::
       
