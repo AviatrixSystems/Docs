@@ -21,8 +21,8 @@ Once the infra is in-place then the policy will be created to inspect the east-w
 
 |avx_tr_firenet_topology|
 
-Step 1 : Create VPCs
-***************************
+Create VPCs
+*************
 
 VPCs can be created manually on AWS or directly from Aviatrix Controller.
 
@@ -35,24 +35,23 @@ Aviatrix controller has set of useful tools available for users and in this exam
 
 |create_vpc|
 
-Step 2: Deploy the Transit Aviatrix Gateway
-***************************************************
+Deploy the Transit Aviatrix Gateway
+************************************
 
 Transit Aviatrix Gateway can be deployed using the `Transit Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_
 
 Prerequisite for AWS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
-Transit FireNet builds on the Aviatrix Transit Network where Aviatrix gateways are deployed in both the transit VPC and the spoke VPCs in AWS.
+Transit FireNet builds on the Aviatrix Transit Network where Aviatrix gateways are deployed in both the transit VPC and the spoke VPCs in AWS. ActiveMesh is enabled by default
 
 Make sure the deployment meets the following specifications:
 
-1.	ActiveMesh must be enabled when launching the Aviatrix Transit Gateway.
-#.	The minimum size of the Aviatrix Transit Gateway is c5.xlarge.
+1.	The minimum size of the Aviatrix Transit Gateway is c5.xlarge.
 #.	Aviatrix Transit Network must be in Connected mode. Go to Transit Network -> Advanced Config -> Connected Transit. Click Enable.
 
 Procedure
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
 
 1.	Navigate to Multi-Cloud Transit -> Setup -> Transit -> #1 Launch an Aviatrix Transit Gateway.
 #.	Choose instance size **C5x.large**
@@ -66,8 +65,8 @@ Please see an example below for Transit FireNet GW:
 
 |tr_firenet_gw|
 
-Step 3: Deploy Spoke Gateways
-*************************************
+Deploy Spoke Gateways
+**********************
 
 Now that we have Aviatrix Transit Gateway, we can deploy Aviatrix Spoke Gateways in the spoke VPCs using `Aviatrix Spoke Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_.
 
@@ -81,8 +80,8 @@ Now that we have Aviatrix Transit Gateway, we can deploy Aviatrix Spoke Gateways
 
 |launch_spk_gw|
 
-Step 4: Attach Spoke Gateways to Transit Network
-*******************************************************
+Attach Spoke Gateways to Transit Network
+****************************************
 
 Now that the Transit and spoke gateways are deployed, the next step is to connect them.
 
@@ -94,8 +93,8 @@ Now that the Transit and spoke gateways are deployed, the next step is to connec
 .. note::
  Transit Gateway is attached to Spoke Gateways, but by default, Transit Gateway will not route traffic between Spoke Gateways.
 
-Step 5: Enable Connected Transit
-**************************************
+Enable Connected Transit
+************************
 
 By default, spoke VPCs are in isolated mode where the Transit will not route traffic between them. To allow the Spoke VPCs to communicate with each other, we need to enable Connected Transit
 
@@ -103,8 +102,8 @@ By default, spoke VPCs are in isolated mode where the Transit will not route tra
 
 |connected_transit|
 
-Step 6: Configure Transit Firewall Network
-**************************************************
+Configure Transit Firewall Network
+***********************************
 
 Transit and Spoke Gateways have now been deployed, next step is to deploy and enable the Firewall for traffic inspection.
 
@@ -124,8 +123,8 @@ Let’s start with enabling the firewall function and configure the FireNet poli
 |tr_firenet_policy|
 
 
-Step 7: Subscribe to Firewall Vendor in AWS Marketplace
-*************************************************************
+Subscribe to Firewall Vendor in AWS Marketplace
+***********************************************
 
 At this point, FireNet functionality on Transit Gateway is enabled and FireNet policy is created for spokes. It is time to subscribe to the firewall vendor and deploy the firewall.
 
@@ -136,8 +135,8 @@ In your AWS marketplace, subscribe to the supported firewall vendor using an acc
 
 |subscribe_firewall|
 
-Step 2a: Launch and Associate Firewall Instance
-*****************************************************************
+Launch and Associate Firewall Instance
+**************************************
 
 This approach is recommended if this is the first Firewall instance to be attached to the gateway.
 
@@ -148,8 +147,8 @@ This step launches a Firewall instance and associates it with one of the FireNet
 
     The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
 
-7a.1 Launch and Attach
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Launch and Attach
+~~~~~~~~~~~~~~~~~~~
 
 Go to Aviatrix Controller's console and navigate to Firewall Network -> Setup -> Step 2a. Provide all the required input as shown in the table and click **"Launch"**.
 
@@ -190,10 +189,6 @@ eth1 (on subnet -dmz-firewall)                                   LAN or Trusted 
 ========================================================         ===============================          ================================
 
 Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 interface.
-
-
-
-
 
 .. important::
 

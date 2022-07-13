@@ -24,8 +24,8 @@ Once the infrastructure is in place the policy to inspect the east-west and nort
 |avx_tr_firenet_topology|
 
 
-Step 1 : Create VPCs
-***************************
+Create VPCs
+**************
 
 VPCs can be created manually on GCP or directly from Aviatrix Controller.
 
@@ -39,13 +39,13 @@ See `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ for guide
 
 |create_vpc|
 
-Step 2: Deploy the Transit Aviatrix Gateway
-***************************************************
+Deploy the Transit Aviatrix Gateway
+************************************
 
 Transit Aviatrix Gateway can be deployed using the `Transit Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_
 
 Procedure
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
 
 1.	Navigate to Multi-Cloud Transit -> Setup -> Transit -> #1 Launch an Aviatrix Transit Gateway.
 #.  Select the Cloud Type **Gcloud**
@@ -61,8 +61,8 @@ Please see an example below for Transit FireNet GW:
 
 |tr_firenet_gw|
 
-Step 3: Deploy Spoke Gateways
-*************************************
+Deploy Spoke Gateways
+**********************
 
 Now that we have set up an Aviatrix Transit Gateway, we can deploy Aviatrix Spoke Gateways in the spoke VPCs using `Aviatrix Spoke Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_.
 
@@ -73,8 +73,8 @@ Now that we have set up an Aviatrix Transit Gateway, we can deploy Aviatrix Spok
 
 |launch_spk_gw|
 
-Step 4: Attach Spoke Gateways to Transit Network
-*******************************************************
+Attach Spoke Gateways to Transit Network
+*****************************************
 
 The transit and spoke gateways are now deployed. To connect them:
 
@@ -86,8 +86,8 @@ The transit and spoke gateways are now deployed. To connect them:
 .. note::
  Although the Transit Gateway is now attached to the Spoke Gateways, it will not route traffic between Spoke Gateways.
 
-Step 5: Enable Connected Transit
-**************************************
+Enable Connected Transit
+*************************
 
 By default, spoke VPCs are in isolated mode where the Transit will not route traffic between them. To allow the Spoke VPCs to communicate with each other, you must enable Connected Transit:
 
@@ -97,8 +97,8 @@ By default, spoke VPCs are in isolated mode where the Transit will not route tra
 
 Load balancers are created in GCP after this step is performed.
 
-Step 6: Configure Transit Firewall Network
-**************************************************
+Configure Transit Firewall Network
+************************************
 
 Transit and Spoke Gateways have now been deployed. You must now deploy and enable the Firewall for traffic inspection. 
 
@@ -121,8 +121,8 @@ To enable the firewall function and configure the FireNet policy:
 |tr_firenet_policy|
 
 
-Step 2a: Launch and Associate Firewall Instance
-*****************************************************************
+Launch and Associate Firewall Instance
+**************************************
 
 This approach is recommended if this is the first Firewall instance being attached to the gateway.
 
@@ -133,8 +133,8 @@ This step launches a Firewall instance and associates it with one of the FireNet
 
     The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ (Availability Zone), and, the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
 
-2a.1 Launch and Attach
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Launch and Attach
+~~~~~~~~~~~~~~~~~~
 
 From the Aviatrix Controller console, navigate to **Firewall Network -> Setup -> Firewall -> Step 2a** and provide all the required input as shown in a table. Click **"Launch"**.
 

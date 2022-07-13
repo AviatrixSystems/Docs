@@ -21,46 +21,47 @@ Once the infra is in-place then the policy will be created to inspect the east-w
 
 |avx_tr_firenet_topology_az|
 
-Step 1 : Create Transit VNet
-*******************************
+Create Transit VNet
+********************
 
 VNets can be created manually on Azure or directly from Aviatrix Controller.
 
 Aviatrix controller has set of useful tools available for users and in this example, VNets are created following the Useful Tools `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ guidelines.
 
-1.	Login to the Aviatrix Controller with username and password
-#.	Navigate to **Useful Tools -> Create A VPC**
-#.	Add one VNet for Transit FireNet Gateway and select **Aviatrix FireNet VPC** option as shown below.
+1.	Login to the Aviatrix Controller with username and password.
+#.	Navigate to **Useful Tools -> Create A VPC**.
+#. Select Azure as the Cloud Type.
+#.	Add one VNet for Transit FireNet Gateway and select **Aviatrix Transit FireNet VNet** option as shown below.
 #.  Create two more VNets with **no option/checkbox** selected for Spoke Gateways.
 
 |create_vpc|
 
-Step 2: Deploy the Transit Aviatrix Gateway
-***************************************************
+Deploy the Transit Aviatrix Gateway
+************************************
 
 Transit Aviatrix Gateway can be deployed using the `Transit Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_
 
 Prerequisite for Azure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Transit FireNet builds on the Aviatrix Transit Network solution where Aviatrix gateways are deployed in Transit VNet and/or in Spoke VNet in Azure.
+Transit FireNet builds on the Aviatrix Transit Network solution where Aviatrix gateways are deployed in Transit VNet and/or in Spoke VNet in Azure. ActiveMesh is applied by default.
 
 Make sure the deployment meets the following specifications:
 
-1.	ActiveMesh must be enabled when launching the Aviatrix Transit Gateway.
-2.	Select the option “Enable Transit FireNet” when launching the Aviatrix Transit Gateway.
-3.	Aviatrix Transit Network must be in Connected mode. Go to Transit Network -> Advanced Config -> Connected Transit. Click Enable.
+1.	Select the option “Enable Transit FireNet” when launching the Aviatrix Transit Gateway.
+#.	Aviatrix Transit Network must be in Connected mode. Go to Multi-Cloud Transit -> Advanced Config -> Connected Transit and ensure the option is enabled.
 
 .. important::
-    Controller version 6.0 and prior, the minimum size of the Aviatrix Transit Gateway virtual machine is Standard_B2ms. Starting 6.1, minimum Transit Gateway instance size requirement is removed.
+    In Aviatrix Controller version 6.0 and prior, the minimum size of the Aviatrix Transit Gateway virtual machine is Standard_B2ms. Starting 6.1, minimum Transit Gateway instance size requirement is removed.
 
 Procedure
 ~~~~~~~~~~~~~~~~~~~~~
 
 1.	Navigate to Multi-Cloud Transit -> Setup -> Transit -> #1 Launch an Aviatrix Transit Gateway.
+#. Ensure that Azure is the selected Cloud Type.
 #.	Choose virtual machine size **Standard_B2ms**
-#.	Enable **ActiveMesh Mode (Mandatory)**
-#.	Enable InsaneMode for higher throughputs (optional)
+#.	Enable Insane Mode Encryption for higher throughputs (optional).
+#. Click Create.
 #.	Enable Transit Gateway HA by navigating to **MULTI-CLOUD TRANSIT -> Setup -> #2 (Optional) Enable HA to an Aviatrix Transit Gateway**
 
 Please see an example below for Transit FireNet GW:
@@ -71,20 +72,20 @@ Please see an example below for Transit FireNet GW:
 
   Insane Mode Encryption for higher throughput requires a virtual machine size. Check this `link <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#azure-performance-test-results>`_ for detail. 
 
-Step 3: Deploy Spoke Gateways
-*************************************
+Deploy Spoke Gateways
+***********************
 
 Now that we have Aviatrix Transit Gateway, we can deploy Aviatrix Spoke Gateways in the spoke VNET using `Aviatrix Spoke Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_.
 
 1.	Navigate to Multi-Cloud Transit -> Setup -> Spoke ->  #1 Launch an Aviatrix Spoke Gateway.
 #.	Deploy a Spoke Gateway (GW) in each of the spoke VNETs using defaults while choose correct Account and VNET info
-#.	Choose the Public Subnet
-#.	Enable Spoke Gateway HA by navigating to Transit network -> Setup -> #5 (Optional) Enable/Disable HA at Spoke GW
+#.	Choose the Public Subnet.
+#.	Enable Spoke Gateway HA by navigating to Transit network -> Setup -> #5 (Optional) Enable/Disable HA at Spoke GW.
 
 |launch_spk_gw|
 
-Step 4: Attach Spoke Gateways to Transit Network
-*******************************************************
+Attach Spoke Gateways to Transit Network
+*****************************************
 
 Transit and spoke gateways are deployed, next step is to connect them.
 
@@ -96,8 +97,8 @@ Transit and spoke gateways are deployed, next step is to connect them.
 .. note::
  Transit Gateway is attached to Spoke Gateways, but by default, Transit Gateway will not route traffic between Spoke Gateways.
 
-Step 5: Enable Connected Transit
-**************************************
+Enable Connected Transit
+************************
 
 By default, spoke VNETs are in isolated mode where the Transit will not route traffic between them. To allow the Spoke VNETs to communicate with each other, we need to enable Connected Transit
 
@@ -105,8 +106,8 @@ By default, spoke VNETs are in isolated mode where the Transit will not route tr
 
 |connected_transit|
 
-Step 6: Configure Transit Firewall Network
-**************************************************
+Configure Transit Firewall Network
+***********************************
 
 Transit and Spoke Gateways have now been deployed, next step is to deploy and enable the Firewall for traffic inspection.
 
@@ -126,8 +127,8 @@ Let’s start with enabling the firewall function and configure the FireNet poli
 |tr_firenet_policy|
 
 
-Step 2a: Launch and Associate Firewall Instance
-*****************************************************************
+Launch and Associate Firewall Instance
+***************************************
 
 This approach is recommended if this is the first Firewall instance to be attached to the gateway.
 
