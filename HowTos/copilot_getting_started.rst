@@ -597,6 +597,169 @@ To deploy CoPilot from the controller UI (AWS Only):
         Note that if you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List here. In addition, in your native cloud console, you must open your CoPilot security group for UDP 5000 from each newly launched gateway.
 
 
+CoPilot cluster launch using Controller UI (AWS Only)
+======================================================
+
+Launch a cluster of CoPilot instances for a fault tolerant deployment from the controller UI (AWS Only). This feature is available starting from Aviatrix Controller release 6.8. 
+
+If you want to launch a single CoPilot instance for a simple deployment from the controller UI, follow the instructions in "CoPilot instance launch using Controller UI (AWS Only)".
+
+If you want to launch a cluster of CoPilot instances for a fault tolerant deployment by using Terraform scripts (AWS Only), see the Aviatrix Terraform modules for CoPilot on GitHub at https://github.com/AviatrixSystems/terraform-modules-copilot. 
+
+Launching a fault tolerant deployment from a cloud provider marketplace is not supported. 
+
+**About a CoPilot Fault Tolerant (Clustered) Deployment** 
+
+In a CoPilot fault tolerant (clustered) deployment, 1 cluster instance serves as the user interface and controller of the other instances — the cluster *server instance* — and the other cluster instances are used for storing, searching, indexing, and serving cached data —the cluster *data instances*. In a CoPilot cluster, the data is striped across the data instances so there is no single point of failure should any data instance become unavailable. 
+
+By default, the controller UI deploy process will launch the cluster *server instance* in the same region as the controller. You can deploy the *server instance* in a different region than the controller if needed. All cluster instances, both server instance and data instances, must be deployed in the same region and it is recommended to deploy each instance in a different availability zone. You must deploy a minimum of 3 data instances. You can deploy up to 9 data instances (for a maximum of 10 nodes in a cluster).
+
+**Prerequisite tasks:** 
+
+Before you begin, obtain the following information and perform the tasks indicated.
+
+-   Verify your controller is version 6.8 or later.
+-   Subscribe to a CoPilot offer at the Amazon Web Services (AWS) Marketplace and accept the terms and conditions (this is described in the first step of the procedure if you haven't done this yet).
+-   Verify that your AWS account has been created in your controller. You create your AWS account by navigating to Controller > Account > Access Accounts > +Add New).
+-   Verify that your controller instance has the IAM role `aviatrix-role-ec2` attached to it. The CoPilot deployment will fail if this role is not attached to your controller.
+-   Obtain the login credentials of your Aviatrix Controller user account; the account must have admin permissions.
+-   Obtain the login credentials of the user account to be used as the CoPilot service account. See `About CoPilot User Accounts`_.
+-   Obtain the CoPilot customer ID provided by your Aviatrix Sales representative. See `CoPilot Customer IDs and Licensing`_.
+-   Obtain the number of *data instances* to deploy for your cluster. Work with your Aviatrix Sales representative to determine the minimum data instances you should deploy in the cluster for your specific environment. For more information, see `Minimum Instance System Requirements`_.
+-   Obtain the VM size to be used for *data instances* in the cluster. Each data instance must use the same VM sizing. The size of the VM you provision for your data instances depends on the scale and the kind of networking infrastructure you have planned according to your business requirements. Work with your Aviatrix Sales representative to determine your VM sizing requirements. For more information, see `Minimum Instance System Requirements`_.
+-   Obtain the size to be used for the data volumes attached to *data instance*s for CoPilot storage. The deploy process will attach a data volume of the size specified to each data instance. Data volume sizes must be the same across all data instances.
+-   Note the following points when considering storage size for your cluster data instances:
+
+    -   After you deploy the cluster, you will not be able to expand or increase the size of the data volumes attached to the data instances. Expandable storage is still possible for simple deployments (as in prior releases) but not for clustered deployments at this time.
+    -   If you already have a CoPilot simple deployment (single instance) and you are planning on migrating your data from the simple deployment to the new clustered deployment, the size of the disk volume you specify for each data instance should be the same size or larger than the *storage used* in your *old copilot*. See `CoPilot Disk (Volume) Management`_ in *Aviatrix CoPilot Deployment Guide* for more information.
+
+**Launch instructions:**
+
+To launch a CoPilot cluster (fault tolerant deployment) from the controller UI (AWS Only):
+
+1.  **If you haven't already done so**, subscribe to a CoPilot offer:
+
+    a.  Log in to your account at the Amazon Web Services (AWS) Marketplace.
+
+        If your company has multiple AWS accounts, be sure to log in to the same AWS account that you registered (onboarded) in your controller.
+
+    b.  Locate the Aviatrix CoPilot software offer you want to subscribe to and click **Subscribe**.
+    c.  When prompted, review the subscription pricing information and accept the terms and conditions.
+
+        You only need to subscribe, review the subscription pricing information, and accept the terms and conditions in the marketplace before proceeding to the next step. You would not move on to the configuration steps in the marketplace.
+
+2.  In Aviatrix Controller, do one of the following to begin the deployment process:
+
+    -   From the onboarding page, click the Aviatrix CoPilot tile.
+    -   From the action bar, click the app icon and select **Deploy CoPilot**.
+
+3.  Select **Fault Tolerant Deployment**.
+
+4.  For **CoPilot Server**, do the following:
+
+    a.  In **Access Account**, specify your AWS account.
+
+    b.  (Optional) If desired, in **Region**, change the region in which to deploy the cluster. By default, the deploy process will deploy the cluster server instance and all data instances in the same region as your controller. Deploying them in the same region as the controller is recommended to reduce latency. If you want to deploy them in a different region than where the controller is deployed, click **Customize Deployment** and select the region from the Region list.
+
+    c.  (Optional) If desired, in **VPC**, change the VPC in which to deploy the cluster. By default, the deploy process will deploy the cluster server instance and all data instances in the same VPC as your controller. If you want to deploy them in a different VPC than where the controller is deployed, click **Customize Deployment** and select the VPC from the VPC list.
+
+    d.  In **Subnet**, specify the subnet (availability zone) in which to deploy the *server instance*. In the next steps, you can specify to deploy each data instance in a different availability zone. It is recommended to deploy each cluster instance in a different availability zone so the cluster can tolerate an AZ failure.
+
+    e.  In **CoPilot Server VM Size**, specify the VM size you want to provision for your *server instance.* The default is a recommended minimum VM size for a *server instance*. See `Minimum Instance System Requirements`_ for information about instance sizing. You can accept the default or specify a custom instance configuration by ticking the **Customize Deployment** check box.
+
+    f.  Click **Next**.
+
+5.  For **CoPilot Data**, do the following:
+
+    a.  Click **+ Add Instance** for each data instance you will have in the cluster.
+
+        You must deploy at least 3 data instances. You can deploy a maximum of 9 data instances.
+
+    b.  In **Subnet**, for each *data instance*, specify the subnet (availability zone) in which to deploy the instance. It is recommended to deploy each data instance in a **different availability zone** so the cluster can tolerate an AZ failure. For example, if you deployed three data instances in AZs 1a, 1b, and 1c:
+
+        *subnet_cidr1*~~**us-east-1a**~~...
+
+        *subnet_cidr2*~~**us-east-1b**~~...
+
+        *subnet_cidr3*~~**us-east-1c**~~...
+
+    c.  In**Size**, specify the VM size to be used for all *data instances* in the cluster. Each data instance must use the same VM sizing. The default is a recommended minimum VM size for a *data instance*. See `Minimum Instance System Requirements`_ for information about instance sizing. You can accept the default or specify a custom instance configuration.
+
+    d.  In **Disk(GB)**, specify the size to be used for the data volumes attached to the *data instance*s for CoPilot storage. You can accept the default minimum storage size or choose a custom size. Data volume sizes must be the same across all data instances.
+
+    e.  Click **Next**.
+
+6.  Verify the Controller username and password by entering the same credentials you used to log in to the Controller and clicking **Verify**. If you do not receive an error, click **Deploy**.
+
+    During the deployment process, the background task dialog and Deploy CoPilot status dialog show the details of your CoPilot instances including the instance sizes, VPC names, regions, and associated AWS account number. You can copy the information from the task or status dialog to take note of it.
+
+7.  Wait until the deployment progress indicator reads **Successfully deployed cluster instances** and then click **Close**.
+
+8.  **Wait for approximately 15 minutes.** It takes about fifteen minutes for the CoPilot application to initialize and upgrade.
+
+9.  From the controller action bar, click the app icon and select **CoPilot**.
+
+10. When prompted, enter the login and password of your Aviatrix Controller user account.
+
+11. When prompted for a **CoPilot Service Account**, enter the login credentials of the user account you created previously on the controller to be the service account.
+
+12. When prompted, enter your **CoPilot customer ID**.
+
+    This is the customer ID key obtained from your Aviatrix Sales representative. Note that the CoPilot customer ID is separate from the Aviatrix Controller customer ID.
+
+    CoPilot opens to the Dashboard page.
+
+    You are now successfully logged into CoPilot.
+
+    The steps that follow are ways you can verify the clustered deployment is intact and that integration points with other components in the Aviatrix platform are configured as expected.
+
+13. (**Verify connectivity with your controller**) You are now successfully logged into CoPilot. To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see your resource inventory across all clouds in your multi-cloud network that is managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VNets are represented on the geographic map.
+
+14. (**Verify the cluster is intact via CoPilot**) In the CoPilot application, go to Settings > Cluster > Cluster Status to check the status of the cluster instances.You can also review the cluster details in Settings > Cluster > Cluster Settings.
+
+15. (**Verify the cluster is intact via the AWS environment**) In your EC2 console, check the following:
+
+    -   Verify the *server instance* is created and running after deployment (“Main-Node” is in the server instance name.)
+    -   Verify all *data instances* are created and running after deployment (“Data-Node” is in each data instance name.)
+    -   Verify the CoPilot IP address was added on port 443 to the user Security Groups of the controller (to the groups that do not have an "Aviatrix-SG" prefix).
+    -   Verify the user Security Groups exist for the server instance and the data instances.
+
+16. (**Verify security group configurations**) When you deploy CoPilot from the controller UI, the process will automatically do the following:
+
+    -   Add the CoPilot IP address to the user Security Groups of the controller (those without an "Aviatrix-SG" prefix) so that CoPilot can communicate with the controller API on port 443. In addition, each time a new gateway is deployed, the gateway IP address will be added to the security groups to the inbound rules of your newly launched CoPilot Server (similar to how gateway IPs are automatically added to the controller inbound rules).
+    -   Enable the CoPilot security group management feature (in Controller > Settings > CoPilot > CoPilot Security Group Management). With this feature enabled, the Controller sends NetFlow and Syslog data to CoPilot (verified by steps 17 and 18) and the CoPilot Server virtual machine ports 31283 and 5000 will be open to each IP of your existing gateways (and **not** open to any IP (0.0.0.0/0).
+
+17. (**Verify NetFlow is enabled in Controller**) To enable NetFlow for the CoPilot FlowIQ Data feature, ensure that the controller is configured to forward NetFlow logs to CoPilot.
+
+    **Note:** In Controller 6.8, the CoPilot Security Group Management feature (in Controller > Settings > CoPilot > CoPilot Security Group Management) is automatically enabled so this configuration is expected to be completed. This is only a verification step.
+
+    a.  Log in to Aviatrix Controller.
+
+    b.  Go to Settings -> Logging -> NetFlow Agent.
+
+    c.  Use the static IP address of CoPilot as the Netflow server IP and UDP port 31283 (default, port is configurable).
+
+    d.  Use version 9.
+
+    e.  Tick the Advanced check box. In Gateways, verify all of your Aviatrix gateways are in the Include List.
+
+18. (**Verify Syslog is enabled in Controller**) To enable Syslog for the CoPilot Egress FQDN and Audit Data features, ensure the controller is configured to specify CoPilot as the loghost server.
+
+    **Note:** In Controller 6.8, the CoPilot Security Group Management feature (in Controller > Settings > CoPilot > CoPilot Security Group Management) is automatically enabled so this configuration is expected to be completed. This is only a verification step.
+
+    a.  Log in to Aviatrix Controller.
+
+    b.  Go to Settings -> Logging -> Remote Syslog.
+
+    c.  Choose Profile Index 9.
+
+    d.  In Enable Remote Syslog, enter the profile name you want to use, the static IP address of CoPilot as the server, and UDP port 5000 (default). **If you are using the private mode feature**, use **TCP** port 5000 (default).
+
+    e.  Tick the Advanced check box. In Gateways, verify all of your Aviatrix gateways are in the Include List.
+
+19. (**To terminate CoPilot cluster**) After you deploy a CoPilot cluster from your controller UI, if you decide to terminate the cluster, you must do so via the AWS environment.
+
+
 (Terraform) CoPilot instance launch using Terraform
 ==================================================== 
 
