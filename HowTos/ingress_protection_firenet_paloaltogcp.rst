@@ -6,15 +6,15 @@
 Ingress Protection via Aviatrix Transit FireNet with Palo Alto in GCP
 =====================================================================
 
-This document describes how to configure ingress in GCP with traffic inspection, deployed directly in FireNet. In this configuration you use the native GCP load balancer in FireNet.
+This document describes how to configure ingress in GCP with traffic inspection, deployed directly in FireNet. In this configuration you use the native GCP load balancers in FireNet. These load balancers are created after you enable Transit FireNet as part of the `Transit FireNet Workflow for GCP <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_gcp.html>`_.
 
-The solution described below shows how to implement NLB based ingress with Palo Alto firewalls in GCP.
+The solution described below shows how to implement network load balancer (NLB)-based ingress with Palo Alto firewalls in GCP.
 
 |gcp_ingress|
 
 .. note::
 
-  In this NLB based deployment in Google Cloud the original source address is preserved. The firewall then has to NAT the traffic source to its LAN interface IP, so that’s where the original source IP is rewritten (SNAT).
+  In this NLB based deployment in GCP the original source address is preserved. The firewall then has to NAT the traffic source to its LAN interface IP; that’s where the original source IP is rewritten (SNAT).
 
 This document describes a step-by-step guide for application ingress protection via Aviatrix Transit FireNet using Palo Alto firewalls for Aviatrix Controller version R6.6 and later. 
 
@@ -28,9 +28,9 @@ For more information about Transit FireNet, please see the following documents:
 Design Considerations
 =====================
 
-This document describes NLB based ingress in GCP. However, there are options available for other traffic types. For HTTP/HTTPS load balancing, HTTP(S) load balancer with Network Endpoint groups could be another option although that doesn’t preserve the source IP address until the firewall is reached. For a limited list of supported ports you can also use a TCP proxy-based load balancer with Network Endpoint Groups.
+This document describes NLB-based ingress in GCP. However, there are options available for other traffic types. For HTTP/HTTPS load balancing, HTTP(S) load balancer with Network Endpoint groups could be another option although that doesn’t preserve the source IP address until the firewall is reached. For a limited list of supported ports you can also use a TCP proxy-based load balancer with Network Endpoint Groups.
 
-Today in GCP you cannot put a HTTP(S) or other form of load balancer into a spoke VPC, as load balancers are not tied to a subnet and would deliver traffic directly to backend services instead of Spoke Gateways. A third party appliance such as F5 could be used to do this in a spoke network if needed.
+Today in GCP you cannot place a HTTP(S) or other form of load balancer into a spoke VPC, as load balancers are not tied to a subnet and would deliver traffic directly to backend services instead of Spoke Gateways. A third party appliance such as F5 could be used to do this in a spoke network if needed.
 
 Deployment Steps
 ====================
@@ -67,7 +67,7 @@ The following screenshots show how to enable egress:
 Step 3. Verify health probe status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the GCP console open the Load balancing menu and check the health of the load balancers used by the Transit FireNet. These load balancers are created during the Transit FireNet setup for GCP. There will be one UDP and one TCP load balancer. Backends should show as healthy.
+In the GCP console open the Load balancing menu and check the health of the load balancers used by the Transit FireNet. These load balancers were created during the Transit FireNet setup for GCP. There will be one UDP and one TCP load balancer. Backends should show as healthy.
 
 |gcp_be_lb_health|
 
@@ -78,6 +78,7 @@ Step 4.1. Update management profile
 -------------------------------------
 
 Edit the management profile to restrict access to firewall management access over WAN and LAN interfaces to only health probes. 
+
 Enable HTTP access since the legacy health probes in GCP only support HTTP and not HTTPS. 
 
 The IP address ranges to add are:
@@ -100,23 +101,23 @@ a. Click Create Load Balancer on the Load balancing page.
 
 |gcp_create_lb_1|
 
-Select TCP Load Balancing > Start Configuration.
+b. Select TCP Load Balancing > Start Configuration.
 
 |gcp_create_lb_2|
 
-b. Select the load balancer options as shown below: From internet to my VMs, Single region only, and Target Pool or Target Instance.
+c. Select the load balancer options as shown below: From internet to my VMs, Single region only, and Target Pool or Target Instance.
 
 |gcp_create_lb_3|
 
-c. Enter a Name, select a Region (must match Transit FireNet’s region), click Select Existing Instances and select the firewall instances.
+d. Enter a Name, select a Region (must match Transit FireNet’s region), click Select Existing Instances and select the firewall instances.
 
 |gcp_create_lb_4|
 
-d. In the Health Check area, create a health probe for the Load Balancer. Use port 80 and enter this path: /php/login.php. This path must be set for the health probe to succeed. Click Save.
+e. In the Health Check area, create a health probe for the Load Balancer. Use port 80 and enter this path: /php/login.php. This path must be set for the health probe to succeed. Click Save.
 
 |gcp_create_lb_5|
 
-e. Click Frontend configuration on the Load Balancer Page and set up a frontend for the ingress public IP. 
+f. Click Frontend configuration on the Load Balancer Page and set up a frontend for the ingress public IP. 
 
    - Set up one frontend per application (or per public IP needed). 
    - Specify the port needed for the application. Note that you cannot modify this port later, so if you are unsure, set up 1-65535 as this allows all ports to be forwarded to the firewall for this IP address. 
@@ -133,7 +134,9 @@ Step 6.1. Create NAT rules
 
 Now that the load balancer is created, you must create a NAT rule for the firewall to answer those probes destined for the frontend IP address of the load balancer.
 
-In the firewall UI, create a DNAT rule for each frontend IP, to ensure that the health check will work. Then create a DNAT/SNAT rule for each application to DNAT/SNAT traffic to the actual application IP in the Spoke. The following screenshot shows an example for these rules.
+In the firewall UI, create a DNAT rule for each frontend IP, to ensure that the health check will work. 
+
+Next, create a DNAT/SNAT rule for each application to DNAT/SNAT traffic to the actual application IP in the Spoke. The following screenshot shows an example for these rules.
 
 This example uses the following parameters:
 
@@ -143,7 +146,6 @@ This example uses the following parameters:
   - Application IP in spoke: 10.0.2.18
   
   You need to SNAT traffic to the firewall’s LAN port to make sure returning traffic hits the same firewall. 
-  
 
   Make sure you always add the health probe NAT rule above the ingress app rule, as that is more specific in case the application and the health probe use the same port.
 

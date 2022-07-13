@@ -95,10 +95,12 @@ By default, spoke VPCs are in isolated mode where the Transit will not route tra
 
 |connected_transit|
 
+Load balancers are created in GCP after this step is performed.
+
 Step 6: Configure Transit Firewall Network
 **************************************************
 
-Transit and Spoke Gateways have now been deployed. You must now deploy and enable the Firewall for traffic inspection.
+Transit and Spoke Gateways have now been deployed. You must now deploy and enable the Firewall for traffic inspection. 
 
 To enable the firewall function and configure the FireNet policy:
 
