@@ -55,11 +55,11 @@ After registering your Aviatrix Controller as an app, assign this app a role to 
 
 |image12|
 
-3. Click the **Subscription ID** to open the subscription.
+3. Click the **Subscription Name** to open the subscription.
 4. On the Subscriptions page, select **Access control (IAM)** on the left.
-5. On the Access control (IAM) page, click **+ Add**.
+5. On the Access control (IAM) page, click **+ Add** > **Add role assignment**.
 6. Under Add role assignment, select the **Contributor** role for this app. If the Contributor role is too broad, you can later replace it with a custom role with specific permissions. Refer to `Use Azure IAM Custom Role <https://docs.aviatrix.com/HowTos/azure_custom_role.html>`_ for instructions. 
-7. On the right, under Select members, in the Select search field, enter "aviatrix" into the field provided to search for the Aviatrix Controller app that you registered in the `Registering Your Aviatrix Controller Application <https://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html#registering-your-aviatrix-controller-application>`_ section. Your app should appear in the list below. Select your Aviatrix Controller app and click **Select** towards to the bottom.
+7. Click **+ Select members**. On the right, under Select members, in the Select search field, enter "aviatrix" into the field provided to search for the Aviatrix Controller app that you registered in the `Registering Your Aviatrix Controller Application <https://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html#registering-your-aviatrix-controller-application>`_ section. Your app should appear in the list below. Select your Aviatrix Controller app and click **Select** towards to the bottom.
 
 |image13|
 
@@ -81,11 +81,12 @@ Creating a Secret Identifier
 
 After registering your Aviatrix Controller as an app and assigning it the Contributor role, create a Secret identifier. Azure Active Directory uses this Secret identifier to authenticate the Aviatrix Controller application.
 
-1. Navigate back to All services > Azure Active Directory > App registrations and seleect **Certificates & secrets** on the left. Then, click **+New client secret**.
+1. Navigate back to All services > Azure Active Directory > App registrations and select the application you registered early.
+2. Select **Certificates & secrets** on the left. Then, click **+New client secret**.
 2. On the right, under Add a client secret, enter:
 
 * **Description**  - Aviatrix
-* **Expires**  - Never
+* **Expires**  - Select a time period that complies with your organization's security standards
 
 3. Click **Add** towards the bottom. 
 
@@ -109,7 +110,7 @@ Access Account Setup Input Field                         Value
 ==========================================               ======================
 Subscription ID                                          From the `"Assigning a Role to the Aviatrix Application" <https://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html#assigning-a-role-to-the-aviatrix-application>`_ section
 Directory ID                                             From the `"Registering Your Aviatrix Controller Application" <https://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html#registering-your-aviatrix-controller-application>`_ section
-Application ID                                           From From the `"Registering Your Aviatrix Controller Application" <https://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html#registering-your-aviatrix-controller-application>`_ section
+Application ID                                           From the `"Registering Your Aviatrix Controller Application" <https://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html#registering-your-aviatrix-controller-application>`_ section
 Client Secret Value                                      From the `"Creating a Secret Identifier" <https://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html#creating-a-secret-identifier>`_ section
 ==========================================               ======================
 
