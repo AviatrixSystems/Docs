@@ -142,7 +142,7 @@ Launching a Controller in Azure China
 The Aviatrix Controller and CoPilot are available on the Azure China Marketplace. Use the following steps to launch a Controller in Azure China.
 
 1. Log in to the Azure China Portal.
-2. Navigate to the Azure marketplace for the Ningxia and Beijing Region.
+2. Navigate to the Azure marketplace for the China North region.
 3. Search for the keyword "Aviatrix."
 
   |aviatrix_azure_china_marketplace|
