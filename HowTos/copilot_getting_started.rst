@@ -51,7 +51,7 @@ Instance (VM) Configuration Details for CoPilot
   - UDP port 31283 (default, port is configurable) — Enable Netflow for CoPilot FlowIQ Data (from each gateway). Gateways send Netflow to CoPilot. 
 
 .. tip::
-  After launching your CoPilot instance, you can enable the "CoPilot Security Group Management" option in Controller to automate the configuration of integration points between CoPilot and Aviatrix Gateways such as those for syslog and Netflow listed above. Tip: If you need to manually add IPs for gateways, in Controller, you can view the IP addresses of all your gateways from the Gateways page. 
+  After launching your CoPilot instance, you can enable the "CoPilot Security Group Management" option in Controller (starting from Controller 6.8) to automate the configuration of integration points between CoPilot and Aviatrix Gateways such as those for syslog and Netflow listed above. Tip: If you need to manually add IPs for gateways, in Controller, you can view the IP addresses of all your gateways from the Gateways page. 
 
 
 Minimum Instance (VM) System Requirements for CoPilot
@@ -670,7 +670,7 @@ Before you begin, obtain the following information and perform the tasks indicat
 -   Subscribe to a CoPilot offer at the Amazon Web Services (AWS) Marketplace and accept the terms and conditions (this is described in the first step of the procedure if you haven't done this yet).
 -   Verify that your AWS account has been created in your controller. You create your AWS account by navigating to Controller > Account > Access Accounts > +Add New).
 -   Verify that your controller instance has the IAM role `aviatrix-role-ec2` attached to it. The CoPilot deployment will fail if this role is not attached to your controller.
--   Obtain the login credentials of your Aviatrix Controller user account; the account must have admin permissions.
+-   Obtain the login credentials of your Aviatrix Controller user account. Use a controller user account that has full admin permissions. To confirm that the user account has full admin permissions, log in to your Controller, go to Accounts > Account Users, and verify the "Permissions Groups" column is set to **admin** for the account in question.
 -   Obtain the login credentials of the user account to be used as the CoPilot service account. See `About CoPilot User Accounts`_.
 -   Obtain the CoPilot customer ID provided by your Aviatrix Sales representative. See `CoPilot Customer IDs and Licensing`_.
 -   Obtain the number of *data instances* to deploy for your cluster. Work with your Aviatrix Sales representative to determine the minimum data instances you should deploy in the cluster for your specific environment. For more information, see `Minimum Instance (VM) System Requirements for CoPilot`_.
@@ -767,8 +767,8 @@ To launch a CoPilot cluster (fault tolerant deployment) from the controller UI (
 
 15. (**Verify the cluster is intact via the AWS environment**) In your EC2 console, check the following:
 
-    -   Verify the *server instance* is created and running after deployment (“Main-Node” is in the server instance name.)
-    -   Verify all *data instances* are created and running after deployment (“Data-Node” is in each data instance name.)
+    -   Verify the *server instance* is created and running after deployment (“Aviatrix-CoPilot-Cluster-Main-Node” is the server instance name.)
+    -   Verify all *data instances* are created and running after deployment (“Aviatrix-CoPilot-Cluster-Data-Node_node_number” is the data instance name format.)
     -   Verify the CoPilot IP address was added on port 443 to the user Security Groups of the controller (to the groups that do not have an "Aviatrix-SG" prefix).
     -   Verify the user Security Groups exist for the server instance and the data instances.
 
@@ -811,15 +811,17 @@ To launch a CoPilot cluster (fault tolerant deployment) from the controller UI (
 (Terraform) CoPilot instance launch using Terraform
 ==================================================== 
 
-This section provides a summary of steps for launching an Aviatrix CoPilot instance using Terraform. The Aviatrix Terraform Module for CoPilot is avaiable on GitHub here: https://github.com/AviatrixSystems/terraform-modules-copilot.
+If you are knowledgeable in deploying infrastructure-as-code using Terraform, you may prefer or find it more convenient in some circumstances to launch the Aviatrix CoPilot VM/instance using a Terraform script rather than via the CSP marketplace. 
 
-You can deploy Aviatrix CoPilot from the marketplace of any cloud service provider (CSP) that Aviatrix supports. The provisioning of the instance and instance launch via the CSP marketplace only takes a few steps as described in the topic "Subscribing to a CoPilot Offer". 
+This section provides a summary of steps for launching a CoPilot single instance (simple deployment) using Terraform. For detailed instructions, please refer to the documentation for the Aviatrix Terraform Module for CoPilot on GitHub here: https://github.com/AviatrixSystems/terraform-modules-copilot. This section is only a summary of steps.
 
-If you are knowledgeable in deploying infrastructure-as-code using Terraform, you may prefer or find it more convenient in some circumstances to launch the CoPilot VM/instance using a Terraform script rather than via the CSP marketplace. The instance launched using Terraform is the latest release version of CoPilot based on Aviatrix CoPilot image version 1.5.1.
+If you want to launch a CoPilot cluster (clustered, fault tolerant deployment) using Terraform, this is supported only for AWS at this time. 
 
-Below is a summary of steps for a CoPilot instance launch via Terraform:
+A CoPilot application launched using Terraform is typically based on the latest available image release version of CoPilot.
 
-1.  If you haven't already done so, subscribe to a CoPilot offer in the CSP marketplace. See "Subscribe to a CoPilot Offer".
+**Summary of steps for a CoPilot instance launch via Terraform:**
+
+1.  If you haven't already done so, subscribe to a CoPilot offer in the CSP marketplace. See `Subscribe to a CoPilot Offer`_.
 
     You only need to subscribe, review the subscription pricing information, and accept the terms and conditions in the marketplace before proceeding to the next step. You would not move on to the configuration steps in the marketplace.
 
@@ -935,7 +937,7 @@ Below is a summary of steps for a CoPilot instance launch via Terraform:
 
 12. (Verify connectivity with your controller) You are now successfully logged into CoPilot. To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see your resource inventory across all clouds in your multi-cloud network that is managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VNets are represented on the geographic map.
 
-13. After deployment, the CoPilot virtual machine ports 31283 and 5000 will be open for any IP (0.0.0.0/0). It is strongly recommended to remove the 0.0.0.0 entry from the CoPilot security group for these ports and add entries for all of your gateway IP addresses as described in the next steps.
+13. After deployment, the CoPilot virtual machine ports must be open to the IPs of the gateways so that CoPilot can receive NetFlow and Syslog data from the gateways. See `Instance (VM) Configuration Details for CoPilot`_ for information about what entries must be in place in CoPilot security groups. Starting from Controller 6.8, you can use the CoPilot Security Group Management feature to enable the controller to set the required entries for existing and future gateways.
 
 14. (For FlowIQ feature) To use the FlowIQ feature in CoPilot, ensure that the controller is configured to forward NetFlow logs to CoPilot.
 
@@ -951,8 +953,6 @@ Below is a summary of steps for a CoPilot instance launch via Terraform:
 
     6.  Click Enable.
 
-        Note that if you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List here. In addition, in your native cloud console, you must open your CoPilot security group for UDP 31283 from each newly launched gateway.
-
 15. (For Security audit page feature) Remote syslog index 9 is used for the CoPilot > Security audit page. Ensure the controller is configured to specify CoPilot as the loghost server.
 
     1.  Log in to Aviatrix Controller.
@@ -967,7 +967,14 @@ Below is a summary of steps for a CoPilot instance launch via Terraform:
 
     6.  Click Enable.
 
-        Note that if you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List here. In addition, in your native cloud console, you must open your CoPilot security group for UDP 5000 from each newly launched gateway.
+
+(Terraform) CoPilot cluster launch using Terraform
+==================================================== 
+
+If you want to launch a CoPilot cluster (clustered, fault tolerant deployment) using Terraform, this is supported only for AWS at this time. 
+
+For detailed instructions, please refer to the documentation for the Aviatrix Terraform Module for CoPilot on GitHub here: https://github.com/AviatrixSystems/terraform-modules-copilot.
+
 
 About Migrating CoPilot Data
 =========================================================== 
@@ -988,10 +995,17 @@ Migrate data from one CoPilot instance to another
 
 This section provides instructions for migrating CoPilot data from one CoPilot instance to another CoPilot instance. See also `About Migrating CoPilot Data`_.
 
+These instructions apply for migrating CoPilot data:
+
+-   From a single CoPilot instance (simple deployment) to another single CoPilot instance (simple deployment).
+-   From a single CoPilot instance (simple deployment) to a CoPilot clustered deployment (to the main CoPilot Server instance).
+
+Migrating data from one clustered deployment to another clustered deployment is not supported at this time. 
+
 The following terms are used in these instructions:
 
 -   *old copilot* — Refers to your current (source) CoPilot instance that you want to migrate data from.
--   *new copilot* — Refers to your newly deployed (destination) CoPilot instance that you want to migrate data to.
+-   *new copilot* — Refers to your newly deployed (destination) CoPilot instance that you want to migrate data to. If migrating data to a clustered deployment, this is the main CoPilot Server instance.
 
 **Important:** Please consider the following points about the data migration process in the current release:
 
@@ -1033,8 +1047,9 @@ At the applicable CSP portal, on the ***new copilot*** VM:
 -   **Note:** After initial deployment, your *new copilot* ports 31283 and 5000 will be open for any IP (0.0.0.0/0) . It is strongly recommended to remove the 0.0.0.0 entry from the inbound access rules for these ports and add entries for all your gateway IP addresses.
 -   Open port 443 to receive TCP traffic from the *old copilot* (*old copilot* IP address).
 -   Open port 31283 to receive UDP traffic from each of your Aviatrix gateways.
--   Open port 5000 to receive UDP traffic from each of your Aviatrix gateways.
+-   Open port 5000 to receive UDP traffic from each of your Aviatrix gateways. **For private mode**, you open **TCP** port 5000.
 
+NOTE: If you launched your *new copilot* from the Controller UI starting from Controller release 6.8, the above security group configurations will be automatically applied.
 
 At the applicable CSP portal, on the ***old copilot*** VM:
 
