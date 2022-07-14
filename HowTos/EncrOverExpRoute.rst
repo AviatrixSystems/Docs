@@ -63,10 +63,14 @@ The configuration workflow is as follows, with major steps highlighted.
 |
 |   a. Select the VPC/VNet Name where the Aviatrix Gateway for encryption is launched.
 |   b. If HA is not enabled:
+
 |      i. In the Gateway field, select a gateway that was launched with encryption enabled.
+
 |   c. If HA is enabled:
+
 |      i.  In the Primary Cloud Gateway field, select a gateway launched earlier as primary gateway.
 |      ii.  In the Backup Gateway field, select a gateway launched earlier as backup gateway.
+
 |   d. Input the connection with a unique name (for example, FirstExpressRoute).
 |   e. In the Remote Gateway IP Address field, enter the private IP address of the edge router for Enterprise data center.
 |   f. In the Remote Subnet (Real) field, enter the network CIDR of the Enterprise datacenter. If there are multiple subnets, enter each one separated with a comma.
