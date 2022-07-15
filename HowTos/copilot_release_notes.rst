@@ -36,24 +36,18 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
 
-CoPilot Release 2.2.0 (7/13/2022)
+CoPilot Release 2.2.1 (7/15/2022)
 ---------------------------------------------
 
--   (CostIQ) **New function!** — CostIQ shows you an aggregate cost of your managed resources across the spokes in clouds and regions. Cost domains are split into separate cloud domains. A cost domain shows percentages of your total cost. For information about creating, editing, and deleting cost domains, see "Working with CostIQ" in *Aviatrix CoPilot User Reference Guide*. 
+(Note: The following release was built for internal use only: 2.2.0)
 
--   (FlowIQ) **Layer-7 Visibility** — CoPilot can now report on the following L7 attributes for Layer 7 application visibility in flow records (FlowIQ Records tab):
+-   Improved license handling. 
 
-    -   APPL_LATENCY_MS: After a connection is established (e.g., TCP) , the time it takes to receive the first incoming packet of a flow after the first outgoing packet of the same flow is sent (in msec). The latency is calculated on the first packet only.
-    -   L7_PROTO : Layer 7 protocol (numeric). For example, “124” for YouTube service.
-    -   L7_PROTO_NAME: Layer 7 protocol name. For example, “TLS.Google” for Google service.
-    -   L7_PROTO_CATEGORY: Layer 7 protocol category. For example, “Social network” for Facebook.
-    -   L7_RISK_SCORE: Flow risk score of a flow.
-    -   L7_FQDN: The fully qualified domain name of the host or IP address
-    -   JA3S_HASH: The TLS fingerprint.
+**Issues Corrected in CoPilot release 2.2.1**
 
-      CoPilot also includes a JA3 Dictionary that maps L7-application JA3S hashes to application names. You can add custom entries to the dictionary to map human readable names to your application hash fingerprints.
+    -   **AVX-25226** — In CoPilot Cloud Routes, the Cloud column was incorrectly displaying a cloud type of "AWS China" or "ARM China" for some managed resources.
 
--   (Performance
+    -   **AVX-25009** — When a CoPilot license expired, you were locked out eventhough other licenses were associated with your CoPilot Customer ID. CoPilot now uses all available licenses and does not require that you reset your CoPilot Customer ID to use them.
    
 
 CoPilot Release 2.1.1 (7/07/2022)
