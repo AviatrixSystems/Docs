@@ -11,22 +11,22 @@ Introduction
 
 This document provides step-by-step instructions for building BGP over LAN connections between an Aviatrix Transit Gateway and one or more External Devices in Azure. 
 
-Transit BGP to LAN allows Aviatrix Transit Gateways to communicate with multiple instances in different VNets in Azure without running any tunneling protocol such as IPsec or GRE. One use case is to interoperate with third-party virtual appliances such as SD-WAN cloud instances that do not have the capability to support BGP over any tunneling protocols. For example, integrating with SD-WAN gateways can be deployed as below, where Aviatrix Multi-Cloud Transit Gateways connect to third-party cloud instances in another VNet in Azure.
+Transit BGP over LAN allows Aviatrix Transit Gateways to communicate with multiple instances in different VNets in Azure without running any tunneling protocol such as IPsec or GRE. One use case is to interoperate with third-party virtual appliances such as SD-WAN cloud instances that do not have the capability to support BGP over any tunneling protocols. For example, integrating with SD-WAN gateways can be deployed as below, where Aviatrix Multi-Cloud Transit Gateways connect to third-party cloud instances in another VNet in Azure.
 
 |NVA_scale_out_concept|
 
 Related Topics 
 ^^^^^^^^^^^^^^^^ 
 
-`Azure Multi-Cloud Transit BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_azure_workflow.html?highlight=bGP%20over%20LAN#azure-multi-cloud-transit-bgp-over-lan-workflow>`_
-Azure Multi-Peer BGP over LAN with Azure Route Server Integration 
-`AWS Multi-Cloud Transit BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html?highlight=bGP%20over%20LAN#aws-multi-cloud-transit-bgp-over-lan-workflow>`_
-`GCP Multi-Peer BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_gcp_workflow.html?highlight=bGP%20over%20LAN#gcp-multi-peer-bgp-over-lan-workflow>`_
+* `Azure Multi-Cloud Transit BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_azure_workflow.html?highlight=bGP%20over%20LAN#azure-multi-cloud-transit-bgp-over-lan-workflow>`_
+* `Azure Multi-Peer BGP over LAN with Azure Route Server Integration <https://docs.aviatrix.com/HowTos/azure_bgpolan_multi-peer_ars.html>`_
+* `AWS Multi-Cloud Transit BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html?highlight=bGP%20over%20LAN#aws-multi-cloud-transit-bgp-over-lan-workflow>`_
+* `GCP Multi-Peer BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_gcp_workflow.html?highlight=bGP%20over%20LAN#gcp-multi-peer-bgp-over-lan-workflow>`_
 
 Prerequisites 
 ^^^^^^^^^^^^^^^^ 
 
-* Aviatrix Controller is updated to software version 6.8 and above.   
+* Aviatrix Controller is updated to software version 6.8 or above.   
 * Transit Gateways are deployed with BGPoLAN enabled with the required number of interfaces, which is based on the number of BGP over LAN connections you need. 
 * In the single-attach use case, each BGP peer requires one BGPoLAN NIC on a single Aviatrix Transit Gateway. 
 * In the dual-attach use case—that is, a scenario where the BGP peer needs to establish a BGP session to both Transit Gateways for high-availability reasons—a single BGP peer requires one BGPoLAN NIC on **both** Aviatrix Transit Gateways. 
@@ -34,10 +34,10 @@ Prerequisites
 Deploying Aviatrix Multi-Cloud Transit Solution 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Refer to `Global Transit Network Workflow Instructions <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ for the steps below. Adjust the topology depending on your requirements. 
+Refer to `Global Transit Network Workflow Instructions <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ for more detailed instructions for the steps below. Adjust the topology depending on your requirements. 
 
-1. Deploy `Aviatrix Multi-Cloud Transit Gateway and HA <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-2-deploy-the-transit-aviatrix-gateway>`_  with Insane Mode encryption enabled in the Transit VNet. 
-2. Deploy `Spoke Gateway <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html#step-3-deploy-spoke-gateways>`_. If desired, you can deploy this gateway with HA and enable Insane Mode encryption in the Spoke VNet(s). Note that HA and Insane Mode are not required. 
+1. Deploy an `Aviatrix Multi-Cloud Transit Gateway and HA <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html#step-1-create-transit-vnet>`_  with Insane Mode encryption enabled in the Transit VNet. 
+2. Deploy a `Spoke Gateway <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html#step-3-deploy-spoke-gateways>`_. If desired, you can deploy this gateway with HA and enable Insane Mode encryption in the Spoke VNet(s). Note that HA and Insane Mode are not required. 
 
 Building BGP over LAN 
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -93,7 +93,7 @@ Configuring BGP over LAN on Aviatrix Transit Gateway
 1. Log into the Aviatrix Controller. 
 2. Navigate to Multi-Cloud Transit > Setup > External Connection tab. 
 3. Select the following radio buttons: External Device > BGP > LAN. 
-4. Enter the following information in the fields below. 
+4. Enter the following information in the fields provided.
 
 +--------------------------------+-------------------------------------------------------------------------------+
 | **Setting**                    | **Value**                                                                     |
@@ -137,8 +137,8 @@ Configuring BGP over LAN on Aviatrix Transit Gateway
 Click **Connect** to generate the BGP sessions. 
 
 
-Ready to Go
-^^^^^^^^^^^^^
+Verify the Connection
+^^^^^^^^^^^^^^^^^^^^^^
 
 At this point, run a connectivity and performance test to ensure everything is working correctly. 
 
