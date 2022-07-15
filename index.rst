@@ -435,6 +435,8 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/s2c_overlapping_cidrs_with_fast_convergence
    HowTos/transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow
    
+   HowTos/azure_bgpolan_multi_peer_ARS
+
 .. _Good To Know:
 
 .. toctree::
