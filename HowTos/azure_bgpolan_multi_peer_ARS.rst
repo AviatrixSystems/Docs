@@ -9,33 +9,33 @@ Configuring Azure Multi-Peer BGP over LAN with Azure Route Server Integration
 Introduction 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Aviatrix Controller allows Azure Route Server (ARS) integration for on-premises connectivity using ExpressRoute with no overlay. Azure Route Server is a managed service that is highly available. It provides a mechanism for exchanging routes between Azure Software Defined Networking (SDN) and Network Virtual Appliances (NVAs) dynamically through Border Gateway Protocol (BGP). You can achieve full-mesh high availability by running two BGP peering endpoints.   
+The Aviatrix Controller allows Azure Route Server (ARS) integration for on-premises connectivity using Azure ExpressRoute with no overlay. Azure Route Server is a managed service that is highly available. It provides a mechanism for exchanging routes between Azure Software Defined Networking (SDN) and Network Virtual Appliances (NVAs) dynamically through Border Gateway Protocol (BGP). You can achieve full-mesh high availability by running two BGP peering endpoints.   
 
-Aviatrix integrates with Azure Route Server by treating the Azure Route Server as a BGP over LAN peer and exchanging routes using the BGP routing protocol. This enables Azure cloud networks to connect to on-prem or branch locations and provides connectivity across hybrid environments. Customers who use high-speed Azure ExpressRoute connectivity with no encryption for hybrid environments can exchange routes between the Aviatrix Transit Gateways and the on-prem network connected via ExpressRoute. This solution provides you with an enterprise-grade transit network. 
+Aviatrix integrates with Azure Route Server by treating the Azure Route Server as a BGP over LAN peer and exchanging routes using BGP. This enables Azure cloud networks to connect to on-prem or branch locations and provides connectivity across hybrid environments. Customers who use high-speed Azure ExpressRoute connectivity with no encryption for hybrid environments can exchange routes between the Aviatrix Transit Gateways and the on-prem network connected via ExpressRoute. This solution provides you with an enterprise-grade transit network. 
 
-The diagram below shows Azure Route Server integration with Aviatrix Transit Gateways. Full mesh is enabled so that both Transit Gateways peer with the two Azure Route Server IP endpoints in the Route Server. 
+The diagram below shows Azure Route Server integration with Aviatrix Transit Gateways. Full mesh is enabled so that both Transit Gateways peer with the two Azure Route Server IP endpoints in the Azure Route Server. 
 
 |ARS_High_Level|
 
 Related Topics 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-`Azure Multi-Cloud Transit BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_azure_workflow.html?highlight=bGP%20over%20LAN#azure-multi-cloud-transit-bgp-over-lan-workflow>`_
-Azure Multi-Peer BGP over LAN Workflow 
-`AWS Multi-Cloud Transit BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html?highlight=bGP%20over%20LAN#aws-multi-cloud-transit-bgp-over-lan-workflow>`_
-`GCP Multi-Peer BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_gcp_workflow.html?highlight=bGP%20over%20LAN#gcp-multi-peer-bgp-over-lan-workflow>`_
+* `Azure Multi-Cloud Transit BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_azure_workflow.html>`_
+* `Azure Multi-Peer BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/azure_bgpolan_multi_peer.html>`_
+* `AWS Multi-Cloud Transit BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html>`_
+* `GCP Multi-Peer BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_gcp_workflow.html>`_
 
 Prerequisites 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Aviatrix Controller is updated to software version 6.8 and above. 
-* Aviatrix Transit Gateways are deployed with Insane Mode (mandatory) and with BGP over LAN enabled. Only one BGP over LAN interface needs to be configured to peer with both Azure Route Server instances. 
+* Aviatrix Controller is updated to software version 6.8 or above. 
+* Aviatrix Transit Gateways are deployed with Insane Mode (mandatory) and with BGP over LAN enabled. You only need to configure one BGP over LAN interface to peer with both Azure Route Server instances.
 
 |prereq_insane_mode_bgpolan|
 
-* A BGP ASN is assigned to the Transit Gateways (configured on the Aviatrix Controller in Multi-cloud Transit > Advanced Config > Local AS Number). 
+* A BGP ASN is assigned to the Transit Gateways (configured on the Aviatrix Controller in Multi-Cloud Transit > Advanced Config > Local AS Number). 
 
-Configure the following in Azure: 
+Complete the following tasks in Azure:
 
 * Create a VNet to deploy the Azure Route Server.  
 * Deploy the Azure Route Server in this VNet by referring to the applicable Azure documentation. 
@@ -44,7 +44,7 @@ Configure the following in Azure:
 |prereq_ASN_private_IP|
 
 Configuring Azure BGP over LAN with Azure Route Server Integration 
-==========================================================================
+-----------------------------------------------------------------------------------------
 
 Configure VNet Peering Between Transit VNet and Azure Route Server 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -76,8 +76,8 @@ You need to configure the VNet peering between the VNet that is hosting the Azur
 
 3. Go to Virtual networks and select your peered Transit Server VNet. 
 
-* Under Settings, click Peerings.  
-* On the Peerings page, click Add. 
+* Under Settings, click **Peerings**.  
+* On the Peerings page, click **Add**. 
 * On the Add peering page, select the following options: 
  
 +--------------------------------------------------+--------------------------------------+
@@ -148,11 +148,13 @@ When you select BGP Activemesh, Aviatrix Controller creates two peers from each 
 | Remote vnet:rg:sub             |ARS VNET                                                    |
 +--------------------------------+------------------------------------------------------------+
 | Remote LAN IP                  |ARS instance 0 IP address                                   |
-|                                |Note: the Prerequisites section above shows where to find   |
-|                                |the Azure Route Server IP addresses.                        |
+|                                |                                                            |
+|                                |**Note**: the Prerequisites section above shows where to    |
+|                                |find the Azure Route Server IP addresses.                   |
 +--------------------------------+------------------------------------------------------------+
 |Local LAN IP                    |Primary Transit Gateway BGPoLAN IP address                  |
-|                                |Note: The BGPoLAN IP address of the gateway is              |
+|                                |                                                            |
+|                                |**Note**: The BGPoLAN IP address of the gateway is          |
 |                                |automatically suggested here.                               |
 +--------------------------------+------------------------------------------------------------+
 | Remote BGP AS number (Backup)  |65515                                                       |
@@ -164,9 +166,9 @@ When you select BGP Activemesh, Aviatrix Controller creates two peers from each 
 
 .. note::
 
-  To confirm that Controller set up the Azure Network Virtual Appliance (NVA) peering in Steps 5 and 6, go to Multi-Cloud Transit > BGP > Connections. You may need to use the sorting tool in the Remote AS Num column to identify the pairs of Route Servers. In the HA Status column, confirm that Activemesh is the status for the Route Servers and confirm that Neighbor Status is established. 
+  To confirm that the Aviatrix Controller set up the Azure Network Virtual Appliance (NVA) peering in Steps 5 and 6, go to Multi-Cloud Transit > BGP > Connections. You may need to use the sorting tool in the Remote AS Num column to identify the pairs of Route Servers. In the HA Status column, confirm that Activemesh is the status for the Route Servers and confirm that Neighbor Status is established. 
 
-  You can also use CoPilot to check the status of the BGP peerings to the Azure Route Server and the BGP routes learned/advertised. Go to Cloud Routes > BGP Info and click on the BGP Map, Learned Routes, or Advertised Routes button to get more details. 
+  You can also use CoPilot to check the status of the BGP peerings to the Azure Route Server and the BGP routes learned/advertised. In CoPilot, go to Cloud Routes > BGP Info and click on the BGP Map, Learned Routes, or Advertised Routes button to get more details. 
  
 |check_status|
 
