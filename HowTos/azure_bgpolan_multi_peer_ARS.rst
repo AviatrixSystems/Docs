@@ -69,7 +69,7 @@ You need to configure the VNet peering between the VNet that is hosting the Azur
 +------------------------------------------------+--------------------------------------------+
 | Traffic forwarded from remote virtual network  | Allow                                      |
 +------------------------------------------------+--------------------------------------------+
-| Virtual network gateway or Route Server        | Select the appropriate Azure account.      |
+| Virtual network gateway or Route Server        | Select the appropriate Azure account       |
 +------------------------------------------------+--------------------------------------------+
 
 |add_peering|
@@ -102,7 +102,7 @@ Configure BGP peering Between Azure Route Server and Transit Gateways
 
 |gateway_interface_info|
 
-2. In Azure, go to Route Servers > select your Azure Route Server > Peers. Click **Add** and configure the Azure Route Server peering to both remote Aviatrix Transit Gateways in the Transit VNet by specifying the ASN you configured for your Aviatrix Transit Gateways and the IP address of the BGP over LAN network interface on each Transit Gateway. 
+2. In your Azure portal, go to Route Servers > select your Azure Route Server > Peers. Click **Add** and configure the Azure Route Server peering to both remote Aviatrix Transit Gateways in the Transit VNet by specifying the ASN you configured for your Aviatrix Transit Gateways and the IP address of the BGP over LAN network interface on each Transit Gateway. See the Prerequisites section to find the ASN number.
 
 |ars_peers|
 
@@ -134,7 +134,7 @@ Configure External Connection in Controller
 
 When you select BGP Activemesh, Aviatrix Controller creates two peers from each Transit Gateway to both instances of Azure Route Server. This is required for the correct operation of Azure Route Server. 
  
-7. In the remaining fields, enter the Azure Route Server IP addresses. Use the IP addresses for each Azure Route Server instance as reported in the Azure portal.  
+7. In the remaining fields, enter the ARS IP addresses. Use the IP addresses for each Azure Route Server instance as reported in the Azure portal.  
  
 .. note::
 
