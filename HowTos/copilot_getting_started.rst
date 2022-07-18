@@ -173,30 +173,37 @@ To subscribe to a CoPilot offer:
 
     -   If you want to deploy CoPilot via the Controller UI or via Terraform scripts, you can stop here and refer to the instructions for each deploy method. If you want to deploy CoPilot from your CSP marketplace, you can continue with the rest of the steps.
 
-4.  Each marketplace will prompt you to configure and launch the CoPilot software. Apply the default configurations for resource settings that are recommmended by your chosen marketplace. For CoPilot instance (VM) configurations, you can accept the defaults or change them to suit your business needs. Note the following required CoPilot instance specifications:
+4.  Each marketplace will prompt you to configure and launch the CoPilot software. For CoPilot instance (VM) configurations and launch requirements, note the following:
 
-    -   (Storage & Instance)
-
-        When deploying the Aviatrix CoPilot 1.5.1 image release:
+    -   (VM Sizing)
 
         -   For the minimum supported instance/VM size for CoPilot, see `Minimum Instance (VM) System Requirements for CoPilot`_.
-        -   You must attach at least one data disk (data volume) to your CoPilot instance to be used for expandable storage; this is a secondary data storage separate from the root disk that comes with CoPilot. For more information, see `CoPilot Disk (Volume) Management`_. Create your disk (volume) and attach the disk (volume) to your CoPilot instance. You can choose the disk type (volume type) that meets your business needs given the size of your environment. See 
 
-        When deploying Pre-1.5.1 image releases:
+    -   (Storage)
 
-        -   For machine/instance/VM type, CoPilot requires a minimum of 8 vCPUs and 32 GB Memory.
-        -   CoPilot requires 2 TB of storage (SSD recommended).
+        -   You must attach at least one data disk (data volume) to your CoPilot instance to be used for expandable storage; this is a secondary data storage separate from the root disk that comes with CoPilot. For more information, see `CoPilot Disk (Volume) Management`_. You can choose the disk type (volume type) that meets your business needs given the size of your environment.
 
-    -   CoPilot requires a static public IP address (for example, an Elastic IP address in AWS)
-    -   Copilot requires the following service ports:
+    -   (Static IP Address)
+
+        -   CoPilot requires a static public IP address (for example, an Elastic IP address in AWS). The only exception is if you are using private mode.
+
+    -   (Service Ports)
+
+        - Copilot requires the following service ports:
 
         - TCP port 443 from anywhere user access (to reach CoPilot via HTTPS connection using web browser)
         - UDP port 5000 (default) — Enable Syslog for CoPilot Egress FQDN & Audit Data (from each gateway). Gateways send remote syslog to CoPilot.
         - TCP port 5000 (default) — **For private mode**, enable Syslog for CoPilot Egress FQDN & Audit Data (from each gateway). Gateways send remote syslog to CoPilot.
         - UDP port 31283 (default, port is configurable) — Enable Netflow for CoPilot FlowIQ Data (from each gateway). Gateways send Netflow to CoPilot. 
 
+    -   (Internet Access)
+
+        - CoPilot requires Internet access.
+        - If you are using *private mode*, when you specify the subnet (availability zone) in which to deploy the instance, you must select a subnet with outbound Internet access.
         
-5.  In your cloud console, in the security group page of your CoPilot VM/instance, add entries FOR EACH of your Aviatrix gateways:
+5.  (Pre-6.8 Controller releases only) Starting with Controller release 6.8, this manual step is no longer required. You can use the CoPilot Security Group Management feature in Controller after you launch CoPilot to automatically add these entries to your CoPilot security groups. Skip this step if you have Controller 6.8.
+
+    -   If your Controller is a pre-6.8 release version: In your cloud console, in the security group page of your CoPilot VM/instance, add entries FOR EACH of your Aviatrix gateways:
 
     -   For the UDP ports, change the default inbound rule of 0.0.0.0/0 to the IP addresses of your Aviatrix gateways: 
           -   Open your CoPilot Security Group for UDP 31283 from all of your Aviatrix Gateways.
@@ -277,9 +284,12 @@ To perform an initial setup of CoPilot:
 
     Note that when you launch CoPilot at first your version number will be based on the version of the image release. Within an hour, the CoPilot version will be updated to the latest software release.
 
-8.  (Verify connectivity with your controller) To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see the inventory of all resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VPNs/VNETs are represented on the geographic map.
+8.  (Controller 6.8 or later) In Controller, enable the CoPilot Security Group Management feature in Controller > Settings > CoPilot > CoPilot Security Group Management). With this feature enabled, the Controller sends NetFlow and Syslog data to CoPilot (can be verified by steps 9 and 10 below) and the CoPilot virtual machine ports 31283 and 5000 will be open to each IP of your existing gateways (and **not** open to any IP (0.0.0.0/0)). If you have a pre-6.8 Controller release version, perform steps 10 and 11 manually. 
 
-9.  (For FlowIQ feature) To use the FlowIQ feature in CoPilot, ensure that the controller is configured to forward NetFlow logs to CoPilot.
+9.  (Verify connectivity with your controller) To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see the inventory of all resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VPNs/VNETs are represented on the geographic map.
+
+
+10.  (For FlowIQ feature) To use the FlowIQ feature in CoPilot, ensure that the controller is configured to forward NetFlow logs to CoPilot.
 
     a.  Log in to Aviatrix Controller.
 
@@ -298,7 +308,7 @@ To perform an initial setup of CoPilot:
 
     You should start seeing NetFlow in CoPilot after a few minutes.
 
-10. (For Security audit page feature) Remote syslog index 9 is used for the CoPilot > Security audit page. Ensure the controller is configured to specify CoPilot as the loghost server.
+11. (For Security audit page feature) Remote syslog index 9 is used for the CoPilot > Security audit page. Ensure the controller is configured to specify CoPilot as the loghost server.
 
     a.  Log in to Aviatrix Controller.
 
@@ -567,6 +577,8 @@ Obtain the following information before you begin. You will need it for the init
 -   The CoPilot customer ID obtained from your Aviatrix Sales representative.
 -   Verify that your AWS account has been created in your controller (you create your AWS account by navigating to Controller > Account > Access Accounts > +Add New).
 
+If you are using private mode, note that CoPilot must have Internet access. 
+
 To deploy CoPilot from the controller UI (AWS Only):
 
 1.  If you haven't already done so, subscribe to a CoPilot offer:
@@ -583,8 +595,22 @@ To deploy CoPilot from the controller UI (AWS Only):
 
     -   From the onboarding page, click the Aviatrix CoPilot tile.
     -   From the action bar, click the app icon and select **Deploy CoPilot**.
-3.  In the Deploy CoPilot dialog, to specify a custom instance configuration, tick the **Customize Configuration** check box, select the instance size you want. See `Minimum Instance (VM) System Requirements for CoPilot`_ for information about instance sizing. The default is a recommended minimum VM size only. You can accept the default disk volume size or specify the size you want. See `CoPilot Disk (Volume) Management`_. Click **Deploy**.  
-        
+
+3.  In the Deploy CoPilot dialog, do the following:
+
+    a.  In **Access Account**, specify your AWS account.
+
+    b.  (Optional) If desired, in **Region**, change the region in which to deploy the instance. By default, the deploy process will deploy the instance in the same region as your controller. Deploying the instance in the same region as the controller is recommended to reduce latency. If you want to deploy the instance in a different region than where the controller is deployed, click **Customize Deployment** and select the region from the Region list.
+
+    c.  (Optional) If desired, in **VPC**, change the VPC in which to deploy the instance. By default, the deploy process will deploy the instance in the same VPC as your controller. If you want to deploy the instance in a different VPC than where the controller is deployed, click **Customize Deployment** and select the VPC from the VPC list.
+
+    d.  In **Subnet**, specify the subnet (availability zone) in which to deploy the instance. **Note:** If you are using private mode, you must select a subnet with outbound Internet access in this step. 
+
+    e.  In **VM Size**, specify the VM size you want to provision for your instance. The default is a recommended minimum VM size for a single instance. See `Minimum Instance (VM) System Requirements for CoPilot`_ for information about instance sizing. You can accept the default or specify a custom instance configuration by ticking the **Customize Deployment** check box. 
+
+    f.  In **Data Volume (GB)**, you can accept the default disk volume size or specify the size you want. See `CoPilot Disk (Volume) Management`_.
+
+    g.  Click **Deploy**.       
 
 4.  Wait until the deployment progress indicator reads **Complete** and then click **Close**.
 
@@ -611,8 +637,12 @@ To deploy CoPilot from the controller UI (AWS Only):
 12. (Verify connectivity with your controller) You are now successfully logged into CoPilot. To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see your resource inventory across all clouds in your multi-cloud network that is managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VNets are represented on the geographic map.
 
 13. After deployment, the CoPilot virtual machine ports 31283 and 5000 will be open for any IP (0.0.0.0/0). It is strongly recommended to remove the 0.0.0.0 entry from the CoPilot security group for these ports and add entries for all of your gateway IP addresses as described in the next steps.
+ 
+    **Note:** In Controller 6.8, the CoPilot Security Group Management feature (in Controller > Settings > CoPilot > CoPilot Security Group Management) is automatically enabled so this configuration is expected to be completed. This is only a verification step.
 
 14. (For FlowIQ feature) To use the FlowIQ feature in CoPilot, ensure that the controller is configured to forward NetFlow logs to CoPilot.
+
+    **Note:** In Controller 6.8, the CoPilot Security Group Management feature (in Controller > Settings > CoPilot > CoPilot Security Group Management) is automatically enabled so this configuration is expected to be completed. This is only a verification step.
 
     a.  Log in to Aviatrix Controller.
 
@@ -630,6 +660,8 @@ To deploy CoPilot from the controller UI (AWS Only):
 
 15. (For Security audit page feature) Remote syslog index 9 is used for the CoPilot > Security audit page. Ensure the controller is configured to specify CoPilot as the loghost server.
 
+    **Note:** In Controller 6.8, the CoPilot Security Group Management feature (in Controller > Settings > CoPilot > CoPilot Security Group Management) is automatically enabled so this configuration is expected to be completed. This is only a verification step.
+
     a.  Log in to Aviatrix Controller.
 
     b.  Go to Settings -> Logging -> Remote Syslog.
@@ -642,7 +674,7 @@ To deploy CoPilot from the controller UI (AWS Only):
 
     f.  Click **Enable**.
 
-        Note that if you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List here. In addition, in your native cloud console, you must open your CoPilot security group for UDP 5000 from each newly launched gateway.
+        Note that if you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List here. In addition, in your native cloud console, you must open your CoPilot security group for UDP 5000 from each newly launched gateway.    
 
 
 CoPilot cluster launch using Controller UI (AWS Only)
@@ -655,6 +687,8 @@ If you want to launch a single CoPilot instance for a simple deployment from the
 If you want to launch a cluster of CoPilot instances for a fault tolerant deployment by using Terraform scripts (AWS Only), see the Aviatrix Terraform modules for CoPilot on GitHub at https://github.com/AviatrixSystems/terraform-modules-copilot. 
 
 Launching a fault tolerant deployment from a cloud provider marketplace is not supported. 
+
+If you are using private mode, note that CoPilot must have Internet access. 
 
 **About a CoPilot Fault Tolerant (Clustered) Deployment** 
 
@@ -711,7 +745,7 @@ To launch a CoPilot cluster (fault tolerant deployment) from the controller UI (
 
     c.  (Optional) If desired, in **VPC**, change the VPC in which to deploy the cluster. By default, the deploy process will deploy the cluster server instance and all data instances in the same VPC as your controller. If you want to deploy them in a different VPC than where the controller is deployed, click **Customize Deployment** and select the VPC from the VPC list.
 
-    d.  In **Subnet**, specify the subnet (availability zone) in which to deploy the *server instance*. In the next steps, you can specify to deploy each data instance in a different availability zone. It is recommended to deploy each cluster instance in a different availability zone so the cluster can tolerate an AZ failure.
+    d.  In **Subnet**, specify the subnet (availability zone) in which to deploy the *server instance*. In the next steps, you can specify to deploy each data instance in a different availability zone. It is recommended to deploy each cluster instance in a different availability zone so the cluster can tolerate an AZ failure. **Note:** If you are using private mode, you must select a subnet with outbound Internet access in this step. 
 
     e.  In **CoPilot Server VM Size**, specify the VM size you want to provision for your *server instance.* The default is a recommended minimum VM size for a *server instance*. See `Minimum Instance (VM) System Requirements for CoPilot`_ for information about instance sizing. You can accept the default or specify a custom instance configuration by ticking the **Customize Deployment** check box.
 
@@ -763,7 +797,7 @@ To launch a CoPilot cluster (fault tolerant deployment) from the controller UI (
 
 13. (**Verify connectivity with your controller**) You are now successfully logged into CoPilot. To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see your resource inventory across all clouds in your multi-cloud network that is managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VNets are represented on the geographic map.
 
-14. (**Verify the cluster is intact via CoPilot**) In the CoPilot application, go to Settings > Cluster > Cluster Status to check the status of the cluster instances.You can also review the cluster details in Settings > Cluster > Cluster Settings.
+14. (**Verify the cluster is intact via CoPilot**) In the CoPilot application, go to Settings > Cluster > Cluster Status to check the status of the cluster instances. You can also review the cluster details in Settings > Cluster > Cluster Settings.
 
 15. (**Verify the cluster is intact via the AWS environment**) In your EC2 console, check the following:
 
