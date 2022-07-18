@@ -145,7 +145,7 @@ It is important to commit your changes before creating the necessary static rout
 
 1. Click Commit in the top right corner of the webpage <right term to use?>. In the resulting dialog, click Commit if your dialog looks like the following:
 
-|pan_policy_commit|
+|PAN_policy_commit|
 
 #. After committing, a dialog displays indicating that the configuration was successful. Keep the firewall HTTPS session open for further configuration.
 
@@ -200,7 +200,7 @@ Traffic is passing through the firewall, because both Spoke gateways are in the 
 |may have screenshot here from Word doc|
 
 
-.. |pan_policy_commit| image:: config_paloaltoVM_media/pan_policy_commit.png
+.. |pan_policy_commit| image:: config_paloaltoVM_media/PAN_policy_commit.png
    :scale: 35%
 
 .. |PAN_FW_Azure_Controller| image:: config_paloaltoVM_media/PAN_FW_Azure_Controller.png
