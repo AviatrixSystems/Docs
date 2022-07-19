@@ -59,12 +59,14 @@ Firewall Network solution supports two hashing types:
 By default, AWS TGW-based FireNet and Aviatrix Transit FireNet use 5-tuple hashing algorithm (source IP, source port, destination IP, destination port and protocol type) to load balance the traffic across different firewall. However, user has an option to select two-tuple (source IP and destination IP) hashing algorithm to map traffic to the available firewalls.
 
 
-Keep Alive via Firewall Lan Interface
----------------------------------------------------------------------
+Keep Alive via Firewall LAN Interface (AWS)
+---------------------------------------------
 
-For AWS, LAN or Management interface can be used for firewall health check and failure detection.
+For AWS, the LAN or Management interface can be used for firewall health check and failure detection.
 
-By default, Aviatrix Controller check the firewall's health by pinging the firewall's management IP address. Starting 6.0, firewall instance’s health can also be checked by pinging its LAN interface from the connecting Aviatrix FireNet Gateway. This is an alternative approach which improves firewall failure detection time and detection accuracy.
+See `below <#checking-firewall-health-in-azure-and-gcp>`_ for information on performing health checks in Azure and GCP.
+
+By default, Aviatrix Controller check the health of a firewall in AWS by pinging the firewall's management IP address. Starting in version 6.0, the AWS firewall instance’s health can also be checked by pinging its LAN interface from the connecting Aviatrix FireNet Gateway. This is an alternative approach which improves firewall failure detection time and detection accuracy.
 
 The mechanism is that the FireNet Gateway pings the firewall instance's LAN interface every 5 seconds with a ping time out of 20ms. If the first ping times out, it 
 immediately pings again. Two consecutive ping failures indicates the firewall is in down state and it is detached from the FireNet Gateway pool. The ping functions continues 
@@ -134,6 +136,22 @@ In this example, AWS and Check Point used to demonstrate the functionality as sh
 Go to Check Point logs and Monitoring section, notice that the ICMP health check is initiated every 5 seconds from the Aviatrix Transit FireNet Gateways. The 5 second setting is the default and cannot be changed.
 
 |cp_icmp_lan_example|
+
+
+Checking Firewall Health in Azure and GCP
+-----------------------------------------
+
+Enabling Transit FireNet for Azure or GCP automatically creates Load Balancers in those CSPs. HTTPS in these Load Balancers perform the firewall health check (not ping). You must disable ping in the interface management profile of your Azure or GCP firewalls. 
+
+In Azure:
+
+- you can check the health probe status under the Monitoring > Metrics sub-menu. See `this article <https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-standard-diagnostics>`_ for more information.
+- the State column on the Gateway page in the Aviatrix Controller only reflects if the firewall is up or not. It does not reflect if the firewall is responding to health checks. You must check the health of the firewall in the Azure portal.
+
+In GCP: 
+
+- you can check the health status of the backend under the Network services > Load balancing > Load balancer details sub-menu. See `this article <https://cloud.google.com/load-balancing/docs/health-check-concepts#lb_guide>`_ for more information.
+- the State column on the Gateway page in the Aviatrix Controller reflects the health status of the firewall from the GCP load balancer.
 
 
 .. |firewall_advanced_lan_1| image:: firewall_network_workflow_media/firewall_advanced_lan_1.png
