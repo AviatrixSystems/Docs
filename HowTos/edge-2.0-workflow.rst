@@ -608,8 +608,8 @@ To run Clish on the Edge Gateway, log in with the username **admin**.
 | unlock                            | Unlock console and enter Linux shell.                  |
 +-----------------------------------+--------------------------------------------------------+
 
-Tech Notes About BGP and Routing
---------------------------------
+About BGP and Routing over Public and Private Networks
+------------------------------------------------------
 
 If the connectivity to the Cloud Service Provider (CSP) is over a private network:  
 
