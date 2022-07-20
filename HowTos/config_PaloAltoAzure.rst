@@ -13,6 +13,8 @@ Aviatrix FireNet deploys and manages firewall instances in the cloud. It greatly
 
 FireNet allows you to scale firewall deployment to multiple Availability Zones and multiple instances/VMs in a maximum throughput Active/Active state without SNAT.
 
+|pan-gcp-azure|
+
 See `here <https://docs.aviatrix.com/HowTos/pan_bootstrap_example_azure.html>`_ for using a bootstrap configuration to set up your Palo Alto Firewall in Azure.
 
 For Palo Alto example configurations in other CSPs, see:
@@ -21,18 +23,6 @@ For Palo Alto example configurations in other CSPs, see:
 - `Palo Alto Networks VM-Series in GCP <https://docs.aviatrix.com/HowTos/config_paloaltoGCP.html>`_
 - `Palo Alto Networks VM-Series in OCI <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_oci.html>`_
 
-Palo Alto VM-Series Specifications
-----------------------------------
-
-Palo Alto Networks VM-Series instance has three interfaces as described below. <not sure this is needed>
-
-========================================================         ===============================          ================================
-**Palo Alto VM interfaces**                                      **Description**                          **Inbound Security Group Rule**
-========================================================         ===============================          ================================
-eth0 (on subnet -Public-gateway-and-firewall-mgmt)               Management interface                     Allow SSH, HTTPS, ICMP, TCP 3978
-eth1 (on subnet -Public-FW-ingress-egress)                       Egress or Untrusted interface            Allow ALL
-eth2 (on subnet -dmz-firewall_lan)                               LAN or Trusted interface                 Allow ALL (Do not change)
-========================================================         ===============================          ================================
 
 Prerequisites 
 -------------
@@ -41,8 +31,6 @@ Before deploying the PAN VM-Series firewall as described below, you must follow 
 
 As per this example you would need: 
 
-- A spoke gateway in GCP (created in us-central-1) named gcp-us-central1-spoke1
-- A transit gateway in GCP (created in us-central-1) named gcp-us-central1-transit
 - Two spoke gateways in Azure (created in us-west) named azure-us-west-spoke1 and azure-us-west-spoke2
 - A transit gateway in Azure (created in us-west) named azure-us-west-transit
 - Enable Transit FireNet for azure-us-west-transit
@@ -82,14 +70,17 @@ Advanced                                        Do not select this checkbox
 
 |firewall_launch|
 
-3. In your Azure CSP, navigate to **Virtual machines** and make note of the public IP address of the newly created firewall instance (in this case, 'azure-us-west-pan'). 
-#. In a new browser tab, type **https:\\publicIP** (obtained in the previous step) and press Enter.
+3. In the Aviatrix Controller, navigate to Firewall Network > List > Firewall. This list shows all created firewalls and their management UI IP addresses. 
+#. Click the management UI link for the Palo Alto Networks firewall you just created in Azure.
+#. Log in using the username and password you configured in step 1.
 
 
 Configuring the Palo Alto Firewall
 ----------------------------------
 
 When you access the firewall, you may see an “invalid certificate” warning. Navigate past this warning and log in to the firewall using the username and password you entered when you launched your firewall instance.
+
+All of the following steps are performed in the Palo Alto firewall UI.
 
 WAN Interface Setup
 -------------------
@@ -103,6 +94,9 @@ WAN Interface Setup
 	- Security Zone: New Zone
 
 5. In the Zone dialog, enter WAN as the new zone name and click OK.
+
+|pan_wan_azure|
+
 6. On the IPv4 tab, select DHCP Client and clear the **Automatically create default route pointing to default gateway provided by the server** check box.
 
 LAN Interface Setup
@@ -119,10 +113,13 @@ LAN Interface Setup
 	- Security Zone: New Zone
 
 7. In the Zone dialog, enter ‘LAN’ as the new zone name and click OK.
-#. On the IPv4 tab, select DHCP Client and clear the **Automatically create default route pointing to default gateway provided by the server** check box. 
+
+|pan_lan_azure|
+
+8. On the IPv4 tab, select DHCP Client and clear the **Automatically create default route pointing to default gateway provided by the server** check box. 
 #. Click OK.
 
-Setting up Policies
+Setting up Policies 
 -------------------
 
 On the Policies tab, do the following for intrazone-default and interzone-default:
@@ -143,7 +140,7 @@ Committing Changes
 
 It is important to commit your changes before creating the necessary static routes in the next section.
 
-1. Click Commit in the top right corner of the webpage <right term to use?>. In the resulting dialog, click Commit if your dialog looks like the following:
+1. Click Commit in the top right corner of the webpage. In the resulting dialog, click Commit if your dialog looks like the following:
 
 |PAN_policy_commit|
 
@@ -153,28 +150,20 @@ It is important to commit your changes before creating the necessary static rout
 Pushing RFC 1918 Routes to Firewall 
 -----------------------------------
 
-1. Go to Controller > Firewall Network > Vendor Integration and configure the fields as follows:
+1. In the Aviatrix Controller, navigate to Controller > Firewall Network > Vendor Integration and configure the fields as follows:
 
 	- Transit VPC ID: azure-us-west-transit
 	- Firewall Instance ID: azure-us-west-pan
 	- Firewall Name: azure-us-west-pan
 	- Firewall Vendor Type: Palo Alto Networks VM-Series
-	- Firewall Login Username: the username you entered at the beginning of this document
+	- Firewall Login Username: the username you created at the beginning of this document
 	- Firewall Login Password: the password you created at the beginning of this document
 	- Firewall Management IP Address: Auto populated
 
+|vendor_integration_example|
+
 2. Click Save to save the credentials.
 3. Click Show to see the RFC 1918 routes that the Controller automatically programmed on the firewall. Each route has an AVX prefix to indicate this.
-
-Verifying the Installed Firewall Routes
----------------------------------------
-
-You now need to verify that the RFC 1918 routes exist on the firewall.
-
-1. In the Palo Alto firewall UI, navigate to Network > Virtual Routers and click default.
-#. Click Static Routes. You will see the same RFC 1918 routes with AVX prefixes that were created by the Aviatrix Controller.
-
-Keep the firewall session open for further configuration.
 
 Configuring the FireNet Policy 
 ------------------------------
@@ -186,19 +175,23 @@ Configuring the FireNet Policy
 
 The traffic entering and exiting these Spoke gateways will now be inspected.
 
+Verifying the Installed Firewall Routes
+---------------------------------------
 
-Verifying the Traffic Flow in Azure
------------------------------------
+You now need to verify that the RFC 1918 routes exist on the firewall.
 
-1. You can use SSH in ‘azure-us-west-spoke1-test1’ to ping ‘azure-us-west-spoke2-test1’ on its private IP to confirm that the new spoke gateway is reachable. Just have one VM pinging the other
-<is a step needed here to say that the intrazone-default policy on the firewall is set to Allow All?>
-2. On the firewall website, click the Monitor tab.
-3. Paste this string in the filter field and hit Enter, which applies the filter: (addr in 192.168.1.100) – could be anything <double check format of this>
+1. In the Palo Alto firewall UI, navigate to Network > Virtual Routers and click default.
+#. Click the Static Routes tab. You will see the same RFC 1918 routes with AVX prefixes that were created by the Aviatrix Controller.
 
-Traffic is passing through the firewall, because both Spoke gateways are in the Inspected list.
 
-|may have screenshot here from Word doc|
+.. |pan_wan_azure| image:: config_paloaltoVM_media/pan_lan_azure.png
+   :scale: 35%
 
+.. |pan_wan_azure| image:: config_paloaltoVM_media/pan_wan_azure.png
+   :scale: 35%
+
+.. |pan-gcp-azure| image:: config_paloaltoVM_media/pan-gcp-azure.png
+   :scale: 35%
 
 .. |pan_policy_commit| image:: config_paloaltoVM_media/PAN_policy_commit.png
    :scale: 35%
