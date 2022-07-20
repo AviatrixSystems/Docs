@@ -39,7 +39,7 @@ Prerequisites
 
      |controller_versions|
 
-* An S3 bucket in the AWS account linked to your Aviatrix Controller (will be used for backups).
+* An `S3 bucket <https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html>`_ in the AWS account linked to your Aviatrix Controller (will be used for backups).
 * Your IAM policy must be updated in all your AWS accounts. Please refer the instructions `here <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`__ to update your IAM policies.
 * Make sure you **delete the Controller HA cloud formation stack**. 
 
@@ -88,9 +88,15 @@ Enable Backup
    If you already have backup enabled, click **Backup Now** to make sure you have the latest backup.
    Once complete, confirm in your S3 bucket that the backup file has been updated with the latest timestamp.
 
-#. Log in to your existing Aviatrix Controller.
-#. Navigate to Settings > Maintenance > Backup & Restore tab.
-#. Click **Enable**.
+1. Log in to your existing Aviatrix Controller.
+2. Navigate to Settings > Maintenance > Backup & Restore tab. Enter the name of your S3 bucket in the S3 Bucket Name field. This name must be:
+
+* Between 3-63 characters long.
+* A series of labels separated by a single period (.)
+* Start and end with a lowercase letter or number.
+* Must **not** be formatted as an IP address (such as 92.168.5.4).
+
+3. Click **Enable**.
 
 |enable_backup|
 
