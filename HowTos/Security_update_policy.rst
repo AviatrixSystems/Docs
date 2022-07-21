@@ -9,6 +9,7 @@ We currently disclose vulnerabilities and security releases via numerous channel
 - `Aviatrix Controller and Gateway Release Notes <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_ 
 - `PSIRT Advisories <https://docs.aviatrix.com/HowTos/PSIRT_Advisories.html>`_ 
 - Early Disclosure Mailing List  
+- Customers can also subscribe to notices of fix availability via the `Email Notifications <https://docs.aviatrix.com/HowTos/alert_and_email.html#changing-the-email-recipients-of-alert-email-notifications>`_.
 
 .. important:: 
 
