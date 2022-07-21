@@ -6,7 +6,7 @@
 Certificate Management Overview
 ###################################
 
-You can use the Aviatrix certificate created at the time of installation for the Controller and gateway, or you can customize the Controller and gateway certificate to use an organization-specific certificate. Both types are certificates are issued locally through the Aviatrix Controller's automated processes. To customize the Controller or Gateway certificate, see below. 
+You can use the Aviatrix certificate created at the time of installation for the Controller and gateway, or you can customize the Aviatrix Controller and gateway certificate to use an organization-specific certificate. Both types are certificates are issued locally through the Controller's automated processes. All keys and certificates are in PEM format. To customize the Controller or gateway certificate, see below. 
 
 .. note:: 
 	Please make sure there are no special characters (including space) in the file name.
@@ -60,7 +60,7 @@ Gateway Certificate Management
 .. note:: 
 	Setting up your custom gateway certificate only works in versions 6.0 or higher. Earlier versions will cause the custom certificate deployment to fail. You must update all existing gateways to at least version 6.0 before applying a custom certificate. Also, if any of your GCP gateways are version 14.04, using a custom gateway certificate is not supported.
 
-The Gateway Certificate is created when each gateway is launched via the Aviatrix Controller. At the time of gateway launch, an Aviatrix self-signed certificate is issued to the gateway to make sure all data transmission to and from the gateway is authenticated. If you don't customize the certificate, your gateway will continue to operate with the default certificate. If you choose to customize the certificate with your organization credentials, you must apply the below steps to customize all existing and new gateways. 
+The gateway certificate is created when each gateway is launched via the Aviatrix Controller. At the time of gateway launch, an Aviatrix self-signed certificate is issued to the gateway to make sure all data transmission to and from the gateway is authenticated. If you don't customize the certificate, your gateway will continue to operate with the default certificate. If you choose to customize the certificate with your organization credentials, you must apply the below steps to customize all existing and new gateways. 
 
 In addition, you can confirm and monitor each gateway certificate type in the Aviatrix Controller Console > Gateway > reference column Cert Type. 
 

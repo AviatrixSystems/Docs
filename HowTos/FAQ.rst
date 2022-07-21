@@ -96,7 +96,7 @@ communicate back to the Controller.
 
 You can use the Controller Security Management feature to automatically manage the Controller instance's inbound rules from gateways.  
 
-Go to Settings > Controller > Security Group Management, select the `primary account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#setup-primary-access-account-for-aws-cloud>`_, and click **Enable**. 
+Go to Settings > Controller > Access Security, select the `primary access account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#setup-primary-access-account-for-aws-cloud>`_, and click **Enable**. 
 
 .. note::
 
@@ -139,7 +139,7 @@ In addition to username and password login credentials to the Controller, you ca
 
 To enable LDAP authentication, go to Settings > Controller > LDAP Login and fill the form. 
 
-To enable DUO authentication, go to Settings > Controller > 2FA Login and follow `the instructions <http://docs.aviatrix.com/HowTos/AdminUsers_DuoAuth.html#configuration-workflow-for-duo-authentication>`_ to set up DUO. 
+To enable DUO authentication, go to Settings > Controller > Duo Login and follow `the instructions <http://docs.aviatrix.com/HowTos/AdminUsers_DuoAuth.html#configuration-workflow-for-duo-authentication>`_ to set up DUO. 
 
 5. Creating Read-Only Accounts
 #############################
