@@ -69,14 +69,16 @@ Deleting a Certificate
 
 You must delete a certificate if it has expired. These certificates show as 'invalid' in the CA Certificate table.
 
-Only admin users can delete certificates.
-
-1. In the Aviatrix Controller, navigate to SITE2CLOUD > CA Certificate.
-#. On the CA Certificate tab, select the certificate and click DELETE.
-
 .. important::
 
   You should not delete the certificate while it is in use; this will bring down the Site2Cloud connection.
+
+Only admin users can delete certificates.
+
+1. In the Aviatrix Controller, navigate to Site2Cloud > CA Certificate.
+#. On the CA Certificate tab, select the certificate and click Delete.
+#. (optional) On the Site2Cloud > Diagnostics tab, select the appropriate gateway and then select Restart service from the Action list. This removes the deleted certificate from the gateway cache.
+
 
 Limitations
 -----------

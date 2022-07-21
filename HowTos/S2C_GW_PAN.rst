@@ -40,20 +40,19 @@ If you want to use certificate-based authentication when establishing a Site2Clo
 
 1. Generate a certificate from your Palo Alto VM-Series firewall. See steps `here <#creating-and-generating-a-self-signed-root-certificate>`_. 
 #. Export your certificate in PEM format. See steps `here <#creating-and-generating-a-self-signed-root-certificate>`_.
-#. In the Aviatrix Controller, upload the CA certificate generated from your Palo Alto VM-Series firewall under SITE2CLOUD > Certificate > CA Certificate. See `here <https://docs.aviatrix.com/HowTos/site2cloud_cacert.html>`_ for details.
+#. In the Aviatrix Controller, upload the CA certificate generated from your Palo Alto VM-Series firewall under Site2Cloud > Certificate > CA Certificate. See `here <https://docs.aviatrix.com/HowTos/site2cloud_cacert.html>`_ for details.
 #. Create your Site2Cloud connection as described `here <#setting-up-site2cloud-connection>`_.	
 #. After creating the Site2Cloud connection, `download the resulting configuration <https://docs.aviatrix.com/HowTos/site2cloud.html#download-configuration>`_.
-#. Download the Aviatrix CA certificate from SITE2CLOUD > CA Certificate.
+#. Download the Aviatrix CA certificate from Site2Cloud > CA Certificate.
 #. Upload the Aviatrix CA certificate to your on-prem Palo Alto VM-Series firewall. See steps `here <#importing-the-aviatrix-ca-certificate>`_.
 #. In the Palo Alto VM-Series UI, use the information from the downloaded configuration file to configure your tunnels/interfaces. See steps `here <#adding-a-tunnel-interface>`_.
 #. In the Palo Alto VM-Series UI, configure the `IKE Gateway <#setting-up-ike-crypto-profile-and-ike-gateways>`_ depending on if you are using PSK or certificate-based authentication.
-#. In the Aviatrix Controller, navigate to SITE2CLOUD > Certificate > AVX CA Certificate and download the Aviatrix CA certificate.
  
 
 Configuration Workflow
 ======================
 
-If you are not using certificate-based authentication in your Site2Cloud connection with your Palo Alto firewall, you can skip the following sections below:
+If you are not using certificate-based authentication in your Site2Cloud connection with your Palo Alto firewall, you can skip these sections:
 
 - Creating and Generating a Self-Signed Root Certificate
 - Importing the Aviatrix CA Certificate 
@@ -63,7 +62,7 @@ Also, in the "Setting up IKE Crypto Profile and Gateways" section, you follow th
 Creating and Generating a Self-Signed Root Certificate 
 ------------------------------------------------------
 
-If you are creating a Site2Cloud connection between your Palo Alto VM-Series firewall and your Aviatrix gateway in the cloud and want to use cert-based authentication, you must generate a CA certificate that you will upload to the Aviatrix Controller under Site2Cloud > CA Certificate.
+If you are creating a Site2Cloud connection between your Palo Alto VM-Series firewall and your Aviatrix gateway in the cloud and want to use cert-based authentication, you must generate a CA certificate in the firewall UI that you will upload to the Aviatrix Controller under Site2Cloud > CA Certificate.
 
 See `this URL <https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/certificate-management/obtain-certificates/create-a-self-signed-root-ca-certificate>`_ for more information on certificates in Palo Alto.
 
@@ -88,10 +87,10 @@ See `this URL <https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/certifi
 - Common Name: a name that makes sense to you, such as pan-device.com
 - Signed by: PAN-CA (created in above steps)
 - Cryptographic Settings: Elliptic Curve DSA algorithm; 256 bits; sha256 digest
-- Certificate Attributes: refer to the aforementioned URL for information on attributes to use for device certificate creation
+- Certificate Attributes: refer to the aforementioned Palo Alto Networks URL for information on attributes to use for device certificate creation
 
 6. Click Generate.
-#. Export the PAN-CA certificate for uploading to the SITE2CLOUD > CA Certificate page in the Aviatrix Controller.
+#. Export the PAN-CA certificate for uploading to the Site2Cloud > CA Certificate page in the Aviatrix Controller.
 #. See the `CA Certificate page <https://docs.aviatrix.com/HowTos/site2cloud_cert.html>`_ for details on uploading this certificate.
 
 Setting up Site2Cloud Connection
@@ -99,9 +98,9 @@ Setting up Site2Cloud Connection
 
 1. Launch a Palo Alto Networks VM-series with at least two network interfaces. One interface serves as a WAN port and is in VPC2's public subnet. The other interface serves as a LAN port and is in VPC2's private subnet. Collect the public IP address of the WAN port.
 
-#. At the Aviatrix Controller, go to Gateway > New Gateway to launch an Aviatrix Gateway at VPC1's public subnet. Collect both the public and private IP address of the Gateway.
+#. In the Aviatrix Controller, navigate to Gateway > New Gateway to launch an Aviatrix Gateway at VPC1's public subnet. Collect both the public and private IP address of the Gateway.
 
-#. At the Aviatrix Controller, go to Site2Cloud and click **Add New** to create a Site2Cloud connection using the following values (selecting either PSK or certificate-based authentication):
+#. In the Aviatrix Controller, navigate to Site2Cloud and click **Add New** to create a Site2Cloud connection using the following values (selecting either PSK or certificate-based authentication):
 
    ===============================     =========================================
      **Field**                         **Value**
@@ -121,7 +120,7 @@ Setting up Site2Cloud Connection
      Local Subnet                      10.0.2.0/24 (VPC1 private subnet)
    ===============================     =========================================
 
-#. After the connection is created, select the connection you just created in the table on the SITE2CLOUD page (for example, avx-pan-s2c).
+#. After the connection is created, select the connection you just created in the table on the Site2Cloud page (for example, avx-pan-s2c).
 
 #. Select **Generic** from the **Vendor** dropdown list and click the **Download Configuration** button to download the Site2Cloud configuration. Use this configuration file to configure the tunnels and interfaces in your Palo Alto Network VM-Series firewall.
 
@@ -141,7 +140,7 @@ If you are creating a Site2Cloud connection between your Palo Alto VM-Series fir
 4. Click OK.
 #. Navigate to Device > Certificate Management > Certificate Profile. In the Certificate Profile dialog enter the following:
 
-- Name: enter a name for the profile (such as AVX-CA)
+- Name: enter a name for the profile (such as AVX-CA).
 - CA Certificates: click Add and select AVX-CERT (or whatever name you gave to the imported Aviatrix CA certificate) from the CA Certificate list. 
 
 6. Click OK.
@@ -153,7 +152,7 @@ Adding a Tunnel Interface
 
 #. Log into the Palo Alto Networks VM Series UI.
 
-#. Go to Network > Interface > Tunnel and click **Add** to create a new tunnel interface and assign the following parameters.
+#. Navigate to Network > Interface > Tunnel and click **Add** to create a new tunnel interface and assign the following parameters.
 
       |image0|
 
@@ -173,13 +172,13 @@ Adding a Tunnel Interface
 Setting up IKE Crypto Profile and IKE Gateways 
 ----------------------------------------------
 
-1. Go to Network > Network Profiles > IKE Crypto, click **Add** and define the IKE Crypto profile (IKEv1 Phase-1) parameters.
+1. In the Palo Alto VM-Series UI, navigate to to Network > Network Profiles > IKE Crypto, click **Add** and define the IKE Crypto profile (IKEv1 Phase-1) parameters.
 
       |image1|
 
 #. If using PSK (Pre-shared Key) for authentication with Site2Cloud:
 
-   a. Go to Network > Network Profiles > IKE Gateways to configure the IKE Phase-1 Gateway. These parameters should match the Site2Cloud configuration downloaded under "Setting up Site2Cloud Connection".
+   a. Navigate to Network > Network Profiles > IKE Gateways to configure the IKE Phase-1 Gateway. These parameters should match the Site2Cloud configuration downloaded under "Setting up Site2Cloud Connection".
 
       |image2|
 
@@ -291,14 +290,13 @@ Setting up IKE Crypto Profile and IKE Gateways
 Finishing the Configuration
 ---------------------------
 
-1. At the AWS portal, configure the VPC Route Table associated with the private subnet of VPC2. Add a route destinating to VPC1's private subnet with the Palo Alto Networks VM LAN port as the gateway.
+1. In the AWS portal, configure the VPC Route Table associated with the private subnet of VPC2. Add a route that has a destination of the VPC1 private subnet with the Palo Alto Networks VM LAN port as the gateway.
 
-
-#. Send traffic between VPC1's and VPC2's private subnets. At the Aviatrix Controller, go to the Site2Cloud page to verify the Site2Cloud connection status.
+#. Send traffic between VPC1's and VPC2's private subnets. In the Aviatrix Controller, go to the Site2Cloud page to verify the Site2Cloud connection status.
 
 |image8|
 
-For troubleshooting, go to Site2Cloud > Diagnostics and select various commands from **Action** drop down list.
+To troubleshoot, navigate to Site2Cloud > Diagnostics and select commands from **Action** drop down list.
 
 |image9|
 
