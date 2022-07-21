@@ -558,6 +558,72 @@ To create an RBAC group with permissions to create, delete, and manage Edge gate
 You can now create or assign a user account with the newly created RBAC group.
 
 
+Selective Gateway Upgrade for Edge 2.0
+-----------------------------------------
+
+The Aviatrix Edge 2.0 base OS is not upgradeable. To update the base OS to a newer version, you can only deploy a newer version of the Aviatrix Edge image to a new VM to replace it.
+
+As Edge 2.0 base OS is not field upgradeable, Edge 2.0 does not support selective gateway image update and software rollback.
+
+Troubleshooting
+---------------
+
+You can use the Clish commands below to troubleshoot the Edge Gateway.
+
+To run Clish on the Edge Gateway, log in with the username **admin**.
+
++-----------------------------------+--------------------------------------------------------+
+| Command                           | Description                                            |
++===================================+========================================================+
+| change_console_password           | Changes the password for the CLI login.                |
++-----------------------------------+--------------------------------------------------------+
+| diagnostics                       | Show gateway diagnostics from                          |
+|                                   | /home/ubuntu/cloudx-aws/avx_edge_status.json, which is |
+|                                   | written by register process or reset_config process.   |
++-----------------------------------+--------------------------------------------------------+
+| logout                            | Log out of the console.                                |
++-----------------------------------+--------------------------------------------------------+
+| ping [-c count] [dest]            | Ping destination, optional parameter ping packet count.|
+|                                   | The default is 5.                                      |
++-----------------------------------+--------------------------------------------------------+
+| reboot                            | Reboot the system.                                     |
++-----------------------------------+--------------------------------------------------------+
+| register                          | Register with the Controller.                          |
++-----------------------------------+--------------------------------------------------------+
+| reset_config                      | Deregister and reset to factory default.               |
++-----------------------------------+--------------------------------------------------------+
+| set_controller_ip [controller_ip] | Set controller ip, usually performed after controller  |
+|                                   | migration when controller ip changed.                  |
++-----------------------------------+--------------------------------------------------------+
+| show_interfaces                   | Show output from the command “ifconfig -a | more”.     |
++-----------------------------------+--------------------------------------------------------+
+| show_routes                       | Show output from the command “ip route show table all”.|
++-----------------------------------+--------------------------------------------------------+
+| test connect                      | Test TLS and port 443 connection to controller.        |
++-----------------------------------+--------------------------------------------------------+
+| test dns [host_name]              | Test DNS availability.                                 |
++-----------------------------------+--------------------------------------------------------+
+| test port                         | Test controller port 443 reachability.                 |
++-----------------------------------+--------------------------------------------------------+
+| unlock                            | Unlock console and enter Linux shell.                  |
++-----------------------------------+--------------------------------------------------------+
+
+About BGP and Routing over Public and Private Networks
+------------------------------------------------------
+
+If the connectivity to the Cloud Service Provider (CSP) is over a private network:  
+
+- The edge (WAN) router runs a BGP session to VGW (AWS) where the edge router advertises an Edge Gateway WAN subnet network, and the VGW advertises the Transit VPC CIDR. 
+
+- The Edge Gateway LAN interface runs a BGP session to the edge router where the edge router advertises the on-prem network address range to Edge Gateway LAN interface. 
+
+- The Edge Gateway WAN interface runs a BGP session to the Transit Gateway in the Transit VPC where Transit Gateway advertises all Spoke VPC CIDRs to the Edge Gateway, and the Edge Gateway advertises on-prem network to the Transit Gateway. 
+
+If the connectivity to the CSP is over a public network: 
+
+- The Edge Gateway LAN and WAN interfaces do not use public IP addresses. The interfaces rely on the edge router or Firewall NAT function and Internet connectivity. 
+
+- The Edge Gateway LAN interface runs a BGP session to the edge router where the edge router advertises the on-prem network address range to the Edge Gateway LAN interface. 
 
 
 

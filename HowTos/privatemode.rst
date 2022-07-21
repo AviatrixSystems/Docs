@@ -29,8 +29,8 @@ Prerequisites
 
 - `Configure the permissions for Private Mode and GWLB-Based FireNet <https://docs.aviatrix.com/HowTos/aviatrix_iam_policy_requirements.html>`_. This is very important; you cannot deploy your Private Mode resources without these permissions. Please see sections 6 and 15 in the referenced document.
 - Upgrade to 6.8.
-- A Controller in AWS or AWS GovCloud. It is best to set up Private Mode from a new Controller that does not have any previously deployed gateways. Private Mode will not work if you already have gateways deployed in your Controller.
-- A version of CoPilot that supports Private Mode, if you want to send syslog or Netflow data to CoPilot from the gateways. 
+- An Aviatrix Controller in AWS or AWS GovCloud. It is best to set up Private Mode from a new Controller that does not have any previously deployed gateways. Private Mode will not work if you already have gateways deployed in your Controller.
+- A version of CoPilot that supports Private Mode, if you want to send syslog or Netflow data to CoPilot from the gateways. You must already have deployed CoPilot from the Private Mode Controller. When you deploy CoPilot from the Controller you must select a subnet that has outbound internet access. 
 - If you want to associate a CoPilot instance, it must be in the same VPC as the Controller.
 - If setting up Private Mode in a multi-cloud deployment, a private underlay between the CSPs must exist (Direct Connect for AWS or Express Route for Azure). 
 
@@ -44,7 +44,11 @@ When you prepare your single cloud Private Mode environment, you are building a 
 - All gateways you create will use private IPs. You will not be able to create or deploy non-private gateways. A mixture of public and private IPs is not possible.
 - The existing eth0 private IP is used for the Controller. 
 
-2. (optional) If you want to view syslog and Netflow data gathered by the gateways in CoPilot, you can associate a CoPilot instance with the Controller. This ensures that data is sent to CoPilot. On the Controller tab, select a CoPilot instance and click Associate. 
+2. (optional) If you want to view syslog and Netflow data gathered by the gateways in CoPilot, you must associate a CoPilot instance with the Controller. This ensures that data is sent to CoPilot (you must have already deployed CoPilot from the Private Mode Controller as per the above Prerequisites). 
+
+   a. On the Controller tab, select a CoPilot instance and click Associate. 
+   b. In CoPilot, navigate to Settings > CoPilot > CoPilot Association and enter the private IP address of the CoPilot instance. 
+
 
 |private-mode-enable|
 

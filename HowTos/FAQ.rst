@@ -96,7 +96,7 @@ communicate back to the Controller.
 
 You can use the Controller Security Management feature to automatically manage the Controller instance's inbound rules from gateways.  
 
-Go to Settings > Controller > Security Group Management, select the `primary account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#setup-primary-access-account-for-aws-cloud>`_, and click **Enable**. 
+Go to Settings > Controller > Access Security, select the `primary access account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#setup-primary-access-account-for-aws-cloud>`_, and click **Enable**. 
 
 .. note::
 
@@ -123,7 +123,7 @@ When this feature is enabled, the Controller utilizes the associated network sec
 
 The Aviatrix Controller is shipped with a self-signed certificate. Therefore, there is a "Note Secure" warning sign shown on your browser console. 
 
-You can change that by importing your own signed certificate. To do so, go to Settings > Advanced > Security. At the panel "Certificate Request - Send to Certificate Authority," send a CSR (certificate sign request), then follow the instructions to import CA and the signed Controller certificate. 
+You can change that by importing your own signed certificate. To do so, go to Settings > Controller > Certificate. On the Controller Certificate Management page, select Generate CSR and Import Certificate. Here you generate a CSR (certificate sign request), and then import the CA and the signed Controller certificate. 
 
 You can also use an `ALB in front of the Controller <./controller_ssl_using_elb.html>`__.
 
@@ -139,7 +139,7 @@ In addition to username and password login credentials to the Controller, you ca
 
 To enable LDAP authentication, go to Settings > Controller > LDAP Login and fill the form. 
 
-To enable DUO authentication, go to Settings > Controller > 2FA Login and follow `the instructions <http://docs.aviatrix.com/HowTos/AdminUsers_DuoAuth.html#configuration-workflow-for-duo-authentication>`_ to set up DUO. 
+To enable DUO authentication, go to Settings > Controller > Duo Login and follow `the instructions <http://docs.aviatrix.com/HowTos/AdminUsers_DuoAuth.html#configuration-workflow-for-duo-authentication>`_ to set up DUO. 
 
 5. Creating Read-Only Accounts
 #############################

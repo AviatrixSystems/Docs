@@ -36,6 +36,19 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
 
+CoPilot Release 2.2.1 (7/15/2022)
+---------------------------------------------
+
+(Note: The following release was built for internal use only: 2.2.0)
+
+-   Improved license handling. 
+
+**Issues Corrected in CoPilot release 2.2.1**
+
+    -   **AVX-25226** — In CoPilot Cloud Routes, the Cloud column was incorrectly displaying a cloud type of "AWS China" or "ARM China" for some managed resources.
+
+    -   **AVX-25009** — When a CoPilot license expired, you were locked out even though other licenses were associated with your CoPilot Customer ID. CoPilot now uses all available licenses and does not require that you reset your CoPilot Customer ID to use them.
+   
 
 CoPilot Release 2.1.1 (7/07/2022)
 ---------------------------------------------
