@@ -7,7 +7,7 @@ Controller Certificate Management
 ###################################
 
 The Aviatrix Controller uses a self-signed certificate by default. That is why you see "Not Secure" 
-at the browser. You can make it secure by importing a signed certificate. This documentation outlines the **Import a Certificate with Key** method. This example utilizes Godaddy as the CA, however steps 1 and 3 should be universal for any certificate provider.
+In the browser. You can make it secure by importing a signed certificate. This documentation outlines the **Import a Certificate with Key** method. This example utilizes Godaddy as the CA. However, steps 1 and 3 should be universal for any certificate provider.
 
 Import a Certificate with Key
 -------------------------------------
@@ -15,12 +15,12 @@ Import a Certificate with Key
 Step 1. Create Private Key and Certificate Signing Request 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A. Log into SSH on a Linux or macOS device and run the following command to create the private key
+A. Log into SSH on a Linux or macOS device and run the following command to create the private key:
  
 mymac$ **openssl genrsa -out my_prv.key 4096** 
 
 B.	Create CSR 
- - Run the follow command and fill out the needed information as it relates to your company information.   
+ - Run the following command and fill out the necessary information as it relates to your company.   
  - Leave the password blank 
  
 mymac$ **openssl req -new -sha256 -key my_prv.key -out controller.csr** 
@@ -49,7 +49,7 @@ Site Path: GoDaddy.com > SSL > Certificates > Your Desired Domain Name > Downloa
 Step 3. Uploading the Certificates to the Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Path: Controller > Settings > Advanced > Security > Import Certificate Key
+Path: Controller > Certificate > Controller Certificate Management > Import Certificate with Key
 
  - Select “Import Certificate with Key”
  - The CA certificate – the file named gd_bundle
@@ -60,16 +60,16 @@ Path: Controller > Settings > Advanced > Security > Import Certificate Key
 
 |controller_cert_2|
 
-If everything works, you now have a signed certificate on the Controller!
+The Controller signed certificate procedure is complete.
 
 
 Additional Notes
 ^^^^^^^^^^^^^^^^
- - If a certificate is already present on the Controller then you will need to disable “Import Certificate” before uploading the new certificates. Otherwise the Controller will present an error.
+ - If a certificate is already present on the Controller you must disable “Import Certificate” before uploading the new certificates, otherwise an error occurs. 
 
 |controller_cert_3| 
 
- - The Controller will perform a validity check between the Server Certificate and the Private Key
+ - The Controller will perform a validity check between the Server Certificate and the Private Key.
 
 
 
