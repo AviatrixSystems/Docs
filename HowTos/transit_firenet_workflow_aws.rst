@@ -103,7 +103,7 @@ Now that the Transit and spoke gateways are deployed, you must connect them.
 Enable Connected Transit
 ************************
 
-By default, Spoke VPCs are in isolated mode where the Transit will not route traffic between them. To allow the Spoke VPCs to communicate with each other, you must enable Connected Transit by navigating to Multi-Cloud Transit -> Advanced Config. Select the Transit Gateway and toggle Connected Transit to **Enabled**.
+By default, Spoke VPCs are in isolated mode where the Transit will not route traffic between them. To allow the Spoke VPCs to communicate with each other, you must enable Connected Transit by navigating to Multi-Cloud Transit -> Advanced Config. Under Edit Transit, select the Transit Gateway and toggle Connected Transit to **Enabled**.
 
 |connected_transit|
 
