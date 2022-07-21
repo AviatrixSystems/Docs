@@ -11,11 +11,11 @@ Aviatrix Transit FireNet allows you to deploy firewall functions for the Aviatri
 
 To learn about Transit FireNet, look at the `Transit FireNet FAQ. <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_
 
-If you want to deploy firewall networks in an AWS Transit Gateway (TGW) environment, your starting point is `here. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_.
+If you want to deploy firewall networks in an AWS Transit Gateway (TGW) environment, your starting point is `here <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_.
 
-In this example, a transit VPC with Aviatrix Gateways will be deployed, and two Spoke Gateways (DEV and PROD) will be attached to it.
+In this example, a transit VPC with Aviatrix Gateways is deployed, and two Spoke Gateways (DEV and PROD) are attached to it.
 
-The transit VPC will have a firewall of supported vendors (Checkpoint, Palo Alto Networks and Fortinet etc.) deployed within it. Please see the diagram below for more details.
+The transit VPC will have a firewall of supported vendors (Check Point, Palo Alto Networks and Fortinet etc.) deployed within it. Please see the diagram below for more details.
 
 Once the infrastructure is in place you create a policy to inspect the east-west and north-south traffic.
 
@@ -31,7 +31,7 @@ In this example, VPCs are created following the Useful Tools `Create a VPC <http
 1.	Login to the Aviatrix Controller with a username and password.
 #.	Navigate to Useful Tools -> Create A VPC.
 #. Select AWS as the Cloud Type.
-#.	Add one VPC for Transit FireNet Gateway and select the **Aviatrix FireNet VPC** option as shown below.
+#.	Add one VPC for Transit FireNet Gateway and select the **Aviatrix Transit Firenet VPC** option as shown below.
 #.  Create two more VPCs with no option/checkbox selected for Spoke Gateways.
 
 |create_vpc|
@@ -75,7 +75,7 @@ Please see an example below for Transit FireNet GW:
 Deploy Spoke Gateways
 **********************
 
-Now that we have an Aviatrix Transit Gateway, we can deploy Aviatrix Spoke Gateways in the spoke VPCs using `Aviatrix Spoke Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_.
+Now that there is an Aviatrix Transit Gateway, you can deploy Aviatrix Spoke Gateways in the Spoke VPCs using `Aviatrix Spoke Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_.
 
 1.	Navigate to Multi-Cloud Transit -> Setup -> Spoke -> #1 Launch an Aviatrix Spoke Gateway.
 #.	Deploy a Spoke Gateway (GW) in each of the spoke VPCs using defaults, ensuring that you choose the correct Account and VPC information.
@@ -103,7 +103,7 @@ Now that the Transit and spoke gateways are deployed, you must connect them.
 Enable Connected Transit
 ************************
 
-By default, spoke VPCs are in isolated mode where the Transit will not route traffic between them. To allow the Spoke VPCs to communicate with each other, you must enable Connected Transit by navigating to Multi-Cloud Transit -> Advanced Config. Select the Transit Gateway and toggle Connected Transit to **Enabled**.
+By default, Spoke VPCs are in isolated mode where the Transit will not route traffic between them. To allow the Spoke VPCs to communicate with each other, you must enable Connected Transit by navigating to Multi-Cloud Transit -> Advanced Config. Select the Transit Gateway and toggle Connected Transit to **Enabled**.
 
 |connected_transit|
 
@@ -265,8 +265,8 @@ In the Aviatrix Controller, navigate to Firewall Network -> Setup -> Firewall ->
 Example Setup for "Allow All" Policy
 *************************************
 
-After a firewall instance is launched, wait 5 to 15 minutes for it to come up. Time varies for each firewall vendor.
-In addition, please follow example configuration guides as per below to build a simple policy on the firewall instance for a test validation that traffic is indeed being routed to the firewall instance.
+After a firewall instance is launched, wait 5 to 15 minutes for it to become available. Time varies for each firewall vendor.
+In addition, please follow the example configuration guides as per below to build a simple policy on the firewall instance for a test validation that traffic is indeed being routed to the firewall instance.
 
 Palo Alto Network (PAN)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
