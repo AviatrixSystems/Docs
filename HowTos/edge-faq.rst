@@ -1,132 +1,134 @@
 .. meta::
-   :description: Aviatrix Edge
-   :keywords: Edge, Edge Gateway, ESXi, EaaS, Edge ZTP, Edge as a Spoke
+   :description: Aviatrix Edge Overview
+   :keywords: Edge, Edge Gateway, ESXi, KVM, EaaS, Edge ZTP, Edge as a Spoke
 
 
-=================
+==================
 Aviatrix Edge FAQ
-=================
+==================
 
 What is Aviatrix Edge?
 ----------------------
 
-Aviatrix Edge enables enterprises migrating to the cloud to integrate their on-premises footprint as Spokes into the enterprise Cloud backbone. The result is secure, seamless connectivity to locations at the Edge of your network such as data centers, remote sites, provider locations, branch offices, and retail stores.
+The Aviatrix Edge solution enables enterprises to extend the Cloud operational model to the edge network for consistent and repeatable architecture, management, visibility, security, and control. This cloud-out architecture enables enterprises to leverage the Aviatrix platform ubiquitous support for edge connectivity. The result is secure, seamless connectivity to edge locations such as data centers, co-locations, remote sites, provider locations, branch offices, and retail stores.
 
-By extending the Aviatrix data plane to the Edge of the network, you can use Aviatrix Controller and Aviatrix CoPilot to manage orchestration, visibility, and operational capabilities. You can deploy an Edge Gateway using Aviatrix Controller, the VMware ESXi host server, and the VMware vSphere management console.
+Benefits of the Aviatrix Edge solution include:
 
+- Go-to platform for all hybrid connectivity
+
+- Centralized Control Plane across multi-cloud networks and edge locations resulting in reduced hardware and operating costs
+
+- Single pane of glass for visibility, monitoring, and troubleshooting from Aviatrix Controller and Aviatrix CoPilot
+
+- Encrypted connectivity and routing between multi-cloud networks with a private path that uses standard architecture
+
+- High Performance Encryption (HPE) support over public and private networks 
+
+- Zero-touch provisioning (ZTP) for automated Edge deployments
+
+- Available in multiple form factors to support various edge requirements
 
 Aviatrix Edge 2.0
 -----------------
 
-Aviatrix Edge 2.0 lets you run Edge as an Aviatrix Spoke Gateway. This gives you the ability to implement more intelligent, robust, transformative Edge solutions that include retail/e-commerce, healthcare, manufacturing, agriculture—basically any industry that wants to gain a competitive advantage. Benefits of the Aviatrix Edge 2.0 solution include:
+Aviatrix Edge 2.0 solution is offered in VMware ESXi and KVM form factors and allows you to run the spoke gateway features at the edge network. 
 
--	Go-to platform for all branch, off-prem, and on-prem hybrid connectivity
+Edge 2.0 features include:  
 
--	Centralized control plane across on-premises and multi-cloud networks that also reduces on-premises hardware and operating costs
+- High-availability active-active and active-standby mode for Edge Gateways at the same site location
 
--	Single pane of glass for visibility, monitoring, and troubleshooting from Controller
+- HPE over private and public network for AWS, Azure, OCI and over private network for GCP
 
--	Encrypted connectivity and routing between clouds with a private path that uses standard architecture
+- Non-HPE over private and public network on Edge to Transit Gateway connection
 
--	High Performance Encryption (HPE) supported over public and private networks for AWS and Azure
+- Custom SNAT and DNAT (A/S) on Edge to Transit Gateway connection
 
+- Network segmentation
+
+- Transitive routing
+
+- FireNet traffic inspection
+
+
+Aviatrix Edge 2.0 requires Aviatrix Controller 6.8.
+
+For more information about Edge 2.0 use case scenarios, see `What are the use cases for Aviatrix Edge? <http://docs.aviatrix.com/HowTos/edge-faq.html#what-are-the-use-cases-for-aviatrix-edge?>`_.
+
+For additional requirements and deployment workflow, see `Deploying Aviatrix Edge 2.0 <http://docs.aviatrix.com/HowTos/edge-2.0.html>`_.
 
 Aviatrix Edge 1.0
 -----------------
 
-Aviatrix Edge 1.0 is the initial implementation of the Aviatrix Edge solution offered as a virtual form factor that lets you deploy an Edge Gateway as a standard virtual machine (VM). Edge 1.0 is for customers who want to try out Edge in a limited capacity while retaining the ability to use Aviatrix Controller and Aviatrix CoPilot to manage the network. Benefits include:
+Aviatrix Edge 1.0 solution is the initial implementation of the Aviatrix Edge. Edge 1.0 is offered as a virtual form factor on VMware ESXi that lets you deploy an Edge Gateway as a standard virtual machine (VM) and has feature parity with Managed CloudN. Edge 1.0 is for customers who want to try out Edge in a limited capacity while retaining the ability to use Aviatrix Controller and Aviatrix CoPilot to manage the network. For customers with Edge 1.0 deployment, we recommend that you migrate to Edge 2.0.
 
--	Virtual form factor deployed on VMware ESXI that integrates with the existing Cloud orchestration platform
+Aviatrix Edge 1.0 requires Aviatrix Controller 6.7. 
 
--	Go-to platform for all branch, off-prem, and on-prem hybrid connectivity
-
--	Centralized control plane across on-premises and multi-cloud networks that also reduces on-premises hardware and operating costs
-
--	Single pane of glass for visibility, monitoring, and troubleshooting from Controller
-
--	Parity with hardware-based Edge gateway solutions
-
--	Encrypted connectivity and routing between clouds with a private path that uses standard architecture
-
--	Zero-touch provisioning (ZTP) that supports automated provisioning
-
--	High Performance Encryption (HPE) supported over public and private networks for AWS and Azure
-
--	Can be run as an external BGP device (CloudN)
-
-For more information, refer to `Deploying Aviatrix Secure Edge 1.0 for VMware ESXi <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html>`_.
+For additional requirements and deployment workflow, see `Deploying Aviatrix Secure Edge 1.0 for VMware ESXi <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html>`_.
 
 
-What are the use cases for the Aviatrix Edge Gateway?
------------------------------------------------------
+What are the use cases for Aviatrix Edge?
+-----------------------------------------
 
-You can deploy Aviatrix Edge to extend the Aviatrix platform to the Edge or to configure multi-cloud/multi-transit connectivity. You can deploy the Edge Gateway in an on-premises location with connectivity over a private network or as a secure gateway supporting locations at the Edge of your network.
+The following are examples of Aviatrix Edge use cases.
 
--	Extend Aviatrix to Edge Locations
+-       `Extend Aviatrix to edge locations <http://docs.aviatrix.com/HowTos/edge-faq.html#extend-aviatrix-to-edge-locations>`_
 
--	Multi-Cloud/Multi-Transit Connectivity via Aviatrix Edge
+-	`Multi-Cloud connectivity using Aviatrix Edge <http://docs.aviatrix.com/HowTos/edge-faq.html#multi-cloud-connectivity-using-aviatrix-edge>`_
 
--	Aviatrix Edge Gateway – Private Network
+-	`Network segmentation using Aviatrix Edge <http://docs.aviatrix.com/HowTos/edge-faq.html#network-segmentation-using-aviatrix-edge>`_
 
--	Aviatrix Edge Gateway – Public Network
+-	`Aviatrix Edge connectivity over private network <http://docs.aviatrix.com/HowTos/edge-faq.html#aviatrix-edge-connectivity-over-private-network>`_
+
+-	`Aviatrix Edge connectivity over public network <http://docs.aviatrix.com/HowTos/edge-faq.html#aviatrix-edge-connectivity-over-public-network>`_
 
 
 Extend Aviatrix to Edge Locations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This diagram illustrates Edge Gateways deployed into multiple Edge locations.
+This diagram illustrates Aviatrix Edge Gateways deployed at multiple edge locations.
 
-|eaas_usecase_edge_location|
+|edge_usecase_edge_location|
 
-Multi-Cloud Connectivity via Aviatrix Edge
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Multi-Cloud Connectivity Using Aviatrix Edge
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This diagram illustrates Edge Gateway deployed as primary path of Multi-Cloud Connectivity with Transit Peering over Internet for the backup path.
+This diagram illustrates Aviatrix Edge Gateway deployed as the primary path for the multi-cloud connectivity and transit peering over the Internet for the backup path.
 
-|eaas_usecase_mc|
+|edge_usecase_multi_cloud|
 
-Aviatrix Edge Gateway – Private Network
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This diagram illustrates Edge Gateway deployed in a private network.
-
-|secure_edge_private_network|
-
-Aviatrix Edge Gateway – Public Network
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This diagram illustrates Edge Gateway deployed in a public network.
-
-|secure_edge_public_network|
+Network Segmentation Using Aviatrix Edge
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-What are the requirements to run the Edge Gateway?
---------------------------------------------------
+Aviatrix Edge Connectivity over Private Network
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Aviatrix Edge 2.0 requires Aviatrix Controller 6.8. For additional requirements, refer to the *Prerequisites* section in `Deploying Aviatrix Edge 2.0 <http://docs.aviatrix.com/HowTos/edge-2.0.html#prerequisites>`_.
+This diagram illustrates Aviatrix Edge Gateway deployed in a private network.
 
-Aviatrix Edge 1.0 requires Aviatrix Controller 6.7. For additional requirements, refer to the *Prerequisites* section in `Deploying Aviatrix Secure Edge 1.0 for VMware ESXi <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#prerequisites>`_.
+|edge_usecase_private_network|
+
+Aviatrix Edge Connectivity over Public Network
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This diagram illustrates Aviatrix Edge Gateway deployed in a public network.
+
+|edge_usecase_public_network|
 
 
-How do I deploy Aviatrix Edge?
-------------------------------
-
-To deploy Aviatrix Edge 2.0 as a Spoke, follow the workflow in `Deploying Aviatrix Edge 2.0 <http://docs.aviatrix.com/HowTos/edge-2.0.html>`_..
-
-To deploy Aviatrix Edge 1.0 as a virtual machine, follow the workflow in `Deploying Aviatrix Secure Edge 1.0 for VMware ESXi <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html>`_.
 
 
-.. |eaas_usecase_edge_location| image:: CloudN_workflow_media/eaas_usecase_edge_location.png
+
+.. |edge_usecase_edge_location| image:: CloudN_workflow_media/edge_usecase_edge_location.png
    :scale: 40%
 
 
-.. |eaas_usecase_mc| image:: CloudN_workflow_media/eaas_usecase_mc.png
+.. |edge_usecase_multi_cloud| image:: CloudN_workflow_media/edge_usecase_multi_cloud.png
    :scale: 40%
 
-.. |secure_edge_private_network| image:: CloudN_workflow_media/secure_edge_private_network.png
+.. |edge_usecase_private_network| image:: CloudN_workflow_media/edge_usecase_private_network.png
    :scale: 40%
 
-.. |secure_edge_public_network| image:: CloudN_workflow_media/secure_edge_public_network.png
+.. |edge_usecase_public_network| image:: CloudN_workflow_media/edge_usecase_public_network.png
    :scale: 40%
 
 
