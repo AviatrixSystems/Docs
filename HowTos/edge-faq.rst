@@ -52,7 +52,7 @@ Edge 2.0 features include:
 
 Aviatrix Edge 2.0 requires Aviatrix Controller 6.8.
 
-For more information about Edge 2.0 use case scenarios, see `Aviatrix Edge Connectivity Use Case Scenarios <http://docs.aviatrix.com/HowTos/edge-faq.html#aviatrix-edge-connectivity-use-case-scenarios>`_.
+For more information about Edge 2.0 use case scenarios, see `What are the use cases for Aviatrix Edge? <http://docs.aviatrix.com/HowTos/edge-faq.html#what-are-the-use-cases-for-aviatrix-edge?>`_.
 
 For additional requirements and deployment workflow, see `Deploying Aviatrix Edge 2.0 <http://docs.aviatrix.com/HowTos/edge-2.0.html>`_.
 
@@ -118,17 +118,17 @@ This diagram illustrates Aviatrix Edge Gateway deployed in a public network.
 
 
 
-.. |edge_usecase_edge_location| image:: CloudN_workflow_media/eaas_usecase_edge_location.png
+.. |edge_usecase_edge_location| image:: CloudN_workflow_media/edge_usecase_edge_location.png
    :scale: 40%
 
 
-.. |edge_usecase_multi_cloud| image:: CloudN_workflow_media/eaas_usecase_mc.png
+.. |edge_usecase_multi_cloud| image:: CloudN_workflow_media/edge_usecase_multi_cloud.png
    :scale: 40%
 
-.. |edge_usecase_private_network| image:: CloudN_workflow_media/secure_edge_private_network.png
+.. |edge_usecase_private_network| image:: CloudN_workflow_media/edge_usecase_private_network.png
    :scale: 40%
 
-.. |edge_usecase_public_network| image:: CloudN_workflow_media/secure_edge_public_network.png
+.. |edge_usecase_public_network| image:: CloudN_workflow_media/edge_usecase_public_network.png
    :scale: 40%
 
 
