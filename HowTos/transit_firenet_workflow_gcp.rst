@@ -11,7 +11,12 @@ You use Aviatrix Transit FireNet to deploy firewall functions for the Aviatrix M
 
 To learn about Transit FireNet, see `Transit FireNet FAQ. <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_
 
-If you want to deploy firewall networks in AWS Transit Gateway (TGW) environment, your starting point is `here. <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_.
+To deploy firewall networks in other CSPs:
+
+
+- `AWS Transit Gateway (TGW) <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_
+- `AWS Transit FireNet multi-cloud transit <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html>`_
+- `Azure Transit FireNet workflow <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_azure.html>`_
 
 
 In this example, a transit VPC with Aviatrix Gateways is deployed, and two Spoke Gateways (DEV and PROD) are attached.
@@ -72,7 +77,7 @@ Now that we have set up an Aviatrix Transit Gateway, we can deploy Aviatrix Spok
 1.	Navigate to Multi-Cloud Transit -> Setup -> Spoke -> #1 Launch an Aviatrix Spoke Gateway.
 #.	Deploy a Spoke Gateway (GW) in each of the spoke VPCs using defaults while choose correct Account and VPC info
 #.	Choose the Public Subnet.
-#.	Enable Spoke Gateway HA by navigating to **Multi-Cloud Transit -> Setup -> #5 (Optional) Enable/Disable HA at Spoke GW**.
+#.	Enable Spoke Gateway HA by navigating to Multi-Cloud Transit -> Setup -> #5 (Optional) Enable/Disable HA at Spoke GW.
 
 |launch_spk_gw|
 
@@ -162,12 +167,12 @@ Bootstrap Bucket Name                           In advanced mode, specify a boot
 ==========================================      ==========
 
 1. Check Point Specification
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Check Point support for Google Cloud will be available in a future release.
 
 
 2. Palo Alto VM-Series Specifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Palo instance has three interfaces as described below.
 
@@ -194,17 +199,17 @@ Follow `Palo Alto Network (VM Series) GCP Example <https://docs.aviatrix.com/How
 
 
 3. Fortigate Specifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For details on how to configure Transit FireNet for GCP see <https://docs.aviatrix.com/HowTos/config_FortigateGCP.html>`_.
+For details on how to configure Transit FireNet for GCP click `here <https://docs.aviatrix.com/HowTos/config_FortigateGCP.html>`_.
 
 
 Associate an Existing Firewall Instance
 ******************************************
 
-This step is the alternative step to Step 8a. If you already launched the firewall (Check Point, Palo Alto Network or Fortinet) instance from AWS Console, you can still associate it with the FireNet gateway.
+This step is the alternative step to Step 2a. If you already launched the firewall (Check Point, Palo Alto Network or Fortinet) instance from AWS Console, you can still associate it with the FireNet gateway.
 
-Go to the Aviatrix Controller console and navigate to **Firewall Network -> Setup -> Step 7b** and associate a firewall with right FireNet Gateway.
+In the Aviatrix Controller navigate to Firewall Network -> Setup -> Firewall -> Step 2b and associate a firewall with a FireNet Gateway.
 
 
 Vendor Firewall Integration

@@ -7,11 +7,18 @@
 Transit FireNet Workflow for Azure
 =========================================================
 
-Aviatrix Transit FireNet allows you to deploy firewalls functions for the Aviatrix Multi-Cloud Transit architecture. With Transit FireNet feature, the Firewall Network (FireNet) function is integrated into the Aviatrix Transit gateway.
+Aviatrix Transit FireNet allows you to deploy firewall functions for the Aviatrix Multi-Cloud Transit architecture. With the Transit FireNet feature, the Firewall Network (FireNet) function is integrated into the Aviatrix Transit gateway.
 
 Aviatrix Transit FireNet supports different hashing algorithms available in Azure cloud to load balance the traffic across different firewalls which includes `Hash-based distribution mode (five-tuple hash) <https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-distribution-mode#hash-based-distribution-mode>`_ and `Source IP affinity mode (three-tuple or two-tuple hash) <https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-distribution-mode#source-ip-affinity-mode>`_.
 
 To learn more about Hashing Algorithm and Transit FireNet, read the `Transit FireNet FAQ. <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_
+
+To deploy firewall networks in other CSPs:
+
+
+- `AWS Transit Gateway (TGW) <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_
+- `AWS Transit FireNet multi-cloud transit <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html>`_
+- `GCP Transit FireNet workflow <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_gcp.html>`_
 
 In this example, a Transit VNet with Aviatrix Gateways is deployed, and two Spoke Gateways (DEV and PROD) are attached to it.
 
