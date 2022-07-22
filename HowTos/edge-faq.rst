@@ -20,7 +20,7 @@ Benefits of the Aviatrix Edge solution include:
 
 - Single pane of glass for visibility, monitoring, and troubleshooting from Aviatrix Controller and Aviatrix CoPilot
 
-- Encrypted connectivity and routing between multi-clouds with a private path that uses standard architecture
+- Encrypted connectivity and routing between multi-cloud networks with a private path that uses standard architecture
 
 - High Performance Encryption (HPE) support over public and private networks 
 
@@ -66,8 +66,8 @@ Aviatrix Edge 1.0 requires Aviatrix Controller 6.7.
 For additional requirements and deployment workflow, see `Deploying Aviatrix Secure Edge 1.0 for VMware ESXi <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html>`_.
 
 
-Aviatrix Edge Connectivity Use Case Scenarios
----------------------------------------------
+What are the use cases for Aviatrix Edge?
+-----------------------------------------
 
 The following are examples of Aviatrix Edge use cases.
 
