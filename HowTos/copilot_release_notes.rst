@@ -38,7 +38,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 CoPilot Release 2.2.2 (7/22/2022)
 ---------------------------------------------
 
--   Bug Fix: A fix is delivered for a bug that was causing new deployments on OCI/GCP/Azure to fail for release 2.2.1. New AWS deployments were not impacted.
+-   Bug Fix: A fix is delivered for a bug that was causing new deployments on OCI/GCP/Azure to fail for release 2.2.1. New AWS deployments are not impacted.
 
 
 CoPilot Release 2.2.1 (7/15/2022)
