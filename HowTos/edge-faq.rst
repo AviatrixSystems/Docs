@@ -31,7 +31,7 @@ Benefits of the Aviatrix Edge solution include:
 Aviatrix Edge 2.0
 -----------------
 
-Aviatrix Edge 2.0 solution is offered in VMware ESXi and KVM form factors and allows you to run the spoke gateway features at the edge network. 
+Aviatrix Edge 2.0 solution is offered in VMware ESXi and KVM form factors that lets you deploy an Edge Gateway with spoke gateway capabilities at the edge network. 
 
 Edge 2.0 features include:  
 

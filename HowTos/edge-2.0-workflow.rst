@@ -6,15 +6,14 @@
 Deploying Aviatrix Edge  2.0
 ============================
 
-Aviatrix Edge 2.0 (Edge as a Spoke) enables you to extend your cloud network to the Edge and easily integrate it with your remote locations and data centers. You can extend your Aviatrix-managed platform to the Edge as well as support multi-cloud multi-transit connectivity. 
+This document provides instructions for deploying Aviatrix Edge 2.0 on VMware ESXi or on open-source Kernel-based Virtual Machine (KVM).
 
-Aviatrix Edge 2.0 is supported in AWS, Azure, and OCI. Edge 2.0 is supported in GCP for non-High-Performance Encryption (HPE) environments.
 
-This document provides instructions for deploying Aviatrix Edge 2.0 on VMware ESXi or on open-source Kernel-based Virtual Machine (KVM). 
+For additional information about Aviatrix Edge 2.0, refer to `Aviatrix Edge FAQ <http://docs.aviatrix.com/HowTos/edge-faq.html>`_. 
+ 
 
-For examples of Edge 2.0 designs, refer to `Aviatrix Edge Design Patterns <http://docs.aviatrix.com/HowTos/edge-design-patterns.html>`_.
+For examples of Edge 2.0 design patterns, refer to `Aviatrix Edge Design Patterns <http://docs.aviatrix.com/HowTos/edge-design-patterns.html>`_.
 
-For additional information about Aviatrix Edge 2.0, refer to `Aviatrix Secure Edge FAQ <http://docs.aviatrix.com/HowTos/secure_edge_faq.html>`_. 
 
 For the Aviatrix Edge 1.0 for ESXi workflow, refer to `Deploying Aviatrix Edge 1.0 for VMware ESXi <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html>`_.
    
@@ -133,6 +132,14 @@ Aviatrix Edge Network Interfaces
 Aviatrix Edge Ports and Protocols
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. Important::
+
+   The Aviatrix Controller requires access to the following ports for Edge Gateway deployment. You must allow access on these ports on your firewall.
+
+      - MGMT: TCP 443 access to the Aviatrix Controller’s public IP address 
+      - MGMT: TCP 443 access to the Aviatrix Controller’s private IP address (only permit this access if you selected **Management over Private Network** for management IP connectivity) 
+      - WAN: UDP 500/4500
+
 +------------+-------------------------------------------+--------------+----------+-----------------------+
 |**Source**  | **Destination**                           | **Protocol** | **Port** | **Purpose**           |
 +============+===========================================+==============+==========+=======================+
@@ -144,12 +151,11 @@ Aviatrix Edge Ports and Protocols
 +------------+-------------------------------------------+--------------+----------+-----------------------+
 | Mgmt eth2  | DNS server                                | UDP          | 53       | DNS lookup            |
 +------------+-------------------------------------------+--------------+----------+-----------------------+
-| Mgmt eth2  | NTP                                       | UDP          | 123      | NTP                   |
-+------------+-------------------------------------------+--------------+----------+-----------------------+
 | Mgmt eth2  | Aviatrix Controller FQDN or               | TCP          | 443      | Edge to Controller    |
-|            | public IP address.                        |              |          | registration          |
+|            | public IP address.                        |              |          |                       |
 |            | controller.aviatrixnetwork.com            |              |          |                       |
 |            | spire-server.aviatrixnetwork.com          |              |          |                       |
+|            | time-server.aviatrixnetwork.com           |              |          |                       |
 +------------+-------------------------------------------+--------------+----------+-----------------------+
 | Mgmt eth2  | security.aviatrix.com                     | TCP          | 443      | Credentials sync      |
 |            |                                           |              |          | Software download     |
@@ -158,13 +164,6 @@ Aviatrix Edge Ports and Protocols
 |            |                                           |              |          | Remote support        |
 +------------+-------------------------------------------+--------------+----------+-----------------------+
 
-.. Important::
-
-   The Aviatrix Controller requires access to the following ports for Edge Gateway deployment. You must allow access on these ports on your firewall.
-
-      - MGMT: TCP 443 access to the Aviatrix Controller’s public IP address 
-      - MGMT: TCP 443 access to the Aviatrix Controller’s private IP address (only permit this access if you selected **Management over Private Network** for management IP connectivity) 
-      - WAN: UDP 500/4500
 
 
 Aviatrix Edge 2.0 Deployment Workflow
@@ -395,7 +394,7 @@ To configure BGP AS Numbers (ASN), follow these steps.
 3b. Attach Edge Gateway to Transit Gateway 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After you have udated the WAN Public IP on the Edge Gateway and configured the BGP ASNs on both the Transit Gateway, follow these steps to attach the Edge Gateway to the Transit Gateway.
+After you have updated the WAN Public IP on the Edge Gateway and configured the BGP ASNs on both the Transit Gateway, follow these steps to attach the Edge Gateway to the Transit Gateway.
 
 1.	In Aviatrix Controller, go to **MULTI-CLOUD TRANSIT** > **List** > **Spoke**. Confirm that the Edge Gateway you created is up.
 2.	Navigate to **MULTI-CLOUD TRANSIT** > **Setup** > **Attach / Detach** > **1a Attach Spoke Gateway to Transit Network**.
