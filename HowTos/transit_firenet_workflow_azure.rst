@@ -7,61 +7,75 @@
 Transit FireNet Workflow for Azure
 =========================================================
 
-Aviatrix Transit FireNet allows you to deploy firewalls functions for the Aviatrix Multi-Cloud Transit architecture. With Transit FireNet feature, the Firewall Network (FireNet) function is integrated into the Aviatrix Transit gateway.
+Aviatrix Transit FireNet allows you to deploy firewall functions for the Aviatrix Multi-Cloud Transit architecture. With the Transit FireNet feature, the Firewall Network (FireNet) function is integrated into the Aviatrix Transit gateway.
 
 Aviatrix Transit FireNet supports different hashing algorithms available in Azure cloud to load balance the traffic across different firewalls which includes `Hash-based distribution mode (five-tuple hash) <https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-distribution-mode#hash-based-distribution-mode>`_ and `Source IP affinity mode (three-tuple or two-tuple hash) <https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-distribution-mode#source-ip-affinity-mode>`_.
 
-To learn more about Hashing Algorithm and Transit FireNet, check out `Transit FireNet FAQ. <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_
+To learn more about Hashing Algorithm and Transit FireNet, read the `Transit FireNet FAQ. <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_
 
-In this example, Transit VNet with Aviatrix Gateways will be deployed, and two Spoke Gateways (DEV and PROD) will be attached to it.
+To deploy firewall networks in other CSPs:
 
-The transit VNET will have a firewall of supported vendors (Check Point, Palo Alto Networks and Fortinet etc.) deployed in it. Please see the diagram below for more details.
 
-Once the infra is in-place then the policy will be created to inspect the east-west and north-south traffic.
+- `AWS Transit Gateway (TGW) <https://docs.aviatrix.com/HowTos/firewall_network_workflow.html>`_
+- `AWS Transit FireNet multi-cloud transit <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_aws.html>`_
+- `GCP Transit FireNet workflow <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_gcp.html>`_
+
+In this example, a Transit VNet with Aviatrix Gateways is deployed, and two Spoke Gateways (DEV and PROD) are attached to it.
+
+The transit VNET will then have a firewall of supported vendors (Check Point, Palo Alto Networks and Fortinet etc.) deployed within it. Please see the diagram below for more details.
+
+Once the infrastructure is in place you create a policy to inspect the east-west and north-south traffic.
 
 |avx_tr_firenet_topology_az|
 
-Step 1 : Create Transit VNet
-*******************************
+Create Transit VNet
+********************
 
-VNets can be created manually on Azure or directly from Aviatrix Controller.
+VNets can be created manually on Azure or directly from the Aviatrix Controller.
 
-Aviatrix controller has set of useful tools available for users and in this example, VNets are created following the Useful Tools `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ guidelines.
+VNets are created following the Useful Tools `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ guidelines.
 
-1.	Login to the Aviatrix Controller with username and password
-#.	Navigate to **Useful Tools -> Create A VPC**
-#.	Add one VNet for Transit FireNet Gateway and select **Aviatrix FireNet VPC** option as shown below.
-#.  Create two more VNets with **no option/checkbox** selected for Spoke Gateways.
+1.	Login to the Aviatrix Controller with a username and password.
+#.	Navigate to **Useful Tools -> Create A VPC**.
+#. Select Azure as the Cloud Type.
+#.	Add one VNet for Transit FireNet Gateway and select **Aviatrix Transit FireNet VNet** option as shown below.
+#.  Create two more VNets with no option/checkbox selected for Spoke Gateways.
 
 |create_vpc|
 
-Step 2: Deploy the Transit Aviatrix Gateway
-***************************************************
+Deploy the Transit Aviatrix Gateway
+************************************
 
-Transit Aviatrix Gateway can be deployed using the `Transit Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_
+The Transit Aviatrix Gateway can be deployed using the `Transit Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-transit-gateway>`_.
 
-Prerequisite for Azure
+Prerequisites for Azure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Transit FireNet builds on the Aviatrix Transit Network solution where Aviatrix gateways are deployed in Transit VNet and/or in Spoke VNet in Azure.
+Transit FireNet builds on the Aviatrix Transit Network solution where Aviatrix gateways are deployed in Transit VNet and/or in Spoke VNet in Azure. ActiveMesh is applied by default.
 
 Make sure the deployment meets the following specifications:
 
-1.	ActiveMesh must be enabled when launching the Aviatrix Transit Gateway.
-2.	Select the option “Enable Transit FireNet” when launching the Aviatrix Transit Gateway.
-3.	Aviatrix Transit Network must be in Connected mode. Go to Transit Network -> Advanced Config -> Connected Transit. Click Enable.
+1.	Select the option “Enable Transit FireNet” when launching the Aviatrix Transit Gateway.
+#.	Aviatrix Transit Network must be in Connected mode. Go to Multi-Cloud Transit -> Advanced Config -> Connected Transit and ensure the option is enabled.
 
 .. important::
-    Controller version 6.0 and prior, the minimum size of the Aviatrix Transit Gateway virtual machine is Standard_B2ms. Starting 6.1, minimum Transit Gateway instance size requirement is removed.
+    In Aviatrix Controller version 6.0 and prior, the minimum size of the Aviatrix Transit Gateway virtual machine is Standard_B2ms. Starting in 6.1, the minimum Transit Gateway instance size requirement is removed.
 
 Procedure
 ~~~~~~~~~~~~~~~~~~~~~
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Setup -> #1 Launch an Aviatrix Transit Gateway**
-#.	Choose virtual machine size **Standard_B2ms**
-#.	Enable **ActiveMesh Mode (Mandatory)**
-#.	Enable InsaneMode for higher throughputs (optional)
-#.	Enable Transit Gateway HA by navigating to **MULTI-CLOUD TRANSIT -> Setup -> #2 (Optional) Enable HA to an Aviatrix Transit Gateway**
+1.	Navigate to Multi-Cloud Transit -> Setup -> Transit -> #1 Launch an Aviatrix Transit Gateway.
+#. Ensure that Azure is the selected Cloud Type.
+#. Enter a Gateway Name.
+#. Select the Azure Access Account Name.
+#. Select a region.
+#. Select the VNet Name. 
+#. Select a Public Subnet.
+#. Select a gateway size (default is Standard_B2ms).
+#. Enable Insane Mode Encryption for higher throughputs (optional).
+#. Enable the Transit FireNet function.
+#. Click Create.
+#. Enable Transit Gateway HA by navigating to Multi-Cloud -> Setup -> #2 (Optional) Enable HA to an Aviatrix Transit Gateway.
 
 Please see an example below for Transit FireNet GW:
 
@@ -69,56 +83,54 @@ Please see an example below for Transit FireNet GW:
 
 .. note::
 
-  Insane Mode Encryption for higher throughput requires a virtual machine size. Check this `link <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#azure-performance-test-results>`_ for detail. 
+  Insane Mode Encryption for higher throughput requires a virtual machine size. Check this `link <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#azure-performance-test-results>`_ for details. 
 
-Step 3: Deploy Spoke Gateways
-*************************************
+Deploy Spoke Gateways
+***********************
 
-Now that we have Aviatrix Transit Gateway, we can deploy Aviatrix Spoke Gateways in the spoke VNET using `Aviatrix Spoke Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_.
+Now that we have an Aviatrix Transit Gateway, we can deploy Aviatrix Spoke Gateways in the spoke VNET using `Aviatrix Spoke Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_.
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Setup -> #4 Launch an Aviatrix Spoke Gateway**
+1.	Navigate to Multi-Cloud Transit -> Setup -> Spoke ->  #1 Launch an Aviatrix Spoke Gateway.
 #.	Deploy a Spoke Gateway (GW) in each of the spoke VNETs using defaults while choose correct Account and VNET info
-#.	Choose the Public Subnet
-#.	Enable Spoke Gateway HA by navigating to Transit network -> Setup -> #5 (Optional) Enable/Disable HA at Spoke GW
+#.	Choose the Public Subnet.
+#.	Enable Spoke Gateway HA by navigating to Transit network -> Setup -> #5 (Optional) Enable/Disable HA at Spoke GW.
 
 |launch_spk_gw|
 
-Step 4: Attach Spoke Gateways to Transit Network
-*******************************************************
+Attach Spoke Gateways to Transit Network
+*****************************************
 
-Transit and spoke gateways are deployed, next step is to connect them.
+Now that Transit and Spoke gateways are deployed, you must connect them.
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Setup -> #6a Attach Spoke Gateway to Transit Network**
+1.	Navigate to Multi-Cloud Transit -> Setup -> Attach/Detach -> #1 Attach Spoke Gateway to Transit Network.
 #.	Select one spoke at a time and attach to the Transit Gateway.
 
 |attach_spk_trgw|
 
 .. note::
- Transit Gateway is attached to Spoke Gateways, but by default, Transit Gateway will not route traffic between Spoke Gateways.
+ The Transit gateway is attached to Spoke Gateways, but by default, Transit Gateway will not route traffic between Spoke Gateways.
 
-Step 5: Enable Connected Transit
-**************************************
+Enable Connected Transit
+************************
 
-By default, spoke VNETs are in isolated mode where the Transit will not route traffic between them. To allow the Spoke VNETs to communicate with each other, we need to enable Connected Transit
-
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Advanced Config**, select the right Transit Gateway and enable **“Connected Transit”**
+By default, spoke VNETs are in isolated mode where the Transit will not route traffic between them. To allow the Spoke VNETs to communicate with each other, you must enable Connected Transit by navigating to Multi-Cloud Transit -> Advanced Config. Under Edit Transit, select the Transit Gateway and toggle Connected Transit to **Enabled**.
 
 |connected_transit|
 
-Step 6: Configure Transit Firewall Network
-**************************************************
+Configure Transit Firewall Network
+***********************************
 
-Transit and Spoke Gateways have now been deployed, next step is to deploy and enable the Firewall for traffic inspection.
+Now that Transit and Spoke gateways have now been deployed, you must deploy and enable the firewall for traffic inspection.
 
 Let’s start with enabling the firewall function and configure the FireNet policy.
 
-1.	Navigate to **MULTI-CLOUD TRANSIT -> Transit FireNet -> #1 Enable Transit FireNet on Aviatrix Transit Gateway**
-#.	Choose the Aviatrix Transit Gateway and Click **“Enable”**
+1.	Navigate to Firewall Network -> Setup -> Transit FireNet -> #3a Enable Transit FireNet on Aviatrix Transit Gateway.
+#.	Choose the Aviatrix Transit Gateway and Click **Enable**.
 
 |en_tr_firenet|
 
-3.	Navigate to **MULTI-CLOUD TRANSIT -> Transit FireNet -> #2 Manage FireNet Policy**
-#.	Add spokes to the Inspected box for traffic inspection
+3.	Navigate to Firewall Network -> Policy -> Manage FireNet Policy.
+#.	Add spokes to the Inspected box for traffic inspection.
 
 .. note::
     By default, FireNet inspects ingress (INET to VNET) and east-west traffic (VNET to VNET) only.
@@ -126,28 +138,28 @@ Let’s start with enabling the firewall function and configure the FireNet poli
 |tr_firenet_policy|
 
 
-Step 7a: Launch and Associate Firewall Instance
-*****************************************************************
+Launch and Associate Firewall Instance
+***************************************
 
-This approach is recommended if this is the first Firewall instance to be attached to the gateway.
+This approach is recommended if this is the first firewall instance to be attached to the gateway.
 
 This step launches a Firewall instance and associates it with one of the FireNet gateways.
 
 
 .. important::
 
-    The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet should not be in the same subnet.
+    The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet not be in the same subnet.
 
 .. note::
     By default, Aviatrix Transit Firenet uses 5 tuple hashing algorithm but that can be changed to 2 or 3 tuple as per requirement. Please check transit `firenet FAQs <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html#azure>`_ for more details.
 
-7a.1 Launch and Attach
+2a.1 Launch and Attach
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Go to Aviatrix Controller's console and navigate to **Firewall Network -> Setup -> Step 7a** and provide all the required input as shown in a table and click **"Launch"** button.
+In the Aviatrix Controller navigate to Firewall Network -> Setup -> Firewall -> Step 2a. Provide all the required input as shown in the table and click **"Launch"**.
 
 .. important::
-    Vendor's firewall may take some time after launch to be available.
+    The vendor's firewall may take some time after launch to be available.
 
 ==========================================      ==========
 **Setting**                                     **Value**
@@ -171,7 +183,7 @@ Advanced (Optional)                             Click this selection to allow Pa
 1. Check Point Specification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Check Point Security Gateway has 2 interfaces as described below.
+Check Point Security Gateway has two interfaces as described below.
 
 ========================================================         ===============================          ================================
 **Check Point VM interfaces**                                    **Description**                          **Inbound Security Group Rule**
@@ -185,7 +197,7 @@ Note that security gateway eth1 is on the same subnet as Firenet gateway eth2 in
 Check Point Security Gateway launch from the Aviatrix Controller automatically initiates the on-boarding process, configure security gateway interfaces and program RFC 1918 routes. After completing this step, user should be able to login to the Check Point Gaia console with username **admin** and provided password during launch.
 
 .. note::
-    Repeat Step 7a to launch the second security gateway to associate with the HA FireNet gateway. Or repeat this step to launch more security gateways to associate with the same Firenet gateway.
+    Repeat Step 2a to launch the second security gateway to associate with the HA FireNet gateway. Or repeat this step to launch more security gateways to associate with the same Firenet gateway.
 
 
 Follow `Check Point Example <https://docs.aviatrix.com/HowTos/config_CheckPointAzure.html#launch-check-point-firewall-from-aviatrix-controller>`_ to see how to launch Check Point Security Gateway in Azure, and for more details.
@@ -194,7 +206,7 @@ Follow `Check Point Example <https://docs.aviatrix.com/HowTos/config_CheckPointA
 2. Palo Alto VM-Series Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Palo instance has 3 interfaces as described below.
+Palo instance has three interfaces as described below.
 
 ========================================================         ===============================          ================================
 **Palo Alto VM interfaces**                                      **Description**                          **Inbound Security Group Rule**
@@ -206,7 +218,7 @@ eth2 (on subnet -dmz-firewall)                                   LAN or Trusted 
 
 Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 interface.
 
-Launch VM Series from Aviatrix Controller automatically set it up the Palo Alto Network VM-Series firewall. User should be able to login to the VM-Series console with given username and password during launch.
+You can launch the Palo Alto VM Series firewall from the Aviatrix Controller and then configure it. User should be able to login to the VM-Series console with given username and password during launch.
 
 .. important::
 
@@ -220,7 +232,7 @@ Launch VM Series from Aviatrix Controller automatically set it up the Palo Alto 
 3. Fortinet Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-FortiGate Next Generation Firewall instance has 2 interfaces as described below.
+FortiGate Next Generation Firewall instance has two interfaces as described below.
 
 ========================================================         ===============================          ================================
 **FortiGate VM interfaces**                                      **Description**                          **Inbound Security Group Rule**
@@ -234,21 +246,22 @@ eth1 (on subnet -dmz-firewall)                                   LAN or Trusted 
 
 Please refer to `FortiGate Azure Configuration Example <https://docs.aviatrix.com/HowTos/config_FortiGateAzure.html#example-config-for-fortigate-vm-in-azure>`_ for more details.
 
-Step 7b: Associate an Existing Firewall Instance
-*******************************************************
+Associate an Existing Firewall Instance
+******************************************
 
-This step is the alternative step to Step 7a. If you already launched the firewall (Check Point, Palo Alto Network or Fortinet) instance from Azure Console, you can still associate it with the FireNet gateway.
+This step is the alternative step to Step 2a. If you already launched the firewall (Check Point, Palo Alto Network or Fortinet) instance from Azure Console, you can still associate it with the FireNet gateway.
 
-Go to Aviatrix Controller's console and navigate to **Firewall Network -> Setup -> Step 7b** and associate a firewall with right FireNet Gateway.
+In the Aviatrix Controller navigate to Firewall Network -> Setup -> Step 2b and associate a firewall with the correct FireNet Gateway.
 
 
-Step 8: Vendor Firewall Integration
-*****************************************************
+Vendor Firewall Integration
+*****************************
 
-Vendor integration dynamically updates firewall route tables. The use case is for networks with RFC 1918 and non-RFC 1918 routes that require specific route table programming on the firewall appliance
+Vendor integration dynamically updates firewall route tables. The use case is for networks with RFC 1918 and non-RFC 1918 routes that require specific route table programming on the firewall appliance.
 
-1.	Go to Firewall Network -> Vendor Integration -> Select Firewall, fill in the details of your Firewall instance.
-2.	Click Save, Show and Sync.
+1.	In the Aviatrix Controller, navigate to Firewall Network -> Vendor Integration -> Firewall. Select the Firewall Vendor Type and fill in the details of your firewall instance.
+#. Click Save.
+#. You can click Show or Sync to show the integration details, or sync the configuration with the firewall.
 
 .. important::
     Aviatrix Controller automatically programs RFC 1918 in Check Point Security Gateway at a time of launch. This step can be skipped for Check Point if non-RFC 1918 routes programming is not required in Security Gateway.
@@ -257,9 +270,9 @@ Vendor integration dynamically updates firewall route tables. The use case is fo
     Vendor integration is not supported for FortiGate. User needs to configure RFC 1918 static routes manually in FortiGate firewall.
 
 
-Step 9: Enable Health Check Policy in Firewall
-***************************************************
-Aviatrix Controller uses HTTPS (TCP 443) to check the health of firewall every 5 seconds. User needs to enable this port in firewall as per given instruction.
+Enable Health Check Policy in Firewall
+****************************************
+Aviatrix Controller uses HTTPS (TCP 443) to check the health of firewall every five seconds. You must enable this port in the firewall as per given instructions.
 
 Check Point
 ~~~~~~~~~~~~~~
@@ -268,7 +281,7 @@ By default, HTTPS or TCP 443 is allowed in Security Gateway. No action is requir
 
 Palo Alto Network (PAN)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-By default, VM-Series do not allow HTTPS or TCP 443 port. Pleas follow the given steps to enable it:
+By default, VM-Series does not allow HTTPS or TCP 443 port. Follow these steps to enable it:
 
     1. Login to VM-Series with username and password.
     #. Go to Network -> Interface Mgmt under Network Profiles and click "Add".
@@ -287,9 +300,9 @@ Firewall health check probes can be verified in Monitor -> Traffic.
 
 Fortinet
 ~~~~~~~~~~~~~~~
-User needs to allow HTTPS or TCP 443 port in FortiGate firewall to monitor the health of firewall. Please follow the steps to allow HTTPS in FortiGate:
+You must allow HTTPS or TCP 443 port in the FortiGate firewall to monitor the health of firewall. Please follow the steps to allow HTTPS in FortiGate:
 
-    1. Login to FortiGate's console using username and password
+    1. Login to FortiGate's console using username and password.
     #. Go to Network -> Interfaces, select **port 2** and click "Edit".
     #. Check HTTPS checkbox under Administrative access -> IPv4 and click "OK".
 
@@ -300,8 +313,8 @@ The health check probes can be verified in FortiGate by navigating to Log & Repo
 |health-probe-logs|
 
 
-Step 10: Example Setup for "Allow All" Policy
-***************************************************
+Example Setup for "Allow All" Policy
+**************************************
 
 After a firewall instance is launched, wait for 5 to 15 minutes for it to come up. Time varies for each firewall vendor.
 In addition, please follow example configuration guides as below to build a simple policy on the firewall instance for a test validation that traffic is indeed being routed to firewall instance.
@@ -324,16 +337,16 @@ Check Point
 For basic policy configuration, please refer to `example Check Point configuration guide <https://docs.aviatrix.com/HowTos/config_CheckPointAzure.html#configure-basic-traffic-policy-to-allow-traffic-vnet-to-vnet>`_.
 
 
-Step 11: Verification
-***************************
+Verification
+***************
 
 There are multiple ways to verify if Transit FireNet is configured properly:
 
     1.	Aviatrix Flightpath - Control-plane Test
     #.	Ping/Traceroute Test between Spoke VNETs (East-West) - Data-plane Test
 
-Flight Path Test for FireNet Control-Plane Verification:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Flight Path Test for FireNet Control-Plane Verification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Flight Path is a very powerful troubleshooting Aviatrix tool which allows users to validate the control-plane and gives visibility of end to end packet flow.
 
@@ -344,13 +357,13 @@ Flight Path is a very powerful troubleshooting Aviatrix tool which allows users 
 .. note::
     VM instance will be required in Azure, and ICMP should be allowed in security group.
 
-Ping/Traceroute Test for FireNet Data-Plane Verification:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ping/Traceroute Test for FireNet Data-Plane Verification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once control-plane is established and no problem found in security and routing polices. Data-plane validation needs to be verified to make sure traffic is flowing and not blocking anywhere.
+Once control-plane is established and no problems are found in security and routing polices, data-plane validation needs to be verified to make sure traffic is flowing and not blocking anywhere.
 
-There are multiple ways to check data-plane:
-    1. One way to SSH to Spoke EC2 instance  (e.g. DEV1-VM) and ping other Spoke EC2 to instance (e.g PROD1-VM) to make sure no traffic loss in the path.
+There are multiple ways to check the data-plane:
+    1. SSH to Spoke EC2 instance  (e.g. DEV1-VM) and ping other Spoke EC2 to instance (e.g PROD1-VM) to make sure no traffic loss in the path.
     2. Ping/traceroute capture can also be performed from Aviatrix Controller. Go to **TROUBLESHOOT -> Diagnostics** and perform the test.
 
 
