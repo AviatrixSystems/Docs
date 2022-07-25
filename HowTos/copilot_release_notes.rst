@@ -35,6 +35,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
+<<<<<<< Updated upstream
 CoPilot Release 2.2.2 (7/22/2022)
 ---------------------------------------------
 
@@ -44,12 +45,36 @@ CoPilot Release 2.2.2 (7/22/2022)
 
     -   **AVX-26326** — A fix is delivered for a bug that was causing new deployments on OCI/GCP/Azure to fail for release 2.2.1.
 
-
-
-CoPilot Release 2.3 (7/22/2022)
+=======
+CoPilot Release 2.3 (7/28/2022)
 ---------------------------------------------
 
--   Minor bug fixes. 
+**Feature Enhancements in CoPilot release 2.3**
+
+    -   (Notifications) **Set alerts based on new metric types** — You can set alerts based on:
+
+        -   The percentage of disk free — Percent Disk Free condition
+
+        -   The percentage of memory free — Percent Memory Free condition
+>>>>>>> Stashed changes
+
+        -   The status (outage detection) of the underlay connection — Underlay Connection Status condition
+
+    -   (System messages) **Notification for gateway tunnel limit** — CoPilot sends a notification if the limit for the number of allowed gateway tunnels is reached.
+
+**Issues Corrected in CoPilot release 2.3**
+
+    -   **AVX-24607** — Threat IPs were missing from ThreatGuard webhook alerts.
+ 
+
+CoPilot Release 2.2.2 (7/22/2022)
+---------------------------------------------
+
+-   Bug Fix.
+
+**Issue Corrected in CoPilot release 2.2.2**
+
+    -   **AVX-26326** — A fix is delivered for a bug that was causing new deployments on OCI/GCP/Azure to fail for release 2.2.1.
 
 
 CoPilot Release 2.2.1 (7/15/2022)
