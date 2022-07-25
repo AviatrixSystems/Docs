@@ -22,7 +22,7 @@ Please note that you will need an Aviatrix Controller to use CoPilot. CoPilot wo
 
 Aviatrix Controller and CoPilot are not required to be collocated. It is possible to run them in separate VPCs/VNets or separate cloud providers (in multi-cloud environments). Typically, Aviatrix Controller and Aviatrix CoPilot are run in the same VPC/VNet.
 
-After launching CoPilot, you must configure integration points for CoPilot to connect and communication with other components in the Aviatrix platform. See `Instance Configuration Details`_.
+After launching CoPilot, you must configure integration points for CoPilot to connect and communication with other components in the Aviatrix platform. See `Instance (VM) Configuration Details for CoPilot`_.
 
 If you are launching a new instance of CoPilot and need to migrate CoPilot data from an existing (source) CoPilot to a newly launched (destination) CoPilot, see `About Migrating CoPilot Data`_.
 
@@ -31,11 +31,11 @@ CoPilot Deployment Methods
 
 You can deploy Aviatrix CoPilot directly from any supported cloud service provider (CSP) marketplace, by using Terraform scripts, or by using the Aviatrix Controller user interface (available for AWS from Controller release 6.7.1185). 
 
-Deploying from the CSP marketplace takes only a few clicks to provision and launch the instance. Since you must subscribe to a CoPilot offer at a marketplace as a first step for all deployment methods, this method is commonly used right after subscribing. This deploy method is often used for a CoPilot simple (single instance) deployment. See `Subscribe to a CoPilot Offer`_. If your controller is in AWS, you can also conveniently launch a CoPilot simple or clustered deployment from the Aviatrix Controller user interface. See `CoPilot instance launch from the Controller UI`_ and `CoPilot cluster launch from the Controller UI`_.
+Deploying from the CSP marketplace takes only a few clicks to provision and launch the instance. Since you must subscribe to a CoPilot offer at a marketplace as a first step for all deployment methods, this method is commonly used right after subscribing. This deploy method is often used for a CoPilot simple (single instance) deployment. See `Subscribe to a CoPilot Offer`_. 
 
-For a CoPilot fault tolerant (clustered) deployment, you can deploy CoPilot from the Aviatrix Controller user interface. This feature is currently available only for AWS. Deploying CoPilot from the controller UI can be done if your controller is in AWS. See `CoPilot instance launch from the Controller UI`_. You can deploy a simple deployment or clustered deployment from the controller user interface in AWS.
+If your controller is in AWS, you can also conveniently launch a CoPilot simple or fault tolerant (clustered) deployment from the Aviatrix Controller user interface. See `CoPilot instance launch using Controller UI (AWS Only)`_ and `CoPilot cluster launch using Controller UI (AWS Only)`_.
 
-If you are knowledgeable in deploying infrastructure-as-code using Terraform, you might find it convenient to launch CoPilot by using Terraform scripts. A summary of steps for launching a single instance using Terraform is provided at `CoPilot instance launch using Terraform`_ but it is recommended to refer to the Terraform documentation for the most current instructions and samples. You can launch a simple or clustered deployment using Terraform scripts. At this time only AWS is supported for launching a CoPilot clustered deployment using Terraform. The Aviatrix Terraform Module for CoPilot is avaiable on GitHub here: https://github.com/AviatrixSystems/terraform-modules-copilot.
+If you are knowledgeable in deploying infrastructure-as-code using Terraform, you might find it convenient to launch CoPilot by using Terraform scripts. You can launch a simple or clustered deployment using Terraform scripts. At this time only AWS is supported for launching a CoPilot clustered deployment using Terraform. A summary of steps for launching a single instance using Terraform is provided at `(Terraform) CoPilot instance launch using Terraform`_.  Please refer to the Aviatrix Terraform Module for CoPilot for the most current instructions and samples on GitHub here: https://github.com/AviatrixSystems/terraform-modules-copilot.
 
 
 Instance (VM) Configuration Details for CoPilot
@@ -49,6 +49,8 @@ Instance (VM) Configuration Details for CoPilot
   - TCP port 5000 (default) — **For private mode**, enable Syslog for CoPilot Egress FQDN & Audit Data (from each gateway). Gateways send remote syslog to CoPilot.
 
   - UDP port 31283 (default, port is configurable) — Enable Netflow for CoPilot FlowIQ Data (from each gateway). Gateways send Netflow to CoPilot. 
+
+Each CoPilot instance must be launched in a *subnet (availability zone)* that has outbound Internet access. If you are using private mode, you also must select a *subnet* with outbound Internet access when specifying the subnet for each CoPilot instance. In a clustered (fault tolerant) deployment, select a subnet with outbound Internet access for the server instance as well as for each data instance in the cluster.
 
 .. tip::
   After launching your CoPilot instance, you can enable the "CoPilot Security Group Management" option in Controller (starting from Controller 6.8) to automate the configuration of integration points between CoPilot and Aviatrix Gateways such as those for syslog and Netflow listed above. Tip: If you need to manually add IPs for gateways, in Controller, you can view the IP addresses of all your gateways from the Gateways page. 
@@ -198,8 +200,7 @@ To subscribe to a CoPilot offer:
 
     -   (Internet Access)
 
-        - CoPilot requires Internet access.
-        - If you are using *private mode*, when you specify the subnet (availability zone) in which to deploy the instance, you must select a subnet with outbound Internet access.
+        - CoPilot requires Internet access. You must select a *subnet* with outbound Internet access when specifying the subnet for each CoPilot instance. If you are using *private mode*, you must also select a subnet with outbound Internet access when specifying the subnet (availability zone) in which to deploy each instance.
         
 5.  (Pre-6.8 Controller releases only) Starting with Controller release 6.8, this manual step is no longer required. You can use the CoPilot Security Group Management feature in Controller after you launch CoPilot to automatically add these entries to your CoPilot security groups. Skip this step if you have Controller 6.8.
 
@@ -226,7 +227,7 @@ To subscribe to a CoPilot offer:
 
     For example, in the AWS EC2 Dashboard, check the instance checkbox and from the Actions menu, choose Start Instance.
 
-    You are now ready to launch CoPilot in a web browser or from the Aviatrix Controller homepage and perform initial setup.
+    You are now ready to launch CoPilot in a web browser or from the Aviatrix Controller homepage and perform initial setup. See `Initial Setup of CoPilot`_.
 
 
 Initial Setup of CoPilot
@@ -604,7 +605,7 @@ To deploy CoPilot from the controller UI (AWS Only):
 
     c.  (Optional) If desired, in **VPC**, change the VPC in which to deploy the instance. By default, the deploy process will deploy the instance in the same VPC as your controller. If you want to deploy the instance in a different VPC than where the controller is deployed, click **Customize Deployment** and select the VPC from the VPC list.
 
-    d.  In **Subnet**, specify the subnet (availability zone) in which to deploy the instance. **Note:** If you are using private mode, you must select a subnet with outbound Internet access in this step. 
+    d.  In **Subnet**, specify the subnet (availability zone) in which to deploy the instance. **Note:** Each CoPilot instance must be launched in a *subnet* that has outbound Internet access. If you are using private mode, you also must select a *subnet* with outbound Internet access in this step. 
 
     e.  In **VM Size**, specify the VM size you want to provision for your instance. The default is a recommended minimum VM size for a single instance. See `Minimum Instance (VM) System Requirements for CoPilot`_ for information about instance sizing. You can accept the default or specify a custom instance configuration by ticking the **Customize Deployment** check box. 
 
@@ -745,7 +746,7 @@ To launch a CoPilot cluster (fault tolerant deployment) from the controller UI (
 
     c.  (Optional) If desired, in **VPC**, change the VPC in which to deploy the cluster. By default, the deploy process will deploy the cluster server instance and all data instances in the same VPC as your controller. If you want to deploy them in a different VPC than where the controller is deployed, click **Customize Deployment** and select the VPC from the VPC list.
 
-    d.  In **Subnet**, specify the subnet (availability zone) in which to deploy the *server instance*. In the next steps, you can specify to deploy each data instance in a different availability zone. It is recommended to deploy each cluster instance in a different availability zone so the cluster can tolerate an AZ failure. **Note:** If you are using private mode, you must select a subnet with outbound Internet access in this step. 
+    d.  In **Subnet**, specify the subnet (availability zone) in which to deploy the *server instance*. In the next steps, you can specify to deploy each data instance in a different availability zone. It is recommended to deploy each cluster instance in a different availability zone so the cluster can tolerate an AZ failure. **Note:** Each CoPilot instance must be launched in a *subnet* that has outbound Internet access. If you are using private mode, you also must select a *subnet* with outbound Internet access in this step.
 
     e.  In **CoPilot Server VM Size**, specify the VM size you want to provision for your *server instance.* The default is a recommended minimum VM size for a *server instance*. See `Minimum Instance (VM) System Requirements for CoPilot`_ for information about instance sizing. You can accept the default or specify a custom instance configuration by ticking the **Customize Deployment** check box.
 
@@ -757,7 +758,7 @@ To launch a CoPilot cluster (fault tolerant deployment) from the controller UI (
 
         You must deploy at least 3 data instances. You can deploy a maximum of 9 data instances.
 
-    b.  In **Subnet**, for each *data instance*, specify the subnet (availability zone) in which to deploy the instance. It is recommended to deploy each data instance in a **different availability zone** so the cluster can tolerate an AZ failure. For example, if you deployed three data instances in AZs 1a, 1b, and 1c:
+    b.  In **Subnet**, for each *data instance*, specify the subnet (availability zone) in which to deploy the instance. **Note:** Each CoPilot instance must be launched in a *subnet* that has outbound Internet access. If you are using private mode, you also must select a *subnet* with outbound Internet access in this step for each data instance. It is recommended to deploy each data instance in a **different availability zone** so the cluster can tolerate an AZ failure. For example, if you deployed three data instances in AZs 1a, 1b, and 1c:
 
         *subnet_cidr1*~~**us-east-1a**~~...
 
@@ -847,7 +848,7 @@ To launch a CoPilot cluster (fault tolerant deployment) from the controller UI (
 
 If you are knowledgeable in deploying infrastructure-as-code using Terraform, you may prefer or find it more convenient in some circumstances to launch the Aviatrix CoPilot VM/instance using a Terraform script rather than via the CSP marketplace. 
 
-This section provides a summary of steps for launching a CoPilot single instance (simple deployment) using Terraform. For detailed instructions, please refer to the documentation for the Aviatrix Terraform Module for CoPilot on GitHub here: https://github.com/AviatrixSystems/terraform-modules-copilot. This section is only a summary of steps.
+This section only provides a summary of steps for launching a CoPilot single instance (simple deployment) using Terraform. Please refer to the documentation for the Aviatrix Terraform Module for CoPilot on GitHub here: https://github.com/AviatrixSystems/terraform-modules-copilot for the most current and detailed instructions.
 
 If you want to launch a CoPilot cluster (clustered, fault tolerant deployment) using Terraform, this is supported only for AWS at this time. 
 
@@ -1008,6 +1009,8 @@ A CoPilot application launched using Terraform is typically based on the latest 
 If you want to launch a CoPilot cluster (clustered, fault tolerant deployment) using Terraform, this is supported only for AWS at this time. 
 
 For detailed instructions, please refer to the documentation for the Aviatrix Terraform Module for CoPilot on GitHub here: https://github.com/AviatrixSystems/terraform-modules-copilot.
+
+Note that you must select a *subnet* with outbound Internet access when specifying the subnet for each CoPilot instance.
 
 
 About Migrating CoPilot Data
