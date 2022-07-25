@@ -34,6 +34,26 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
+6.7.1325 (07/25/2022) 
+========================= 
+
+**Issues Corrected in Aviatrix Release 6.7.1325**  
+
+- **AVX-25128** – An exception is seen when migrating transit gateway tunnel status in MongoDB to etcd when transit gateway has CloudN attached. Fix:
+
+#. When migrating transit gateway tunnel status in MongoDB to etcd, for transit gateways that have CloudN attached, use CloudN private_ip for peer_ip to fix the exception.
+#. If tunnel status in MongoDB does not have peer_ip, update it with peer_ip based on peer info from the tunnel status msg controller received from a gateway.
+
+6.6.5667 (07/25/2022) 
+========================= 
+
+**Issues Corrected in Aviatrix Release 6.6.5667**  
+
+- **AVX-25128** – An exception is seen when migrating transit gateway tunnel status in MongoDB to etcd when transit gateway has CloudN attached. Fix:
+
+#. When migrating transit gateway tunnel status in MongoDB to etcd, for transit gateways that have CloudN attached, use CloudN private_ip for peer_ip to fix the exception.
+#. If tunnel status in MongoDB does not have peer_ip, update it with peer_ip based on peer info from the tunnel status msg controller received from a gateway.
+
 6.7.1324 (07/06/2022) 
 ========================= 
 
