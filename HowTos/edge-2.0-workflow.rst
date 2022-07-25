@@ -21,6 +21,8 @@ For the Aviatrix Edge 1.0 for ESXi workflow, refer to `Deploying Aviatrix Edge 1
 Aviatrix Edge Network Connectivity
 ==================================
 
+The following diagram shows an example of network connectivity for Edge Gateway to Transit Gateway in AWS.
+
 |edge-network-connectivity|
 
 Prerequisites
@@ -391,10 +393,16 @@ To configure BGP AS Numbers (ASN), follow these steps.
 4.  In the **BGP Spoke Gateway** pull-down menu, select the Edge Gateway you created and enter the Local AS Number for the Edge Gateway. 5.  Click **CHANGE**.
 
 
-3b. Attach Edge Gateway to Transit Gateway 
+3c. Attach Edge Gateway to Transit Gateway 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After you have updated the WAN Public IP on the Edge Gateway and configured the BGP ASNs on both the Transit Gateway, follow these steps to attach the Edge Gateway to the Transit Gateway.
+
+.. Important::
+    To create an Insane Mode attachment, make sure the Transit Gateway is created with Insane Mode enabled.
+
+.. Note::
+    If you want Jumbo Frame enabled on the Edge Gateway, make sure to enable Jumbo Frame on the Edge Gateway before you attach it to the Transit Gateway. See `Jumbo Frame <http://docs.aviatrix.com/HowTos/gateway.html#jumbo-frame>`_.
 
 1.	In Aviatrix Controller, go to **MULTI-CLOUD TRANSIT** > **List** > **Spoke**. Confirm that the Edge Gateway you created is up.
 2.	Navigate to **MULTI-CLOUD TRANSIT** > **Setup** > **Attach / Detach** > **1a Attach Spoke Gateway to Transit Network**.
@@ -405,14 +413,12 @@ After you have updated the WAN Public IP on the Edge Gateway and configured the 
 4.	In the **Transit Gateway/NextHop Gateway** pull-down menu, select your Transit Gateway.
 5.	To connect over a private network, check **Over Private Network** box. Leave unchecked to connect using a public network.
 6.	To configure Jumbo Frame on Edge Gateway, check **Jumbo Frame** box.
-7.	To build High-Performance Encryption (HPE), check **Insane Mode** box. Leave unchecked if you do not require HPE. 
-8.  Click **ATTACH**. 
+7.	To build High-Performance Encryption (HPE), check **Insane Mode** box. Leave unchecked if you do not require HPE.
 
-.. Important::
-    To create an Insane Mode attachment, make sure the Transit Gateway is enabled for Insane Mode.
-	
-.. Note::
-    For Insane Mode over the Internet, you will need to enter the Insane Mode Tunnel Number.
+        .. Note::
+           For **Insane Mode Tunnel Number**, enter the number of HPE tunnels to create for Insane Mode over the Internet or private network.
+
+8.  Click **ATTACH**. 
 
 To verify the Edge Gateway attachment:
 
@@ -457,12 +463,12 @@ In Active-Active mode, all Edge-to-Transit connections perform load sharing and 
 Active-Standby Edge
 -------------------
 
-Active-Standby mode provides the flexibility on Aviatrix Transit Gateways and Aviatrix BGP Spoke Gateways to connect to on-prem with only one active tunnel and one backup/standby tunnel. 
+Active-Standby mode provides the flexibility on Aviatrix Transit Gateways and Aviatrix BGP Spoke Gateways to connect to on-prem with only one active peering and one backup/standby peering. For more information about active-standby mode, see See `Active-Standby <http://docs.aviatrix.com/HowTos/transit_advanced.html#active-standby>`_.
 
 |edge-active-standby|
 
 .. Important::
-    *  The Active-Standby Preemptive setting is per site and is decided when you create the first Edge Gateway for that Site ID. You cannot choose a different setting when you add more Edge Gateways to that site. 
+    *  The Active-Standby Preemptive setting is per site or location and is decided when you create the first Edge Gateway for that Site ID. You cannot choose a different setting when you add more Edge Gateways to that site. 
 	*  Active-Standby Mode only supports ActiveMesh 2.0.
 
 
