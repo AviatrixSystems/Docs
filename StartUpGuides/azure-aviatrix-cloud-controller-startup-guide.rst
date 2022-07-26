@@ -20,7 +20,7 @@ Follow the instructions to also subscribe to the Aviatrix Companion Gateway desc
 
 .. note::
 
-  These instructions apply generally to both Azure commercial and Azure Government clouds for deploying an Aviatrix Controller. Note that some screenshots may show regions that are only available for commercial Azure accounts. Commerial Azure offers multiple regions worldwide while Azure Government offers four US regions: (US) USGov Virginia, (US) UsGov Arizona, (US) UsGov Iowa, and (US) UsGov. For more information about Azure regions, click `here <https://azure.microsoft.com/en-us/global-infrastructure/geographies/#overview>`_. 
+  These instructions apply generally to both Azure commercial and Azure Government clouds for deploying an Aviatrix Controller. Note that some screenshots may show regions that are only available for commercial Azure accounts. Commercial Azure offers multiple regions worldwide while Azure Government offers four US regions: (US) USGov Virginia, (US) UsGov Arizona, (US) UsGov Iowa, and (US) UsGov. For more information about Azure regions, click `here <https://azure.microsoft.com/en-us/global-infrastructure/geographies/#overview>`_. 
 
 Subscribing to the Aviatrix Metered Offer 
 =============================================
