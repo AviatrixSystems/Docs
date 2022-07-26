@@ -376,6 +376,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/PSIRT_Advisories
    HowTos/Security_Patches
+   HowTos/Security_update_policy
 
 .. _Field Notices:
 
