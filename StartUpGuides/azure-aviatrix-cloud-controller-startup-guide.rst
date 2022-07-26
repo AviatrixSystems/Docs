@@ -18,6 +18,12 @@ Follow the instructions to also subscribe to the Aviatrix Companion Gateway desc
 * `Launching the Controller VM from the Azure Marketplace Portal <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#id4>`_
 * `Onboarding your Azure Account in the Aviatrix Controller <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#id5>`_
 
+.. note::
+
+  While this document and its screenshots focus on commercial Azure accounts, the following instructions also enable you to deploy Controllers from Azure Government accounts. 
+
+  The main difference between commercial Azure and Azure Government that is relevant to using the Aviatrix Controller is that the clouds use regions differently. Commerial Azure offers multiple regions worldwide, while Azure Government offers four US regions: (US) USGov Virginia, (US) UsGov Arizona, (US) UsGov Iowa, and (US) UsGov. For more information about Azure regions, click `here <https://azure.microsoft.com/en-us/global-infrastructure/geographies/#overview>`_. 
+
 Subscribing to the Aviatrix Metered Offer 
 =============================================
 
