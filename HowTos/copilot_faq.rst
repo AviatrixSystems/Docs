@@ -140,6 +140,13 @@ FAQs about CoPilot notifications/alerts
 
 Frequently asked questions about notifications and alerts in CoPilot.
 
+
+Can I pause alerts in CoPilot?
+---------------------------------
+
+Yes. To pause a user-defined alert, click the bell icon in the alerts list. 
+
+
 What kind of alerts/notifications does CoPilot offer?
 ---------------------------------------------------------
 
