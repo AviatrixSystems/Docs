@@ -153,6 +153,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/paloalto_API_setup
    HowTos/ingress_firewall_example
    HowTos/Azure_ingress_firewall_example
+   HowTos/ingress_protection_firenet_paloaltogcp
    HowTos/config_paloaltoVM
    HowTos/config_PaloAltoAzure.rst
    HowTos/config_paloaltoGCP
@@ -221,6 +222,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/site2cloud_faq
    HowTos/site2cloud
+   HowTos/site2cloud-cacert
    HowTos/avxgw_azurevpngw_site2cloud
    HowTos/site2cloud_aviatrix
    HowTos/site2cloud_awsvgw
@@ -331,6 +333,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/controller_config
    HowTos/Migration_From_Marketplace
    HowTos/controller_migration
+   HowTos/privatemode
 
 .. _Troubleshoot:
 
@@ -433,7 +436,9 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/aviatrix_aws_outposts
    HowTos/s2c_overlapping_cidrs_with_fast_convergence
    HowTos/transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow
-   
+   HowTos/azure_bgpolan_multi_peer
+   HowTos/azure_bgpolan_multi_peer_ARS
+
 .. _Good To Know:
 
 .. toctree::
