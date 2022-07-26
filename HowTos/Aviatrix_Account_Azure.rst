@@ -20,9 +20,7 @@ This document describes, for a given subscription, how to set up your Azure acco
 
 .. note::
 
-  While this document and its screenshots focus on commercial Azure accounts, the following instructions also enable you to onboard Azure Government accounts to your Controller. 
-
-  The main difference between commercial Azure and Azure Government that is relevant to using the Aviatrix Controller is that the clouds use regions differently. Commerial Azure offers multiple regions worldwide, while Azure Government offers four US regions: (US) USGov Virginia, (US) UsGov Arizona, (US) UsGov Iowa, and (US) UsGov. For more information about Azure regions, click `here <https://azure.microsoft.com/en-us/global-infrastructure/geographies/#overview>`_. 
+  These instructions apply generally to both Azure commercial and Azure Government clouds for onboarding Azure accounts to your Controller. Note that some screenshots may show regions that are only available for commercial Azure accounts. Commerial Azure offers multiple regions worldwide while Azure Government offers four US regions: (US) USGov Virginia, (US) UsGov Arizona, (US) UsGov Iowa, and (US) UsGov. For more information about Azure regions, click `here <https://azure.microsoft.com/en-us/global-infrastructure/geographies/#overview>`_. 
 
 2. API and Permission Setup 
 ========================================
