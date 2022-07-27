@@ -43,7 +43,7 @@ Connection Type
 
 Select Mapped or Unmapped as the Connection Type. You should select Unmapped unless the Local Subnet and the Remote Subnet overlap.
 
-<what is Custom Mapped? Check box displays if you select Mapped. If you select this three other check boxes display: Remote Initiated Traffic, Local Initiated Traffic, Save Template. Looks like if you don't select that check box you have to enter the remote subnet real and virtual, local subnet real and virtual.>
+If you select Mapped, you have the option of selecting the Custom Mapped checkbox. If you select Custom Mapped, you can select either or both of the Remote Initiated Traffic/Local Initiated Traffic options. If you select one or both of these you must configure the source and destination real and virtual CIDRs for these options. You can enter customized mappings for both (typically only performed by advanced users).
 
 If you select Mapped, configure the following:
 
@@ -152,7 +152,7 @@ Select this option to to create a backup/failover connection in case the primary
 
 If mapped NAT is enabled, HA in Site2Cloud is not supported.
 
-If you have the following configuration you can select the Same Pre-shared Key as primary check box, which means the backup tunnel uses the same pre-shared key as the primary <primary what?>.
+If you have the following configuration you can select the Same Pre-shared Key as primary check box, which means the backup tunnel uses the same pre-shared key as the primary.
 
 - Enable HA check box selected
 - Enable Single IP HA check box not selected
@@ -182,8 +182,8 @@ Remote Gateway IP address
 
 Enter the IP address of the device.
 
-Remote Network?
-^^^^^^^^^^^^^^^
+Remote Network
+^^^^^^^^^^^^^^
 
 Does this only show up if you selected an Insane Mode gateway earlier in this procedure (that was initially set up under Gateway > New in the Controller)?
 
@@ -256,7 +256,13 @@ To enable this, go to Site2Cloud, edit the connection on the Setup page, scroll 
 Forward Traffic to Transit Gateway
 -----------------------------------
 
-This configuration option applies to a use case where an Aviatrix Spoke gateway connects to on-prem routers via Site2Cloud IPsec connections. 
+Typically you enable the **Forward Traffic to Transit Gateway** option when you have a Site2Cloud connection that has overlapping CIDRs. This forwarding ensures that traffic is sent from on-prem to local Spokes and Transit gateways. 
+
+In most cases customers will enable this so that their on premise traffic is forwarded.
+
+For more information view the explanation `in this scenario <https://docs.aviatrix.com/HowTos/overlapping_network_solutions.html#scenario-4-multi-sites-overlap-in-aviatrix-transit-deployment>`_. 
+
+This option is only available for route-based IPSec paired with Mapped NAT. 
 
 Event Triggered HA
 -------------------

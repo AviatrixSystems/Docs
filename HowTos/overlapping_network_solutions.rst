@@ -147,6 +147,8 @@ overlaps with a Spoke CIDR where it needs to communicate with, as shown in the d
 
 |overlap_onprem_aviatrix_transit|
 
+This scenario is made possible by the **Forward Traffic to Transit Gateway** option that you enable after configuring your Site2Cloud connection. See `here <https://docs.aviatrix.com/HowTos/site2cloud.html#forward-traffic-to-transit-gateway>`_ for more information.
+
 
 Scenario 4: Multi-Sites Overlap in Aviatrix Transit Deployment
 ----------------------------------------------------------------------------
@@ -154,6 +156,14 @@ Scenario 4: Multi-Sites Overlap in Aviatrix Transit Deployment
 This scenario extends the previous solution to include multi sites, as shown in the diagram below. 
 
 |overlap_multi_onprem_aviatrix_transit|
+
+This scenario is made possible by the **Forward Traffic to Transit Gateway** option that you enable after configuring your Site2Cloud connection. See `here <https://docs.aviatrix.com/HowTos/site2cloud.html#forward-traffic-to-transit-gateway>`_ for more information. 
+
+Spoke 2 in this scenario is a landing Spoke. When the Site2Cloud Forwarding option referenced above is enabled, NAT occurs on the landing Spoke and ensures that the traffic from the on-prem routers arrives at its destination(s) (local Spoke and Transit gateways). If this option isn't enabled the traffic remains on the local (on-prem) Spoke and is not forwarded.
+
+Traffic can be initiated from the local or remote side (on premise side), as per what you configured in your Site2Cloud connection (local or remote initiated traffic). If you select only one of these, you cannot initiate from the other direction and NAT translation will not occur. 
+
+Enabling the **Auto Advertise Spoke Site2Cloud CIDRs** option (configured at Multi-Cloud Transit > List > Spoke; select a Spoke gateway and select this option from the Actions list) in this scenario ensures that the other Spokes in the scenario are aware of the CIDRs that are coming into the landing Spoke (Spoke 2). If you select this Auto Advertise option you must make sure that for any non-RFC 1918 routes your CPS VPC route tables can handle the route entry limit.
 
 
 .. |overlap_onprem_tgw| image:: overlapping_network_solutions_media/overlap_onprem_tgw.png
