@@ -140,7 +140,10 @@ If the Algorithms checkbox is unmarked, the default values will be used.  If it 
 IKEv2
 ^^^^^
 
-Select the option to connect to the remote site using IKEv2 protocol.   
+Select the option to connect to the remote site using IKEv2 protocol. This is the recommended protocol. 
+
+.. note::
+	If you configure IKEv1 in a Site2Cloud connection that uses certificate-based authentication and is connecting to another Aviatrix device, you must add the intermediate CA's in addition to the root CA. When an intermediate CA is renewed and re-authentication is attempted, the Site2Cloud connection will go down until you add the new certificate.
 
 Enabling HA
 ^^^^^^^^^^^
