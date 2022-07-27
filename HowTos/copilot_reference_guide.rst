@@ -818,6 +818,8 @@ Some alerts are associated with enhanced security services like `Network Behavio
 
 "Memory Free"
 
+"Percent Memory Free"
+
 "CPU Idle"
 
 "CPU Wait"
@@ -827,6 +829,8 @@ Some alerts are associated with enhanced security services like `Network Behavio
 "CPU Kernel Space"
 
 "Disk Free"
+
+"Percent Disk Free"
 
 "Disk Total"
 
@@ -932,11 +936,26 @@ Some alerts are associated with enhanced security services like `Network Behavio
 
 "BGP Peering Status"
 
+"Underlay Connection Status"
+
 "Threat IP Detected"
 
 "Anomaly Detected"
 
 "Scaling Recommendation triggered"
+
+
+Underlay Connection Status Alert
+-----------------------------------
+
+The Underlay Connection Status alert indicates a potential underlay communication issue. Potential causes of this alert include the following: 
+
+-   A CSP link outage.
+-   A misconfigured security group or ACL.
+-   A firewall blocking traffic.
+-   A router dropping packets.
+
+This alert applies to connections between hosts running Aviatrix gateways. For a host that you select, syslog from any connection that includes the host as the source or destination is monitored. When syslog data indicates a potential problem ("DPD check timed out") from each direction of the connection between that host and another host within 30 seconds of the other, the alert is triggered. On the same connection, if the syslog data indicates the problem is resolved ("established with SPIs") from either direction, the alert is automatically resolved.  
 
 
 Working with AppIQ
