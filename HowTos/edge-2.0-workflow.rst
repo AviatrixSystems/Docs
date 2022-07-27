@@ -63,9 +63,9 @@ Before you begin the deployment of the Edge Gateway, submit a request to Aviatri
 
 2. Select **Submit a request**.
 
-3. In the **Subject** field, enter **Requesting access to Edge image**.
+3. For **Subject**, enter **Requesting access to Edge image**.
 
-4. In the **Edge Location** field, enter the physical address of the location where you will install the Edge VM(s), such as a data center, headend, co-location site, or office. If you are installing Edge VMs at more than one location, provide the following information for each physical location:
+4. For **Edge Location**, enter the physical address of the location where you will install the Edge VM(s), such as a data center, headend, co-location site, or office. If you are installing Edge VMs at more than one location, provide the following information for each physical location:
 
     - Physical Address (Do not enter a P.O.Box.)
     - City
@@ -73,7 +73,7 @@ Before you begin the deployment of the Edge Gateway, submit a request to Aviatri
     - Zip Code or Postal Code
     - Country
 
-5. In the **Type of VM**, enter **OVA** for VMware ESXi or **QCOW2** for KVM.
+5. For **Type of VM**, enter **OVA** for VMware ESXi or **QCOW2** for KVM.
 
 6. Click **Submit**. Aviatrix Support will respond with a link you can use to download the Edge Gateway image file.
 
@@ -175,8 +175,8 @@ The diagram below provides a high-level view of the four-step process for deploy
 
 |edge-deploy-workflow|
  
-1. Create the Edge Gateway ZTP ISO Image File
----------------------------------------------
+1. Create Edge Gateway ZTP ISO Image File
+-----------------------------------------
 
 .. note::
    You must have port 443 open to the IP address of the Aviatrix Controller. For the required access for Edge Gateway deployment, refer to `Aviatrix Edge Ports and Protocols <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#aviatrix-edge-ports-and-protocols>`_.
@@ -239,10 +239,12 @@ To create the Edge Gateway ISO image file, follow these steps.
 
     Controller downloads the ZTP **.iso** file to your downloads folder. 
 
-.. Note::
-   Controller displays a message that confirms when you have successfully downloaded the **.iso** file you created for the Edge gateway. The .iso file will expire 24 hours after you create it, so you must mount the .iso file to an Edge VM to complete the Edge gateway registration within that timeframe, as you cannot download it again and will have to repeat the above steps.
+5. Log in to your ESXi or KVM host and upload the **.iso** file to a datastore or storage device.
+
+   .. Note::
+      Controller displays a message that confirms when you have successfully downloaded the **.iso** file you created for the Edge gateway. The .iso file will expire 24 hours after you create it, so you must mount the .iso file to an Edge VM to complete the Edge gateway registration within that timeframe, as you cannot download it again and will have to repeat the above steps.
    
-Next, deploy the Edge virtual machine and attach the ZTP **.iso** file in the VMware or KVM environment.
+Next, deploy the Edge virtual machine and attach the ZTP **.iso** file in the VMware or KVM environment. See `Deploy Edge Virtual Machine and Attach ZTP ISO File <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#deploy-edge-virtual-machine-and-attach-ztp-iso-file>`_.
 
 Edge Site ID Guidelines
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -266,10 +268,10 @@ Follow these guidelines to decide whether to use an existing Site ID or create a
 -	If you want to configure FireNet management on the Edge Gateway, you need to configure it per site.
 -	When multiple Edge Gateways are attached to a common transit, the transit will propagate routes from Edge Gateways with the same Site ID to other Edge Gateways with a different Site ID but will not propagate routes from the Edge Gateways to other Edge Gateways with the same Site ID.
 
-2. Deploying the Edge Virtual Machine and Attaching the ZTP ISO File
---------------------------------------------------------------------
+2. Deploy Edge Virtual Machine and Attach ZTP ISO File
+------------------------------------------------------
 
-To deploy the Edge virtual machine on KVM, skip to step `2c. Deploying the Edge Virtual Machine in KVM<http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#2c.-deploying-the-edge-virtual-machine-in-kvm>`_.
+To deploy the Edge virtual machine on KVM, skip to step `2c. Deploying the Edge Virtual Machine in KVM <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#2c.-deploying-the-edge-virtual-machine-in-kvm>`_.
 
 2a. Deploying the Edge Virtual Machine in VMware ESXi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -278,7 +280,7 @@ To deploy the Edge virtual machine in VMware ESXi, follow these steps.
 
 1. Download the ESXi OVA file by using the link provided to you by Aviatrix Support. See `Requesting an Aviatrix Edge Gateway Image File <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#requesting-an-aviatrix-edge-gateway-image-file>`_.
 
-2. Log into VMware vSphere Web client to access the ESXi host.
+2. Log in to VMware vSphere Web client to access the ESXi host.
 
    You can use vSphere Web client to manage ESXi host, launch a VM, mount ISO files, and start and stop the Aviatrix Edge Gateway.
 
@@ -331,12 +333,12 @@ Next, attach the ZTP **.iso** and the Edge will auto-mount the media which conta
 
 7. Click **Save**.
 
-Next, verify Edge in Controller. See `Verifying Edge in Controller <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#verifying-edge-in-controller>`_.)
+Next, verify Edge in Controller. See `Verifying Edge in Controller <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#verifying-edge-in-controller>`_.
 
 2c. Deploying the Edge Virtual Machine in KVM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Before you begin, on the KVM Linux host ensure the LAN, WAN, and MGMT network bridges are associated with the physical ethernet interfaces on the KVM sever.
+Before you begin, on the KVM Linux host ensure the LAN, WAN, and MGMT network bridges are associated with the physical ethernet interfaces on the KVM sever. Refer to the KVM product documentation.
 
 1. Download the KVM QCOW2 file by using the link provided to you by Aviatrix Support. See `Requesting an Aviatrix Edge Gateway Image File <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#requesting-an-aviatrix-edge-gateway-image-file>`_.
 
@@ -345,7 +347,7 @@ Before you begin, on the KVM Linux host ensure the LAN, WAN, and MGMT network br
 3. Create a new virtual machine from an existing disk image. 
 
    a. From File menu, select **New virtual machine**.
-   b. Select the option **Import existing disk imag**.
+   b. Select the option **Import existing disk image**.
    c. Click **Forward**.
 
    |edge-kvm-new-vm|
@@ -359,11 +361,11 @@ Before you begin, on the KVM Linux host ensure the LAN, WAN, and MGMT network br
 
    |edge-kvm-new-vm-2|
 
-5. Enter the memory and CPU settings for the Edge Gateway and click **Forward**.
+5. Enter the memory and CPU settings for the Edge Gateway VM and click **Forward**.
 
    |edge-kvm-new-vm-3|
 
-6. In the next step, enter a name for the Edge Gateway VM and check the **Customize configuration before install** checkbox, then click **Finish**.
+6. Enter a name for the Edge Gateway VM and check the **Customize configuration before install** checkbox, then click **Finish**.
 
    |edge-kvm-new-vm-4|
 
@@ -373,7 +375,7 @@ Before you begin, on the KVM Linux host ensure the LAN, WAN, and MGMT network br
 
       |edge-kvm-new-vm-5|
 
-   b. In **Add New Virtual Hardware**, select **Network** from the left pane and configure the network bridge interfaces for the LAN, WAN, and MGMT virtual interfaces.
+   b. In **Add New Virtual Hardware**, select **Network** from the left pane and add network bridge interfaces for the LAN, WAN, and MGMT virtual interfaces.
   
       |edge-kvm-new-vm-6|
 
@@ -382,7 +384,7 @@ Before you begin, on the KVM Linux host ensure the LAN, WAN, and MGMT network br
    a. In **Add New Virtual Hardware**, select **Storage** from the left pane.
    b. Select the option **Select or create custom storage**.
    c. Click **Manage**.
-   d. Locate and select the KVM **iso** file which you downloaded from Aviatrix Controller and uploaded to the KVM host.
+   d. Locate and select the KVM **iso** file which you previously uploaded.
    e. Click **Choose Volume**.
    f. Click **Finish**.
 
@@ -390,12 +392,11 @@ Before you begin, on the KVM Linux host ensure the LAN, WAN, and MGMT network br
 
 9. Click **Begin Installation** to create the Edge Gateway VM instance on the KVM host.
 
+After you attach the ZTP **.iso**, the KVM hypervisor will auto-mount the media which contains the configuration file to provision the Edge Gateway.
 
 For more information about deploying virtual machines and attaching .iso file in KVM , refer to KVM product documentation.
 
-After you attach the ZTP **.iso**, the KVM hypervisor will auto-mount the media which contains the configuration file to provision the Edge Gateway.
-
-Next, verify Edge in Controller. See `Verifying Edge in Controller <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#verifying-edge-in-controller>`_.)
+Next, verify Edge in Controller. See `Verifying Edge in Controller <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#verifying-edge-in-controller>`_.
 
 2d. Verifying Edge in Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -404,16 +405,17 @@ To verify the Edge Gateway is up, wait for 5 minutes after you have attached the
 
 1. In Aviatrix Controller, go to **Multi-Cloud Transit** > **List** > **Spoke**.
 2. In the **State** column, verify that the Edge Gateway you created is in the **up** state.
+
    Click the refresh button to update the registration status.
 
    |edge-verify|
 
-   If the Edge Gateway status is not **up**, you can troubleshoot any connectivity issues using CLI commands on the Edge Gateway console on the KVM host. See `Troubleshooting Edge Gateway Connectivity <http://docs.aviatrix.com/HowTos/edge_2.0.html#troubleshooting-edge-gateway-connectivity>`_.
+   If the Edge Gateway status is not **up**, you can troubleshoot Edge connectivity using CLI commands on the Edge Gateway console. See `Troubleshooting Edge Gateway Connectivity <http://docs.aviatrix.com/HowTos/edge_2.0.html#troubleshooting-edge-gateway-connectivity>`_.
 
-Next, attach the Edge Gateway to the Transit Gateway.
+Next, attach the Edge Gateway to the Transit Gateway. See `Attach Edge Gateway to Transit Gateway <http://docs.aviatrix.com/HowTos/edge_2.0.html#attach-edge-gateway-to-transit-gateway>`_.
 
 3. Attach Edge Gateway to Transit Gateway
------------------------------------------
+------------------------------------------
 
 For Edge Gateway attachment over a public network, you must update the WAN Public IP on the Edge Gateway and configure BGP ASNs on the Transit Gateway before you attach Edge Gateway.
 
@@ -440,9 +442,9 @@ To configure BGP AS Numbers (ASN), follow these steps.
 1. In Aviatrix Controller, go to **MULTI-CLOUD TRANSIT** > **Advanced Config** > **Edit Transit**. 
 2. Select your Transit Gateway and enter the Local AS Number for the gateway. 
 3. Click **CHANGE**.
-3. Select **Edit Spoke**. 
-4. In the **BGP Spoke Gateway** pull-down menu, select the Edge Gateway you created and enter the Local AS Number for the Edge Gateway. 
-5. Click **CHANGE**.
+4. Select **Edit Spoke**. 
+5. In the **BGP Spoke Gateway** pull-down menu, select the Edge Gateway you created and enter the Local AS Number for the Edge Gateway. 
+6. Click **CHANGE**.
 
 3c. Attach Edge Gateway to Transit Gateway 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -471,10 +473,10 @@ After you have updated the WAN Public IP on the Edge Gateway and configured the 
 
 8. Click **ATTACH**. 
 
-To verify the Edge Gateway attachment:
+9. Verify the Edge Gateway attachment in the following ways:
 
-* From Controller: Navigate to **Multi-Cloud Transit** > **List** > **Spoke**
-* From CoPilot: Navigate to **Topology** > **Network Graph** > **Network**.
+   * From Controller: Navigate to **Multi-Cloud Transit** > **List** > **Spoke**
+   * From CoPilot: Navigate to **Topology** > **Network Graph** > **Network**.
 
 4. Connect Edge Gateway to External Device (BGP over LAN)
 ---------------------------------------------------------
@@ -484,7 +486,7 @@ To connect the Edge Gateway to LAN Routing using BGP over LAN, follow these step
 1.	Go to **MULTI-CLOUD TRANSIT** > **Setup** > **External Connection**. 
 2.  In **Connect to VGW/External Device/Azure VNG**, enter the following values:
 
-    a.	Select these options: External Device, BGP, and LAN.
+    a.	Select these options: **External Device**, **BGP**, and **LAN**.
     b.	**VPC Name/Site ID**: Select an existing Edge Site ID from the drop-down list.
     c.	**Connection Name**: Enter a unique name to identify the connection to the LAN router.
     d.	**Aviatrix Gateway BGP ASN**: Enter the BGP AS number the Edge Gateway will use to exchange routes with the LAN router.
@@ -514,13 +516,13 @@ In Active-Active mode, all Edge-to-Transit connections perform load sharing and 
 Active-Standby Edge
 -------------------
 
-Active-Standby mode provides the flexibility on Aviatrix Transit Gateways and Aviatrix BGP Spoke Gateways to connect to on-prem with only one active peering and one backup/standby peering. For more information about active-standby mode, see See `Active-Standby <http://docs.aviatrix.com/HowTos/transit_advanced.html#active-standby>`_.
+Active-Standby mode provides the flexibility on Aviatrix Transit Gateways and Aviatrix BGP Spoke Gateways to connect to on-prem with only one active peering and one backup/standby peering. 
 
 |edge-active-standby|
 
 .. Important::
-    *  The Active-Standby Preemptive setting is per site or location and is decided when you create the first Edge Gateway for that Site ID. You cannot choose a different setting when you add more Edge Gateways to that site. 
-	*  Active-Standby Mode only supports ActiveMesh 2.0.
+    *  The Active-Standby Preemptive setting is per site or location and is decided when you create the first Edge Gateway for that site. You cannot choose a different setting when you add more Edge Gateways to that site. For more information about preemptive and non-preemptive active-standby modes, see See `Active-Standby <http://docs.aviatrix.com/HowTos/transit_advanced.html#active-standby>`_.
+    *  Active-Standby Mode only supports ActiveMesh 2.0.
 
 
 Transitive Routing
@@ -705,7 +707,7 @@ If the connectivity to the CSP is over a public network:
    :scale: 50%
 
 .. |edge-deploy-workflow| image:: CloudN_workflow_media/edge-deploy-workflow.png
-   :scale: 50%
+   :width: 500
 
 .. |edge-ip-config| image:: CloudN_workflow_media/edge-ip-config.png
    :scale: 50%
@@ -720,24 +722,23 @@ If the connectivity to the CSP is over a public network:
    :scale: 50%
 
 .. |edge-network-connectivity| image:: CloudN_workflow_media/edge-network-connectivity.png
-   :scale: 50%
 
 .. |edge-network-port-protocol| image:: CloudN_workflow_media/edge-network-port-protocol.png
-   :scale: 50%
 
 .. |edge-rbac| image:: CloudN_workflow_media/edge-rbac.png
    :scale: 50%
 
-.. |edge-transitive-routing| image:: CloudN_workflow_media/edge-transitive-routing.png
-   :scale: 50%	
+.. |edge-transitive-routing| image:: CloudN_workflow_media/edge-transitive-routing.png	
 
 .. |edge-transit-peering| image:: CloudN_workflow_media/edge-transit-peering.png
-   :scale: 50%
 
 .. |edge-transit-peering-config| image:: CloudN_workflow_media/edge-transit-peering-config.png
    :scale: 50%
 
 .. |edge-verify| image:: CloudN_workflow_media/edge-verify.png
+   :scale: 50%
+
+.. |edge-kvm-new-vm| image:: CloudN_workflow_media/edge-kvm-new-vm.png
    :scale: 50%
 
 .. |edge-kvm-new-vm-1| image:: CloudN_workflow_media/edge-kvm-new-vm-1.png
