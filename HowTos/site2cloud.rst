@@ -34,7 +34,7 @@ Create Site2Cloud Connection
 
 #. Log in to your Aviatrix Controller.
 #. Select SITE2CLOUD in the left navigation bar.
-#. Click **+ Add New** near the top of the SITE2CLOUD tab.
+#. Click **+ Add New** near the top of the Site2Cloud tab.
 #. Under Add a new connection, select the VPC ID where this tunnel will terminate in the cloud.
 #. See the below sections for information on configuring the connection.
 
@@ -155,12 +155,10 @@ If mapped NAT is enabled, HA in Site2Cloud is not supported.
 If you have the following configuration you can select the Same Pre-shared Key as primary check box, which means the backup tunnel uses the same pre-shared key as the primary.
 
 - Enable HA check box selected
-- Enable Single IP HA check box not selected
+- Enable Single IP HA checkbox not selected
 - PSK-based authentication selected
 
-If the Enable HA check box is selected, you can enter a Pre-shared Key backup? Format?
-
-If the Enable HA check box is selected, you must enter the backup IP address of the backup gateway (.hagw). 
+If the Enable HA checkbox is selected, you can enter a Pre-shared Key for the back-up (HA) gateway. Also if this checkbox is selected, you must enter the Remote Gateway IP address of the backup gateway (.hagw). 
 
 Enable Single IP HA
 ^^^^^^^^^^^^^^^^^^^
