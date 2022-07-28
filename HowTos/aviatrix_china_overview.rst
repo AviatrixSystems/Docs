@@ -6,6 +6,8 @@
 Aviatrix in China Regions Overview
 ===================================
 
+This document provides an overview of the Aviatrix features that are supported and the requirements for implementing Aviatrix in the China regions. It also provides various options and design patterns for interconnecting Aviatrix in the China regions and Global regions.
+
 Features Supported in AWS China, Azure China, and Alibaba China Regions
 =======================================================================
 
