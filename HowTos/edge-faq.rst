@@ -75,8 +75,6 @@ The following are examples of Aviatrix Edge use cases.
 
 -	`Multi-Cloud connectivity using Aviatrix Edge <http://docs.aviatrix.com/HowTos/edge-faq.html#multi-cloud-connectivity-using-aviatrix-edge>`_
 
--	`Network segmentation using Aviatrix Edge <http://docs.aviatrix.com/HowTos/edge-faq.html#network-segmentation-using-aviatrix-edge>`_
-
 -	`Aviatrix Edge connectivity over private network <http://docs.aviatrix.com/HowTos/edge-faq.html#aviatrix-edge-connectivity-over-private-network>`_
 
 -	`Aviatrix Edge connectivity over public network <http://docs.aviatrix.com/HowTos/edge-faq.html#aviatrix-edge-connectivity-over-public-network>`_
@@ -95,9 +93,6 @@ Multi-Cloud Connectivity Using Aviatrix Edge
 This diagram illustrates Aviatrix Edge Gateway deployed as the primary path for the multi-cloud connectivity and transit peering over the Internet for the backup path.
 
 |edge_usecase_multi_cloud|
-
-Network Segmentation Using Aviatrix Edge
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Aviatrix Edge Connectivity over Private Network

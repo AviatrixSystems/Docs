@@ -284,7 +284,7 @@ To deploy the Edge virtual machine in VMware ESXi, follow these steps.
 
    You can use vSphere Web client to manage ESXi host, launch a VM, mount ISO files, and start and stop the Aviatrix Edge Gateway.
 
-3. To load the OVA file into the ESXi using vSphere, go to: **ESXI** > **Virtual Machines** > **Create/Register VM**.
+3. To load the OVA file into the ESXi using vSphere, go to: **ESXi** > **Virtual Machines** > **Create/Register VM**.
 
 4. Select **Deploy a virtual machine from an OVF or OVA file**. Click **Next**.
 
@@ -375,7 +375,7 @@ Before you begin, on the KVM Linux host ensure the LAN, WAN, and MGMT network br
 
       |edge-kvm-new-vm-5|
 
-   b. In **Add New Virtual Hardware**, select **Network** from the left pane and add network bridge interfaces for the LAN, WAN, and MGMT virtual interfaces.
+   b. In **Add New Virtual Hardware**, select **Network** from the left pane and add two additional network bridge interfaces for the LAN and MGMT virtual interfaces. The bridge interface for WAN interface is automatically created as part of the VM image creation.
   
       |edge-kvm-new-vm-6|
 
@@ -394,7 +394,7 @@ Before you begin, on the KVM Linux host ensure the LAN, WAN, and MGMT network br
 
 After you attach the ZTP **.iso**, the KVM hypervisor will auto-mount the media which contains the configuration file to provision the Edge Gateway.
 
-For more information about deploying virtual machines and attaching .iso file in KVM , refer to KVM product documentation.
+For more information about deploying virtual machines and attaching .iso file in KVM, refer to KVM product documentation.
 
 Next, verify Edge in Controller. See `Verifying Edge in Controller <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#verifying-edge-in-controller>`_.
 
@@ -417,7 +417,7 @@ Next, attach the Edge Gateway to the Transit Gateway. See `Attach Edge Gateway t
 3. Attach Edge Gateway to Transit Gateway
 ------------------------------------------
 
-For Edge Gateway attachment over a public network, you must update the WAN Public IP on the Edge Gateway and configure BGP ASNs on the Transit Gateway before you attach Edge Gateway.
+For Edge Gateway attachment over a public network, you must update the WAN Public IP on the Edge Gateway and configure BGP ASN on the Edge Gateway before you attach Edge Gateway.
 
 3a. Update WAN Public IP
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -432,19 +432,16 @@ To update the WAN Public IP, follow these steps.
 .. Important::
     If you have multiple Edge Gateways, make sure each Edge Gateway has a unique WAN Public IP.
 	
-|edge-ip-config|
+    |edge-ip-config|
 
-3b. Configure BGP ASNs
-^^^^^^^^^^^^^^^^^^^^^^
+3b. Configure BGP ASN on the Edge Gateway
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To configure BGP AS Numbers (ASN), follow these steps.
+To configure BGP AS Number (ASN) on the Edge Gateway, follow these steps.
 
-1. In Aviatrix Controller, go to **MULTI-CLOUD TRANSIT** > **Advanced Config** > **Edit Transit**. 
-2. Select your Transit Gateway and enter the Local AS Number for the gateway. 
+1. In Aviatrix Controller, go to **MULTI-CLOUD TRANSIT** > **Advanced Config** > **Edit Spoke**. 
+2. In the **BGP Spoke Gateway** pull-down menu, select the Edge Gateway you created and enter the Local AS Number for the Edge Gateway. 
 3. Click **CHANGE**.
-4. Select **Edit Spoke**. 
-5. In the **BGP Spoke Gateway** pull-down menu, select the Edge Gateway you created and enter the Local AS Number for the Edge Gateway. 
-6. Click **CHANGE**.
 
 3c. Attach Edge Gateway to Transit Gateway 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -521,8 +518,7 @@ Active-Standby mode provides the flexibility on Aviatrix Transit Gateways and Av
 |edge-active-standby|
 
 .. Important::
-    *  The Active-Standby Preemptive setting is per site or location and is decided when you create the first Edge Gateway for that site. You cannot choose a different setting when you add more Edge Gateways to that site. For more information about preemptive and non-preemptive active-standby modes, see See `Active-Standby <http://docs.aviatrix.com/HowTos/transit_advanced.html#active-standby>`_.
-    *  Active-Standby Mode only supports ActiveMesh 2.0.
+    *  The Active-Standby Preemptive setting is per site or location and is decided when you create the first Edge Gateway for that site. You cannot choose a different setting when you add more Edge Gateways to that site. For more information about preemptive and non-preemptive active-standby modes, see `Active-Standby <http://docs.aviatrix.com/HowTos/transit_advanced.html#active-standby>`_.
 
 
 Transitive Routing
@@ -563,7 +559,7 @@ To create Transit Peering over public network to use as backup path, follow thes
 4.	Scroll down to the **Connection AS Path Prepend** section. Select the Transit Peering connection name.
 5.	In the **Prepend AS Path** field, input the same Local AS Number three times separated by space.
 
-|edge-transit-peering-config|
+        |edge-transit-peering-config|
 
 6.	Repeat steps 3, 4, and 5 for the second Transit Gateway.
 
@@ -603,13 +599,15 @@ To create an RBAC group with permissions to create, delete, and manage Edge gate
 
 7.  Click **OK**, and then click **Close**.
 
-|edge-rbac|
+       |edge-rbac|
 
 8.	In **Permission Groups**, select the new group name, and then click **MANAGE ACCESS ACCOUNTS**.
 
 9.	In **Access accounts for group "Group Name"**, click **ADD NEW**. 
 
 10.  In **Add access accounts to group "Group Name"**, select **edge_admin**. 
+
+       |edge-rbac-edgeadmin|
 
 11.  Click **OK**, and then click **Close**.
 
@@ -635,6 +633,10 @@ To run Clish on the Edge Gateway, log in with the username **admin**.
 +===================================+========================================================+
 | change_console_password           | Changes the password for the CLI login.                |
 +-----------------------------------+--------------------------------------------------------+
+| check_conduit                     | Check conduit state.                                   |
++-----------------------------------+--------------------------------------------------------+
+| check_network                     | Troubleshoot network connectivity.                     |
++-----------------------------------+--------------------------------------------------------+
 | diagnostics                       | Show gateway diagnostics from                          |
 |                                   | /home/ubuntu/cloudx-aws/avx_edge_status.json, which is |
 |                                   | written by register process or reset_config process.   |
@@ -646,24 +648,12 @@ To run Clish on the Edge Gateway, log in with the username **admin**.
 +-----------------------------------+--------------------------------------------------------+
 | reboot                            | Reboot the system.                                     |
 +-----------------------------------+--------------------------------------------------------+
-| register                          | Register with the Controller.                          |
-+-----------------------------------+--------------------------------------------------------+
-| reset_config                      | Deregister and reset to factory default.               |
-+-----------------------------------+--------------------------------------------------------+
-| set_controller_ip [controller_ip] | Set controller ip, usually performed after controller  |
-|                                   | migration when controller ip changed.                  |
+| set_controller_ip [controller_ip] | Set Controller IP address, usually performed after     |
+|                                   | Controller migration when Controller IP address changed|
 +-----------------------------------+--------------------------------------------------------+
 | show_interfaces                   | Show output from the command “ifconfig -a | more”.     |
 +-----------------------------------+--------------------------------------------------------+
 | show_routes                       | Show output from the command “ip route show table all”.|
-+-----------------------------------+--------------------------------------------------------+
-| test connect                      | Test TLS and port 443 connection to controller.        |
-+-----------------------------------+--------------------------------------------------------+
-| test dns [host_name]              | Test DNS availability.                                 |
-+-----------------------------------+--------------------------------------------------------+
-| test port                         | Test controller port 443 reachability.                 |
-+-----------------------------------+--------------------------------------------------------+
-| unlock                            | Unlock console and enter Linux shell.                  |
 +-----------------------------------+--------------------------------------------------------+
 
 About BGP and Routing over Public and Private Networks
@@ -726,6 +716,9 @@ If the connectivity to the CSP is over a public network:
 .. |edge-network-port-protocol| image:: CloudN_workflow_media/edge-network-port-protocol.png
 
 .. |edge-rbac| image:: CloudN_workflow_media/edge-rbac.png
+   :scale: 50%
+
+.. |edge-rbac-edgeadmin| image:: CloudN_workflow_media/edge-rbac-edgeadmin.png
    :scale: 50%
 
 .. |edge-transitive-routing| image:: CloudN_workflow_media/edge-transitive-routing.png	
