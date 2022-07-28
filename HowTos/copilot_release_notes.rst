@@ -36,7 +36,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
 
-CoPilot Release 2.3.0 (7/29/2022)
+CoPilot Release 2.3.0 (7/28/2022)
 ---------------------------------------------
 
 **Feature Enhancements in CoPilot release 2.3.0**
