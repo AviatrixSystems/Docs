@@ -512,7 +512,7 @@ To create a resource-scale policy:
 
 5.  In Trigger Condition, configure the alarms you want this policy to raise based on the monitored telemetry data:
 
-    -   Select the metric and the condition for it that must be met to raise an alarm. You can specify multiple alarm conditions. For information about each metric, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id3>`_ in *Aviatrix CoPilot User Reference Guide*.
+    -   Select the metric and the condition for it that must be met to raise an alarm. You can specify multiple alarm conditions. For information about each metric, see `Metrics used for Triggering Notifications`_. 
     -   When multiple alarm conditions are specified, CoPilot generates a resource-scale alert when all the conditions are met.
     -   When the policy alarm condition(s) are met on any gateway in the monitored VPC/VNet(s), CoPilot generates a resource-scale alert.
 
@@ -582,7 +582,7 @@ In Notifications, you can configure alerts so that you can be notified about cha
 
 CoPilot supports Webhook alerts. Webhooks allow you to send notifications to third-party automation systems such as Slack. You can send a Webhook to any system that can take an HTTPS callback. A single alert can notify multiple systems/people. For information on how to customize the webhooks CoPilot generates, see `CoPilot Webhooks <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id8>`_ in *Aviatrix CoPilot User Reference Guide*.
 
-You can pause alerts. For example, if you are going to perform maintenance tasks on the network that you know will trigger pre-configured alerts, you can pause the alerts temporarily and unpause them when the maintenance is complete.
+You can pause alerts. For example, if you are going to perform maintenance tasks on the network that you know will trigger pre-configured alerts, you can pause the alerts temporarily and unpause them when the maintenance is complete. See `Pause Alerts`_. 
 
 In the Notification tab, CoPilot lists all alerts and shows if they are in a triggerd (open) or closed state. You can open an alert from the list to view its lifecycle. CoPilot closes the alert automatically when the alert metric no longer meets the condition to trigger the alert. The alert lifecycle provides a history for every alert that happens in your network environment.
 
@@ -593,18 +593,18 @@ Configure alerts in CoPilot so you can be notified to events that occur in your 
 
 When configuring alerts, you can choose a notification channel of email or Webhook destinations. Before you begin, specify the email or Webhook addresses in the Notifications tab of CoPilot Settings. For more information about Webhooks, see `CoPilot Webhooks Customization  <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id9>`_.
 
-To configure notifications:
+To configure alerts:
 
 1. From the sidebar, click Notifications.
 #. In Define Alert, type the name you want to use for the alert.
-#. In Condition, select the metric or condition that must be met to trigger the alert. For descriptions of the system and network metrics used for triggering alerts, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id3>`_ in *Aviatrix CoPilot User Reference Guide*.
+#. In Condition, select the metric or condition that must be met to trigger the alert. For descriptions of the system and network metrics used for triggering alerts, see `Metrics used for Triggering Notifications`_.
 #. Click Add Recipients and select the email address or Webhook destination where you want the alert to be sent. Repeat this step for each recipient you want to receive the notification.
 #. Click Save. The alert is enabled. When the condition is met for the metric you specified, CoPilot will now send a notification to the email or Webhook system you specified.
 
-Edit Notifications 
+Edit Alerts
 --------------------
 
-You can edit notification settings you previously configured.
+You can edit alert settings you previously configured.
 
 **Prerequisite**: (**If adding new email recipient/new webhook URL**) If you need to add new email recipients or new webhook payload URLs to receive the alert, add the new recipient's email address or new webhook configuration first in the Settings > Notifications tab.
 
@@ -629,6 +629,26 @@ To edit a previously configured notification:
 
     Your new configuration is displayed in the Editing Alerts pane. When conditions are met for the alert, your new configuration now applies.
 
+Pause Alerts
+--------------------
+
+You can pause alerts.
+
+To pause a previously configured alert.
+
+1.  From the sidebar, click Notifications.
+
+2.  From the Configured Alerts list, locate the alert you want to pause and click the bell icon.
+
+    A Pause badge for the notification will appear.
+
+    |copilot-paused-notification|
+
+    The notification will remain paused until you manually remove the pause.
+
+3.  (Cancel pause) To cancel the pause, click the bell with a slash icon.
+
+    The Pause badge will disappear and notifications will resume.
 
 Metrics used for Triggering Notifications
 ------------------------------------------
@@ -790,7 +810,7 @@ CoPilot Alert Condition Display Names
 
 The following is a list of all alert condition display names shown by CoPilot. 
 
-Many of the alerts are associated with detecting changes in resource utilization (telemetry) data for managed resources as described in `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id3>`_. 
+Many of the alerts are associated with detecting changes in resource utilization (telemetry) data for managed resources as described in see `Metrics used for Triggering Notifications`_.
 
 Some alerts are associated with enhanced security services like `Network Behavior Analytics <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-anomalies>`_ (detecting network traffic finterprint anomalies) and `ThreatIQ with ThreatGuard <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-threatiq>`_ (detecting threat IPs identified by a well known threat-IP source).  
 
@@ -955,7 +975,11 @@ The Underlay Connection Status alert indicates a potential underlay communicatio
 -   A firewall blocking traffic.
 -   A router dropping packets.
 
-This alert applies to connections between hosts running Aviatrix gateways. For a host that you select, syslog from any connection that includes the host as the source or destination is monitored. When syslog data indicates a potential problem ("giving up") from each direction of the connection between that host and another host within 30 seconds of the other, the alert is triggered. On the same connection, if the syslog data indicates the problem is resolved ("established with SPIs") from either direction, the alert is automatically resolved.  
+This alert applies to connections between hosts running Aviatrix gateways. 
+
+Monitored hosts will alert on syslog traffic where it is the source or the destination
+
+When you set this alert for a host(s), CoPilot monitors the syslog from any connection that includes the host as the source or destination. When syslog data indicates a potential problem from each direction of the connection between that host and another host within 30 seconds of the other, the alert is triggered. On the same connection, if the syslog data later indicates the problem is resolved from either direction, the alert is automatically resolved.  
 
 
 Working with AppIQ
@@ -1623,13 +1647,13 @@ Working with CostIQ
 
 This section describes the CostIQ feature of Aviatrix CoPilot.
 
-CostIQ enables you to have visibility into costs of resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. Costs are currently reported as percentages of traffic generated by end instances in spoke gateways. The information reported in CostIQ reflects native CSP costs, not Aviatrix Systems costs. 
+CostIQ offers visibility into costs of resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. Costs are currently reported as percentages of traffic generated by end instances in spoke gateways. The information reported in CostIQ reflects native CSP costs (not Aviatrix Systems costs). 
 
 In CostIQ, you create cost domains which are defined by a unique set of spoke gateways. CoPilot looks at the traffic generated by all end instances in the unique set of spoke gateways and calculates the percentage of traffic they generate when compared to the total traffic for all end instances in all spoke gateways in your Aviatrix managed environment. 
 
-The CostIQ overview shows a breakdown of your managed resources by top-cost resources by cloud provider, by top-cost resources by CSP region, by top cost resources across CSPs, and by top-cost cost domains.
+The CostIQ overview shows a breakdown of your managed resources by top-cost resources by cloud provider, by top-cost resources by CSP region, by top-cost resources across CSPs, and by top-cost cost domains.
 
-By using cost domains, the top utilized spoke gateways for different departments can be identified. The information can be used for billing purposes.  
+Cost domains can help you identify the top utilized spoke gateways for different departments and business units in your enterprise. The information can be used for billing purposes.  
 
 Create a Cost Domain 
 ----------------------
@@ -2170,6 +2194,10 @@ Managing Your Appliance
 In order to provide backup to your data, you can leverage instance snapshot methodology in the cloud.
 
 You can configure periodic snapshots, based on your preferred interval, to be able retain data in case of corruption or disk loss on EBS.  
+
+
+..  |copilot-paused-notification| image:: copilot_reference_guide_media/copilot-paused-notification.png
+    :scale: 80%
 
 
 ..  |transit_segmentation| image:: copilot_reference_guide_media/transit_segmentation.png
