@@ -180,16 +180,11 @@ Remote Gateway IP address
 
 Enter the IP address of the device.
 
-Remote Network
-^^^^^^^^^^^^^^
-
-Does this only show up if you selected an Insane Mode gateway earlier in this procedure (that was initially set up under Gateway > New in the Controller)?
-
 
 Editing the Site2Cloud Connection
 =================================
 
-Once a connection is created, you can download the configuration or edit parameters. To do this, select SITE2CLOUD in the left pane and select the connection you just created.
+Once a connection is created, you can download the configuration or edit parameters. To do this, select Site2Cloud in the left pane and select the connection you just created.
 
 Local Identifier
 ---------------------
@@ -212,12 +207,11 @@ You can generate a remote site configuration template. This template file contai
 
 To download a configuration:
 
-1. After creating a Site2Cloud connection, select the remote site device from the table on the Setup Site2Cloud Connection page and click EDIT.
-#. <do you have to select a local/remote identifier first?>
-#. In the DOWNLOAD CONFIGURATION area, select your remote site device from the Vendor menu, or use the Generic/Vendor Independent template (you select Generic for anything that is not an Aviatrix gateway. If you are connecting two Aviatrix gateways, you select Aviatrix as the vendor).
+1. After creating a Site2Cloud connection, select the remote site device from the table on the Setup Site2Cloud Connection page and click **Edit**.
+#. In the Download Configuration area, select your remote site device from the Vendor menu, or use the Generic/Vendor Independent template (you select Generic for anything that is not an Aviatrix gateway. If you are connecting two Aviatrix gateways, you select Aviatrix as the vendor).
 
 - If you select a Generic vendor, the Platform field is populated as Generic, and the Software field is populated with Vendor Independent.
-- If you select the Aviatrix vendor, the Platform is populated with UCC, and the Software version is 1.0?
+- If you select the Aviatrix vendor, the Platform is populated with UCC, and the Software version is 1.0.
 - If you select a specific hardware vendor (such as Cisco), available platforms belonging to that vendor are displayed in the Platform field, and the Software field is populated with related software versions.
 
 How to use this downloaded configuration:
@@ -271,14 +265,18 @@ Scroll down to Event Triggered HA and click **Enable**.
 Jumbo Frame
 -------------
 
-Jumbo Frame improves the performance between Aviatrix Transit gateway  or an OCI Transit Gateway and CloudN. This feature is only supported for AWS and OCI; Azure and GCP do not support Jumbo frame. To configure, go to Site2Cloud > select a connection and click **Edit**. 
-Scroll down to Jumbo Frame and click **Enable**. 
+Jumbo Frame improves the performance between Aviatrix Transit gateway  or an OCI Transit Gateway and CloudN. This feature is only supported for AWS and OCI; Azure and GCP do not support Jumbo frame. To configure:
+
+1. Navigate to Site2Cloud > select a connection and click **Edit**. 
+#. Scroll down to Jumbo Frame and click **Enable**. 
 
 Clear Sessions
 -------------------
 
-Clear Session allows to reset all the active sessions on a selected Site2Cloud connection. To clear, navigate to SITE2CLOUD > select a connection and click EDIT. 
-Scroll down to Clear Sessions and click CLEAR.
+Clear Session allows to reset all the active sessions on a selected Site2Cloud connection:
+
+1. Navigate to Site2Cloud > select a connection and click **Edit**. 
+#. Scroll down to Clear Sessions and click **Clear**.
 
 
 Periodic Ping
