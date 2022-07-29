@@ -256,7 +256,7 @@ To enable this, go to Site2Cloud, edit the connection on the Setup page, scroll 
 Forward Traffic to Transit Gateway
 -----------------------------------
 
-Typically you enable the **Forward Traffic to Transit Gateway** option when you have a Site2Cloud connection that has overlapping CIDRs. This forwarding ensures that traffic is sent from on-prem to local Spokes and Transit gateways. 
+Typically you enable the **Forward Traffic to Transit Gateway** option when you have a Site2Cloud connection that has overlapping CIDRs. This forwarding ensures that traffic is sent between on-prem routers and local Spoke and Transit gateways. 
 
 In most cases customers will enable this so that their on premise traffic is forwarded.
 
