@@ -29,7 +29,7 @@ VPCs can be created manually on AWS or directly from the Aviatrix Controller.
 In this example, VPCs are created following the Useful Tools `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_ guidelines.
 
 1.	Login to the Aviatrix Controller with a username and password.
-#.	Navigate to Useful Tools -> Create A VPC.
+#.	Navigate to Useful Tools > Create A VPC.
 #. Select AWS as the Cloud Type.
 #.	Add one VPC for Transit FireNet Gateway and select the **Aviatrix Transit Firenet VPC** option as shown below.
 #.  Create two more VPCs with no option/checkbox selected for Spoke Gateways.
@@ -49,12 +49,12 @@ Transit FireNet builds on the Aviatrix Transit Network where Aviatrix gateways a
 Make sure the deployment meets the following specifications:
 
 1.	The minimum size of the Aviatrix Transit Gateway is c5.xlarge.
-#.	The Aviatrix Transit Network must be in Connected mode. Go to Transit Network -> Advanced Config -> Connected Transit and click Enable.
+#.	The Aviatrix Transit Network must be in Connected mode. Go to Transit Network > Advanced Config > Connected Transit and click Enable.
 
 Procedure
 ~~~~~~~~~~
 
-1. Navigate to Multi-Cloud Transit -> Setup -> Transit -> #1 Launch an Aviatrix Transit Gateway.
+1. Navigate to Multi-Cloud Transit > Setup > Transit > #1 Launch an Aviatrix Transit Gateway.
 #. Enter a Gateway Name.
 #. Select the AWS Access Account Name.
 #. Select a region.
@@ -63,7 +63,7 @@ Procedure
 #. Select the Public Subnet.
 #. Enable Insane Mode Encryption for higher throughputs (optional).
 #. Enable the Transit FireNet Function. 
-#. Enable Transit VPC GW HA by navigating to Multi-Cloud Transit -> Setup -> Transit -> #2 (Optional) Enable HA to an Aviatrix Transit Gateway.
+#. Enable Transit VPC GW HA by navigating to Multi-Cloud Transit > Setup > Transit > #2 (Optional) Enable HA to an Aviatrix Transit Gateway.
 
 .. note::
     The c5.xlarge instance size will be required for Insane Mode Encryption (for higher throughput).
@@ -77,10 +77,10 @@ Deploy Spoke Gateways
 
 Now that there is an Aviatrix Transit Gateway, you can deploy Aviatrix Spoke Gateways in the Spoke VPCs using `Aviatrix Spoke Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_.
 
-1.	Navigate to Multi-Cloud Transit -> Setup -> Spoke -> #1 Launch an Aviatrix Spoke Gateway.
+1.	Navigate to Multi-Cloud Transit > Setup > Spoke > #1 Launch an Aviatrix Spoke Gateway.
 #.	Deploy a Spoke Gateway (GW) in each of the spoke VPCs using defaults, ensuring that you choose the correct Account and VPC information.
 #.	Choose the Public Subnet.
-#.	Enable Spoke Gateway HA by navigating to Multi-Cloud Transit -> Setup -> Spoke -> #5 (Optional) Enable/Disable HA to an Aviatrix Spoke Gateway.
+#.	Enable Spoke Gateway HA by navigating to Multi-Cloud Transit > Setup > Spoke > #5 (Optional) Enable/Disable HA to an Aviatrix Spoke Gateway.
 
 .. note::
     The c5.xlarge instance size will be required for Insane Mode Encryption (for higher throughput).
@@ -92,7 +92,7 @@ Attach Spoke Gateways to Transit Network
 
 Now that the Transit and spoke gateways are deployed, you must connect them.
 
-1.	Navigate to Multi-Cloud Transit -> Setup -> Attach/Detach -> #1a Attach Spoke Gateway to Transit Network.
+1.	Navigate to Multi-Cloud Transit > Setup > Attach/Detach > #1a Attach Spoke Gateway to Transit Network.
 #.	Select one spoke at a time and attach to the Transit gateway.
 
 |attach_spk_trgw|
@@ -103,7 +103,7 @@ Now that the Transit and spoke gateways are deployed, you must connect them.
 Enable Connected Transit
 ************************
 
-By default, Spoke VPCs are in isolated mode where the Transit will not route traffic between them. To allow the Spoke VPCs to communicate with each other, you must enable Connected Transit by navigating to Multi-Cloud Transit -> Advanced Config. Under Edit Transit, select the Transit Gateway and toggle Connected Transit to **Enabled**.
+By default, Spoke VPCs are in isolated mode where the Transit will not route traffic between them. To allow the Spoke VPCs to communicate with each other, you must enable Connected Transit by navigating to Multi-Cloud Transit > Advanced Config. Under Edit Transit, select the Transit Gateway and toggle Connected Transit to **Enabled**.
 
 |connected_transit|
 
@@ -112,12 +112,12 @@ Configure Transit Firewall Network
 
 Now that Transit and Spoke gateways have been deployed, you must deploy and enable the firewall for traffic inspection.
 
-1.	Navigate to Firewall Network -> Setup -> #3a Enable Transit FireNet on Aviatrix Transit Gateway.
+1.	Navigate to Firewall Network > Setup > #3a Enable Transit FireNet on Aviatrix Transit Gateway.
 #.	Choose the Gateway Name and click **“Enable”**.
 
 |en_tr_firenet|
 
-3.	Navigate to Firewall Network -> Policy -> Manage FireNet Policy.
+3.	Navigate to Firewall Network > Policy > Manage FireNet Policy.
 #.	Add spokes to the Inspected box for traffic inspection.
 
 .. note::
@@ -131,7 +131,7 @@ Subscribe to Firewall Vendor in AWS Marketplace
 
 At this point, FireNet functionality on Transit Gateway is enabled and the FireNet policy is created for spokes. You can now subscribe to the firewall vendor and deploy the firewall.
 
-As indicated in the Aviatrix Controller at Firewall Network -> Setup -> Firewall, you must subscribe to the supported firewall vendor in your AWS marketplace using an access account onboarded to the Controller.
+As indicated in the Aviatrix Controller at Firewall Network > Setup > Firewall, you must subscribe to the supported firewall vendor in your AWS marketplace using an access account onboarded to the Controller.
 
 .. note::
     Please subscribe to the firewall, but do not launch the firewall.
@@ -143,17 +143,17 @@ Launch and Associate Firewall Instance
 
 This approach is recommended if this is the first firewall instance to be attached to the gateway.
 
-This step launches a Firewall instance and associates it with one of the FireNet gateways.
+This step launches a firewall instance and associates it with one of the FireNet gateways.
 
 
 .. important::
 
-    The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ, and, we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet not be in the same subnet.
+    The Firewall instance and the associated Aviatrix FireNet gateway above must be in the same AZ, and we recommend that the Management Interface Subnet and Egress (untrust dataplane) Interface Subnet not be in the same subnet.
 
 Launch and Attach
 ~~~~~~~~~~~~~~~~~~~
 
-In the Aviatrix Controller navigate to Firewall Network -> Setup -> Firewall -> Step 2a. Provide all the required input as shown in the table and click **"Launch"**.
+In the Aviatrix Controller navigate to Firewall Network > Setup > Firewall > Step 2a. Provide all the required input as shown in the table and click **"Launch"**.
 
 .. important::
     The vendor's firewall may take some time after launch to be available.
@@ -173,7 +173,7 @@ Egress Interface Subnet                         Select the subnet whose name con
 Username                                        Applicable to Azure deployment only. "admin" as a username is not accepted.
 Password                                        Applicable to Azure deployment only.
 Key Pair Name (Optional)                        The .pem file name for SSH access to the firewall instance.
-Attach (Optional)                               By selecting this option, the firewall instance is inserted in the data path to receive packet. If this is the second firewall instance for the same gateway and you have an operational FireNet deployment, you should not select this option as the firewall is not configured yet. You can attach the firewall instance later at Firewall Network -> Advanced page.
+Attach (Optional)                               By selecting this option, the firewall instance is inserted in the data path to receive packet. If this is the second firewall instance for the same gateway and you have an operational FireNet deployment, you should not select this option as the firewall is not configured yet. You can attach the firewall instance later at Firewall Network > Advanced page.
 Advanced (Optional)                             Click this selection to allow Palo Alto firewall bootstrap files to be specified.
 IAM Role                                        In advanced mode, create an IAM Role on the AWS account that launched the FireNet gateway. Create a policy to attach to the role. The policy is to allow access to "Bootstrap Bucket".
 Bootstrap Bucket Name                           In advanced mode, specify a bootstrap bucket name where the initial configuration and policy file is stored.
@@ -195,7 +195,7 @@ Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 i
 
 .. important::
 
-     Starting in Release 5.4, launching Check Point firewall instances from the Aviatrix Controller automatically initiates its onboarding process. For initial login information, go to `Credentials for Checkpoint Initial Login <https://aviatrix.zendesk.com/hc/en-us/articles/4417552852109>`_. You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
+     Starting in Release 5.4, launching Check Point firewall instances from the Aviatrix Controller automatically initiates Check Point's onboarding process. For initial login information, go to `Credentials for Checkpoint Initial Login <https://aviatrix.zendesk.com/hc/en-us/articles/4417552852109>`_. You must be registered to access the Aviatrix Customer Support website. If you are not already registered, you can sign-up at https://support.aviatrix.com.
 
 
 .. note::
@@ -260,7 +260,7 @@ Associate an Existing Firewall Instance
 
 This step is the alternative step to launching and associating a firewall instance as per above. If you already launched the firewall (Check Point, Palo Alto Network or Fortinet) instance from AWS Console, you can still associate it with the FireNet gateway.
 
-In the Aviatrix Controller, navigate to Firewall Network -> Setup -> Firewall -> Step 2b and associate a firewall with the correct FireNet Gateway.
+In the Aviatrix Controller, navigate to Firewall Network > Setup > Firewall > Step 2b and associate a firewall with the correct FireNet Gateway.
 
 Example Setup for "Allow All" Policy
 *************************************
@@ -291,9 +291,9 @@ For basic configuration, please refer to `example Check Point configuration guid
 
 Vendor integration dynamically updates firewall route tables. The use case is for networks with non-RFC 1918 routes that require specific route table programming on the firewall appliance.
 
-1. In the Aviatrix Controller, navigate to Firewall Network -> Vendor Integration -> Firewall. Select the Firewall Vendor Type and fill in the details of your firewall instance.
-2.	Click Save.
-3. You can click Show or Sync to show the integration details or sync the configuration with the firewall.
+1. In the Aviatrix Controller, navigate to Firewall Network > Vendor Integration > Firewall. Select the Firewall Vendor Type and fill in the details of your firewall instance.
+2.	Click **Save**.
+3. You can click **Show** or **Sync** to show the integration details or sync the configuration with the firewall.
 
 Verification
 **************
@@ -303,26 +303,26 @@ There are multiple ways to verify if Transit FireNet is configured properly:
     1.	Aviatrix Flightpath - Control-plane Test
     #.	Ping/Traceroute Test between Spoke VPCs (East-West) - Data-plane Test
 
-Flight Path Test for FireNet Control-Plane Verification
+Flight Path Test for FireNet Control Plane Verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Flight Path is a powerful troubleshooting Aviatrix tool which allows users to validate the control-plane and gives visibility of end to end packet flow.
 
-    1.	In the Aviatrix Controller, navigate to Troubleshoot-> Flight Path.
+    1.	In the Aviatrix Controller, navigate to Troubleshoot > Flight Path.
     #.	Provide the Source and Destination Region and VPC information.
     #.	Select ICMP and Private subnet, and run the test.
 
 .. note::
     An EC2 VM instance will be required in AWS, and ICMP should be allowed in the security group.
 
-Ping/Traceroute Test for FireNet Data-Plane Verification
+Ping/Traceroute Test for FireNet Data Plane Verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once control-plane is established and no problems are found in security and routing polices, data-plane validation needs to be verified to make sure traffic is flowing and not blocking anywhere.
+Once control plane is established and no problems are found in security and routing polices, data plane validation needs to be verified to make sure traffic is flowing and not blocking anywhere.
 
-There are multiple ways to check the data-plane:
+There are multiple ways to check the data plane:
     1. SSH to Spoke EC2 instance  (e.g. DEV1-VM) and ping other Spoke EC2 to instance (e.g PROD1-VM) to make sure no traffic loss in the path.
-    2. Ping/traceroute capture can also be performed from Aviatrix Controller. Navigate to Troubleshoot -> Diagnostics and perform the test.
+    2. Ping/traceroute capture can also be performed from Aviatrix Controller. Navigate to Troubleshoot > Diagnostics and perform the test.
 
 
 .. |subscribe_firewall| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/subscribe_firewall.png
