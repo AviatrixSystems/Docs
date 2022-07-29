@@ -163,7 +163,7 @@ Spoke 2 in this scenario is a landing Spoke. When the Site2Cloud Forwarding opti
 
 Either side can now initiate traffic (locally or remotely), as per what you configured in your Site2Cloud connection. If you select only one of these, you cannot initiate from the other direction and NAT translation will not occur. 
 
-Enabling the **Auto Advertise Spoke Site2Cloud CIDRs** option (configured at Multi-Cloud Transit > List > Spoke; select a Spoke gateway and select this option from the Actions list) in this scenario ensures that the other Spokes in the scenario are aware of the CIDRs that are coming into the landing Spoke (Spoke 2). If you select this Auto Advertise option ensure that you do not advertise more than the CSP-allowed limit of routes per route table. For example, for AWS the routes per route table limit is described `here <https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html>`_.
+Enabling the **Auto Advertise Spoke Site2Cloud CIDRs** option (configured at Multi-Cloud Transit > List > Spoke; select a Spoke gateway and select this option from the Actions list) in this scenario ensures that the other Spokes in the scenario are aware of the virtual CIDRs on which the landing Spoke is going to perform NAT (Spoke 2). If you select this Auto Advertise option ensure that you do not advertise more than the CSP-allowed limit of routes per route table. For example, for AWS the routes per route table limit is described `here <https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html>`_.
 
 
 .. |overlap_onprem_tgw| image:: overlapping_network_solutions_media/overlap_onprem_tgw.png
