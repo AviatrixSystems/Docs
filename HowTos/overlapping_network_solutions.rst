@@ -159,11 +159,11 @@ This scenario extends the previous solution to include multi sites, as shown in 
 
 This scenario is made possible by the **Forward Traffic to Transit Gateway** option that you can enable after configuring your Site2Cloud connection. See `here <https://docs.aviatrix.com/HowTos/site2cloud.html#forward-traffic-to-transit-gateway>`_ for more information. 
 
-Spoke 2 in this scenario is a landing Spoke. When the Site2Cloud Forwarding option referenced above is enabled, NAT occurs on the landing Spoke and ensures that the traffic from the on-prem routers arrives at its destination(s) (local Spoke and Transit gateways). If this option is not enabled the traffic remains on the local (on-prem) Spoke and is not forwarded.
+Spoke 2 in this scenario is a landing Spoke. When the Site2Cloud Forwarding option referenced above is enabled, NAT occurs on the landing Spoke and ensures that bi-directional traffic flow is possible between on-prem routers and local Spoke and Transit gateways. 
 
-Traffic can be initiated from the local or remote side (on-prem side), as per what you configured in your Site2Cloud connection (local or remote initiated traffic). If you select only one of these, you cannot initiate from the other direction and NAT translation will not occur. 
+Either side can now initiate traffic (locally or remotely), as per what you configured in your Site2Cloud connection. If you select only one of these, you cannot initiate from the other direction and NAT translation will not occur. 
 
-Enabling the **Auto Advertise Spoke Site2Cloud CIDRs** option (configured at Multi-Cloud Transit > List > Spoke; select a Spoke gateway and select this option from the Actions list) in this scenario ensures that the other Spokes in the scenario are aware of the CIDRs that are coming into the landing Spoke (Spoke 2). If you select this Auto Advertise option you must make sure that for any non-RFC 1918 routes your CSP VPC route tables can handle the route entry limit.
+Enabling the **Auto Advertise Spoke Site2Cloud CIDRs** option (configured at Multi-Cloud Transit > List > Spoke; select a Spoke gateway and select this option from the Actions list) in this scenario ensures that the other Spokes in the scenario are aware of the CIDRs that are coming into the landing Spoke (Spoke 2). If you select this Auto Advertise option ensure that you do not advertise more than the CSP-allowed limit of routes per route table. For example, for AWS the routes per route table limit is described `here <https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html>`_.
 
 
 .. |overlap_onprem_tgw| image:: overlapping_network_solutions_media/overlap_onprem_tgw.png

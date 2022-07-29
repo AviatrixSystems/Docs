@@ -43,7 +43,10 @@ Connection Type
 
 Select Mapped or Unmapped as the Connection Type. You should select Unmapped unless the Local Subnet and the Remote Subnet overlap.
 
-If you select Mapped, you have the option of selecting the Custom Mapped checkbox. If you select Custom Mapped, you can select either or both of the Remote Initiated Traffic/Local Initiated Traffic options. If you select one or both of these you must configure the source and destination real and virtual CIDRs for these options. You can enter customized mappings for both (typically only performed by advanced users).
+If you select the Mapped option in conjunction with the `Forward Traffic to Transit Gateway option <#forward-traffic-to-transit-gateway>`_ (possible after you configure your Site2Cloud connection, under the Edit options), bi-directional traffic flow occurs. 
+
+Mapped
+++++++
 
 If you select Mapped, configure the following:
 
@@ -67,7 +70,12 @@ Here is an example of one-to-one mapping:
       | Local Subnet(Real): 10.1.7.15/32
       | Local Subnet(Virtual): 192.168.7.45/32
 
-Enter the Connection Name and click OK.
+Enter the Connection Name and click **OK**.
+
+Custom Mapping
+++++++++++++++
+
+If you select the Custom Mapped checkbox after selecting the Mapped option, more complex Site2Cloud configurations are possible. You can have locally initiated traffic flows only, remotely initiated traffic flows only, and differing NAT translation based on these local/remote initiated flows. 
 
 Remote Gateway Type
 ^^^^^^^^^^^^^^^^^^^
