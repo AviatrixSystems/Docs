@@ -194,7 +194,8 @@ To create the Edge Gateway ISO image file, follow these steps.
     b.  **ZTP File Type**: Select **iso**.
 
         .. note::
-         The ISO file is the equivalent of the Zero-Touch Provisioning (ZTP) token. ZTP allows network engineers to remotely deploy and provision network devices at remote locations.
+           The ISO file is the equivalent of the Zero-Touch Provisioning (ZTP) token. ZTP allows network engineers to remotely deploy and provision network devices at remote locations.
+           For KVM deployments, **cloud-init** is also supported.
 
     c.  **Gateway Name**: Enter a name for the new Edge Gateway.
 
@@ -369,13 +370,17 @@ Before you begin, on the KVM Linux host ensure the LAN, WAN, and MGMT network br
 
    |edge-kvm-new-vm-4|
 
-7. Configure the LAN, WAN, and MGMT network bridge interfaces.
+7. Add the LAN and MGMT virtual bridge interfaces.
 
    a. Click **Add Hardware**.
 
       |edge-kvm-new-vm-5|
 
-   b. In **Add New Virtual Hardware**, select **Network** from the left pane and add two additional network bridge interfaces for the LAN and MGMT virtual interfaces. The bridge interface for WAN interface is automatically created as part of the VM image creation.
+   b. In **Add New Virtual Hardware**, select **Network** from the left pane and add two additional network interfaces for the LAN and MGMT virtual bridges. The virtual bridge for the WAN interface is automatically added as part of the VM image creation.
+
+   a. For **Network source**, select the name of the virtual bridge for the LAN interface.
+   b. For **Device model**, select **virtio**.
+   c. Repeat steps a and b and add the virtual bridge for the MGMT interface.
   
       |edge-kvm-new-vm-6|
 
@@ -398,7 +403,20 @@ For more information about deploying virtual machines and attaching .iso file in
 
 Next, verify Edge in Controller. See `Verifying Edge in Controller <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#verifying-edge-in-controller>`_.
 
-2d. Verifying Edge in Controller
+2d. Enabling Multiqueue virtio-net on KVM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Multiqueue virtio-net allows network performance to scale with the number of vCPUs, by allowing packet processing (packet sending and receiving) through multiple TX and RX queues.
+
+To enable Multiqueue virtio-net support on KVM, add the following to the guest XML definition, where *N* specifies the number of queues. Set the value of **N** to the number of vCPUs.
+
+   <interface type='network'>
+        <source network='default'/>
+        <model type='virtio'/>
+        <driver name='vhost' queues='*N*'/>
+   </interface>
+
+2e. Verifying Edge in Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To verify the Edge Gateway is up, wait for 5 minutes after you have attached the ZTP **.iso** file then do the following:
@@ -617,7 +635,7 @@ You can now create or assign a user account with the newly created RBAC group.
 Selective Gateway Upgrade for Edge 2.0
 -----------------------------------------
 
-The Aviatrix Edge 2.0 base OS is not upgradeable. To update the base OS to a newer version, you can only deploy a newer version of the Aviatrix Edge image to a new VM to replace it.
+The Aviatrix Edge 2.0 base OS is not upgradeable. To update the base OS to a newer version, you need to deploy the latest version of the Aviatrix Edge image to a new VM.
 
 As Edge 2.0 base OS is not field upgradeable, Edge 2.0 does not support selective gateway image update and software rollback.
 
@@ -648,8 +666,9 @@ To run Clish on the Edge Gateway, log in with the username **admin**.
 +-----------------------------------+--------------------------------------------------------+
 | reboot                            | Reboot the system.                                     |
 +-----------------------------------+--------------------------------------------------------+
-| set_controller_ip [controller_ip] | Set Controller IP address, usually performed after     |
-|                                   | Controller migration when Controller IP address changed|
+| set_controller_ip [controller_ip] | Set the Controller IP address, usually performed after |
+|                                   | Controller migration when the Controller IP address    |
+|                                   | is changed.                                            |
 +-----------------------------------+--------------------------------------------------------+
 | show_interfaces                   | Show output from the command “ifconfig -a | more”.     |
 +-----------------------------------+--------------------------------------------------------+
