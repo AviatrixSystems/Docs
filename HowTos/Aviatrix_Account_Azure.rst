@@ -18,7 +18,9 @@ to a valid Azure subscription with API credentials. You need to create an access
 
 This document describes, for a given subscription, how to set up your Azure account credentials and onboard this Azure account to your Aviatrix Controller. Then, your Aviatrix Controller can execute APIs on that subscription.
 
+.. note::
 
+  These instructions apply generally to both Azure commercial and Azure Government clouds for onboarding Azure accounts to your Controller. Note that some screenshots may show regions that are only available for commercial Azure accounts. Commercial Azure offers multiple regions worldwide while Azure Government offers four US regions: (US) USGov Virginia, (US) UsGov Arizona, (US) UsGov Iowa, and (US) UsGov. For more information about Azure regions, click `here <https://azure.microsoft.com/en-us/global-infrastructure/geographies/#overview>`_. 
 
 2. API and Permission Setup 
 ========================================

@@ -512,7 +512,7 @@ To create a resource-scale policy:
 
 5.  In Trigger Condition, configure the alarms you want this policy to raise based on the monitored telemetry data:
 
-    -   Select the metric and the condition for it that must be met to raise an alarm. You can specify multiple alarm conditions. For information about each metric, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id3>`_ in *Aviatrix CoPilot User Reference Guide*.
+    -   Select the metric and the condition for it that must be met to raise an alarm. You can specify multiple alarm conditions. For information about each metric, see `Metrics used for Triggering Notifications`_. 
     -   When multiple alarm conditions are specified, CoPilot generates a resource-scale alert when all the conditions are met.
     -   When the policy alarm condition(s) are met on any gateway in the monitored VPC/VNet(s), CoPilot generates a resource-scale alert.
 
@@ -582,7 +582,7 @@ In Notifications, you can configure alerts so that you can be notified about cha
 
 CoPilot supports Webhook alerts. Webhooks allow you to send notifications to third-party automation systems such as Slack. You can send a Webhook to any system that can take an HTTPS callback. A single alert can notify multiple systems/people. For information on how to customize the webhooks CoPilot generates, see `CoPilot Webhooks <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id8>`_ in *Aviatrix CoPilot User Reference Guide*.
 
-You can pause alerts. For example, if you are going to perform maintenance tasks on the network that you know will trigger pre-configured alerts, you can pause the alerts temporarily and unpause them when the maintenance is complete.
+You can pause alerts. For example, if you are going to perform maintenance tasks on the network that you know will trigger pre-configured alerts, you can pause the alerts temporarily and unpause them when the maintenance is complete. See `Pause Alerts`_. 
 
 In the Notification tab, CoPilot lists all alerts and shows if they are in a triggerd (open) or closed state. You can open an alert from the list to view its lifecycle. CoPilot closes the alert automatically when the alert metric no longer meets the condition to trigger the alert. The alert lifecycle provides a history for every alert that happens in your network environment.
 
@@ -593,18 +593,18 @@ Configure alerts in CoPilot so you can be notified to events that occur in your 
 
 When configuring alerts, you can choose a notification channel of email or Webhook destinations. Before you begin, specify the email or Webhook addresses in the Notifications tab of CoPilot Settings. For more information about Webhooks, see `CoPilot Webhooks Customization  <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id9>`_.
 
-To configure notifications:
+To configure alerts:
 
 1. From the sidebar, click Notifications.
 #. In Define Alert, type the name you want to use for the alert.
-#. In Condition, select the metric or condition that must be met to trigger the alert. For descriptions of the system and network metrics used for triggering alerts, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id3>`_ in *Aviatrix CoPilot User Reference Guide*.
+#. In Condition, select the metric or condition that must be met to trigger the alert. For descriptions of the system and network metrics used for triggering alerts, see `Metrics used for Triggering Notifications`_.
 #. Click Add Recipients and select the email address or Webhook destination where you want the alert to be sent. Repeat this step for each recipient you want to receive the notification.
 #. Click Save. The alert is enabled. When the condition is met for the metric you specified, CoPilot will now send a notification to the email or Webhook system you specified.
 
-Edit Notifications 
+Edit Alerts
 --------------------
 
-You can edit notification settings you previously configured.
+You can edit alert settings you previously configured.
 
 **Prerequisite**: (**If adding new email recipient/new webhook URL**) If you need to add new email recipients or new webhook payload URLs to receive the alert, add the new recipient's email address or new webhook configuration first in the Settings > Notifications tab.
 
@@ -629,6 +629,26 @@ To edit a previously configured notification:
 
     Your new configuration is displayed in the Editing Alerts pane. When conditions are met for the alert, your new configuration now applies.
 
+Pause Alerts
+--------------------
+
+You can pause alerts.
+
+To pause a previously configured alert.
+
+1.  From the sidebar, click Notifications.
+
+2.  From the Configured Alerts list, locate the alert you want to pause and click the bell icon.
+
+    A Pause badge for the notification will appear.
+
+    |copilot-paused-notification|
+
+    The notification will remain paused until you manually remove the pause.
+
+3.  (Cancel pause) To cancel the pause, click the bell with a slash icon.
+
+    The Pause badge will disappear and notifications will resume.
 
 Metrics used for Triggering Notifications
 ------------------------------------------
@@ -790,82 +810,176 @@ CoPilot Alert Condition Display Names
 
 The following is a list of all alert condition display names shown by CoPilot. 
 
-Many of the alerts are associated with detecting changes in resource utilization (telemetry) data for managed resources as described in `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id3>`_. 
+Many of the alerts are associated with detecting changes in resource utilization (telemetry) data for managed resources as described in see `Metrics used for Triggering Notifications`_.
 
 Some alerts are associated with enhanced security services like `Network Behavior Analytics <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-anomalies>`_ (detecting network traffic finterprint anomalies) and `ThreatIQ with ThreatGuard <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-threatiq>`_ (detecting threat IPs identified by a well known threat-IP source).  
 
 "Processes Waiting To Be Run"
+
 "Processes Uninterruptible Sleep"
+
 "System Interrupts"
+
 "System Context Switches"
+
 "Swaps To Disk"
+
 "Swaps From Disk"
+
 "IO Blocks IN"
+
 "IO Blocks OUT"
+
 "Memory Cache"
+
 "Memory Buffer"
+
 "Memory Swapped"
+
 "Memory Free"
+
+"Percent Memory Free"
+
 "CPU Idle"
+
 "CPU Wait"
+
 "CPU User Space"
+
 "CPU Kernel Space"
+
 "Disk Free"
+
+"Percent Disk Free"
+
 "Disk Total"
+
 "CPU Steal"
+
 "Transmitted Rate"
+
 "Received Rate"
+
 "Total Rate"
+
 "Peak Transmitted Rate"
+
 "Peak Received Rate"
+
 "Peak Total Rate"
+
 "Received Bytes"
+
 "Compressed Packets Received"
+
 "Packets Dropped While Receiving"
+
 "Errored Packets Received"
+
 "Receiver FIFO Frames"
+
 "Received Frames"
+
 "Multicast Packets Received"
+
 "Received Packets"
+
 "Transmitted Bytes"
+
 "Transmitted Carrier Frames"
+
 "Collisions during Transmission"
+
 "Compressed Packets Transmitted"
+
 "Packets Dropped during Transmission"
+
 "Errored Packets Transmitted"
+
 "Transmission FIFO Frames"
+
 "Transmitted Packets"
+
 "Bandwidth Ingress Limit Exceeded"
+
 "Bandwidth Egress Limit Exceeded"
+
 "PPS Limit Exceeded"
+
 "Conntrack Limit Exceeded"
+
 "Linklocal Limit Exceeded"
+
 "Packets Transmitted Rate"
+
 "Packets Received Rate"
+
 "Total Rate (in packets)"
+
 "Compressed Packets Received Rate"
+
 "Rate of Packets Dropped While Receiving"
+
 "Errored Packets Received Rate"
+
 "Receiver FIFO Frames Rate"
+
 "Received Frames Rate"
+
 "Multicast Packets Received Rate"
+
 "Transmitted Carrier Frames Rate"
+
 "Collisions Rate during Transmission"
+
 "Compressed Packets Transmitted Rate"
+
 "Rate of Packets Dropped during Transmission"
+
 "Errored Packets Transmitted Rate"
+
 "Transmission FIFO Frames Rate"
+
 "Bandwidth Ingress Limit Exceeded Rate"
+
 "Bandwidth Egress Limit Exceeded Rate"
+
 "PPS Limit Exceeded Rate"
+
 "Conntrack Limit Exceeded Rate"
+
 "Linklocal Limit Exceeded Rate"
+
 "Gateway Status"
+
 "Tunnel Status"
+
 "BGP Peering Status"
+
+"Underlay Connection Status"
+
 "Threat IP Detected"
+
 "Anomaly Detected"
+
 "Scaling Recommendation triggered"
+
+
+Underlay Connection Status Alert
+-----------------------------------
+
+The Underlay Connection Status alert indicates a potential underlay communication issue. Potential causes of this alert include the following: 
+
+-   A CSP link outage.
+-   A misconfigured security group or ACL.
+-   A firewall blocking traffic.
+-   A router dropping packets.
+
+This alert applies to connections between hosts running Aviatrix gateways. 
+
+Monitored hosts will alert on syslog traffic where it is the source or the destination
+
+When you set this alert for a host(s), CoPilot monitors the syslog from any connection that includes the host as the source or destination. When syslog data indicates a potential problem from each direction of the connection between that host and another host within 30 seconds of the other, the alert is triggered. On the same connection, if the syslog data later indicates the problem is resolved from either direction, the alert is automatically resolved.  
 
 
 Working with AppIQ
@@ -1349,6 +1463,32 @@ To create a resource utilization report:
 
 11. (Optional) To generate another report, at the top of the Resource Utilization Report page, click the arrow to return to the main Reports page and repeat the procedure.
 
+
+Create a FlightCheck Report
+------------------------------------
+
+Create a report showing the results of validation checks run on your Aviatrix platform. A FlightCheck report will show you the following: 
+
+-   If your CSP account status is not intact (the IAM policy deviates from the Aviatrix default policy).
+-   If backups are not configured.
+-   If gateways are down.
+-   If syslog is not configured.
+-   If SAML login is not enabled.
+-   If connections are down.
+
+The report also shows your current controller version, the latest controller version, the controller Apache version, and your current CoPilot version. 
+
+To create a FlightCheck report:
+
+1.  Log in to CoPilot.
+
+2.  From the sidebar, click Reports.
+
+3.  For FlightCheck Report, click **Start**.
+
+    The FlightCheck report is generated.
+ 
+
 Working with Anomalies
 =======================
 
@@ -1501,6 +1641,119 @@ When you enable network behavior analytics on a VPC/VNet, CoPilot learns its nor
 -   **Total Packets**
 
     Total number of packets for traffic coming out of and traffic going into all end instances.
+
+Working with CostIQ
+=======================
+
+This section describes the CostIQ feature of Aviatrix CoPilot.
+
+CostIQ offers visibility into costs of resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. Costs are currently reported as percentages of traffic generated by end instances in spoke gateways. 
+
+In CostIQ, you create cost domains which are defined by a unique set of spoke gateways. CoPilot looks at the traffic generated by all end instances in the unique set of spoke gateways and calculates the percentage of traffic they generate when compared to the total traffic for all end instances in all spoke gateways in your Aviatrix managed environment. 
+
+The CostIQ overview shows a breakdown of your managed resources by top-cost resources by cloud provider, by top-cost resources by CSP region, by top-cost resources across CSPs, and by top-cost cost domains.
+
+Cost domains can help you identify the top utilized spoke gateways for different departments and business units in your enterprise. The information can be used for billing purposes.  
+
+Create a Cost Domain 
+----------------------
+
+Cost domains are defined by a unique set of spoke gateways. 
+
+You can edit the name of a cost domain as well as the list of spoke gateways that define the domain at any time.
+
+Delete a Cost Domain
+----------------------
+
+You can delete a cost domain at any time. 
+
+You can reconstruct a cost domain using the same set of spoke gateways at any time.
+
+CoPilot considers only the current set of spoke gateways when calculating total traffic percentages. The traffic for a deleted spoke gateway is no longer considered in the calculation. A deleted spoke gateway is not automatically removed from a cost domain; it remains in the cost domain but is no longer factored into the calculation of total traffic percentages.
+
+CostIQ Properties Reference
+---------------------------------------
+
+Descriptions of the properties in the CoPilot CostIQ tabs listed in alphabetical order.
+
+**CostIQ Overview (Dashboard) Properties**
+
+Descriptions of the properties in the CoPilot CostIQ Overview (dashboard) listed in alphabetical order:
+
+-   **Time Period**
+
+    The time ranges you can set for viewing cost information of managed resources in cost domains.
+
+    When cost information for a time range is not available in Netflow record data, the option for that time range is greyed out.
+
+    Options are:
+
+    -   **Last 60 minutes**: Last 60 minutes including the current minute.
+    -   **Last 24 hours**: Last 24 hours including the current hour.
+    -   **Last 7 days**: Last 7 days including the current day.
+    -   **Last 30 days**: Last 30 days including the current day.
+    -   **Last 90 days**: Last 90 days including the current day.
+    -   **Last 365 days**: Last 365 days (year) including the current day.
+    -   **Previous hour**: Last 1 hour excluding the current hour.
+
+        For example, if the current time is 14:30:00, shows the cost information from 13:00:00 to 14:00:00.
+
+    -   **Previous day**: Last 1 day excluding the current day.
+    -   **Previous week**: Last 1 week excluding the current week.
+    -   **Previous month**: Last 1 month excluding the current month.
+
+        For example, if the current month is July, shows cost information for June (6/01/2022 - 6/30/2022).
+
+    -   **Previous 3 months**: Last 3 months excluding the current month.
+
+        For example, if the current month is July, shows cost information for April to June (4/01/2022 - 6/30/2022).
+
+    -   **Previous quarter**: Last 4 months excluding the current month.
+    -   **Previous year**: Last 12 months excluding the current month.
+    -   **Month to date**: From the beginning of the month to the current date.
+
+        For example, if today is Apr 9, 2022, cost information from 4/01/2022 to 04/09/2022.
+
+    -   **Quarter to date**: From the beginning of the month of the 4-month quarter to the current date.
+    -   **Year to date**: From the beginning of the year to the current date.
+-   **Time Period Start**
+
+    Start date and start time of the time range for which cost information is shown for managed resources in cost domains.
+
+-   **Time Period End**
+
+    End date and end time of the time range for which cost information is shown for managed resources in cost domains.
+
+-   **Top Costs by Region**
+
+    Of all the managed resources you track costs for using cost domains, the managed resources that cost the most on a per CSP region basis.
+
+-   **Top Costs by Cloud Providers**
+
+    Of all the managed resources you track costs for using cost domains, the managed resources that cost the most on a per cloud service provider basis.
+
+-   **Top-Cost Resources**
+
+    Of all the managed resources in your environment, the managed resources that cost the most across all CSPs and regions.
+
+-   **Top-Cost Domains**
+
+    Of all the cost domains you have defined, the cost domains that cost the most.
+
+
+**CostIQ Cost Domains Properties**
+
+Descriptions of the properties in the CoPilot CostIQ Cost Domains tab listed in alphabetical order:
+
+-   **Name**
+
+    The name you assign to the cost domain.
+
+    For example, `Marketing` or `Engineering` if all of the spoke gateways in these domains run workloads for those departments.
+
+-   **Percentage**
+
+    The percentage (%) values reported are of the total traffic for *all* spoke gateways within the specified time frame regardless of whether the spoke gateways are associated with cost domains or not. For example, let's say you have spoke gateways A, B, C, and D and define a cost domain with spoke gateways A and B. If CoPilot reports **Prev Month** as 7%, this means in the previous month the traffic A + B is 7% of traffic A + B + C + D.
 
 
 CoPilot WebHooks
@@ -1941,6 +2194,10 @@ Managing Your Appliance
 In order to provide backup to your data, you can leverage instance snapshot methodology in the cloud.
 
 You can configure periodic snapshots, based on your preferred interval, to be able retain data in case of corruption or disk loss on EBS.  
+
+
+..  |copilot-paused-notification| image:: copilot_reference_guide_media/copilot-paused-notification.png
+    :scale: 80%
 
 
 ..  |transit_segmentation| image:: copilot_reference_guide_media/transit_segmentation.png
