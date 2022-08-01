@@ -257,5 +257,19 @@ This error will be returned when there are 0 available IP addresses in a subnet 
 
 You may have exceeded GCP IN_USE_ADDRESSES limits on this account. By default in GCP, the In-use IP address of a region is 8 (Different GCP project has different quotas limit setting), you can ask for a new quota limit by following `this GCP instruction <https://cloud.google.com/compute/quotas#request_quotas>`_.
 
+--------------------------------------------------------------------
+
+::
+
+    Error: [Aviatrix Error] [AVXERR-GATEWAY-####] Failed to resize Gateway *Gateway_Name*. Azure Error: NetworkInterfaceCountExceeded Message: The number of network interfaces for virtual machine *Virtual_Machine_Name* exceeds the maximum allowed for the virtual machine size Standard_B1ms. The number of network interfaces is 3 and the maximum allowed is 2.
+
+This issue occurs because the gateway you attempted to downsize does not have enough network interfaces or NICs (Network Interface Cards) for the size of your Azure virtual machine with Aviatrix FireNet enabled.
+
+Azure virtual machines with the Standard_B1 size can have up to 2 NICs. However, when you use Aviatrix Transit FireNet for a gateway, you need 3 NICs.
+
+To resolve this issue, you can either:
+
+* Resize the Azure virtual machine to Standard-B2 or larger.
+* Disable Transit FireNet on this gateway. In your Controller, go to Firewall Network > Setup > Detach > Disable Transit Firenet Function for Aviatrix Transit Gateway > select the gateway > click **Disable**.
 
 .. disqus::
