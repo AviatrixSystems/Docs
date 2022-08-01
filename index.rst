@@ -177,9 +177,10 @@ While all content is searchable, the site is organized into the following sectio
    :maxdepth: 1
    :caption: CloudN
 
-   HowTos/secure_edge_faq
+   HowTos/edge-faq
+   HowTos/edge-design-patterns
+   HowTos/edge-2.0-workflow
    HowTos/secure_edge_workflow   
-   HowTos/cloudn_faq
    HowTos/CloudN_workflow
 
 

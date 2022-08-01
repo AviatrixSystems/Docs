@@ -8,7 +8,7 @@ Single Transit with Single Edge – Attachment over Private Network
 
 In this design, a single Edge Gateway attached to an Aviatrix Transit Gateway over a private network, such as AWS Direct Connect, Azure Express Route, and GCP Interconnect.
 
-|secure_edge_private_network|
+|edge_private_network|
 
 The key ideas for this scenario are:
 
@@ -27,7 +27,7 @@ Key ideas are similar to Attachment over Private Network design except the WAN R
 .. Important::
     If you have multiple Edge Gateways, make sure each Edge Gateway has a unique WAN Public IP.
 
-|secure_edge_public_network|
+|edge_public_network|
 
 Single Transit with Redundant Edge
 ----------------------------------
@@ -75,10 +75,10 @@ The key ideas for this scenario are:
 .. |edge-redundant-circuit| image:: CloudN_workflow_media/edge-redundant-circuit.png
    :scale: 50%	
 
-.. |secure_edge_private_network| image:: CloudN_workflow_media/secure_edge_private_network.png
+.. |secure_edge_private_network| image:: CloudN_workflow_media/edge_private_network.png
    :scale: 50%
 
-.. |secure_edge_public_network| image:: CloudN_workflow_media/secure_edge_public_network.png
+.. |secure_edge_public_network| image:: CloudN_workflow_media/edge_public_network.png
    :scale: 50%
 
 .. |edge-single-transit-redundant| image:: CloudN_workflow_media/edge-single-transit-redundant.png

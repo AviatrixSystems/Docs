@@ -100,14 +100,14 @@ Aviatrix Edge Connectivity over Private Network
 
 This diagram illustrates Aviatrix Edge Gateway deployed in a private network.
 
-|edge_usecase_private_network|
+|edge_private_network|
 
 Aviatrix Edge Connectivity over Public Network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This diagram illustrates Aviatrix Edge Gateway deployed in a public network.
 
-|edge_usecase_public_network|
+|edge_public_network|
 
 
 
@@ -120,10 +120,10 @@ This diagram illustrates Aviatrix Edge Gateway deployed in a public network.
 .. |edge_usecase_multi_cloud| image:: CloudN_workflow_media/edge_usecase_multi_cloud.png
    :scale: 40%
 
-.. |edge_usecase_private_network| image:: CloudN_workflow_media/edge_usecase_private_network.png
+.. |edge_usecase_private_network| image:: CloudN_workflow_media/edge_private_network.png
    :scale: 40%
 
-.. |edge_usecase_public_network| image:: CloudN_workflow_media/edge_usecase_public_network.png
+.. |edge_usecase_public_network| image:: CloudN_workflow_media/edge_public_network.png
    :scale: 40%
 
 

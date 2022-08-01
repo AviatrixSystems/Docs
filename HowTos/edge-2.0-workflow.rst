@@ -159,12 +159,6 @@ Aviatrix Edge Ports and Protocols
 |            | spire-server.aviatrixnetwork.com          |              |          |                       |
 |            | time-server.aviatrixnetwork.com           |              |          |                       |
 +------------+-------------------------------------------+--------------+----------+-----------------------+
-| Mgmt eth2  | security.aviatrix.com                     | TCP          | 443      | Credentials sync      |
-|            |                                           |              |          | Software download     |
-+------------+-------------------------------------------+--------------+----------+-----------------------+
-| Mgmt eth2  | diag.aviatrix.com                         | TCP          | 443      | Tracelog upload       |
-|            |                                           |              |          | Remote support        |
-+------------+-------------------------------------------+--------------+----------+-----------------------+
 
 
 
@@ -291,7 +285,7 @@ To deploy the Edge virtual machine in VMware ESXi, follow these steps.
 
 5. Enter a name for the Edge VM and drag the OVA file into the blue pane. Click **Next**.
 
-   |secure_edge_ova_load_file|
+   |edge_ova_load_file|
 
 6. In the Select storage page, select the storage device for the instance you created (the OVA is installed in this instance). Click **Next**.
 
@@ -300,7 +294,7 @@ To deploy the Edge virtual machine in VMware ESXi, follow these steps.
    .. Note::
       If necessary, you can change the network interface mappings after deployment.
 
-   |secure_edge_ova_deploy_options|
+   |edge_ova_deploy_options|
 
 8. Click **Next**.
 
@@ -327,7 +321,7 @@ Next, attach the ZTP **.iso** and the Edge will auto-mount the media which conta
  
 6. Next to the CD/DVD Media field, click **Browse**. Select the ISO file you downloaded.
 
-   |secure_edge_edit_settings|
+   |edge_edit_settings|
 
    .. note::
       **Connect at power on** (step 4) is required when you attach the ISO image to the VM for the first time. If the VM is powered on at the time you attach the ISO image, select the **Datastore ISO file** and save the configuration to make the ISO available to ZTP.
@@ -408,7 +402,7 @@ Next, verify Edge in Controller. See `Verifying Edge in Controller <http://docs.
 
 Multiqueue virtio-net allows network performance to scale with the number of vCPUs, by allowing packet processing (packet sending and receiving) through multiple TX and RX queues.
 
-To enable Multiqueue virtio-net support on KVM, add the following to the guest XML definition, where *N* specifies the number of queues. Set the value of **N** to the number of vCPUs.
+To enable Multiqueue virtio-net support on KVM, add the following to the guest XML definition, where *N* specifies the number of queues to create. Set the value of **N** to the number of vCPUs.
 
    <interface type='network'>
         <source network='default'/>
@@ -653,7 +647,7 @@ To run Clish on the Edge Gateway, log in with the username **admin**.
 +-----------------------------------+--------------------------------------------------------+
 | check_conduit                     | Check conduit state.                                   |
 +-----------------------------------+--------------------------------------------------------+
-| check_network                     | Troubleshoot network connectivity.                     |
+| check_network [dns][reachability] | Troubleshoot network connectivity.                     |
 +-----------------------------------+--------------------------------------------------------+
 | diagnostics                       | Show gateway diagnostics from                          |
 |                                   | /home/ubuntu/cloudx-aws/avx_edge_status.json, which is |
@@ -694,13 +688,13 @@ If the connectivity to the CSP is over a public network:
 
 
 
-.. |secure_edge_ova_deploy_options| image:: CloudN_workflow_media/secure_edge_ova_deploy_options.png
+.. |secure_edge_ova_deploy_options| image:: CloudN_workflow_media/edge_ova_deploy_options.png
    :scale: 80%
    
-.. |secure_edge_edit_settings| image:: CloudN_workflow_media/secure_edge_edit_settings.png
+.. |secure_edge_edit_settings| image:: CloudN_workflow_media/edge_edit_settings.png
    :scale: 50%
    
-.. |secure_edge_ova_load_file| image:: CloudN_workflow_media/secure_edge_ova_load_file.png
+.. |secure_edge_ova_load_file| image:: CloudN_workflow_media/edge_ova_load_file.png
    :scale: 80%
 
 .. |edge-active-standby| image:: CloudN_workflow_media/edge-active-standby.png
