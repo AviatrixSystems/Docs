@@ -40,7 +40,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Important Notices in Aviatrix Release 6.8** 
 
-- **AVX-26666** – In order for release 6.8 to roll back to 6.7 correctly, the Controller and gateways must be upgraded to the latest version of 6.7 (6.7a) before upgrading to 6.8.
+- **AVX-26666** – For release 6.8 to roll back to 6.7 correctly, the Controller and gateways must be upgraded to the latest version of 6.7 (6.7.1376) before upgrading to 6.8.
 
 The following `Private Preview Features`_ are available in this release:
 
@@ -119,16 +119,16 @@ For more information about Aviatrix Edge, refer to the `Aviatrix Edge FAQ <https
 - **AVX-26419** - If you are connecting to another Aviatrix device, using IKEv2 is preferred. IKEv2 support started in version 5.0.2667. If you configure IKEv1 in a Site2Cloud connection that uses certificate-based authentication and is connecting to another Aviatrix device, you must add the intermediate CA’s in addition to the root CA. When an intermediate CA is renewed and re-authentication is attempted, the Site2Cloud connection will go down until you add the new certificate.
 
 
-6.7-pt082022 (08/02/2022) <waiting on official release number/name>
+6.7.1376 (08/02/2022) 
 =========================
 
-**Enhancements in Aviatrix Release xxxx** <waiting on official release number/name>
+**Enhancements in Aviatrix Release 6.7.1376** 
 
 - **AVX-25470: Create single HPE tunnel for Transit and Spoke Attachments** - By default, when HPE is used for Transit peering and Spoke attachments over private IPs, Aviatrix creates the maximum number of HPE tunnels possible given the instance sizes. This enhancement adds the ability to create a single HPE tunnel for Transit peering and spoke attachments over private IPs. Both Transit and Spoke Gateways must have HPE enabled. In Terraform you can enable this by setting the “enable_max_performance” field to “false” when creating Transit peering and Spoke attachments.  
 If using HPE for private Transit peering and Spoke attachments, please re-create those connections once “enable_max_performance” option is enabled.  
 - **AVX25657: CoPilot Notification Thresholds** - Notification thresholds can be set on gateway tunnel counts configured in CoPilot to send alert notifications via the UI and email. 
 
-**Issues Corrected in Aviatrix Release xxxx** 
+**Issues Corrected in Aviatrix Release 6.7.1376** 
 
 - **AVI-2021-0006** - Fixed a remote code execution vulnerability for users of Aviatrix VPN.
 - **AVX-23386** - Upgraded Spire to version 0.12.3, fixing CVE-2021-27099, CVE-2021-27098, CVE-2021-44716, and CVE-2022-24675.
@@ -147,24 +147,24 @@ If using HPE for private Transit peering and Spoke attachments, please re-create
 - **AVX-26205** - The number of available threads in strongSwan was increased to improve scalability and support more than 2000 tunnels. 
 - **AVX-26374** - The Controller database had empty peer IPs for tunnels between Transit Gateways and CloudN. This prevented the gateway snapshot creation, and also prevented configuration/route updates from being propagated to the gateway. This software patch script will correct the Controller database entries. 
 
-**Known Issues in Aviatrix Release xxxx** 
+**Known Issues in Aviatrix Release 6.7.1376** 
 
 - **AVX-25256** - A control plane service running on a gateway consumes multiple gigabytes of memory when there are many IPsec tunnels.
 
-6.6-pt082022 (08/02/2022) <waiting on official release number/name>
+6.6.5712 (08/02/2022)
 =========================
 
-**New Features in Aviatrix Release xxxx**
+**New Features in Aviatrix Release 6.6.5712**
 
 - **AVX-25289** - In 6.7.1319, Aviatrix introduced a new toggle, “Preserve AS Path”. When enabled, this toggle ensured gateways retained the AS path in manually advertised routes, and that routes would be advertised as local if the route did not exist in the best route DB. 
 This change improves failover behavior; gateways will stop advertising any manually advertised CIDR if it is no longer in the best DB (the route is no longer advertised as local).  
 
-**Issues Corrected in Aviatrix Release 6.6-pt082022** <this will be a different number>
+**Issues Corrected in Aviatrix Release 6.6.5712** 
 
 - **AVI-2021-0006** - Fixed a remote code execution vulnerability for users of Aviatrix VPN.
 - **AVX-23386** - Upgraded Spire to version 0.12.3, fixing CVE-2021-27099, CVE-2021-27098, CVE-2021-44716, and CVE-2022-24675.
 - **AVX-24658** - The Python scheduler has been improved to accommodate more tasks. This ensures that all tasks are scheduled and triggered on time without being missed or having to wait.
-- **AVX-25082** - An uncaught exception caused the Aviatrix metering system to report metering inaccurately. This has been fixed.
+- **AVX-25082/25598** - Stale transit peering entries in the database resulted in an issue listing transit peers. This resulted in incorrect metered billing. 
 - **AVX-25128** - An exception occurs when migrating Transit Gateway tunnel status in MongoDB to etcd when the Transit Gateway has a CloudN attached. To fix this issue, when migrating Transit Gateway tunnel status in MongoDB to etcd that have CloudN attached, use the CloudN private_ip for peer_ip. If the tunnel status in MongoDB does not a peer_ip, update it with the peer_ip based on the peer information from the gateway tunnel status message received by the Controller.
 - **AVX-25257** - An inefficient lookup routine in our internal routing service on Transit gateways running in Azure resulted in a persistently high CPU usage for a large number (1000+) of tunnels. This has been corrected.
 - **AVX-25993** - The logging service for Rsyslog supports up to nine profiles. The configuration during restore allowed each profile enablement to start the Rsyslog service (6 times or more) in less than 2 seconds. The system service defaults five times in 10 seconds; otherwise, the Rsyslog service will fail in “starting”. The fix ensures that the Rsyslog service is only restarted once for all profiles.
@@ -175,7 +175,7 @@ This change improves failover behavior; gateways will stop advertising any manua
 - **AVX-26205** - The number of available threads in strongSwan was increased to improve scalability and support more than 2000 tunnels. 
 - **AVX-26374** - The Controller database had empty peer IPs for tunnels between Transit Gateways and CloudN. This prevented the gateway snapshot creation, and also prevented configuration/route updates from being propagated to the gateway. This software patch script will correct the Controller database entries. 
 
-**Known Issues in Aviatrix Release 6.6-pt082022** <this will be a different number>
+**Known Issues in Aviatrix Release 6.6.5712**
 
 - **AVX-25256** - A control plane service running on a gateway consumes multiple gigabytes of memory when there are many IPsec tunnels.
 
