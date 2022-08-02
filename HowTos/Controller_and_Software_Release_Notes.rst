@@ -40,8 +40,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Enhancements in Aviatrix Release 6.7.1376** 
 
-- **AVX-25470: Create single HPE tunnel for Transit and Spoke Attachments** - By default, when HPE is used for Transit peering and Spoke attachments over private IPs, Aviatrix creates the maximum number of HPE tunnels possible given the instance sizes. This enhancement adds the ability to create a single HPE tunnel for Transit peering and spoke attachments over private IPs. Both Transit and Spoke Gateways must have HPE enabled. In Terraform you can enable this by setting the “enable_max_performance” field to “false” when creating Transit peering and Spoke attachments.  
-If using HPE for private Transit peering and Spoke attachments, please re-create those connections once “enable_max_performance” option is enabled.  
+- **AVX-25470: Create single HPE tunnel for Transit and Spoke Attachments** - By default, when HPE is used for Transit peering and Spoke attachments over private IPs, Aviatrix creates the maximum number of HPE tunnels possible given the instance sizes. This enhancement adds the ability to create a single HPE tunnel for Transit peering and spoke attachments over private IPs. Both Transit and Spoke Gateways must have HPE enabled. In Terraform you can enable this by setting the “enable_max_performance” field to “false” when creating Transit peering and Spoke attachments. If using HPE for private Transit peering and Spoke attachments, please re-create those connections once “enable_max_performance” option is enabled.  
 - **AVX25657: CoPilot Notification Thresholds** - Notification thresholds can be set on gateway tunnel counts configured in CoPilot to send alert notifications via the UI and email. 
 
 **Issues Corrected in Aviatrix Release 6.7.1376** 
