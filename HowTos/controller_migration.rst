@@ -204,7 +204,7 @@ Restore the data from your old Controller. In your new Controller, go to Setting
    :scale: 60%
 
 .. |oci_terminate| image:: controller_migration_media/oci_terminate.png
-   :scale: 100%
+   :scale: 80%
 
 .. |oci_permanently_delete_unchecked| image:: controller_migration_media/oci_permanently_delete_unchecked.png
    :scale: 100%
