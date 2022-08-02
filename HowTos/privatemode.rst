@@ -147,6 +147,8 @@ Backup/Restore
 
 When in Private Mode, you can restore the Controller and related Private Mode configuration if the restoration is done in the same VPC as the previous Controller. You cannot restore a Controller that has been created in a different VPC. The restoration will change the targets of the Link Services to the new Controller.
 
+Click `here <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ for more information on backup/restore.
+
 Limitations
 -----------
 
