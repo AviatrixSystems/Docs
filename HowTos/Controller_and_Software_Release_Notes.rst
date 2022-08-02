@@ -34,14 +34,68 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
+
+6.7.1376 (08/02/2022) 
+=========================
+
+**Enhancements in Aviatrix Release 6.7.1376** 
+
+- **AVX-25470: Create single HPE tunnel for Transit and Spoke Attachments** - By default, when HPE is used for Transit peering and Spoke attachments over private IPs, Aviatrix creates the maximum number of HPE tunnels possible given the instance sizes. This enhancement adds the ability to create a single HPE tunnel for Transit peering and spoke attachments over private IPs. Both Transit and Spoke Gateways must have HPE enabled. In Terraform you can enable this by setting the “enable_max_performance” field to “false” when creating Transit peering and Spoke attachments. If using HPE for private Transit peering and Spoke attachments, please re-create those connections once “enable_max_performance” option is enabled.  
+- **AVX25657: CoPilot Notification Thresholds** - Notification thresholds can be set on gateway tunnel counts configured in CoPilot to send alert notifications via the UI and email. 
+
+**Issues Corrected in Aviatrix Release 6.7.1376** 
+
+- **AVI-2021-0006** - Fixed a remote code execution vulnerability for users of Aviatrix VPN.
+- **AVX-23386** - Upgraded Spire to fix CVE-2021-27099, CVE-2021-27098, CVE-2021-44716, and CVE-2022-24675.
+- **AVX-24658** - The Python scheduler has been improved to accommodate more tasks. This ensures that all tasks are scheduled and triggered on time without being missed or having to wait.
+- **AVX-25082** - An uncaught exception caused the Aviatrix metering system to report metering inaccurately. This has been fixed.
+- **AVX-25128** - An exception occurs when migrating Transit Gateway tunnel status in MongoDB to etcd when the Transit Gateway has a CloudN attached. To fix this issue, when migrating Transit Gateway tunnel status in MongoDB to etcd that have CloudN attached, use the CloudN private_ip for peer_ip. If the tunnel status in MongoDB does not a peer_ip, update it with the peer_ip based on the peer information from the gateway tunnel status message received by the Controller.
+- **AVX-25257** - An inefficient lookup routine in our internal routing service on Transit gateways running in Azure resulted in a persistently high CPU usage for a large number (1000+) of tunnels. This has been corrected.
+- **AVX-25289*** - A bug in the Preserve AS Path feature resulted in manual summary CIDRs not present in the best route database being listed in BGP Advertise CIDRs on the BGP page for the HA gateway. The routes are programmed correctly; this is a display-only issue. Customers who have enabled this feature must disable and reenable the feature on the Transit gateway to correct the display issue.
+- **AVX-25632** - Fixed the issue where the Aviatrix Controller was creating more tunnels which exceeds the maximum throughput of the CSP, for the same gateway instance sizes in terms of core counts. 
+- **AVX-25687** - When single SNAT is enabled, traffic toward the Spoke VPC CIDRs is no longer SNAT'ed. Before this change, all traffic egress from Spoke GW eth0 interface would be SNAT'ed, leading to asymmetric traffic on Transit gateways. 
+- **AVX-25993** - The logging service for Rsyslog supports up to nine profiles. The configuration during restore allowed each profile enablement to start the Rsyslog service (6 times or more) in less than 2 seconds. The system service defaults five times in 10 seconds; otherwise, the Rsyslog service will fail in “starting”. The fix ensures that the Rsyslog service is only restarted once for all profiles.
+- **AVX-26007** - The only user actions possible during a restore are enabling remote support or uploading tracelog. All other actions are blocked.
+- **AVX-26086** - Corrected the logic to program the learned 0.0.0.0/0 route on the Azure CSP route table.
+- **AVX-26095** - An improperly configured security group prevented gateways from sending keepalive checks to the Aviatrix Controller. This should have marked the gateways as down. However, because of a bug in our internal service, the Controller continued to mark those gateways as up. 
+- **AVX-26188** - For cases where Transit gateways had a large number of tunnels and encountered a failover event, strongSwan would take a long time to reestablish and restore tunnels, since strongSwan was configured to monitor all interfaces on the gateway. strongSwan config was altered to only monitor the eth0 interface, which results in a shorter restoration time.
+- **AVX-26205** - The number of available threads in strongSwan was increased to improve scalability and support more than 2000 tunnels. 
+- **AVX-26374** - The Controller database had empty peer IPs for tunnels between Transit Gateways and CloudN. This prevented the gateway snapshot creation, and also prevented configuration/route updates from being propagated to the gateway. This software patch script will correct the Controller database entries. 
+
+
+6.6.5712 (08/02/2022)
+=========================
+
+**New Features in Aviatrix Release 6.6.5712**
+
+- **AVX-25289** - In 6.7.1319, Aviatrix introduced a new toggle, “Preserve AS Path”. When enabled, this toggle ensured gateways retained the AS path in manually advertised routes, and that routes would be advertised as local if the route did not exist in the best route DB. 
+This change improves failover behavior; gateways will stop advertising any manually advertised CIDR if it is no longer in the best DB (the route is no longer advertised as local).  
+
+**Issues Corrected in Aviatrix Release 6.6.5712** 
+
+- **AVI-2021-0006** - Fixed a remote code execution vulnerability for users of Aviatrix VPN.
+- **AVX-23386** - Upgraded Spire to fix CVE-2021-27099, CVE-2021-27098, CVE-2021-44716, and CVE-2022-24675.
+- **AVX-24658** - The Python scheduler has been improved to accommodate more tasks. This ensures that all tasks are scheduled and triggered on time without being missed or having to wait.
+- **AVX-25082/25598** - Stale transit peering entries in the database resulted in an issue listing transit peers. This resulted in incorrect metered billing. 
+- **AVX-25128** - An exception occurs when migrating Transit Gateway tunnel status in MongoDB to etcd when the Transit Gateway has a CloudN attached. To fix this issue, when migrating Transit Gateway tunnel status in MongoDB to etcd that have CloudN attached, use the CloudN private_ip for peer_ip. If the tunnel status in MongoDB does not a peer_ip, update it with the peer_ip based on the peer information from the gateway tunnel status message received by the Controller.
+- **AVX-25257** - An inefficient lookup routine in our internal routing service on Transit gateways running in Azure resulted in a persistently high CPU usage for a large number (1000+) of tunnels. This has been corrected.
+- **AVX-25993** - The logging service for Rsyslog supports up to nine profiles. The configuration during restore allowed each profile enablement to start the Rsyslog service (6 times or more) in less than 2 seconds. The system service defaults five times in 10 seconds; otherwise, the Rsyslog service will fail in “starting”. The fix ensures that the Rsyslog service is only restarted once for all profiles.
+- **AVX-26007** - The only user actions possible during a restore are enabling remote support or uploading tracelog. All other actions are blocked.
+- **AVX-26086** - Corrected the logic to program the learned 0.0.0.0/0 route on the Azure CSP route table.
+- **AVX-26095** - An improperly configured security group prevented gateways from sending keepalive checks to the Aviatrix Controller. This should have marked the gateways as down. However, because of a bug in our internal service, the Controller continued to mark those gateways as up. 
+- **AVX-26188** - For cases where Transit gateways had a large number of tunnels and encountered a failover event, strongSwan would take a long time to reestablish and restore tunnels, since strongSwan was configured to monitor all interfaces on the gateway. strongSwan config was altered to only monitor the eth0 interface, which results in a shorter restoration time.
+- **AVX-26205** - The number of available threads in strongSwan was increased to improve scalability and support more than 2000 tunnels. 
+- **AVX-26374** - The Controller database had empty peer IPs for tunnels between Transit Gateways and CloudN. This prevented the gateway snapshot creation, and also prevented configuration/route updates from being propagated to the gateway. This software patch script will correct the Controller database entries. 
+
+
 6.7.1325 (07/25/2022) 
 ========================= 
 
 **Issues Corrected in Aviatrix Release 6.7.1325**  
 
-- **AVX-25128** – An exception is seen when migrating transit gateway tunnel status in MongoDB to etcd when transit gateway has CloudN attached. Fix:
+- **AVX-25128** – An exception is seen when migrating Transit Gateway tunnel status in MongoDB to etcd when Transit Gateway has CloudN attached. Fix:
 
-#. When migrating transit gateway tunnel status in MongoDB to etcd, for transit gateways that have CloudN attached, use CloudN private_ip for peer_ip to fix the exception.
+#. When migrating Transit Gateway tunnel status in MongoDB to etcd, for Transit Gateways that have CloudN attached, use CloudN private_ip for peer_ip to fix the exception.
 #. If tunnel status in MongoDB does not have peer_ip, update it with peer_ip based on peer info from the tunnel status msg controller received from a gateway.
 
 6.6.5667 (07/25/2022) 
@@ -49,9 +103,9 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Issues Corrected in Aviatrix Release 6.6.5667**  
 
-- **AVX-25128** – An exception is seen when migrating transit gateway tunnel status in MongoDB to etcd when transit gateway has CloudN attached. Fix:
+- **AVX-25128** C An exception is seen when migrating Transit Gateway tunnel status in MongoDB to etcd when Transit Gateway has CloudN attached. Fix:
 
-#. When migrating transit gateway tunnel status in MongoDB to etcd, for transit gateways that have CloudN attached, use CloudN private_ip for peer_ip to fix the exception.
+#. When migrating Transit Gateway tunnel status in MongoDB to etcd, for Transit Gateways that have CloudN attached, use CloudN private_ip for peer_ip to fix the exception.
 #. If tunnel status in MongoDB does not have peer_ip, update it with peer_ip based on peer info from the tunnel status msg controller received from a gateway.
 
 6.7.1324 (07/06/2022) 
@@ -84,8 +138,8 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-21263** – Improved email notifications. When a GRE tunnel in your account goes down or up, the Aviatrix Controller sends the GRE tunnel status change to the registered-email-address(es). This email notification contains the timestamp for the tunnel status change. 
 * **AVX-23069** – Added a new toggle switch, “Preserve AS Path,” to Multi-Cloud Transit > Advanced Config. This option allows you to preserve an AS Path during manual BGP route advertisements, which reduces the chances of routing loops and wrong route selection on the peer side. 
 
-* You can enable this option in both the Gateway Manual BGP Advertised Network List and the Connection Manual BGP Advertised Network List, and on transit and spoke gateways.  
-* When the “Preserve AS Path” option is disabled, the AS path is stripped during BGP route advertisements from transit or spoke gateways to neighbors. 
+* You can enable this option in both the Gateway Manual BGP Advertised Network List and the Connection Manual BGP Advertised Network List, and on Transit and Spoke Gateways.  
+* When the “Preserve AS Path” option is disabled, the AS path is stripped during BGP route advertisements from Transit or Spoke Gateways to neighbors. 
 
 * **AVX-23105** – Enhanced Controller validation for micro-segmentation. The Controller now checks that gateway kernel version is greater or equal to 5.4.0 before allowing you to configure micro-segmentation. Micro-segmentation requires this minimum kernel for data plane enforcement. 
 * **AVX-23163** – The account/gateway auditing interval has been changed from every hour to every 24 hours. This change improves the memory performance of the Controller. 
@@ -116,7 +170,7 @@ The **Micro-segmentation** public preview feature has the following enhancements
 * **AVX-22208** – Launching a new GCP Gateway with Insane Mode and peering it with another GCP Insane Mode Gateway failed to program the Linux route table correctly. This issue is caused by GCE HPE Gateways with HA pairs to have incorrect entries for secondary IP addresses. The gateway could not recover from this error; you had to terminate the existing gateway and launch a new one. 
 * **AVX-22504** – An error displayed when the Alibaba Cloud subnet list was empty: “TypeError: 'NoneType' object is not subscriptable.” Now, the Controller resolves the error automatically without displaying an error message.  
 * **AVX-22791** – Starting with release 6.6, the Controller consolidates emails so that emails with the same email address and subject line are combined (helping limit the number of emails while still delivering important status notifications). These email notifications were being consolidated incorrectly. 
-* **AVX-22903** – After a new Controller was launched for the first time, there were no routes from the transit gateway to the spoke gateway. 
+* **AVX-22903** – After a new Controller was launched for the first time, there were no routes from the Transit Gateway to the Spoke Gateway. 
 * **AVX-22929** – Potential micro-segmentation app domain filter issue: If an account ID was associated with more than one account name, an app domain may have shown an empty list of resolved CIDRs when one of those account names was used as match criteria for a VM or VPC/VNet filter. 
 * **AVX-22934** – ICMP packets could have nonfunctioning associated ports. 
 * **AVX-23077** – A gateway would continue trying to enforce micro-segmentation policies on deleted network interfaces. 
@@ -217,7 +271,7 @@ You should plan to migrate your Standalone CloudN deployment to Managed CloudN. 
 
 **Issues Corrected in Aviatrix Release 6.7.1186** 
 
-- **AVX-22903** – After a new controller is launched for the first time, there are no routes from the transit gateway to the spoke gateway. 
+- **AVX-22903** – After a new controller is launched for the first time, there are no routes from the Transit Gateway to the Spoke Gateway. 
 
 6.7.1185 (05/09/2022) 
 =======================
@@ -262,7 +316,7 @@ In releases prior to Controller 6.7, the term security domain was used to refer 
 - **AVI-2022-0002** – A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
 - **AVX-10577** – Licensing metrics were not visible. 
 - **AVX-16122** – The Packet Logging toggle switch on the Stateful Firewall > Policy tab page was not working. 
-- **AVX-17174** – Controller traceroute utility not showing first-hop when HPE is enabled between spoke and transit. 
+- **AVX-17174** – Controller traceroute utility not showing first-hop when HPE is enabled between Spoke and Transit. 
 - **AVX-18291** – Failed daily and manual controller backups due to a rare corner case condition. 
 - **AVX-18700** – When the Stateful firewall rules reach above 500 rows of rules during add/insert/delete the firewall rule, it will throw error as “Command to execute is too long.” 
 - **AVX-18796** – The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction. 
@@ -345,12 +399,12 @@ The following `Private Preview Features`_ are available in this release:
 - **AVX-15117** – Large (4G+) tracelog uploads consumed excessive CPU, which caused gateway flapping. 
 - **AVX-20423** – Optimized performance for launching gateways, viewing tunnel status, and uploading trace logs in large deployments. 
 - **AVX-17030** – In a Site2Cloud connection, the same IP address in the remote gateway peer and the remote subnet is now supported. This is useful when configuring a Site2Cloud connection to a third-party environment where only one public IP address is exposed. For more information, refer to the `Site2Cloud FAQs <https://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_.
-- **AVX-19161** – Added New Site2Cloud RX Balancing option to the Multi-Cloud Transit > Advanced Config > Edit Transit page. Enabling this option can increase forwarding throughput on Aviatrix Transit gateways for BGP-over-GRE External Device traffic (a.k.a. Site2Cloud or S2C GRE tunnels), in these situations:
+- **AVX-19161** – Added New Site2Cloud RX Balancing option to the Multi-Cloud Transit > Advanced Config > Edit Transit page. Enabling this option can increase forwarding throughput on Aviatrix Transit Gateways for BGP-over-GRE External Device traffic (a.k.a. Site2Cloud or S2C GRE tunnels), in these situations:
 
 * On certain topologies that require high throughput, with External Devices that limit the number of GRE tunnels.
 * Where maintaining a high number of GRE tunnels increases operational burden.
 
-Note: This option is only available for Aviatrix Transit gateways deployed in AWS on C5 and C5n instance types (except for c5.large and c5n.large).
+Note: This option is only available for Aviatrix Transit Gateways deployed in AWS on C5 and C5n instance types (except for c5.large and c5n.large).
 
 - **AVX-20200** – Clarified a confusing error message in an automated exception email that had little context: “AttributeError: 'NoneType' object has no attribute 'resource_guid’”.
 - **AVX-20022** – You can now configure the gateway interfaces to enable or disable generic receive offload (GRO) and generic segmentation offload (GSO).
@@ -396,9 +450,9 @@ Note: This option is only available for Aviatrix Transit gateways deployed in AW
 
 - **AVX-20502** - Controller upgrade from 6.5 to 6.6 causes BGP to go down on Aviatrix Transit Firenet. The issue occurs when the following conditions are met:
 
-#. The AWS transit FireNet is enabled.
-#. The Transit FireNet gateway is attached to the AWS transit gateway as an edge gateway.
-#. The AWS transit gateway is added to the Transit FireNet inspection list.
+#. The AWS Transit FireNet is enabled.
+#. The Transit FireNet gateway is attached to the AWS Transit Gateway as an edge gateway.
+#. The AWS Transit Gateway is added to the Transit FireNet inspection list.
 
 6.5.3012 (03/17/2022)
 ===================================
@@ -452,8 +506,8 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 - **AVX-20201** - Controller sends false alert email about CloudN after upgrading or rebooting Managed CloudN configurations. You can ignore this false alert email.
 - **AVX-20502** - Controller upgrade from 6.5 to 6.6 causes BGP to go down on Aviatrix Transit FireNet. The issue occurs when the following conditions are met:
 #. The AWS transit FireNet is enabled.
-#. The Transit FireNet gateway is attached to the AWS transit gateway as an edge gateway.
-#. The AWS transit gateway is added to the Transit FireNet inspection list.
+#. The Transit FireNet gateway is attached to the AWS Transit Gateway as an edge gateway.
+#. The AWS Transit Gateway is added to the Transit FireNet inspection list.
 
 6.6.5404 (02/28/2022)  
 ====================== 
@@ -462,7 +516,7 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 
 - Added support for gateway rollback from 6.6.a to versions 6.6 and 6.5. 
 - Added new option for users to select between preemptive or non-preemptive failover behavior for Active/Standby deployments for S2C connections. 
-- Added support for BGP on Spoke route propagation control to transit. 
+- Added support for BGP on Spoke route propagation control to Transit. 
 - Added support for BGP MD5 authentication. 
 
 **Public Preview Features in Release 6.6.5404**
@@ -481,9 +535,9 @@ The following `Public Preview Features`_ are available in this release:
 - **AVX-16838** - Release server API showing an error during IP update.
 - **AVX-17650** - CloudN custom upgrade dry run GUI hanging at 99%, but commands.log showing succeeded.
 - **AVX-20502** - Controller upgrade from 6.5 to 6.6 causes BGP to go down on Aviatrix Transit FireNet. The issue occurs when the following conditions are met:
-#. The AWS transit FireNet is enabled.
-#. The Transit FireNet gateway is attached to the AWS transit gateway as an edge gateway.
-#. The AWS transit gateway is added to the Transit FireNet inspection list.
+#. The AWS Transit FireNet is enabled.
+#. The Transit FireNet Gateway is attached to the AWS Transit Gateway as an edge gateway.
+#. The AWS Transit Gateway is added to the Transit FireNet inspection list.
 - **AVX-20978** – Only one active profile rsyslog config shows up in gateways, even when the gateway has multiple profiles. A workaround for this issue is to remove the entire Syslog profile index and then add them back using Terraform. Then, the rsyslog configs appears in all gateways.
 
 **Issues Corrected in Release 6.6.5404** 
@@ -498,16 +552,16 @@ The following `Public Preview Features`_ are available in this release:
 
 **Issues Corrected in Release 6.6.5230 **  
 
-- **AVX-14504** - Terraform relies on the API get_instance_by_id / CLI "firewall_instance get instance --instance_id <ID>" to refresh the state of the aviatrix_firewall_instance resource. However, in some Azure FireNet deployments the API returns the incorrect value for the attached transit gateway. 
+- **AVX-14504** - Terraform relies on the API get_instance_by_id / CLI "firewall_instance get instance --instance_id <ID>" to refresh the state of the aviatrix_firewall_instance resource. However, in some Azure FireNet deployments the API returns the incorrect value for the attached Transit Gateway. 
 - **AVX-18700** - When the stateful firewall rules configured on a gateway reaches a limit of 500 and above, while performing "Add/Delete/Insert" operations the following error may be encountered - "Command to execute too long".
 
 
 **Known Issues in Release 6.6.5230 ** 
 
 - **AVX-20502** - Controller upgrade from 6.5 to 6.6 causes BGP to go down on Aviatrix Transit FireNet. The issue occurs when the following conditions are met:
-#. The AWS transit FireNet is enabled.
-#. The Transit FireNet gateway is attached to the AWS transit gateway as an edge gateway.
-#. The AWS transit gateway is added to the Transit FireNet inspection list.
+#. The AWS Transit FireNet is enabled.
+#. The Transit FireNet Gateway is attached to the AWS Transit Gateway as an edge gateway.
+#. The AWS Transit Gateway is added to the Transit FireNet inspection list.
 
 
 6.5.3006 (02/09/2022)  
@@ -515,7 +569,7 @@ The following `Public Preview Features`_ are available in this release:
 
 **Issues Corrected in Release 6.5.3006** 
 
-- **AVX-14504** - Terraform relies on the API get_instance_by_id / CLI "firewall_instance get instance --instance_id <ID>" to refresh the state of the aviatrix_firewall_instance resource. However, in some Azure FireNet deployments the API returns the incorrect value for the attached transit gateway. 
+- **AVX-14504** - Terraform relies on the API get_instance_by_id / CLI "firewall_instance get instance --instance_id <ID>" to refresh the state of the aviatrix_firewall_instance resource. However, in some Azure FireNet deployments the API returns the incorrect value for the attached Transit Gateway. 
 - **AVX-17620** - Improved stateful firewall duplicate rule checks if duplicate rules are already present in the system. 
 - **AVX-17332** - While onboarding a Google account either through UI or Terraform, subsequent onboarding attempts with incorrect Google Project ID will display an error.
 - **AVX-18148** - Excessive load on cloudxd induced due to rsyslog monitoring certain user visible changes.Excessive email alerts generated about rsyslog while trying to reduce rsyslog monitoring load on core processes.
@@ -534,7 +588,7 @@ The following `Public Preview Features`_ are available in this release:
 
 **Enhanced Features in Release 6.6.5224**
 
-- Added support for Aviatrix Spoke Gateway to External Device (BGP-Enabled Spoke). Introduced in Aviatrix release 6.6, you can now create spoke gateways that are BGP-enabled and NAT-enabled. Aviatrix Cloud Network Platform has always supported NAT in a way that most enterprises need in order to meet their business and technical requirements. Using BGP-enabled and NAT-enabled spoke gateways gives you yet more capabilities to implement policy based SNAT/DNAT functions in strategic places in your network architecture. For more information, see the discussion about `Aviatrix Spoke Gateway to External Device <https://docs.aviatrix.com/HowTos/spokegw_external.html>`_. 
+- Added support for Aviatrix Spoke Gateway to External Device (BGP-Enabled Spoke). Introduced in Aviatrix release 6.6, you can now create Spoke Gateways that are BGP-enabled and NAT-enabled. Aviatrix Cloud Network Platform has always supported NAT in a way that most enterprises need in order to meet their business and technical requirements. Using BGP-enabled and NAT-enabled Spoke Gateways gives you yet more capabilities to implement policy based SNAT/DNAT functions in strategic places in your network architecture. For more information, see the discussion about `Aviatrix Spoke Gateway to External Device <https://docs.aviatrix.com/HowTos/spokegw_external.html>`_. 
 - Added support for Google Cloud Platform (GCP) BGP over LAN to support multi peer instance. This allows Aviatrix Transit Gateways to communicate with a pair of instances in the same VPC in GCP without running any tunneling protocol such as IPSec or GRE. For more information, see the discussion about `GCP Multi-cloud Transit BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_gcp_workflow.html>`_. 
 - Added support for AWS TGW Connect over Direct Connect. Amazon Web Services (AWS) enables AWS customers to integrate their Software Defined Wide Area Network (SD-WAN) devices with AWS Transit Gateway and AWS Direct Connect so they can use their existing SD-WAN devices to connect their on-premises networks to an AWS Transit Gateway. In support of this, Aviatrix enables you to create one or multiple Transit Gateway Connect attachments over Direct Connect. You can also create Transit Gateway Connect peer attachments. For instructions, see the topic `Enable AWS TGW connect over Direct Connect <https://docs.aviatrix.com/HowTos/tgwconnect.html>`_. 
 - Added support for Aviatrix Controller Security Assertion Markup Language (SAML) based authentication user VPN access in Azure. For instructions, see the topic `Azure SAML Authorization VPN Access <https://docs.aviatrix.com/HowTos/azure_saml_auth_vpn_access.html>`_. 
@@ -587,7 +641,7 @@ The following `Public Preview Features`_ are available in this release:
 - **AVX-15704** - While creating an IKEv2 enabled site2cloud connection, you will see "Failed to establish a new connection" error.snat 
 - **AVX-15978** - The conntrack "allow all" rule should always be placed above the "drop all" rule in the order of operations.
 - **AVX-16100** - You can configure DNAT on transit GW, either ActiveMesh or non-ActiveMesh connection. 
-- **AVX-16375** - For policy based site2cloud connection, if one of the s2c tunnel is down on a transit gateway, traffic from attached spoke, or peering transit, or AWS TGW to the transit gateway will be dropped. 
+- **AVX-16375** - For policy based site2cloud connection, if one of the s2c tunnel is down on a Transit Gateway, traffic from attached spoke, or peering transit, or AWS TGW to the Transit Gateway will be dropped. 
 - **AVX-16450** - Addressed issues with CloudN registration in some scenarios. 
 - **AVX-16486** - Improved IPSec performance on high latency links. 
 - **AVX-16494** - Performance optimization in monitoring IPSec states. 
@@ -597,7 +651,7 @@ The following `Public Preview Features`_ are available in this release:
   - For CloudN versions >= 6.5.2613:  Please follow the `Internet Acces <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html#internet-access>`_ instructions. For a list of required FDQNs, please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/signin?return_to=https%3A%2F%2Faviatrix.zendesk.com%2Fhc%2Fen-us%2Farticles%2F4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_.
 
 - **AVX-17027** - The UI upgrade progress bar getting stuck at 99% during standalone CloudN upgrade. 
-- **AVX-17302** - Secondary cidrs in OCI VCN not advertised to transit gateway. 
+- **AVX-17302** - Secondary cidrs in OCI VCN not advertised to Transit Gateway. 
 - **AVX-17420** - If the account is deleted or deactivated from AWS, VPC attachment from AWS TGW is getting deleted. You must manually clean up all blackhole routes (RFC1918 or customized routes) on AWS. 
 - **AVX-17432** - For route based, unmapped S2C, when the connection is down, the routes for the remote CIDRs are still associated with the connection, i.e. the routes are not removed. 
 - **AVX-17512** - Addressed an issue in NAT programming on Spoke-HA when sync-to-ha is enabled. 
@@ -617,7 +671,7 @@ The following `Public Preview Features`_ are available in this release:
  
 - **AVX-9033** - Some logs are too big on CloudN.
 - **AVX-14426** - Tunnels take a long time to become established and on occasion can flap even during establishment in IPSEC IKE interoperability.
-- **AVX-14659** - Tunnel flaps when attaching spoke gateways running IPSec strongSwan to transit gateways running IPSec racoon, or transit gateways running IPSec strongSwan to transit gateways running IPSec racoon.
+- **AVX-14659** - Tunnel flaps when attaching Spoke Gateways running IPSec strongSwan to Transit Gateways running IPSec racoon, or Transit Gateways running IPSec strongSwan to Transit Gateways running IPSec racoon.
 - **AVX-16967** - When a SNAT rule is added/removed for a gateway, it needs to check if the NAT rule is duplicated in the route tables. The checking is dependent on the NAT routes if load balanced or generic (not load balanced). You must miss the checking for duplicated routes to include the HA gateways in the interface list. It may give a wrong conclusion that some NAT rules were duplicated.
 - **AVX-17214** - If any conntrack module related errors are observed in 6.5. (g's build number) and after, AVXERR format can be used for first level debugging. 'AVXERR-CONNTRACK-0001': 'Gateway Error: {}', 'AVXERR-CONNTRACK-0002': 'Required/Invalid option: {}' 'AVXERR-CONNTRACK-0003': 'Not found/File error: {}' 'AVXERR-CONNTRACK-0004': 'Not Supported: {}' 
 - **AVX-17349** – Closed vulnerability AVI-2021-0008, allowing an unauthenticated attacker partial access to configuration information on controllers and an unauthenticated network-adjacent attacker API access on gateways. 
@@ -669,7 +723,7 @@ The following `Public Preview Features`_ are available in this release:
 - **AVX-16563** - Security Group Management feature fails on an Aviatrix Controller deployed in GCP after a Controller Migration operation. 
 - **AVX-16912** - Cannot create Transit GW with HA in OCI using Terraform scripts. 
 - **AVX-16967** - Deleting one or more Customized SNATs generates a “route already exists in route table” error. 
-- **AVX-17489** - When deleting one CIDR from the spoke customized advertise CIDR list, the CIDR should only be removed from the transit gateway and the rest of the network. However, during deletion the CIDR was removed from the spoke itself, which deletes the routes added for static S2c. 
+- **AVX-17489** - When deleting one CIDR from the spoke customized advertise CIDR list, the CIDR should only be removed from the Transit Gateway and the rest of the network. However, during deletion the CIDR was removed from the spoke itself, which deletes the routes added for static S2c. 
  
 **Known Issues in Aviatrix Release 6.5.2835**
 
@@ -788,7 +842,7 @@ The following `Public Preview Features`_ are available in this release:
 - **AVX-15071** - Fixed firewall tuple setting from changing during Controller upgrade.
 - **AVX-15083** - Fixed issues with Site2Cloud with “Single IP HA” feature having issues with customized SNAT features when “sync to HA gateway” configuration is enabled.
 - **AVX-15138** - Fixed route table priority to deal with CIDR overlap between advertised routes from Transit and CaaG/CloudN eth2 MGMT interface.
-- **AVX-15198** - Process optimization to avoid db updates when transit gateway details are listed by the Aviatrix Controller or CoPilot.
+- **AVX-15198** - Process optimization to avoid db updates when Transit Gateway details are listed by the Aviatrix Controller or CoPilot.
 - **AVX-15238** - Fixed a CaaG registrion failure issue after the cert domain is changed from default.
 - **AVX-15332** - Fixed an issue that was causing the Controller migration process to fail.
 - **AVX-15454** - Deleted dependency of storage account for Azure China gateways.
@@ -821,9 +875,9 @@ The following `Public Preview Features`_ are available in this release:
 
 **Issues Corrected in Aviatrix Release 6.4**
 
-- **AVX-14678** - Unable to create multiple firewalls attached to the same transit gateway in Azure environments.
-- **AVX-15138** - When a spoke or transit gateway advertises a CIDR that overlaps with a CaaG or StandAlone CloudN MGMT eth2 subnet, and the client application accesses the device through the eth2 MGMT interface, the reply traffic is not returned through the eth2 MGMT interface.
-- **AVX-15198** - When transit gateway details are listed by the Aviatrix Controller or CoPilot, an exception may occur because the request is in replica mode and incorrectly tries to update the Mongo DB.
+- **AVX-14678** - Unable to create multiple firewalls attached to the same Transit Gateway in Azure environments.
+- **AVX-15138** - When a Spoke or Transit Gateway advertises a CIDR that overlaps with a CaaG or StandAlone CloudN MGMT eth2 subnet, and the client application accesses the device through the eth2 MGMT interface, the reply traffic is not returned through the eth2 MGMT interface.
+- **AVX-15198** - When Transit Gateway details are listed by the Aviatrix Controller or CoPilot, an exception may occur because the request is in replica mode and incorrectly tries to update the Mongo DB.
 
 6.5.1905 (8/24/2021)
 =====================
@@ -861,7 +915,7 @@ Alternatively, you can add the SubjectAlternateName (SAN) tag in the openssl.cnf
 
 *Upgrading to Aviatrix Release 6.5*
 
-- This behavior does not affect ActiveMesh gateways. In non-ActiveMesh environments, only one transit or spoke gateway can have the image upgraded or the software rolled back at a time. If you select multiple gateways, you receive an error message. For multiple API calls to replace gateways using Terraform, only one gateway is allowed and the others fail. For Terraform calls, Aviatrix recommends you set parallelism=1. 
+- This behavior does not affect ActiveMesh gateways. In non-ActiveMesh environments, only one transit or Spoke Gateway can have the image upgraded or the software rolled back at a time. If you select multiple gateways, you receive an error message. For multiple API calls to replace gateways using Terraform, only one gateway is allowed and the others fail. For Terraform calls, Aviatrix recommends you set parallelism=1. 
 
 *Gateway Issue Discovered After Upgrade*
 
@@ -946,9 +1000,9 @@ R6.4.2672 (06/11/2021)
 - **Bug fix** Gateway FQDN logs fail to download resulting in an error message.
 - **Bug fix** Availability Domain and Fault Domain not available in OCI gateway and firewall instances.
 - **Bug fix** Terraform bug fix, cannot delete all gateway tags.
-- **Bug fix** SNAT cannot be disabled on Azure spoke gateway.
+- **Bug fix** SNAT cannot be disabled on Azure Spoke Gateway.
 - **Bug fix** OCI Gateways deployed with Active Mesh are not being deployed in separate Availability Domains.
-- **Bug fix** CAAG OCI, OCI tunnels missing after replacing the OCI transit gateway
+- **Bug fix** CAAG OCI, OCI tunnels missing after replacing the OCI Transit Gateway
 - **Bug fix** Aviatrix Controller in Azure unable to push RFC-1918 route to Panorama in OCI.
 - **Bug fix** Intermittent connectivity issues from CoPilot to Controller.
 - **Bug fix** Enabling FQDN Discovery fails, some configuration changes are not removed, and the network connection breaks.
@@ -964,7 +1018,7 @@ R6.4.2618 (05/30/2021)
   
 - **Bug fix** Enabling segmentation caused some routes missing in the spoke routing table
 - **Bug fix** Fixed exception for SAML VPN connection.
-- **Bug fix** In Ali Cloud, Transit gateway showed all connections down.
+- **Bug fix** In Ali Cloud, Transit Gateway showed all connections down.
 - **Bug fix** In some corner cases Controller HA, backup/restore broke the control connection between the controller and CloudN.
 - **Bug fix** Fixed exception when downloading the OCI OVPN file.
 - **Bug fix** Fixed Managed CloudN exception during registration.
@@ -979,19 +1033,19 @@ R6.4.2561 (05/18/2021)
 - **Bug fix** When FQDN gateways deployed in HA topologies have private route tables with the IAM deny policy applied, the default route restoration fails when the FQDN feature is disabled. Default route restoration only works only in non-HA topologies.
 - **Bug fix** In the Alibaba cloud, after running for a while BGP sessions on the IPSEC tunnel can go down at random.
 - **Bug fix** When using insane mode over the internet, missing Elastic IP addresses can cause some tunnels not to come up.
-- **Bug fix** When a new transit gateway for FireNet is launched on Azure, a false notification indicating that interface eth1 is down and needs to be restarted manually is sent.
+- **Bug fix** When a new Transit Gateway for FireNet is launched on Azure, a false notification indicating that interface eth1 is down and needs to be restarted manually is sent.
 - **Bug fix** Disconnecting last BGP connection does not clear the IP prefix configuration.
 - **Bug fix** When a new best path is selected, old routes are deleted causing traffic interruptions.
 - **Bug fix** In GCP, when FireNet and FQDN Filtering are enabled the gateway is no longer associated with the existing instance group after the gateway is replaced.
 - **Bug fix** Deleting then recreating transit peering connections blocks some tunnels from delivering traffic.
 - **Bug fix** In GCP, after a NIC connection goes down the gateway fails to restart.
 - **Bug fix** Route updates can take excessive time after upgrading to 6.4.
-- **Bug fix** Unable to attach OCI spoke gateway to OCI transit gateway after upgrading to 6.4.
+- **Bug fix** Unable to attach OCI Spoke Gateway to OCI Transit Gateway after upgrading to 6.4.
 - **Bug fix** When a spoke is attached to an egress IP, the skip public route table update operation is not working.
 - **Bug fix** Some gateways may not be upgraded during the 6.4 upgrade process.
 - **Bug fix** When FQDN gateways deployed in HA topologies have private route tables with the IAM deny policy applied, the default route restoration fails when the FQDN feature is disabled. Default route restoration only works only in non-HA topologies.
 - **Bug fix** Block creating a global network from AWS China controllers.
-- **Bug fix** In Alibaba clouds, after deleting a transit gateway you may find invalid paths to certificates.
+- **Bug fix** In Alibaba clouds, after deleting a Transit Gateway you may find invalid paths to certificates.
 - **Bug fix** Enable the custom Gateway IAM role feature for AWS China and Government clouds through the API. 
 
 R6.4.2499 (05/10/2021)
@@ -1007,7 +1061,7 @@ R6.4.2499 (05/10/2021)
   
   * Multi-Cloud Transit solution in AWS China, Azure China and Alibaba China regions.
 
-- **Multi-Tier Transit** supports the hierarchical Multi-Cloud Transit gateway deployment model, and adds the ability to traverse more than two Aviatrix Multi-Cloud Transit gateways. This feature improves operational simplicity by aggregating multiple Aviatrix Transits. One use case is centralized firewall design for multiple Aviatrix-Transits in a single region, which allows in-region traffic without any inspection. To configure Multi-Tier Transit, go to Multi-cloud Transit -> Advance Config. Select the Transit Gateway and enable the Multi-Tier Transit feature. For more information, refer to `Multi-Tier Transit doc <https://docs.aviatrix.com/HowTos/transit_advanced.html#multi-tier-transit>`_
+- **Multi-Tier Transit** supports the hierarchical Multi-Cloud Transit Gateway deployment model, and adds the ability to traverse more than two Aviatrix Multi-Cloud Transit Gateways. This feature improves operational simplicity by aggregating multiple Aviatrix Transits. One use case is centralized firewall design for multiple Aviatrix-Transits in a single region, which allows in-region traffic without any inspection. To configure Multi-Tier Transit, go to Multi-cloud Transit -> Advance Config. Select the Transit Gateway and enable the Multi-Tier Transit feature. For more information, refer to `Multi-Tier Transit doc <https://docs.aviatrix.com/HowTos/transit_advanced.html#multi-tier-transit>`_
 - **Transit Peering Insane Mode Support over Public Network** provides high performance Transit Gateway peering to multi-cloud networks with public network connectivity between AWS and Azure only. To configure Insane Mode over public networks, go to Multi-cloud Transit -> Transit Peering -> +Add New. Select the option Insane mode over Internet for a new peering connection. For more information, refer to `Peering over Public Network or Internet doc <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#peering-over-public-network-or-internet>`_
 - **OCI Transit Insane Mode Support** expands our Insane Mode Encryption Service to OCI networks. The support includes Insane Mode for VCN to VCN encrypted peering and Transit Peering connections. Launch an OCI gateway with Insane Mode enabled to get started. For more information, refer to `OCI Performance Test Results <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#oci-performance-test-results>`_
 - **IAM Role and Policy for Gateways** separate IAM policy for Aviatrix gateway. API support only.
@@ -1063,7 +1117,7 @@ R6.3.2475 (05/22/2021)
 - **Bug fix** In some corner cases Controller HA, backup/restore breaks the control connection between the controller and Cloudn.
 - **Bug fix** Fixed an issue with BGP route advertisement after spoke attachment
 - **Bug fix** When a gateway NIC goes down, an alert will be triggered and the gateway will be taken down and brought back up again after self-remediation. 
-- **Bug Fix** If a VNet route table is deleted unexpectedly, VNets could connect to the wrong transit gateway spoke for the subscription. When VNets under different subscriptions use the same Resource group name, and both Spoke VNets connect to different transit gateways, the controller cannot distinguish which VNet should attach to which gateway.
+- **Bug Fix** If a VNet route table is deleted unexpectedly, VNets could connect to the wrong Transit Gateway spoke for the subscription. When VNets under different subscriptions use the same Resource group name, and both Spoke VNets connect to different Transit Gateways, the controller cannot distinguish which VNet should attach to which gateway.
 
 R6.3.2415 (04/19/2021)
 =======================
@@ -1132,7 +1186,7 @@ R6.3.2092 (1/31/2021)
 1. Multi-Cloud Transit Network
 --------------------------------
 
-- **Transit in Azure with Express Route** allows you to build an Aviatrix Transit and Transit FireNet solutions while leveraging the native Azure Express Route for on-prem to cloud connectivity and route propagation. One use case is to deploy in an environment where encryption between data center and cloud is not required but using native high performance Express Route is required. Both native Spoke VNet and Aviatrix Spoke gateways are supported as Spoke attachment. For configuration workflow, follow the `Multi-cloud Transit Integration with Azure Expressroute workflow <https://docs.aviatrix.com/HowTos/integrate_transit_gateway_with_expressroute.html>`_.
+- **Transit in Azure with Express Route** allows you to build an Aviatrix Transit and Transit FireNet solutions while leveraging the native Azure Express Route for on-prem to cloud connectivity and route propagation. One use case is to deploy in an environment where encryption between data center and cloud is not required but using native high performance Express Route is required. Both native Spoke VNet and Aviatrix Spoke Gateways are supported as Spoke attachment. For configuration workflow, follow the `Multi-cloud Transit Integration with Azure Expressroute workflow <https://docs.aviatrix.com/HowTos/integrate_transit_gateway_with_expressroute.html>`_.
 
 - **Transit BGP over GRE Tunnel** provides an alternative tunneling protocol to IPSec when connecting Aviatrix Transit Gateway to on-prem. One use case is for an organization that requires high performance but not encryption. With GRE tunneling, Multi-cloud Transit Gateways in AWS connects with on-prem network devices without deploying Aviatrix CloudN appliances. Only available in AWS (Azure and GCP do not support GRE). For configuration information, refer to `Aviatrix Transit Gateway to External Devices <https://docs.aviatrix.com/HowTos/transitgw_external.html#how-to-configure>`_. For end-to-end configuration workflow and performance benchmark, refer to `GRE Tunneling workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_gre_high_performance_workflow.html>`_. 
 
@@ -1148,7 +1202,7 @@ R6.3.2092 (1/31/2021)
 
 - **Client Proxy** allow both the Controller and Aviatrix gateways to use external proxy server for Internet facing API access. One use case is to satisfy compliance requirements where all traffic destined to Internet is required to go through a proxy server. For configuration information, refer to `proxy configuration <https://docs.aviatrix.com/HowTos/advanced_config.html#proxy>`_. 
 
-- **Improve AWS t3 instances IPSec performance** to up to 6Gbps (MTU 1500 Bytes) for Multi-cloud Transit and Spoke gateway without additional license charge. The mechanism is to allow Insane Mode to be applied the t3 series without charging the Insane Mode license. For performance details on t3 series, refer to `t3 series Insane Mode performance <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#t3-instance-series-performance>`_. 
+- **Improve AWS t3 instances IPSec performance** to up to 6Gbps (MTU 1500 Bytes) for Multi-cloud Transit and Spoke Gateway without additional license charge. The mechanism is to allow Insane Mode to be applied the t3 series without charging the Insane Mode license. For performance details on t3 series, refer to `t3 series Insane Mode performance <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#t3-instance-series-performance>`_. 
 
 - **Support N2 and C2 instance types on GCP gateways** improves Insane Mode performance on GCP cloud. For new network throughput with these new instance types, refer to `GCP Insane Mode Performance. <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#gcp-performance-test-results>`_ 
 
@@ -1201,8 +1255,8 @@ R6.2.2003 (2/15/2021)
 R6.2.1955 (1/16/2021)
 ======================
 
- - **Bug fix** GCP Spoke gateway with SNAT configuration propagates route incorrectly. 
- - **Enhancement** Optimize Spoke gateway attach/detach functions when "Customize VPC Route table" feature is enabled. 
+ - **Bug fix** GCP Spoke Gateway with SNAT configuration propagates route incorrectly. 
+ - **Enhancement** Optimize Spoke Gateway attach/detach functions when "Customize VPC Route table" feature is enabled. 
  - **Enhancement** Improve email authentication mechanism for emails generated by Controller. 
  - **Enhancement** Optimize Multi-cloud transit network failover time. 
  - **Bug fix** Unable to launch Palo Alto VM-Series with version 9.x
@@ -1225,7 +1279,7 @@ R6.2.1891 (11/20/2020)
 ========================
 
 - **Bug fix** OCI Spoke VCN default route tables not programmed correctly. 
-- **Bug fix** After removing Spoke FQDN, Spoke gateway route table entries are missing. 
+- **Bug fix** After removing Spoke FQDN, Spoke Gateway route table entries are missing. 
 - **Enhancement** Reduce excessive logging on Controller. 
 - **Enhancement** Add new regions to OCI. 
 - **Enhancement** Performance enhancement when interoperating with Copilot. 
@@ -1255,7 +1309,7 @@ R6.2.1742 (10/15/2020)
 
 - **Multi-cloud Transit Gateway Peering over Private Network** expands Transit Gateway peering over multi-cloud where there is private network connectivity cross cloud. One use case is two Aviatrix Transit Gateways deployed in two different public cloud where each has its private connectivity such as AWS Direct Connect and Azure Express Route connecting to on-prem or a co-location. By building a high performance Transit Gateway private peering, Aviatrix Transit Gateway forwards traffic over the private links to the other Aviatrix Transit Gateway and beyond with encryption for data in motion. To configure, go to Multi-cloud Transit -> Transit Peering -> +Add New. Select the option Peering over Private Network for a new peering connection. For an example configuration, refer to `Multi-cloud Transit Peering over Private Networks <https://docs.aviatrix.com/HowTos/transit_gateway_peering_with_private_network_workflow.html>`_.
 
-- **Insane Mode in GCP** is now available for Multi-cloud Transit solution. For performance benchmark, refer to `GCP Insane Mode performance test results <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#gcp-performance-test-results>`_. Insane Mode is enabled when launching a new Aviatrix Transit Gateway or Spoke gateway in GCP. 
+- **Insane Mode in GCP** is now available for Multi-cloud Transit solution. For performance benchmark, refer to `GCP Insane Mode performance test results <https://docs.aviatrix.com/HowTos/insane_mode_perf.html#gcp-performance-test-results>`_. Insane Mode is enabled when launching a new Aviatrix Transit Gateway or Spoke Gateway in GCP. 
 
 - **Managed CloudN Appliance** simplifies CloudN configuration and operation by allowing it to be managed by the Controller. Active-Active deployment model supports up to 25Gbps encryption performance. Refer to `Managed CloudN workflow <https://docs.aviatrix.com/HowTos/CloudN_workflow.html>`_. GCP support is in the future release. 
 
@@ -1314,8 +1368,8 @@ R6.1.1409 (10/20/2020)
 R6.1.1401 (10/4/2020)
 ======================
 
-- **Bug fix** When attaching an Insane Mode Spoke gateway to Transit Gateway, the action succeeds even though the underlying cloud provider peering (AWS PCX and Azure VNet Peering) fails. 
-- **Bug fix** Controller does not update the egress default route when Spoke gateways experience a failover. 
+- **Bug fix** When attaching an Insane Mode Spoke Gateway to Transit Gateway, the action succeeds even though the underlying cloud provider peering (AWS PCX and Azure VNet Peering) fails. 
+- **Bug fix** Controller does not update the egress default route when Spoke Gateways experience a failover. 
 - **Bug fix** Enabling advertising transit CIDR breaks Azure transit network. 
 - **Bug fix** Single AZ gateway replace function is broken.
 - **Enhancement** Improve IKEv2 compatibility with Cisco ASA when re-establishing a tunnel after it goes down without restarting the VPN service. 
@@ -1397,7 +1451,7 @@ R6.1.1162 (8/1/2020)
 - **Gateway Name Alias** allow you to change an Aviatrix gateway name after it is created by providing an alias name and allowing it to be modified at any time. The use case is customers often need to change some gateway names after the network has been built out to certain scale. By allowing gateway name alias to be modified without having to delete the gateway and thus reduces network downtime. To change gateway name alias, go to Gateway, hover the mouse at a specific gateway name, click the Pen icon and start typing. Note the original gateway name is still maintained as "Original Name". Refer to `this document <https://docs.aviatrix.com/HowTos/gateway.html#gateway-name-alias>`_. Note this feature does not interoperate with Co-Pilot at this time. For customers who deploy Co-Pilot, making changes the gateway names breaks Co-Pilot. The work around is not to use this feature or change back the gateway name. 
 
 
-- **Create a VPC Enhancement** now creates multiple route tables associated with public and private subnets. One use case is to allow traffic load balancing when Aviatrix Spoke gateways are deployed. To configure, go to Useful Tools -> Create a VPC. For more details, check out `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_.
+- **Create a VPC Enhancement** now creates multiple route tables associated with public and private subnets. One use case is to allow traffic load balancing when Aviatrix Spoke Gateways are deployed. To configure, go to Useful Tools -> Create a VPC. For more details, check out `Create a VPC <https://docs.aviatrix.com/HowTos/create_vpc.html>`_.
  
 - **Controller Access Security on Azure** extends the Access Security feature to Azure. When an Aviatrix gateway is launched, security rule is automatically added to the Controller inbound rule. This allows Controller admin to only open inbound TCP port 443 to Aviatrix gateways and no-prem public IP addresses, thus improving Controller security. To configure, go to Settings -> Controller -> Access Security. Select the Controller account and enable. For more details, refer to `Enable Controller Security Group Management <https://docs.aviatrix.com/HowTos/FAQ.html#enable-controller-security-group-management>`_.  
 
@@ -1434,7 +1488,7 @@ R6.0.2466 (7/22/2020)
 R6.0.2387 (7/10/2020)
 ======================
 
-- **Bug fix** New gateway launching is missing MSS clamping rule which affects connectivity for potentially different types of traffic including egress and multi region transit gateway peering, etc. 
+- **Bug fix** New gateway launching is missing MSS clamping rule which affects connectivity for potentially different types of traffic including egress and multi region Transit Gateway peering, etc. 
 
 R6.0.2383 (7/2/2020)
 ======================
@@ -1455,11 +1509,11 @@ R6.0.2269 (6/19/2020)
 -----------------------------------------
 
 - **ActiveMesh 2.0**  unifies the Aviatrix Transit Gateway next hop route selection by conforming to BGP next hop selection algorithm for all traffic sources. The use case is to provide a predictable routing path in a multi regions, multi cloud  and multi sites environments. All new Transit Network deployed is launched with ActiveMesh 2.0. For a one time migration from the existing deployment, go to Settings -> Migration -> ActiveMesh 2.0 Migration. Click Migrate. To learn more details, check out `ActiveMesh 2.0 Details <https://docs.aviatrix.com/HowTos/activemesh_faq.html#what-is-activemesh-2-0>`_.
-- **Multi-Cloud Transit Segmentation** allows you to segment the Aviatrix multi-cloud transit network (where Aviatrix Transit Gateways and Spoke gateways are deployed) by specifying domains and connection policy across all clouds and regions. To learn more, check out `Aviatrix Transit Network Segmentation FAQ <https://docs.aviatrix.com/HowTos/transit_segmentation_faq.html>`_.
+- **Multi-Cloud Transit Segmentation** allows you to segment the Aviatrix multi-cloud transit network (where Aviatrix Transit Gateways and Spoke Gateways are deployed) by specifying domains and connection policy across all clouds and regions. To learn more, check out `Aviatrix Transit Network Segmentation FAQ <https://docs.aviatrix.com/HowTos/transit_segmentation_faq.html>`_.
 - **External Device to Support Static Remote Route-Based** provides the interoperability between a route-based Aviatrix Transit Gateway and a remote route-based IPSEC tunnel connection. The use case is to allow the remote site to participate in the ActiveMesh 2.0 route selection in a unified manner. To configure, go to Multi-Cloud Transit -> Setup -> Step 3 -> External Device -> Static Remote Route-Based.
-- **Dual Transit FireNet** allows you to attach an Aviatrix Spoke gateway to two Aviatrix Transit Gateways, each with Transit FireNet service enabled but with a different purpose. One carries Egress/Ingress inspection and the other carries East-West and North-South inspection. The use case is to allow different policies to be implemented easily. To configure, go to Multi-Cloud Transit -> Transit FireNet -> `Step 1b. <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#b-enable-transit-firenet-on-aviatrix-egress-transit-gateway>`_
+- **Dual Transit FireNet** allows you to attach an Aviatrix Spoke Gateway to two Aviatrix Transit Gateways, each with Transit FireNet service enabled but with a different purpose. One carries Egress/Ingress inspection and the other carries East-West and North-South inspection. The use case is to allow different policies to be implemented easily. To configure, go to Multi-Cloud Transit -> Transit FireNet -> `Step 1b. <https://docs.aviatrix.com/HowTos/transit_firenet_workflow.html#b-enable-transit-firenet-on-aviatrix-egress-transit-gateway>`_
 - **Aviatrix Transit Gateway ECMP Disable Option** allows you to turn off ECMP for next hop selection. The use case is if on-prem deploy a firewall devices that require symmetric routing. The BGP ECMP is disabled by default. To enable, go to Multi-Cloud Transit -> Advanced Config -> Edit Transit -> BGP ECMP. For more information, refer to `BGP ECMP <https://docs.aviatrix.com/HowTos/transit_advanced.html#bgp-ecmp>`_.
-- **Advanced NAT Function for Azure and GCP** is now available for Aviatrix Spoke gateways. The use case is to resolve overlapping network CIDRs between on-prem network and Spoke network. To learn more on Aviatrix advanced SNAT/DNAT functions, check out `Aviatrix Advanced SNAT <https://docs.aviatrix.com/HowTos/gateway.html#source-nat>`_ and `Aviatrix Advanced DNAT <https://docs.aviatrix.com/HowTos/gateway.html#destination-nat>`_.
+- **Advanced NAT Function for Azure and GCP** is now available for Aviatrix Spoke Gateways. The use case is to resolve overlapping network CIDRs between on-prem network and Spoke network. To learn more on Aviatrix advanced SNAT/DNAT functions, check out `Aviatrix Advanced SNAT <https://docs.aviatrix.com/HowTos/gateway.html#source-nat>`_ and `Aviatrix Advanced DNAT <https://docs.aviatrix.com/HowTos/gateway.html#destination-nat>`_.
 - **GCP Multi Region Transit HA** leverages the GCP capability of multi regions in a single VPC and provide Aviatrix Transit/Spoke Gateway HA in a different region. The use case is to improve regional failure by the ability to failover to a different region. 
 - **Azure Availability Zone Support** allows you to deploy an Aviatrix gateway in Azure in a specified availability zone where it is applicable. Not all regions support availability zones and where it is not, availability set is supported.  
 - **Change Aviatrix Transit Gateway AS Number** provides the ability to change AS number of Aviatrix Transit Gateways. The use case is to avoid human errors when there are multiple BGP connections. To configure, go to Multi-Cloud Transit -> Advanced Config -> Edit Transit -> LOCAL AS NUMBER, enter the desired AS number and click Change. 
@@ -1630,7 +1684,7 @@ R5.3.1524 (4/26/2020)
 ========================
 
 - **Bug fix** Enhancement for Controller migration.
-- **Bug fix** CloudN missing routes after Transit gateway is rebooted. 
+- **Bug fix** CloudN missing routes after Transit Gateway is rebooted. 
 
 R5.3.1516 (4/3/2020)
 ======================
@@ -1753,7 +1807,7 @@ R5.2.2047 (12/19/2019)
 ========================
 
  - **Bug fix** Azure China upgraded to upgrade from 5.1 to 5.2.
- - **Bug fix** Aviatrix Transit Gateway with multiple Spoke gateways exhibits memory leaks. 
+ - **Bug fix** Aviatrix Transit Gateway with multiple Spoke Gateways exhibits memory leaks. 
  - **Bug fix** GCP gateway replacement function fails.
  - **Bug fix** GCP gateway names, VPC route table tables and route entry names can exceed cloud provider's limits. 
  - **Bug fix** Failed to delete IPSec policy when deleting Spoke to Spoke peering. 
@@ -1789,9 +1843,9 @@ Operations
 ------------
 
  - **FQDN Dashboard** displays statistics of egress bound destination FQDN names both accepted and rejected. You can further deep dive to see the statistics for each gateways. To view the statistics, go to Dashboard and scroll down to FQDN Stats. 
- - **Flightpath** to include ActiveMesh spoke gateways, ActiveMesh Transit Gateways and peering gateways.  
+ - **Flightpath** to include ActiveMesh Spoke Gateways, ActiveMesh Transit Gateways and peering gateways.  
  - **Selective Gateways for Logging** allows to not to have to enable all gateways for logging events. To configure, go to Settings -> Logging, select a log service, click Advanced to edit the list of the gateways to forward the log to the log service. By default, all gateways are included. 
- - **Show Deployment per Access Account** displays what is deployed, for example, the number of encrypted Spoke gateways, the number of VPC attachment, the number of FQDN gateways and the site2cloud tunnels, deployed for each access account. The use case is to gain visibility of the Aviatrix usage per each account and helps to charge back to teams who are part of the deployment. To view, go to Access Accounts, highlight one access account, click on the three dots skewer, click Show Deployment.
+ - **Show Deployment per Access Account** displays what is deployed, for example, the number of encrypted Spoke Gateways, the number of VPC attachment, the number of FQDN gateways and the site2cloud tunnels, deployed for each access account. The use case is to gain visibility of the Aviatrix usage per each account and helps to charge back to teams who are part of the deployment. To view, go to Access Accounts, highlight one access account, click on the three dots skewer, click Show Deployment.
  - **TGW Route Auditing** allows you to immediately discover the missing routes in Spoke VPC route tables and its associated TGW route tables. To use, go to TGW Orchestrator -> List. Highlight one attachment, click the three dots and click Audit Routes.
  - **TGW Audit** expands its capability to audit all route entries of attached VPC route tables in addition to route entries in TGW route tables. To use, go to TGW Orchestrator -> Audit. Select one TGW and click Run On-Demand Audit. 
 
@@ -1804,7 +1858,7 @@ R5.1.1183 (12/2/2019)
 R5.1.1169 (11/25/2019)
 =======================
 
-- **Bug fix** Transit gateway filter does not work properly 
+- **Bug fix** Transit Gateway filter does not work properly 
 
 R5.1.1016 (11/21/2019)
 =======================
@@ -1815,7 +1869,7 @@ R5.1.1016 (11/21/2019)
 R5.1.989 (11/17/2019)
 =======================
 
- - **Enhancement** Controller does not allow Transit gateway peering when multiple Transit Gateways are in the same VPC. 
+ - **Enhancement** Controller does not allow Transit Gateway peering when multiple Transit Gateways are in the same VPC. 
  - **Bug fix** Gateways fail to forward syslog to remote syslog server when Controller cannot reach the syslog server. 
  - **Terraform enhancement** Add Terraform Export for aviatrix_firewall_instance, aviatrix_firenet_resources, aviatrix_firenet.
  - **Bug fix** Export to Terraform feature is broken.
@@ -1832,7 +1886,7 @@ R5.1.969 (11/3/2019)
  - **Enhancement** Import VPN users now include user profile field. 
  - **Bug fix** Azure native peering is broken. 
  - **Bug fix** FireNet gateway does not load balance UDP traffic. 
- - **Bug fix** Cannot detach Spoke gateway when customized CIDRs feature is configured on the Spoke gateway. 
+ - **Bug fix** Cannot detach Spoke Gateway when customized CIDRs feature is configured on the Spoke Gateway. 
  - **Bug fix** Fail to import user via CSV file when Geo VPN and SAML are enabled. 
 
 R5.1.962 (10/29/2019)
@@ -1847,7 +1901,7 @@ R5.1.943 (10/25/2019)
 =======================
 
  - **Bug fix** Hostname is blocked in VPN profile policy configuration. Revert the change. 
- - **Bug fix** Transit gateway peering is missing on dashboard. 
+ - **Bug fix** Transit Gateway peering is missing on dashboard. 
 
 R5.1.935 (10/19/2019)
 ==========================
@@ -1855,12 +1909,12 @@ R5.1.935 (10/19/2019)
 Transit Gateway Enhancement
 ------------------------------
 
- - **Transit Gateway Peering with Network Filter** allows you block route propagation from one transit gateway side to the other. This use case is to allow two regions of transit network to connect with each other when there are exact overlapping network CIDRs by blocking on each Transit Gateway these CIDRs. To configure, go to Transit Network -> Transit Peering -> Add New, or Edit an existing peer. For more info, refer to `Filtered CIDRs <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#filtered-cidrs>`_.
+ - **Transit Gateway Peering with Network Filter** allows you block route propagation from one Transit Gateway side to the other. This use case is to allow two regions of transit network to connect with each other when there are exact overlapping network CIDRs by blocking on each Transit Gateway these CIDRs. To configure, go to Transit Network -> Transit Peering -> Add New, or Edit an existing peer. For more info, refer to `Filtered CIDRs <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html#filtered-cidrs>`_.
 
  - **Route Table Selection** allows VPC route tables to be selected when attaching attaching a Spoke VPC gateway. Only the selected route tables are programmed for learning routes and reprogramming routes at failover time. API support only.
 
  - **TGW DXGW and VPN Enhancment** allows DXGW and VPN to be deployed in any Security Domain. One use case is if you have multiple VPN connection and do not wish to have the remote sites to have connectivity with each other, you can now create VPN connections in different Security Domains. 
- - **ASN Path Prepend** adds ASN number when Aviatrix transit gateway redistribute routes to its BGP peer. For new Transit connection, the Aviatrix Transit gateway automatically inserts its ASN number. To insert ASN path in an existing connection, go to Transit Network -> Advanced Config -> Prepend AS Path
+ - **ASN Path Prepend** adds ASN number when Aviatrix Transit Gateway redistribute routes to its BGP peer. For new Transit connection, the Aviatrix Transit Gateway automatically inserts its ASN number. To insert ASN path in an existing connection, go to Transit Network -> Advanced Config -> Prepend AS Path
 
 Security
 ------------
@@ -1939,7 +1993,7 @@ R5.0.2667 (9/9/2019)
  - **Azure Transit with Native Spoke VNet Support** Allows you to build a transit solution without launching an Aviatrix gateway in the Spoke VNet. The solution leverages the Azure native peering capability for the traffic between Spoke VNet and Transit VNet, it also leverages the Controller to propagate learned routes directly to Spoke VNet. Follow the `Transit Network Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to get started by launching an Aviatrix Transit GW. Attach a Spoke VNet at `Step 6b <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#b-attach-azure-arm-spoke-vnet-via-native-peering>`_. 
  - **Azure Transit Insane Mode Support** expands our `Insane Mode Encryption Service <https://docs.aviatrix.com/HowTos/insane_mode.html>`_ to Azure networks. The support include Insane Mode encryption over Express Route, Insane Mode for VNet to VNet encrypted peering and Transit Peering connections. Launch an Azure gateway with Insane Mode enabled to get started. 
  - **GCP Transit Gateway Support** expands our `Transit Network Solution <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to Google GCP. Follow the `Transit Network Solution <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ instruction to get started. 
- - **Oracle Cloud (OCI) Spoke Gateway Support** expands our Transit Network Solution to OCI Spoke gateways. 
+ - **Oracle Cloud (OCI) Spoke Gateway Support** expands our Transit Network Solution to OCI Spoke Gateways. 
 
 3. Networking
 ----------------
@@ -1973,14 +2027,14 @@ R4.7.590 (8/23/2019)
 ======================
 
  - **Bug fix** When attaching a Spoke VPC to TGW, VPC route table did not handle the case when there is AWS end point. 
- - **Bug fix** When connecting Transit gateway to external device, Transit gateway did not handle the case if on-prem router's advertised routes is a super set to the IPSEC end point IP address. 
+ - **Bug fix** When connecting Transit Gateway to external device, Transit Gateway did not handle the case if on-prem router's advertised routes is a super set to the IPSEC end point IP address. 
  - **Bug fix** The profile attribute handling for SAML user VPN client did not consider error cases when profile attribute is absent or does not produce a match. 
  
 
 R4.7.581 (8/11/2019)
 =======================
 
- - **Transit peering for two transit gateways in the same VPC** removes the constraint that Transit Peering can only take place on two Aviatrix Transit Gateway in two different VPCs. The use case is if you have deployed two individual transit networks in the same VPC, now you can connect them by implementing Transit Gateway Peering. 
+ - **Transit peering for two Transit Gateways in the same VPC** removes the constraint that Transit Peering can only take place on two Aviatrix Transit Gateway in two different VPCs. The use case is if you have deployed two individual transit networks in the same VPC, now you can connect them by implementing Transit Gateway Peering. 
 
 
 R4.7.501 (7/22/2019)
@@ -1992,7 +2046,7 @@ R4.7.501 (7/22/2019)
 R4.7.494 (7/14/2019)
 ======================
 
- - **Spoke VPC Gateway Attach Behavior** is modified such that when a spoke gateway is attached to the Aviatrix Transit GW, RFC 1918 routes are programmed. Conversely when a Spoke VPC gateway is detached from the Aviatrix Transit GW, all learned routes are deleted. Such behavior change simplifies migration process from Aviatrix Encrypted Transit architecture to AWS Transit Gateway (TGW) based transit architecture. Backward compatibility is ensured.
+ - **Spoke VPC Gateway Attach Behavior** is modified such that when a Spoke Gateway is attached to the Aviatrix Transit GW, RFC 1918 routes are programmed. Conversely when a Spoke VPC gateway is detached from the Aviatrix Transit GW, all learned routes are deleted. Such behavior change simplifies migration process from Aviatrix Encrypted Transit architecture to AWS Transit Gateway (TGW) based transit architecture. Backward compatibility is ensured.
  - **Azure Gateway Launch** no longer creates a new resource, instead it now re-uses VNET resource. The use case is customers already created a resource group when creating a VNET. 
  - **Add Aviatrix Tag for Cross Account VPC Attachment** allows you to identify in the TGW route table Aviatrix attachment resource when the Spoke VPC is in a different AWS account.  
  - Bug fix that removes the unnecessary restarts of BGP process after software upgrades.  
@@ -2072,7 +2126,7 @@ R4.3.1262 (Patch release of 4.3 on 5/13/2019)
 =============================================
 
  - **User Selected Subnet Attachment to TGW** allows you to customize the subnet/AZ of a VPC to attach to TGW. To configure, go to TGW Orchestrator -> Build. Select Advanced and multi select the subnets. For MAC, multi select is "Command + highlight". For Windows, multi select is "Control + highlight".
- - Bug fix for transit gateway peering. 
+ - Bug fix for Transit Gateway peering. 
  - Bug fix for Datadog upgrade for Azure gateway. 
  - Remove TGW VPN background task.
 
@@ -2092,7 +2146,7 @@ R4.3.1230 (5/5/2019)
 
 2. Routing Policies
 ---------------------
- - **Filter Advertised Spoke VPC CIDRs** Supports the ability to exclude certain VPC subnets from advertising to transit gateway. One use case is if you have Spoke VPCs that have partial overlapping VPC CIDRs, by excluding the overlapping CIDRs, you can attach your VPC to Aviatrix Transit Gateway without error. This feature is only available for encrypted transit solution. To configure, check out `this link. <https://docs.aviatrix.com/HowTos/gateway.html#filter-advertised-spoke-vpc-cidrs>`_
+ - **Filter Advertised Spoke VPC CIDRs** Supports the ability to exclude certain VPC subnets from advertising to Transit Gateway. One use case is if you have Spoke VPCs that have partial overlapping VPC CIDRs, by excluding the overlapping CIDRs, you can attach your VPC to Aviatrix Transit Gateway without error. This feature is only available for encrypted transit solution. To configure, check out `this link. <https://docs.aviatrix.com/HowTos/gateway.html#filter-advertised-spoke-vpc-cidrs>`_
  - **Transit Peers as Backup to On-prem local route** is a routing policy for Transit Gateway with the configuration to instruct all remote Transit Gateway peers not to advertise to their on-prem routes that are learned from the Transit Gateway with the configuration, except when the configured Transit Gateway loses connectivity to its on-prem. One use case is for a connected on-prem network with multiple datacenters where each datacenter is connected to a Transit Gateway and where the Aviatrix Transit Gateways form a mesh backbone. With this policy enabled, datacenters do not learn and advertise conflicting cloud routes to each other. To configure, select the Transit Gateway at the Gateway page, click Edit. Scroll down to "Transit Peers As Backup to On-prem", click Enable.  
  
 3. Operation
@@ -2116,7 +2170,7 @@ R4.2.740 (Patch release of 4.2 on 3/31/2019)
 Notable bug fixes:
  
  - When attaching a VPC with CIDR 192.168.0.0/16, the system crashes.
- - When on-prem advertises 0.0.0.0/0, spoke gateways in the transit deployment could lose connectivity to the Controller. 
+ - When on-prem advertises 0.0.0.0/0, Spoke Gateways in the transit deployment could lose connectivity to the Controller. 
  - FQDN process crashes when certain invalid or corrupted packets are received.
  - Datadog for gateway in ARM does not work. Fix is a workaround to disable Datadog in ARM.
  - InsaneMode BGP session goes down after phase-2 negotiation.
@@ -2140,7 +2194,7 @@ R4.2.634 (3/19/2019)
 2. Multi Cloud
 ----------------
 
-- **GCP Spoke Gateway** allows you to launch a GCP gateway in the Aviatrix Next Gen Transit Network workflow. To launch, follow `the Transit VPC workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to launch a GCP Spoke gateway. 
+- **GCP Spoke Gateway** allows you to launch a GCP gateway in the Aviatrix Next Gen Transit Network workflow. To launch, follow `the Transit VPC workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_ to launch a GCP Spoke Gateway. 
 
 - **GCP FQDN support** allows you to apply Aviatrix FQDN Egress Control to an Aviatrix GCP gateway. Follow `the instructions for FQDN Control <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html>`_ to get started.
 
@@ -2166,7 +2220,7 @@ R4.1.946 (Patch release of 4.1 on 2/21/2019)
 Notable field found bug fixes:
  
  - Disable OPTIONS HTTP method to pass security scan. 
- - Detach or delete spoke gateway when the gateway instance has been deleted from AWS console. 
+ - Detach or delete Spoke Gateway when the gateway instance has been deleted from AWS console. 
  - Allow editing manual summarization CIDR when spoke CIDR are either in primary or backup gateway. 
  
 
@@ -2178,15 +2232,15 @@ R4.1.914 (2/9/2019)
 1. Networking
 ---------------
 
-- **Transit Gateway Peering** establishes encrypted tunnels that connect inter region and inter cloud networks by transit gateways. This allows you to build a software defined, fully connected global transit network with multiple transit clusters. The spoke VPC/VNet CIDRs and on-prem routes are automatically propagated throughout the network. To configure, follow the `Transit Gateway Peering <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_ instructions.
+- **Transit Gateway Peering** establishes encrypted tunnels that connect inter region and inter cloud networks by Transit Gateways. This allows you to build a software defined, fully connected global transit network with multiple transit clusters. The spoke VPC/VNet CIDRs and on-prem routes are automatically propagated throughout the network. To configure, follow the `Transit Gateway Peering <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_ instructions.
 
-- **Azure Transit Gateway** allows you to launch a transit gateway in Azure and build a transit network in Azure the same way for AWS. For configuration instructions, follow the `Global Transit Network Workflow Instructions <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_. "Advertise Transit VNET CIDR" is not supported in 4.1.
+- **Azure Transit Gateway** allows you to launch a Transit Gateway in Azure and build a transit network in Azure the same way for AWS. For configuration instructions, follow the `Global Transit Network Workflow Instructions <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_. "Advertise Transit VNET CIDR" is not supported in 4.1.
 
 - **AWS Transit Gateway DMZ** is a Bring Your Own Firewall architecture that seamlessly integrates virtual firewall appliances into the edge of the Next Gen Transit Network. By decoupling firewall functions from the network functions, the architecture allows a scalable firewall deployment that filters traffic between on-prem and cloud. Check out `Transit Gateway FAQ <https://docs.aviatrix.com/HowTos/transit_dmz_faq.html>`_ to learn more. For configuration, follow the `Transit DMZ workflow <https://docs.aviatrix.com/HowTos/transit_dmz_workflow.html>`_..
 
 - **Palo Alto VM-Series Integration** integrates the firewall route updating and health monitoring into the Aviatrix Controller for the AWS Transit Gateway DMZ deployment. The Controller monitors and applies VM-series APIs to the appliance, thus simplifies the operations. For details, read `<https://docs.aviatrix.com/HowTos/transit_dmz_vendors.html>`_.
 
-- **External Device support for Transit** allows you to build the Next Gena Transit Network without the constraint of the 100 route limits by AWS VGW. By establishing the IPSEC tunnel directly to your on-prem router over Direct Connect or Internet, VGW no longer carries the routes from on-prem and Spoke VPCs. To configure, follow the `Transit gateway to external device <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_. Check out the configuration examples for `on-prem ISR/ASR <https://docs.aviatrix.com/HowTos/transitgw_external.html#appendix-2-transit-connection-to-cisco-isr-asr-over-direct-connect>`_. 
+- **External Device support for Transit** allows you to build the Next Gena Transit Network without the constraint of the 100 route limits by AWS VGW. By establishing the IPSEC tunnel directly to your on-prem router over Direct Connect or Internet, VGW no longer carries the routes from on-prem and Spoke VPCs. To configure, follow the `Transit Gateway to external device <https://docs.aviatrix.com/HowTos/transitgw_external.html>`_. Check out the configuration examples for `on-prem ISR/ASR <https://docs.aviatrix.com/HowTos/transitgw_external.html#appendix-2-transit-connection-to-cisco-isr-asr-over-direct-connect>`_. 
 
 - **Insane Mode Encryption** breaks the 1.25Gbps Transit VPC performance limit and allows you to scale your transit network to 10Gbps throughput with encryption between on-prem and Spoke network. Insane Mode is also supported for Spoke VPCs' connectivities with up to 20Gbps throughput. Follow `Insane Mode <https://docs.aviatrix.com/HowTos/insane_mode.html>`_ to learn more.
 
@@ -2345,7 +2399,7 @@ R3.3 (6/10/2018)
 2. Connectivity
 ----------------
 
-- **Azure Spoke Gateway** is now supported in the Transit Network workflow. To configure, follow the Transit Network workflow `Step 4 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_ to launch a Spoke gateway in Azure. 
+- **Azure Spoke Gateway** is now supported in the Transit Network workflow. To configure, follow the Transit Network workflow `Step 4 <http://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_ to launch a Spoke Gateway in Azure. 
 
 - **Multi-CIDR VPC support** is now available if your VPC has multiple CIDR ranges. 
 
@@ -2378,7 +2432,7 @@ R3.3 (6/10/2018)
 
 - **New APIs** are available for all features in 3.3.
 
-- **List Spoke Gateways** allows you to easily see what are the Spoke gateways are attached to a selected Transit gateway. To view, scroll down to Step 9 at Transit Network workflow, select a Transit GW and view the attached Spoke gateways. 
+- **List Spoke Gateways** allows you to easily see what are the Spoke Gateways are attached to a selected Transit Gateway. To view, scroll down to Step 9 at Transit Network workflow, select a Transit GW and view the attached Spoke Gateways. 
 
 
 
