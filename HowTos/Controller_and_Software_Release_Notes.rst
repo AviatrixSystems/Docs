@@ -38,6 +38,10 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 6.7.1376 (08/02/2022) 
 =========================
 
+**Important Notices in Aviatrix Release 6.7.1376** 
+
+- **AVX-26277** - Controllers running earlier versions of Aviatrix Controller software on AWS AMI version 051022 (released May 1, 2022) will halt due to resource exhaustion after a period of time depending on the level of activity the Controller sees. If using AWS AMI version 051022, you must upgrade to the latest version of 6.7 to prevent this behavior.
+
 **Enhancements in Aviatrix Release 6.7.1376** 
 
 - **AVX-25470: Create single HPE tunnel for Transit and Spoke Attachments** - By default, when HPE is used for Transit peering and Spoke attachments over private IPs, Aviatrix creates the maximum number of HPE tunnels possible given the instance sizes. This enhancement adds the ability to create a single HPE tunnel for Transit peering and spoke attachments over private IPs. Both Transit and Spoke Gateways must have HPE enabled. In Terraform you can enable this by setting the “enable_max_performance” field to “false” when creating Transit peering and Spoke attachments. If using HPE for private Transit peering and Spoke attachments, please re-create those connections once “enable_max_performance” option is enabled.  
@@ -65,6 +69,10 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 6.6.5712 (08/02/2022)
 =========================
+
+**Important Notices in Aviatrix Release 6.7.1376** 
+
+- **AVX-26277** - Controllers running earlier versions of Aviatrix Controller software on AWS AMI version 051022 (released May 1, 2022) will halt due to resource exhaustion after a period of time depending on the level of activity the Controller sees. If using AWS AMI version 051022, you must upgrade to the latest version of 6.7 to prevent this behavior.
 
 **New Features in Aviatrix Release 6.6.5712**
 
