@@ -58,14 +58,17 @@ If you want to force an immediate backup (e.g. for a configuration change) you c
 How to restore configuration
 --------------------------------
 
+.. note::
+	If in Private Mode, restoration can only be done in the same VPC as the previous Controller. You cannot restore a Controller that has been created in a different VPC.
+
 If you are starting from a new Controller, follow these steps to get started:
 
 #. Log in to the Controller with the `admin` username and the default password.
 #. Follow the initial steps to get the Controller up and running.
 
-   #. Shut down the older controller.
-   #. Transfer the IP address to the new controller.
-   #. Proceed to configure the new controller by entering an email address.
+   #. Shut down the older Controller.
+   #. Transfer the IP address to the new Controller.
+   #. Proceed to configure the new Controller by entering an email address.
    #. Change your admin password.
    #. Enter or skip the proxy configuration.
    #. Allow the upgrade to run.
