@@ -134,20 +134,20 @@ Controller Migration in OCI
 
 |oci_account_details|
 
+.. important::
+
+  Make sure that the **Permanently delete the attached boot volume** checkbox is *unmarked* while terminating. This step saves the old Controller image to use for the new Controller.
+
+  |oci_permanently_delete_unchecked|
+
 2. Terminate the old Controller instance. In your OCI account, go to  Compute > Instances > Controller Instance > More actions > Terminate. Click **Terminate instance**.
 
 |oci_terminate|
 
-.. important::
-
-  Make sure that the Permanently delete the attached boot volume checkbox is **unmarked** while terminating. This step saves the old Controller image to use for the new Controller.
-
-  |oci_permanently_delete_unchecked|
-
-2. Create a new Controller instance. Go to OCI Console > Menu > Compute > Instances > click **Create instance**. Refer to `these instructions <https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_.
-3. The Launching instance page opens. Enter the details of the Controller as per old Controller instance.
-4. Add the appropriate ssh public key file and click **Create** to launch the instance.
-5. Move the Controller's public IP address. Follow the steps below.
+3. Create a new Controller instance. Go to OCI Console > Menu > Compute > Instances > click **Create instance**. Refer to `these instructions <https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_.
+4. The Launching instance page opens. Enter the details of the Controller as per the old Controller instance.
+5. Add the appropriate ssh public key file and click **Create** to launch the instance.
+6. Move the Controller's public IP address. Follow the steps below.
 
 Move your OCI Controller's Public IP Address
 --------------------------------------------------------
@@ -160,7 +160,7 @@ Move your OCI Controller's Public IP Address
 
 |oci_click_edit|
 
-3. Go to Public IP type > Select reserved IP address > Select the Public IP reserved for controller > click **Update**.
+3. Go to Public IP type > Select reserved IP address > Select the **Reserved public IP** radio button. Under Reserved IP Address in *Compartment_Name*, click on the dropdown menu and select the Public IP address reserved for your Controller. Then, click **Update**.
 
 |oci_click_update|
 
