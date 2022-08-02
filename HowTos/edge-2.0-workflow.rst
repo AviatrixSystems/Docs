@@ -689,83 +689,87 @@ If the connectivity to the CSP is over a public network:
 
 
 .. |edge_ova_deploy_options| image:: CloudN_workflow_media/edge_ova_deploy_options.png
-   :scale: 80%
+   :scale: 40%
    
 .. |edge_edit_settings| image:: CloudN_workflow_media/edge_edit_settings.png
-   :scale: 50%
+   :scale: 40%
    
 .. |edge_ova_load_file| image:: CloudN_workflow_media/edge_ova_load_file.png
-   :scale: 80%
+   :scale: 40%
 
 .. |edge-active-standby| image:: CloudN_workflow_media/edge-active-standby.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-attach-spoke-to-transit| image:: CloudN_workflow_media/edge-attach-spoke-to-transit.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-connect-external-device| image:: CloudN_workflow_media/edge-connect-external-device.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-deploy-ova-template| image:: CloudN_workflow_media/edge-deploy-ova-template.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-deploy-workflow| image:: CloudN_workflow_media/edge-deploy-workflow.png
-   :width: 500
+   :scale: 40%
 
 .. |edge-ip-config| image:: CloudN_workflow_media/edge-ip-config.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-launch-spoke-gateway| image:: CloudN_workflow_media/edge-launch-spoke-gateway.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-multiple-transit-redundant| image:: CloudN_workflow_media/edge-multiple-transit-redundant.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-multiple-transit-single-edge| image:: CloudN_workflow_media/edge-multiple-transit-single-edge.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-network-connectivity| image:: CloudN_workflow_media/edge-network-connectivity.png
+   :scale: 40%
 
 .. |edge-network-port-protocol| image:: CloudN_workflow_media/edge-network-port-protocol.png
+   :scale: 40%
 
 .. |edge-rbac| image:: CloudN_workflow_media/edge-rbac.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-rbac-edgeadmin| image:: CloudN_workflow_media/edge-rbac-edgeadmin.png
-   :scale: 50%
+   :scale: 40%
 
-.. |edge-transitive-routing| image:: CloudN_workflow_media/edge-transitive-routing.png	
+.. |edge-transitive-routing| image:: CloudN_workflow_media/edge-transitive-routing.png
+   :scale: 40%	
 
 .. |edge-transit-peering| image:: CloudN_workflow_media/edge-transit-peering.png
+   :scale: 40%
 
 .. |edge-transit-peering-config| image:: CloudN_workflow_media/edge-transit-peering-config.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-verify| image:: CloudN_workflow_media/edge-verify.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-kvm-new-vm| image:: CloudN_workflow_media/edge-kvm-new-vm.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-kvm-new-vm-1| image:: CloudN_workflow_media/edge-kvm-new-vm-1.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-kvm-new-vm-2| image:: CloudN_workflow_media/edge-kvm-new-vm-2.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-kvm-new-vm-3| image:: CloudN_workflow_media/edge-kvm-new-vm-3.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-kvm-new-vm-4| image:: CloudN_workflow_media/edge-kvm-new-vm-4.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-kvm-new-vm-5| image:: CloudN_workflow_media/edge-kvm-new-vm-5.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-kvm-new-vm-6| image:: CloudN_workflow_media/edge-kvm-new-vm-6.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-kvm-new-vm-7| image:: CloudN_workflow_media/edge-kvm-new-vm-7.png
-   :scale: 50%
+   :scale: 40%
 
 

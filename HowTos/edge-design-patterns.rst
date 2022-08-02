@@ -73,16 +73,16 @@ The key ideas for this scenario are:
 |edge-multiple-transit-single-edge|
 
 .. |edge-redundant-circuit| image:: CloudN_workflow_media/edge-redundant-circuit.png
-   :scale: 50%	
+   :scale: 40%	
 
 .. |edge_private_network| image:: CloudN_workflow_media/edge_private_network.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge_public_network| image:: CloudN_workflow_media/edge_public_network.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-single-transit-redundant| image:: CloudN_workflow_media/edge-single-transit-redundant.png
-   :scale: 50%	
+   :scale: 40%	
 
 .. |edge-multiple-transit-single-edge| image:: CloudN_workflow_media/edge-multiple-transit-single-edge.png
-   :scale: 50%
+   :scale: 40%

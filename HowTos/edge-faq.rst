@@ -118,7 +118,7 @@ This diagram illustrates Aviatrix Edge Gateway deployed in a public network.
 
 
 .. |edge_usecase_multi_cloud| image:: CloudN_workflow_media/edge_usecase_multi_cloud.png
-   :scale: 40%
+   :scale: 35%
 
 .. |edge_private_network| image:: CloudN_workflow_media/edge_private_network.png
    :scale: 40%
