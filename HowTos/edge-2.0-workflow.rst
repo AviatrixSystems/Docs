@@ -688,13 +688,13 @@ If the connectivity to the CSP is over a public network:
 
 
 
-.. |secure_edge_ova_deploy_options| image:: CloudN_workflow_media/edge_ova_deploy_options.png
+.. |edge_ova_deploy_options| image:: CloudN_workflow_media/edge_ova_deploy_options.png
    :scale: 80%
    
-.. |secure_edge_edit_settings| image:: CloudN_workflow_media/edge_edit_settings.png
+.. |edge_edit_settings| image:: CloudN_workflow_media/edge_edit_settings.png
    :scale: 50%
    
-.. |secure_edge_ova_load_file| image:: CloudN_workflow_media/edge_ova_load_file.png
+.. |edge_ova_load_file| image:: CloudN_workflow_media/edge_ova_load_file.png
    :scale: 80%
 
 .. |edge-active-standby| image:: CloudN_workflow_media/edge-active-standby.png
