@@ -47,7 +47,7 @@ If using HPE for private Transit peering and Spoke attachments, please re-create
 **Issues Corrected in Aviatrix Release 6.7.1376** 
 
 - **AVI-2021-0006** - Fixed a remote code execution vulnerability for users of Aviatrix VPN.
-- **AVX-23386** - Upgraded Spire to version 0.12.3, fixing CVE-2021-27099, CVE-2021-27098, CVE-2021-44716, and CVE-2022-24675.
+- **AVX-23386** - Upgraded Spire to fix CVE-2021-27099, CVE-2021-27098, CVE-2021-44716, and CVE-2022-24675.
 - **AVX-24658** - The Python scheduler has been improved to accommodate more tasks. This ensures that all tasks are scheduled and triggered on time without being missed or having to wait.
 - **AVX-25082** - An uncaught exception caused the Aviatrix metering system to report metering inaccurately. This has been fixed.
 - **AVX-25128** - An exception occurs when migrating Transit Gateway tunnel status in MongoDB to etcd when the Transit Gateway has a CloudN attached. To fix this issue, when migrating Transit Gateway tunnel status in MongoDB to etcd that have CloudN attached, use the CloudN private_ip for peer_ip. If the tunnel status in MongoDB does not a peer_ip, update it with the peer_ip based on the peer information from the gateway tunnel status message received by the Controller.
@@ -78,7 +78,7 @@ This change improves failover behavior; gateways will stop advertising any manua
 **Issues Corrected in Aviatrix Release 6.6.5712** 
 
 - **AVI-2021-0006** - Fixed a remote code execution vulnerability for users of Aviatrix VPN.
-- **AVX-23386** - Upgraded Spire to version 0.12.3, fixing CVE-2021-27099, CVE-2021-27098, CVE-2021-44716, and CVE-2022-24675.
+- **AVX-23386** - Upgraded Spire to fix CVE-2021-27099, CVE-2021-27098, CVE-2021-44716, and CVE-2022-24675.
 - **AVX-24658** - The Python scheduler has been improved to accommodate more tasks. This ensures that all tasks are scheduled and triggered on time without being missed or having to wait.
 - **AVX-25082/25598** - Stale transit peering entries in the database resulted in an issue listing transit peers. This resulted in incorrect metered billing. 
 - **AVX-25128** - An exception occurs when migrating Transit Gateway tunnel status in MongoDB to etcd when the Transit Gateway has a CloudN attached. To fix this issue, when migrating Transit Gateway tunnel status in MongoDB to etcd that have CloudN attached, use the CloudN private_ip for peer_ip. If the tunnel status in MongoDB does not a peer_ip, update it with the peer_ip based on the peer information from the gateway tunnel status message received by the Controller.
