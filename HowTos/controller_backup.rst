@@ -59,7 +59,7 @@ How to restore configuration
 --------------------------------
 
 .. note::
-	If in Private Mode, restoration can only be done in the same VPC as the previous Controller. You cannot restore a Controller that has been created in a different VPC.
+	In Private Mode, restoration can only be done in the same VPC as the previous Controller. You cannot restore a Controller that has been created in a different VPC. Click `here <https://docs.aviatrix.com/HowTos/privatemode.html>`_ for more information on Private Mode.
 
 If you are starting from a new Controller, follow these steps to get started:
 
