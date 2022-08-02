@@ -75,10 +75,10 @@ The key ideas for this scenario are:
 .. |edge-redundant-circuit| image:: CloudN_workflow_media/edge-redundant-circuit.png
    :scale: 50%	
 
-.. |secure_edge_private_network| image:: CloudN_workflow_media/edge_private_network.png
+.. |edge_private_network| image:: CloudN_workflow_media/edge_private_network.png
    :scale: 50%
 
-.. |secure_edge_public_network| image:: CloudN_workflow_media/edge_public_network.png
+.. |edge_public_network| image:: CloudN_workflow_media/edge_public_network.png
    :scale: 50%
 
 .. |edge-single-transit-redundant| image:: CloudN_workflow_media/edge-single-transit-redundant.png
