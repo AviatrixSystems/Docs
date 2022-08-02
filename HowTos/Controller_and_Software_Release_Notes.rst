@@ -62,9 +62,6 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - **AVX-26205** - The number of available threads in strongSwan was increased to improve scalability and support more than 2000 tunnels. 
 - **AVX-26374** - The Controller database had empty peer IPs for tunnels between Transit Gateways and CloudN. This prevented the gateway snapshot creation, and also prevented configuration/route updates from being propagated to the gateway. This software patch script will correct the Controller database entries. 
 
-**Known Issues in Aviatrix Release 6.7.1376** 
-
-- **AVX-25256** - A control plane service running on a gateway consumes multiple gigabytes of memory when there are many IPsec tunnels.
 
 6.6.5712 (08/02/2022)
 =========================
@@ -90,9 +87,6 @@ This change improves failover behavior; gateways will stop advertising any manua
 - **AVX-26205** - The number of available threads in strongSwan was increased to improve scalability and support more than 2000 tunnels. 
 - **AVX-26374** - The Controller database had empty peer IPs for tunnels between Transit Gateways and CloudN. This prevented the gateway snapshot creation, and also prevented configuration/route updates from being propagated to the gateway. This software patch script will correct the Controller database entries. 
 
-**Known Issues in Aviatrix Release 6.6.5712**
-
-- **AVX-25256** - A control plane service running on a gateway consumes multiple gigabytes of memory when there are many IPsec tunnels.
 
 6.7.1325 (07/25/2022) 
 ========================= 
