@@ -70,7 +70,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 6.6.5712 (08/02/2022)
 =========================
 
-**Important Notices in Aviatrix Release 6.7.1376** 
+**Important Notices in Aviatrix Release 6.6.5712** 
 
 - **AVX-26277** - Controllers running earlier versions of Aviatrix Controller software on AWS AMI version 051022 (released May 1, 2022) will halt due to resource exhaustion after a period of time depending on the level of activity the Controller sees. If using AWS AMI version 051022, you must upgrade to the latest version of 6.7 to prevent this behavior.
 
