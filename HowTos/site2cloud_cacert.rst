@@ -84,7 +84,7 @@ Limitations
 -----------
 
 - Only the Palo Alto VM-Series firewall is supported in this version of Site2Cloud cert-based authentication.
-- Only the Elliptic Curve DSA algorithm (256-bit) is supported in this version when creating a certificate in the Palo Alto VM-Series UI.
+- Only the Elliptic Curve DSA algorithm (256-bit) is supported in this version.
 - Only the PEM certificate file type is supported in this version. 
 - You can only use one certificate group (all the certificates with the same tag name) per Site2Cloud connection.
 - You can only roll back the platform version if the previous version supports certificate-based authentication (not supported prior to 6.8).
