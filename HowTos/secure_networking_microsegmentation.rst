@@ -153,7 +153,7 @@ You can manually trigger a poll to fetch resources directly from your CSPs by cl
 Limitations
 ===========
 
-- In 6.7 micro-segmentation is only supported on AWS and Azure. Support for other clouds is not available in this release.
+- In 6.7 micro-segmentation is only supported on AWS and Azure (not AWS GovCloud or Azure Government). Support for other clouds is not available in this release.
 - You can configure up to 500 app domains.
 - You can have up to 3000 unique CIDRs per app domain.
 - You can configure up to 20 filters per app domain (OR/ANY filters that are not the CIDR type).
