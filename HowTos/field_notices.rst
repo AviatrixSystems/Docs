@@ -70,8 +70,6 @@ Aviatrix recommends the following be done, as soon as possible, to avoid any pos
  
 If you run into any issues during upgrade, you can reach out to Aviatrix Support by opening a ticket at Support Portal at https://support.aviatrix.com  
 
-Please subscribe to the Security Alerts mailing list at securityalerts@aviatrix.com to get notified earlier on any future vulnerabilities. To subscribe, send an email to securityalerts@aviatrix.com with "Subscribe" in subject line. 
-
 
 
 Field Notice 0036 (2022/01/11)
@@ -86,7 +84,6 @@ The upgrade mechanism is described in our documentation:
 * For 6.4 release, refer to `these instructions <https://docs.aviatrix.com/HowTos/inline_upgrade.html#how-to-upgrade-software>`_
 * For 6.5 release, start `here <https://docs.aviatrix.com/HowTos/selective_upgrade.html#performing-a-platform-software-upgrade-dry-run>`_ 
 
-Please subscribe to the Security Alerts mailing lists at securityalerts@aviatrix.com to get notified earlier on any future vulnerabilities. To subscribe, send an email to securityalerts@aviatrix.com with "Subscribe" in subject line.
 
 If you run into any issues during upgrade, you can reach out to Aviatrix Support by opening a ticket at Support Portal at https://support.aviatrix.com
 
