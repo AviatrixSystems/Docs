@@ -21,7 +21,7 @@ For customers who launched a Controller through AWS, this document outlines the 
 There are two methods you can use to migrate your Controller AMI:
 
 1. **Controller-driven method** (simplest method)  - You can easily migrate your AMI directly from the Controller. Note that you can only migrate between AMIs with the same license (BYOL, Metered, or another license) using this method.
-2. **Manual method** (longer method, but offers more visibility)  - You can migrate your Controller by going through the AWS marketplace and stopping your Controller instance, disassociating your EIP, and so on. This method requires more steps but allows you to see the network and account changes involved in each step. You can also use this method to change licenses if needed.
+2. **Manual method** (longer method which offers more visibility)  - You can migrate your Controller by going through the AWS marketplace and stopping your Controller instance, disassociating your EIP, and so on. This method requires more steps but allows you to see the network and account changes involved in each step. You can also use this method to change licenses if needed.
 
 .. note::
       The Controller-driven method can only migrate between AMIs using the same license. To change your license, use the manual method.
@@ -39,7 +39,7 @@ Prerequisites
 
      |controller_versions|
 
-* An S3 bucket in the AWS account linked to your Aviatrix Controller (will be used for backups).
+* An `S3 bucket <https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html>`_ in the AWS account linked to your Aviatrix Controller (will be used for backups).
 * Your IAM policy must be updated in all your AWS accounts. Please refer the instructions `here <https://docs.aviatrix.com/HowTos/iam_policies.html#updating-iam-policies>`__ to update your IAM policies.
 * Make sure you **delete the Controller HA cloud formation stack**. 
 
@@ -88,9 +88,15 @@ Enable Backup
    If you already have backup enabled, click **Backup Now** to make sure you have the latest backup.
    Once complete, confirm in your S3 bucket that the backup file has been updated with the latest timestamp.
 
-#. Log in to your existing Aviatrix Controller.
-#. Navigate to Settings > Maintenance > Backup & Restore tab.
-#. Click **Enable**.
+1. Log in to your existing Aviatrix Controller.
+2. Navigate to Settings > Maintenance > Backup & Restore tab. Enter the name of your S3 bucket in the S3 Bucket Name field. This name must be:
+
+* Between 3-63 characters long.
+* A series of labels separated by a single period (.)
+* Start and end with a lowercase letter or number.
+* Must **not** be formatted as an IP address (such as 92.168.5.4).
+
+3. Click **Enable**.
 
 |enable_backup|
 
