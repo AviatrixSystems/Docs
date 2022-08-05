@@ -58,8 +58,43 @@ Migrate
 Controller Migration in Azure
 ##################################
 
-1. In your old Controller, navigate to Settings > Maintenance > Backup & Restore tab > Backup and click **Backup Now**.
-2. Launch the new Controller from the Azure marketplace. Use `these instructions <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_.
+Before migrating your Azure Controller, note the following details so that you can replicate them in your new Controller:
+
+* The instance's location, Subscription ID, Size, Public IP address, Virtual network (VNet)/subnet, and Private IP address. In your Azure account, go to Virtual machines > select the Controller instance.
+
+|azure_account_details_1|
+
+* The instance's Display name, Application (client) ID, and Directory (tenant) ID.
+
+|azure_account_details_2|
+
+* The instance's `secret value <https://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html#creating-a-secret-identifier>`_, which could only be accessed directly after the instance is created.
+
+2. (For BYOL images only) locate your `Customer ID <https://docs.aviatrix.com/HowTos/onboarding_faq.html?highlight=customer%20id#what-is-an-aviatrix-customer-id>`_.
+
+3. Take a Controller backup in a storage container and make a note of Subscription ID, Directory ID, Application Client ID, Application Client Secret, Storage Name, Container Name, File Name.
+
+4. Launch new Controller Instance. Please refer to the `Azure Startup Guide <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_.
+5. Shut down the old Controller instance. Go to your Azure account > Virtual machines and select the old Controller instance. Click **Stop**.
+
+|azure_stop_old_controller|
+
+6. Dissociate the Public IP address from the old Controller. In your Azure account, go to Network interfaces > select the Network Interface > Select the public IP > click **Dissociate**.
+
+|azure_click_dissociate|
+
+Click **Yes** to confirm the dissociation.
+
+7. Associate this Public IP address to the new Controller instance. On the Public IP address page, click **Associate**.
+
+|azure_click_associate|
+
+* Under Resource type, select **Network interface**. 
+* Under Network interface, select your new Controller instance. 
+
+|azure_IP_details|
+
+8. Set up your `Aviatrix Customer ID <https://docs.aviatrix.com/HowTos/onboarding_faq.html?highlight=%22customer%20id%22#what-is-an-aviatrix-customer-id>`. Open your new Aviatrix Controller and go to Onboarding > Azure > enter your Aviatrix Customer ID.
 
 Controller Migration in GCP
 ##################################
@@ -92,33 +127,6 @@ Controller Migration in GCP
 
 8. Launch a new Controller instance in the same region and VPC, of the same size as your old Controller. Review the details you saved from your old Controller to ensure they match. To launch the new instance, go to your GCP account > Marketplace > search for "Aviatrix" > choose your required Aviatrix platform > click **Launch**. Make sure to replicate the same region, subnet (if required), and size of the old Controller. See the `Google Startup Guide <https://docs.aviatrix.com/StartUpGuides/google-aviatrix-cloud-controller-startup-guide.html>`_ for thorough instructions.
 9. Once the new Controller launches, associate the reserved static IP address to this new instance. In your GCP account, go to VPC Network > IP Addresses > select the IP address > change > select the newly launched Controller.
-
-Setting up the New GCP Controller
------------------------------------------------
-
-1. Log into the newly launched Controller instance. 
-
-* Username  - admin
-* Password  - the private IP of the newly launched instance
-
-2. Set a new password and upgrade this Controller to the same version as your old Controller instance. This might take up to 5 minutes.
-3. Log into the new Controller and onboard your primary access account (the GCP account). Make sure to have your Google Cloud credentials available, as you will need it to onboard your GCP account. In your Controller, go to Accounts > Access Accounts > GCP.
-4. If you are using a BYOL Controller, onboard your Aviatrix Customer ID. This is necessary only if you are using a BYOL Controller. Use your old Controller's Customer ID.
-5. Once everything is set up and ready, restore the backup from the bucket. Go to your Controller > Settings > Maintenance > Backup & Restore > Restore > fill in the appropriate details > click **Restore**.
-
-It will take a few minutes for the backup to be restored. You can verify the dashboard to see if all the configuration from the old Controller has been restored. 
-
-6. If you do not have an IP reserved for your Controller, and post-migration you have been assigned a new IP address, perform Controller IP migration. Go to Troubleshoot > Diagnostics > Controller IP address migration > click **Migrate**.
-
-Before Controller IP migration :
-
-|gcp_before_migrating_ip|
-
-After Controller IP migration :
-
-|gcp_after_migrating_ip|
-
-See the instructions in the Post Migration Tasks section below to finish this Controller migration.
 
 Controller Migration in OCI
 #############################################
@@ -169,6 +177,21 @@ Post Migration Tasks
 
 After testing to ensure that the Controller migration is complete and successful, you can delete the old Controller. It can be left in "Stopped" status for a while, but it should never be started. If it is started, this old Controller will reach out to the gateways and the network could have issues with two Controllers trying to monitor/modify the gateways. 
 
+Setting up Your New Controller
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Log into the newly launched Controller instance. 
+
+* Username  - admin
+* Password  - the private IP of the newly launched instance
+
+2. Set a new password and upgrade this Controller to the same version as your old Controller instance. This might take up to 5 minutes.
+3. Log into the new Controller and onboard your primary access account (the cSP account). Make sure to have your CSP credentials available, as you will need it to onboard your GCP account. In your Controller, go to Accounts > Access Accounts > *CSP* (Azure, GCP, or OCI).
+4. If you are using a BYOL Controller, onboard your Aviatrix Customer ID. Use your old Controller's Customer ID.
+5. Once everything is set up and ready, restore the backup from the bucket. Go to your Controller > Settings > Maintenance > Backup & Restore > Restore > fill in the appropriate details > click **Restore**.
+
+It will take a few minutes for the backup to be restored. You can verify the dashboard to see if all the configuration from the old Controller has been restored. 
+
 Migrating the Controller IP Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -177,10 +200,31 @@ After migrating to a new Controller, make sure you have migrated your public IP 
 1. In Azure, GCP, or OCI, disassociate the Static Public IP or Elastic IP address from your old Controller and associate it with your new Controller.
 2. In your new Controller, in the left sidebar, go to Troubleshoot > Diagnostics > scroll down to the Controller IP Address Migration section. If two IPs display under Controller Public IP, click **Migrate**.
 
-Restore
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Before Controller IP migration :
 
-Restore the data from your old Controller. In your new Controller, go to Settings > Maintenance > Backup & Restore tab > Restore and click **Restore**.
+|gcp_before_migrating_ip|
+
+After Controller IP migration :
+
+|gcp_after_migrating_ip|
+
+.. |azure_account_details_1| image:: controller_migration_media/azure_account_details_1.png
+   :scale: 60%
+
+.. |azure_account_details_2| image:: controller_migration_media/azure_account_details_2.png
+   :scale: 60%
+
+.. |azure_stop_old_controller| image:: controller_migration_media/azure_stop_old_controller.png
+   :scale: 50%
+
+.. |azure_click_dissociate| image:: controller_migration_media/azure_click_dissociate.png
+   :scale: 50%
+
+.. |azure_click_associate| image:: controller_migration_media/azure_click_associate.png
+   :scale: 40%
+
+.. |azure_IP_details| image:: controller_migration_media/azure_IP_details.png
+   :scale: 30%
 
 .. |gcp_cloud_storage_browser| image:: controller_migration_media/gcp_cloud_storage_browser.png
    :scale: 60%
