@@ -44,11 +44,11 @@ Adding a CA Certificate
 
 After you obtain the CA certificate from your external device, you must upload it on the CA Certificate tab before creating your Site2Cloud connection.
 
-1. In the Aviatrix Controller, navigate to SITE2CLOUD > CA Certificate.
-#. On the CA Certificate tab, click ADD.
+1. In the Aviatrix Controller, navigate to Site2Cloud > CA Certificate.
+#. On the CA Certificate tab, click **Add**.
 #. Under Add Certificate, in the Tag Name field, enter a unique name for the certificate. 
 #. Select the CA certificate to upload.
-#. Click OK.
+#. Click **OK**.
 
 If you have received an email notification that a CA certificate is about to expire, or one of the certificates is showing as Invalid on the CA Certificate list, you use the above procedure to add the new certificate. You must then delete the expired certificate.
 
@@ -62,7 +62,7 @@ Downloading the Aviatrix CA Certificate
 
 You must download the Aviatrix CA certificate and upload it to your external device (or Aviatrix gateway) for the Site2Cloud connection to work. 
 
-Navigate to SITE2CLOUD > CA Certificate > Aviatrix CA Certificate to download the cloud gateway CA certificate.
+Navigate to Site2Cloud > CA Certificate > Aviatrix CA Certificate to download the cloud gateway CA certificate.
 
 Deleting a Certificate
 ----------------------
@@ -76,15 +76,15 @@ You must delete a certificate if it has expired. These certificates show as 'inv
 Only admin users can delete certificates.
 
 1. In the Aviatrix Controller, navigate to Site2Cloud > CA Certificate.
-#. On the CA Certificate tab, select the certificate and click Delete.
-#. (optional) On the Site2Cloud > Diagnostics tab, select the appropriate gateway and then select Restart service from the Action list. This removes the deleted certificate from the gateway cache.
+#. On the CA Certificate tab, select the certificate and click **Delete**.
+#. (optional) On the Site2Cloud > Diagnostics tab, select the appropriate gateway and then select **Restart service** from the Action list. This removes the deleted certificate from the gateway cache.
 
 
 Limitations
 -----------
 
 - Only the Palo Alto VM-Series firewall is supported in this version of Site2Cloud cert-based authentication.
-- Only the Elliptic Curve DSA algorithm is supported in this version when creating a certificate in the Palo Alto VM-Series UI.
+- Only the Elliptic Curve DSA algorithm (256-bit) is supported in this version.
 - Only the PEM certificate file type is supported in this version. 
 - You can only use one certificate group (all the certificates with the same tag name) per Site2Cloud connection.
 - You can only roll back the platform version if the previous version supports certificate-based authentication (not supported prior to 6.8).

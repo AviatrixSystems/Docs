@@ -10,6 +10,27 @@ Please note the below Aviatrix Security recommendations and communication plans:
 - All known software vulerabilities are submitted to Mitre for CVE-ID references by Aviatrix Systems
 - Avitrix publish Field Notices and send alerts to Controller Admin in the Controller console when security related issues are published
 
+
+23. Aviatrix Controller and Gateways - Unauthorized Access
+----------------------------------------------------------
+
+**Date** 08/02/2022
+
+**Risk Rating** High for Gateways.
+
+**Description** Gateway APIs contain functions that are inappropriately authenticated and would allow an authenticated VPN user to inject arbitrary commands.
+
+**Impact** A successful attack would allow an authenticated VPN user to execute arbitrary comments against Aviatrix gateways.
+
+**Affected Products** Aviatrix Gateways
+
+**Solution** Upgrade your Aviatrix Controller and gateway software to:
+
+- 6.6.5712 or later
+- 6.7.1376 or later
+
+**Acknowledgement** Aviatrix would like to thank Thomas Wallin from Splunk for the responsible disclosure of this issue. 
+
 22. Remote Code Execution
 ----------------------------------------
 

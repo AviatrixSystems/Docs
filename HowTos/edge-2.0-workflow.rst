@@ -159,12 +159,6 @@ Aviatrix Edge Ports and Protocols
 |            | spire-server.aviatrixnetwork.com          |              |          |                       |
 |            | time-server.aviatrixnetwork.com           |              |          |                       |
 +------------+-------------------------------------------+--------------+----------+-----------------------+
-| Mgmt eth2  | security.aviatrix.com                     | TCP          | 443      | Credentials sync      |
-|            |                                           |              |          | Software download     |
-+------------+-------------------------------------------+--------------+----------+-----------------------+
-| Mgmt eth2  | diag.aviatrix.com                         | TCP          | 443      | Tracelog upload       |
-|            |                                           |              |          | Remote support        |
-+------------+-------------------------------------------+--------------+----------+-----------------------+
 
 
 
@@ -194,7 +188,8 @@ To create the Edge Gateway ISO image file, follow these steps.
     b.  **ZTP File Type**: Select **iso**.
 
         .. note::
-         The ISO file is the equivalent of the Zero-Touch Provisioning (ZTP) token. ZTP allows network engineers to remotely deploy and provision network devices at remote locations.
+           The ISO file is the equivalent of the Zero-Touch Provisioning (ZTP) token. ZTP allows network engineers to remotely deploy and provision network devices at remote locations.
+           For KVM deployments, **cloud-init** is also supported.
 
     c.  **Gateway Name**: Enter a name for the new Edge Gateway.
 
@@ -290,7 +285,7 @@ To deploy the Edge virtual machine in VMware ESXi, follow these steps.
 
 5. Enter a name for the Edge VM and drag the OVA file into the blue pane. Click **Next**.
 
-   |secure_edge_ova_load_file|
+   |edge_ova_load_file|
 
 6. In the Select storage page, select the storage device for the instance you created (the OVA is installed in this instance). Click **Next**.
 
@@ -299,7 +294,7 @@ To deploy the Edge virtual machine in VMware ESXi, follow these steps.
    .. Note::
       If necessary, you can change the network interface mappings after deployment.
 
-   |secure_edge_ova_deploy_options|
+   |edge_ova_deploy_options|
 
 8. Click **Next**.
 
@@ -326,7 +321,7 @@ Next, attach the ZTP **.iso** and the Edge will auto-mount the media which conta
  
 6. Next to the CD/DVD Media field, click **Browse**. Select the ISO file you downloaded.
 
-   |secure_edge_edit_settings|
+   |edge_edit_settings|
 
    .. note::
       **Connect at power on** (step 4) is required when you attach the ISO image to the VM for the first time. If the VM is powered on at the time you attach the ISO image, select the **Datastore ISO file** and save the configuration to make the ISO available to ZTP.
@@ -369,13 +364,17 @@ Before you begin, on the KVM Linux host ensure the LAN, WAN, and MGMT network br
 
    |edge-kvm-new-vm-4|
 
-7. Configure the LAN, WAN, and MGMT network bridge interfaces.
+7. Add the LAN and MGMT virtual bridge interfaces.
 
    a. Click **Add Hardware**.
 
       |edge-kvm-new-vm-5|
 
-   b. In **Add New Virtual Hardware**, select **Network** from the left pane and add two additional network bridge interfaces for the LAN and MGMT virtual interfaces. The bridge interface for WAN interface is automatically created as part of the VM image creation.
+   b. In **Add New Virtual Hardware**, select **Network** from the left pane and add two additional network interfaces for the LAN and MGMT virtual bridges. The virtual bridge for the WAN interface is automatically added as part of the VM image creation.
+
+   a. For **Network source**, select the name of the virtual bridge for the LAN interface.
+   b. For **Device model**, select **virtio**.
+   c. Repeat steps a and b and add the virtual bridge for the MGMT interface.
   
       |edge-kvm-new-vm-6|
 
@@ -398,7 +397,21 @@ For more information about deploying virtual machines and attaching .iso file in
 
 Next, verify Edge in Controller. See `Verifying Edge in Controller <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#verifying-edge-in-controller>`_.
 
-2d. Verifying Edge in Controller
+2d. Enabling Multiqueue virtio-net on KVM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Multiqueue virtio-net allows network performance to scale with the number of vCPUs, by allowing packet processing (packet sending and receiving) through multiple TX and RX queues.
+
+To enable Multiqueue virtio-net support on KVM, when launching the Edge Gateway VM using virt-install, add the **driver_queues** parameter to the network interface details.
+
+--network bridge=<*bridge-name*>, model=virtio,driver_queues=*N*
+
+where, *N* is the number of vCPUs.
+
+.. Note::
+    KVM Hypervisor does not support configuration of RX/TX queue size during runtime. RX/TX queue size should be configured during Edge VM bootup.
+
+2e. Verifying Edge in Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To verify the Edge Gateway is up, wait for 5 minutes after you have attached the ZTP **.iso** file then do the following:
@@ -617,7 +630,7 @@ You can now create or assign a user account with the newly created RBAC group.
 Selective Gateway Upgrade for Edge 2.0
 -----------------------------------------
 
-The Aviatrix Edge 2.0 base OS is not upgradeable. To update the base OS to a newer version, you can only deploy a newer version of the Aviatrix Edge image to a new VM to replace it.
+The Aviatrix Edge 2.0 base OS is not upgradeable. To update the base OS to a newer version, you need to deploy the latest version of the Aviatrix Edge image to a new VM.
 
 As Edge 2.0 base OS is not field upgradeable, Edge 2.0 does not support selective gateway image update and software rollback.
 
@@ -635,7 +648,7 @@ To run Clish on the Edge Gateway, log in with the username **admin**.
 +-----------------------------------+--------------------------------------------------------+
 | check_conduit                     | Check conduit state.                                   |
 +-----------------------------------+--------------------------------------------------------+
-| check_network                     | Troubleshoot network connectivity.                     |
+| check_network [dns][reachability] | Troubleshoot network connectivity.                     |
 +-----------------------------------+--------------------------------------------------------+
 | diagnostics                       | Show gateway diagnostics from                          |
 |                                   | /home/ubuntu/cloudx-aws/avx_edge_status.json, which is |
@@ -648,8 +661,9 @@ To run Clish on the Edge Gateway, log in with the username **admin**.
 +-----------------------------------+--------------------------------------------------------+
 | reboot                            | Reboot the system.                                     |
 +-----------------------------------+--------------------------------------------------------+
-| set_controller_ip [controller_ip] | Set Controller IP address, usually performed after     |
-|                                   | Controller migration when Controller IP address changed|
+| set_controller_ip [controller_ip] | Set the Controller IP address, usually performed after |
+|                                   | Controller migration when the Controller IP address    |
+|                                   | is changed.                                            |
 +-----------------------------------+--------------------------------------------------------+
 | show_interfaces                   | Show output from the command “ifconfig -a | more”.     |
 +-----------------------------------+--------------------------------------------------------+
@@ -675,84 +689,88 @@ If the connectivity to the CSP is over a public network:
 
 
 
-.. |secure_edge_ova_deploy_options| image:: CloudN_workflow_media/secure_edge_ova_deploy_options.png
-   :scale: 80%
+.. |edge_ova_deploy_options| image:: CloudN_workflow_media/edge_ova_deploy_options.png
+   :scale: 40%
    
-.. |secure_edge_edit_settings| image:: CloudN_workflow_media/secure_edge_edit_settings.png
-   :scale: 50%
+.. |edge_edit_settings| image:: CloudN_workflow_media/edge_edit_settings.png
+   :scale: 40%
    
-.. |secure_edge_ova_load_file| image:: CloudN_workflow_media/secure_edge_ova_load_file.png
-   :scale: 80%
+.. |edge_ova_load_file| image:: CloudN_workflow_media/edge_ova_load_file.png
+   :scale: 40%
 
 .. |edge-active-standby| image:: CloudN_workflow_media/edge-active-standby.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-attach-spoke-to-transit| image:: CloudN_workflow_media/edge-attach-spoke-to-transit.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-connect-external-device| image:: CloudN_workflow_media/edge-connect-external-device.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-deploy-ova-template| image:: CloudN_workflow_media/edge-deploy-ova-template.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-deploy-workflow| image:: CloudN_workflow_media/edge-deploy-workflow.png
-   :width: 500
+   :scale: 40%
 
 .. |edge-ip-config| image:: CloudN_workflow_media/edge-ip-config.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-launch-spoke-gateway| image:: CloudN_workflow_media/edge-launch-spoke-gateway.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-multiple-transit-redundant| image:: CloudN_workflow_media/edge-multiple-transit-redundant.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-multiple-transit-single-edge| image:: CloudN_workflow_media/edge-multiple-transit-single-edge.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-network-connectivity| image:: CloudN_workflow_media/edge-network-connectivity.png
+   :scale: 40%
 
 .. |edge-network-port-protocol| image:: CloudN_workflow_media/edge-network-port-protocol.png
+   :scale: 40%
 
 .. |edge-rbac| image:: CloudN_workflow_media/edge-rbac.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-rbac-edgeadmin| image:: CloudN_workflow_media/edge-rbac-edgeadmin.png
-   :scale: 50%
+   :scale: 40%
 
-.. |edge-transitive-routing| image:: CloudN_workflow_media/edge-transitive-routing.png	
+.. |edge-transitive-routing| image:: CloudN_workflow_media/edge-transitive-routing.png
+   :scale: 40%	
 
 .. |edge-transit-peering| image:: CloudN_workflow_media/edge-transit-peering.png
+   :scale: 40%
 
 .. |edge-transit-peering-config| image:: CloudN_workflow_media/edge-transit-peering-config.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-verify| image:: CloudN_workflow_media/edge-verify.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-kvm-new-vm| image:: CloudN_workflow_media/edge-kvm-new-vm.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-kvm-new-vm-1| image:: CloudN_workflow_media/edge-kvm-new-vm-1.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-kvm-new-vm-2| image:: CloudN_workflow_media/edge-kvm-new-vm-2.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-kvm-new-vm-3| image:: CloudN_workflow_media/edge-kvm-new-vm-3.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-kvm-new-vm-4| image:: CloudN_workflow_media/edge-kvm-new-vm-4.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-kvm-new-vm-5| image:: CloudN_workflow_media/edge-kvm-new-vm-5.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-kvm-new-vm-6| image:: CloudN_workflow_media/edge-kvm-new-vm-6.png
-   :scale: 50%
+   :scale: 40%
 
 .. |edge-kvm-new-vm-7| image:: CloudN_workflow_media/edge-kvm-new-vm-7.png
-   :scale: 50%
+   :scale: 40%
 
 

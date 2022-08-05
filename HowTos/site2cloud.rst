@@ -34,7 +34,7 @@ Create Site2Cloud Connection
 
 #. Log in to your Aviatrix Controller.
 #. Select SITE2CLOUD in the left navigation bar.
-#. Click **+ Add New** near the top of the SITE2CLOUD tab.
+#. Click **+ Add New** near the top of the Site2Cloud tab.
 #. Under Add a new connection, select the VPC ID where this tunnel will terminate in the cloud.
 #. See the below sections for information on configuring the connection.
 
@@ -43,7 +43,10 @@ Connection Type
 
 Select Mapped or Unmapped as the Connection Type. You should select Unmapped unless the Local Subnet and the Remote Subnet overlap.
 
-<what is Custom Mapped? Check box displays if you select Mapped. If you select this three other check boxes display: Remote Initiated Traffic, Local Initiated Traffic, Save Template. Looks like if you don't select that check box you have to enter the remote subnet real and virtual, local subnet real and virtual.>
+If you select the Mapped option in conjunction with the `Forward Traffic to Transit Gateway option <#forward-traffic-to-transit-gateway>`_ (possible after you configure your Site2Cloud connection, under the Edit options), bi-directional traffic flow occurs. 
+
+Mapped
+++++++
 
 If you select Mapped, configure the following:
 
@@ -67,7 +70,12 @@ Here is an example of one-to-one mapping:
       | Local Subnet(Real): 10.1.7.15/32
       | Local Subnet(Virtual): 192.168.7.45/32
 
-Enter the Connection Name and click OK.
+Enter the Connection Name and click **OK**.
+
+Custom Mapping
+++++++++++++++
+
+If you select the Custom Mapped checkbox after selecting the Mapped option, more complex Site2Cloud configurations are possible. You can have locally initiated traffic flows only, remotely initiated traffic flows only, and differing NAT translation based on these local/remote initiated flows. 
 
 Remote Gateway Type
 ^^^^^^^^^^^^^^^^^^^
@@ -104,10 +112,10 @@ Certificate-Based
 
 If you select Cert-based authentication:
 
-- In the Remote CA Certificate field select the certificate you uploaded from your Palo Alto VM-Series firewall as per `these instructions <https://docs.aviatrix.com/HowTos/site2cloud-cacert.html>`_.
+- In the Remote CA Certificate field select the certificate you uploaded from your Palo Alto VM-Series firewall as per `these instructions <https://docs.aviatrix.com/HowTos/site2cloud_cacert.html>`_.
 - Enter the SAN/Remote Identifier. The format depends on the device you are connecting to. For example, for an on-prem Aviatrix gateway the format will be the DNS from the server certificate (such as gw-54-210-118-19).
 
-See `here <https://docs.aviatrix.com/HowTos/site2cloud-cacert.html>`_ for more details on Site2Cloud certificate-based authentication.
+See `here <https://docs.aviatrix.com/HowTos/site2cloud_cacert.html>`_ for more details on Site2Cloud certificate-based authentication.
 
 Tunnel Type
 ^^^^^^^^^^^
@@ -152,15 +160,13 @@ Select this option to to create a backup/failover connection in case the primary
 
 If mapped NAT is enabled, HA in Site2Cloud is not supported.
 
-If you have the following configuration you can select the Same Pre-shared Key as primary check box, which means the backup tunnel uses the same pre-shared key as the primary <primary what?>.
+If you have the following configuration you can select the Same Pre-shared Key as primary check box, which means the backup tunnel uses the same pre-shared key as the primary.
 
 - Enable HA check box selected
-- Enable Single IP HA check box not selected
+- Enable Single IP HA checkbox not selected
 - PSK-based authentication selected
 
-If the Enable HA check box is selected, you can enter a Pre-shared Key backup? Format?
-
-If the Enable HA check box is selected, you must enter the backup IP address of the backup gateway (.hagw). 
+If the Enable HA checkbox is selected, you can enter a Pre-shared Key for the back-up (HA) gateway. Also if this checkbox is selected, you must enter the Remote Gateway IP address of the backup gateway (.hagw). 
 
 Enable Single IP HA
 ^^^^^^^^^^^^^^^^^^^
@@ -182,16 +188,11 @@ Remote Gateway IP address
 
 Enter the IP address of the device.
 
-Remote Network?
-^^^^^^^^^^^^^^^
-
-Does this only show up if you selected an Insane Mode gateway earlier in this procedure (that was initially set up under Gateway > New in the Controller)?
-
 
 Editing the Site2Cloud Connection
 =================================
 
-Once a connection is created, you can download the configuration or edit parameters. To do this, select SITE2CLOUD in the left pane and select the connection you just created.
+Once a connection is created, you can download the configuration or edit parameters. To do this, select Site2Cloud in the left pane and select the connection you just created.
 
 Local Identifier
 ---------------------
@@ -214,12 +215,11 @@ You can generate a remote site configuration template. This template file contai
 
 To download a configuration:
 
-1. After creating a Site2Cloud connection, select the remote site device from the table on the Setup Site2Cloud Connection page and click EDIT.
-#. <do you have to select a local/remote identifier first?>
-#. In the DOWNLOAD CONFIGURATION area, select your remote site device from the Vendor menu, or use the Generic/Vendor Independent template (you select Generic for anything that is not an Aviatrix gateway. If you are connecting two Aviatrix gateways, you select Aviatrix as the vendor).
+1. After creating a Site2Cloud connection, select the remote site device from the table on the Setup Site2Cloud Connection page and click **Edit**.
+#. In the Download Configuration area, select your remote site device from the Vendor menu, or use the Generic/Vendor Independent template (you select Generic for anything that is not an Aviatrix gateway. If you are connecting two Aviatrix gateways, you select Aviatrix as the vendor).
 
 - If you select a Generic vendor, the Platform field is populated as Generic, and the Software field is populated with Vendor Independent.
-- If you select the Aviatrix vendor, the Platform is populated with UCC, and the Software version is 1.0?
+- If you select the Aviatrix vendor, the Platform is populated with UCC, and the Software version is 1.0.
 - If you select a specific hardware vendor (such as Cisco), available platforms belonging to that vendor are displayed in the Platform field, and the Software field is populated with related software versions.
 
 How to use this downloaded configuration:
@@ -256,7 +256,13 @@ To enable this, go to Site2Cloud, edit the connection on the Setup page, scroll 
 Forward Traffic to Transit Gateway
 -----------------------------------
 
-This configuration option applies to a use case where an Aviatrix Spoke gateway connects to on-prem routers via Site2Cloud IPsec connections. 
+Typically you enable the **Forward Traffic to Transit Gateway** option when you have a Site2Cloud connection that has overlapping CIDRs. This forwarding ensures that traffic is sent between on-prem routers and local Spoke and Transit gateways. 
+
+In most cases customers will enable this so that their on premise traffic is forwarded.
+
+For more information view the explanation `in this scenario <https://docs.aviatrix.com/HowTos/overlapping_network_solutions.html#scenario-4-multi-sites-overlap-in-aviatrix-transit-deployment>`_. 
+
+This option is only available for route-based IPSec paired with Mapped NAT. 
 
 Event Triggered HA
 -------------------
@@ -267,14 +273,18 @@ Scroll down to Event Triggered HA and click **Enable**.
 Jumbo Frame
 -------------
 
-Jumbo Frame improves the performance between Aviatrix Transit gateway  or an OCI Transit Gateway and CloudN. This feature is only supported for AWS and OCI; Azure and GCP do not support Jumbo frame. To configure, go to Site2Cloud > select a connection and click **Edit**. 
-Scroll down to Jumbo Frame and click **Enable**. 
+Jumbo Frame improves the performance between Aviatrix Transit gateway  or an OCI Transit Gateway and CloudN. This feature is only supported for AWS and OCI; Azure and GCP do not support Jumbo frame. To configure:
+
+1. Navigate to Site2Cloud > select a connection and click **Edit**. 
+#. Scroll down to Jumbo Frame and click **Enable**. 
 
 Clear Sessions
 -------------------
 
-Clear Session allows to reset all the active sessions on a selected Site2Cloud connection. To clear, navigate to SITE2CLOUD > select a connection and click EDIT. 
-Scroll down to Clear Sessions and click CLEAR.
+Clear Session allows to reset all the active sessions on a selected Site2Cloud connection:
+
+1. Navigate to Site2Cloud > select a connection and click **Edit**. 
+#. Scroll down to Clear Sessions and click **Clear**.
 
 
 Periodic Ping
