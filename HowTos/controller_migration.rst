@@ -94,7 +94,7 @@ Click **Yes** to confirm the dissociation.
 
 |azure_IP_details|
 
-8. (For BYOL images only) Set up your `Aviatrix Customer ID <https://docs.aviatrix.com/HowTos/onboarding_faq.html?highlight=%22customer%20id%22#what-is-an-aviatrix-customer-id>`. Open your new Aviatrix Controller and go to Onboarding > Azure > enter your Aviatrix Customer ID.
+8. (For BYOL images only) Set up your `Aviatrix Customer ID <https://docs.aviatrix.com/HowTos/onboarding_faq.html?highlight=%22customer%20id%22#what-is-an-aviatrix-customer-id>`_. Open your new Aviatrix Controller and go to Onboarding > Azure > enter your Aviatrix Customer ID.
 
 Controller Migration in GCP
 ##################################
