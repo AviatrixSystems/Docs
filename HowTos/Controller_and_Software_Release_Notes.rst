@@ -39,7 +39,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Important Notices in Aviatrix Release 6.8** 
 
-- **AVX-26666** – For release 6.8 to roll back to 6.7 correctly, the Controller and gateways must be upgraded to the latest version of 6.7 (6.7.1376) before upgrading to 6.8.
+- **AVX-26666** – For gateway rollback to work in 6.8, your Controller and gateways must be on the latest version of 6.7 (6.7.1376) before upgrading to 6.8.
 
 The following `Private Preview Features`_ are available in this release:
 
@@ -125,7 +125,7 @@ For more information about Aviatrix Edge, refer to the `Aviatrix Edge FAQ <https
 
 **Important Notices in Aviatrix Release 6.7.1376** 
 
-- **AVX-26277** - Controllers running earlier versions of Aviatrix Controller software on AWS AMI version 051022 (released May 1, 2022) will halt due to resource exhaustion after a period of time depending on the level of activity the Controller sees. If using AWS AMI version 051022, you must upgrade to version 6.7.1376 (or 6.6.5712) to prevent this behavior.
+- **AVX-26277** - Controllers running earlier versions of Aviatrix Controller software on AWS AMI version 051022 (released June 9, 2022) will halt due to resource exhaustion after a period of time depending on the level of activity the Controller sees. If using AWS AMI version 051022, you must upgrade to version 6.7.1376 (or 6.6.5712) to prevent this behavior.
 
 **Enhancements in Aviatrix Release 6.7.1376** 
 
@@ -158,7 +158,7 @@ For more information about Aviatrix Edge, refer to the `Aviatrix Edge FAQ <https
 
 **Important Notices in Aviatrix Release 6.6.5712** 
 
-- **AVX-26277** - Controllers running earlier versions of Aviatrix Controller software on AWS AMI version 051022 (released May 1, 2022) will halt due to resource exhaustion after a period of time depending on the level of activity the Controller sees. If using AWS AMI version 051022, you must upgrade to version 6.6.5712 (or 6.7.1376) to prevent this behavior.
+- **AVX-26277** - Controllers running earlier versions of Aviatrix Controller software on AWS AMI version 051022 (released June 9, 2022) will halt due to resource exhaustion after a period of time depending on the level of activity the Controller sees. If using AWS AMI version 051022, you must upgrade to version 6.6.5712 (or 6.7.1376) to prevent this behavior.
 
 **New Features in Aviatrix Release 6.6.5712**
 
