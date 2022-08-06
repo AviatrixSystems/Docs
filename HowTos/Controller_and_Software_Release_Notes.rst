@@ -64,6 +64,10 @@ For more information about Aviatrix Edge, refer to the `Aviatrix Edge FAQ <https
 - **CoPilot Notification Thresholds** - Notification thresholds can be set on gateway tunnel counts configured in CoPilot to send alert notifications via the UI and email. 
 - **Site2Cloud Mapped NAT** - Site2Cloud mapped NAT now supports 32 remote/on-prem CIDRs and ten Site2Cloud connections. The AWS Spoke gateway size must be at least t3.small (or equivalent size in other CSPs). You should keep the number of routes in the landing Spoke VPC route tables to a minimum for better performance of landing Spoke gateway failovers or upgrades. Using RFC 1918 CIDRs to map the remote/on-prem CIDRs is strongly recommended.
 
+**Deprecated Features in Aviatrix Release 6.8**
+
+- ActiveMesh 1.0 is deprecated in this release. You can upgrade to ActiveMesh 2.0 using the Controller's Migrate option. 
+
 **UI Enhancements in Aviatrix Release 6.8**
 
 - Support for deploying a CoPilot clustered deployment
@@ -96,7 +100,8 @@ For more information about Aviatrix Edge, refer to the `Aviatrix Edge FAQ <https
 - **AVX-25228** - Under certain conditions a gateway can be deleted but its peering information is still in the peering_info database, which can cause an exception. Now, the gateway information is removed from the peering_info database when the gateway is deleted.
 - **AVX-25256** - A control plane service running on a gateway no longer consumes multiple gigabytes of memory when there are many IPsec tunnels.
 - **AVX-25257** - An inefficient lookup routine in our internal routing service on Transit gateways running in Azure resulted in a persistently high CPU usage for a large number (1000+) of tunnels. This has been corrected.
-- **AVX-25289*** - A bug in the Preserve AS Path feature resulted in manual summary CIDRs not present in the best route database being listed in BGP Advertise CIDRs on the BGP page for the HA gateway. The routes are programmed correctly; this is a display-only issue. Customers who have enabled this feature must disable and re-enable the feature on the Transit gateway to correct the display issue.  
+- **AVX-25289*** - A bug in the Preserve AS Path feature resulted in manual summary CIDRs not present in the best route database being listed in BGP Advertise CIDRs on the BGP page for the HA gateway. The routes are programmed correctly; this is a display-only issue. Customers who have enabled this feature must disable and re-enable the feature on the Transit gateway to correct the display issue. 
+- **AVX-25425** - The upgrade to Controller version 6.8 will fail if there are racoon-based CSP gateways. You must perform an image upgrade on your gateways before attempting to upgrade to Controller version 6.8.
 - **AVX-25632** - Fixed the issue where the Aviatrix Controller was creating more tunnels which exceeds the maximum throughput of the CSP, for the same gateway instance sizes in terms of core counts.
 - **AVX-25687** - When single SNAT is enabled, traffic toward the Spoke VPC CIDRs is no longer SNAT'ed. Before this change, all traffic egress from Spoke GW eth0 interface would be SNAT'ed, leading to asymmetric traffic on Transit gateways.  
 - **AVX-25993** - The logging service for Rsyslog supports up to nine profiles. The configuration during restore allowed each profile enablement to start the Rsyslog service (6 times or more) in less than 2 seconds. The system service defaults five times in 10 seconds; otherwise, the Rsyslog service will fail in “starting”. The fix ensures that the Rsyslog service is only restarted once for all profiles.
