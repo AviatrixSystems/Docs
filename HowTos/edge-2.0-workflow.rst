@@ -402,13 +402,14 @@ Next, verify Edge in Controller. See `Verifying Edge in Controller <http://docs.
 
 Multiqueue virtio-net allows network performance to scale with the number of vCPUs, by allowing packet processing (packet sending and receiving) through multiple TX and RX queues.
 
-To enable Multiqueue virtio-net support on KVM, add the following to the guest XML definition, where *N* specifies the number of queues to create. Set the value of **N** to the number of vCPUs.
+To enable Multiqueue virtio-net support on KVM, when launching the Edge Gateway VM using virt-install, add the **driver_queues** parameter to the network interface details.
 
-   <interface type='network'>
-        <source network='default'/>
-        <model type='virtio'/>
-        <driver name='vhost' queues='*N*'/>
-   </interface>
+--network bridge=<*bridge-name*>, model=virtio,driver_queues=*N*
+
+where, *N* is the number of vCPUs.
+
+.. Note::
+    KVM Hypervisor does not support configuration of RX/TX queue size during runtime. RX/TX queue size should be configured during Edge VM bootup.
 
 2e. Verifying Edge in Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
