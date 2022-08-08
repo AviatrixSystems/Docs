@@ -47,14 +47,13 @@ The following `Private Preview Features`_ are available in this release:
 
 **New Features in Aviatrix Release 6.8**
 
-- **Aviatrix Edge 2.0** - The Aviatrix Edge solution enables enterprises to extend the Cloud operational model to the edge network for consistent and repeatable architecture, management, visibility, security, and control. This cloud-out architecture enables enterprises to leverage the Aviatrix platform ubiquitous support for edge connectivity. The result is secure, seamless connectivity to edge locations such as data centers, co-locations, remote sites, provider locations, branch offices, and retail stores. Aviatrix Edge 2.0 solution is offered in VMware ESXi and KVM form factors that lets you deploy an Edge Gateway with Spoke Gateway capabilities at the edge network.
-- **Azure BGP over LAN multi-peer and Azure Route Server Integration** - Aviatrix now supports multi-peer BGP Over LAN connections in Azure. This feature offers new functionality, such as the ability to interoperate with multiple third-party virtual appliances such as SD-WAN cloud instances without having to use any tunneling protocols such as IPsec. Please see `this document <https://docs.aviatrix.com/HowTos/azure_bgpolan_multi_peer.html>`_ for more information.
+- **Aviatrix Edge 2.0** - The Aviatrix Edge solution enables enterprises to extend the Cloud operational model to the edge network for consistent and repeatable architecture, management, visibility, security, and control. This cloud-out architecture enables enterprises to leverage the Aviatrix platform ubiquitous support for edge connectivity. The result is secure, seamless connectivity to edge locations such as data centers, co-locations, remote sites, provider locations, branch offices, and retail stores. Aviatrix Edge 2.0 solution is offered in VMware ESXi and KVM form factors that lets you deploy an Edge Gateway with Spoke Gateway capabilities at the edge network. For more information about Aviatrix Edge, refer to the `Aviatrix Edge FAQ <https://docs.aviatrix.com/HowTos/edge-faq.html>`.
+- **Azure BGP over LAN multi-peer and Azure Route Server Integration** - Aviatrix now supports multi-peer BGP Over LAN connections in Azure. This feature offers new functionality, such as the ability to interoperate with multiple third-party virtual appliances such as SD-WAN cloud instances without having to use any tunnelling protocols such as IPsec. Please see `this document <https://docs.aviatrix.com/HowTos/azure_bgpolan_multi_peer.html>`_ for more information.
 - **Certificate-Based Authentication for Site2Cloud VPN** - You can now use certificate-based authentication when configuring a Site2Cloud connection between your Aviatrix gateways and external devices. Currently only the Palo Alto VM-Series firewall is supported as an external device. See `here <https://docs.aviatrix.com/HowTos/site2cloud_cacert.html>`_ for more information. 
 - **HPE for AWS/Azure China** - AWS China and Azure China CSPs now support High Performance Encryption (HPE).
-For more information about Aviatrix Edge, refer to the `Aviatrix Edge FAQ <https://docs.aviatrix.com/HowTos/edge-faq.html>`.
 - **Aviatrix Controller Deployment from Azure China** - Aviatrix now supports deploying a Controller from Azure China. See `this document < https://docs.aviatrix.com/HowTos/aviatrix_china_overview.html?highlight=china%20overview >`_ for more information about which Aviatrix features and services are available for China marketplaces. Please note that Aviatrix CoPilot is still only available in AWS China.
 - **Preserve AS Path** - In 6.7.1319, we introduced a new toggle, “Preserve AS Path”. When enabled, this toggle ensured gateways retained the AS path in manually advertised routes, and that routes would be advertised as local if the route did not exist in best route DB. This change improves failover behavior; gateways will stop advertising any manually advertised CIDR if it is no longer in the best DB (the route is no longer advertised as local).  
-- **Private Mode Phase 1** - Private Mode is a global setting that offers secure orchestrated intra- and multi-cloud networking by removing the need for public IPs for Aviatrix gateways. See `here <https://docs.aviatrix.com/HowTos/privatemode.html>`_ for more information.
+- **Private Mode Phase 1** - Private Mode is a global setting that offers secure orchestrated intra- and multi-cloud networking by removing the need for public IPs for Aviatrix gateways. `Click here for more information about Private Mode `<https://docs.aviatrix.com/HowTos/privatemode.html>`_.
 
 **Enhanced Features in Aviatrix Release 6.8**
 
@@ -114,7 +113,7 @@ For more information about Aviatrix Edge, refer to the `Aviatrix Edge FAQ <https
 
 - **AVX-13908** - In a Site2Cloud connection, the public or private IP address of the remote endpoint is used as the Remote Identification. If one side uses a public IP and the other side uses a private IP, the Site2Cloud connection will not be established since the remote identification does not match.
 - **AVX-24650** - Single SNAT is not supported in Private Mode.
-- **AVX-25641** - When the customer configures the route-based mapped Site2Cloud connections (including enabling Forward Traffic to Transit) with tunnel or gateway failover or subnet editing, some customer traffic could be dropped. This is because the code incorrectly updates the routing parts of the connection. To fix the issue, you should upgrade your fix versions, and then upgrade the image gateways. This removes the incorrect routing information on the gateway so that the new code can rebuild the correct routing.
+- **AVX-25641** - When the customer configures the route-based mapped Site2Cloud connections (including enabling Forward Traffic to Transit) with tunnel or gateway failover or subnet editing, some customer traffic could be dropped. This is because the code incorrectly updates the routing parts of the connection. To fix the issue, you should upgrade your Controller to version 6.8; 6.6e or later; or 6.7b or later. You must also upgrade the image gateways. This removes the incorrect routing information on the gateway so that the new code can rebuild the correct routing.
 - **AVX-26115** - Micro-segmentation: Failure of 6.7 to 6.8 Upgrade. If in 6.7 you created a micro-segmentation policy that used port 0, you must change the port number to a valid value before upgrading.
 - **AVX-26115** - Micro-segmentation: Failure of 6.7 to 6.8 Upgrade. If you experience an upgrade failure due to invalid characters or spaces in app domain or policy names, you can do one of the following and then upgrade:
 
@@ -300,7 +299,9 @@ The **Micro-segmentation** public preview feature has the following enhancements
 
 Issues Corrected in Aviatrix Release 6.4.3057
 
-**AVI-2022-0002** – A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
+- **AVI-2022-0002** – A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
+- **AVX-23200** - When connectivity is lost between a Controller and a Gateway, and the Controller is unable to perform a health check on the Gateway by establishing an HTTPS connection, then an SSH-based connection will be used to perform the health check. The results of the health check are supposed to assist the Controller in determining whether a data-plane change is necessary (e.g., routing table updates).
+
 
 6.5.3233 (05/26/2022) 
 =======================
@@ -314,6 +315,7 @@ Issues Corrected in Aviatrix Release 6.5.3233
 - **AVX-21238** – High Performance Encryption (HPE) Gateways with many HPE peerings that have transit segmentation enabled would encounter an Out of Memory (OOM) issue. The gateway failed to recover even after a reboot.  
 - **AVX-21332** – You can now use “insert_stateful_firewall_rules” API to insert stateful firewall rules, even when the table is empty. 
 - **AVX-22040** – Exception seen when disconnecting a firewall domain from Aviatrix edge domain on an AWS Transit Gateway.  
+- **AVX-23200** - When connectivity is lost between a Controller and a Gateway, and the Controller is unable to perform a health check on the Gateway by establishing an HTTPS connection, then an SSH-based connection will be used to perform the health check. The results of the health check are supposed to assist the Controller in determining whether a data-plane change is necessary (e.g., routing table updates).
 
 Known Issues in Release 6.5.3233
 
