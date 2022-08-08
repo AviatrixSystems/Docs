@@ -18,7 +18,7 @@ The Aviatrix Site2Cloud feature provides encryption over Direct Connect or Expre
 This document describes how to implement the feature over Express Route. The same
 method applies to AWS. 
 
-The VNet VPN gateway that terminates the ExpressRoute connects VNet virtual
+The Express Route VNet gateway that terminates the ExpressRoute connects VNet virtual
 machines with the on-prem servers in a traditional routing domain. While
 Azure ExpressRoute provides a private link between a customer’s on-prem
 network and an Azure VNet without going through the Internet, packets between
