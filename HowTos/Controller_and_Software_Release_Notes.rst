@@ -54,7 +54,7 @@ The following `Private Preview Features`_ are available in this release:
 For more information about Aviatrix Edge, refer to the `Aviatrix Edge FAQ <https://docs.aviatrix.com/HowTos/edge-faq.html>`.
 - **Aviatrix Controller Deployment from Azure China** - Aviatrix now supports deploying a Controller from Azure China. See `this document < https://docs.aviatrix.com/HowTos/aviatrix_china_overview.html?highlight=china%20overview >`_ for more information about which Aviatrix features and services are available for China marketplaces. Please note that Aviatrix CoPilot is still only available in AWS China.
 - **Preserve AS Path** - In 6.7.1319, we introduced a new toggle, “Preserve AS Path”. When enabled, this toggle ensured gateways retained the AS path in manually advertised routes, and that routes would be advertised as local if the route did not exist in best route DB. This change improves failover behavior; gateways will stop advertising any manually advertised CIDR if it is no longer in the best DB (the route is no longer advertised as local).  
-- **Private Mode Phase 1** - Private Mode is a global setting that offers secure orchestrated intra- and multi-clod networking by removing the need for public IPs for Aviatrix gateways. Web proxies are used as the gateways to access the internet. All communication is done via native cloud constructs such as Load Balancers, Private Link Services, and peering connections, which act as the underlay for the Aviatrix encrypted Transit network. Cloud environments that support this feature are AWS, AWS GovCloud (where the Controller can be deployed), Azure, and Azure Government. See `here <https://docs.aviatrix.com/HowTos/privatemode.html>`_ for more information.
+- **Private Mode Phase 1** - Private Mode is a global setting that offers secure orchestrated intra- and multi-cloud networking by removing the need for public IPs for Aviatrix gateways. See `here <https://docs.aviatrix.com/HowTos/privatemode.html>`_ for more information.
 
 **Enhanced Features in Aviatrix Release 6.8**
 
@@ -364,7 +364,7 @@ If you experience a configuration failure, roll back the config_fail gateway aga
 
 You should plan to migrate your Standalone CloudN deployment to Managed CloudN. To migrate to Managed CloudN, see `this document <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#migrating-a-standalone-cloudn-to-a-managed-cloudn>`_.
 
-**Note**: From Release 6.6.5404 onwards, registering CloudN with the Controller does not require the CloudN and the Controller to be the same version. You can register CloundN version 6.6 with Controller version 6.7.
+**Note**: From Release 6.6.5404 onwards, registering CloudN with the Controller does not require the CloudN and the Controller to be the same version. You can register CloudN version 6.6 with Controller version 6.7.
 
 6.7.1186 (05/11/2022) 
 =======================
@@ -386,7 +386,7 @@ You should plan to migrate your Standalone CloudN deployment to Managed CloudN. 
 **Enhanced Features in Aviatrix Release 6.7.1185** 
 
 * **Transit Peering over Public Network** – Aviatrix Transit Gateway peering over public network now supports Transit Gateway peering over the internet using Insane Mode High-Performance Encryption (HPE) between GCP and Azure, AWS, OCI. `<http://docs.aviatrix.com/HowTos/transit_gateway_peering.html#peering-over-public-network>`_. 
-* **Subnet-Level Inspection in Azure** – Subnet-Level inspection in Azure is enhanced to optimize intra-VNet traffic behavior. With this optimization, traffic between VMs in the same subnet and intra-VNet traffic between VMs in different subnets and the same subnet group is routed through the Azure native Virtual Network instead of the Aviatrix Spoke Gateway. If traffic inspection is desired between subnets in a Vnet, the subnets must be in different subnet groups. For more information, refer to Using Subnet Inspection in Azure to Redirect Subnet-Level Traffic to `Aviatrix Transit FireNet and NGFW <http://docs.aviatrix.com/HowTos/transit_subnet_inspection_azure.html>`_. 
+* **Subnet-Level Inspection in Azure** – Subnet-Level inspection in Azure is enhanced to optimize intra-VNet traffic behavior. With this optimization, traffic between VMs in the same subnet and intra-VNet traffic between VMs in different subnets and the same subnet group is routed through the Azure native Virtual Network instead of the Aviatrix Spoke Gateway. If traffic inspection is desired between subnets in a VNet, the subnets must be in different subnet groups. For more information, refer to Using Subnet Inspection in Azure to Redirect Subnet-Level Traffic to `Aviatrix Transit FireNet and NGFW <http://docs.aviatrix.com/HowTos/transit_subnet_inspection_azure.html>`_. 
 
 **UI enhancements in Aviatrix Release 6.7.1185** 
 
@@ -419,7 +419,7 @@ In releases prior to Controller 6.7, the term security domain was used to refer 
 - **AVX-17174** – Controller traceroute utility not showing first-hop when HPE is enabled between Spoke and Transit. 
 - **AVX-18291** – Failed daily and manual controller backups due to a rare corner case condition. 
 - **AVX-18700** – When the Stateful firewall rules reach above 500 rows of rules during add/insert/delete the firewall rule, it will throw error as “Command to execute is too long.” 
-- **AVX-18796** – The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction. 
+- **AVX-18796** – The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets re-certified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction. 
 
   Note that after this fix, the certificate’s validity changes from 60 days to 30 days. The rotation frequency also changes from 30 days to 15 days. 
 
@@ -477,7 +477,7 @@ The following `Private Preview Features`_ are available in this release:
 - **AVX-16122** – The Packet Logging toggle switch on the Stateful Firewall > Policy tab page was not working.
 - **AVX-16838** – A newly created Controller failed to get its public IP, causing some gateways to fail to start. 
 - **AVX-17650** – CloudN custom upgrade dry run GUI hanging at 99%, but commands.log showing succeeded. 
-- **AVX-18796** – The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction. 
+- **AVX-18796** – The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets re-certified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction. 
 
  Note that after this fix, the certificate’s validity changes from 60 days to 30 days. The rotation frequency also changes from 30 days to 15 days. 
 
@@ -559,7 +559,7 @@ Note: This option is only available for Aviatrix Transit Gateways deployed in AW
 
 **Issues Corrected in Aviatrix Release 6.5.3012**
 
-- **AVX-18796** – The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
+- **AVX-18796** – The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets re-certified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
 
 Note that after this fix, the certificate’s validity changes from 60 days to 30 days. The rotation frequency also changes from 30 days to 15 days.
 
@@ -578,7 +578,7 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 
 **Issues Corrected in Aviatrix Release 6.4.3015**
 
-- **AVX-18796** – The Controller to Gateway control channel uses certificate based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
+- **AVX-18796** – The Controller to Gateway control channel uses certificate based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period if any Gateway gets re-certified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
 - **AVX-20109** – Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
 
 #. From the Aviatrix Controller, go to Settings > Maintenance > Selective upgrade and perform a Platform Upgrade to 6.6 with all gateways selected. For more information, see `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
@@ -594,7 +594,7 @@ Note that after this fix, the certificate’s validity changes from 60 days to 3
 
 **Issues Corrected in Release 6.6.5409** 
 
-- **AVX-18796** – The Controller to Gateway control channel uses certificate based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period if any Gateway gets recertified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
+- **AVX-18796** – The Controller to Gateway control channel uses certificate based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period if any Gateway gets re-certified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
 - **AVX-20109** – Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
 
 #. From the Aviatrix Controller, go to Settings > Maintenance > Selective upgrade and perform a Platform Upgrade to 6.6 with all gateways selected. For more information, see `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
@@ -689,7 +689,7 @@ The following `Public Preview Features`_ are available in this release:
 **Enhanced Features in Release 6.6.5224**
 
 - Added support for Aviatrix Spoke Gateway to External Device (BGP-Enabled Spoke). Introduced in Aviatrix release 6.6, you can now create Spoke Gateways that are BGP-enabled and NAT-enabled. Aviatrix Cloud Network Platform has always supported NAT in a way that most enterprises need in order to meet their business and technical requirements. Using BGP-enabled and NAT-enabled Spoke Gateways gives you yet more capabilities to implement policy based SNAT/DNAT functions in strategic places in your network architecture. For more information, see the discussion about `Aviatrix Spoke Gateway to External Device <https://docs.aviatrix.com/HowTos/spokegw_external.html>`_. 
-- Added support for Google Cloud Platform (GCP) BGP over LAN to support multi peer instance. This allows Aviatrix Transit Gateways to communicate with a pair of instances in the same VPC in GCP without running any tunneling protocol such as IPSec or GRE. For more information, see the discussion about `GCP Multi-cloud Transit BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_gcp_workflow.html>`_. 
+- Added support for Google Cloud Platform (GCP) BGP over LAN to support multi peer instance. This allows Aviatrix Transit Gateways to communicate with a pair of instances in the same VPC in GCP without running any tunnelling protocol such as IPSec or GRE. For more information, see the discussion about `GCP Multi-cloud Transit BGP over LAN Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_gcp_workflow.html>`_. 
 - Added support for AWS TGW Connect over Direct Connect. Amazon Web Services (AWS) enables AWS customers to integrate their Software Defined Wide Area Network (SD-WAN) devices with AWS Transit Gateway and AWS Direct Connect so they can use their existing SD-WAN devices to connect their on-premises networks to an AWS Transit Gateway. In support of this, Aviatrix enables you to create one or multiple Transit Gateway Connect attachments over Direct Connect. You can also create Transit Gateway Connect peer attachments. For instructions, see the topic `Enable AWS TGW connect over Direct Connect <https://docs.aviatrix.com/HowTos/tgwconnect.html>`_. 
 - Added support for Aviatrix Controller Security Assertion Markup Language (SAML) based authentication user VPN access in Azure. For instructions, see the topic `Azure SAML Authorization VPN Access <https://docs.aviatrix.com/HowTos/azure_saml_auth_vpn_access.html>`_. 
 - Added support for FireNet with PAN in AWS China. 
@@ -745,13 +745,13 @@ The following `Public Preview Features`_ are available in this release:
 - **AVX-16450** - Addressed issues with CloudN registration in some scenarios. 
 - **AVX-16486** - Improved IPSec performance on high latency links. 
 - **AVX-16494** - Performance optimization in monitoring IPSec states. 
-- **AVX-16496** - When upgrading a standalone CloundN implementation:
+- **AVX-16496** - When upgrading a standalone CloudN implementation:
 
   - For CloudN versions < 6.5.2613: Full outbound access on TCP ports 80 and 443 on CloudN Management is required. 
-  - For CloudN versions >= 6.5.2613:  Please follow the `Internet Acces <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html#internet-access>`_ instructions. For a list of required FDQNs, please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/signin?return_to=https%3A%2F%2Faviatrix.zendesk.com%2Fhc%2Fen-us%2Farticles%2F4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_.
+  - For CloudN versions >= 6.5.2613:  Please follow the `Internet Access <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html#internet-access>`_ instructions. For a list of required FDQNs, please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/signin?return_to=https%3A%2F%2Faviatrix.zendesk.com%2Fhc%2Fen-us%2Farticles%2F4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_.
 
 - **AVX-17027** - The UI upgrade progress bar getting stuck at 99% during standalone CloudN upgrade. 
-- **AVX-17302** - Secondary cidrs in OCI VCN not advertised to Transit Gateway. 
+- **AVX-17302** - Secondary CIDRs in OCI VCN not advertised to Transit Gateway. 
 - **AVX-17420** - If the account is deleted or deactivated from AWS, VPC attachment from AWS TGW is getting deleted. You must manually clean up all blackhole routes (RFC1918 or customized routes) on AWS. 
 - **AVX-17432** - For route based, unmapped S2C, when the connection is down, the routes for the remote CIDRs are still associated with the connection, i.e. the routes are not removed. 
 - **AVX-17512** - Addressed an issue in NAT programming on Spoke-HA when sync-to-ha is enabled. 
@@ -783,7 +783,7 @@ The following `Public Preview Features`_ are available in this release:
 **Known Behaviors in Aviatrix Release 6.5.2898**
 
 - If your Controller is running 6.4 and you have ControllerHA enabled, there is a very small chance that your HA recovery might fail if your Controller goes down by any chance. If that happens, you can manually restore the backup on your new Controller. To avoid this, please upgrade to the 6.5 release.
-- **AVX-16496** - When upgrading a standalone CloundN implementation:
+- **AVX-16496** - When upgrading a standalone CloudN implementation:
 
   - For CloudN versions < 6.5.2613: Full outbound access on TCP ports 80 and 443 on CloudN Management is required. 
   - For CloudN versions >= 6.5.2613: Please follow the instructions at Standalone `CloudN Deployment Checklist <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html?highlight=StandAlone%20CloudN%20>`_. For a list of required FDQNs, please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/signin?return_to=https%3A%2F%2Faviatrix.zendesk.com%2Fhc%2Fen-us%2Farticles%2F4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_.
@@ -938,12 +938,12 @@ The following `Public Preview Features`_ are available in this release:
 - **AVX-14700** - Addressed an issue where some Gateways could be reported in a down state if Certificate Domain is updated.
 - **AVX-14729** - Fixed an issue with cloudN upgrade failing dry run caused due to SSLError (Cert Expired).
 - **AVX-14820** - Addressed an issue with Gateways being in up state during an upgrade from 6.4 to 6.5.
-- **AVX-15012** - Exception error during disabling OCI transit firenet function.
+- **AVX-15012** - Exception error during disabling OCI transit FireNet function.
 - **AVX-15071** - Fixed firewall tuple setting from changing during Controller upgrade.
 - **AVX-15083** - Fixed issues with Site2Cloud with “Single IP HA” feature having issues with customized SNAT features when “sync to HA gateway” configuration is enabled.
 - **AVX-15138** - Fixed route table priority to deal with CIDR overlap between advertised routes from Transit and CaaG/CloudN eth2 MGMT interface.
 - **AVX-15198** - Process optimization to avoid db updates when Transit Gateway details are listed by the Aviatrix Controller or CoPilot.
-- **AVX-15238** - Fixed a CaaG registrion failure issue after the cert domain is changed from default.
+- **AVX-15238** - Fixed a CaaG registration failure issue after the cert domain is changed from default.
 - **AVX-15332** - Fixed an issue that was causing the Controller migration process to fail.
 - **AVX-15454** - Deleted dependency of storage account for Azure China gateways.
 - **AVX-15528** - The real-time status of the gateway is not returned in GCP when there are a large number of instances in the Project.
@@ -969,7 +969,7 @@ The following `Public Preview Features`_ are available in this release:
 
 **Feature Enhancements in Aviatrix Release 6.4**
 
-- **AVX-15101** - Added support for Azure Government Cloud Availablility Zones.
+- **AVX-15101** - Added support for Azure Government Cloud Availability Zones.
 - Enhanced stateful firewall functionality.
 - Enhanced certificate functionality.
 
@@ -998,7 +998,7 @@ To facilitate less disruptive upgrades and reduce maintenance windows Aviatrix p
 
 **Modified Behaviors in Aviatrix Release 6.5**
 
-- **AVX-9894** - Removed deprecated optional custom logging fields for Splunk, Sumo, and FielBeat from the user interface.
+- **AVX-9894** - Removed deprecated optional custom logging fields for Splunk, Sumo, and Filebeat from the user interface.
 - **AVX-10113** - When you import security certificates on the gateways and controller, the certificate must include the proper FQDN. 
  
  For example:
@@ -1044,7 +1044,7 @@ Gateway rollback operations are not supported after Controller restore operation
 **Issues Corrected**
 
 - **AVX-13787** Incorrect gateway status is reported for default routes when an OCI gateway in insane mode is attached to a Transit FireNet gateway.
-- **AVX-14295** When on-premise routes are a injected or withdrawn, they are incorrectly removed in connected domain route tables.
+- **AVX-14295** When on-premise routes are injected or withdrawn, they are incorrectly removed in connected domain route tables.
 - **AVX-14426** Newly deployed cloud gateways use a new IKE implementation and may cause negotiation issues when spoke or on-premise tunnels are configured with an older IKE implementation on one side and the new Aviatrix IKE implementation on the transit side. You may observe tunnels taking a long time to become established, and on occasion may observe route flapping even after the tunnel is established.
 - **AVX-14689** Creating an Aviatrix gateway in the Alibaba Cloud may fail because the public IP address may not get converted to an elastic IP address.
 
@@ -1214,7 +1214,7 @@ R6.3.2475 (05/22/2021)
 - **End of life** Gateway images based on Ubuntu 14 and Ubuntu 16 are deprecated. You MUST replace these with Ubuntu 18 based images before upgrading to 6.4. Refer to FN28 for more details.
 - **Bug fix** Fixed exception for OCI gateway launch.
 - **Bug fix** Fixed bug in GCP FireNet with Palo Alto VM-Series image version listing.
-- **Bug fix** In some corner cases Controller HA, backup/restore breaks the control connection between the controller and Cloudn.
+- **Bug fix** In some corner cases Controller HA, backup/restore breaks the control connection between the controller and CloudN.
 - **Bug fix** Fixed an issue with BGP route advertisement after spoke attachment
 - **Bug fix** When a gateway NIC goes down, an alert will be triggered and the gateway will be taken down and brought back up again after self-remediation. 
 - **Bug Fix** If a VNet route table is deleted unexpectedly, VNets could connect to the wrong Transit Gateway spoke for the subscription. When VNets under different subscriptions use the same Resource group name, and both Spoke VNets connect to different Transit Gateways, the controller cannot distinguish which VNet should attach to which gateway.
@@ -1278,7 +1278,7 @@ R6.3.2216 (2/22/2021)
 - **Bug fix** Fix the route propagation for HPE Aviatrix Transit Gateway eth0 in Azure.
 - **Bug fix** Update RFC1918 routes in OCI VCN for non-default security list.
 - **Bug fix** Fix the default route entry removal issue when "Use VPC/VNET DNS Server" feature in-use.
-- **Bug fix** Security patch for SAML vulnerablity
+- **Bug fix** Security patch for SAML vulnerability
 
 R6.3.2092 (1/31/2021)
 =======================
@@ -1340,7 +1340,7 @@ R6.3.2092 (1/31/2021)
 R6.2.2016 (2/18/2021)
 =======================
 
-- **Bug fix** Security patch for SAML Vulnerablity.
+- **Bug fix** Security patch for SAML Vulnerability.
 
 
 R6.2.2003 (2/15/2021)
@@ -1593,7 +1593,7 @@ R6.0.2387 (7/10/2020)
 R6.0.2383 (7/2/2020)
 ======================
 
-- **Bug fix** for error out when using Diagnostics to force upgrade an gateway. 
+- **Bug fix** for error out when using Diagnostics to force upgrade a gateway. 
 
 R6.0.2373 (6/30/2020)
 =======================
@@ -1862,7 +1862,7 @@ migration beyond release 5.3:
  - **Aviatrix Transit FireNet for Azure** allows you to deploy firewall instances in Azure. For more information, check out `Transit FireNet FAQ <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_.
  - **Check Point CloudGuard** can be launched from Aviatrix Controller for FireNet use case. The Controller monitors the firewall instances' health and automatically detach the unhealthy instance and reattach when it becomes healthy. Note static routes need to be programmed on the firewall instances. 
  - **Fortinet FortiGate** can be launched from Aviatrix Controller for FireNet use case. The Controller monitors the firewall instances' health and automatically detach the unhealthy instance and reattach when it becomes healthy. Note static routes need to be programmed on the firewall instances.
- - **FireNet Fail Close** provides an option to FireNet gateway to drop packets when no firewall instances are attached. To enable, go to Fiewall Network -> Advanced, highlight one FireNet gateway, click the 3 dots skewer. At Fail Close, click Enable.
+ - **FireNet Fail Close** provides an option to FireNet gateway to drop packets when no firewall instances are attached. To enable, go to Firewall Network -> Advanced, highlight one FireNet gateway, click the 3 dots skewer. At Fail Close, click Enable.
 
 4. Operation
 -------------
@@ -2013,13 +2013,13 @@ Transit Gateway Enhancement
 
  - **Route Table Selection** allows VPC route tables to be selected when attaching attaching a Spoke VPC gateway. Only the selected route tables are programmed for learning routes and reprogramming routes at failover time. API support only.
 
- - **TGW DXGW and VPN Enhancment** allows DXGW and VPN to be deployed in any Security Domain. One use case is if you have multiple VPN connection and do not wish to have the remote sites to have connectivity with each other, you can now create VPN connections in different Security Domains. 
+ - **TGW DXGW and VPN Enhancement** allows DXGW and VPN to be deployed in any Security Domain. One use case is if you have multiple VPN connection and do not wish to have the remote sites to have connectivity with each other, you can now create VPN connections in different Security Domains. 
  - **ASN Path Prepend** adds ASN number when Aviatrix Transit Gateway redistribute routes to its BGP peer. For new Transit connection, the Aviatrix Transit Gateway automatically inserts its ASN number. To insert ASN path in an existing connection, go to Transit Network -> Advanced Config -> Prepend AS Path
 
 Security
 ------------
 
- - **Force_Drop Function** in statefule firewall rule to allow immediate packet dropping on established sessions. 
+ - **Force_Drop Function** in stateful firewall rule to allow immediate packet dropping on established sessions. 
  - **Stateful Firewall Port Configuration Enhancement** allows you to add multiple port numbers and multiple port ranges separated by comma in the same rule. 
  - **FQDN for non TCP 443 SSL protocol** allows you to execute FQDN filtering function for HTTPS traffic running on non TCP port 443. The use case is for HTTPS based applications that need to access Internet sites on non TCP port 443. To configure, select HTTPS as the protocol and input a specific TCP port. With is feature, you can configure wild card. 
 
@@ -2390,7 +2390,7 @@ R4.0 (11/26/2018)
 1. Security
 -------------
 
-- **FQDN Source Filter** enhances egress FQDN function by allowing source IP filtering on any tag and gateway. An given tag can have different source IP filtering applying to different gateways. This provides fine grained configuration control. To configure, click Edit Source on an existing tag and select a gateway to edit. For details, read `Edit Source <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#edit-source>`_.  
+- **FQDN Source Filter** enhances egress FQDN function by allowing source IP filtering on any tag and gateway. A given tag can have different source IP filtering applying to different gateways. This provides fine grained configuration control. To configure, click Edit Source on an existing tag and select a gateway to edit. For details, read `Edit Source <https://docs.aviatrix.com/HowTos/FQDN_Whitelists_Ref_Design.html#edit-source>`_.  
 
 2. Next Gen Transit Network
 -----------------------------
@@ -2402,7 +2402,7 @@ R4.0 (11/26/2018)
 3. Operations
 --------------
 
-- **AWS CloudWatch Log Integration** exports the Aviatrix Controller and gateways logs to AWS ClouddWatch Log. If you are already using AWS CloudWatch log service, enable this feature to consolidate the logs from Aviatrix Controller and gateways to the same service. For details, read `AWS CloudWatch Integration <https://docs.aviatrix.com/HowTos/cloudwatch.html>`_. 
+- **AWS CloudWatch Log Integration** exports the Aviatrix Controller and gateways logs to AWS CloudWatch Log. If you are already using AWS CloudWatch log service, enable this feature to consolidate the logs from Aviatrix Controller and gateways to the same service. For details, read `AWS CloudWatch Integration <https://docs.aviatrix.com/HowTos/cloudwatch.html>`_. 
 
 
 
@@ -2592,7 +2592,7 @@ R3.1 (3/6/2018)
 
 - **Configurable TLS version** allows you to turn off support for older versions, such as TLSv1.0 and TLSv1.1. TLSv1.2 is supported by default. To configure, go to Settings -> Advanced -> TLS VERSIONS SUPPORT
 
-- **Dashboard Logical View** allows you to view VPCs and connection graph. Each dot represents a gateway deployed in a VPC. You can rearrange the graph by draging the dots. Make sure you click Save to save the changes.   
+- **Dashboard Logical View** allows you to view VPCs and connection graph. Each dot represents a gateway deployed in a VPC. You can rearrange the graph by dragging the dots. Make sure you click Save to save the changes.   
 - **Gateway Single AZ** is an economic way to improve gateway uptime without running a standby instance. The Aviatrix Controller monitors the gateway's health and when gateway keep alive packets fail to arrive at the Controller, it stops and starts the gateway again. To configure, go to Gateway, select a gateway to Edit, then Enable or Disable Single AZ gateway HA. 
 
 - **Security patches** for CIS-CAT and Meltdown.
@@ -2684,7 +2684,7 @@ R2.7
 
 - Allocate New EIP. When this option is selected at new gateway launch time, Controller always allocates a new EIP from AWS and associated it with the gateway. If this option is unchecked, Controller will first look at the EIP pool that belong to the account: if there is allocated but unassociated EIP, Controller will allocate EIP from this pool and associate it with the gateway, otherwise it will select one EIP from the pool and associate it with the gateway. 
 
-- Support resizing active Gateway without deleting its peering tunnel. You can resize an active gateway when there peering HA configured. The workflow should be: 1) Settings -> Gateways -> select the gateway, select Edit. 2) Select it desired gateway instance size, click Change. As the result of this function, the gateway will be stopped and tunnel switch to backup tunnel. 3) Go to Settings -> Peering, select the peer and click Force Switchover.  
+- Support resizing active Gateway without deleting its peering tunnel. You can resize an active gateway when their peering HA configured. The workflow should be: 1) Settings -> Gateways -> select the gateway, select Edit. 2) Select it desired gateway instance size, click Change. As the result of this function, the gateway will be stopped and tunnel switch to backup tunnel. 3) Go to Settings -> Peering, select the peer and click Force Switchover.  
 
 - Support resizing UDP based OpenVPN® gateway instance. 
 
@@ -2705,7 +2705,7 @@ Connectivity
 
 - Run encrypted tunnel on TCP port 443. Aviatrix Virtual Appliance CloudN now offers a TCP based secure tunnel connectivity. With this new capability, you do not need to open outbound UDP port 500 and 4500. The encrypted tunnel runs on TCP 443. To configure, go to Datacenter Extension, select TCP for the field Tunnel Type. UDP based encrypted tunnel is still supported. 
 
-- Reserve on-prem segment for Datacenter Extension feature of CloudN. After deciding how many VPCs you wish to configure during on boarding, you can sub divide the segments to reserve some for on prem VM deployment. This allows you launch applications where some part of it (such as database) is on-prem and others parts of it (such as web front end) to be in VPC.  
+- Reserve on-prem segment for Datacenter Extension feature of CloudN. After deciding how many VPCs you wish to configure during on boarding, you can sub divide the segments to reserve some for on-prem VM deployment. This allows you launch applications where some part of it (such as database) is on-prem and others parts of it (such as web front end) to be in VPC.  
 
 - Google IDP support. Google IDP is now supported IDP for the Aviatrix SAML VPN solution. 
 
@@ -2717,7 +2717,7 @@ Security
 API
 ---------
 
-- New APIs are published. list active VPN users, edit Open VPN configuration, backup and restore, list vpc peers, list image. For API details, click `this link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Cloud+Services+Gateway+Controller+API+reference.pdf>`_ for details.
+- New APIs are published. list active VPN users, edit Open VPN configuration, backup and restore, list VPC peers, list image. For API details, click `this link. <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Cloud+Services+Gateway+Controller+API+reference.pdf>`_ for details.
 
 User Interface
 --------------
