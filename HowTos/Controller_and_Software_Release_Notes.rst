@@ -114,15 +114,15 @@ The following `Private Preview Features`_ are available in this release:
 - **AVX-13908** - In a Site2Cloud connection, the public or private IP address of the remote endpoint is used as the Remote Identification. If one side uses a public IP and the other side uses a private IP, the Site2Cloud connection will not be established since the remote identification does not match.
 - **AVX-24650** - Single SNAT is not supported in Private Mode.
 - **AVX-25641** - When the customer configures the route-based mapped Site2Cloud connections (including enabling Forward Traffic to Transit) with tunnel or gateway failover or subnet editing, some customer traffic could be dropped. This is because the code incorrectly updates the routing parts of the connection. To fix the issue, you should upgrade your Controller to version 6.8; 6.6e or later; or 6.7b or later. You must also upgrade the image gateways. This removes the incorrect routing information on the gateway so that the new code can rebuild the correct routing.
-- **AVX-26115** - Micro-segmentation: Failure of 6.7 to 6.8 Upgrade. If in 6.7 you created a micro-segmentation policy that used port 0, you must change the port number to a valid value before upgrading.
-- **AVX-26115** - Micro-segmentation: Failure of 6.7 to 6.8 Upgrade. If you experience an upgrade failure due to invalid characters or spaces in app domain or policy names, you can do one of the following and then upgrade:
+-**AVX-26115, AVX-27062** - Micro-segmentation: Before upgrading from 6.7 to 6.8:
 
-   - remove these characters or spaces from the app domain or policy names
-   - rename the app domains or policies 
-   - If there is a policy in 6.7 that contains port 0, change it to a valid value
+   - remove invalid characters or spaces, if any, in app domain or policy names
+   - if there is a policy that contains port 0, change it to a valid value
+   - port ranges should follow < lower port number - higher port number > format   
 
 - **AVX-25673** - After Site2Cloud verbose logging is enabled, it cannot be disabled in the UI.
 - **AVX-26419** - If you are connecting to another Aviatrix device, using IKEv2 is preferred. IKEv2 support started in version 5.0.2667. If you configure IKEv1 in a Site2Cloud connection that uses certificate-based authentication and is connecting to another Aviatrix device, you must add the intermediate CA’s in addition to the root CA. When an intermediate CA is renewed and re-authentication is attempted, the Site2Cloud connection will go down until you add the new certificate.
+
 
 6.7.1376 (08/02/2022) 
 =========================
