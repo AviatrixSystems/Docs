@@ -193,7 +193,7 @@ Setting up IKE Crypto Profile and IKE Gateways
 						it should be peer private IP) 
       ===============================     =========================================
 
-According to the Palo Alto Networks official documents, it is not necessary to add Peer Identification. However, Aviatrix recommends adding it, to make sure the tunnel is working. In the event that IPsec tunnel is up but traffic is not passing between cloud and on-prem, you may want to enable NAT-T in the Palo Alto Networks Firewall.
+According to the Palo Alto Networks official documents, it is not necessary to add Peer Identification. However, Aviatrix recommends adding it, to make sure the tunnel is working. In the event that IPsec tunnel is up but traffic is not passing between the Cloud and on-prem, you may want to enable NAT-T in the Palo Alto Networks Firewall.
 
 
       |image3|
