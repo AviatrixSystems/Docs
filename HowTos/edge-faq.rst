@@ -71,11 +71,11 @@ What are the use cases for Aviatrix Edge?
 
 The following are examples of Aviatrix Edge use cases.
 
--       `Extend Aviatrix to edge locations <http://docs.aviatrix.com/HowTos/edge-faq.html#extend-aviatrix-to-edge-locations>`_
+-       `Extend Aviatrix to Edge Locations <http://docs.aviatrix.com/HowTos/edge-faq.html#extend-aviatrix-to-edge-locations>`_
 
--	`Multi-Cloud connectivity using Aviatrix Edge <http://docs.aviatrix.com/HowTos/edge-faq.html#multi-cloud-connectivity-using-aviatrix-edge>`_
+-	`Multi-Cloud Connectivity Using Aviatrix Edge <http://docs.aviatrix.com/HowTos/edge-faq.html#multi-cloud-connectivity-using-aviatrix-edge>`_
 
--	`Aviatrix Edge connectivity over private network <http://docs.aviatrix.com/HowTos/edge-faq.html#aviatrix-edge-connectivity-over-private-network>`_
+-	`Aviatrix Edge Connectivity over Private Network <http://docs.aviatrix.com/HowTos/edge-faq.html#aviatrix-edge-connectivity-over-private-network>`_
 
 -	`Aviatrix Edge connectivity over public network <http://docs.aviatrix.com/HowTos/edge-faq.html#aviatrix-edge-connectivity-over-public-network>`_
 
