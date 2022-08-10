@@ -184,7 +184,7 @@ You now need to verify that the RFC 1918 routes exist on the firewall.
 #. Click the Static Routes tab. You will see the same RFC 1918 routes with AVX prefixes that were created by the Aviatrix Controller.
 
 
-.. |pan_wan_azure| image:: config_paloaltoVM_media/pan_lan_azure.png
+.. |pan_lan_azure| image:: config_paloaltoVM_media/pan_lan_azure.png
    :scale: 35%
 
 .. |pan_wan_azure| image:: config_paloaltoVM_media/pan_wan_azure.png
@@ -194,16 +194,15 @@ You now need to verify that the RFC 1918 routes exist on the firewall.
    :scale: 35%
 
 .. |pan_policy_commit| image:: config_paloaltoVM_media/PAN_policy_commit.png
-   :scale: 35%
+   :scale: 50%
 
 .. |PAN_FW_Azure_Controller| image:: config_paloaltoVM_media/PAN_FW_Azure_Controller.png
    :scale: 35%
 
 .. |azure_paloalto_policy| image:: config_paloaltoVM_media/azure_paloalto_policy.png
-   :scale: 35%
+   :scale: 45%
 
 .. |firewall_launch| image:: config_paloaltoVM_media/firewall_launch.png
-   :scale: 35%
 
 .. |avx-firewall-step7a_UI| image:: config_paloaltoVM_media/avx-firewall-step7a_UI.png
    :scale: 35%
