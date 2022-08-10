@@ -54,7 +54,7 @@ Aviatrix Edge 2.0 is supported on Aviatrix Controller version 6.8.
 
 For more information about Edge 2.0 use case scenarios, see `What are the use cases for Aviatrix Edge? <http://docs.aviatrix.com/HowTos/edge-faq.html#what-are-the-use-cases-for-aviatrix-edge?>`_.
 
-For additional requirements and deployment workflow, see `Deploying Aviatrix Edge 2.0 <http://docs.aviatrix.com/HowTos/edge-2.0.html>`_.
+For additional requirements and deployment workflow, see `Deploying Aviatrix Edge 2.0 <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html>`_.
 
 Aviatrix Edge 1.0
 -----------------
