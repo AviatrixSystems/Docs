@@ -223,7 +223,7 @@ To create the Edge Gateway ISO image file, follow these steps.
 
     n.  **LAN Interface IP/Mask**: Enter the interface IP/mask for the Edge VM. 
 
-	o.  **Active-Standby**: Check the box for active-standby mode (see `Active-Standby Edge <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#active-standby-edge>`_). Leave unchecked for Active-Active mode.
+	o.  **Active-Standby**: Check the box for active-standby mode (see `Active-Standby Edge <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#active-standby-edge>`_. Leave unchecked for Active-Active mode.
 	
 	.. Important::
           The Active-Active and Active-Standby modes are configured when you create the first Edge ZTP for a particular Site ID. If you need to change a configuration from Active-Active to Active-Standby, delete all the Edge Gateway for that Site ID and recreate the Edge Gateway with the new setting.
@@ -266,7 +266,7 @@ Follow these guidelines to decide whether to use an existing Site ID or create a
 2. Deploy Edge Virtual Machine and Attach ZTP ISO File
 ------------------------------------------------------
 
-To deploy the Edge virtual machine on KVM, skip to step `2c. Deploying the Edge Virtual Machine in KVM <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#2c.-deploying-the-edge-virtual-machine-in-kvm>`_.
+To deploy the Edge virtual machine on KVM, skip to step `2c. Deploying the Edge Virtual Machine in KVM  <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#2c.-deploying-the-edge-virtual-machine-in-kvm>`_.
 
 2a. Deploying the Edge Virtual Machine in VMware ESXi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -423,9 +423,9 @@ To verify the Edge Gateway is up, wait for 5 minutes after you have attached the
 
    |edge-verify|
 
-   If the Edge Gateway status is not **up**, you can troubleshoot Edge connectivity using CLI commands on the Edge Gateway console. See `Troubleshooting Edge Gateway Connectivity <http://docs.aviatrix.com/HowTos/edge_2.0.html#troubleshooting-edge-gateway-connectivity>`_.
+   If the Edge Gateway status is not **up**, you can troubleshoot Edge connectivity using CLI commands on the Edge Gateway console. See `Troubleshooting Edge Gateway Connectivity <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#troubleshooting-edge-gateway-connectivity>`_.
 
-Next, attach the Edge Gateway to the Transit Gateway. See `Attach Edge Gateway to Transit Gateway <http://docs.aviatrix.com/HowTos/edge_2.0.html#attach-edge-gateway-to-transit-gateway>`_.
+Next, attach the Edge Gateway to the Transit Gateway. See `Attach Edge Gateway to Transit Gateway <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#attach-edge-gateway-to-transit-gateway>`_.
 
 3. Attach Edge Gateway to Transit Gateway
 ------------------------------------------
@@ -567,7 +567,7 @@ Configuring Transit Peering over Public Network
 To create Transit Peering over public network to use as backup path, follow these steps.
 
 1.	In the Aviatrix Controller, go to **MULTI-CLOUD TRANSIT** > **Transit Peering**.
-2.  Create a Transit Gateway Peering by following the `Transit Gateway Peering over Public Network workflow <https://docs.aviatrix.com/HowTos/transit_gateway_peering_over_public_network_workflow.html>`_.
+2.  Create a Transit Gateway Peering by following the `Multi-Cloud Transit Gateway Peering over Public Network workflow <https://docs.aviatrix.com/HowTos/multi-cloud-transit_gateway_peering_over_public_network_workflow.html>`_.
 3.	Go to **MULTI-CLOUD TRANSIT** > **Advanced Config**. Select the first Transit Gateway and take note the Local AS Number. 
 4.	Scroll down to the **Connection AS Path Prepend** section. Select the Transit Peering connection name.
 5.	In the **Prepend AS Path** field, input the same Local AS Number three times separated by space.
