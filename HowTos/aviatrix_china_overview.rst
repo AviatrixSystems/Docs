@@ -85,9 +85,9 @@ Requirements to Implement Aviatrix in China Regions
 
 The following are the requirements to implement Aviatrix in AWS China, Azure China, and Alibaba China regions.
 
-- The Aviatrix Controller must be deployed in the China region, for example, AWS China Ningxia region. Currently, an Aviatrix Controller in the Global region (non-China) does not support Aviatrix Gateways deployment and management in the China region. Similarly, an Aviatrix Controller in the China region does not support Aviatrix Gateways deployment and management in the Global region. See `Unsupported Topologies <https://docs.aviatrix.com/HowTos/aviatrix_china_overview.html#unsupported-topologies>`_.
+- The Aviatrix Controller must be deployed in the China region, for example, AWS China Ningxia region. Currently, an Aviatrix Controller in the Global region (non-China) does not support Aviatrix Gateways deployment and management in the China region. Similarly, an Aviatrix Controller in the China region does not support Aviatrix Gateways deployment and management in the Global region. See `Unsupported Topologies`_.
 
-- You must have an Internet Content Provider (ICP) license. An ICP license is required for opening a CSP account in the China region. For more information, see `Acquiring a China ICP License <https://docs.aviatrix.com/HowTos/aviatrix_china_overview.html#acquiring-a-china-icp-license>`_.
+- You must have an Internet Content Provider (ICP) license. An ICP license is required for opening a CSP account in the China region. For more information, see `Acquiring a China ICP License`_.
 
 Unsupported Topologies
 ======================
@@ -161,7 +161,7 @@ The following options are available for the underlying network of Site2Cloud:
 
 To create a global multi-cloud network with low-latency connectivity between the China region and the global region, we recommend that you use private connectivity provided by certified telecom carriers or through the Alibaba Cloud network.
 
-For description of the design patterns for these underlying networks, see `Design Patterns for China Region <https://docs.aviatrix.com/HowTos/aviatrix_china_overview.html#design-patterns-for-china-region>`_.
+For description of the design patterns for these underlying networks, see `Design Patterns for China Region`_.
 
 Launching Aviatrix Controller in AWS China
 ==========================================
@@ -228,13 +228,13 @@ Cross-border connectivity through Alibaba Cloud Enterprise Network (Alibaba CEN)
    :scale: 50%
 
 .. |aviatrix_china_site2cloud_internet| image:: aviatrix_china_overview_media/aviatrix_china_site2cloud_internet.png
-   :scale: 50%
+   :scale: 40%
 
 .. |aviatrix_china_site2cloud_telecoms| image:: aviatrix_china_overview_media/aviatrix_china_site2cloud_telecoms.png
-   :scale: 50%
+   :scale: 40%
 
 .. |aviatrix_china_site2cloud_alicloud| image:: aviatrix_china_overview_media/aviatrix_china_site2cloud_alicloud.png
-   :scale: 50%
+   :scale: 40%
    
 .. |aviatrix_aws_china_marketplace| image:: aviatrix_china_overview_media/aviatrix_aws_china_marketplace.png
    :scale: 50%
