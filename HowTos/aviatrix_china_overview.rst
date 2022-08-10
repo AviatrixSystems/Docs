@@ -161,7 +161,7 @@ The following options are available for the underlying network of Site2Cloud:
 
 To create a global multi-cloud network with low-latency connectivity between the China region and the global region, we recommend that you use private connectivity provided by certified telecom carriers or through the Alibaba Cloud network.
 
-For description of the design patterns for these underlying networks, see `Design Patterns for China Region`_.
+For a description of the design patterns for these underlying networks, see `Design Patterns for China Region`_.
 
 Launching Aviatrix Controller in AWS China
 ==========================================
