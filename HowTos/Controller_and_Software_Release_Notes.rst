@@ -34,10 +34,10 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
-6.8 (08/06/2022)
+6.8.1148 (08/09/2022)
 ================
 
-**Important Notices in Aviatrix Release 6.8** 
+**Important Notices in Aviatrix Release 6.8.1148** 
 
 - **AVX-26666** – For gateway rollback to work in 6.8, your Controller and gateways must be on the latest version of 6.7 (6.7.1376) before upgrading to 6.8.
 
@@ -45,7 +45,7 @@ The following `Private Preview Features`_ are available in this release:
 
 - **Managed CloudN for AWS and Azure China** - Managed CloudN for AWS and Azure China provides High-Performance Encryption (Insane Mode) to on-premises locations in China with CloudN. Refer to `Managed CloudN Workflows <https://docs.aviatrix.com/HowTos/CloudN_workflow.html>`_.
 
-**New Features in Aviatrix Release 6.8**
+**New Features in Aviatrix Release 6.8.1148**
 
 - **Aviatrix Edge 2.0** - The Aviatrix Edge solution enables enterprises to extend the Cloud operational model to the edge network for consistent and repeatable architecture, management, visibility, security, and control. This cloud-out architecture enables enterprises to leverage the Aviatrix platform ubiquitous support for edge connectivity. The result is secure, seamless connectivity to edge locations such as data centers, co-locations, remote sites, provider locations, branch offices, and retail stores. Aviatrix Edge 2.0 solution is offered in VMware ESXi and KVM form factors that lets you deploy an Edge Gateway with Spoke Gateway capabilities at the edge network. For more information about Aviatrix Edge, refer to the `Aviatrix Edge FAQ <https://docs.aviatrix.com/HowTos/edge-faq.html>`.
 - **Azure BGP over LAN multi-peer and Azure Route Server Integration** - Aviatrix now supports multi-peer BGP Over LAN connections in Azure. This feature offers new functionality, such as the ability to interoperate with multiple third-party virtual appliances such as SD-WAN cloud instances without having to use any tunnelling protocols such as IPsec. Please see `this document <https://docs.aviatrix.com/HowTos/azure_bgpolan_multi_peer.html>`_ for more information.
@@ -55,7 +55,7 @@ The following `Private Preview Features`_ are available in this release:
 - **Preserve AS Path** - In 6.7.1319, we introduced a new toggle, “Preserve AS Path”. When enabled, this toggle ensured gateways retained the AS path in manually advertised routes, and that routes would be advertised as local if the route did not exist in best route DB. This change improves failover behavior; gateways will stop advertising any manually advertised CIDR if it is no longer in the best DB (the route is no longer advertised as local).  
 - **Private Mode Phase 1** - Private Mode is a global setting that offers secure orchestrated intra- and multi-cloud networking by removing the need for public IPs for Aviatrix gateways. `Click here for more information about Private Mode `<https://docs.aviatrix.com/HowTos/privatemode.html>`_.
 
-**Enhanced Features in Aviatrix Release 6.8**
+**Enhanced Features in Aviatrix Release 6.8.1148**
 
 - **CoPilot Clustered Deployment from Aviatrix Controller UI (AWS CSP only)** - If you deployed Aviatrix Controller in AWS, you now have the option to deploy Aviatrix CoPilot as a clustered (fault tolerant) system directly from your Aviatrix Controller UI. For detailed information, see the Aviatrix CoPilot Deployment Guide.
 - **Near-hitless GW Resize/Replace** -- Aviatrix cloud and routing orchestration enhancements now allow for near hitless traffic loss when performing an image upgrade or when resizing a gateway from the Controller (applies to HA pairs).
@@ -63,18 +63,18 @@ The following `Private Preview Features`_ are available in this release:
 - **CoPilot Notification Thresholds** - Notification thresholds can be set on gateway tunnel counts configured in CoPilot to send alert notifications via the UI and email. 
 - **Site2Cloud Mapped NAT** - Site2Cloud mapped NAT now supports 32 remote/on-prem CIDRs and ten Site2Cloud connections. The AWS Spoke gateway size must be at least t3.small (or equivalent size in other CSPs). You should keep the number of routes in the landing Spoke VPC route tables to a minimum for better performance of landing Spoke gateway failovers or upgrades. Using RFC 1918 CIDRs to map the remote/on-prem CIDRs is strongly recommended.
 
-**Deprecated Features in Aviatrix Release 6.8**
+**Deprecated Features in Aviatrix Release 6.8.1148**
 
 - ActiveMesh 1.0 is deprecated in this release. You can upgrade to ActiveMesh 2.0 using the Controller's Migrate option. 
 
-**UI Enhancements in Aviatrix Release 6.8**
+**UI Enhancements in Aviatrix Release 6.8.1148**
 
 - Support for deploying a CoPilot clustered deployment
 - Support for deploying Aviatrix Edge Gateway
 - Added CA Certificate section in Site2Cloud (Controller)
 - Added Private Mode section in Settings (Controller)
 
-**Issues Corrected in Aviatrix Release 6.8**
+**Issues Corrected in Aviatrix Release 6.8.1148**
 
 - **AVX-10899** - When a new subnet was added to a Google Cloud VPC after a spoke was created, the firewall rules were not getting updated to reflect the new subnet. After this fix, when a new subnet is added, the firewall rule is updated when attaching Spoke to Transit. If a Spoke is already attached to Transit and a new subnet is added, the Spoke needs to be detached and reattached to update the firewall rule.
 - **AVX-17284** - Fixed Stateful firewall log throttling. The logs no longer undergo quick rotation.
@@ -109,7 +109,7 @@ The following `Private Preview Features`_ are available in this release:
 - **AVX-26095** - An improperly configured security group prevented gateways from sending keepalive checks to the Aviatrix Controller. This should have marked the gateways as down. However, because of a bug in our internal service, the Controller continued to mark those gateways as up. 
 - **AVX-26188** - IPsec tunnel re-establishment time on the Transit gateway has been improved when there is a large number of tunnels. This will shorten the time it takes to recover from a failure event.
 
-**Known Issues in Aviatrix Release 6.8**
+**Known Issues in Aviatrix Release 6.8.1148**
 
 - **AVX-13908** - In a Site2Cloud connection, the public or private IP address of the remote endpoint is used as the Remote Identification. If one side uses a public IP and the other side uses a private IP, the Site2Cloud connection will not be established since the remote identification does not match.
 - **AVX-24650** - Single SNAT is not supported in Private Mode.
