@@ -2115,8 +2115,7 @@ The Settings page allows you to configure various CoPilot settings. The default 
 Configuration
 ---------------
 
-Options
-~~~~~~~~~~~~~~~
+**Options**
 
 ============================  ===================================================================  
  netflowPort                    Allows you to change the port on which flows are sent/received
@@ -2126,8 +2125,7 @@ Options
  dataStoreHeapSize              Memory allocation for Data Store
 ============================  ===================================================================
 
-DNS Lookup Server
-~~~~~~~~~~~~~~~~~~~~~~~~
+**DNS Lookup Server**
 
 ============================  ===================================================================  
  server_1                      Primary DNS Server
@@ -2135,9 +2133,33 @@ DNS Lookup Server
  server_2                      Backup DNS Server
 ============================  ===================================================================
 
+**Certificate Management**
 
-Disk Space Management
-~~~~~~~~~~~~~~~~~~~~~~~~
+CoPilot comes with a self-signed certificate and key. You can upload your own SSL certificate and key.
+ 
+If you are using a Windows Internal CA, the following is an example of the certificate format for the .crt and .key file:
+ 
+-   SSL Certificate: **aviatrixCustomerCertificate** -> PEM-encoded X509 full-chain certificate
+ 
+-   SSL Certificate Key: **aviatrixCustomerKey** -> PEM-encoded RSA private key (not encrypted with DES3)
+ 
+SSL Certificate: **aviatrixCustomerCertificate** example: ::
+
+  -----BEGIN CERTIFICATE-----
+  <root CA cert>
+  -----END CERTIFICATE-----
+  -----BEGIN CERTIFICATE-----
+  <intermediate CA cert>
+  -----END CERTIFICATE-----
+
+SSL Certificate Key: **aviatrixCustomerKey** example: ::
+ 
+  -----BEGIN RSA PRIVATE KEY-----
+  <private key>
+  -----END RSA PRIVATE KEY-----
+ 
+**Disk Space Management**
+
 **Min. disk space % avail. threshold**
   Allows you to set a threshold based on available disk space, at which point automatic 
   data deletion start. When this threshold is reached, CoPilot will start deleting records in order of 

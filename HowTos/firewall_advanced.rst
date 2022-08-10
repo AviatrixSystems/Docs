@@ -35,21 +35,6 @@ Egress Static CIDRs
 You can allow egress to a subset of your IP address space from your on-prem data center to the Internet with Aviatrix Egress FireNet. Static CIDR egress is supported on Aviatrix Transit and AWS Transit Gateways (TGW). Up to 20 subnets are supported.
 
 
-Fail Close
--------------
-
-Fail Close feature applies to the scenario where there are no firewalls attached to the FireNet Gateways. Fail Close
-is disabled by default. 
-
-When Fail Close is disabled, east-west traffic that requires inspection  
-can pass through the FireNet Gateways without having any attached firewalls, making the FireNet Gateway behave
-as a lookback interface. This is useful as it allows you  to isolate and test network connectivity 
-during troubleshooting.  
-
-When Fail Close is enabled, FireNet Gateway drops all traffic when there are no firewalls 
-attached to the FireNet Gateways. 
-
-
 Network List Excluded From East-West Inspection
 -------------------------------------------------------------------
 
@@ -74,16 +59,16 @@ Firewall Network solution supports two hashing types:
 By default, AWS TGW-based FireNet and Aviatrix Transit FireNet use 5-tuple hashing algorithm (source IP, source port, destination IP, destination port and protocol type) to load balance the traffic across different firewall. However, user has an option to select two-tuple (source IP and destination IP) hashing algorithm to map traffic to the available firewalls.
 
 
-Keep Alive via Firewall Lan Interface
----------------------------------------------------------------------
+Keep Alive via Firewall LAN Interface (AWS)
+---------------------------------------------
 
-For AWS, LAN or Management interface can be used for firewall health check and failure detection.
+For AWS, the LAN or Management interface can be used for firewall health check and failure detection.
 
-By default, Aviatrix Controller check the firewall's health by pinging the firewall's management IP address. Starting 6.0, firewall instance’s health can also be checked by pinging its LAN interface from the connecting Aviatrix FireNet Gateway. This is an alternative approach which improves firewall failure detection time and detection accuracy.
+See `below <#checking-firewall-health-in-azure-and-gcp>`_ for information on performing health checks in Azure and GCP.
 
-The mechanism is that the FireNet Gateway pings the firewall instance's LAN interface every 5 seconds with a ping time out of 20ms. If the first ping times out, it 
-immediately pings again. Two consecutive ping failures indicates the firewall is in down state and it is detached from the FireNet Gateway pool. The ping functions continues 
-and it detects the firewall instance has come up by successful pings, it is attached back to the FireNet Gateway pool. 
+By default, Aviatrix Controller checks the health of a firewall in AWS by pinging the firewall's management IP address. Starting in version 6.0, you can also check the AWS firewall instance’s health by pinging its LAN interface from the connecting Aviatrix FireNet Gateway. This is an alternative approach which improves firewall failure detection time and detection accuracy.
+
+The FireNet Gateway pings the firewall instance's LAN interface every 5 seconds with a ping time out of 20ms. If the first ping times out, it immediately pings again. Two consecutive ping failures indicate that the firewall is in 'down' state and it is detached from the FireNet Gateway pool. The ping function continues and once it detects that the firewall instance has come up (pings are successful), it is attached back to the FireNet Gateway pool. 
 
 With LAN interface pinging, the firewall instance fail over time is reduced. 
 
@@ -149,6 +134,22 @@ In this example, AWS and Check Point used to demonstrate the functionality as sh
 Go to Check Point logs and Monitoring section, notice that the ICMP health check is initiated every 5 seconds from the Aviatrix Transit FireNet Gateways. The 5 second setting is the default and cannot be changed.
 
 |cp_icmp_lan_example|
+
+
+Checking Firewall Health in Azure and GCP
+-----------------------------------------
+
+Enabling Transit FireNet for Azure or GCP automatically creates Load Balancers in those CSPs. HTTPS in these Load Balancers perform the firewall health check (not ping). You must disable ping in the interface management profile of your Azure or GCP firewalls. 
+
+In Azure:
+
+- You can check the health probe status under Monitor > Metrics. See `this article <https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-standard-diagnostics>`_ for more information.
+- The State column on the Gateway page in the Aviatrix Controller only reflects if the firewall is up or not. It does not reflect if the firewall is responding to health checks. You must check the health of the firewall in the Azure portal.
+
+In GCP: 
+
+- You can check the health status of the backend under Network services > Load balancing > Load balancer details. See `this article <https://cloud.google.com/load-balancing/docs/health-check-concepts#lb_guide>`_ for more information.
+- The State column on the Gateway page in the Aviatrix Controller reflects the health status of the firewall from the GCP load balancer.
 
 
 .. |firewall_advanced_lan_1| image:: firewall_network_workflow_media/firewall_advanced_lan_1.png
