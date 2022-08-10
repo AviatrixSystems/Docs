@@ -5,14 +5,6 @@ Field Notices
 .. Note::
 
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
- 
-
-Field Notice 0039 (2022/08/08)
-------------------------------
-
-**High Priority Bug Fix: AVX-25425**
-
-The upgrade to Controller version 6.8 will fail if there are racoon-based CSP gateways. You must perform an image upgrade on your gateways before attempting to upgrade to Controller version 6.8.
 
 
 Field Notice 0038 (2022/08/09)

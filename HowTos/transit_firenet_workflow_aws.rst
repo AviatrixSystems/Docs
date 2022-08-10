@@ -49,21 +49,23 @@ Transit FireNet builds on the Aviatrix Transit Network where Aviatrix gateways a
 Make sure the deployment meets the following specifications:
 
 1.	The minimum size of the Aviatrix Transit Gateway is c5.xlarge.
-#.	The Aviatrix Transit Network must be in Connected mode. Go to Transit Network > Advanced Config > Connected Transit and click Enable.
+#.	The Aviatrix Transit Network must be in Connected mode. Go to Transit Network > Advanced Config > Connected Transit and click **Enable**.
 
 Procedure
 ~~~~~~~~~~
 
 1. Navigate to Multi-Cloud Transit > Setup > Transit > #1 Launch an Aviatrix Transit Gateway.
+#. Select the **AWS** Cloud Type.
 #. Enter a Gateway Name.
 #. Select the AWS Access Account Name.
 #. Select a region.
 #. Select the VPC ID of the AWS Transit VPC.
-#. Choose the **c5x.large** gateway size.
 #. Select the Public Subnet.
-#. Enable Insane Mode Encryption for higher throughputs (optional).
-#. Enable the Transit FireNet Function. 
+#. Choose the **c5x.large** gateway size.
+#. Enable **Insane Mode Encryption** for higher throughputs (optional).
 #. Enable Transit VPC GW HA by navigating to Multi-Cloud Transit > Setup > Transit > #2 (Optional) Enable HA to an Aviatrix Transit Gateway.
+#. Select the Transit gateway and the HA Gateway Subnet.
+#. Click **Enable**.
 
 .. note::
     The c5.xlarge instance size will be required for Insane Mode Encryption (for higher throughput).
@@ -129,7 +131,7 @@ Now that Transit and Spoke gateways have been deployed, you must deploy and enab
 Subscribe to Firewall Vendor in AWS Marketplace
 ***********************************************
 
-At this point, FireNet functionality on Transit Gateway is enabled and the FireNet policy is created for spokes. You can now subscribe to the firewall vendor and deploy the firewall.
+At this point, FireNet functionality on the Transit Gateway is enabled and the FireNet policy is created for Spokes. You can now subscribe to the firewall vendor and deploy the firewall.
 
 As indicated in the Aviatrix Controller at Firewall Network > Setup > Firewall, you must subscribe to the supported firewall vendor in your AWS marketplace using an access account onboarded to the Controller.
 
@@ -179,8 +181,8 @@ IAM Role                                        In advanced mode, create an IAM 
 Bootstrap Bucket Name                           In advanced mode, specify a bootstrap bucket name where the initial configuration and policy file is stored.
 ==========================================      ==========
 
-1. Check Point Specification
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Check Point Specifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Check Point Firewall instance has two interfaces as described below.
 
@@ -205,8 +207,8 @@ Note that firewall instance eth1 is on the same subnet as FireNet gateway eth2 i
 Follow `Check Point Example <https://docs.aviatrix.com/HowTos/config_CheckPointVM.html#example-config-for-check-point-vm-in-aws>`_ to launch Check Point security gateway in AWS and for more details.
 
 
-2. Palo Alto VM-Series Specifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Palo Alto VM-Series Specifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Palo instance has three interfaces as described below.
 
@@ -232,8 +234,8 @@ Note that firewall instance eth2 is on the same subnet as FireNet gateway eth2 i
 Follow `Palo Alto Network (VM Series) Example <https://docs.aviatrix.com/HowTos/config_paloaltoVM.html#example-config-for-palo-alto-network-vm-series>`_ to launch VM Series firewall in AWS and for more details.
 
 
-3. FortiGate Specifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+FortiGate Specifications
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FortiGate Next Generation Firewall instance has two interfaces as described below.
 
@@ -318,10 +320,10 @@ Flight Path is a powerful troubleshooting Aviatrix tool which allows users to va
 Ping/Traceroute Test for FireNet Data Plane Verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once control plane is established and no problems are found in security and routing polices, data plane validation needs to be verified to make sure traffic is flowing and not blocking anywhere.
+Once control plane is established and no problems are found in security and routing polices, data plane validation needs to be verified to make sure traffic is flowing and not blocked anywhere.
 
 There are multiple ways to check the data plane:
-    1. SSH to Spoke EC2 instance  (e.g. DEV1-VM) and ping other Spoke EC2 to instance (e.g PROD1-VM) to make sure no traffic loss in the path.
+    1. SSH to Spoke EC2 instance  (e.g. DEV1-VM) and ping other Spoke EC2 to instance (e.g PROD1-VM) to make sure there is no traffic loss in the path.
     2. Ping/traceroute capture can also be performed from Aviatrix Controller. Navigate to Troubleshoot > Diagnostics and perform the test.
 
 
@@ -329,7 +331,7 @@ There are multiple ways to check the data plane:
    :scale: 25%
 
 .. |en_tr_firenet| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/en_tr_firenet.png
-   :scale: 25%
+   :scale: 35%
 
 .. |tr_firenet_policy| image:: transit_firenet_workflow_media/transit_firenet_AWS_workflow_media/tr_firenet_policy.png
    :scale: 25%

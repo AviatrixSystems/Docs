@@ -91,7 +91,7 @@ Deploy Spoke Gateways
 Now that we have an Aviatrix Transit Gateway, we can deploy Aviatrix Spoke Gateways in the spoke VNET using `Aviatrix Spoke Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_.
 
 1.	Navigate to Multi-Cloud Transit -> Setup -> Spoke ->  #1 Launch an Aviatrix Spoke Gateway.
-#.	Deploy a Spoke Gateway (GW) in each of the spoke VNETs using defaults while choose correct Account and VNET info
+#.	Deploy a Spoke Gateway (GW) in each of the spoke VNETs using defaults while choose correct Account and VNET info.
 #.	Choose the Public Subnet.
 #.	Enable Spoke Gateway HA by navigating to Transit network -> Setup -> #5 (Optional) Enable/Disable HA at Spoke GW.
 
@@ -122,15 +122,13 @@ Configure Transit Firewall Network
 
 Now that Transit and Spoke gateways have now been deployed, you must deploy and enable the firewall for traffic inspection.
 
-Let’s start with enabling the firewall function and configure the FireNet policy.
-
 1.	Navigate to Firewall Network -> Setup -> Transit FireNet -> #3a Enable Transit FireNet on Aviatrix Transit Gateway.
 #.	Choose the Aviatrix Transit Gateway and Click **Enable**.
 
 |en_tr_firenet|
 
 3.	Navigate to Firewall Network -> Policy -> Manage FireNet Policy.
-#.	Add spokes to the Inspected box for traffic inspection.
+#.	Add Spokes to the Inspected box for traffic inspection.
 
 .. note::
     By default, FireNet inspects ingress (INET to VNET) and east-west traffic (VNET to VNET) only.
@@ -153,8 +151,8 @@ This step launches a Firewall instance and associates it with one of the FireNet
 .. note::
     By default, Aviatrix Transit Firenet uses 5 tuple hashing algorithm but that can be changed to 2 or 3 tuple as per requirement. Please check transit `firenet FAQs <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html#azure>`_ for more details.
 
-2a.1 Launch and Attach
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Launch and Attach
+~~~~~~~~~~~~~~~~~~~
 
 In the Aviatrix Controller navigate to Firewall Network -> Setup -> Firewall -> Step 2a. Provide all the required input as shown in the table and click **"Launch"**.
 
@@ -180,10 +178,10 @@ Attach (Optional)                               By selecting this option, the fi
 Advanced (Optional)                             Click this selection to allow Palo Alto firewall bootstrap files to be specified.
 ==========================================      ==========
 
-1. Check Point Specification
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Check Point Specifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Check Point Security Gateway has two interfaces as described below.
+The Check Point Security Gateway has two interfaces as described below.
 
 ========================================================         ===============================          ================================
 **Check Point VM interfaces**                                    **Description**                          **Inbound Security Group Rule**
@@ -203,8 +201,8 @@ Check Point Security Gateway launch from the Aviatrix Controller automatically i
 Follow `Check Point Example <https://docs.aviatrix.com/HowTos/config_CheckPointAzure.html#launch-check-point-firewall-from-aviatrix-controller>`_ to see how to launch Check Point Security Gateway in Azure, and for more details.
 
 
-2. Palo Alto VM-Series Specifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Palo Alto VM-Series Specifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Palo instance has three interfaces as described below.
 
@@ -229,8 +227,8 @@ You can launch the Palo Alto VM Series firewall from the Aviatrix Controller and
     If VM-Series are individually managed and integrated with the Controller, you can still use Bootstrap to save initial configuration time. Export the first firewall's configuration to bootstrap.xml, create an IAM role and Bootstrap bucket structure as indicated above, then launch additional firewalls with IAM role and the S3 bucket name to save the time of the firewall manual initial configuration.
 
 
-3. Fortinet Specifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fortinet FortiGate Specifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 FortiGate Next Generation Firewall instance has two interfaces as described below.
 
@@ -298,8 +296,8 @@ Firewall health check probes can be verified in Monitor -> Traffic.
 
 |pan-health-probe|
 
-Fortinet
-~~~~~~~~~~~~~~~
+Fortinet FortiGate
+~~~~~~~~~~~~~~~~~~
 You must allow HTTPS or TCP 443 port in the FortiGate firewall to monitor the health of firewall. Please follow the steps to allow HTTPS in FortiGate:
 
     1. Login to FortiGate's console using username and password.

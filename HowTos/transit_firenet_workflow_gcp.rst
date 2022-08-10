@@ -21,7 +21,7 @@ To deploy firewall networks in other CSPs:
 
 In this example, a Transit VPC with Aviatrix Gateways is deployed, and two Spoke Gateways (DEV and PROD) are attached.
 
-A firewall of supported vendors (Check Point, Palo Alto Networks and Fortinet etc.) will be deployed within the Transit VPC. See the diagram below for more details.
+A firewall of supported vendors (Check Point, Palo Alto Networks, Fortinet FortiGate, etc.) will be deployed within the Transit VPC. See the diagram below for more details.
 
 Once the infrastructure is in place you create a policy to inspect the east-west and north-south traffic.
 
@@ -72,7 +72,7 @@ Please see an example below for Transit FireNet GW:
 Deploy Spoke Gateways
 **********************
 
-Now that we have set up an Aviatrix Transit Gateway, we can deploy Aviatrix Spoke Gateways in the spoke VPCs using `Aviatrix Spoke Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_.
+Now that we have set up an Aviatrix Transit Gateway, we can deploy Aviatrix Spoke Gateways in the spoke VPCs using the `Aviatrix Spoke Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_.
 
 1.	Navigate to Multi-Cloud Transit > Setup > Spoke > #1 Launch an Aviatrix Spoke Gateway.
 #.	Deploy a Spoke Gateway (GW) in each of the Spoke VPCs using defaults while choose correct Account and VPC info
@@ -87,7 +87,7 @@ Attach Spoke Gateways to Transit Network
 The Transit and Spoke gateways are now deployed. To connect them:
 
 1.	Navigate to Multi-Cloud Transit > Setup > Attach/Detach > #1 Attach Spoke Gateway to Transit Network.
-#.	Select one spoke at a time and attach to the Transit Gateway.
+#.	Select one Spoke at a time and attach it to the Transit Gateway.
 
 |attach_spk_trgw|
 
@@ -111,15 +111,15 @@ Transit and Spoke Gateways have now been deployed. You must now deploy and enabl
 To enable the firewall function and configure the FireNet policy:
 
 1.	Navigate to Firewall Network > Setup > #3a Enable Transit FireNet on Aviatrix Transit Gateway.
-#.	Choose the Aviatrix Transit Gateway and Click **“Enable”**.
+#.	Choose the Aviatrix Transit Gateway and Click **Enable**.
 
 .. Note::
 
-  In a GCP deployment, Transit FireNet function is enabled when launching the gateway. You can skip this step.
+  In a GCP deployment, the Transit FireNet function is enabled when launching the gateway. You can skip this step.
 
 
 3.	Navigate to Firewall Network > Policy > Manage FireNet Policy.
-#.	Add spokes to the Inspected box for traffic inspection.
+#.	Add Spokes to the Inspected box for traffic inspection.
 
 .. note::
     By default, FireNet inspects ingress (Internet to VPC) and east-west traffic (VPC to VPC) only.
@@ -142,7 +142,7 @@ This step launches a Firewall instance and associates it with one of the FireNet
 Launch and Attach
 ~~~~~~~~~~~~~~~~~~
 
-In the Aviatrix Controller, navigate to Firewall Network > Setup > Firewall > Step 2a. Provide all the required input as shown in a table. Click **"Launch"**.
+In the Aviatrix Controller, navigate to Firewall Network > Setup > Firewall > Step 2a. Provide all the required input as shown in a table. Click **Launch**.
 
 .. important::
     The vendor firewall may take 5-10 minutes to become available.
@@ -166,13 +166,13 @@ Advanced (Optional)                             Click this selection to allow Pa
 Bootstrap Bucket Name                           In advanced mode, specify a bootstrap bucket name where the initial configuration and policy file is stored.
 ==========================================      ==========
 
-1. Check Point Specification
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Check Point Specifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Check Point support for Google Cloud will be available in a future release.
 
 
-2. Palo Alto VM-Series Specifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Palo Alto VM-Series Specifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Palo instance has three interfaces as described below.
 
@@ -198,8 +198,8 @@ Note that firewall instance nic2 is on the same subnet as the FireNet gateway ni
 Follow `Palo Alto Network (VM Series) GCP Example <https://docs.aviatrix.com/HowTos/config_paloaltoGCP.html>`_ to launch VM Series firewall in GCP and for more details.
 
 
-3. Fortigate Specifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fortinet Fortigate Specifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For details on how to configure Transit FireNet for GCP click `here <https://docs.aviatrix.com/HowTos/config_FortigateGCP.html>`_.
 

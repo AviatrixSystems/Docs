@@ -12,49 +12,50 @@ In the browser. You can make it secure by importing a signed certificate. This d
 Import a Certificate with Key
 -------------------------------------
 
-Step 1. Create Private Key and Certificate Signing Request 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Create Private Key and Certificate Signing Request 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A. Log into SSH on a Linux or macOS device and run the following command to create the private key:
+1. Log into SSH on a Linux or macOS device and run the following command to create the private key:
  
 mymac$ **openssl genrsa -out my_prv.key 4096** 
 
-B.	Create CSR 
+2. Create the CSR:
+
  - Run the following command and fill out the necessary information as it relates to your company.   
- - Leave the password blank 
+ - Leave the password blank.
  
 mymac$ **openssl req -new -sha256 -key my_prv.key -out controller.csr** 
 
-Step 2. Upload the CSR to Go Daddy and Retrieve the Certificates
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Upload the CSR to Go Daddy and Retrieve the Certificates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A. Upload the CSR
+1. Upload the CSR.
 
 Site Path: GoDaddy.com > SSL > Certificates > Your Desired Domain Name > Rekey & Manage > Re-Key Certificate 
  
-Paste certificate signing request (CSR) into entry field 
+2. Paste the Certificate Signing Request (CSR) into the entry field.
 
 |godaddy_1|
 
-B. Retrieve the Certificate
+3. Retrieve the Certificate:
 
 Site Path: GoDaddy.com > SSL > Certificates > Your Desired Domain Name > Download 
 
- - Wait for GoDaddy to respond with Certs 
- - Usually takes 10 minutes (an email will be sent)
- - Download the Certificates 
+4. Wait for GoDaddy to respond with Certs. This usually takes ten minutes (an email confirmation is sent). 
+5. Download the Certificates.
 
 |godaddy_2|
 
-Step 3. Uploading the Certificates to the Controller
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Uploading the Certificates to the Controller
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Path: Controller > Certificate > Controller Certificate Management > Import Certificate with Key
 
- - Select “Import Certificate with Key”
- - The CA certificate – the file named gd_bundle
- - The Server certificate - the other file ending in .crt
- - The Private Key – the file produced in step 1 of this documentation
+1. Select “Import Certificate with Key”
+
+   - The CA certificate – the file named gd_bundle
+   - The Server certificate - the other file ending in .crt
+   - The Private Key – the file produced in step 1 of this documentation
 
 |controller_cert_1|
 
@@ -82,7 +83,7 @@ Additional Notes
     :scale: 60%
 
 .. |controller_cert_1| image::  controller_certificate_media/controller_cert_1.png
-    :scale: 100%
+    :scale: 50%
 
 .. |controller_cert_2| image::  controller_certificate_media/controller_cert_2.png
     :scale: 100%
