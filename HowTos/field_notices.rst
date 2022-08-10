@@ -7,6 +7,14 @@ Field Notices
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
 
 
+Field Notice 0039 (2022/08/10)
+------------------------------
+
+**High Severity Bug Fix: AVX-25425**
+
+The dry run for 6.8.1148 will fail if the CSP gateways are using an older AMI, but the upgrade will succeed. To prevent any issues with your gateways, performing an “Image Upgrade” from the Controller (Settings > Maintenance > Upgrade) is recommended. CSP gateways with older AMIs (released in early 2021) may not be able to upgrade after 7.0.
+
+
 Field Notice 0038 (2022/08/09)
 --------------------------------
 
