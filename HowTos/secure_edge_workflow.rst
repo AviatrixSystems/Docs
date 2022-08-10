@@ -107,13 +107,13 @@ To deploy the Edge virtual machine in VMware ESXi, follow these steps.
 
 5. Enter a name for the Edge VM and drag the OVA file into the blue pane. Click **Next**.
 
-   |secure_edge_ova_load_file|
+   |edge_ova_load_file|
 
 6. In the Select storage page, select the storage device for the instance you created (the OVA is installed in this instance). Click **Next**.
 
 7. In the Deployment options window, enter the network interface mappings and select the Deployment type. (Refer to the pull-down menu or see `Virtual Machine CPU and Memory Configurations <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html#virtual-machine-cpu-and-memory-configurations>`_.)
 
-   |secure_edge_ova_deploy_options|
+   |edge_ova_deploy_options|
 
 8. Click **Next**.
 
@@ -194,7 +194,7 @@ Attaching the ISO Image to the Edge Virtual Machine
  
 6. Next to the CD/DVD Media field, click **Browse**. Select the ISO file you downloaded.
 
-   |secure_edge_edit_settings|
+   |edge_edit_settings|
 
    .. note::
       **Connect at power on** (step 4) is required when you attach the ISO image to the VM for the first time. If the VM is powered on at the time you attach the ISO image, select the **Datastore ISO file** and save the configuration to make the ISO available to ZTP.
@@ -443,16 +443,16 @@ If the connectivity to the CSP is over a public network:
 
 - The Edge Gateway WAN interface runs a BGP session to the Transit Gateway in the Transit VPC/VNET where the Transit Gateway advertises all Spoke VPC/VNET CIDRs to the Edge Gateway, and the Edge Gateway advertises the on-prem network to the Transit Gateway.
 
-.. |secure_edge_ova_load_file| image:: CloudN_workflow_media/secure_edge_ova_load_file.png
+.. |edge_ova_load_file| image:: CloudN_workflow_media/edge_ova_load_file.png
    :scale: 80%
 
-.. |secure_edge_ova_deploy_options| image:: CloudN_workflow_media/secure_edge_ova_deploy_options.png
+.. |edge_ova_deploy_options| image:: CloudN_workflow_media/edge_ova_deploy_options.png
    :scale: 80%
 
 .. |secure_edge_launch_gateway_a| image:: CloudN_workflow_media/secure_edge_launch_gateway_a.png
    :scale: 80%
 
-.. |secure_edge_edit_settings| image:: CloudN_workflow_media/secure_edge_edit_settings.png
+.. |edge_edit_settings| image:: CloudN_workflow_media/edge_edit_settings.png
    :scale: 50%
 
 .. |secure_edge_mgmt_egress_ip_a| image:: CloudN_workflow_media/secure_edge_mgmt_egress_ip_a.png

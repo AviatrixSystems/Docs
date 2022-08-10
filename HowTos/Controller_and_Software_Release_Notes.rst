@@ -122,6 +122,7 @@ for more information about which Aviatrix features and services are available fo
    - if there is a policy that contains port 0, change it to a valid value
    - port ranges should follow < lower port number - higher port number > format 
 
+
 - **AVX-25673** - After Site2Cloud verbose logging is enabled, it cannot be disabled in the UI.
 - **AVX-26419** - If you are connecting to another Aviatrix device, using IKEv2 is preferred. IKEv2 support started in version 5.0.2667. If you configure IKEv1 in a Site2Cloud connection that uses certificate-based authentication and is connecting to another Aviatrix device, you must add the intermediate CA’s in addition to the root CA. When an intermediate CA is renewed and re-authentication is attempted, the Site2Cloud connection will go down until you add the new certificate.
 

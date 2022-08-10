@@ -17,14 +17,27 @@ This document describes how to configure an IPsec tunnel between an Aviatrix Gat
    #. You have overlapping CIDR blocks but need to peer two VPC/VNets.
    #. The two Aviatrix Gateways are not part of the same Controller (i.e., one is at your customer and the other one is in your environment).
 
-   If you don't have one of these use cases, you can likely use Aviatrix Encrypted Peering
+   If these reasons don't apply to you, you can use Aviatrix Encrypted Peering.
+
+Certificate-Based Authentication
+--------------------------------
+
+If you want to use certificate-based authentication when establishing this connection:
+
+#. In the Aviatrix Controller for 'Gateway B', navigate to SITE2CLOUD > Certificate > CA Certificate and download the certificate.
+#. When following the procedure below, select this downloaded Aviatrix CA certificate when configuring the tunnel from Gateway A to Gateway B.
+
+ .. note::
+	If both Aviatrix gateways are in the same Controller these steps are not required. 
 
 Deployment Guide
 -----------------------------
 
-There are two Aviatrix Gateways for this scenario.  Since you are using the Site2Cloud feature, you must configure each side of the tunnel individually.
+There are two Aviatrix Gateways for this scenario. Since you are using the Site2Cloud feature, you must configure each side of the tunnel individually.
 
 We will refer to the gateways below as **Gateway A** and **Gateway B**.  You can pick either gateway to be **Gateway A** or **Gateway B**.
+
+If you want to use certificate-based authentication, you must first download the Aviatrix CA certificate from Gateway B, to use when setting up the tunnel from Gateway A to Gateway B.
 
 Configure Tunnel from Gateway A to Gateway B
 ++++++++++++++++++++++++++++++++++++++++++++
@@ -46,7 +59,10 @@ Configure Tunnel from Gateway A to Gateway B
    | Remote Gateway IP Address     | Enter the public IP address of           |
    |                               | **Gateway B**.                           |
    +-------------------------------+------------------------------------------+
-   | Pre-shared Key                | Leave blank and Aviatrix will generate   |
+   | Pre-shared Key or CA          | If you leave the PSK Key blank one is    |
+   | Certificate                   | generated for you, or you select the     |
+   |                               | remote CA certificate and enter the      |
+   |                               | Remote Identifier                        |
    +-------------------------------+------------------------------------------+
 
 #. Once complete, select the newly created tunnel in the list.
