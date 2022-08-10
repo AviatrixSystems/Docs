@@ -35,25 +35,27 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
 6.8.1148 (08/09/2022)
-================
+=====================
 
 **Important Notices in Aviatrix Release 6.8.1148** 
 
 - **AVX-26666** – For gateway rollback to work in 6.8, your Controller and gateways must be on the latest version of 6.7 (6.7.1376) before upgrading to 6.8.
 
-The following `Private Preview Features`_ are available in this release:
+The following Private Preview Features are available in this release:
 
 - **Managed CloudN for AWS and Azure China** - Managed CloudN for AWS and Azure China provides High-Performance Encryption (Insane Mode) to on-premises locations in China with CloudN. Refer to `Managed CloudN Workflows <https://docs.aviatrix.com/HowTos/CloudN_workflow.html>`_.
 
 **New Features in Aviatrix Release 6.8.1148**
 
-- **Aviatrix Edge 2.0** - The Aviatrix Edge solution enables enterprises to extend the Cloud operational model to the edge network for consistent and repeatable architecture, management, visibility, security, and control. This cloud-out architecture enables enterprises to leverage the Aviatrix platform ubiquitous support for edge connectivity. The result is secure, seamless connectivity to edge locations such as data centers, co-locations, remote sites, provider locations, branch offices, and retail stores. Aviatrix Edge 2.0 solution is offered in VMware ESXi and KVM form factors that lets you deploy an Edge Gateway with Spoke Gateway capabilities at the edge network. For more information about Aviatrix Edge, refer to the `Aviatrix Edge FAQ <https://docs.aviatrix.com/HowTos/edge-faq.html>`.
+- **Aviatrix Edge 2.0** - The Aviatrix Edge solution enables enterprises to extend the Cloud operational model to the edge network for consistent and repeatable architecture, management, visibility, security, and control. This cloud-out architecture enables enterprises to leverage the Aviatrix platform ubiquitous support for edge connectivity. The result is secure, seamless connectivity to edge locations such as data centers, co-locations, remote sites, provider locations, branch offices, and retail stores. Aviatrix Edge 2.0 solution is offered in VMware ESXi and KVM form factors that lets you deploy an Edge Gateway with Spoke Gateway capabilities at the edge network. For more information about Aviatrix Edge, refer to the `Aviatrix Edge FAQ <https://docs.aviatrix.com/HowTos/edge-faq.html>`_.
 - **Azure BGP over LAN multi-peer and Azure Route Server Integration** - Aviatrix now supports multi-peer BGP Over LAN connections in Azure. This feature offers new functionality, such as the ability to interoperate with multiple third-party virtual appliances such as SD-WAN cloud instances without having to use any tunnelling protocols such as IPsec. Please see `this document <https://docs.aviatrix.com/HowTos/azure_bgpolan_multi_peer.html>`_ for more information.
 - **Certificate-Based Authentication for Site2Cloud VPN** - You can now use certificate-based authentication when configuring a Site2Cloud connection between your Aviatrix gateways and external devices. Currently only the Palo Alto VM-Series firewall is supported as an external device. See `here <https://docs.aviatrix.com/HowTos/site2cloud_cacert.html>`_ for more information. 
 - **HPE for AWS/Azure China** - AWS China and Azure China CSPs now support High Performance Encryption (HPE).
-- **Aviatrix Controller Deployment from Azure China** - Aviatrix now supports deploying a Controller from Azure China. See `this document < https://docs.aviatrix.com/HowTos/aviatrix_china_overview.html?highlight=china%20overview >`_ for more information about which Aviatrix features and services are available for China marketplaces. Please note that Aviatrix CoPilot is still only available in AWS China.
+- **Aviatrix Controller Deployment from Azure China** - Aviatrix now supports deploying a Controller from Azure China. See `this document <https://docs.aviatrix.com/HowTos/aviatrix_china_overview.html?highlight=china%20overview>`_
+
+for more information about which Aviatrix features and services are available for China marketplaces. Please note that Aviatrix CoPilot is still only available in AWS China.
 - **Preserve AS Path** - In 6.7.1319, we introduced a new toggle, “Preserve AS Path”. When enabled, this toggle ensured gateways retained the AS path in manually advertised routes, and that routes would be advertised as local if the route did not exist in best route DB. This change improves failover behavior; gateways will stop advertising any manually advertised CIDR if it is no longer in the best DB (the route is no longer advertised as local).  
-- **Private Mode Phase 1** - Private Mode is a global setting that offers secure orchestrated intra- and multi-cloud networking by removing the need for public IPs for Aviatrix gateways. `Click here for more information about Private Mode `<https://docs.aviatrix.com/HowTos/privatemode.html>`_.
+- **Private Mode Phase 1** - Private Mode is a global setting that offers secure orchestrated intra- and multi-cloud networking by removing the need for public IPs for Aviatrix gateways. `Click here for more information about Private Mode <https://docs.aviatrix.com/HowTos/privatemode.html>`_.
 
 **Enhanced Features in Aviatrix Release 6.8.1148**
 
@@ -118,7 +120,8 @@ The following `Private Preview Features`_ are available in this release:
 
    - remove invalid characters or spaces, if any, in app domain or policy names
    - if there is a policy that contains port 0, change it to a valid value
-   - port ranges should follow < lower port number - higher port number > format   
+   - port ranges should follow < lower port number - higher port number > format 
+
 
 - **AVX-25673** - After Site2Cloud verbose logging is enabled, it cannot be disabled in the UI.
 - **AVX-26419** - If you are connecting to another Aviatrix device, using IKEv2 is preferred. IKEv2 support started in version 5.0.2667. If you configure IKEv1 in a Site2Cloud connection that uses certificate-based authentication and is connecting to another Aviatrix device, you must add the intermediate CA’s in addition to the root CA. When an intermediate CA is renewed and re-authentication is attempted, the Site2Cloud connection will go down until you add the new certificate.
