@@ -74,6 +74,7 @@ See `this URL <https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/certifi
 - Common Name: a descriptor that makes sense to you, such as pan-to-avx.com
 - Signed By: select ‘Certificate Authority’
 - Cryptographic Settings: 
+
   - Select Elliptic Curve DSA (ECDSA); this is currently the only algorithm supported by Site2Cloud cert-based authentication.
   - Select 256 bits
   - Select sha256 digest
@@ -192,11 +193,11 @@ Setting up IKE Crypto Profile and IKE Gateways
 						it should be peer private IP) 
       ===============================     =========================================
 
-     .. note::
+According to the Palo Alto Networks official documents, it is not necessary to add Peer Identification. However, Aviatrix recommends adding it, to make sure the tunnel is working. In the event that IPsec tunnel is up but traffic is not passing between the Cloud and on-prem, you may want to enable NAT-T in the Palo Alto Networks Firewall.
 
-         According to the Palo Alto Networks official documents, it is not necessary to add Peer Identification. However, Aviatrix recommends adding it, to make sure the tunnel working. In the event that IPsec tunnel is up but traffic is not passing between cloud and on-premises, you may want to enable NAT-T in Palo Alto Networks Firewall.
 
       |image3|
+
 
       ===============================     =========================================
         **Field**                         **Value**
@@ -281,7 +282,6 @@ Setting up IKE Crypto Profile and IKE Gateways
         |                      | previous section                                      |
         +----------------------+-------------------------------------------------------+
 
-|screenshot here|
 
    c. Click OK.
    d. Navigate to Device > Certificate Management > Device Certificates > PAN-CA and export this certificate as a PEM file.
@@ -346,7 +346,6 @@ To troubleshoot, navigate to Site2Cloud > Diagnostics and select commands from *
     :height: 0.60000 in
 
 .. |image11| image:: s2c_gw_pan_media/generate-cert.png
-    :width: 7.00000 in
-    :height: 0.60000 in
+   
    
 .. disqus::

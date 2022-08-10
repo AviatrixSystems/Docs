@@ -33,7 +33,7 @@ Create Site2Cloud Connection
 ----------------------------
 
 #. Log in to your Aviatrix Controller.
-#. Select SITE2CLOUD in the left navigation bar.
+#. Select Site2Cloud in the left navigation bar.
 #. Click **+ Add New** near the top of the Site2Cloud tab.
 #. Under Add a new connection, select the VPC ID where this tunnel will terminate in the cloud.
 #. See the below sections for information on configuring the connection.
