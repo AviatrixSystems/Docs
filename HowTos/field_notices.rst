@@ -7,8 +7,65 @@ Field Notices
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
  
 
+Field Notice 0039 (2022/08/08)
+------------------------------
+
+**High Priority Bug Fix: AVX-25425**
+
+The upgrade to Controller version 6.8 will fail if there are racoon-based CSP gateways. You must perform an image upgrade on your gateways before attempting to upgrade to Controller version 6.8.
 
 
+Field Notice 0038 (2022/08/09)
+--------------------------------
+
+
+**High Severity Bug Fix: AVX-26277**
+
+**Affected Versions:**
+
+For customers running 6.5 or older of the Aviatrix Controller **OR**,
+For customers running 6.7 of the Aviatrix Controller, with release 6.7.1325 or older OR 
+For customers running 6.6 of the Aviatrix Controller, with release 6.6.5667 or older 
+**AND**
+AWS AMI version released between May 2022 and June 2022 (ver. 05102022). 
+
+**Remediation:**
+
+This bug is fixed in 6.7.1376 or 6.6.5712. Due to the nature of this error, we strongly recommend that customers upgrade their platforms to the latest version, so that they do not face an outage, and are not halted with their deployments or configuration changes. 
+
+**IMPORTANT NOTE FOR CUSTOMERS RUNNING 6.5 OR OLDER VERSIONS:** Customers running 6.5 or older versions of the Aviatrix Controller should refrain from upgrading their AMI image (to ver. 05102022) until they first upgrade their software version on the Controller to 6.6.5712 or 6.7.1376 by following the steps in “Instructions for Upgrade”; these customers will also need to follow the `valid upgrade path <https://docs.aviatrix.com/HowTos/selective_upgrade.html#valid-upgrade-paths>`_.
+
+
+Any customers who are running 6.5 or older who have already upgraded their AMI image (to ver. 05102022) but have not seen the issue yet should proactively open a support ticket with Aviatrix Support for remediation. 
+
+**Issue Description & Impact**
+
+The AMI included a version of a database store that does not include automatic maintenance settings.  This will cause resource exhaustion on the Controller after a period of time depending on the level of activity the Controller sees.   
+
+Due to this bug, at least one of the following situations may occur:
+
+* Customers may come across an issue that will halt their ability to build environments or make configuration change, they will get an error stating `StatusCode.RESOURCE_EXHAUSTED` and details will include `tcdserver : mvcc: database space exceeded`.
+* Gateway deployment or configuration change is prevented or is not reflected in the data-plane.
+* Controller may lose connectivity with the Gateways.
+* Controller may report an incorrect Gateway status or “waiting” status.
+* When performing backup using *Settings > Maintenance > Backup & Restore > Backup Now*, an error appears `Gateway <name> not found` on the UI.
+
+**Instructions for Upgrade**
+
+If you have seen this issue already as described in the “*Issue Description & Impact*” section previously, it is mandatory to open a support ticket with Aviatrix Support first so that they can assist you prepare for the bug fix and the subsequent upgrade. 
+
+1. Take a backup at *Controller > Settings > Maintenance > Backup & Restore > Backup Now*. If you are encountering an issue doing the backup, please contact Aviatrix Support.
+2. We request that you upgrade your Controller and Gateways to the latest build in the release you are running.  
+
+* Please go through the release notes.  
+* Please review the field notices.  
+* Please go through the relevant upgrade instructions: Releases 6.4 and earlier or Releases 6.5 and later.  
+* **Make sure that all Gateways are in “UP” state.**  
+* **PLEASE DO NOT upgrade unless *Settings > Upgrade > Dry Run* is successfully completed for all Gateways.**  If dry run fails, please address the issue, or reach out to Aviatrix Support.  
+* Please upgrade to the latest build in the current release by entering the release that the Controller is currently running at *Settings > Upgrade > Target Release Version*. For example, if your Controller is running 6.7.1325, please enter “6.7” in the box without quotation.  
+* Create a backup again.  
+
+If you run into any issues during upgrade, please reach out to Aviatrix Support by opening a ticket on the Support Portal at https://support.aviatrix.com.  
 
 
 
@@ -53,8 +110,6 @@ Aviatrix recommends the following be done, as soon as possible, to avoid any pos
    - AVX_SW-PATCH_INAPPLICABLE: If the report says that no additional action is needed. The patch is not applicable to your controller version. We recommend that you stay on the latest supported releases 
  - Take a backup again at "Controller/Settings/Maintenance/Backup&Restore/Backup Now"
 
-
-
 **Instructions for Upgrade**
 
  - Take a backup at "Controller/Settings/Maintenance/Backup&Restore/Backup Now"
@@ -68,9 +123,7 @@ Aviatrix recommends the following be done, as soon as possible, to avoid any pos
      - Take a backup again 
      - Please apply **"Detect AVX-18796"** software patch again to confirm that your network is free of AVX-18796 
  
-If you run into any issues during upgrade, you can reach out to Aviatrix Support by opening a ticket at Support Portal at https://support.aviatrix.com  
-
-
+If you run into any issues during upgrade, you can reach out to Aviatrix Support by opening a ticket at Support Portal at https://support.aviatrix.com.
 
 Field Notice 0036 (2022/01/11)
 --------------------------------
