@@ -42,7 +42,7 @@ CoPilot Release 2.4.0 (8/11/2022)
 
 **Feature Enhancements in CoPilot release 2.4.0**
 
--   **Export Reports to TSV** – Starting with CoPilot release 2.4.0, you can download Inventory and FlightCheck reports as TSV (tab separated value).  For more information about Reports, see `Working with Reports <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html?highlight=inventory#create-an-inventory-report>`_ in *Aviatrix CoPilot User Reference Guide*.
+-   **Export Reports to TSV** – Starting with CoPilot release 2.4.0, you can download Inventory and FlightCheck reports as TSV (Tab Separated Value).  For more information about Reports, see `Working with Reports <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html?highlight=inventory#create-an-inventory-report>`_ in *Aviatrix CoPilot User Reference Guide*.
 
 -   **Alerts UI** – The display has been changed to a data grid which enables you to search, filter, and export alert instances. The alert detail panel is also changed to use the new design system which improves user interaction and clarity.
 
