@@ -158,7 +158,7 @@ You now need to create a security policy granting health check access to the vir
    - Source: select the 130.211.0.0/22 and 35.191.0.0/16 IP addresses you created in the previous step.
    - Destination: ilb-vip (or equivalent, as per what you configured in the previous section)
    - Schedule: always
-   - Service: ALL
+   - Service: All
    - NAT: disabled
 
 4. Click **OK**.
@@ -180,8 +180,8 @@ You can configure a basic traffic security policy that allows traffic to pass th
    - Source: all
    - Destination: all
    - Schedule: always
-   - Service: ALL
-   - Action: ACCEPT
+   - Service: All
+   - Action: Accept
    - NAT: disabled
 
 |gcp_fortigate_policy_vpc_to_vpc|
@@ -269,7 +269,7 @@ You can also use CoPilot AppIQ to check traffic flow and troubleshoot any issues
    :scale: 25%
 .. |vendor_integration_fortgcp| image:: config_FortiGate_media/vendor_integration_fortgcp.png
    :scale: 30%
-.. |gcp_fortigate_policy_vpc_to_vpc| image:: config_FortiGateGCP_media/gcp_fortigate_policy_vpc_to_vpc.png
+.. |gcp_fortigate_policy_vpc_to_vpc| image:: config_FortiGate_media/gcp_fortigate_policy_vpc_to_vpc.png
    :scale: 30%
 .. |health-check| image:: config_FortiGate_media/health-check.png
    :scale: 30%
