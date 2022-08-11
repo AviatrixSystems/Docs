@@ -223,7 +223,7 @@ While all content is searchable, the site is organized into the following sectio
 
    HowTos/site2cloud_faq
    HowTos/site2cloud
-   HowTos/site2cloud_cacert
+   HowTos/site2cloud-cacert
    HowTos/avxgw_azurevpngw_site2cloud
    HowTos/site2cloud_aviatrix
    HowTos/site2cloud_awsvgw
