@@ -42,7 +42,7 @@ While all content is searchable, the site is organized into the following sectio
    :caption: Getting Started
 
    StartUpGuides/aviatrix_overview
-   StartUpGuides/aviatrix-cloud-controller-startup-guide
+   StartUpGuides/aws_getting_started_guide
    StartUpGuides/azure-aviatrix-cloud-controller-startup-guide
    StartUpGuides/oracle-aviatrix-cloud-controller-startup-guide
    StartUpGuides/google-aviatrix-cloud-controller-startup-guide
