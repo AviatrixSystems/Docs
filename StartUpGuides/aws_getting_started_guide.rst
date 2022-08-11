@@ -129,7 +129,7 @@ Find and save the **CIDR range** for the device of the main Controller user. Not
   Optional steps (not required for deployment):
   
   * Create an `S3 bucket <https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html>`_ for storage. An S3 bucket is not required to launch a Controller, but is required for `HA (High Availability) <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ and `Backup and Restore Configuration <https://docs.aviatrix.com/HowTos/controller_backup.html>`_. 
-  * Create an `Application Load Balancer <https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html>`_ with a `Web Application Firewall (WAF) <https://aws.amazon.com/waf/#:~:text=AWS%20WAF%20is%20a%20web,security%2C%20or%20consume%20excessive%20resources.>`_ for additional security. This configuration requires a second subnet in a different Availability Zone. Click `here <https://docs.aviatrix.com/HowTos/controller_ssl_using_elb.html>`_ for more information about this configuration.
+  * Create an `Application Load Balancer <https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html>`_ with a `Web Application Firewall (WAF) <https://aws.amazon.com/waf/#:~:text=AWS%20WAF%20is%20a%20web,security%2C%20or%20consume%20excessive%20resources.>`_ for additional security. This configuration requires a second subnet in a different Availability Zone. See `Configuring an AWS Load Balancer with SSL in front of Aviatrix Controller <https://docs.aviatrix.com/HowTos/controller_ssl_using_elb.html>`_ for more information about this configuration.
 
 Prerequisite Checklist
 -----------------------------------------------------------------
