@@ -35,7 +35,7 @@ Aviatrix Edge 2.0 requires the following:
 
     -	OVA image for VMware ESXi (see `Requesting Aviatrix Edge Gateway Image File <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#requesting-an-aviatrix-edge-gateway-image-file>`_).
     -	VMware ESXi 6.7 or 7.0.1
-    -	Sufficient VMware ESXi resources to run Edge Gateway (see `Aviatrix Edge 2.0 Installation Requirements <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#aviatrix-edge-2.0-installation-requirements>`_).
+    -	Sufficient VMware ESXi resources to run Edge Gateway (see `Aviatrix Edge 2.0 Installation Requirements`_).
     -	(Optional) VMware vCenter Server
 	
 	For information about installing VMware products, refer to the VMware product documentation.
@@ -46,7 +46,7 @@ Aviatrix Edge 2.0 requires the following:
     -	KVM server running in Linux Bare Metal Server
     -	CentOS 7.6-1810
     -	QEMU Version 1.5.3, Release 160.el7_6.3
-    -	Sufficient KVM resources to run Edge Gateway (see `Aviatrix Edge 2.0 Installation Requirements <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#aviatrix-edge-2.0-installation-requirements>`_).
+    -	Sufficient KVM resources to run Edge Gateway (see `Aviatrix Edge 2.0 Installation Requirements`_).
 	
 	For information about installing KVM products, refer to KVM product documentation.
 	
@@ -195,7 +195,7 @@ To create the Edge Gateway ISO image file, follow these steps.
 
 	d.  **Site ID**: Select an existing Site ID or create a new Site ID by entering a name (such as, edge-01) and click **Add item**. 
 	
-	     For guidance on whether to select an existing Site ID or create a new one, see `Edge Site ID Guidelines <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#edge-site-id-guidelines>`_.
+	     For guidance on whether to select an existing Site ID or create a new one, see `Edge Site ID Guidelines`_.
 	
     e.  **Management Connection Type**: Select DHCP or Static, depending on your environment. 
       
@@ -223,7 +223,7 @@ To create the Edge Gateway ISO image file, follow these steps.
 
     n.  **LAN Interface IP/Mask**: Enter the interface IP/mask for the Edge VM. 
 
-	o.  **Active-Standby**: Check the box for active-standby mode (see `Active-Standby Edge <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#active-standby-edge>`_. Leave unchecked for Active-Active mode.
+	o.  **Active-Standby**: Check the box for active-standby mode (see `Active-Standby Edge`_.) Leave unchecked for Active-Active mode.
 	
 	.. Important::
           The Active-Active and Active-Standby modes are configured when you create the first Edge ZTP for a particular Site ID. If you need to change a configuration from Active-Active to Active-Standby, delete all the Edge Gateway for that Site ID and recreate the Edge Gateway with the new setting.
@@ -239,7 +239,7 @@ To create the Edge Gateway ISO image file, follow these steps.
    .. Note::
       Controller displays a message that confirms when you have successfully downloaded the **.iso** file you created for the Edge gateway. The .iso file will expire 24 hours after you create it, so you must mount the .iso file to an Edge VM to complete the Edge gateway registration within that timeframe, as you cannot download it again and will have to repeat the above steps.
    
-Next, deploy the Edge virtual machine and attach the ZTP **.iso** file in the VMware or KVM environment. See `Deploy Edge Virtual Machine and Attach ZTP ISO File <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#deploy-edge-virtual-machine-and-attach-ztp-iso-file>`_.
+Next, deploy the Edge virtual machine and attach the ZTP **.iso** file in the VMware or KVM environment. See `Deploy Edge Virtual Machine and Attach ZTP ISO File`_.
 
 Edge Site ID Guidelines
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -266,7 +266,7 @@ Follow these guidelines to decide whether to use an existing Site ID or create a
 2. Deploy Edge Virtual Machine and Attach ZTP ISO File
 ------------------------------------------------------
 
-To deploy the Edge virtual machine on KVM, skip to step `2c. Deploying the Edge Virtual Machine in KVM  <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#2c.-deploying-the-edge-virtual-machine-in-kvm>`_.
+To deploy the Edge virtual machine on KVM, skip to step `2c. Deploying the Edge Virtual Machine in KVM`_.
 
 2a. Deploying the Edge Virtual Machine in VMware ESXi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -328,7 +328,7 @@ Next, attach the ZTP **.iso** and the Edge will auto-mount the media which conta
 
 7. Click **Save**.
 
-Next, verify Edge in Controller. See `Verifying Edge in Controller <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#verifying-edge-in-controller>`_.
+Next, verify Edge in Controller. See `Verifying Edge in Controller`_.
 
 2c. Deploying the Edge Virtual Machine in KVM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -395,7 +395,7 @@ After you attach the ZTP **.iso**, the KVM hypervisor will auto-mount the media 
 
 For more information about deploying virtual machines and attaching .iso file in KVM, refer to KVM product documentation.
 
-Next, verify Edge in Controller. See `Verifying Edge in Controller <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#verifying-edge-in-controller>`_.
+Next, verify Edge in Controller. See `Verifying Edge in Controller`_.
 
 2d. Enabling Multiqueue virtio-net on KVM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -423,9 +423,9 @@ To verify the Edge Gateway is up, wait for 5 minutes after you have attached the
 
    |edge-verify|
 
-   If the Edge Gateway status is not **up**, you can troubleshoot Edge connectivity using CLI commands on the Edge Gateway console. See `Troubleshooting Edge Gateway Connectivity <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#troubleshooting-edge-gateway-connectivity>`_.
+   If the Edge Gateway status is not **up**, you can troubleshoot Edge connectivity using CLI commands on the Edge Gateway console. See `Troubleshooting Edge Gateway Connectivity`_.
 
-Next, attach the Edge Gateway to the Transit Gateway. See `Attach Edge Gateway to Transit Gateway <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#attach-edge-gateway-to-transit-gateway>`_.
+Next, attach the Edge Gateway to the Transit Gateway. See `Attach Edge Gateway to Transit Gateway`_.
 
 3. Attach Edge Gateway to Transit Gateway
 ------------------------------------------
@@ -443,9 +443,10 @@ To update the WAN Public IP, follow these steps.
 4. Verify the WAN Public IP and click **Update**. 
 
 .. Important::
-    If you have multiple Edge Gateways, make sure each Edge Gateway has a unique WAN Public IP.
+     If you have multiple Edge Gateways, make sure each Edge Gateway has a unique WAN Public IP.
 	
-    |edge-ip-config|
+  
+   |edge-ip-config|
 
 3b. Configure BGP ASN on the Edge Gateway
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -531,7 +532,7 @@ Active-Standby mode provides the flexibility on Aviatrix Transit Gateways and Av
 |edge-active-standby|
 
 .. Important::
-    *  The Active-Standby Preemptive setting is per site or location and is decided when you create the first Edge Gateway for that site. You cannot choose a different setting when you add more Edge Gateways to that site. For more information about preemptive and non-preemptive active-standby modes, see `Active-Standby <http://docs.aviatrix.com/HowTos/transit_advanced.html#active-standby>`_.
+    *  The Active-Standby Preemptive setting is per site or location and is decided when you create the first Edge Gateway for that site. You cannot choose a different setting when you add more Edge Gateways to that site. For more information about preemptive and non-preemptive active-standby modes, see `Active-Standby`_.
 
 
 Transitive Routing
@@ -546,7 +547,7 @@ Configuring Transitive Routing
 
 To configure Transitive Routing, follow these steps.
 
-1. Attach the Edge Gateway to the first Transit Gateway. Follow the steps in `3b. Attach Edge Gateway to Transit Gateway <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#3b.-attach-edge-gateway-to-transit-gateway>`_.
+1. Attach the Edge Gateway to the first Transit Gateway. Follow the steps in `3b. Attach Edge Gateway to Transit Gateway`_.
 2. Repeat and attach the Edge Gateway to the second Transit Gateway.
 3. Navigate to **MULTI-CLOUD TRANSIT** > **Advanced Config** > **Transitive Routing**.
 4. Click the toggle to enable Transitive Routing.
@@ -567,7 +568,7 @@ Configuring Transit Peering over Public Network
 To create Transit Peering over public network to use as backup path, follow these steps.
 
 1.	In the Aviatrix Controller, go to **MULTI-CLOUD TRANSIT** > **Transit Peering**.
-2.  Create a Transit Gateway Peering by following the `Multi-Cloud Transit Gateway Peering over Public Network workflow <https://docs.aviatrix.com/HowTos/multi-cloud-transit_gateway_peering_over_public_network_workflow.html>`_.
+2.  Create a Transit Gateway Peering by following the `Multi-Cloud Transit Gateway Peering over Public Network Workflow <https://docs.aviatrix.com/HowTos/transit_gateway_peering_over_public_network_workflow.html>`_.
 3.	Go to **MULTI-CLOUD TRANSIT** > **Advanced Config**. Select the first Transit Gateway and take note the Local AS Number. 
 4.	Scroll down to the **Connection AS Path Prepend** section. Select the Transit Peering connection name.
 5.	In the **Prepend AS Path** field, input the same Local AS Number three times separated by space.
@@ -690,64 +691,64 @@ If the connectivity to the CSP is over a public network:
 
 
 .. |edge_ova_deploy_options| image:: CloudN_workflow_media/edge_ova_deploy_options.png
-   :scale: 40%
+   :scale: 50%
    
 .. |edge_edit_settings| image:: CloudN_workflow_media/edge_edit_settings.png
-   :scale: 40%
+   :scale: 50%
    
 .. |edge_ova_load_file| image:: CloudN_workflow_media/edge_ova_load_file.png
-   :scale: 40%
+   :scale: 50%
 
 .. |edge-active-standby| image:: CloudN_workflow_media/edge-active-standby.png
-   :scale: 40%
+   :scale: 50%
 
 .. |edge-attach-spoke-to-transit| image:: CloudN_workflow_media/edge-attach-spoke-to-transit.png
-   :scale: 40%
+   :scale: 50%
 
 .. |edge-connect-external-device| image:: CloudN_workflow_media/edge-connect-external-device.png
-   :scale: 40%
+   :scale: 50%
 
 .. |edge-deploy-ova-template| image:: CloudN_workflow_media/edge-deploy-ova-template.png
-   :scale: 40%
+   :scale: 50%
 
 .. |edge-deploy-workflow| image:: CloudN_workflow_media/edge-deploy-workflow.png
-   :scale: 40%
+   :scale: 60%
 
 .. |edge-ip-config| image:: CloudN_workflow_media/edge-ip-config.png
-   :scale: 40%
+   :scale: 50%
 
 .. |edge-launch-spoke-gateway| image:: CloudN_workflow_media/edge-launch-spoke-gateway.png
-   :scale: 40%
+   :scale: 50%
 
 .. |edge-multiple-transit-redundant| image:: CloudN_workflow_media/edge-multiple-transit-redundant.png
-   :scale: 40%
+   :scale: 50%
 
 .. |edge-multiple-transit-single-edge| image:: CloudN_workflow_media/edge-multiple-transit-single-edge.png
-   :scale: 40%
+   :scale: 50%
 
 .. |edge-network-connectivity| image:: CloudN_workflow_media/edge-network-connectivity.png
-   :scale: 40%
+   :scale: 50%
 
 .. |edge-network-port-protocol| image:: CloudN_workflow_media/edge-network-port-protocol.png
-   :scale: 40%
+   :scale: 50%
 
 .. |edge-rbac| image:: CloudN_workflow_media/edge-rbac.png
-   :scale: 40%
+   :scale: 50%
 
 .. |edge-rbac-edgeadmin| image:: CloudN_workflow_media/edge-rbac-edgeadmin.png
-   :scale: 40%
+   :scale: 50%
 
 .. |edge-transitive-routing| image:: CloudN_workflow_media/edge-transitive-routing.png
-   :scale: 40%	
+   :scale: 50%	
 
 .. |edge-transit-peering| image:: CloudN_workflow_media/edge-transit-peering.png
-   :scale: 40%
+   :scale: 50%
 
 .. |edge-transit-peering-config| image:: CloudN_workflow_media/edge-transit-peering-config.png
-   :scale: 40%
+   :scale: 50%
 
 .. |edge-verify| image:: CloudN_workflow_media/edge-verify.png
-   :scale: 40%
+   :scale: 50%
 
 .. |edge-kvm-new-vm| image:: CloudN_workflow_media/edge-kvm-new-vm.png
    :scale: 40%

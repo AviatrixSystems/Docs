@@ -52,7 +52,7 @@ Edge 2.0 features include:
 
 Aviatrix Edge 2.0 is supported on Aviatrix Controller version 6.8.
 
-For more information about Edge 2.0 use case scenarios, see `What are the use cases for Aviatrix Edge? <http://docs.aviatrix.com/HowTos/edge-faq.html#what-are-the-use-cases-for-aviatrix-edge?>`_.
+For more information about Edge 2.0 use case scenarios, see `What are the use cases for Aviatrix Edge?`_.
 
 For additional requirements and deployment workflow, see `Deploying Aviatrix Edge 2.0 <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html>`_.
 
@@ -71,13 +71,13 @@ What are the use cases for Aviatrix Edge?
 
 The following are examples of Aviatrix Edge use cases.
 
--       `Extend Aviatrix to Edge Locations <http://docs.aviatrix.com/HowTos/edge-faq.html#extend-aviatrix-to-edge-locations>`_
+-       `Extend Aviatrix to Edge Locations`_
 
--	`Multi-Cloud Connectivity Using Aviatrix Edge <http://docs.aviatrix.com/HowTos/edge-faq.html#multi-cloud-connectivity-using-aviatrix-edge>`_
+-	`Multi-Cloud Connectivity Using Aviatrix Edge`_
 
--	`Aviatrix Edge Connectivity over Private Network <http://docs.aviatrix.com/HowTos/edge-faq.html#aviatrix-edge-connectivity-over-private-network>`_
+-	`Aviatrix Edge Connectivity over Private Network`_
 
--	`Aviatrix Edge connectivity over public network <http://docs.aviatrix.com/HowTos/edge-faq.html#aviatrix-edge-connectivity-over-public-network>`_
+-	`Aviatrix Edge Connectivity over Public Network`_
 
 
 Extend Aviatrix to Edge Locations
@@ -114,17 +114,17 @@ This diagram illustrates Aviatrix Edge Gateway deployed in a public network.
 
 
 .. |edge_usecase_edge_location| image:: CloudN_workflow_media/edge_usecase_edge_location.png
-   :scale: 40%
+   :scale: 50%
 
 
 .. |edge_usecase_multi_cloud| image:: CloudN_workflow_media/edge_usecase_multi_cloud.png
-   :scale: 35%
+   :scale: 40%
 
 .. |edge_private_network| image:: CloudN_workflow_media/edge_private_network.png
-   :scale: 40%
+   :scale: 50%
 
 .. |edge_public_network| image:: CloudN_workflow_media/edge_public_network.png
-   :scale: 40%
+   :scale: 50%
 
 
 .. disqus::
