@@ -135,9 +135,9 @@ Prerequisite Checklist
 
 Make sure you have completed these prerequisites before launching your Controller:
 
-* Launched a dedicated VPC with settings listed above
-* Saved the CIDR range for the main user of the Controller
-* Reviewed the optional steps `above <https://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html#setting-up-a-dedicated-vpc>`_ (creating an S3 bucket and an Application Load Balancer) and completed them if needed for your configuration
+- Launched a dedicated VPC with settings listed above
+- Saved the CIDR range for the main user of the Controller
+- Reviewed the optional steps `above <https://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html#setting-up-a-dedicated-vpc>`_ (creating an S3 bucket and an Application Load Balancer) and completed them if needed for your configuration
 
 Launching the Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -427,7 +427,7 @@ If your stack creation fails to launch your Controller instance in AWS, check th
 
 
 .. |aws_getting_started_diagram| image:: aws_getting_started_guide_media/aws_getting_started_diagram.png
-   :scale: 70%
+   :scale: 50%
 
 .. |choose_vpc_region|image:: aws_getting_started_guide_media/choose_vpc_region.png
    :scale: 60%
