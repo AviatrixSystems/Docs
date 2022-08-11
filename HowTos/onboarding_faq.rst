@@ -16,10 +16,8 @@ The first time you log in to Aviatrix Controller, complete the onboarding proces
 What is an Aviatrix Customer ID?
 ------------------------------------
 
-If you have a BYOL license or use a community image, you need to have a
+If you have a BYOL license, metered license, or use a community image, you need to have a
 customer ID provided by Aviatrix to be able to use the product. Please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ if you do not have a customer ID.
-
-You do not need a Customer ID if you are running a metered AMI. 
 
 What is an Aviatrix Access Account on the Controller?
 -------------------------------------------------------------
