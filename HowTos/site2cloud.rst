@@ -23,7 +23,7 @@ The Aviatrix Site2Cloud feature supports connectivity between its Gateways in th
 |site2cloud_new|
 
 .. note::
-	If you are planning to use certificate-based authentication for your Site2Cloud connection, ensure that you have already generated and exported the external device CA certificate `as described here <https://docs.aviatrix.com/HowTos/site2cloud_cacert.html>`_.
+	If you are planning to use certificate-based authentication for your Site2Cloud connection, ensure that you have already generated and exported the external device CA certificate `as described here <https://docs.aviatrix.com/HowTos/site2cloud-cacert.html>`_.
 
 
 Configuration Workflow
@@ -112,10 +112,10 @@ Certificate-Based
 
 If you select Cert-based authentication:
 
-- In the Remote CA Certificate field select the certificate you uploaded from your Palo Alto VM-Series firewall as per `these instructions <https://docs.aviatrix.com/HowTos/site2cloud_cacert.html>`_.
+- In the Remote CA Certificate field select the certificate you uploaded from your Palo Alto VM-Series firewall as per `these instructions <https://docs.aviatrix.com/HowTos/site2cloud-cacert.html>`_.
 - Enter the SAN/Remote Identifier. The format depends on the device you are connecting to. For example, for an on-prem Aviatrix gateway the format will be the DNS from the server certificate (such as gw-54-210-118-19).
 
-See `here <https://docs.aviatrix.com/HowTos/site2cloud_cacert.html>`_ for more details on Site2Cloud certificate-based authentication.
+See `here <https://docs.aviatrix.com/HowTos/site2cloud-cacert.html>`_ for more details on Site2Cloud certificate-based authentication.
 
 Tunnel Type
 ^^^^^^^^^^^
