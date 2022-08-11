@@ -427,13 +427,13 @@ If your stack creation fails to launch your Controller instance in AWS, check th
 
 
 .. |aws_getting_started_diagram| image:: aws_getting_started_guide_media/aws_getting_started_diagram.png
-   :scale: 60%
+   :scale: 40%
 
 .. |choose_vpc_region| image:: aws_getting_started_guide_media/choose_vpc_region.png
    :scale: 60%
 
 .. |create_vpc_settings| image:: aws_getting_started_guide_media/create_vpc_settings.png
-   :scale: 40%
+   :scale: 50%
 
 .. |aws_marketplace_options| image:: aws_getting_started_guide_media/aws_marketplace_options.png
    :scale: 40%
