@@ -33,22 +33,22 @@ Generate the CSR File
 ^^^^^^^^^^^^^^^^^^^^^
 
 1. In the left pane of the Aviatrix Controller, select Settings > Controller, and then click the Certificate tab. 
-#. Under Controller Certificate Management, select the Generate CSR and Import Certificate option.
+#. Under Controller Certificate Management, select the **Generate CSR and Import Certificate** option.
 
 |gen_csr|
 
 3. Enter the Fully Qualified Domain Name (FQDN) of the Controller.
-#. Click Generate Certificate Signing Request. The CSR is downloaded to your local host. 
+#. Click **Generate Certificate Signing Request**. The CSR is downloaded to your local host. 
 #. After ensuring that the CSR is signed by a Sign Authority, you receive two files: a CA certificate and a Server certificate. 
-#. In the CA Certificate field, select the signed CA certificate and click Import CA Certificate.
+#. In the CA Certificate field, select the signed CA certificate and click **Import CA Certificate**.
 #. In the Server Public Certificate field, select the Server certificate from step 3.
-#. Click Import Server Public Certificate.
+#. Click **Import Server Public Certificate**.
 
 
 Import CA Certificate and Server Certificate 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After you obtain the CA certificate and Server Public Certificate, click the Import Certificate with Key option to import/upload the files to the Controller. 
+After you obtain the CA certificate and Server Public Certificate, click the **Import Certificate with Key** option to import/upload the files to the Controller. 
 
 |ca.crt|
 
@@ -70,8 +70,8 @@ Setting up the Custom Gateway Certificate
 Make sure that all gateways are green/running before you proceed.
 
 1. In the left pane of the Aviatrix Controller, select Settings > Advanced and click the Gateway tab.
-#. Under Gateway Certificate Management, the Import CA Certificate with Key option is selected by default. Click Choose File and navigate to the locations of the CA Certificate and the CA Private Key.
-#. Click OK. 
+#. Under Gateway Certificate Management, the **Import CA Certificate with Key** option is selected by default. Click **Choose File** and navigate to the locations of the CA Certificate and the CA Private Key.
+#. Click **OK**. 
 
 
 Step 3. Check the Gateway Certificate Type to Confirm Deployment

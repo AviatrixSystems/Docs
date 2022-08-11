@@ -40,7 +40,7 @@ If you want to use certificate-based authentication when establishing a Site2Clo
 
 1. Generate a certificate from your Palo Alto VM-Series firewall. See steps `here <#creating-and-generating-a-self-signed-root-certificate>`_. 
 #. Export your certificate in PEM format. See steps `here <#creating-and-generating-a-self-signed-root-certificate>`_.
-#. In the Aviatrix Controller, upload the CA certificate generated from your Palo Alto VM-Series firewall under Site2Cloud > Certificate > CA Certificate. See `here <https://docs.aviatrix.com/HowTos/site2cloud_cacert.html>`_ for details.
+#. In the Aviatrix Controller, upload the CA certificate generated from your Palo Alto VM-Series firewall under Site2Cloud > Certificate > CA Certificate. See `here <https://docs.aviatrix.com/HowTos/site2cloud-cacert.html>`_ for details.
 #. Create your Site2Cloud connection as described `here <#setting-up-site2cloud-connection>`_.	
 #. After creating the Site2Cloud connection, `download the resulting configuration <https://docs.aviatrix.com/HowTos/site2cloud.html#download-configuration>`_.
 #. Download the Aviatrix CA certificate from Site2Cloud > CA Certificate.
@@ -128,7 +128,7 @@ Setting up Site2Cloud Connection
 Importing the Aviatrix CA Certificate
 -------------------------------------
 
-If you are creating a Site2Cloud connection between your Palo Alto VM-Series firewall and your Aviatrix gateway, you must download the Aviatrix CA certificate as per the instructions on the `CA Certificate <https://docs.aviatrix.com/HowTos/site2cloud_cacert.html>`_ page, and then upload it to your Palo Alto VM-Series UI as follows:
+If you are creating a Site2Cloud connection between your Palo Alto VM-Series firewall and your Aviatrix gateway, you must download the Aviatrix CA certificate as per the instructions on the `CA Certificate <https://docs.aviatrix.com/HowTos/site2cloud-cacert.html>`_ page, and then upload it to your Palo Alto VM-Series UI as follows:
 
 1. In the Palo Alto VM-Series UI, navigate to Device > Certificate Management > Certificates > Device Certificates.
 #. At the bottom of the window, click Import.

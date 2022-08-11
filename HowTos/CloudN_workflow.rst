@@ -313,7 +313,7 @@ In this example traffic flow verification is performed after the Site2Cloud conn
 CloudN States
 ==============
 
-The Registered Devices table on the CLOUDN > List tab shows the state of the CloudN device and the reason for that state.
+The Registered Devices table on the CloudN > List tab shows the state of the CloudN device and the reason for that state.
 
 - Registered: 
 

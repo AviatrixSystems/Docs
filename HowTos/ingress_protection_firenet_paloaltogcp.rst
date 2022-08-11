@@ -105,11 +105,11 @@ b. Select TCP Load Balancing > Start Configuration.
 
 |gcp_create_lb_2|
 
-c. Select the load balancer options as shown below: From Internet to my VMs, Single region only, and Target Pool or Target Instance.
+c. Select the load balancer options as shown below: **From Internet to my VMs**, **Single region only**, and **Target Pool or Target Instance**.
 
 |gcp_create_lb_3|
 
-d. Enter a Name, select a Region (must match Transit FireNet’s region), click **Select Existing Instances** and select the firewall instances.
+d. Enter a Name and select a Region (must match Transit FireNet’s region), click **Select Existing Instances** and select the firewall instances.
 
 |gcp_create_lb_4|
 
