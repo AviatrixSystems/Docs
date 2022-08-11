@@ -40,6 +40,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 **Important Notices in Aviatrix Release 6.8.1148** 
 
 - **AVX-26666** – For gateway rollback to work in 6.8, your Controller and gateways must be on the latest version of 6.7 (6.7.1376) before upgrading to 6.8.
+- **AVXSRE-395** – Aviatrix is continuously improving its products and services, requiring to migrate to new IP addresses. Therefore, if you are filtering out part of all the traffic from your controllers to the Internet, please update your rules to allow “Aviatrix Central Services” according to our Support Portal: Aviatrix Products: `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Required-Access-for-External-Sites>`_
 
 The following Private Preview Features are available in this release:
 
