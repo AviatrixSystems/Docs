@@ -429,28 +429,28 @@ If your stack creation fails to launch your Controller instance in AWS, check th
 .. |aws_getting_started_diagram| image:: aws_getting_started_guide_media/aws_getting_started_diagram.png
    :scale: 50%
 
-.. |choose_vpc_region|image:: aws_getting_started_guide_media/choose_vpc_region.png
+.. |choose_vpc_region| image:: aws_getting_started_guide_media/choose_vpc_region.png
    :scale: 60%
 
-.. |create_vpc_settings|image:: aws_getting_started_guide_media/create_vpc_settings.png
+.. |create_vpc_settings| image:: aws_getting_started_guide_media/create_vpc_settings.png
    :scale: 60%
 
-.. |aws_marketplace_options|image:: aws_getting_started_guide_media/aws_marketplace_options.png
+.. |aws_marketplace_options| image:: aws_getting_started_guide_media/aws_marketplace_options.png
    :scale: 60%
 
-.. |location_for_cloudformation|image:: aws_getting_started_guide_media/location_for_cloudformation.png
+.. |location_for_cloudformation| image:: aws_getting_started_guide_media/location_for_cloudformation.png
    :scale: 60%
 
-.. |cloudformation_outputs_tab|image:: aws_getting_started_guide_media/cloudformation_outputs_tab.png
+.. |cloudformation_outputs_tab| image:: aws_getting_started_guide_media/cloudformation_outputs_tab.png
    :scale: 60%
 
-.. |save_ip_addresses|image:: aws_getting_started_guide_media/save_ip_addresses.png
+.. |save_ip_addresses| image:: aws_getting_started_guide_media/save_ip_addresses.png
    :scale: 60%
 
-.. |open_icon|image:: aws_getting_started_guide_media/open_icon.png
+.. |open_icon| image:: aws_getting_started_guide_media/open_icon.png
    :scale: 60%
 
-.. |click_aws_icon|image:: aws_getting_started_guide_media/click_aws_icon.png
+.. |click_aws_icon| image:: aws_getting_started_guide_media/click_aws_icon.png
    :scale: 40%
 
 .. disqus::
