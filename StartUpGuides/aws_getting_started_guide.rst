@@ -8,7 +8,7 @@ AWS Getting Started Guide
 
 |aws_getting_started_diagram|
 
-The Aviatrix Controller is management and control plane or a single pane of glass that enables you to manage and support a single or multi-cloud network architecture. You can deploy an Aviatrix Controller through any of the four major CSP (Cloud Service Provider) marketplaces: 
+The Aviatrix Controller is a management and control plane or a single pane of glass that enables you to manage and support a single or multi-cloud network architecture. You can deploy an Aviatrix Controller through any of the four major CSP (Cloud Service Provider) marketplaces: 
 
 * AWS (Amazon Web Services)
 * Microsoft Azure 
@@ -41,7 +41,22 @@ To organize and segment resources more easily, set up a dedicated VPC for your C
 Choosing to Use an Existing VPC vs. Creating a New VPC
 ********************************************************
 
-TABLE
++--------------+------------------------------------+----------------------------------+
+|              | Using an Existing VPC              | Creating a New VPC               |
++==============+====================================+==================================+
+| Cost         | Equal                              |Equal unless your organization’s  |
+|              |                                    |policy is to create a dedicated   |
+|              |                                    |AWS account for each new VPC      |
++--------------+------------------------------------+----------------------------------+
+|Network       |Equal	                            | Equal                            |
+|performance   |                                    |                                  |
++--------------+------------------------------------+----------------------------------+
+|Simplicity    | Maintaining a VPC with resources   |Improved fault isolation in Day 2 |
+|and           | many different requirements may be | operations, as it is less likely |
+|resiliency    | more difficult                     | that changing components in the  |
+|              |                                    | same location will harm the      |
+|              |                                    | control plane's connectivity     |
++--------------+------------------------------------+----------------------------------+
 
 If you choose to use an existing VPC, make sure it uses the settings specified below in the “Creating a New VPC” section.
 
@@ -73,7 +88,7 @@ Region – Before configuring any settings, click on the dropdown menu in the to
 +----------------------------+----------------------------------------------------------------+
 | Tenancy                    | Default                                                        |                     
 +----------------------------+----------------------------------------------------------------+
-| Number of Availability     | Select **1** if you do **not** choose to                       |
+| Number of Availability     | Select **1** if you choose **not** to                          |
 | Zones (AZs)                | configure                                                      |
 | 2208 - Copilot, 24x7       | `HA <https://docs.aviatrix.com/HowTos/controller_ha.html>`_.   |        
 | Support**                  | One Availability Zone offers a simpler deployment but no       |
@@ -81,7 +96,7 @@ Region – Before configuring any settings, click on the dropdown menu in the to
 |                            |                                                                |
 |                            | Select **2** if you require Controller resiliency through HA.  |
 +----------------------------+----------------------------------------------------------------+
-| Number of public subnets   | Select **1** if you do not choose to configure HA.             |
+| Number of public subnets   | Select **1** if you choose not to configure HA.                |
 | Services - Migration       |                                                                |
 |                            | Select **2** if you choose to configure HA (make sure you have |        
 |                            | also selected two Availability Zones).                         |
@@ -103,7 +118,7 @@ Region – Before configuring any settings, click on the dropdown menu in the to
 Saving the Management CIDR Range
 ------------------------------------------------------------------------
 
-Find and save the **CIDR range** for the device of the main user who should be able to use the Controller. Note that this IP address is different than the IP for the VPC itself, which you configured when you launched the VPC.
+Find and save the **CIDR range** for the device of the main Controller user. Note that this IP address is different than the IP for the VPC itself, which you configured when you launched the VPC.
 
 .. note::
 
@@ -117,6 +132,8 @@ Find and save the **CIDR range** for the device of the main user who should be a
 
 Prerequisite Checklist
 -----------------------------------------------------------------
+
+Make sure you have completed these prerequisites before launching your Controller:
 
 * Launched a dedicated VPC with settings listed above
 * Saved the CIDR range for the main user of the Controller
@@ -166,7 +183,7 @@ To launch your Controller, subscribe to the correct Aviatrix AMI from the AWS Ma
 +----------------------------+-------------------------------------------------+
 | Aviatrix Secure Networking | An all-in-one license that allows unlimited     |
 | Platform - Enterprise      | deployment. Charged at an hourly rate unless    |
-| Subscription               | there is a private of er to adjust pricing with |
+| Subscription               | there is a private offer to adjust pricing with |
 |                            | Aviatrix separately.                            |
 +----------------------------+-------------------------------------------------+
 | Aviatrix Professional      | This license offers an automated and streamlined|                     
@@ -214,7 +231,7 @@ A CloudFormation template provides a layer of abstraction that makes the configu
 
 3. Use the options on the CloudFormation template to set up your Controller.
 
-* **Step 1: Create Stack** – Leave the settings on this page at their defaults. Click Next.
+* **Step 1: Create Stack** – Leave the settings on this page at their defaults. Click **Next**.
 * **Step 2: Specify stack details** – 
 
 +----------------------------+-------------------------------------------------+
@@ -253,7 +270,7 @@ A CloudFormation template provides a layer of abstraction that makes the configu
   * If this your first time launching an Aviatrix Controller, select the default setting **New** for IAM Role Creation. 
   * If an Aviatrix IAM role has been created before, select **aviatrix-role-ec2** for IAM Role Creation.
 
-* **Step 3: Configure stack options** – Leave the settings on this page at their defaults and click Next. 
+* **Step 3: Configure stack options** – Leave the settings on this page at their defaults and click **Next**. 
 
 * **Step 4: Review *Stack_Name*** – Review the settings to make sure they are correct. Mark the **I acknowledge that AWS CloudFormation might create IAM resources with custom names** checkbox at the bottom of the page and click **Create stack**.
 
@@ -340,7 +357,7 @@ Add IP Addresses to the Controller’s Security Group Rules
 
   Later, when you launch gateways from your Controller, each gateway creates a new Security group. You will need to add your device’s IP address to each new gateway’s Security group.
 
-Return to your instance’s page. If you have not already done so, save the **Public IPv4** and **Private IPv4** for your Controller. 
+7. Return to your instance’s page. If you have not already done so, save the **Public IPv4** and **Private IPv4** for your Controller. 
 
 |save_ip_addresses|
 
@@ -394,7 +411,7 @@ You can now use advanced settings for your `IAM roles <https://docs.aviatrix.com
 
 .. note::
 
-  Note that you will need to deploy a separate Controller to use AWS China. Please see `this document <https://docs.aviatrix.com/HowTos/aviatrix_china_overview.html?highlight=china>`_.
+  You need to deploy a separate Controller to use AWS China. Please see `this document <https://docs.aviatrix.com/HowTos/aviatrix_china_overview.html?highlight=china>`_.
 
 Troubleshooting if the Stack Creation Fails
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -3,7 +3,7 @@ Launch Aviatrix Controller Manually
 ===============================================
 
 Aviatrix Controller should be launched by CloudFormation script following the 
-`AWS Getting Started Guide <http://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html>`_ for a complete information. 
+`AWS Getting Started Guide <http://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html>`_.
 
 The method below has been deprecated. It is kept here for record only. 
 
