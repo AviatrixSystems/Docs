@@ -99,7 +99,7 @@ Integrating a FortiGate firewall with the Aviatrix Controller enables the Contro
 
    - Transit VPC ID: select the VPC ID for the CSP
    - Firewall Instance ID: automatically populated
-   - Firewall Name: the name you gave your FortiGate firewall? 
+   - Firewall Name: the name you gave your FortiGate firewall
    - Firewall Vendor Type: Fortinet FortiGate
    - Firewall API token: paste the API token string from step 1 here
    - Firewall Management IP Address: IP address of your firewall
@@ -278,6 +278,10 @@ You can also use CoPilot AppIQ to check traffic flow and troubleshoot any issues
 .. |fortgcp_packetcapture| image:: config_FortiGate_media/fortgcp_packetcapture.png
    :scale: 30%
 .. |fortgcp_packetcapture2| image:: config_FortiGate_media/fortgcp_packetcapture2.png
+   :scale: 30%
+.. |gcp_fortigate_egress_internet| image:: config_FortiGate_media/gcp_fortigate_egress_internet.png
+   :scale: 30%
+.. |gcp_fortigate_NAT| image:: config_FortiGate_media/gcp_fortigate_NAT.png
    :scale: 30%
 
 
