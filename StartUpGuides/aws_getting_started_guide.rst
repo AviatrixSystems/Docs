@@ -52,10 +52,10 @@ Choosing to Use an Existing VPC vs. Creating a New VPC
 |performance   |                                    |                                  |
 +--------------+------------------------------------+----------------------------------+
 |Simplicity    | Maintaining a VPC with resources   |Improved fault isolation in Day 2 |
-|and           | many different requirements may be | operations, as it is less likely |
-|resiliency    | more difficult                     | that changing components in the  |
-|              |                                    | same location will harm the      |
-|              |                                    | control plane's connectivity     |
+|and           | many different requirements may be |operations, as it is less likely  |
+|resiliency    | more difficult                     |that changing components in the   |
+|              |                                    |same location will harm the       |
+|              |                                    |control plane's connectivity      |
 +--------------+------------------------------------+----------------------------------+
 
 If you choose to use an existing VPC, make sure it uses the settings specified below in the “Creating a New VPC” section.
@@ -126,7 +126,7 @@ Find and save the **CIDR range** for the device of the main Controller user. Not
 
 .. tip::
 
-  * Optional steps (not required for deployment):
+  Optional steps (not required for deployment):
   * Create an `S3 bucket <https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html>`_ for storage. An S3 bucket is not required to launch a Controller, but is required for `HA (High Availability) <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ and `Backup and Restore Configuration <https://docs.aviatrix.com/HowTos/controller_backup.html>`_. 
   * Create an `Application Load Balancer <https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html>`_ with a `Web Application Firewall (WAF) <https://aws.amazon.com/waf/#:~:text=AWS%20WAF%20is%20a%20web,security%2C%20or%20consume%20excessive%20resources.>`_ for additional security. This configuration requires a second subnet in a different Availability Zone. Click `here https://docs.aviatrix.com/HowTos/controller_ssl_using_elb.html>`_ for more information about this configuration.
 
@@ -135,9 +135,9 @@ Prerequisite Checklist
 
 Make sure you have completed these prerequisites before launching your Controller:
 
-* Launched a dedicated VPC with settings listed above
-* Saved the CIDR range for the main user of the Controller
-* Reviewed the optional steps above (creating an S3 bucket and an Application Load Balancer) and completed them if needed for your configuration
+- Launched a dedicated VPC with settings listed above
+- Saved the CIDR range for the main user of the Controller
+- Reviewed the optional steps `above <https://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html#setting-up-a-dedicated-vpc>`_ (creating an S3 bucket and an Application Load Balancer) and completed them if needed for your configuration
 
 Launching the Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -426,31 +426,31 @@ If your stack creation fails to launch your Controller instance in AWS, check th
   * Through `OpenVPN <https://docs.aviatrix.com/HowTos/uservpn.html>`_ using Single Sign On (SSO). 
 
 
-.. |aws_getting_started_diagram| image:: aws_getting_started_media/aws_getting_started_diagram.png
-   :scale: 70%
-
-.. |choose_vpc_region|image:: aws_getting_started_media/choose_vpc_region.png
-   :scale: 60%
-
-.. |create_vpc_settings|image:: aws_getting_started_media/create_vpc_settings.png
-   :scale: 60%
-
-.. |aws_marketplace_options|image:: aws_getting_started_media/aws_marketplace_options.png
-   :scale: 60%
-
-.. |location_for_cloudformation|image:: aws_getting_started_media/location_for_cloudformation.png
-   :scale: 60%
-
-.. |cloudformation_outputs_tab|image:: aws_getting_started_media/cloudformation_outputs_tab.png
-   :scale: 60%
-
-.. |save_ip_addresses|image:: aws_getting_started_media/save_ip_addresses.png
-   :scale: 60%
-
-.. |open_icon|image:: aws_getting_started_media/open_icon.png
-   :scale: 60%
-
-.. |click_aws_icon|image:: aws_getting_started_media/click_aws_icon.png
+.. |aws_getting_started_diagram| image:: aws_getting_started_guide_media/aws_getting_started_diagram.png
    :scale: 40%
+
+.. |choose_vpc_region| image:: aws_getting_started_guide_media/choose_vpc_region.png
+   :scale: 60%
+
+.. |create_vpc_settings| image:: aws_getting_started_guide_media/create_vpc_settings.png
+   :scale: 40%
+
+.. |aws_marketplace_options| image:: aws_getting_started_guide_media/aws_marketplace_options.png
+   :scale: 40%
+
+.. |location_for_cloudformation| image:: aws_getting_started_guide_media/location_for_cloudformation.png
+   :scale: 60%
+
+.. |cloudformation_outputs_tab| image:: aws_getting_started_guide_media/cloudformation_outputs_tab.png
+   :scale: 60%
+
+.. |save_ip_addresses| image:: aws_getting_started_guide_media/save_ip_addresses.png
+   :scale: 60%
+
+.. |open_icon| image:: aws_getting_started_guide_media/open_icon.png
+   :scale: 60%
+
+.. |click_aws_icon| image:: aws_getting_started_guide_media/click_aws_icon.png
+   :scale: 30%
 
 .. disqus::
