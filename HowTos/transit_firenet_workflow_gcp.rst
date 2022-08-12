@@ -7,7 +7,7 @@
 Transit FireNet Workflow for GCP
 =========================================================
 
-You use Aviatrix Transit FireNet to deploy firewall functions for the Aviatrix Multi-Cloud transit architecture. With Transit FireNet feature, the Firewall Network (FireNet) function is integrated into the Aviatrix Transit gateway.
+You use Aviatrix Transit FireNet to deploy firewall functions for the Aviatrix Multi-Cloud transit architecture. With the Transit FireNet feature, the Firewall Network (FireNet) function is integrated into the Aviatrix Transit gateway.
 
 To learn about Transit FireNet, see `Transit FireNet FAQ. <https://docs.aviatrix.com/HowTos/transit_firenet_faq.html>`_
 
@@ -65,7 +65,7 @@ Procedure
 #. Check the **Enable Transit FireNet Function** checkbox.
 #. Enable Transit Gateway HA by navigating to Multi-Cloud > Setup > #2 (Optional) Enable HA to an Aviatrix Transit Gateway.
 
-Please see an example below for Transit FireNet GW:
+The example below shows the configuration of the Transit FireNet Gateway:
 
 |tr_firenet_gw|
 
@@ -75,7 +75,7 @@ Deploy Spoke Gateways
 Now that we have set up an Aviatrix Transit Gateway, we can deploy Aviatrix Spoke Gateways in the spoke VPCs using the `Aviatrix Spoke Gateway Workflow <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-a-spoke-gateway>`_.
 
 1.	Navigate to Multi-Cloud Transit > Setup > Spoke > #1 Launch an Aviatrix Spoke Gateway.
-#.	Deploy a Spoke Gateway (GW) in each of the Spoke VPCs using defaults while choose correct Account and VPC info
+#.	Deploy a Spoke Gateway (GW) in each of the Spoke VPCs using the defaults, selecting the appropriate account and VPC information.
 #.	Choose the Public Subnet.
 #.	Enable Spoke Gateway HA by navigating to Multi-Cloud Transit > Setup > #5 (Optional) Enable/Disable HA at Spoke GW.
 
@@ -111,7 +111,7 @@ Transit and Spoke Gateways have now been deployed. You must now deploy and enabl
 To enable the firewall function and configure the FireNet policy:
 
 1.	Navigate to Firewall Network > Setup > #3a Enable Transit FireNet on Aviatrix Transit Gateway.
-#.	Choose the Aviatrix Transit Gateway and Click **Enable**.
+#.	Choose the Aviatrix Transit Gateway and click **Enable**.
 
 .. Note::
 
@@ -207,7 +207,7 @@ For details on how to configure Transit FireNet for GCP click `here <https://doc
 Associate an Existing Firewall Instance
 ******************************************
 
-This step is the alternative step to Step 2a. If you already launched the firewall (Check Point, Palo Alto Network or Fortinet) instance from AWS Console, you can still associate it with the FireNet gateway.
+This is the alternative step to Step 2a. If you already launched the firewall (Check Point, Palo Alto Network or Fortinet) instance from AWS Console, you can still associate it with the FireNet gateway.
 
 In the Aviatrix Controller navigate to Firewall Network > Setup > Firewall > Step 2b and associate a firewall with a FireNet Gateway.
 
@@ -215,7 +215,7 @@ In the Aviatrix Controller navigate to Firewall Network > Setup > Firewall > Ste
 Vendor Firewall Integration
 *****************************
 
-Vendor integration programs RFC 1918 and non-RFC 1918 routes in firewall appliance.
+Vendor integration programs RFC 1918 and non-RFC 1918 routes in the firewall.
 
 1.  In the Aviatrix Controller, navigate to Firewall Network > Vendor Integration > Firewall. Select the firewall Vendor Type and fill in the details of your Firewall instance.
 #. Click **Save**.
@@ -244,22 +244,22 @@ There are multiple ways to verify if Transit FireNet is configured properly:
     #.	SSH, SCP or Telnet Test between Spoke VPCs (East-West) - Data-plane Test
 
 .. note::
-    ICMP is blocked on Google Cloud Load balancer
+    ICMP is blocked on Google Cloud Load balancer.
 
-Flight Path Test for FireNet Control-Plane Verification:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+FlightPath Test for FireNet Control-Plane Verification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Flight Path is a powerful troubleshooting Aviatrix tool which allows users to validate the control plane and gives end to end visibility of packet flow.
+FlightPath is a powerful troubleshooting Aviatrix tool which allows users to validate the control plane and gives end to end visibility of packet flow.
 
-    1.	In the Aviatrix Controller, navigate to Troubleshoot> FlightPath.
+    1.	In the Aviatrix Controller, navigate to Troubleshoot > FlightPath.
     #.	Provide the Source and Destination Region and VPC information.
     #.	Select SSH and Private subnet, and run the test.
 
 .. note::
     A VM instance will be required in GCP, and SSH/Telnet port should be allowed in firewall the rules for Spoke VPCs.
 
-SSH/Telnet Test for FireNet Data Plane Verification:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SSH/Telnet Test for FireNet Data Plane Verification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once the control plane is established and no problem is found in the security and routing polices, data plane validation needs to be verified to make sure traffic is flowing and not blocked.
 

@@ -169,19 +169,19 @@ In Private Mode the following Aviatrix functionality is not available:
 - Software rollback to 6.7 is not supported (since Private Mode did not exist prior to 6.8)
 
 
-.. |sfc| image:: privatemode_media/topology-private-mode.png
+.. |topology-private-mode| image:: privatemode_media/topology-private-mode.png
    :scale: 30%
-.. |sfc| image:: privatemode_media/private-mode-enable.png
+.. |private-mode-enable| image:: privatemode_media/private-mode-enable.png
    :scale: 30%
-.. |sfc| image:: privatemode_media/private-mode-intracloud.png
+.. |private-mode-intracloud| image:: privatemode_media/private-mode-intracloud.png
    :scale: 30%
-.. |sfc| image:: privatemode_media/private-mode-multicloud-link.png
+.. |private-mode-multicloud-link| image:: privatemode_media/private-mode-multicloud-link.png
    :scale: 30%
-.. |sfc| image:: privatemode_media/private-mode-multicloud-access.png
+.. |private-mode-multicloud-access| image:: privatemode_media/private-mode-multicloud-access.png
    :scale: 30%
-.. |sfc| image:: privatemode_media/private-mode-multicloud-proxy.png
+.. |private-mode-multicloud-proxy| image:: privatemode_media/private-mode-multicloud-proxy.png
    :scale: 30%
-.. |sfc| image:: privatemode_media/private-mode-aws-proxy.png
+.. |private-mode-aws-proxy| image:: privatemode_media/private-mode-aws-proxy.png
    :scale: 30%
 
 .. disqus:

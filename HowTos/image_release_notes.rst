@@ -2,16 +2,16 @@
 Aviatrix Controller and Gateway Image Release Notes
 ====================================================
 
-Controller Images: AWS_BYOL_controller - Version 05102022 (6/09/2022)
+Controller Images: 05112022_AWS_utility_controller Version: 051022 (6/09/2022)
 =============================================
 
-Release version 05102022_AWS_BYOL_controller includes the following updates:
+Release 05112022_AWS_utility_controller includes the following updates:
 
 * Upgraded Apache, LibNSS3, OpenSSL, Zlib, and Rsync
 
 This image also replaces the 122520, 100621, and 110421 Controller versions of BYOL images, which were delisted from the AWS marketplace on May 26.
 
-Controller Images: AWS_utility_controller - Version 05102022 (6/09/2022)
+Controller Images: 05112022_AWS_utility_controller Version: 051022 (6/09/2022)
 =============================================
 
 Release version 05112022_AWS_utility_controller includes the following updates:
@@ -20,7 +20,7 @@ Release version 05112022_AWS_utility_controller includes the following updates:
 
 This image also replaces the 122520, 100621, and 110421 Controller versions of utility images, which were delisted from the AWS marketplace on May 26.
 
-Controller Images: AWS_metered_controller - Version 05102022 (6/09/2022)
+Controller Images: 05112022_AWS_metered_controller Version: 051022 (6/09/2022)
 =============================================
 
 Release version 05112022_AWS_metered_controller includes the following updates:
@@ -29,28 +29,28 @@ Release version 05112022_AWS_metered_controller includes the following updates:
 
 This image also replaces the 122520, 100621, and 110421 Controller versions of utility images, which were delisted from the AWS marketplace on May 26.
 
-Gateway Images: Alibaba AMI - Version 042322 (6/09/2022)
+Gateway Images: Alibaba AMI - Version: 042322 (6/09/2022)
 =============================================
 
 Release version hvm-cloudx-aliyun-042322 includes the following updates:
 
 * Upgraded Apache, LibNSS3, OpenSSL, Zlib, and Rsync
 
-Controller Images: AWS_utility_controller - Version 05112022 (6/2/2022)
+Controller Images: 05112022_AWS_utility_controller Version: 051022 (6/2/2022)
 =============================================
 
 This image addresses multiple public vulnerabilities impacting Apache, LibNSS3, OpenSSL, Zlib, and Rsync which is included on our Controller: `CVE-2022-22719 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22719>`_, `CVE-2022-22720 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22720>`_, `CVE-2021-43527 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-43527>`_, `CVE-2022-0778 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778>`_, and `CVE-2018-25032 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-25032>`_.
 
 This image replaces the 122520, 100621, and 110421 BYOL Controller versions, which were removed from the AWS marketplace on May 26 and are no longer installable.
 
-Controller Images: AWS_metered_controller - Version 05112022 (6/2/2022)
+Controller Images: 05112022_AWS_metered_controller Version: 051022 (6/2/2022)
 ===========================================
 
 This image addresses multiple public vulnerabilities impacting Apache, LibNSS3, OpenSSL, Zlib, and Rsync which is included on our Controller: `CVE-2022-22719 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22719>`_, `CVE-2022-22720 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22720>`_, `CVE-2021-43527 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-43527>`_, `CVE-2022-0778 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778>`_, and `CVE-2018-25032 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-25032>`_.
 
 This image replaces the 122520, 100621, and 110421 BYOL Controller versions, which were removed from the AWS marketplace on May 26 and are no longer installable.
 
-Controller Images: AWS AMI – Version 110421 (11/8/2021)
+Controller Images: AWS AMI – Version: 110421 (11/8/2021)
 ======================================================
 
 Release version 110421 includes the following updates:
@@ -59,7 +59,7 @@ Release version 110421 includes the following updates:
 - Corrected issue with the Aviatrix Controller initialization hanging after image migrating to a new image.
 - Closed potential vulnerability in Ubuntu.
 
-Controller Images: AWS AMI – Version 100621 (10/13/2021)
+Controller Images: AWS AMI – Version: 100621 (10/13/2021)
 ======================================================
 
 This release addresses vulnerabilities fixed by Apache version 2.4.51.

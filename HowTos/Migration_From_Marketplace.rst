@@ -123,6 +123,7 @@ Launch the New Aviatrix Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   
  .. attention::
+
       Make sure you already have subscribed to the AMI that you want to migrate to. Please refer to the `Subscribe to an Aviatrix AMI <https://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html#subscribing-to-the-aviatrix-ami-amazon-machine-image>`__  for details.
 
 Launch a new Aviatrix Controller.  Please see the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html>`__ for instructions.
@@ -130,11 +131,12 @@ Launch a new Aviatrix Controller.  Please see the `AWS Startup Guide <https://do
 .. note::
 
   A best practice is to launch the new Controller before stopping the old Controller.    
+
       
 Associate EIP
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-In AWS, go to **EC2** > **Network & Security** > **Elastic IPs**, and associate the same EIP from step 3 to the new Aviatrix Controller.
+In AWS, go to EC2 > Network & Security > Elastic IPs, and associate the same EIP from the old Controller to the new Aviatrix Controller.
 
 If you have your old `Controller behind an ELB <https://docs.aviatrix.com/HowTos/controller_ssl_using_elb.html>`_, please note that you would have to remove the old Controller instance from the listening group and add the new Controller instance in its place.
 
@@ -143,11 +145,11 @@ Upgrade Controller
 
 Log in to the new Controller and perform the initialization. Make sure your new Aviatrix Controller is upgraded to same version (latest) by validating it at Settings > Maintenance > Upgrade tab. Please note that Aviatrix only supports Controller backup and restore within the same software version. 
 
-Set up Aviatrix Customer ID (Not required if you are migrating to a Metered AMI Controller)
+Set up Aviatrix Customer ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 On the new Aviatrix Controller, go to Settings > Controller and select the **License**.
-Enter your Aviatrix License ID into the Customer ID field in Set up Aviatrix Customer ID.
+Enter your Aviatrix Customer ID into the Customer ID field in Set up Aviatrix Customer ID.
 
 |customer_id|
 
