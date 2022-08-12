@@ -72,7 +72,7 @@ Before migrating your Azure Controller, note the following details so that you c
 
 2. Locate your `Customer ID <https://docs.aviatrix.com/HowTos/onboarding_faq.html?highlight=customer%20id#what-is-an-aviatrix-customer-id>`_.
 
-3. Take a Controller backup in a storage container and make a note of Subscription ID, Directory ID, Application Client ID, Application Client Secret, Storage Name, Container Name, File Name.
+3. Make a Controller backup in a storage container and make a note of Subscription ID, Directory ID, Application Client ID, Application Client Secret, Storage Name, Container Name, File Name.
 
 4. Launch new Controller Instance. Please refer to the `Azure Startup Guide <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_.
 5. Shut down the old Controller instance. Go to your Azure account > Virtual machines and select the old Controller instance. Click **Stop**.
@@ -105,7 +105,7 @@ Controller Migration in GCP
 
 1. In your GCP account, make a list of the old Controller’s region, availability zone, instance size, and any specific subnets so that you can use the same parameters to launch the new Controller. To find this information, log into your GCP account > click on the menu in the top left and scroll down to Compute Engine > hover over Compute Engine and select VM instances. On the VM Instances page, find your Controller instance, click on the three dots on the right side of its row in the table, and select **View network details**.
 
-(Optional) Note your old Controller's Customer ID. In your Aviatrix Controller, go to Settings > Controller > License > Setup Aviatrix Customer ID.
+(Optional) Find and save your old Controller's Customer ID. In your Aviatrix Controller, go to Settings > Controller > License > Setup Aviatrix Customer ID.
 
 2. If you do not have a bucket for data storage, create a new one. In your GCP account, go to Cloud Storage > Browser.
 
@@ -186,9 +186,9 @@ Setting up Your New Controller
 * Password  - the private IP of the newly launched instance
 
 2. Set a new password and upgrade this Controller to the same version as your old Controller instance. This might take up to 5 minutes.
-3. Log into the new Controller and onboard your primary access account (the cSP account). Make sure to have your CSP credentials available, as you will need it to onboard your GCP account. In your Controller, go to Accounts > Access Accounts > *CSP* (Azure, GCP, or OCI).
+3. Log into the new Controller and onboard your primary access account (the CSP account). Make sure to have your CSP credentials available, as you will need them to onboard your CSP account. In your Controller, go to Accounts > Access Accounts > *CSP* (Azure, GCP, or OCI).
 4. Onboard your Aviatrix Customer ID. Use your old Controller's Customer ID.
-5. Once everything is set up and ready, restore the backup from the bucket. Go to your Controller > Settings > Maintenance > Backup & Restore > Restore > fill in the appropriate details > click **Restore**.
+5. Once everything is set up and ready, restore the backup from the bucket. In your Controller, go to > Settings > Maintenance > Backup & Restore > Restore > fill in the appropriate details > click **Restore**.
 
 It will take a few minutes for the backup to be restored. You can verify the dashboard to see if all the configuration from the old Controller has been restored. 
 
