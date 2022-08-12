@@ -84,18 +84,17 @@ end
 
 Integrating a FortiGate firewall with the Aviatrix Controller enables the Controller to make automatic RFC 1918 and non-RFC 1918 route updates to the FortiGate routing tables. You may also manually enable the integration with your CSP management tools. FortiGate integration is supported in AWS, Azure, and GCP clouds.
 
-1. Generate a Firewall API Token from FortiGate. This token is required to integrate the FortiGate firewall with the Aviatrix Controller.
+In this procedure you generate a Firewall API Token from FortiGate. This token is required to integrate the FortiGate firewall with the Aviatrix Controller.
 
-   a. In the FortiGate GUI, navigate to System > Administrators >  Create New > REST API Admin.
-   b. Provide a username and profile for this user. 
+1. In the FortiGate GUI, navigate to System > Administrators >  Create New > REST API Admin.
+#. Provide a username and profile for this user. 
 
 |fort_admin_profile|
   
 
-   c. Click OK to create the user with this profile. An API key is generated.
-   d. Copy the key string that displays. It is only displayed once.
-
-2. Go to Aviatrix Controller > Firewall Network > Vendor Integration > Firewall.
+3. Click OK to create the user with this profile. An API key is generated.
+#. Copy the key string that displays. It is only displayed once.
+#. Go to Aviatrix Controller > Firewall Network > Vendor Integration > Firewall.
 #. Enter the vendor firewall information in the Controller.
 
    - Transit VPC ID: select the VPC ID for the CSP
