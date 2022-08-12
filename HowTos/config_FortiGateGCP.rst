@@ -90,8 +90,8 @@ Integrating a FortiGate firewall with the Aviatrix Controller enables the Contro
    b. Provide a username and profile for this user. 
 
 |fort_admin_profile|
-
   
+
    c. Click OK to create the user with this profile. An API key is generated.
    d. Copy the key string that displays. It is only displayed once.
 
