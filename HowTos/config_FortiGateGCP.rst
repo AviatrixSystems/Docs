@@ -71,8 +71,11 @@ Before configuring the static routes you must configure the port 2 (LAN) interfa
 #. Run these commands to disable the source check. This enables the firewall to forward packets received on that interface.
 
 config system interface
+
 edit "port2"
+
 set src-check disable
+
 end
 
 
@@ -84,7 +87,7 @@ Integrating a FortiGate firewall with the Aviatrix Controller enables the Contro
 1. Generate a Firewall API Token from FortiGate. This token is required to integrate the FortiGate firewall with the Aviatrix Controller.
 
    a. In the FortiGate GUI, navigate to System > Administrators >  Create New > REST API Admin.
-   #. Provide a username and profile for this user. 
+   b. Provide a username and profile for this user. 
 
 |fort_admin_profile|
 
