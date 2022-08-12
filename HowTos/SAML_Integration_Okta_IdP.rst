@@ -132,16 +132,16 @@ Step 3. Retrieve Okta IdP metadata
 
 #. After the application is created in Okta, go to the `Sign On` tab for the application.
 
-#. Scoll down to *SAML Signing Certificates* section, notice SHA-2 certificate is Active, click on Actions -> View IdP metadata
+#. Scroll down to SAML Signing Certificates section, notice that the SHA-2 certificate is Active, click Actions -> View IdP metadata
 
 |image9|
 
-#. This would open up a new page, copy the URL of the page. This value will be used to configure the Aviatrix SP Endpoint.
+#. A new page opens. Copy this page's URL. This value will be used to configure the Aviatrix SP Endpoint.
 The URL would have this format: `https://<accountid>.okta.com/app/<idstring>/sso/saml/metadata`
 
 |image10|
 
-3. Assign the application to your account
+3. Assign the application to your account.
 
 |image8|
 
