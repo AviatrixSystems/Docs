@@ -157,7 +157,6 @@ In Private Mode the following Aviatrix functionality is not available:
 - Site2Cloud
 - AWS TGW
 - Controller Security tab
-- rsyslog that runs over UDP (Private Mode Load Balancers currently only support TCP)
 - You cannot launch gateways in the same VPC/VNet as the Link Service VPC/VNet
 - BGP over LAN
 - BGP over Spoke
