@@ -36,7 +36,7 @@ Below are the steps for initial setup.
 Logging on to the FortiGate Next Generation Firewall
 -------------------------------------------------------
 
-1. After completing the FireNet setup and deploying the FortiGate firewall instance in GCP at `<https://docs.aviatrix.com/HowTos/transit_firenet_workflow_gcp.html>`_, navigate to Firewall Network > List > Firewall in the Aviatrix Controller. 
+1. After completing the FireNet setup and `deploying the FortiGate firewall instance in GCP <https://docs.aviatrix.com/HowTos/transit_firenet_workflow_gcp.html>`_, navigate to Firewall Network > List > Firewall in the Aviatrix Controller. 
 #. Select the firewall in the list.
 #. In the Actions menu, select Download key. This downloads the PEM file to your machine. Make note of the name and location of the PEM file (matches your firewall instance name).
 #. Click on the link as shown.
@@ -70,9 +70,7 @@ Before configuring the static routes you must configure the port 2 (LAN) interfa
 #. SSH into the firewall instance using the following command: ssh -I <firewallname>.pem 
 #. Run these commands to disable the source check. This enables the firewall to forward packets received on that interface.
 
-::
-
-   config system interface
+config system interface
 edit "port2"
 set src-check disable
 end
@@ -85,14 +83,14 @@ Integrating a FortiGate firewall with the Aviatrix Controller enables the Contro
 
 1. Generate a Firewall API Token from FortiGate. This token is required to integrate the FortiGate firewall with the Aviatrix Controller.
 
-   i. In the FortiGate GUI, navigate to System > Administrators >  Create New > REST API Admin.
-   ii. Provide a username and profile for this user. 
+   a. In the FortiGate GUI, navigate to System > Administrators >  Create New > REST API Admin.
+   #. Provide a username and profile for this user. 
 
 |fort_admin_profile|
 
   
-   iii. Click OK to create the user with this profile. An API key is generated.
-   iv. Copy the key string that displays. It is only displayed once.
+   c. Click OK to create the user with this profile. An API key is generated.
+   d. Copy the key string that displays. It is only displayed once.
 
 2. Go to Aviatrix Controller > Firewall Network > Vendor Integration > Firewall.
 #. Enter the vendor firewall information in the Controller.
@@ -121,7 +119,7 @@ Configuring a DNAT Policy for Health Check
 
 A DNAT policy is required on the firewall to translate the destination of the health check packets to the firewall interface IP address. 
 
-Before you begin, you require the TCP and UDP load balancer front end IP addresses from your GCP portal, along with the firewall instance nic0 internal IP address.
+Before you begin, you need the TCP and UDP load balancer front end IP addresses from your GCP portal, along with the firewall instance nic0 internal IP address.
 
 1. In the firewall UI, navigate to Policy & Objects > Virtual IPs and click Create New > Virtual IP.
 #. In the New Virtual IP dialog, configure the following:
