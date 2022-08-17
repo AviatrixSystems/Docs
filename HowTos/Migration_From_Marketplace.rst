@@ -33,7 +33,7 @@ Prerequisites
 * Aviatrix Controller running latest version of software
 
   #. Log in to your existing Aviatrix Controller.
-  #. Get your Customer ID either through Controller > Settings > Controller > License or from your Aviatrix Account Manager. If you are migrating to a metered image, subscribe to the Aviatrix Secure Networking Platform Metered 2208 - Copilot, 24x7 Support offer to receive your Customer ID by email.
+  #. Get your Customer ID either through Controller > Settings > Controller > License or from your Aviatrix Account Manager. If you are migrating a metered image, subscribe to the Aviatrix Secure Networking Platform Metered 2208 - Copilot, 24x7 Support offer to receive your Customer ID by email.
   #. Navigate to Settings > Maintenance > Upgrade tab.
   #. Make sure you are running the **latest** version. If it is not the latest version, please `upgrade <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`__ before proceeding. Note that Aviatrix software version upgrade is a version-to-version upgrade. Therefore, you may need to perform multiple upgrades until you reach the latest version on your existing Controller. 
 
