@@ -34,6 +34,14 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
+6.8.1149 (08/17/2022)
+=====================
+
+**Issues Corrected in Aviatrix Release 6.8.1149**
+
+- **AVX-27330** - Fixed upgrade issues for gateways deployed before version 5.3.
+
+
 6.7.1436 (08/16/2022)
 =====================
 
@@ -58,6 +66,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - **AVX-25459** - If you have one of the VPC CIDRs as same as the spoke gateway’s subnet CIDR, some routes cannot be updated correctly in the spoke gateway route table. 
 - **AVX-25709** - Exception seen when disabling TGW Firenet la launched before the 6.3 release. 
 - **AVX-26684** - GRE external connection may miss routes on the HA Transit. 
+
 
 6.6.5721 (08/16/2022)
 =====================
