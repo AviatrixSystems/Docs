@@ -50,12 +50,12 @@ For manual subscription, follow the steps in `this doc <http://docs.aviatrix.com
 Launching the Controller
 ==============================
 
-After subscribing to the metered offer and receiving your license key, click the link in the "License key for Aviatrix Metered Controller and Copilot" email you received. This link opens the Azure marketaplace to the Aviatrix Secure Networking Platform BYOL (Bring Your Own License) page.
+After subscribing to the metered offer and receiving your license key, click the link in the "License key for Aviatrix Metered Controller and Copilot" email you received. This link opens the Azure marketplace to the Aviatrix Secure Networking Platform BYOL (Bring Your Own License) page.
 
 Launching the Controller VM from the Azure Marketplace Portal
 -------------------------------------------------------------------------------
 
-#. On the Aviatrix Securet Network Platform BYOL page, click **Get it Now**.
+#. On the Aviatrix Secure Network Platform BYOL page, click **Get it Now**.
 
     |aviatrix_byol_offer_azure_marketplace|
 
