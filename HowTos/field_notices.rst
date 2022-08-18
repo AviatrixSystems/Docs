@@ -6,7 +6,7 @@ Field Notices
 
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
 
-Field Notice 0039 (22/08/16)
+Field Notice 0039 (2022/08/16)
 ----------------------------
 
 **High Severity Bug Fix: AVX-25425**
