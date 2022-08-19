@@ -62,7 +62,7 @@ An app domain contains one or more filters to identify CSP endpoints that map to
 
 	a. Click +Resource Type and select VPC/VNet, Virtual Machines, or Subnet. 
 	b. Enter the matching criteria for resources that will be part of this app domain. 
-	c. All CSP tags that you have defined for your Cloud resources are present in the list for you to select from. Some examples of tags are: Backup, Controller, Aviatrix-Created-Resource, and Type.
+	c. All CSP tags that you have defined for your Cloud resources are present in the list for you to select from. In GCP, only the instance labels are available for selection (network tags are not). Some tag examples are: Backup, Controller, Aviatrix-Created-Resource, and Type.
 	d. If needed, add another resource type. Typically you will only have resources of the same type in an app domain (for example, you can have more than one VM based filter).
 	e. You can also select resource attributes (Account Name and Region) if you want to match against all resources within an account or region. The values for the selected condition(s) are populated automatically.
 	f. After entering your resource type, you can use the Preview Resources toggle switch to see the selected resources that map to the app domain. 
@@ -153,7 +153,7 @@ You can manually trigger a poll to fetch resources directly from your CSPs by cl
 Limitations
 ===========
 
-- Micro-segmentation is only supported on AWS and Azure (not AWS GovCloud or Azure Government). Support for other clouds is not available in this release.
+- Micro-segmentation is supported on the following CSPs: AWS, AWS GovCloud, Azure, Azure Government, and GCP.
 - You can configure up to 500 app domains.
 - You can have up to 3000 unique CIDRs per app domain.
 - You can configure up to 20 filters per app domain (OR/ANY filters that are not the CIDR type).
