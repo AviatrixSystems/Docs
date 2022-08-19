@@ -223,7 +223,7 @@ Controller Migration During Disaster Recovery
 In a Disaster Recovery (DR) situation in which an entire CSP region is unavailable, you may not be able to access your old Controller to follow the steps above. In this situation, use the steps below to migrate your Controller.
 
 1. Deploy a new Controller in a **different** region from the old Controller.
-2. `Upgrade <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_ this new Controller to the latest software version.
+2. `Upgrade <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_ this new Controller to the current production version.
 3. If possible, `restore your backup <https://docs.aviatrix.com/HowTos/controller_backup.html#how-to-restore-configuration>`_. A best practice is to keep a current backup in a separate region from the region in which you deployed the Controller. 
 4. In your new Controller, go to Settings > Maintenance > Migration and click **Migrate**.
 5.  Run a connectivity and performance test to ensure everything is working correctly.
