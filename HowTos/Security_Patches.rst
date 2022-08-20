@@ -6,9 +6,10 @@
 Security Patches
 ###################################
 
+4. Security Patch
+-------------------
 
-Security Patch Note for Controllers (11/01/21)
-===================================================================== 
+**Date** 11/01/2021
 
 **Subject**: AVI-2021-0005 Apache Request Smuggling Vulnerability Security Patch.
 
@@ -64,8 +65,10 @@ To apply the security patch:
 
   #. Attach CaaG back to the Transit Gateway.
 
-Security Patch Note (10/25/2021)
-===================================================================== 
+3. Security Patch
+-------------------
+
+**Date** 10/25/2021
 
 **Subject**: AVI-2021-0006 Critical Vulnerability Security Patch
 
@@ -91,8 +94,12 @@ To apply a security patch, please refer to the following steps:
 * This patch can be applied on releases 6.2 and higher
 * Aviatrix **strongly recommends** you to upgrade to releases 6.4 or higher. Please check out the `release notes <https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html>`_ and follow the `upgrade instructions <https://aviatrix.zendesk.com/hc/en-us/articles/4403944002829-Aviatrix-Controller-Upgrade>`_
 
-Security Note 6.5.1936, 6.4.2869, 6.3.2526, and 6.2.2052 (10/11/2021)
-===================================================================== 
+2. Security Patch
+-------------------
+
+**Date** 10/11/2021
+
+**Security Note for 6.5.1936, 6.4.2869, 6.3.2526, and 6.2.2052**
 
 **Subject**: Security release for Aviatrix versions 6.5.1936, 6.4.2869, 6.3.2526, and 6.2.2052.
 
@@ -114,8 +121,12 @@ Mitigation: Please upgrade to the latest release. For detailed instructions rela
 
 -If you are running 6.5, upgrade to 6.5.1936 or later. 
 
-Security Note 6.2.2043, 6.3.2490, 6.4.2838, and 6.5.1922 (9/11/2021)
-===================================================================
+1. Security Patch
+-------------------
+
+**Date** 09/11/2021
+
+**Security Note for 6.2.2043, 6.3.2490, 6.4.2838, and 6.5.1922**
 
 **Subject**: Security release for Aviatrix versions 6.5, 6.4, 6.3, and 6.2. 
 
