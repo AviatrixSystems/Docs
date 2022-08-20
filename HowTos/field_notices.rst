@@ -366,7 +366,7 @@ Please upgrade to one of the supported `Aviatrix VPN Clients <https://docs.aviat
  
 If you have any difficulties in upgrading your Aviatrix VPN Client, please contact your Aviatrix Network Admin and have them open a `support ticket <https://aviatrix.zendesk.com/>`_.
 
-285. Field Notice
+25. Field Notice
 ------------------
 
 **Date** 04/26/2021
@@ -468,5 +468,4 @@ If you have any questions about your Aviatrix network, please open a `support ti
 
 .. |imagefn37| image:: field_notices_media/fn37.png 
    :width: 400
-   
-.. disqus::
+
