@@ -185,7 +185,4 @@ SAML XML signature wrapping vulnerability                                       
                                                                                                         Applicable to Aviatrix Controller only.
 =================================================================             ====================      =======================================================
 
-.. important::
-    Increase File Descriptor limit patch will disconnect all VPN Users.
-
 
