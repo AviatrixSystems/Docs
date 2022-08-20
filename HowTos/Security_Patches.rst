@@ -6,6 +6,21 @@
 Security Patches
 ###################################
 
+Applying a Security Patch
+==========================
+
+To apply a patch:
+
+1) Backup your Aviatrix Controller. For more information, see `Controller Backup and Restore <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
+
+2) Apply the security or software patch on the controller. From the Aviatrix Controller, navigate to Settings > Maintenance > SecurityPatches or SoftwarePatches and click on **UpdateAvailablePatches**. You should see the new patch in the display. 
+
+3) Apply the patch by clicking on the icon on the right and selecting **Apply Patch** from the popup menu.
+
+4) Validate the update by clicking on the icon on the right and selecting **Patch Status** and scrolling down to bottom of page.
+
+5) Backup your Aviatrix Controller again to save the new configuration.
+
 4. Security Patch
 -------------------
 
@@ -173,17 +188,4 @@ SAML XML signature wrapping vulnerability                                       
 .. important::
     Increase File Descriptor limit patch will disconnect all VPN Users.
 
-Applying a Security Patch
-==========================
 
-To apply a patch:
-
-1) Backup your Aviatrix Controller. For more information, see `Controller Backup and Restore <https://docs.aviatrix.com/HowTos/controller_backup.html>`_.
-
-2) Apply the security or software patch on the controller. From the Aviatrix Controller, navigate to Settings > Maintenance > SecurityPatches or SoftwarePatches and click on **UpdateAvailablePatches**. You should see the new patch in the display. 
-
-3) Apply the patch by clicking on the icon on the right and selecting **Apply Patch** from the popup menu.
-
-4) Validate the update by clicking on the icon on the right and selecting **Patch Status** and scrolling down to bottom of page.
-
-5) Backup your Aviatrix Controller again to save the new configuration.
