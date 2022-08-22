@@ -60,6 +60,11 @@ To migrate to the most current AMI directly from your Controller, use the follow
 
 1. Go to your Controller > Settings > Maintenance > Software Upgrade. Make sure you are on the right software version for the migration. If not, upgrade your software version.
 2. Go to Settings > Maintenance > Backup & Restore. Make sure you have a backup of your current settings.
+
+.. tip::
+
+  In case of a Disaster Recovery (DR) scenario in which an entire AWS region goes down, considering backing up your Controller to at least two separate regions.
+
 3. Go to Settings > Maintenance > Migration. Click **Migrate** to migrate your Controller to the latest image.
 
   |controller_migration|
@@ -80,6 +85,10 @@ Method 2: Manually Migrating Your Controller
 ============================================
 
 The steps below describe how to manually migrate your Controller. The Controller-driven and manual methods for migration are the same, but the manual method allows you to see each step of the process.
+
+.. note::
+
+  In a Disaster Recovery (DR) scenario in which you cannot access the old Controller at all, please see the Controller Migration during Disaster Recovery section below.  
 
 Enable Backup
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -179,6 +188,19 @@ If you used an ELB (Elastic Load Balancer) for your old Controller, remove the o
 
 .. tip::
    Optional: After confirming everything is running correctly, delete the previous Aviatrix AWS Marketplace Controller instance.
+
+Controller Migration During Disaster Recovery
+================================================
+
+In a Disaster Recovery (DR) situation in which an entire AWS region is unavailable, you may not be able to access your old Controller to follow the steps above. In this situation, use the steps below to migrate your Controller.
+
+1. `Deploy <https://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html>`_ a new AWS Controller in a **different** region from the old Controller.
+2. `Upgrade <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_ this new Controller to the current production version.
+3. If possible, `restore your backup <https://docs.aviatrix.com/HowTos/controller_backup.html#how-to-restore-configuration>`_. A best practice is to keep a current backup in a separate region from the region in which you deployed the Controller. 
+4. In your new Controller, go to Settings > Maintenance > Migration and click **Migrate**. This migration changes all security group gateways to use the new Controller's EIP (Elastic IP address).
+5.  Run a connectivity and performance test to ensure everything is working correctly.
+6. `Deploy <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#copilot-instance-launch-using-controller-ui-aws-only>`_ CoPilot from the new Controller.
+7. When your old Controller becomes available again, do not restart that instance until you can ensure that all operations are working with the new Controller. Then, you can delete that instance.
 
 .. |controller_versions| image:: Migration_From_Marketplace_media/controller_versions.png
    :scale: 60%

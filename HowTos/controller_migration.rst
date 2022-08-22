@@ -33,9 +33,15 @@ Prerequisites
 ^^^^^^^^^^^^^^^^^
 
 * Run an audit on the Controller’s primary access account and all the remaining secondary accounts to make sure that the IAM roles and policies are set up as suggested. In your Controller, go to Accounts > Access Accounts > select an account > click **Audit**. Repeat these steps for all access accounts for the CSP where your Controller instance is located (AWS, Azure, GCP, or OCI).
-* Enable a `Controller backup <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ using the access account for the CSP from which you launched the Controller (Azure, GCP, or OCI).
+* Enable a `Controller backup <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ using the access account for the CSP from which you launched the Controller (Azure, GCP, or OCI). 
+
+.. note::
+
+  In case of a Disaster Recovery (DR) scenario, considering keeping current backups in separate regions of each CSP.
+
 * Back up your existing Controller. In your Controller, go to Settings  >  Maintenance  > Backup & Restore  >  Backup. Click **Backup now**.
-* Schedule the migration during a maintenance window and a walk through the `pre-op checklist <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_.
+* Schedule the migration during a maintenance window.
+* Walk through the `pre-op checklist <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_.
 * `Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ to the latest build of your current release.
 * `Disable <https://docs.aviatrix.com/HowTos/controller_ha.html#steps-to-disable-controller-ha>`_ your Controller's HA configuration if HA is set up. You can `reenable <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ HA on the new Controller once migration is complete.
 * If you are using SAML login for either the Controller login (Settings/Controller/SAMLLogin) and/or for openvpn authentication (OpenVPN/Advanced/SAML), please make sure that the endpoints configured on the Controller and the SAML applications in the IdP match exactly.
@@ -54,6 +60,10 @@ Migrate
 .. note::
 
   A temporary EIP is created for business continuity during migration.  A new private IP will be created on the new Controller.
+
+.. tip::
+
+  In a Disaster Recovery (DR) situation in which you cannot access the old Controller, please see the Controller Migration During Disaster Recovery section below.
 
 Controller Migration in Azure
 ##################################
@@ -207,6 +217,19 @@ Before Controller IP migration :
 After Controller IP migration :
 
 |gcp_after_migrating_ip|
+
+Controller Migration During Disaster Recovery
+===================================================================
+
+In a Disaster Recovery (DR) situation in which an entire CSP region is unavailable, you may not be able to access your old Controller to follow the steps above. In this situation, use the steps below to migrate your Controller.
+
+1. Deploy a new Controller in a **different** region from the old Controller.
+2. `Upgrade <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_ this new Controller to the current production version.
+3. If possible, `restore your backup <https://docs.aviatrix.com/HowTos/controller_backup.html#how-to-restore-configuration>`_. A best practice is to keep a current backup in a separate region from the region in which you deployed the Controller. 
+4. In your new Controller, go to Settings > Maintenance > Migration and click **Migrate**.
+5.  Run a connectivity and performance test to ensure everything is working correctly.
+6. `Deploy <https://docs.aviatrix.com/HowTos/copilot_getting_started.html>`_ CoPilot from the new Controller.
+7. When your old Controller becomes available again, keep that instance stopped until you can ensure that all operations are working with the new Controller. Then, you can delete that instance.
 
 .. |azure_account_details_1| image:: controller_migration_media/azure_account_details_1.png
    :scale: 60%
