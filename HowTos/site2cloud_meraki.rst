@@ -52,7 +52,7 @@ Adding a Site2Cloud Tunnel in Aviatrix Controller
   | Algorithms                    | Unmark this checkbox                     |
   +-------------------------------+------------------------------------------+
   | Encryption over ExpressRoute/ | Unmark this checkbox                     |
-  | Direct Connect                 |                                         |
+  | Direct Connect                |                                          |
   +-------------------------------+------------------------------------------+
   | Enable HA                     | Unmark this checkbox                     |
   +-------------------------------+------------------------------------------+
