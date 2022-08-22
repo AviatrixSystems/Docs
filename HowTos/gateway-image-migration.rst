@@ -37,11 +37,11 @@ Prerequisites
 
 .. tip::
 
-  Before upgrading, consider upsizing your gateway if the traffic load is high.
+  Before upgrading, consider `upsizing <https://docs.aviatrix.com/HowTos/gateway.html?highlight=resize#gateway-resize>`_, that is, increasing the size of your gateway, if the traffic load is high.
 
 .. warning::
 
-Even with HA configured, if you have high traffic during a gateway image upgrade, the gateway that remains up could be overwhelmed. Schedule gateway image upgrades during a low-traffic period.
+  Even with HA configured, if you have high traffic during a gateway image upgrade, the gateway that remains up could receive too much traffic. Schedule gateway image upgrades during a low-traffic period.
 
 * Before upgrading any gateway images, `upgrade <https://docs.aviatrix.com/HowTos/selective_upgrade.html#upgrading-the-platform-software>`_ your Controller to the latest software version. This software upgrade ensures that you can update to the latest gateway image and reduce downtime for gateway image upgrades.
 
@@ -62,7 +62,7 @@ The process and best practices for upgrading a gateway image can differ based on
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Public Subnet Filtering (PSF) Gateway  | This gateway type does not have HA.                                                                                                                                                |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Transit and Spoke Gateways             | If your network has many Spoke Gateways, replacing the transit primary or HA Gateways takes more time. What for one group of image upgrades to complete before beginning another.  |
+| Transit and Spoke Gateways             | If your network has many Spoke Gateways, replacing the transit primary or HA Gateways takes more time. Wait for one group of image upgrades to complete before beginning another.  |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Site2Cloud Gateways                    | A best practice is to upgrade one gateway at a time.                                                                                                                               |
 |                                        |                                                                                                                                                                                    |
@@ -80,7 +80,7 @@ Upgrade Gateway Image
 
 .. tip::
 
-  * Your Controller can do up to 15 gateway replacements in parallel. Try to group your image upgrades in groups of no more than 15.
+  * Your Controller can replace up to 15 gateways in parallel. Try to group your image upgrades in groups of no more than 15.
   * For greater simplicity and efficiency, combine all your HA gateways, which have “hagw” in their names, and all primary gateways in separate operations.
   * To organize multiple image upgrades, considering spreading out groups of upgrades in separate windows on your browser.
 
