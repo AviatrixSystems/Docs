@@ -9,7 +9,7 @@ Deploying Aviatrix Secure Edge 1.0 for VMware ESXi
 
 Aviatrix Secure Edge has a virtual form factor that lets you deploy an Edge Gateway as a standard virtual machine (VM). This document provides step-by-step instructions for deploying Aviatrix Secure Edge in a private or public Cloud network. The instructions in this document show you how to set up an Edge Gateway in VMware ESXi. 
 
-For deployment diagrams and additional information, refer to `Aviatrix Secure Edge FAQ <http://docs.aviatrix.com/HowTos/secure_edge_faq.html>`_.
+For deployment diagrams and additional information, refer to `Aviatrix Edge FAQ <http://docs.aviatrix.com/HowTos/edge_faq.html>`_.
 
 Prerequisites
 -------------
