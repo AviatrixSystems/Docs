@@ -1,0 +1,101 @@
+.. meta::
+  :description: Migrating Gateway Images
+  :keywords: gateway, migrating, upgrading, gateway replacement, image, Azure, GCP, OCI
+
+===================================================
+Migrating Gateway Images
+===================================================
+
+Introduction
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A gateway image is a virtual resource or template that contains all the information required to launch, backup, or restore a gateway in your cloud network. Aviatrix periodically releases new gateway images that include updates, enhancements, and security improvements. A best practice is to plan to upgrade your gateways at least once a quarter.
+
+You may need to upgrade your gateway image outside of a periodic upgrade in the following situations:
+
+* Aviatrix has released a new gateway image as part of a security update or product enhancement.
+* A gateway requires significant repair.
+
+This document shows you how to upgrade an Aviatrix Gateway to a new image. 
+
+.. note::
+
+  A gateway image upgrade is also known as a gateway replacement.
+
+.. important::
+
+  For major security issues or software issues, Aviatrix sends out a field notice to notify you to upgrade to the newest image. You can review past `Field Notices <https://docs.aviatrix.com/HowTos/field_notices.html>`_ and `Aviatrix Controller and Gateway Image Release Notes <https://docs.aviatrix.com/HowTos/image_release_notes.html>`_.
+
+Prerequisites
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 
+- Every quarter, or if you receive a field notice about a new image, schedule this gateway image upgrade for an off-peak time on your network, during a maintenance window. These upgrades do require some downtime, but they have minimal impact. 
+- Consider enabling HA (High Availability) on the Transit and Spoke Gateways that require an image upgrade if you have not done so. HA helps minimize downtime. 
+ 
+  * If you do not have HA configured, a gateway image upgrade requires downtime. 
+  * If you have HA configured, when you perform a gateway image upgrade, your Controller routes all traffic to the gateway that is not being replaced. Performance during the upgrade depends on the size of the gateway and the amount of traffic. 
+
+.. tip::
+
+  Before upgrading, consider upsizing your gateway if the traffic load is high.
+
+.. warning::
+
+Even with HA configured, if you have high traffic during a gateway image upgrade, the gateway that remains up could be overwhelmed. Schedule gateway image upgrades during a low-traffic period.
+
+* Before upgrading any gateway images, `upgrade <https://docs.aviatrix.com/HowTos/selective_upgrade.html#upgrading-the-platform-software>`_ your Controller to the latest software version. This software upgrade ensures that you can update to the latest gateway image and reduce downtime for gateway image upgrades.
+
+Image Upgrades by Gateway Type
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The process and best practices for upgrading a gateway image can differ based on the type of gateway. Review this list to decide how to structure and schedule your gateway image upgrades.
+
++----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Gateway Type                           | Image Upgrade Notes                                                                                                                                                                |
++========================================+====================================================================================================================================================================================+
+| OpenVPN Gateway                        | * When you have an Open VPN Gateway deployed behind a load balancer, you can upgrade images in batches without causing an outage, depending on the number of users you have.       |
+|                                        | * For OpenVPN Gateways that are not deployed with a load balancer, you should expect an outage.                                                                                    |
+|                                        | * If any users are already on an OpenVPN gateway, they will be bumped when the gateway goes through an image upgrade. If you have more than one OpenVPN gateway, the end user can  |
+|                                        |   connect immediately to another gateway.                                                                                                                                          |
++----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| FQDN Gateways with HA                  | The Controller does not reroute all traffic for these gateways.                                                                                                                    |
++----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Public Subnet Filtering (PSF) Gateway  | This gateway type does not have HA.                                                                                                                                                |
++----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Transit and Spoke Gateways             | If your network has many Spoke Gateways, replacing the transit primary or HA Gateways takes more time. What for one group of image upgrades to complete before beginning another.  |
++----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Site2Cloud Gateways                    | A best practice is to upgrade one gateway at a time.                                                                                                                               |
+|                                        |                                                                                                                                                                                    |
+|                                        |                                                                                                                                                                                    |
+|                                        |                                                                                                                                                                                    |
+|                                        |                                                                                                                                                                                    |
++----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Upgrade Gateway Image
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. In your Controller, go to Settings > Maintenance.
+2. In the Selective Gateway Upgrade window, select the gateways that require an upgrade. The system automatically selects the platform controller current software version and the compatible gateway image version for that software version.
+
+.. tip::
+
+  * Your Controller can do up to 15 gateway replacements in parallel. Try to group your image upgrades in groups of no more than 15.
+  * For greater simplicity and efficiency, combine all your HA gateways, which have “hagw” in their names, and all primary gateways in separate operations.
+  * To organize multiple image upgrades, considering spreading out groups of upgrades in separate windows on your browser.
+
+3. Click **Image Upgrade**. You can follow the status in the progress window.
+
+Replacing a gateway can take 5-7 minutes. After the gateway is up, it takes more time for the tunnels to come up. The total length of time required varies depending on the number of tunnels.
+
+.. note::
+
+  Upgrading gateway images for gateways with many tunnels can take some time. For example, depending on the software version of the Controller, it may take up to one hour to upgrade 4,000 tunnels.
+
+Verify
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Verify the gateway upgrade by reviewing the gateway information in the Current Image Version column.
+For information about migrating your Controller to a new image, please see `this document  <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_ for AWS Controllers and `this document <https://docs.aviatrix.com/HowTos/controller_migration.html>`_ for Azure, GCP, or OCI Controllers.
+
+.. disqus::
