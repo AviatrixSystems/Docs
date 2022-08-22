@@ -200,7 +200,7 @@ In a Disaster Recovery (DR) situation in which an entire AWS region is unavailab
 4. In your new Controller, go to Settings > Maintenance > Migration and click **Migrate**. This migration changes all security group gateways to use the new Controller's EIP (Elastic IP address).
 5.  Run a connectivity and performance test to ensure everything is working correctly.
 6. `Deploy <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#copilot-instance-launch-using-controller-ui-aws-only>`_ CoPilot from the new Controller.
-7. When your old Controller becomes available again, keep that instance stopped until you can ensure that all operations are working with the new Controller. Then, you can delete that instance.
+7. When your old Controller becomes available again, do not restart that instance until you can ensure that all operations are working with the new Controller. Then, you can delete that instance.
 
 .. |controller_versions| image:: Migration_From_Marketplace_media/controller_versions.png
    :scale: 60%
