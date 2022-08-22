@@ -334,6 +334,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/controller_config
    HowTos/Migration_From_Marketplace
    HowTos/controller_migration
+   HowTos/gateway-image-migration
    HowTos/privatemode
 
 .. _Troubleshoot:
