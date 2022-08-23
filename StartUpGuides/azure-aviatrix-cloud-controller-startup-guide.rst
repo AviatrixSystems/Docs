@@ -33,7 +33,7 @@ Subscribing to the Aviatrix Metered Offer
 6. Click **Subscribe**.
 7. After the configuration completes, click **Configure account now**.
 8. Enter your email address in the Email field and click **Submit**. 
-9. You receive a new email from admin@aviatrix.io with the subject line "License key for Aviatrix Metered Controller and Copilot." This email contains your Controller customer ID, Copilot customer ID, and offer subscription ID. Save these values in a secure place to use later for onboarding.
+9. You receive a new email from admin@aviatrix.io with the subject line "License key for Aviatrix Metered Controller and CoPilot." This email contains your Controller customer ID, Copilot customer ID, and offer subscription ID. Save these values in a secure place to use later for onboarding.
 
 Note with the Aviatrix Metered License, you are billed monthly. No upfront cost and pay as you go.
 
@@ -61,7 +61,7 @@ Launching the Controller VM from the Azure Marketplace Portal
 
 #. Under Create this app in Azure, click **Continue**.
 #. Under Aviatrix Secure Networking Platform BYOL, click **Create**.
-#. Create a new Resource Group titled "aviatrix." The virtual machine name can be "aviatrixController." For the instance size, at least 8GB of RAM is recommended; B2ms should be sufficient. 
+#. Create a new Resource Group titled "aviatrix." The virtual machine name can be "aviatrixController." For the instance size, at least 8GB of RAM is recommended; the B2ms instance size should be sufficient. 
 #. Next, enter a username, password, and Resource group. Please do **not** use "ubuntu" as username if you use password as the authentication type.
 
     |Azure_Basics|
@@ -69,7 +69,7 @@ Launching the Controller VM from the Azure Marketplace Portal
 #. Click **Review + create**.
 #. Click **Create**.
 #. Under Generate new key pair, click **Download private key and create resources** to download your secret key.
-#. When you receive the message that Your deployment is compete, click **Go to resource**.
+#. When you receive the message that your deployment is compete, click **Go to resource**.
 #. At the networking header, this will be preconfigured with a default subnet and security group. You should not need to change anything here. For Public IP, click **Create New**.
 #. At Assignment, select **Static** and click **OK**. 
 
@@ -88,14 +88,14 @@ Launching the Controller VM from the Azure Marketplace Portal
     |login|
 
 #. Log into your new Controller.
-#. After logging in, click on the Onboarding tab at the console.
+#. After logging in, click on the Onboarding tab.
 
 .. Warning:: Any resources created by the Controller, such as Aviatrix gateways, Azure routing entries, subnets, etc, must be deleted from the Controller. If you delete them directly on Azure console, The Controller's view of the resources will be incorrect, which will lead to features not working properly.
 
 Onboarding your Azure Account in the Aviatrix Controller
 =====================================================
 
-The purpose of Onboarding is to help you setup an account on the Aviatrix Controller that
+The purpose of onboarding is to help you setup an account on the Aviatrix Controller that
 corresponds to an Azure account with policies so that the Controller can launch gateways using Azure
 APIs.
 
