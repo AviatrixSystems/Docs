@@ -132,8 +132,6 @@ In the Controller, navigate to Multi-Cloud Transit > Setup. On the Transit/Spoke
 - `Launch an Aviatrix Transit Gateway <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-an-aviatrix-transit-gateway>`_
 - `Launch an Aviatrix Spoke Gateway <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-an-aviatrix-spoke-gateway>`_
 
- .. note::
-	NAT is supported on any Spoke gateways you create while in Private Mode.
 
 Deleting Multi-Cloud Access VPC and Link Service
 ------------------------------------------------
