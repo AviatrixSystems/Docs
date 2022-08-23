@@ -161,7 +161,6 @@ In Private Mode the following Aviatrix functionality is not available:
 - You cannot launch gateways in the same VPC/VNet as the Link Service VPC/VNet
 - BGP over LAN
 - BGP over Spoke
-- Transit Connect to External Device (except for BGP over IPSec and Static IPSec)
 - Insane mode to Internet
 - FQDN Gateway
 - Egress through Firewall
