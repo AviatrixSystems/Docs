@@ -45,7 +45,7 @@ when it is launched.
 
 There are exceptional cases, such as if you provide Managed Service on Azure, the Aviatrix Companion Gateway requires manual subscription. 
 
-For manual subscription, follow the steps in `this doc <http://docs.aviatrix.com/HowTos/CompanionGateway.html>`__ to subscribe.
+To subscribe manually, follow the steps in `this doc <http://docs.aviatrix.com/HowTos/CompanionGateway.html>`__ to subscribe.
 
 Launching the Controller
 ==============================
