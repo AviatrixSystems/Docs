@@ -25,16 +25,17 @@ Follow the instructions to also subscribe to the Aviatrix Companion Gateway desc
 Subscribing to the Aviatrix Metered Offer 
 =============================================
 
-Go to `Azure Marketplace <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/aviatrix-systems.aviatrix-controller-saas>`_ to subscribe to Aviatrix Controller Meter License - PAYG. 
+1. Go to the `Azure Marketplace <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/aviatrix-systems.aviatrix-controller-abu-saas?tab=Overview>`_ to subscribe to the Aviatrix Secure Networking Platform Metered 2208 - Copilot & 24x7 Support offer. 
+2. Click **Get it Now** on the left side of the page.
+3. Mark the permissions checkbox and click **Continue**.
+4. Click **Subscribe**.
+5. Enter your Subscription name, Resource group, Name, and Recurring billing preference. Then, click **Review + subscribe**.
+6. Click **Subscribe**.
+7. After the configuration completes, click **Configure account now**.
+8. Enter your email address in the Email field and click **Submit**. 
+9. You receive a new email from admin@aviatrix.io with the subject line "License key for Aviatrix Metered Controller and CoPilot." This email contains your Controller customer ID, Copilot customer ID, and offer subscription ID. Save these values in a secure place to use later for onboarding.
 
-Follow the Azure portal instructions to subscribe. 
-
-Subscribing to the Aviatrix Controller BYOL Offer
-===================================================
-
-After you subscribe to Aviatrix Meter License offer, you should receive an email from admin@aviatrix.io to inform you with customer ID and a link to subscribe the actual Aviatrix Controller BYOL offer. More to continue in the `Launching the Controller <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html#launch-the-controller>`_ section below.
-
-(Note with Aviatrix Meter License, you are billed monthly. No upfront cost and pay as you go.)
+Note with the Aviatrix Metered License, you are billed monthly. No upfront cost and pay as you go.
 
 (Optional) Subscribing to an Aviatrix Companion Gateway
 ===========================================================
@@ -44,34 +45,31 @@ when it is launched.
 
 There are exceptional cases, such as if you provide Managed Service on Azure, the Aviatrix Companion Gateway requires manual subscription. 
 
-For manual subscription, follow the steps in `this doc <http://docs.aviatrix.com/HowTos/CompanionGateway.html>`__ to subscribe.
-
+To subscribe manually, follow the steps in `this doc <http://docs.aviatrix.com/HowTos/CompanionGateway.html>`__.
 
 Launching the Controller
 ==============================
 
-
-Click the link in the email to launch the Controller.
---------------------------------------------------------------
-
-Go back to the email received from admin@aviatrix.io. The email informs you with a customer ID and a 
-link to subscribe the actual Aviatrix Controller BYOL offer.
-
-Click the link to return to the Azure Portal to launch the Controller. 
+After subscribing to the metered offer and receiving your license key, click the link in the "License key for Aviatrix Metered Controller and Copilot" email you received. This link opens the Azure marketplace to the Aviatrix Secure Networking Platform BYOL (Bring Your Own License) page.
 
 Launching the Controller VM from the Azure Marketplace Portal
 -------------------------------------------------------------------------------
 
-#. In your Azure account, navigate to the Marketplace. Enter "Aviatrix Secure Networking Platform BYOL" into the search bar to find the correct subscription. Select this subscription and click **Create**.
+#. On the Aviatrix Secure Network Platform BYOL page, click **Get it Now**.
 
     |aviatrix_byol_offer_azure_marketplace|
 
-#. Create a new Resource Group titled "aviatrix." The virtual machine name can be "aviatrixController." For the instance size, at least 8GB of RAM is recommended; B2ms should be sufficient. 
+#. Under Create this app in Azure, click **Continue**.
+#. Under Aviatrix Secure Networking Platform BYOL, click **Create**.
+#. Create a new Resource Group titled "aviatrix." The virtual machine name can be "aviatrixController." For the instance size, at least 8GB of RAM is recommended; the B2ms instance size should be sufficient. 
 #. Next, enter a username, password, and Resource group. Please do **not** use "ubuntu" as username if you use password as the authentication type.
 
     |Azure_Basics|
 
-#. Click **OK**.
+#. Click **Review + create**.
+#. Click **Create**.
+#. Under Generate new key pair, click **Download private key and create resources** to download your secret key.
+#. When you receive the message that your deployment is compete, click **Go to resource**.
 #. At the networking header, this will be preconfigured with a default subnet and security group. You should not need to change anything here. For Public IP, click **Create New**.
 #. At Assignment, select **Static** and click **OK**. 
 
@@ -84,21 +82,20 @@ Launching the Controller VM from the Azure Marketplace Portal
     |VM|
 
 #.  Use a browser to access the controller VM. In this example, it is
-    https://40.77.57.154
+    https://52.188.7.183
 #.  At the login page, enter "admin" as the username. The initial password is the internal IP address of the VM, as shown below.
 
     |login|
 
-#. Go through the login process.
-#. After logging in, click on the Onboarding tab at the console.
+#. Log into your new Controller.
+#. After logging in, click on the Onboarding tab.
 
-.. Warning:: Any resources created by the Controller, such as Aviatrix gateways, Azure routing entries, subnets, etc, must be deleted from the Controller console. If you delete them directly on Azure console, The Controller's view of the resources will be incorrect, which will lead to features not working properly.
-
+.. Warning:: Any resources created by the Controller, such as Aviatrix gateways, Azure routing entries, subnets, etc, must be deleted from the Controller. If you delete them directly on Azure console, The Controller's view of the resources will be incorrect, which will lead to features not working properly.
 
 Onboarding your Azure Account in the Aviatrix Controller
 =====================================================
 
-The purpose of Onboarding is to help you setup an account on the Aviatrix Controller that
+The purpose of onboarding is to help you setup an account on the Aviatrix Controller that
 corresponds to an Azure account with policies so that the Controller can launch gateways using Azure
 APIs.
 

@@ -210,11 +210,12 @@ To launch your Controller, subscribe to the correct Aviatrix AMI from the AWS Ma
 +----------------------------+-------------------------------------------------+
 
 2. Select the **Aviatrix Secure Networking Platform Metered 2208 – Copilot, 24x7 Support** option. On the subscription’s page, click **Continue to Subscribe**. Subscribing means that you can begin deploying the software in later steps using the CloudFormation template.
-3. If prompted, click **Accept Terms**. Then, **return to this guide and continue**. Do not proceed to Continue to Configuration yet.
+3. On the next page, click **Subscribe** again to confirm. Then, click **Set up Your Account**.
+4. Under Aviatrix Metered Controller Subscription, enter your email address in the Email field and click **Verify Email**. 
+5. Open the email you receive from admin@aviatrix.io, copy the six-digit verification code, and enter it in the Verification Code field. Then, click **Submit Form**.
+6. You receive a new email from admin@aviatrix.io with the subject line "License key for Aviatrix Metered Controller and Copilot." This email contains your Controller customer ID, Copilot customer ID, and offer subscription ID. Save these values in a secure place to use later for onboarding.
 
-.. warning::
-
-  Do not click Continue to Configuration yet. Instead, use the following steps to launch your Controller using a CloudFormation template.
+Next, use a CloudFormation template to launch your Controller.
 
 Launching the Controller with CloudFormation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

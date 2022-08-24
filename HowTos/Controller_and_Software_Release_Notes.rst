@@ -34,6 +34,74 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
+6.8.1149 (08/17/2022)
+=====================
+
+**Issues Corrected in Aviatrix Release 6.8.1149**
+
+- **AVX-27330** - Fixed upgrade issues for gateways deployed before version 5.3.
+
+
+6.7.1436 (08/16/2022)
+=====================
+
+**Issues Corrected in Aviatrix Release 6.7.1436**
+
+- **AVX-18788** - When a GCP spoke/transit using insane mode and attached to other gateway is resized to a larger size the network throughput does not increase as expected. This fix ensures that spoke/transit gateway throughput increases the network throughput when resized to a larger size. 
+- **AVX-24610** - When the AWS TGW API returns an error to search routes from a route table, the VPN /Direct Connect learned routes are withdrawn. It should be treated as no change. 
+- **AVX-24730** - The user should be able to go to the “Settings → Controller → Login Customization” page, the page allows the user to change the admin login restriction setting and set controller banner. 
+- **AVX-24860** - Enabled support for legacy Azure Germany North Region.  Azure does not allow users to create a new resource group in the legacy Germany North Region however users can still access or update the resource created in the legacy region previously. 
+- **AVX-25128** - An exception is seen when migrating transit gateway tunnel status in MongoDB to etc. when transit gateway has CloudN attached. When migrating transit gateway tunnel status in MongoDB to etcd, for transit gateways that have CloudN attached, use CloudN private_ip for peer_ip to fix the exception. If tunnel status in MongoDB does not have peer_ip, update it with peer_ip based on peer info from tunnel status msg controller received from a gateway. When a GCP spoke/transit using insane mode and attached to another gateway is resized to a larger size the network throughput does not increase as expected. This fix ensures that spoken/transit gateway throughput increases the network throughput when resized to a larger size. 
+- **AVX-25641** - When the customer configures the route-based mapped site2cloud connections (including enabling Forward Traffic to Transit) with tunnel or gateway failover or subnet editing, some customer traffic could be dropped. This is because the code incorrectly updates the routing parts of the connection. To fix the issue, the customer should update the versions with the fix, and image upgrades the gateways to get rid of the incorrect routing information on the gateway so that the new code can rebuild the correct routing. 
+- **AVX-25721** - For a spoke gateway, if the CIDR propagated from transit gateway has longer prefix than the CIDR propagated from S2C connection, existing software ignores the route/CIDR from transit gateway. The patch fixes this error and keeps longer prefix route from transit gateway.
+- **AVX-25976** - With this change, we will not program unnecessary entries in the VPC route table for DNAT configured with s2c connection. Thus, there is nothing to be cleaned up when the DNAT configuration is removed. 
+- **AVX-25993** - The logging service for Rsyslog supports up to 9 profiles. It is a bug in which the configuration during restore allows each profile enablement to start the Rsyslog service (6 times or more) in less than 2 seconds. The system service defaults 5 times in 10 seconds; otherwise, the Rsyslog service will fail in “starting”. The fix is to ensure that the Rsyslog service is only restarted once for all profiles. 
+- **AVX-26086** - Corrected the logic to program the learned 0.0.0.0/0 route on the Azure cloud route table. 
+- **AVX-26208** - Corrected issue with Security Group Management in certain cases when restoring from a backup. 
+- **AVX-26374** - The controller database can go into a state where it has empty peer IPs for tunnels between transit gateways and CloudN devices. This prevents the gateway snapshot creation and prevents configuration/route updates being propagated to the gateway. This Software patch script will correct the controller database entries.
+- **AVX-26852** - If users have/use 65535 in their BGP route AS path at the beginning of the path before any other ASN’s, it is replaced with IMPLICIT. This prevents an exception from occurring and prevents BGP route flapping. 
+
+**Known Issues in Aviatrix Release 6.7.1436**
+
+- **AVX-24701** - When the AWS TGW API returns an error to search routes from a route table, the VPN /Direct Connect learned routes are withdrawn. It should be treated as no change. 
+- **AVX-25459** - If you have one of the VPC CIDRs as same as the spoke gateway’s subnet CIDR, some routes cannot be updated correctly in the spoke gateway route table. 
+- **AVX-25709** - Exception seen when disabling TGW Firenet la launched before the 6.3 release. 
+- **AVX-26684** - GRE external connection may miss routes on the HA Transit. 
+
+**Deprecated Features in Aviatrix Release 6.7.1436**
+
+-  The Encrypted Peering feature and Transitive Peering features are deprecated. These features' functionality will be replaced by `Aviatrix Multi-Cloud Transit <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_.
+- The Sumo Logic logging integration, Logstash logging integration, and Splunk logging integrations are deprecated in this release. Instead, use `rsyslog <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#remote-syslog>`_ to integrate with external logging systems.
+
+
+6.6.5721 (08/16/2022)
+=====================
+
+**Issues Corrected in Aviatrix Release 6.6.5721**
+
+- **AVX-18788** - When a GCP spoke/transit using insane mode and attached to other gateway is resized to a larger size the network throughput does not increase as expected. This fix ensures that spoke/transit gateway throughput increases the network throughput when resized to a larger size. 
+- **AVX-24610** - When the AWS TGW API returns an error to search routes from a route table, the VPN /Direct Connect learned routes are withdrawn. It should be treated as no change. 
+- **AVX-24730** - The user should be able to go to the “Settings → Controller → Login Customization” page, the page allows the user to change the admin login restriction setting and set controller banner. 
+- **AVX-24860** - Enabled support for legacy Azure Germany North Region.  Azure does not allow users to create a new resource group in the legacy Germany North Region however users can still access or update the resource created in the legacy region previously. 
+- **AVX-25459** - If you have one of the VPC CIDRs as same as the spoke gateway’s subnet CIDR, some routes cannot be updated correctly in the spoke gateway route table. 
+- **AVX-25490** - New controller versions could be hit with error messages upon upgrade, such as "TypeError: '1370' has type str, but expected one of: int, long". This is because the previous version has some gateway level tunnel configurations which could have some values of the string type, and the newer version expects the integer type. The latest controller image versions with the fix will automatically convert the string values into integer values so that the upgrade could finish. 
+- **AXV-25514** - If users have/use 65535 in their BGP route AS path at the beginning of the path before any other ASN’s, it is replaced with IMPLICIT. This prevents an exception from occurring and prevents BGP route flapping. 
+- **AVX-25641** - When the customer configures the route-based mapped site2cloud connections (including enabling Forward Traffic to Transit) with tunnel or gateway failover or subnet editing, some customer traffic could be dropped. This is because the code incorrectly updates the routing parts of the connection. To fix the issue, the customer should update the versions with the fix, and image upgrades the gateways to get rid of the incorrect routing information on the gateway so that the new code can rebuild the correct routing. 
+- **AVX-25673** - After using SITE2CLOUD Diagnostics 'Enable verbose logging', 'Disable verbose logging' fails to disable verbose logging. 
+- **AVX-25721** - For a spoke gateway, if the CIDR propagated from transit gateway has longer prefix than the CIDR propagated from S2C connection, existing software ignores the route/CIDR from transit gateway. The patch fixes this error and keeps longer prefix route from transit gateway.
+- **AVX-25976** - With this change, we will not program unnecessary entries in the VPC route table for DNAT configured with s2c connection. Thus, there is nothing to be cleaned up when the DNAT configuration is removed. 
+- **AVX-25993** - The logging service for Rsyslog supports up to 9 profiles. It is a bug in which the configuration during restore allows each profile enablement to start the Rsyslog service (6 times or more) in less than 2 seconds. The system service defaults 5 times in 10 seconds; otherwise, the Rsyslog service will fail in “starting”. The fix is to ensure that the Rsyslog service is only restarted once for all profiles. 
+- **AVX-26086** - Corrected the logic to program the learned 0.0.0.0/0 route on the Azure cloud route table. 
+- **AVX-26208** - Corrected issue with Security Group Management in certain cases when restoring from a backup. 
+- **AVX-27359** - CloudN SW upgrade from image prior to 6.6.5721 need to use "upgrade to a custom release" to upgrade to latest 6.6 (6.6.5721).
+
+**Known Issues in Aviatrix Release 6.6.5721**
+
+- **AVX-24701** - When the AWS TGW API returns an error to search routes from a route table, the VPN /Direct Connect learned routes are withdrawn. It should be treated as no change. 
+- **AVX-25709** - Exception seen when disabling TGW Firenet la launched before the 6.3 release. 
+- **AVX-26684** - GRE external connection may miss routes on the HA Transit. 
+
+
 6.8.1148 (08/09/2022)
 =====================
 
@@ -50,7 +118,7 @@ The following Private Preview Features are available in this release:
 
 - **Aviatrix Edge 2.0** - The Aviatrix Edge solution enables enterprises to extend the Cloud operational model to the edge network for consistent and repeatable architecture, management, visibility, security, and control. This cloud-out architecture enables enterprises to leverage the Aviatrix platform ubiquitous support for edge connectivity. The result is secure, seamless connectivity to edge locations such as data centers, co-locations, remote sites, provider locations, branch offices, and retail stores. Aviatrix Edge 2.0 solution is offered in VMware ESXi and KVM form factors that lets you deploy an Edge Gateway with Spoke Gateway capabilities at the edge network. For more information about Aviatrix Edge, refer to the `Aviatrix Edge FAQ <https://docs.aviatrix.com/HowTos/edge-faq.html>`_.
 - **Azure BGP over LAN multi-peer and Azure Route Server Integration** - Aviatrix now supports multi-peer BGP Over LAN connections in Azure. This feature offers new functionality, such as the ability to interoperate with multiple third-party virtual appliances such as SD-WAN cloud instances without having to use any tunnelling protocols such as IPsec. Please see `this document <https://docs.aviatrix.com/HowTos/azure_bgpolan_multi_peer.html>`_ for more information.
-- **Certificate-Based Authentication for Site2Cloud VPN** - You can now use certificate-based authentication when configuring a Site2Cloud connection between your Aviatrix gateways and external devices. Currently only the Palo Alto VM-Series firewall is supported as an external device. See `here <https://docs.aviatrix.com/HowTos/site2cloud_cacert.html>`_ for more information. 
+- **Certificate-Based Authentication for Site2Cloud VPN** - You can now use certificate-based authentication when configuring a Site2Cloud connection between your Aviatrix gateways and external devices. Currently only the Palo Alto VM-Series firewall is supported as an external device. See `here <https://docs.aviatrix.com/HowTos/site2cloud-cacert.html>`_ for more information. 
 - **HPE for AWS/Azure China** - AWS China and Azure China CSPs now support High Performance Encryption (HPE).
 - **Aviatrix Controller Deployment from Azure China** - Aviatrix now supports deploying a Controller from Azure China. See `this document <https://docs.aviatrix.com/HowTos/aviatrix_china_overview.html>`_ for more information about which Aviatrix features and services are available for China marketplaces. Please note that Aviatrix CoPilot is still only available in AWS China.
 - **Preserve AS Path** - In 6.7.1319, we introduced a new toggle, “Preserve AS Path”. When enabled, this toggle ensured gateways retained the AS path in manually advertised routes, and that routes would be advertised as local if the route did not exist in best route DB. This change improves failover behavior; gateways will stop advertising any manually advertised CIDR if it is no longer in the best DB (the route is no longer advertised as local).
@@ -67,6 +135,8 @@ The following Private Preview Features are available in this release:
 **Deprecated Features in Aviatrix Release 6.8.1148**
 
 - ActiveMesh 1.0 is deprecated in this release. You can upgrade to ActiveMesh 2.0 using the Controller's Migrate option. 
+- The Encrypted Peering feature and Transitive Peering features are deprecated. These features' functionality will be replaced by `Aviatrix Multi-Cloud Transit <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_.
+- The Sumo Logic logging integration, Logstash logging integration, and Splunk logging integrations are deprecated in this release. Instead, use `rsyslog <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#remote-syslog>`_ to integrate with external logging systems.
 
 **UI Enhancements in Aviatrix Release 6.8.1148**
 
@@ -102,6 +172,7 @@ The following Private Preview Features are available in this release:
 - **AVX-25257** - An inefficient lookup routine in our internal routing service on Transit gateways running in Azure resulted in a persistently high CPU usage for a large number (1000+) of tunnels. This has been corrected.
 - **AVX-25289** - A bug in the Preserve AS Path feature resulted in manual summary CIDRs not present in the best route database being listed in BGP Advertise CIDRs on the BGP page for the HA gateway. The routes are programmed correctly; this is a display-only issue. Customers who have enabled this feature must disable and re-enable the feature on the Transit gateway to correct the display issue. 
 - **AVX-25425** - The dry run for 6.8.1148 will fail if the CSP gateways are using an older AMI, but the upgrade will succeed. To prevent any issues with your gateways, performing an “Image Upgrade” from the Controller (Settings > Maintenance > Upgrade) is recommended. CSP gateways with older AMIs (released in early 2021) may not be able to upgrade after 7.0.
+- **AVX-25524** - Fix filter removed after auto-refresh gateway list.
 - **AVX-25632** - Fixed the issue where the Aviatrix Controller was creating more tunnels which exceeds the maximum throughput of the CSP, for the same gateway instance sizes in terms of core counts.
 - **AVX-25687** - When single SNAT is enabled, traffic toward the Spoke VPC CIDRs is no longer SNAT'ed. Before this change, all traffic egress from Spoke GW eth0 interface would be SNAT'ed, leading to asymmetric traffic on Transit gateways.  
 - **AVX-25993** - The logging service for Rsyslog supports up to nine profiles. The configuration during restore allowed each profile enablement to start the Rsyslog service (6 times or more) in less than 2 seconds. The system service defaults five times in 10 seconds; otherwise, the Rsyslog service will fail in “starting”. The fix ensures that the Rsyslog service is only restarted once for all profiles.
