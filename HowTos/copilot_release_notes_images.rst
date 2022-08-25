@@ -16,6 +16,14 @@ If you have an existing CoPilot and you want to uptake a new image release versi
 For information about new features and enhancements for CoPilot software releases, see `Aviatrix CoPilot Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes.html>`_.
 
 
+CoPilot Image: Version 2.0.6 (08/25/22) — Azure
+------------------------------------------------------
+
+-   Aviatrix CoPilot image version 2.0.6 released on 08/25/22 on the Azure cloud platform. 
+
+The image remediates `CVE-2021-45960 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45960>`_.
+
+
 CoPilot Image: Version 2.2.2 (07/26/22) — OCI/OCI Gov
 ------------------------------------------------------
 
