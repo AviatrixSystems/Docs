@@ -222,7 +222,7 @@ Launching the Controller with CloudFormation
 
 A CloudFormation template provides a layer of abstraction that makes the configuration process simpler and easier by automating many of the minor steps. Use Aviatrix’s CloudFormation template to launch your Controller.
 
-1. Select `this link <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-cloudformation-aviatrix-metered-controller-copilot-24x7-support.template>`_ to open the correct CloudFormation template to open the correct CloudFormation script.
+1. Select `this link <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/create/template?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-BYOL.template>`_ to open the correct CloudFormation template to open the correct CloudFormation script.
 2. On the CloudFormation page, click on the dropdown menu in the top right corner and select the region in which you want to deploy the Controller. 
 
 |location_for_cloudformation|
