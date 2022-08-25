@@ -68,6 +68,11 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - **AVX-25709** - Exception seen when disabling TGW Firenet la launched before the 6.3 release. 
 - **AVX-26684** - GRE external connection may miss routes on the HA Transit. 
 
+**Deprecated Features in Aviatrix Release 6.7.1436**
+
+-  The Encrypted Peering feature and Transitive Peering features are deprecated. These features' functionality will be replaced by `Aviatrix Multi-Cloud Transit <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_.
+- The Sumo Logic logging integration, Logstash logging integration, and Splunk logging integrations are deprecated in this release. Instead, use `rsyslog <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#remote-syslog>`_ to integrate with external logging systems.
+
 
 6.6.5721 (08/16/2022)
 =====================
@@ -130,6 +135,8 @@ The following Private Preview Features are available in this release:
 **Deprecated Features in Aviatrix Release 6.8.1148**
 
 - ActiveMesh 1.0 is deprecated in this release. You can upgrade to ActiveMesh 2.0 using the Controller's Migrate option. 
+- The Encrypted Peering feature and Transitive Peering features are deprecated. These features' functionality will be replaced by `Aviatrix Multi-Cloud Transit <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_.
+- The Sumo Logic logging integration, Logstash logging integration, and Splunk logging integrations are deprecated in this release. Instead, use `rsyslog <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#remote-syslog>`_ to integrate with external logging systems.
 
 **UI Enhancements in Aviatrix Release 6.8.1148**
 
