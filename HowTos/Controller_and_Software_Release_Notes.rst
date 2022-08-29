@@ -43,7 +43,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Known Issues in Aviatrix Release 6.8.1149**
 
-- **AVX-27716** - An error may show “configuration not up-to-date” while upgrading an old image (<5.4 kernels) to 6.8.1149.
+- **AVX-27716** - An error may show “configuration not up-to-date” while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error.
 
 
 6.7.1436 (08/16/2022)
