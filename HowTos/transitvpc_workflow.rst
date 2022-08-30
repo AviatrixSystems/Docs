@@ -12,10 +12,11 @@ Multi-Cloud Transit Network Workflow Instructions (AWS/Azure/GCP/OCI)
  If you intend to deploy a transit network using AWS Transit Gateway (TGW), your starting point is `this link <https://docs.aviatrix.com/HowTos/tgw_plan.html>`_. For building encrypted Transit in AWS/Azure/GCP/OCI or Transit network with Azure Native Peering, this document is your starting point.
 
 This workflow provides you with step-by-step instructions to build a Multi-Cloud Transit Network. 
-This Multi-Cloud Transit Network consists of a Transit Gateway and a set of Spoke Gateways for communications between Spoke VPC or VNet instances and your on-prem network. 
+This Multi-Cloud Transit Network consists of a single Aviatrix Transit Gateway and a set of Aviatrix Spoke Gateways for communications between Spoke VPC or VNet instances and your on-prem network. 
 
+While the instructions below reference AWS, these functionalities apply to any public cloud in which Aviatrix Multi-Cloud Transit Network is supported. 
 
-While the instructions below reference AWS, these functionalities apply to any public cloud in which Aviatrix Transit Network is supported. 
+To expand your Multi-Cloud Transit Network to multiple clouds and regions, you can create Transit Gateway peering to connect two or more Aviatrix Transit Gateways that are connected to sets of Spoke Gateways. For more information, see `Aviatrix Transit Gateway Encrypted Peering. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html>`_
 
 For a design guide, see `Multi-Cloud Transit Network Design Patterns. <http://docs.aviatrix.com/HowTos/transitvpc_designs.html>`_ 
 
@@ -494,8 +495,6 @@ There are multiple resources to help you automate Transit Network setup. Note th
  
 Extras
 -----------
-
-The above workflow abstracts and combines multiple existing Aviatrix features, such `Encrypted Peering <http://docs.aviatrix.com/HowTos/peering.html>`_, `Transitive Peering <http://docs.aviatrix.com/HowTos/TransPeering.html>`_ and `Site2Cloud <http://docs.aviatrix.com/HowTos/site2cloud.html>`_ to bring you a wizard like experience so that you do not go to multiple pages on the Controller console when building the Transit network.
 
 After you have built the Transit GW and Spokes, you can view the connection between Transit GW and VGW on the Site2Cloud page. You can also see the Spoke to Transit GW connections on the Peering page. 
 

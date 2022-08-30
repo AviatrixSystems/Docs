@@ -41,6 +41,10 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 - **AVX-27330** - Fixed upgrade issues for gateways deployed before version 5.3.
 
+**Known Issues in Aviatrix Release 6.8.1149**
+
+- **AVX-27716** - An error may show “configuration not up-to-date” while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error.
+
 
 6.7.1436 (08/16/2022)
 =====================
@@ -67,6 +71,11 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - **AVX-25459** - If you have one of the VPC CIDRs as same as the spoke gateway’s subnet CIDR, some routes cannot be updated correctly in the spoke gateway route table. 
 - **AVX-25709** - Exception seen when disabling TGW Firenet la launched before the 6.3 release. 
 - **AVX-26684** - GRE external connection may miss routes on the HA Transit. 
+
+**Deprecated Features in Aviatrix Release 6.7.1436**
+
+-  The Encrypted Peering feature and Transitive Peering features are deprecated. These features' functionality will be replaced by `Aviatrix Multi-Cloud Transit <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_.
+- The Sumo Logic logging integration, Logstash logging integration, and Splunk logging integrations are deprecated in this release. Instead, use `rsyslog <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#remote-syslog>`_ to integrate with external logging systems.
 
 
 6.6.5721 (08/16/2022)
@@ -130,6 +139,8 @@ The following Private Preview Features are available in this release:
 **Deprecated Features in Aviatrix Release 6.8.1148**
 
 - ActiveMesh 1.0 is deprecated in this release. You can upgrade to ActiveMesh 2.0 using the Controller's Migrate option. 
+- The Encrypted Peering feature and Transitive Peering features are deprecated. These features' functionality will be replaced by `Aviatrix Multi-Cloud Transit <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_.
+- The Sumo Logic logging integration, Logstash logging integration, and Splunk logging integrations are deprecated in this release. Instead, use `rsyslog <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#remote-syslog>`_ to integrate with external logging systems.
 
 **UI Enhancements in Aviatrix Release 6.8.1148**
 
