@@ -145,7 +145,7 @@ Launching the Controller
 
 After completing the Prerequisite Checklist above, you can set up and launch your Aviatrix Controller.
 
-Subscribing to the Aviatrix AMI (Amazon Machine Image)
+Subscribing to the Metered Aviatrix AMI (Amazon Machine Image)
 ------------------------------------------------------------------------------------
 
 An Amazon Machine Image (AMI) contains the information required to launch an instance. Your Aviatrix Controller will be listed as an instance, or EC2 (Elastic Cloud Compute), on your AWS account. 
@@ -215,6 +215,15 @@ To launch your Controller, subscribe to the correct Aviatrix AMI from the AWS Ma
 5. Open the email you receive from admin@aviatrix.io, copy the six-digit verification code, and enter it in the Verification Code field. Then, click **Submit Form**.
 6. You receive a new email from admin@aviatrix.io with the subject line "License key for Aviatrix Metered Controller and Copilot." This email contains your Controller customer ID, Copilot customer ID, and offer subscription ID. Save these values in a secure place to use later for onboarding.
 
+Activating the Metered AMI through the BYOL (Bring Your Own License) Offer
+------------------------------------------------------------------------------------------------------
+
+After subscribing to the Aviatrix Secure Networking Platform Metered 2208 – Copilot, 24x7 Support subscription, click on the link in the email you received to open the Aviatrix Secure Network Platform (BYOL) offer. On the offer's page, click **Continue to Subscribe**.
+
+.. note::
+
+  The BYOL or Bring Your Own License offer is required to activate the metered license you subscribed to above. You will only be billed for the metered subscription.
+
 Next, use a CloudFormation template to launch your Controller.
 
 Launching the Controller with CloudFormation
@@ -222,7 +231,7 @@ Launching the Controller with CloudFormation
 
 A CloudFormation template provides a layer of abstraction that makes the configuration process simpler and easier by automating many of the minor steps. Use Aviatrix’s CloudFormation template to launch your Controller.
 
-1. Select `this link <https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=AviatrixController&templateURL=https://aviatrix-cloudformation-templates.s3-us-west-2.amazonaws.com/aws-cloudformation-aviatrix-metered-controller-copilot-24x7-support.template>`_ to open the correct CloudFormation template to open the correct CloudFormation script.
+1. Select `this link <https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=AviatrixController&templateURL=https:%2F%2Fs3-us-west-2.amazonaws.com%2Faviatrix-cloudformation-templates%2Favx-awsmp-BYOL.template>`_ to open the correct CloudFormation template.
 2. On the CloudFormation page, click on the dropdown menu in the top right corner and select the region in which you want to deploy the Controller. 
 
 |location_for_cloudformation|
@@ -409,7 +418,11 @@ After logging in and initializing, onboard your AWS account in your Controller.
 
 4. Click **Create**.
 5. Your AWS account is now onboarded. To verify your email address, open Settings > Controller. Enter the verification code sent to your email address.
-You can now use advanced settings for your `IAM roles <https://docs.aviatrix.com/HowTos/iam_policies.html>`_, launch `gateways <https://docs.aviatrix.com/HowTos/gateway.html>`_, and build a single- or multi-cloud network architecture. 
+You can now use advanced settings to configure your `IAM roles <https://docs.aviatrix.com/HowTos/iam_policies.html>`_, launch `gateways <https://docs.aviatrix.com/HowTos/gateway.html>`_, and build a single- or multi-cloud network architecture. 
+
+.. tip::
+
+  To launch Aviatrix CoPilot, please see the `CoPilot Deployment Guide <https://docs.aviatrix.com/HowTos/copilot_getting_started.html>`_. Note that CoPilot requires a separate license from the AWS Marketplace.
 
 .. note::
 
