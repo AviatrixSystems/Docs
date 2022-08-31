@@ -85,7 +85,17 @@ Before migrating your Azure Controller, note the following details so that you c
 
 3. Make a Controller backup in a storage container and make a note of Subscription ID, Directory ID, Application Client ID, Application Client Secret, Storage Name, Container Name, File Name.
 
-4. Launch new Controller Instance. Please refer to the `Azure Startup Guide <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_. Make sure to subscribe to the Aviatrix Secure Networking Platform Metered 2208 - Copilot, 24x7 Support offer on the Azure Marketplace.
+4. Launch the new Controller Instance. Please refer to the `Azure Startup Guide <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_. Make sure to subscribe to the Aviatrix Secure Networking Platform Metered 2208 - Copilot, 24x7 Support offer on the Azure Marketplace, and then activate that subscription using the Aviatrix Secure Networking Platform BYOL offer.
+
+.. note::
+
+  Launching a new Controller, or migrating Controller images, requires two offers from the Azure Marketplace: 
+ 
+  1) Aviatrix Secure Networking Platform Metered 2208 - Copilot & 24x7 Support
+  2) Aviatrix Secure Network Platform BYOL (Bring Your Own License)
+ 
+  Both offers are required because the metered license provides the underlay for the BYOL (Bring Your Own License) offer. Use the steps in the Azure Startup Guide to first subscribe to the metered offer, and then activate the metered offer using the BYOL offer, in order to launch or migrate your Controller.
+
 5. Shut down the old Controller instance. Go to your Azure account > Virtual machines and select the old Controller instance. Click **Stop**.
 
 |azure_stop_old_controller|
@@ -147,7 +157,7 @@ Controller Migration in OCI
 * The instance's region, availability domain, and fault domain
 * The instance's display name
 * Assigned VCN details
-* All private IP addresses, names, subnets and private DNS name (if any)
+* All private IP addresses, names, subnets, and private DNS name (if any)
 * Any public IP addresses assigned from a reserved public pool
 * Any tags on the instance or attached resources
 
