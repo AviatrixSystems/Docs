@@ -35,6 +35,16 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
+CoPilot Release 2.5.1 (8/30/2022)
+---------------------------------------------
+
+-   Bug Fix.
+
+**Issue Corrected in CoPilot release 2.5.1**
+
+    -   **AVX-27965** — Removed the Cluster tab from Settings so it is not visible for single CoPilot deployments.
+
+
 CoPilot Release 2.5.0 (8/24/2022)
 ---------------------------------------------
 
