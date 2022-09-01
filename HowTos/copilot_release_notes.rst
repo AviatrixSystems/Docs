@@ -35,6 +35,27 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
+CoPilot Release 2.5.1 (8/30/2022)
+---------------------------------------------
+
+-   Bug Fix.
+
+**Issue Corrected in CoPilot release 2.5.1**
+
+    -   **AVX-27965** — Removed the Cluster tab from Settings so it is not visible for single CoPilot deployments.
+
+
+CoPilot Release 2.5.0 (8/24/2022)
+---------------------------------------------
+
+**Feature Enhancements in CoPilot release 2.5.0**
+
+-   **Remote Support Function** – You can now allow an Aviatrix Support member to SSH into your CoPilot instance without having to open a security group. The SSH tunnel is enabled and disabled by you, so you have full control over the instance. To enable the SSH tunnel, go to Settings > Services > Remote Support and set the option to **Enabled**. Provide the port number shown to your Suppport representative. After the Support issue is resolved and access to your instance is no longer needed, set the option to **Disabled**.
+
+-   **Run Gateway Diagnostics from Cloud Routes** – A gateway diagnostics button is now available on the Cloud Routes page, enabling you to perform diagnostic tasks for your Aviatrix gateways directly from that page. Performing diagnostics from Cloud Routes can dramatically reduce the time spent troubleshooting issues. To run diagnostics for a gateway, go to Cloud Routes > Gateway Routes. In the gateways list table, locate the Gateway Diagnostics button grouped with the Search in Topology and Filter in FlowIQ buttons. Click the button to open the gateway diagnostics dialog. Running diagnostics from a gateway is also still available from the Topology page by clicking on any gateway in the topology map and then clicking DIAG in the node properties pane. 
+
+
+
 CoPilot Release 2.4.2 (8/12/2022)
 ---------------------------------------------
 
@@ -42,7 +63,7 @@ CoPilot Release 2.4.2 (8/12/2022)
 
 **Feature Enhancements in CoPilot release 2.4.2**
 
--   **Export Reports to TSV** – Starting with CoPilot release 2.4.2, you can download Inventory and FlightCheck reports as TSV (Tab Separated Value).  For more information about Reports, see `Working with Reports <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html?highlight=inventory#create-an-inventory-report>`_ in *Aviatrix CoPilot User Reference Guide*.
+-   **Export Reports to TSV** – Starting with CoPilot release 2.4.2, you can download Inventory and FlightCheck reports as TSV (Tab Separated Value).  For more information about Reports, see `Working with Reports <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-reports>`_ in *Aviatrix CoPilot User Reference Guide*.
 
 -   **Alerts UI** – The display has been changed to a data grid which enables you to search, filter, and export alert instances. The alert detail panel is also changed to use the new design system which improves user interaction and clarity.
 

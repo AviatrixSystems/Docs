@@ -26,7 +26,9 @@ to the logging server. Out of box integration is supported for the following log
  - Netflow
  - AWS CloudWatch
 
-.. note:: Aviatrix highly recommends using the remote syslog (rsyslog) log forwarder.
+.. note:: 
+
+  The Splunk, Sumo Logic, and Logstash integrations are deprecated and not supported from Release 6.8 and onwards. Instead, use rsyslog to integrate with external logging systems.
 
 
 In addition to standard information on syslog, Aviatrix also provides
