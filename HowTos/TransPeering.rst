@@ -6,6 +6,8 @@
 Encrypted Transitive Peering
 ====================================
 
+.. note:: The Encrypted Transitive Peering feature is deprecated and not supported from Release 6.8 and onwards. This feature functionality is replaced by `Aviatrix Multi-Cloud Transit <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_.
+
 As DevOps and applications can now run in Cloud Service Providers (CSPs) such as AWS, Azure, GCP, and OCI, it makes sense to have
 your employees access the cloud directly with the following highlighted
 benefits:

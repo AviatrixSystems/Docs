@@ -25,6 +25,15 @@ Follow the instructions to also subscribe to the Aviatrix Companion Gateway desc
 Subscribing to the Aviatrix Metered Offer 
 =============================================
 
+.. note::
+
+  Launching a new Controller, or migrating Controller images, requires two offers from the Azure Marketplace: 
+ 
+  1) Aviatrix Secure Networking Platform Metered 2208 - Copilot & 24x7 Support
+  2) Aviatrix Secure Network Platform BYOL (Bring Your Own License)
+ 
+  Both offers are required because the metered license provides the underlay for the BYOL (Bring Your Own License) offer. Use the steps below to first subscribe to the metered offer, and then activate the metered offer using the BYOL offer, in order to launch or migrate your Controller. Note that your account will only be billed for the metered license.
+
 1. Go to the `Azure Marketplace <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/aviatrix-systems.aviatrix-controller-abu-saas?tab=Overview>`_ to subscribe to the Aviatrix Secure Networking Platform Metered 2208 - Copilot & 24x7 Support offer. 
 2. Click **Get it Now** on the left side of the page.
 3. Mark the permissions checkbox and click **Continue**.
@@ -51,6 +60,10 @@ Launching the Controller
 ==============================
 
 After subscribing to the metered offer and receiving your license key, click the link in the "License key for Aviatrix Metered Controller and Copilot" email you received. This link opens the Azure marketplace to the Aviatrix Secure Networking Platform BYOL (Bring Your Own License) page.
+
+.. note::
+
+  As explained above, this BYOL offer activates the metered subscription. 
 
 Launching the Controller VM from the Azure Marketplace Portal
 -------------------------------------------------------------------------------
