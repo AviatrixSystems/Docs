@@ -249,25 +249,29 @@ For initial setup of CoPilot, have the following information available:
 -   The login credentials for the user account to be used as the CoPilot service account. If you plan to use the ThreatGuard feature, the CoPilot service account must have a minimum of `all_firewall_write` permissions.
 -   The CoPilot license key (obtained from your Aviatrix representative).
 
-This procedure assumes your Aviatrix Controller is up and running and the controller instance's inbound rules have port 443 open to the public static IP address of the CoPilot instance (so that CoPilot can reach your controller). Your CoPilot software instance/virtual machine must also be up and running.
+**NOTE:** This procedure assumes your Aviatrix Controller is up and running and the controller instance's inbound rules have port 443 open to the public static IP address of the CoPilot instance (so that CoPilot can reach your controller). If you launched your CoPilot instance from the Aviatrix Controller user interface, the controller instance's inbound rules will have port 443 open to the public static IP address of the CoPilot instance. This procedure also assumes your CoPilot software instance/virtual machine is up and running.
 
 To perform an initial setup of CoPilot:
 
 1.  Launch CoPilot in your web browser:
 
-    `https://<copilot static ip address>/`
+    `https://<copilot static public ip address>/`
 
-    where `<copilot static ip address>` is the static IP address of your newly deployed CoPilot software instance/virtual machine.
+    where `<copilot static public ip address>` is the static public IP address of your newly deployed CoPilot software instance/virtual machine.
 
-    Alternatively, you can launch CoPilot from Aviatrix Controller as described in the next step.
+    Alternatively, you can launch CoPilot in your web browser directly from Aviatrix Controller as described in the next step.
 
-2.  (Optional) Launch CoPilot from Aviatrix Controller:
+2.  (Optional) Launch CoPilot in your web browser directly from Aviatrix Controller:
 
     a.  In Aviatrix Controller, under Settings, select CoPilot.
 
-    b.  For the CoPilot Association, set the status to **Enabled** and enter the static IP address for your running CoPilot instance.
+    b.  For the CoPilot Association, set the status to **Enabled**. 
 
-    c.  From the controller homepage, click the CoPilot button in the action bar.
+    c.  In the **IP Address/Hostname field**, enter the static IP address for your running CoPilot instance/virtual machine. This can be the private or public IP address of your CoPilot instance/virtual machine. The IP address specified here is used for connectivity between the controller and CoPilot for intra-platform communication (such as API message exchanges). If CoPilot is located in the same VPC/VNet as your controller, specifying a private IP can increase bandwidth and potentially save on cost. If you enter the private IP address here, then go to the next step to specify the public IP address.
+
+    d.  If you specified the private IP address of your CoPilot instance in “IP Address/Hostname”, enter the public IP address of your CoPilot instance in the **Public IP (Optional)** field. This enables you to open CoPilot in your web browser directly from the controller homepage.
+
+    e.  From the controller homepage, in the action bar, click on the application icon and then select **CoPilot**. 
 
 3.  When prompted, enter the username and password of a valid Aviatrix Controller user account and click Login. Enter the static IP address of your controller and click Login.
 
