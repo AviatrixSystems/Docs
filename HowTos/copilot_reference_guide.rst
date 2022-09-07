@@ -1017,7 +1017,7 @@ The members of a given network domain can communicate with each other but cannot
 
 When you create a network domain, you give it a unique name, specify the spoke and edge VPC/VNets that are members of it, and specify any connection relationships you want it to have with other network domains.
 
-Spoke and edge VPC/VNets within a given network domain communicate with each other via an Aviatrix transit gateway that is enabled for network segmentation. You must enable transit gateways for network segmentation before creating network domains that will use those transits for communication.
+Spoke and edge VPC/VNets within a given network domain communicate with each other via an Aviatrix transit gateway that is enabled for network segmentation. You must enable transit gateways for network segmentation before creating network domains that will use those transits for communication. The maximum number of network domains on each Aviatrix transit gateway is 200.
 
 When a network domain is saved, the Aviatrix Controller dynamically programs and updates all of the applicable VPC/VNet route tables so that instances in different Spoke VPC/VNets in the same network domain can communicate with each other.
 
