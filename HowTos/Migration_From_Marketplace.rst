@@ -65,7 +65,11 @@ To migrate to the most current AMI directly from your Controller, use the follow
 
   In case of a Disaster Recovery (DR) scenario in which an entire AWS region goes down, considering backing up your Controller to at least two separate regions.
 
-3. Go to Settings > Maintenance > Migration. Click **Migrate** to migrate your Controller to the latest image.
+3. Go to Settings > Maintenance > Migration. 
+
+* Enter your Customer ID in the field provided. 
+* If you want to resize your Controller in this migration, click on the **Instance Size** dropdown menu and select a new size. To use the same size, leave this field at the default, "current." 
+* Click **Migrate** to migrate your Controller to the latest image.
 
   |controller_migration|
 

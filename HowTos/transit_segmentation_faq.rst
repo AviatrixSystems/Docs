@@ -70,7 +70,7 @@ Follow the `Transit Segmentation Workflow. <https://docs.aviatrix.com/HowTos/tra
 How many Network Domains are supported in Multi-Cloud Transit Segmentation?
 -------------------------------------------------------------------------------
 
-The maximum number of Network Domains on each Aviatrix Transit Gateway is 250. 
+The maximum number of Network Domains on each Aviatrix Transit Gateway is 200. 
 
 What is the difference in implementation of Segmentation between Release 6.1 and Release 6.0?
 -------------------------------------------------------------------------------------------------

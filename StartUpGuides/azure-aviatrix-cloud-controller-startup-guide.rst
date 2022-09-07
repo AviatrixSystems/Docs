@@ -126,30 +126,21 @@ If the Controller fails to launch an Aviatrix gateway in Azure RM, check out `th
 Enjoy!
 
 .. |image0| image:: AzureAviatrixCloudControllerStartupGuide_media/image001.png
-   :width: 2.90683in
-   :height: 0.35000in
+   :scale: 50%
 .. |marketplace| image:: AzureAviatrixCloudControllerStartupGuide_media/marketplace.png
-   :width: 5.49426in
-   :height: 2.99954in
+   :scale: 60%
 .. |dropdown| image:: AzureAviatrixCloudControllerStartupGuide_media/dropdown.png
-   :width: 10.0in
-   :height: 2.0in
+   :scale: 70%
 .. |Azure_Basics| image:: AzureAviatrixCloudControllerStartupGuide_media/Azure_Basics.png
-   :width: 5.0in
-   :height: 5.0in
+   :scale: 70%
 .. |image3| image:: AzureAviatrixCloudControllerStartupGuide_media/image04___2017_08_14.PNG
-   :width: 5.40347in
-   :height: 2.95863in
+   :scale: 70%
 .. |VM| image:: AzureAviatrixCloudControllerStartupGuide_media/VM.png
-   :width: 5.17776in
-   :height: 2.97500in
+   :scale: 60%
 .. |login| image:: AzureAviatrixCloudControllerStartupGuide_media/login.png
-   :width: 5.0in
-   :height: 4.0in
+   :scale: 70%
 .. |Networking| image:: AzureAviatrixCloudControllerStartupGuide_media/Networking.png
-   :width: 5.0in
-   :height: 5.0in
-
+   :scale: 70%
 .. |subscribe_to_meter| image:: AzureAviatrixCloudControllerStartupGuide_media/subscribe_to_meter.png
    :scale: 90%
 
