@@ -43,7 +43,11 @@ The Controller adds rules to the security group for each gateway IP for the foll
 
 - UDP port 31283 (default, port is configurable) — Enable Netflow for CoPilot FlowIQ Data (from each gateway). Gateways send Netflow to CoPilot.
 
-The Controller adds the above rules for new gateways launched from the Controller *after* the feature is enabled and for existing gateways launched from the Controller *before* the feature was enabled.
+The Controller adds the above rules for:
+
+- New gateways launched from the Controller *after* the feature is enabled.
+
+- Existing gateways launched from the Controller *before* the feature was enabled.
 
 When “Status” is disabled, the Controller removes all gateway-specific inbound rules that it previously added to the CoPilot security group.  
 
@@ -54,7 +58,7 @@ The CoPilot Security Group Management feature adds gateway IP rules to customer-
 
 To enable the CoPilot Security Group Management feature:
 
-1.  In Controller, go to Settings -> CoPilot -> CoPilot Association and set the slider to **Enabled**. Enter the CoPilot private IP address in the IP Address/Hostname field, its public IP address in the Public IP (Optional) field, and click **Save**.
+1.  In your Controller, go to Settings > CoPilot > CoPilot Association and set the slider to **Enabled**. Enter the CoPilot private IP address in the IP Address/Hostname field, its public IP address in the Public IP (Optional) field, and click **Save**.
 
 2.  On the same page, for CoPilot Security Group Management, verify the slider is set to **Enabled**.
 
