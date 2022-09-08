@@ -189,7 +189,7 @@ To subscribe to a CoPilot offer:
 
         -   You must attach at least one data disk (data volume) to your CoPilot instance to be used for expandable storage; this is a secondary data storage separate from the root disk that comes with CoPilot. For more information, see `CoPilot Disk (Volume) Management`_. You can choose the disk type (volume type) that meets your business needs given the size of your environment.
 
-    -   (Static IP Address)
+    -   (Static Public IP Address)
 
         -   CoPilot requires a static public IP address (for example, an Elastic IP address in AWS). The only exception is if you are using private mode.
 
@@ -211,23 +211,24 @@ To subscribe to a CoPilot offer:
     -   If your Controller is a pre-6.8 release version: In your cloud console, in the security group page of your CoPilot VM/instance, add entries FOR EACH of your Aviatrix gateways:
 
     -   For the UDP ports, change the default inbound rule of 0.0.0.0/0 to the IP addresses of your Aviatrix gateways: 
-          -   Open your CoPilot Security Group for UDP 31283 from all of your Aviatrix Gateways.
-          -   Open your CoPilot Security Group for UDP 5000 from all of your Aviatrix Gateways.
+          -   Open your CoPilot Security Group for UDP 31283 from all of your Aviatrix gateways.
+          -   Open your CoPilot Security Group for UDP 5000 from all of your Aviatrix gateways.
           -   For port 443, you can allow only your and other trusted user's IP addresses.
     .. note::
         Each time you launch a new gateway from your controller, you must also add a CIDR entry for it here. 
 
-    Note: Starting with Controller release 6.8, this manual step is no longer required. You can use the CoPilot Security Group Management feature in Controller after you launch CoPilot to add these port entries to your CoPilot access control lists (security groups). 
+    .. tip::
+        Starting from Controller 6.8, you can enable the CoPilot Security Group Management feature to allow your Controller to open CoPilot access to the above ports for all of your Aviatrix gateways. You enable the feature in Controller > Settings > CoPilot > CoPilot Security Group Management. See `CoPilot Security Group Management <https://docs.aviatrix.com/HowTos/Settings_CoPilot.html>`_.
        
 6.  After specifying all values for the marketplace configuration prompts, deploy/launch the CoPilot instance/virtual machine.
 
     For example, in AWS, you select the region and click **Continue to Launch**.
 
-    You should receive a message from the cloud provider stating that the instance of CoPilot software is launched/deployed.
+    You should receive a message from the cloud provider stating that the instance of CoPilot software is deployed/launched.
 
 7.  Assign a static public IP address to the CoPilot software instance/virtual machine. For example, in the AWS EC2 console, you would go to the Elastic IP section, allocate a new EIP, and then associate it with your CoPilot instance.
 
-    Take note of the IP address to use later during initial setup.
+    Take note of the public IP address to use later during initial setup.
 
 8.  Start the CoPilot instance/virtual machine.
 
@@ -247,7 +248,7 @@ For initial setup of CoPilot, have the following information available:
 -   The static IP address for your Aviatrix Controller.
 -   The login credentials of your Aviatrix Controller user account.
 -   The login credentials for the user account to be used as the CoPilot service account. If you plan to use the ThreatGuard feature, the CoPilot service account must have a minimum of `all_firewall_write` permissions.
--   The CoPilot license key (obtained from your Aviatrix representative).
+-   The CoPilot customer ID obtained from your Aviatrix Sales representative. See .
 
 **NOTE:** This procedure assumes your Aviatrix Controller is up and running and the controller instance's inbound rules have port 443 open to the public static IP address of the CoPilot instance (so that CoPilot can reach your controller). If you launched your CoPilot instance from the Aviatrix Controller user interface, the controller instance's inbound rules will have port 443 open to the public static IP address of the CoPilot instance. This procedure also assumes your CoPilot software instance/virtual machine is up and running.
 
@@ -261,17 +262,17 @@ To perform an initial setup of CoPilot:
 
     Alternatively, you can launch CoPilot in your web browser directly from Aviatrix Controller as described in the next step.
 
-2.  (Optional) Launch CoPilot in your web browser directly from Aviatrix Controller:
+2.  (Optional) To launch CoPilot in your web browser directly from Aviatrix Controller:
 
     a.  In Aviatrix Controller, under Settings, select CoPilot.
 
     b.  For the CoPilot Association, set the status to **Enabled**. 
 
-    c.  In the **IP Address/Hostname field**, enter the static IP address for your running CoPilot instance/virtual machine. This can be the private or public IP address of your CoPilot instance/virtual machine. The IP address specified here is used for connectivity between the controller and CoPilot for intra-platform communication (such as API message exchanges). If CoPilot is located in the same VPC/VNet as your controller, specifying a private IP can increase bandwidth and potentially save on cost. If you enter the private IP address here, then go to the next step to specify the public IP address.
+    c.  In the **IP Address/Hostname field**, enter the static IP address for your running CoPilot instance/virtual machine. This can be the private or public IP address of your CoPilot instance/virtual machine. The IP address specified here is used for connectivity between the controller and CoPilot for intra-platform communication (such as API message exchanges). If CoPilot is located in the same VPC/VNet as your controller, specifying a private IP can increase operational bandwidth and potentially save on cost. If you enter the private IP address here, then go to the next step to specify the public IP address.
 
-    d.  If you specified the private IP address of your CoPilot instance in “IP Address/Hostname”, enter the public IP address of your CoPilot instance in the **Public IP (Optional)** field. This enables you to open CoPilot in your web browser directly from the controller homepage.
+    d.  If you specified the private IP address of your CoPilot instance in “IP Address/Hostname”, enter the public IP address of your CoPilot instance in the **Public IP (Optional)** field. This enables you to open CoPilot in your web browser directly from your Controller.
 
-    e.  From the controller homepage, in the action bar, click on the application icon and then select **CoPilot**. 
+    e.  In the action bar of your Controller homepage, click on the application icon, and then select **CoPilot**. 
 
 3.  When prompted, enter the username and password of a valid Aviatrix Controller user account and click Login. Enter the static IP address of your controller and click Login.
 
@@ -283,11 +284,9 @@ To perform an initial setup of CoPilot:
 
     |copilot_login_service_account|
 
-5.  When prompted for **CoPilot Customer ID**, enter your CoPilot license key.
+5.  When prompted for **CoPilot Customer ID**, enter the CoPilot customer ID provided by your Aviatrix Sales representative. See `CoPilot Customer IDs and Licensing`_.
 
     |copilot_login_customer_id|
-
-    **TIP:** Later, if you decide to terminate your instance of CoPilot and deploy a new instance using the same license key, release the license of the current instance first by clicking **RESET** in Settings > Licensing.
 
 6.  If a Data Disk Setup dialog does not appear, skip to step 8 to verify connectivity with your controller.
 
@@ -325,14 +324,14 @@ To perform an initial setup of CoPilot:
 
     b.  Go to Settings -> Logging -> Remote Syslog.
 
-    c.  Choose Profile Index 9.
+    c.  Choose Profile Index 9. Do not use a different index number. Index 9 is reserved for CoPilot.
 
     d.  In Enable Remote Syslog, enter the profile name you want to use, the static IP address of CoPilot as the server, and UDP port 5000 (default).
 
     e.  Tick the Advanced check box. In Gateways, verify all of your Aviatrix gateways are in the Include List.
 
     .. note::
-        If you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List here. In addition, in your native cloud console, you must open your CoPilot security group for UDP 5000 from each newly launched gateway.  
+        If you launch new gateways from your Controller later, you must transfer the newly launched gateways to the Include List here. In addition, in your native cloud console, you must open your CoPilot security group for UDP 5000 from each newly launched gateway.  
 
     f.  Click **Enable**.
 
@@ -362,8 +361,6 @@ Configure Controller's access for CoPilot
 
 - Configure a dedicated user account on Aviatrix Controller for CoPilot if desired. 
 
-- You should now be able to log in to CoPilot with the credentials we configured above.
-
 .. note::
   If you are using RBAC, as of 1.1.5 CoPilot requires read-only access + access to ping and traceroute functions for diagnostic capabilities.
 
@@ -377,7 +374,7 @@ To use audit data of the Security feature in CoPilot, configure syslog to be sen
 
 2.  Go to Settings -> Logging -> Remote Syslog.
 
-3.  Choose Profile Index 9.
+3.  Choose Profile Index 9. Do not choose another index number. Index 9 is reserved for CoPilot.
 
 4.  In Enable Remote Syslog, enter the profile name you want to use, the static IP address of CoPilot as the server, and UDP port 5000 (default).
 
@@ -483,6 +480,36 @@ Auto-scaling memory support became available with the release of Aviatrix CoPilo
 Prior to CoPilot image version 1.5.1, CoPilot required a minimum of 8 vCPUs and 32 GB Memory. Existing deployments will keep their current configuration unless updated. 
 
 Memory settings are located in CoPilot under Settings > Configuration > Options.
+
+
+CoPilot Login via SAML  
+===================================
+
+If you use an identity provider (IdP) to allow your organization's team members to log in to Aviatrix Controller via SAML, they can log in to Aviatrix CoPilot via SAML authentication also provided the following setup is in place.  
+
+1.  (Pre-requisite) Set up SAML login for Aviatrix Controller. This procedure assumes you have already set up your IdP configuration in the IdP application and associated the configuration in your Controller. In your IdP application, take note of the value specified for the **Single sign on URL** SAML setting to see if the SSO URL contains your Controller's public IP address or your Controller's FQDN (either one can be used but this value must match the value set in a later step).  
+
+    |samlsso|
+
+2.  In Aviatrix CoPilot > Settings > Configuration locate the **Controller Public IP/FQDN** field.
+
+    |samlsso2|
+
+3.  Verify the value of the **Controller Public IP/FQDN** field matches the value of the public IP address or the FQDN of your Controller — depending on which one is set in the SSO URL in the SAML settings (these values must match). If needed, update the field and click **Save**. 
+
+4.  Verify your Controller is associated with your CoPilot. In Controller > Settings > CoPilot > CoPilot Association, verify the slider is set to **Enabled** and the correct IP address of the CoPilot instance is specified.
+
+    -   IP Address/Hostname field
+
+        Enter the static IP address for your running CoPilot instance/virtual machine. This can be the private or public IP address of your CoPilot instance/virtual machine. 
+
+        The IP address specified here is used for connectivity between Controller and CoPilot for intra-platform communication (such as API message exchanges). If CoPilot is located in the same VPC/VNet as your Controller, specifying a private IP can increase operational bandwidth and potentially save on cost. 
+
+        If you enter the private IP address here, and you want to be able to open CoPilot in your web browser directly from your Controller, then specify the public IP address in the **Public IP (Optional)** field.
+
+    -   Public IP (Optional) field
+
+        If you specified the private IP address of your CoPilot instance in the “IP Address/Hostname” field, enter the public IP address of your CoPilot instance here if you want to be able to open CoPilot in your web browser directly from your Controller.
 
 
 System Design Considerations 
@@ -1168,6 +1195,12 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
         -   Disks/Volumes
         -   VM/Instance
     -   On your Aviatrix Controller, verify that the CoPilot association (Controller > Settings > CoPilot) is pointing to your *new copilot* IP. If you used the controller UI to launch your *new copilot*, this was automatically done for you. Additionally, verify that the Remote Syslog and Netflow Agent (Controller > Settings > Logging) are pointing to your *new copilot* IP.
+
+.. |samlsso| image:: copilot_getting_started_media/samlsso.png
+   :scale: 50%
+
+.. |samlsso2| image:: copilot_getting_started_media/samlsso2.png
+   :scale: 50%
 
 .. |gcp_copilot_1| image:: copilot_getting_started_media/gcp_copilot_1.png
    :scale: 50%
