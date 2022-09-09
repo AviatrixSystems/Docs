@@ -251,9 +251,13 @@ To scan for vulnerabilities using Security Scanner:
 7.  Analyze the scan report results: 
 
     -   **A scan rating**: The rating reflecting the ranking of TLS services found on the encrypted connections. The TLS rankings are defined by a well-known security source that tracks vulnerable ciphers. Rankings include:
+
         -   A+ — Very secure. The service follows recommended standards by providing only TLS 1.3 with strong cipher suites for the most secure sessions.
+
         -   A  — Secure. The service is using TLS 1.2 or more recent versions with strong cipher suites which are considered secure.
+
         -   B  — Weak. The service is using TLS 1.0 or more recent versions and/or weak cipher suites that may be supported by wider range of devices but are not recommended from a security point of view.
+
         -   C  — Insecure. The service is using invalid certificates (self-signed, expired, or signed with a private root certificate) or relies on deprecated SSL 3 or older versions or on deprecated cipher suites that are considered insecure.
 
     -   **A list of vulnerabilities**: The table lists all vulnerabilities encountered by the scan. 
