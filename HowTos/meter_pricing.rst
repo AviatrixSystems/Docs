@@ -12,35 +12,30 @@ and `Azure Meter License <https://azuremarketplace.microsoft.com/en-us/marketpla
 
 General license and pricing mapping is as follows:
 
-::
+- 1 inter-cloud license = ``$0.70/hour``
+- 1 intra-cloud license = ``$0.23/hour``
+- 1 security service license = ``$0.23/hour``
+- 1 user VPN license = ``$0.045/hour``
 
-  1 inter-cloud license = $0.70/hour
-  1 intra-cloud license = 0.23/hour
-  1 security service license = $0.23/hour
-  1 user VPN license = $0.045/hour
+Common shorthand used in the following sections:
 
-Some common notions described in the following sessions:
+- ``no HA`` - One gateway, HA gateway is not deployed.
+- ``yes HA`` - One gateway and its HA gateway are deployed.
+- ``no HPE`` - HPE (Insane Mode) is not enabled on the gateway. 
+- ``yes HPE`` - HPE (Insane Mode) is enabled on the gateway. 
+- ``yes SameCloud``
 
-::
+  - In Spoke to Transit scenario, when both gateways are in the same cloud. 
+  - In Transit Gateway Peering scenario, when both Transit Gateways are in the same cloud. 
+  
+- ``no SameCloud``
 
-   no HA - One gateway, HA gateway is not deployed.
-   yes HA - One gateway and its HA gateway are deployed.
-   no HPE - HPE (Insane Mode) is not enabled on the gateway. 
-   yes HPE - HPE (Insane Mode) is enabled on the gateway. 
-   yes SameCloud - In Spoke to Transit scenario, both gateways are in the same cloud. 
-                   In Transit Gateway Peering scenario, both Transit Gateways are in the same cloud. 
-   no SameCloud - A Spoke gateway and Transit Gateway are in the different clouds, 
-                  or two Transit Gateways are in the different clouds. 
- 
+  - A Spoke gateway and Transit Gateway in different clouds
+  - Two Transit Gateways in different clouds. 
 
 .. note ::
 
   When launching a selected t3 series gateway instance in AWS with Insane Mode option enabled, the HPE license is **not** applied. The selected t3 series instances are: t3a.xlarge, t3a.medium, t3a.small, t3.large, t3.medium, t3.small. 
- 
- 
- 
- 
- 
  
 
 1. Multi-cloud Spoke Gateway Attachment
