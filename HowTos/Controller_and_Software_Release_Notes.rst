@@ -39,19 +39,18 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Enhanced Features in Release 6.9.127** 
 
-**Micro-segmentation** – `Micro-segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ is now supported on AWS GovCloud and Azure Government as well as AWS, Azure, and GCP. 
+* **Micro-segmentation** – `Micro-segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ is now supported on AWS GovCloud and Azure Government as well as AWS, Azure, and GCP. 
+* **NAT Support for Private Mode** – NAT (Network Address Translation) is now supported on gateways while using `Private Mode <https://docs.aviatrix.com/HowTos/privatemode.html>`_. This enhancement includes: 
 
-**NAT Support for Private Mode** – NAT (Network Address Translation) is now supported on gateways while using `Private Mode <https://docs.aviatrix.com/HowTos/privatemode.html>`_. This enhancement includes: 
+  * DNAT and customized SNAT. 
+  * Terraform support for NAT. 
 
-* DNAT and customized SNAT. 
-* Terraform support for NAT. 
+* **New Metered Offer in AWS and Azure** – Aviatrix offers a new metered license, **Aviatrix Secure Networking Platform Metered 2208 - Copilot, 24x7 Support**, in the AWS and Azure marketplaces. This license offers access to upcoming Aviatrix features and flexible billing options.
+  
+  * New customers can subscribe to this license using the `AWS Getting Started Guide <https://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html>`_ or `Azure Startup Guide <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_.  
+  * Existing customers, you can migrate to this license. See the `AWS Controller Migration <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_ or the `Azure Controller Migration <https://docs.aviatrix.com/HowTos/controller_migration.html#controller-migration-in-azure>`_ instructions. 
 
-**New Metered Offer in AWS and Azure** – Aviatrix offers a new metered license, **Aviatrix Secure Networking Platform Metered 2208 - Copilot, 24x7 Support**, in the AWS and Azure marketplaces. This license offers access to upcoming Aviatrix features and flexible billing options.
-
-* New customers can subscribe to this license using the `AWS Getting Started Guide <https://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html>`_ or `Azure Startup Guide <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_.  
-* Existing customers, you can migrate to this license. See the `AWS Controller Migration <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_ or the `Azure Controller Migration <https://docs.aviatrix.com/HowTos/controller_migration.html#controller-migration-in-azure>`_ instructions. 
-
-**Secondary IP as Destination CIDR** – If you tried to set a gateway’s secondary IP as the Destination CIDR of NAT rules, you received an error message. You can now use this secondary IP as the Destination CIDR as long as the gateway is not in Insane Mode. 
+* **Secondary IP as Destination CIDR** – If you tried to set a gateway’s secondary IP as the Destination CIDR of NAT rules, you received an error message. You can now use this secondary IP as the Destination CIDR as long as the gateway is not in Insane Mode. 
 
 **Public Preview Features in Aviatrix Release 6.9.127**
 
@@ -63,15 +62,11 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Issues Corrected in Aviatrix Release 6.9.127** 
 
-**AVX-27215** - When you have a large network with FireNet gateways, applying Terraform took a long time and may have overused the Controller CPU. 
-
-**AVX-27653** – Resolved an issue in which the conduit binary could become overwhelmed by Linux kernel netlink messages. This issue could cause the conduit binary to crash.  
-
-**AVX-27716** – An error may show “configuration not up-to-date” while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error. 
-
-**AVX-27732** – FIPS 140-2 is neither supported nor required for Edge devices. Previously, if you tried to enable FIPS on the Controller, the edge gateway configuration would fail. Now, if you try to enable user-vpn in FIPS mode silently, the Edge gateways will bypass the request. 
-
-**AVX-27820** - Resolved an issue that sometimes caused a Controller to read the VPC CIDR of a gateway incorrectly. This issue caused an error message when OpenVPN was enabled: “Failed to initialize GlobalConfigDB: Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1.” 
+* **AVX-27215** - When you have a large network with FireNet gateways, applying Terraform took a long time and may have overused the Controller CPU. 
+* **AVX-27653** – Resolved an issue in which the conduit binary could become overwhelmed by Linux kernel netlink messages. This issue could cause the conduit binary to crash.  
+* **AVX-27716** – An error may show “configuration not up-to-date” while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error. 
+* **AVX-27732** – FIPS 140-2 is neither supported nor required for Edge devices. Previously, if you tried to enable FIPS on the Controller, the edge gateway configuration would fail. Now, if you try to enable user-vpn in FIPS mode silently, the Edge gateways will bypass the request. 
+* **AVX-27820** - Resolved an issue that sometimes caused a Controller to read the VPC CIDR of a gateway incorrectly. This issue caused an error message when OpenVPN was enabled: “Failed to initialize GlobalConfigDB: Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1.” 
 
 6.8.1149 (08/17/2022)
 =====================
