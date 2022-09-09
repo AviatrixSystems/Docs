@@ -201,6 +201,70 @@ To perform diagnostics from Topology (from an Aviatrix Gateway):
     i.  SERVICE ACTIONS: Check the status of gateway services and restart services.
 
 
+About Security Scanner
+-----------------------
+
+The Security Scanner enables you to detect some vulnerabilities that an attacker could potentially exploit within your Aviatrix-managed VPCs/VNets.
+
+The Security Scanner does not open ports on machines whose ports you have closed by way of private firewalls. A security scan is performed only on ports that are open by your intentional security design.
+
+A security scan reports the following for end instances within your Aviatrix-managed spoke VPCs/VNets:
+
+    -   If a TLS certificate has a malformed configuration.
+    -   If the certificate is not publicly known — it is self-signed or signed with a private root certificate.
+    -   If the TLS versions used for encrypted communication are outdated / insecure. 
+
+Security Scanner is run from the Aviatrix CoPilot user interface from the Topology page. See `Scan for vulnerabilities using Security Scanner`_. 
+
+You can enable the Security Scanner feature on a per CoPilot instance basis to allow only a specific CoPilot to be able to trigger a scan.  
+
+The security scan feature only inspects TLS/SSL protocols.
+ 
+
+Scan for vulnerabilities using Security Scanner
+------------------------------------------------
+
+The Security Scanner enables you to detect some vulnerabilities of instances that an attacker could potentially exploit within your Aviatrix-managed VPCs/VNets. The security scan feature only inspects TLS/SSL protocols. 
+
+For information about Security Scanner, see `About Security Scanner`_.
+
+To scan for vulnerabilities using Security Scanner:
+
+1.  Log in to CoPilot.
+
+2.  From the sidebar, select Topology.
+
+3.  In the topology map, select the instance (not a gateway) from which you want to perform the scan. 
+
+    Note that the scan will be performed on given ports in the Aviatrix-managed VPC/VNet associated with the selected instance.
+
+4.  In the properties pane, click the **Security Scan** button.
+
+5.  In Ports, select the port(s) you want the Security Scanner to scan. 
+
+    You can specify one or multiple individual ports or a range of ports (for example, 8000:8010).
+
+    You can select as many ports as you'd like.
+
+6.  Click **Run**.
+
+    A process on a spoke gateway that is associated with the selected instance scans the port(s) you specified, inspecting TLS/SSL protocols. The results of the scan display in the right pane.
+
+7.  Analyze the scan report results: 
+
+    -   **A scan rating**: The rating reflecting the ranking of TLS services found on the encrypted connections. The TLS rankings are defined by a well-known security source that tracks vulnerable ciphers. Rankings include:
+        -   A+ — Very secure. The service follows recommended standards by providing only TLS 1.3 with strong cipher suites for the most secure sessions.
+        -   A  — Secure. The service is using TLS 1.2 or more recent versions with strong cipher suites which are considered secure.e
+        -   B  — Weak. The service is using TLS 1.0 or more recent versions and/or weak cipher suites that may be supported by wider range of devices but are not recommended from a security point of view.
+        -   C  — Insecure. The service is using invalid certificates (self-signed, expired or signed with a private root certificate) or relies on deprecated SSL 3 or older versions or on deprecated cipher suites that are considered insecure.
+
+    -   **A list of vulnerabilities**: The table lists all vulnerabilities encountered by the scan. 
+
+8.  If you want to show only vulnerabilities associated with actionable tasks, enable the **Show only Vulnerabilities** filter.
+
+9.  Take action to mitigate any vulnerabilities found and run the scan again to confirm the vulnerabilities are removed.
+
+
 Create and save topology filters
 --------------------------------
 
