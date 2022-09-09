@@ -224,9 +224,7 @@ The security scan feature only inspects TLS/SSL protocols.
 Scan for vulnerabilities using Security Scanner
 ------------------------------------------------
 
-The Security Scanner enables you to detect some vulnerabilities of instances that an attacker could potentially exploit within your Aviatrix-managed VPCs/VNets. The security scan feature only inspects TLS/SSL protocols. 
-
-For information about Security Scanner, see `About Security Scanner`_.
+This section describes how to scan for vulnerabilities using Security Scanner. For information about Security Scanner, see `About Security Scanner`_.
 
 To scan for vulnerabilities using Security Scanner:
 
@@ -248,15 +246,15 @@ To scan for vulnerabilities using Security Scanner:
 
 6.  Click **Run**.
 
-    A process on a spoke gateway that is associated with the selected instance scans the port(s) you specified, inspecting TLS/SSL protocols. The results of the scan display in the right pane.
+    A process on a spoke gateway that is associated with the selected instance scans the port(s) you specified, inspecting TLS/SSL protocols. The results of the scan display in the right pane. Note: The security scan feature only inspects TLS/SSL protocols.
 
 7.  Analyze the scan report results: 
 
     -   **A scan rating**: The rating reflecting the ranking of TLS services found on the encrypted connections. The TLS rankings are defined by a well-known security source that tracks vulnerable ciphers. Rankings include:
         -   A+ — Very secure. The service follows recommended standards by providing only TLS 1.3 with strong cipher suites for the most secure sessions.
-        -   A  — Secure. The service is using TLS 1.2 or more recent versions with strong cipher suites which are considered secure.e
+        -   A  — Secure. The service is using TLS 1.2 or more recent versions with strong cipher suites which are considered secure.
         -   B  — Weak. The service is using TLS 1.0 or more recent versions and/or weak cipher suites that may be supported by wider range of devices but are not recommended from a security point of view.
-        -   C  — Insecure. The service is using invalid certificates (self-signed, expired or signed with a private root certificate) or relies on deprecated SSL 3 or older versions or on deprecated cipher suites that are considered insecure.
+        -   C  — Insecure. The service is using invalid certificates (self-signed, expired, or signed with a private root certificate) or relies on deprecated SSL 3 or older versions or on deprecated cipher suites that are considered insecure.
 
     -   **A list of vulnerabilities**: The table lists all vulnerabilities encountered by the scan. 
 
