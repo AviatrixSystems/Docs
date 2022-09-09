@@ -13,7 +13,7 @@ After Private Mode is configured you can create gateways using `Multi-Cloud Tran
 
 |topology-private-mode|
 
-Cloud environments that support this feature are AWS, AWS GovCloud, Azure, and Azure Government. 
+Cloud environments (providers) that support this feature are AWS, AWS GovCloud, Azure, and Azure Government. 
 
 +-----------------------+--------------------------------------+
 |Controller Location    | Gateways                             |  
@@ -29,7 +29,7 @@ Prerequisites
 
 - `Configure the permissions for Private Mode and GWLB-Based FireNet <https://docs.aviatrix.com/HowTos/aviatrix_iam_policy_requirements.html>`_. This is very important; you cannot deploy your Private Mode resources without these permissions. Please see sections 6 and 15 in the referenced document.
 - Upgrade to 6.8.
-- An Aviatrix Controller in AWS or AWS GovCloud. It is best to set up Private Mode from a new Controller that does not have any previously deployed gateways. Private Mode will not work if you already have gateways deployed in your Controller.
+- An Aviatrix Controller in AWS or AWS GovCloud. It is best to set up Private Mode from a new Controller that does not have any previously deployed gateways. Private Mode will not work if you already have public gateways deployed in your Controller.
 - A version of CoPilot that supports Private Mode, if you want to send syslog or Netflow data to CoPilot from the gateways. You must already have deployed CoPilot from the Private Mode Controller. When you deploy CoPilot from the Controller you must select a subnet that has outbound internet access. 
 - If you want to associate a CoPilot instance, it must be in the same VPC as the Controller.
 - If setting up Private Mode in a multi-cloud deployment, a private underlay between the CSPs must exist (Direct Connect for AWS or Express Route for Azure). 
@@ -132,6 +132,7 @@ In the Controller, navigate to Multi-Cloud Transit > Setup. On the Transit/Spoke
 - `Launch an Aviatrix Transit Gateway <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-an-aviatrix-transit-gateway>`_
 - `Launch an Aviatrix Spoke Gateway <https://docs.aviatrix.com/HowTos/transitvpc_workflow.html#launch-an-aviatrix-spoke-gateway>`_
 
+
 Deleting Multi-Cloud Access VPC and Link Service
 ------------------------------------------------
 
@@ -160,7 +161,6 @@ In Private Mode the following Aviatrix functionality is not available:
 - You cannot launch gateways in the same VPC/VNet as the Link Service VPC/VNet
 - BGP over LAN
 - BGP over Spoke
-- Transit Connect to External Device (except for BGP over IPSec and Static IPSec)
 - Insane mode to Internet
 - FQDN Gateway
 - Egress through Firewall
