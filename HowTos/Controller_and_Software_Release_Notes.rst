@@ -34,10 +34,10 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
-6.9.127 (09/09/2022) 
+6.9.128 (09/09/2022) 
 =====================
 
-**Enhanced Features in Release 6.9.127** 
+**Enhanced Features in Release 6.9.128** 
 
 * **Micro-segmentation** – `Micro-segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ is now supported on AWS GovCloud and Azure Government as well as AWS, Azure, and GCP. 
 * **NAT Support for Private Mode** – NAT (Network Address Translation) is now supported on gateways while using `Private Mode <https://docs.aviatrix.com/HowTos/privatemode.html>`_. This enhancement includes: 
@@ -52,7 +52,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 * **Secondary IP as Destination CIDR** – If you tried to set a gateway’s secondary IP as the Destination CIDR of NAT rules, you received an error message. You can now use this secondary IP as the Destination CIDR as long as the gateway is not in Insane Mode. 
 
-**Public Preview Features in Aviatrix Release 6.9.127**
+**Public Preview Features in Aviatrix Release 6.9.128**
 
 (`Public Preview <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html#public-preview-features>`_ feature) **Network Security Scanner** – The Security Scanner enables you to detect vulnerabilities of instances that an attacker could potentially exploit within your Aviatrix-managed VPCs/VNets.
 
@@ -60,7 +60,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * Select an instance (not a gateway) in the map and click the **Security Scanner** button in the resource's properties pane.
 * Enter one port, multiple ports, or a range of ports to scan and click **Run**. A Scan Report opens on the right. Note that this feature only inspects TLS/SSL protocols.
 
-**Issues Corrected in Aviatrix Release 6.9.127** 
+**Issues Corrected in Aviatrix Release 6.9.128** 
 
 * **AVX-27215** - When you have a large network with FireNet gateways, applying Terraform took a long time and may have overused the Controller CPU. 
 * **AVX-27716** – An error may show “configuration not up-to-date” while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error. 
