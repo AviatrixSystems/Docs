@@ -63,7 +63,6 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 **Issues Corrected in Aviatrix Release 6.9.127** 
 
 * **AVX-27215** - When you have a large network with FireNet gateways, applying Terraform took a long time and may have overused the Controller CPU. 
-* **AVX-27653** – Resolved an issue in which the conduit binary could become overwhelmed by Linux kernel netlink messages. This issue could cause the conduit binary to crash.  
 * **AVX-27716** – An error may show “configuration not up-to-date” while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error. 
 * **AVX-27732** – FIPS 140-2 is neither supported nor required for Edge devices. Previously, if you tried to enable FIPS on the Controller, the edge gateway configuration would fail. Now, if you try to enable user-vpn in FIPS mode silently, the Edge gateways will bypass the request. 
 * **AVX-27820** - Resolved an issue that sometimes caused a Controller to read the VPC CIDR of a gateway incorrectly. This issue caused an error message when OpenVPN was enabled: “Failed to initialize GlobalConfigDB: Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1.” 
