@@ -45,7 +45,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
   * DNAT and customized SNAT. 
   * Terraform support for NAT. 
 
-* **New Metered Offer in AWS and Azure** – Aviatrix offers a new metered license, **Aviatrix Secure Networking Platform Metered 2208 - Copilot, 24x7 Support**, in the AWS and Azure marketplaces. This license offers access to upcoming Aviatrix features and flexible billing options.
+* **New Metered Offer in AWS and Azure** – Aviatrix offers a new metered license, **Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support**, in the AWS and Azure marketplaces. This license offers access to upcoming Aviatrix features and flexible billing options.
   
   * New customers can subscribe to this license using the `AWS Getting Started Guide <https://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html>`_ or `Azure Startup Guide <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_.  
   * Existing customers, you can migrate to this license. See the `AWS Controller Migration <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_ or the `Azure Controller Migration <https://docs.aviatrix.com/HowTos/controller_migration.html#controller-migration-in-azure>`_ instructions. 

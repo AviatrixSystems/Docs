@@ -90,8 +90,8 @@ Region – Before configuring any settings, click on the dropdown menu in the to
 +----------------------------+----------------------------------------------------------------+
 | Number of Availability     | Select **1** if you choose **not** to                          |
 | Zones (AZs)                | configure                                                      |
-| 2208 - Copilot, 24x7       | `HA <https://docs.aviatrix.com/HowTos/controller_ha.html>`_.   |        
-| Support                    | One Availability Zone offers a simpler deployment but no       |
+|                            | `HA <https://docs.aviatrix.com/HowTos/controller_ha.html>`_.   |        
+|                            | One Availability Zone offers a simpler deployment but no       |
 |                            | resiliency.                                                    |
 |                            |                                                                |
 |                            | Select **2** if you require Controller resiliency through HA.  |
@@ -195,7 +195,7 @@ To launch your Controller, subscribe to the correct Aviatrix AMI from the AWS Ma
 +----------------------------+-------------------------------------------------+
 | **Aviatrix Secure          | With this licensing option, the AWS Marketplace |
 | Networking Platform Metered| receives usage data from your Controller and    |
-| 2208 - Copilot, 24x7       | charges based on consumption of Aviatrix        |        
+| 2208-Universal 24x7        | charges based on consumption of Aviatrix        |        
 | Support**                  | functionality as described within the offer.    |
 |                            |                                                 |
 |                            | Make sure to subscribe to the correct metered   |
@@ -209,7 +209,7 @@ To launch your Controller, subscribe to the correct Aviatrix AMI from the AWS Ma
 |                            | information.                                    |
 +----------------------------+-------------------------------------------------+
 
-2. Select the **Aviatrix Secure Networking Platform Metered 2208 – Copilot, 24x7 Support** option. On the subscription’s page, click **Continue to Subscribe**. Subscribing means that you can begin deploying the software in later steps using the CloudFormation template.
+2. Select the **Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support** option. On the subscription’s page, click **Continue to Subscribe**. Subscribing means that you can begin deploying the software in later steps using the CloudFormation template.
 3. On the next page, click **Subscribe** again to confirm. Then, click **Set up Your Account**.
 4. Under Aviatrix Metered Controller Subscription, enter your email address in the Email field and click **Verify Email**. 
 5. Open the email you receive from admin@aviatrix.io, copy the six-digit verification code, and enter it in the Verification Code field. Then, click **Submit Form**.
@@ -218,7 +218,7 @@ To launch your Controller, subscribe to the correct Aviatrix AMI from the AWS Ma
 Activating the Metered AMI through the BYOL (Bring Your Own License) Offer
 ------------------------------------------------------------------------------------------------------
 
-After subscribing to the Aviatrix Secure Networking Platform Metered 2208 – Copilot, 24x7 Support subscription, click on the link in the email you received to open the Aviatrix Secure Network Platform (BYOL) offer. On the offer's page, click **Continue to Subscribe**.
+After subscribing to the Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support subscription, click on the link in the email you received to open the Aviatrix Secure Network Platform (BYOL) offer. On the offer's page, click **Continue to Subscribe**.
 
 .. note::
 
