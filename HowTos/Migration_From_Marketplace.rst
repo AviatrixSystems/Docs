@@ -24,7 +24,7 @@ There are two methods you can use to migrate your Controller AMI:
       The Controller-driven method can only migrate between AMIs using the same license. To change your license, use the manual method.
 
       * To migrate to a BYOL license model, please contact your Aviatrix Sales Account Manager or email sales@aviatrix.com to acquire the appropriate BYOL license. Make sure you already have subscribed to the BYOL AMI. 
-      * To migrate to a metered license, subscribe to the Aviatrix Secure Networking Platform Metered 2208 - Copilot, 24x7 Support offer on the AWS Marketplace.
+      * To migrate to a metered license, subscribe to the Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support offer on the AWS Marketplace.
 
 Prerequisites
 =============
@@ -33,7 +33,7 @@ Prerequisites
 * Aviatrix Controller running latest version of software
 
   #. Log in to your existing Aviatrix Controller.
-  #. Get your Customer ID either through Controller > Settings > Controller > License or from your Aviatrix Account Manager. If you are migrating a metered image, subscribe to the Aviatrix Secure Networking Platform Metered 2208 - Copilot, 24x7 Support offer to receive your Customer ID by email.
+  #. Get your Customer ID either through Controller > Settings > Controller > License or from your Aviatrix Account Manager. If you are migrating a metered image, subscribe to the Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support offer to receive your Customer ID by email.
   #. Navigate to Settings > Maintenance > Upgrade tab.
   #. Make sure you are running the **latest** version. If it is not the latest version, please `upgrade <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`__ before proceeding. Note that Aviatrix software version upgrade is a version-to-version upgrade. Therefore, you may need to perform multiple upgrades until you reach the latest version on your existing Controller. 
 
