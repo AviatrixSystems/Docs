@@ -60,7 +60,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-25499** – An Aviatrix regular gateway (as opposed to a Transit or Spoke Gateway), did not have routes to local VPC CIDRs. 
 * **AVX-26020** – When you did a Controller backup and restore, the Controller temporarily lost its BGP routes. This loss caused network flapping and a loss of traffic until the routes were restored. 
 * **AVX-26933** – When you created a route-based Site2Cloud connection from the Controller’s Site2Cloud setup page and selected the HA gateway as the primary source gateway, the route table was not populated correctly. 
-* **AVX-27215** - When you have a large network with FireNet gateways, applying Terraform took a long time and may have overused the Controller CPU.  
+* **AVX-27215** - When you have a large network with FireNet gateways, applying Terraform took a long time and may have overused the Controller CPU.
 * **AVX-27323** – When you exported a Terraform configuration from your Controller, the downloaded config file may have shown incorrect information. For example, if you exported a gateway configuration by navigating to Useful Tools > Export To Terraform > Gateway > gateway_snat OR gateway_dnat, the downloaded config file may have incorrectly shown that the snat_policy: 
      - Has an interface argument with the tunnel interface ID. 
      - Has a connection argument with the transit connection ID.  
