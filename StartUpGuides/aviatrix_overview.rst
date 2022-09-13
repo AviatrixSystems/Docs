@@ -298,11 +298,6 @@ Aviatrix PrivateS3 provides control and visibility for AWS S3 upload/download wh
 To learn more, `follow the PrivateS3 FAQ <https://docs.aviatrix.com/HowTos/sfc_faq.html>`_
 
 
-Cloud Migration
-==================
-
-Current cloud migration practice is complex and time consuming. The root case is the requirements that migrating VM must change its IP address after the migration. Read how Aviatrix solves `this problem. <http://docs.aviatrix.com/HowTos/ipmotion.html>`_ 
-
 Extending Workloads to Cloud
 ==============================
 
