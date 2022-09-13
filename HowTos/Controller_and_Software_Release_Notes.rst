@@ -57,9 +57,9 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Issues Corrected in Aviatrix Release 6.8.1311** 
 
-* **AVX-25499** – An Aviatrix regular gateway (as opposed to a Transit or Spoke Gateway), did not have routes to local VPC CIDRs. 
-* **AVX-26020** – When you did a Controller backup and restore, the Controller temporarily lost its BGP routes. This loss caused network flapping and a loss of traffic until the routes were restored. 
-* **AVX-26933** – When you created a route-based Site2Cloud connection from the Controller’s Site2Cloud setup page and selected the HA gateway as the primary source gateway, the route table was not populated correctly. 
+* **AVX-25499** – An Aviatrix regular gateway (as opposed to a Transit or Spoke Gateway), did not have routes to local VPC CIDRs.
+* **AVX-26020** – When you did a Controller backup and restore, the Controller temporarily lost its BGP routes. This loss caused network flapping and a loss of traffic until the routes were restored.
+* **AVX-26933** – When you created a route-based Site2Cloud connection from the Controller’s Site2Cloud setup page and selected the HA gateway as the primary source gateway, the route table was not populated correctly.
 * **AVX-27215** - When you have a large network with FireNet gateways, applying Terraform took a long time and may have overused the Controller CPU.
 * **AVX-27323** – When you exported a Terraform configuration from your Controller, the downloaded config file may have shown incorrect information. For example, if you exported a gateway configuration by navigating to Useful Tools > Export To Terraform > Gateway > gateway_snat OR gateway_dnat, the downloaded config file may have incorrectly shown that the snat_policy:
  
@@ -71,9 +71,9 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
      - Has an interface argument with an empty value. 
      - Has a connection argument with the transit connection ID.
 
-* **AVX-27330** – Fixed upgrade issue if the customer deployed GW before 5.3. 
-* **AVX-27716** – An error may show “configuration not up-to-date” while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error. 
-* **AVX-27732** – FIPS 140-2 is neither supported nor required for Edge devices. Previously, if you tried to enable FIPS on the Controller, the edge gateway configuration would fail. Now, if you try to enable user-vpn in FIPS mode silently, the Edge gateways will bypass the request. 
+* **AVX-27330** – Fixed upgrade issue if the customer deployed GW before 5.3.
+* **AVX-27716** – An error may show “configuration not up-to-date” while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error.
+* **AVX-27732** – FIPS 140-2 is neither supported nor required for Edge devices. Previously, if you tried to enable FIPS on the Controller, the edge gateway configuration would fail. Now, if you try to enable user-vpn in FIPS mode silently, the Edge gateways will bypass the request.
 * **AVX-27820** - Resolved an issue that sometimes caused a Controller to read the VPC CIDR of a gateway incorrectly. This issue caused an error message when OpenVPN was enabled: “Failed to initialize GlobalConfigDB:  
 Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1.”  
 
