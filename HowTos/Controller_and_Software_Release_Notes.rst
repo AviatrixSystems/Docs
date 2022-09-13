@@ -34,6 +34,49 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
+
+
+6.8.1311 (09/12/2022) 
+=========================
+
+**New Features in Release 6.8.1311** 
+
+(`Public Preview <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html#public-preview-features>`_ feature)  
+ 
+**Network Security Scanner** – The Security Scanner enables you to detect vulnerabilities of instances that an attacker could potentially exploit within your Aviatrix-managed VPCs/VNets. 
+
+* To run the scanner, open Aviatrix CoPilot and navigate to Topology. 
+* Select an instance (not a gateway) in the map and click the **Security Scanner** button in the resource's properties pane. 
+* Enter one port, multiple ports, or a range of ports to scan and click **Run**. A Scan Report opens on the right. Note that this feature only inspects TLS/SSL protocols. 
+ 
+**Enhanced Features in Release 6.8.1311** 
+
+* **Secondary IP as Destination CIDR** – If you tried to set a gateway’s secondary IP as the Destination CIDR of NAT rules, you received an error message. You can now use this secondary IP as the Destination CIDR as long as the gateway is not in Insane Mode.  
+* **Micro-segmentation** – Micro-segmentation is now supported on AWS GovCloud and Azure Government as well as AWS, Azure, and GCP.  
+* **Performance Improvements for Egress FQDN Tags** – Improved the performance of enabling an Egress FQDN tag so that the process is 5x faster. With this enhancement, adding a rule to an Egress FQDN tag is up to 50x faster. 
+
+**Issues Corrected in Aviatrix Release 6.8.1311** 
+
+* **AVX-25499** – An Aviatrix regular gateway (as opposed to a Transit or Spoke Gateway), did not have routes to local VPC CIDRs. 
+* **AVX-26020** – When you did a Controller backup and restore, the Controller temporarily lost its BGP routes. This loss caused network flapping and a loss of traffic until the routes were restored. 
+* **AVX-26933** – When you created a route-based Site2Cloud connection from the Controller’s Site2Cloud setup page and selected the HA gateway as the primary source gateway, the route table was not populated correctly. 
+* **AVX-27215** - When you have a large network with FireNet gateways, applying Terraform took a long time and may have overused the Controller CPU.  
+* **AVX-27323** – When you exported a Terraform configuration from your Controller, the downloaded config file may have shown incorrect information. For example, if you exported a gateway configuration by navigating to Useful Tools > Export To Terraform > Gateway > gateway_snat OR gateway_dnat, the downloaded config file may have incorrectly shown that the snat_policy: 
+
+* Has an interface argument with the tunnel interface ID. 
+* Has a connection argument with the transit connection ID.  
+
+In this situation, the correct config info would be that the snat_policy: 
+
+* Has an interface argument with an empty value. 
+* Has a connection argument with the transit connection ID. 
+
+* **AVX-27330** – Fixed upgrade issue if the customer deployed GW before 5.3. 
+* **AVX-27716** – An error may show “configuration not up-to-date” while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error. 
+* **AVX-27732** – FIPS 140-2 is neither supported nor required for Edge devices. Previously, if you tried to enable FIPS on the Controller, the edge gateway configuration would fail. Now, if you try to enable user-vpn in FIPS mode silently, the Edge gateways will bypass the request. 
+* **AVX-27820** - Resolved an issue that sometimes caused a Controller to read the VPC CIDR of a gateway incorrectly. This issue caused an error message when OpenVPN was enabled: “Failed to initialize GlobalConfigDB:  
+Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1.”  
+
 6.9.128 (09/09/2022) 
 =====================
 
