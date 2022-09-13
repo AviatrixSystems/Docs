@@ -41,13 +41,11 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **New Features in Release 6.8.1311** 
 
-(`Public Preview <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html#public-preview-features>`_ feature)  
- 
-**Network Security Scanner** – The Security Scanner enables you to detect vulnerabilities of instances that an attacker could potentially exploit within your Aviatrix-managed VPCs/VNets. 
+* (`Public Preview <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html#public-preview-features>`_ feature) **Network Security Scanner** – The Security Scanner enables you to detect vulnerabilities of instances that an attacker could potentially exploit within your Aviatrix-managed VPCs/VNets. 
 
-* To run the scanner, open Aviatrix CoPilot and navigate to Topology. 
-* Select an instance (not a gateway) in the map and click the **Security Scanner** button in the resource's properties pane. 
-* Enter one port, multiple ports, or a range of ports to scan and click **Run**. A Scan Report opens on the right. Note that this feature only inspects TLS/SSL protocols. 
+  * To run the scanner, open Aviatrix CoPilot and navigate to Topology. 
+  * Select an instance (not a gateway) in the map and click the **Security Scanner** button in the resource's properties pane. 
+  * Enter one port, multiple ports, or a range of ports to scan and click **Run**. A Scan Report opens on the right. Note that this feature only inspects TLS/SSL protocols. 
  
 **Enhanced Features in Release 6.8.1311** 
 
