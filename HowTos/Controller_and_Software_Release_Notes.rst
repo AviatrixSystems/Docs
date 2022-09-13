@@ -64,11 +64,9 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-27323** – When you exported a Terraform configuration from your Controller, the downloaded config file may have shown incorrect information. For example, if you exported a gateway configuration by navigating to Useful Tools > Export To Terraform > Gateway > gateway_snat OR gateway_dnat, the downloaded config file may have incorrectly shown that the snat_policy: 
      - Has an interface argument with the tunnel interface ID. 
      - Has a connection argument with the transit connection ID.  
-
 In this situation, the correct config info would be that the snat_policy: 
      - Has an interface argument with an empty value. 
      - Has a connection argument with the transit connection ID. 
-
 * **AVX-27330** – Fixed upgrade issue if the customer deployed GW before 5.3. 
 * **AVX-27716** – An error may show “configuration not up-to-date” while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error. 
 * **AVX-27732** – FIPS 140-2 is neither supported nor required for Edge devices. Previously, if you tried to enable FIPS on the Controller, the edge gateway configuration would fail. Now, if you try to enable user-vpn in FIPS mode silently, the Edge gateways will bypass the request. 
