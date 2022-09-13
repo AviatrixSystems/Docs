@@ -137,7 +137,7 @@ Launch the New Aviatrix Controller
   
  .. attention::
 
-      Make sure you already have subscribed to the AMI that you want to migrate to. Please refer to the `Subscribe to an Aviatrix AMI <https://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html#subscribing-to-the-aviatrix-ami-amazon-machine-image>`__  for details.
+      Make sure you already have subscribed to the **Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support** license. Please refer to the `Subscribe to an Aviatrix AMI <https://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html#subscribing-to-the-metered-aviatrix-ami-amazon-machine-image>`__  for details.
 
 Launch a new Aviatrix Controller.  Please see the `AWS Startup Guide <https://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html>`__ for instructions.
   
