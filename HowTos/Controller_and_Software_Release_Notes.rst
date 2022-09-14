@@ -89,7 +89,7 @@ Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1.” 
 * **New Metered Offer in AWS and Azure** – Aviatrix offers a new metered license, **Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support**, in the AWS and Azure marketplaces. This license offers access to upcoming Aviatrix features and flexible billing options.
   
   * New customers can subscribe to this license using the `AWS Getting Started Guide <https://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html>`_ or `Azure Startup Guide <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_.  
-  * Existing customers, you can migrate to this license. See the `AWS Controller Migration <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_ or the `Azure Controller Migration <https://docs.aviatrix.com/HowTos/controller_migration.html#controller-migration-in-azure>`_ instructions. 
+  * Existing customers, you can migrate to this license. See the AWS or Azure sections of `this document <https://docs.aviatrix.com/HowTos/controller_migration.html>`_. 
 
 * **Secondary IP as Destination CIDR** – If you tried to set a gateway’s secondary IP as the Destination CIDR of NAT rules, you received an error message. You can now use this secondary IP as the Destination CIDR as long as the gateway is not in Insane Mode. 
 
