@@ -379,73 +379,73 @@ In a Disaster Recovery (DR) situation in which an entire CSP region is unavailab
 
 
 
-.. |controller_versions| image:: controller_migration_media/controller_versions.png
+.. |controller_versions| image:: Migration_From_Marketplace_media/controller_versions.png
    :scale: 60%
 
-.. |controller_migration| image:: controller_migration_media/controller_migration.png
+.. |controller_migration| image:: Migration_From_Marketplace_media/controller_migration.png
    :scale: 60%
 
-.. |enable_backup| image:: controller_migration_media/enable_backup.png
+.. |enable_backup| image:: Migration_From_Marketplace_media/enable_backup.png
    :scale: 60%
 
-.. |customer_id| image:: controller_migration_media/customer_id.png
+.. |customer_id| image::Migration_From_Marketplace_media/customer_id.png
    :scale: 60%
 
-.. |restore| image:: controller_migration_media/restore.png
+.. |restore| image:: Migration_From_Marketplace_media/restore.png
    :scale: 60%
 
-.. |azure_account_details_1| image:: controller_migration_media/azure_account_details_1.png
+.. |azure_account_details_1| image:: Migration_From_Marketplace_media/azure_account_details_1.png
    :scale: 60%
 
-.. |azure_account_details_2| image:: controller_migration_media/azure_account_details_2.png
+.. |azure_account_details_2| image:: Migration_From_Marketplace_media/azure_account_details_2.png
    :scale: 60%
 
-.. |azure_stop_old_controller| image:: controller_migration_media/azure_stop_old_controller.png
+.. |azure_stop_old_controller| image:: Migration_From_Marketplace_media/azure_stop_old_controller.png
    :scale: 50%
 
-.. |azure_click_dissociate| image:: controller_migration_media/azure_click_dissociate.png
+.. |azure_click_dissociate| image:: Migration_From_Marketplace_media/azure_click_dissociate.png
    :scale: 50%
 
-.. |azure_click_associate| image:: controller_migration_media/azure_click_associate.png
+.. |azure_click_associate| image:: Migration_From_Marketplace_media/azure_click_associate.png
    :scale: 40%
 
-.. |azure_IP_details| image:: controller_migration_media/azure_IP_details.png
+.. |azure_IP_details| image:: Migration_From_Marketplace_media/azure_IP_details.png
    :scale: 30%
 
-.. |gcp_cloud_storage_browser| image:: controller_migration_media/gcp_cloud_storage_browser.png
+.. |gcp_cloud_storage_browser| image:: Migration_From_Marketplace_media/gcp_cloud_storage_browser.png
    :scale: 60%
 
-.. |gcp_reserve_external_static_address| image:: controller_migration_media/gcp_reserve_external_static_address.png
+.. |gcp_reserve_external_static_address| image:: Migration_From_Marketplace_media/gcp_reserve_external_static_address.png
    :scale: 50%
 
-.. |gcp_attach_to_none| image:: controller_migration_media/gcp_attach_to_none.png
+.. |gcp_attach_to_none| image:: Migration_From_Marketplace_media/gcp_attach_to_none.png
    :scale: 80%
 
-.. |gcp_stop_instance| image:: controller_migration_media/gcp_stop_instance.png
+.. |gcp_stop_instance| image:: Migration_From_Marketplace_media/gcp_stop_instance.png
    :scale: 60%
 
-.. |gcp_before_migrating_ip| image:: controller_migration_media/gcp_before_migrating_ip.png
+.. |gcp_before_migrating_ip| image:: Migration_From_Marketplace_media/gcp_before_migrating_ip.png
    :scale: 60%
 
-.. |gcp_after_migrating_ip| image:: controller_migration_media/gcp_after_migrating_ip.png
+.. |gcp_after_migrating_ip| image:: Migration_From_Marketplace_media/gcp_after_migrating_ip.png
    :scale: 60%
 
-.. |oci_account_details| image:: controller_migration_media/oci_account_details.png
+.. |oci_account_details| image:: Migration_From_Marketplace_media/oci_account_details.png
    :scale: 60%
 
-.. |oci_terminate| image:: controller_migration_media/oci_terminate.png
+.. |oci_terminate| image:: Migration_From_Marketplace_media/oci_terminate.png
    :scale: 80%
 
-.. |oci_permanently_delete_unchecked| image:: controller_migration_media/oci_permanently_delete_unchecked.png
+.. |oci_permanently_delete_unchecked| image:: Migration_From_Marketplace_media/oci_permanently_delete_unchecked.png
    :scale: 100%
 
-.. |oci_select_primary_vnic| image:: controller_migration_media/oci_select_primary_vnic.png
+.. |oci_select_primary_vnic| image:: Migration_From_Marketplace_media/oci_select_primary_vnic.png
    :scale: 80%
 
-.. |oci_click_edit| image:: controller_migration_media/oci_click_edit.png
+.. |oci_click_edit| image:: Migration_From_Marketplace_media/oci_click_edit.png
    :scale: 40%
 
-.. |oci_click_update| image:: controller_migration_media/oci_click_update.png
+.. |oci_click_update| image:: Migration_From_Marketplace_media/oci_click_update.png
    :scale: 60%
 
 .. disqus::
