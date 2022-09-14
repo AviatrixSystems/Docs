@@ -399,13 +399,13 @@ Terraform for Controller launch is supported as a community project on Github on
 How do I migrate a Controller from a Metered license to BYOL license?
 -------------------------------------------------------------------------------------
 
-Follow the instructions described in `this document. <https://docs.aviatrix.com/HowTos/controller_migration.html>`_
+Follow the instructions described in `this document. <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_
 
 What is the best practice to ensure high availability of the Controller?
 ---------------------------------------------------------------------------------------
 
 The best practice is to enable `backup and restore function <https://docs.aviatrix.com/HowTos/controller_backup.html>`_. 
-In the event of Controller being terminated or become non-functional, you can restore the system by following the instructions `here. <https://docs.aviatrix.com/HowTos/controller_migration.html>`_
+In the event of Controller being terminated or become non-functional, you can restore the system by following the instructions `here. <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_
 
 Since Aviatrix Controller is not in the data plane, temporary loss of the Controller does not affect the existing tunnels or packet forwarding. 
 

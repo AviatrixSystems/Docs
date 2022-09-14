@@ -30,7 +30,7 @@ Prerequisites
 
   * The Aviatrix version must be **>= 3.4**.  If older than 3.4, please `upgrade <inline_upgrade.html#how-to-upgrade-software>`__.
   * Enable Controller `Backup <controller_backup.html>`__.
-  * AMI **aviatrix_cloud_services_gateway_043018_YYYY-xxxxxx** or later. If you are on an older AMI, please refer `here <controller_migration.html>`__ to migrate to the latest controller AMI first.
+  * AMI **aviatrix_cloud_services_gateway_043018_YYYY-xxxxxx** or later. If you are on an older AMI, please refer `here <Migration_From_Marketplace.html>`__ to migrate to the latest controller AMI first.
 
 * The Controller's VPC should have one or more public subnets, preferably in different AZs for HA across multiple AZ.
 
@@ -92,7 +92,7 @@ Launch CloudFormation Stack
 
    .. note::
 
-      If the stack fails (and ends with status of **ROLLBACK_COMPLETE**) check the log messages in the **Events** section.  If you see an error that says "Failed to create resource. AMI is not latest. Cannot enable Controller HA. Please backup/restore to the latest AMI before enabling controller HA. ", then follow the steps outlined `here <controller_migration.html>`__.
+      If the stack fails (and ends with status of **ROLLBACK_COMPLETE**) check the log messages in the **Events** section.  If you see an error that says "Failed to create resource. AMI is not latest. Cannot enable Controller HA. Please backup/restore to the latest AMI before enabling controller HA. ", then follow the steps outlined `here <Migration_From_Marketplace.html>`__.
    
 .. note::
    This stack creates the following:
