@@ -399,13 +399,13 @@ Terraform for Controller launch is supported as a community project on Github on
 How do I migrate a Controller from a Metered license to BYOL license?
 -------------------------------------------------------------------------------------
 
-Follow the instructions described in `this document. <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_
+Follow the instructions described in `this document. <https://docs.aviatrix.com/HowTos/controller_migration.html>`_
 
 What is the best practice to ensure high availability of the Controller?
 ---------------------------------------------------------------------------------------
 
 The best practice is to enable `backup and restore function <https://docs.aviatrix.com/HowTos/controller_backup.html>`_. 
-In the event of Controller being terminated or become non-functional, you can restore the system by following the instructions `here. <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_
+In the event of Controller being terminated or become non-functional, you can restore the system by following the instructions `here. <https://docs.aviatrix.com/HowTos/controller_migration.html>`_
 
 Since Aviatrix Controller is not in the data plane, temporary loss of the Controller does not affect the existing tunnels or packet forwarding. 
 
@@ -461,8 +461,7 @@ Here is the best practice procedure to follow:
  #. Do a dry run before upgrading. Go to Settings > Maintenance > Upgrade > Upgrade to the Latest > Dry Run. If the Dry Run is successful, proceed to the next step. If the Dry Run fails, do not proceed to the upgrade until you determine the root cause of the issue. 
  #. Upgrade. Go to Settings > Maintenance > Upgrade > Upgrade to the Latest > Upgrade. Wait for the process to finish.
  #. If Controller upgrade is successful and some gateways fail, you can 'force upgrade' the failed gateway again. Go to Troubleshoot > Gateway > Force Upgrade. Select the gateway and click **Upgrade**. 
- #. If Gateway force upgrade fails, proceed to replace the gateway. Go to Troubleshoot > Gateway > Gateway Replace. Select the failed gateway and click **Replace**. 
- #. If the Controller upgrade fails, follow `this document from Step 2 to the end <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#step-2-stop-the-current-aviatrix-controller-instance>`_. 
+ #. If Gateway force upgrade fails, proceed to replace the gateway. Go to Troubleshoot > Gateway > Gateway Replace. Select the failed gateway and click **Replace**.
 
 What IP addresses does the Controller need to reach out to?
 ----------------------------------------------------------------------------

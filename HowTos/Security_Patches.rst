@@ -30,11 +30,11 @@ To apply a patch:
 
 **Issues**: This patch addresses vulnerabilities fixed by Apache version 2.4.51. 
 
-Aviatrix released new AMIs for AWS on 10/13/21 to address vulnerabilities (`CVE-2021-40438 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40438>`_ and `CVE-2021-33193 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33193>`_). You are fully covered if you migrated your Controller to use the new AMIs mentioned in `Controller Images: AWS AMI – Version 100621 <https://docs.aviatrix.com/HowTos/image_release_notes.html#controller-images-aws-ami-version-100621-10-13-21>`_, following the instructions for `existing customers to perform a Controller image upgrade <https://docs.aviatrix.com/HowTos/image_release_notes.html#existing-customers-controller-image-upgrade-migration>`_.
+Aviatrix released new AMIs for AWS on 10/13/21 to address vulnerabilities (`CVE-2021-40438 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40438>`_ and `CVE-2021-33193 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33193>`_). You are fully covered if you migrated your Controller to use the new AMIs mentioned in `Controller Images: AWS AMI – Version 100621 <https://docs.aviatrix.com/HowTos/image_release_notes.html#controller-images-aws-ami-version-100621-10-13-21>`_, following the instructions for `existing customers to perform a Controller image upgrade <https://controller_migration.html>`_.
 
 This patch will address the same issue without requiring a Controller migration.
 
-For Controllers running in AWS, Aviatrix recommends that you migrate your Controllers as instructed in `Existing Customers - Controller Image upgrade (Migration)  <https://docs.aviatrix.com/HowTos/image_release_notes.html#existing-customers-controller-image-upgrade-migration>`_.
+For Controllers running in AWS, Aviatrix recommends that you migrate your Controllers as instructed in `Existing Customers - Controller Image upgrade (Migration)  <https://controller_migration.html>`_.
 
 For Controllers running in cloud service providers other than AWS (Azure, GCP, etc.), you can apply this security patch.
 
