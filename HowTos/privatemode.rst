@@ -9,7 +9,7 @@ Private Mode
 
 Private Mode is a global setting that offers secure orchestrated intra- and multi-cloud networking by removing the need for public IPs for Aviatrix gateways. Web proxies are used for the gateways to access the internet. All communication is done via native cloud constructs such as Load Balancers, Private Link Services, and peering connections, which act as the underlay for the Aviatrix encrypted Transit network. 
 
-After Private Mode is configured you can create gateways using `Multi-Cloud Transit <https://https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_.
+After Private Mode is configured you can create gateways using `Multi-Cloud Transit <https://https://docs.aviatrix.com/HowTos/transitvpc_workflow.html>`_. Starting with Controller release 6.9, DNAT and SNAT are supported on gateways while using Private Mode.
 
 |topology-private-mode|
 
