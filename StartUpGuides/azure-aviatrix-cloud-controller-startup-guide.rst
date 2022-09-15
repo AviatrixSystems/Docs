@@ -32,7 +32,7 @@ Subscribing to the Aviatrix Metered Offer
   1) Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support
   2) Aviatrix Secure Network Platform BYOL (Bring Your Own License)
  
-  Both offers are required because the metered license provides the underlay for the BYOL (Bring Your Own License) offer. Use the steps below to first subscribe to the metered offer, and then activate the metered offer using the BYOL offer, in order to launch or migrate your Controller. Note that your account will only be billed for the metered license.
+  Both offers are required. Subscribe to the metered offer to receive your Customer ID, and then subscribe to the BYOL offer to deploy your Controller using that Customer ID. You will only be billed for the metered offer.
 
 1. Go to the `Azure Marketplace <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/aviatrix-systems.aviatrix-controller-abu-saas?tab=Overview>`_ to subscribe to the Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support offer. 
 2. Click **Get it Now** on the left side of the page.

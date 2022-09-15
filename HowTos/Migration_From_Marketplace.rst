@@ -216,7 +216,7 @@ Before migrating your Azure Controller, note the following details so that you c
   1) Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support
   2) Aviatrix Secure Network Platform BYOL (Bring Your Own License)
  
-  Both offers are required because the metered license provides the underlay for the BYOL (Bring Your Own License) offer. Use the steps in the Azure Startup Guide to first subscribe to the metered offer, and then activate the metered offer using the BYOL offer, in order to launch or migrate your Controller.
+  Both offers are required. Subscribe to the metered offer to receive your Customer ID, and then subscribe to the BYOL offer to deploy your Controller using that Customer ID. You will only be billed for the metered offer.
 
 5. Shut down the old Controller instance. Go to your Azure account > Virtual machines and select the old Controller instance. Click **Stop**.
 
