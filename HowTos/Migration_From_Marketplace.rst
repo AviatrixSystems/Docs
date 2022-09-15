@@ -330,7 +330,7 @@ Setting up Your New Controller
 
 2. Set a new password and upgrade this Controller to the same version as your old Controller instance. This might take up to 5 minutes.
 3. Log into the new Controller and onboard your primary access account (the CSP account). Make sure to have your CSP credentials available, as you will need them to onboard your CSP account. In your Controller, go to Accounts > Access Accounts > *CSP* (AWS, Azure, GCP, or OCI).
-4. Onboard your Aviatrix Customer ID. Use your old Controller's Customer ID.
+4. Onboard your Aviatrix Customer ID.
 5. Once everything is set up and ready, restore the backup from your storage container. In your Controller, go to > Settings > Maintenance > Backup & Restore > Restore > fill in the appropriate details > click **Restore**.
 
 .. important::
