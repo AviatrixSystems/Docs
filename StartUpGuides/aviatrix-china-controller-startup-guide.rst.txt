@@ -151,7 +151,7 @@ Once logged back into the Controller, you should be on the `Onboarding` page. If
 
 .. Note::
 
-   Contact support@aviatrix.com to get a trial license if you do not have one.
+   Open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ to get a trial license if you do not have one.
 ..
    
 Enter the `Customer ID` in the field and click `Save`.
@@ -198,10 +198,7 @@ You are now ready to establish connectivities to/from the cloud. Here are some o
 
 .. Warning:: Any resources created by the Controller, such as Aviatrix gateways, route entries, ELB, SQS queues, etc, must be deleted from the Controller console. If you delete them directly on AWS console, the Controller's view of resources will be incorrect which will lead to features not working properly.  
 
-For technical support, email us at support@aviatrix.com
-
-Enjoy!
-
+For technical support, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_.
 
 Limitations
 ^^^^^^^^^^^^^^^
