@@ -2176,7 +2176,7 @@ CoPilot Settings
 
 This section describes the Settings options of Aviatrix CoPilot.
 
-The Settings page allows you to configure various CoPilot settings. The default entries are usually sufficient. Ensure that you understand the impact of changing an option before making the change. Typically, you only need to set the Controller IP options by specifying the controller IP address and the controller service account.
+The CoPilot > Settings page allows you to configure various CoPilot settings. The default entries are usually sufficient. Ensure that you understand the impact of changing an option before making the change. Typically, you only need to set the Controller IP options by specifying the controller IP address and the controller service account.
 
 Configuration
 ---------------
@@ -2238,16 +2238,18 @@ SSL Certificate Key: **aviatrixCustomerKey** example: ::
 
 Services
 ----------
-This page allows you stop/start/restart various services. 
+The CoPilot > Settings > Services page allows you to stop/start/restart various CoPilot services. It also includes options that enable Aviatrix Support to troubleshoot problems with your CoPilot instance. 
 
-Use **Services Download Log Bundle Locally** to download the support log bundle to your local system. Submit a support ticket first.
+Use **Download Log Bundle Locally** to download the support log bundle to your local system. Submit a support ticket first.
 
-Use **Services Upload Log Bundle to Support** to send your support log bundle directly to Aviatrix Support (the log bundle is uploaded to s3).
+Use **Upload Log Bundle to Support** to send your support log bundle directly to Aviatrix Support (the log bundle is uploaded to s3).
+
+Use **Remote Support** to allow an Aviatrix Support member to SSH into your CoPilot instance without having to open a security group. To enable the SSH tunnel, set the option to **Enabled**. Provide the port number shown to your Support representative. After the support issue is resolved and access to your instance is no longer needed, set the option to **Disabled**.
 
 
 Resources
 -----------
-The Resources page provides resource utilization levels about the virtual machine (instance) on which CoPilot runs as well as the storage allocated to the instance.
+The CoPilot > Settings > Resources page provides resource utilization levels about the virtual machine (instance) on which CoPilot runs as well as the storage allocated to the instance.
 
 **Disk Usage:**
 

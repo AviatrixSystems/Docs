@@ -1196,6 +1196,20 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
         -   VM/Instance
     -   On your Aviatrix Controller, verify that the CoPilot association (Controller > Settings > CoPilot) is pointing to your *new copilot* IP. If you used the controller UI to launch your *new copilot*, this was automatically done for you. Additionally, verify that the Remote Syslog and Netflow Agent (Controller > Settings > Logging) are pointing to your *new copilot* IP.
 
+Contacting Aviatrix Support for Resolving CoPilot Issues
+=========================================================== 
+
+If you cannot resolve a problem encountered in your CoPilot deployment, contact Aviatrix Support.
+
+If you can log in to your CoPilot instance, the following options are available in the CoPilot > Settings > Services page: 
+
+-   Use **Download Log Bundle Locally** to download the support log bundle to your local system. Please submit a support ticket first.
+
+-   Use **Upload Log Bundle to Support** to send your support log bundle directly to Aviatrix Support (the log bundle is uploaded to s3).
+
+-   Use **Remote Support** to grant privileged level access to your CoPilot instance to the Aviatrix Support team. This establishes a trusted connection between your instance and the Aviatrix diagnostic server for diagnostic purposes. Set the option to **Enabled** and provide the port number shown to your Support representative so they can initiate a debugging session. After access to your instance is no longer needed, disable Remote Support to prevent further access to your CoPilot.
+
+
 .. |samlsso| image:: copilot_getting_started_media/samlsso.png
    :scale: 50%
 
