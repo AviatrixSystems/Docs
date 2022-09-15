@@ -13,7 +13,7 @@ We currently disclose vulnerabilities and security releases via numerous channel
 
 .. important:: 
 
-  While deploying our collective multi-cloud architecture, it is preferable to have the upgrades within a maintenance window. The Aviatrix Product Security Team intends to help routine operations by having quarterly security releases so that upgrade operations can be planned for in advance. If you have any questions, please reach out to support@aviatrix.com.  
+  While deploying our collective multi-cloud architecture, it is preferable to have the upgrades within a maintenance window. The Aviatrix Product Security Team intends to help routine operations by having quarterly security releases so that upgrade operations can be planned for in advance. If you have any questions, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_.  
 
 Patch Tuesday
 ========================
