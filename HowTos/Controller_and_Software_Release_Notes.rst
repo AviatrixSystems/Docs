@@ -86,10 +86,10 @@ Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1.� 
   * DNAT and customized SNAT. 
   * Terraform support for NAT. 
 
-* **New Metered Offer in AWS and Azure** – Aviatrix offers a new metered license, **Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support**, in the AWS and Azure marketplaces. This license offers access to upcoming Aviatrix features and flexible billing options.
+* **New Metered Offer in AWS and Azure** - Aviatrix offers a new metered license, **Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support**, in the AWS and Azure marketplaces. This license offers access to upcoming Aviatrix features and flexible billing options.
   
   * New customers can subscribe to this license using the `AWS Getting Started Guide <https://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html>`_ or `Azure Startup Guide <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_.  
-  * Existing customers, you can migrate to this license. See the AWS or Azure sections of `this document <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_. 
+  * Existing customers, migrate to this license as soon as possible to access upcoming new features and flexible billing options. See the AWS or Azure sections of `this document <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_. 
 
 * **Secondary IP as Destination CIDR** – If you tried to set a gateway’s secondary IP as the Destination CIDR of NAT rules, you received an error message. You can now use this secondary IP as the Destination CIDR as long as the gateway is not in Insane Mode. 
 

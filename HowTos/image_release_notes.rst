@@ -2,6 +2,14 @@
 Aviatrix Controller and Gateway Image Release Notes
 ====================================================
 
+To migrate your Controller to the latest image for AWS, Azure, GCP, or OCI, see `this document <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_.
+
+To migrate your Gateways to the latest images, see `this document <https://docs.aviatrix.com/HowTos/gateway-image-migration.html>`_.
+
+.. important::
+
+  New and existing customers should `migrate <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_ to the Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support image as soon as possible to access upcoming new features and flexible billing options.
+
 Controller Images: 05112022_AWS_utility_controller Version: 051022 (6/09/2022)
 =============================================
 
