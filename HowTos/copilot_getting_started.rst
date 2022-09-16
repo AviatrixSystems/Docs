@@ -33,7 +33,7 @@ You can deploy Aviatrix CoPilot directly from any supported cloud service provid
 
 Deploying from the CSP marketplace takes only a few clicks to provision and launch the instance. Since you must subscribe to a CoPilot offer at a marketplace as a first step for all deployment methods, this method is commonly used right after subscribing. This deploy method is often used for a CoPilot simple (single instance) deployment. See `Subscribe to a CoPilot Offer`_. 
 
-If your controller is in AWS, you can also conveniently launch a CoPilot simple or fault tolerant (clustered) deployment from the Aviatrix Controller user interface. See `CoPilot instance launch using Controller UI (AWS Only)`_ and `CoPilot cluster launch using Controller UI (AWS Only)`_.
+If your Controller is in AWS, you can also conveniently launch a CoPilot simple or fault tolerant (clustered) deployment from the Aviatrix Controller user interface. See `CoPilot instance launch using Controller UI (AWS Only)`_ and `CoPilot cluster launch using Controller UI (AWS Only)`_. 
 
 If you are knowledgeable in deploying infrastructure-as-code using Terraform, you might find it convenient to launch CoPilot by using Terraform scripts. You can launch a simple or clustered deployment using Terraform scripts. At this time only AWS is supported for launching a CoPilot clustered deployment using Terraform. A summary of steps for launching a single instance using Terraform is provided at `(Terraform) CoPilot instance launch using Terraform`_.  Please refer to the Aviatrix Terraform Module for CoPilot for the most current instructions and samples on GitHub here: https://github.com/AviatrixSystems/terraform-modules-copilot.
 
@@ -713,6 +713,7 @@ To deploy CoPilot from the controller UI (AWS Only):
 
         Note that if you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List here. In addition, in your native cloud console, you must open your CoPilot security group for UDP 5000 from each newly launched gateway.    
 
+16. (**If you want to delete the CoPilot instance**) If you deployed your CoPilot from the Controller user interface, you can delete the existing CoPilot by using the **Delete Deployed CoPilot Instance** option in Aviatrix Controller > Settings > CoPilot. You would delete the existing CoPilot, for example, if you accidentally launched the instance in the wrong VPC during deployment. 
 
 CoPilot cluster launch using Controller UI (AWS Only)
 ======================================================
@@ -876,7 +877,7 @@ To launch a CoPilot cluster (fault tolerant deployment) from the controller UI (
 
     e.  Tick the Advanced check box. In Gateways, verify all of your Aviatrix gateways are in the Include List.
 
-19. (**To terminate CoPilot cluster**) After you deploy a CoPilot cluster from your controller UI, if you decide to terminate the cluster, you must do so via the AWS environment.
+19. (**If you want to delete the CoPilot cluster**) If you deployed your CoPilot from the Controller user interface, you can delete the existing CoPilot by using the **Delete Deployed CoPilot Instance** option in Aviatrix Controller > Settings > CoPilot. You would delete the existing CoPilot, for example, if you accidentally launched the CoPilot Server instance in the wrong VPC during deployment.
 
 
 (Terraform) CoPilot instance launch using Terraform
@@ -1190,11 +1191,37 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
     -   On your *new copilot*, if you use your own SSL certificate (rather than the CoPilot self signed certificate), update the DNS servers associated with your certificate in Settings > Configuration.
     -   On your *old copilot*, release the license in Settings > Licensing by clicking the **RESET** button.
     -   Remove your *old copilot* and associated cloud resources:
+
         -   EIP
+
         -   Access/security groups
+
         -   Disks/Volumes
+
         -   VM/Instance
+
     -   On your Aviatrix Controller, verify that the CoPilot association (Controller > Settings > CoPilot) is pointing to your *new copilot* IP. If you used the controller UI to launch your *new copilot*, this was automatically done for you. Additionally, verify that the Remote Syslog and Netflow Agent (Controller > Settings > Logging) are pointing to your *new copilot* IP.
+
+Deleting an Existing CoPilot Instance
+=========================================================== 
+
+You may need to delete (terminate) an existing CoPilot instance. For example, after you migrate CoPilot data to a new CoPilot instance, it is recommended that you delete the old instance. Before deleting, be sure to release any license on the CoPilot in CoPilot > Settings > Licensing by clicking the **RESET** button.  
+
+If you deployed your CoPilot from the Controller user interface, you can delete the existing CoPilot — simple or fault tolerant (cluster) deployment — by using the **Delete Deployed CoPilot Instance** option in Aviatrix Controller > Settings > CoPilot. You would delete the existing CoPilot, for example, if you accidentally launched the instance in the wrong VPC during deployment. 
+
+If you deployed your CoPilot by using Terraform scripts or from the CSP marketplace, you must manually delete the CoPilot instance from the cloud provider environment. 
+
+When deleting the CoPilot from the cloud provider environment, delete associated cloud resources:
+
+    -   EIP (if applicable)
+
+    -   Access/security groups
+
+    -   Disks/Volumes
+
+    -   VM Instance
+
+For a fault tolerant (cluster) deployment, delete the CoPilot Server instance as well as the CoPilot Data instances.
 
 Contacting Aviatrix Support for Resolving CoPilot Issues
 =========================================================== 

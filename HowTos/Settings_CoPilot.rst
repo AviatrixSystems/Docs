@@ -5,7 +5,14 @@
 ###################################
 CoPilot
 ###################################
-This document describes the **CoPilot** configurations under Settings in Aviatrix Controller.
+This document describes the **CoPilot** configurations under Settings in Aviatrix Controller. It includes these sections:
+
+- `CoPilot Association`_ 
+
+- `CoPilot Security Group Management`_ 
+
+- `Delete Deployed CoPilot Instance`_ 
+
 
 CoPilot Association
 ===========================
@@ -77,6 +84,17 @@ To enable the CoPilot Security Group Management feature:
     You can log in to the CSP portal to obtain the instance ID of the CoPilot instance. After you select the VPC in the previous step, all the instances (virtual machines) in that VPC are shown in the drop down menu. From that list, you can identify the CoPilot instance (VM) that was created on the CSP environment.
 
 8.  Click **Submit**. 
+
+
+Delete Deployed CoPilot Instance
+===================================
+
+If you deployed your CoPilot from the Controller user interface, you can delete the existing CoPilot — simple or fault tolerant (cluster) deployment — using this option. You would delete the existing CoPilot, for example, if you accidentally deployed it in the wrong VPC. If you used the CoPilot instance for some time, note that you will lose all historical data in the instance when you delete it.
+
+Select the deployment type and click **Delete**. The CoPilot instance(s) is terminated in the cloud provider environment.
+
+If you deployed your CoPilot by using Terraform scripts or from the CSP marketplace, see the discussion about deleting CoPilot instances in *Aviatrix CoPilot Deployment Guide*.
+
 
 .. |image0| image:: CoPilot_media/image0.png
    :scale: 30%
