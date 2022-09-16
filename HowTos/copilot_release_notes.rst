@@ -35,6 +35,20 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
+CoPilot Release 2.5.3 (9/16/2022)
+---------------------------------------------
+
+-   Performance improvements to AppIQ and Dashboard.
+
+**Feature Enhancement in CoPilot release 2.5.3**
+
+-   **FlightCheck SAP Destination Report** – If your enterprise runs SAP, you can quickly identify SAP known ports to see the resources in your network communicating with SAP services. When you generate a Flight Check Report, the report results now include a **Potential SAP Services** section that shows where SAP may be running in the environment. For more information about Reports, see `Working with Reports <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-reports>`_ in *Aviatrix CoPilot User Reference Guide*.
+
+
+**Issue Corrected in CoPilot release 2.5.2**
+
+    -   **Bug fix** — This release includes a fix required for infrastructure support. Please note it is recommended to allow updates to your CoPilot image for receiving the latest software versions.
+
 CoPilot Release 2.5.2 (9/06/2022)
 ---------------------------------------------
 
