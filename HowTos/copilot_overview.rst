@@ -18,14 +18,23 @@ Key Benefits
 
 
 - **Network Health Monitor** – Real-time cloud network resource inventory and status
+
 - **Dynamic Topology Map** – Accurate, multi-cloud network topology, layout control and search
+
 - **FlowIQ** – Detailed application traffic flow analysis, global heat map and trends, filter traffic by native CSP tags
+
 - **Multi-Cloud Tagging** – Tag multi-cloud resources, search by tag, filter traffic data by tag
+
 - **CloudRoutes** – Detailed searchable routing tables across cloud providers
+
 - **Notifications** – Alert on resources status/utilization across multi-Cloud
+
 - **AppIQ** – Comprehensive reports to analyze network path between any two cloud instances
+
 - **ThreatIQ with ThreatGuard** – Monitor for security threats from malicious sites, set alerts when threats are detected, and block threat-IP associated traffic
+
 - **Inventory Reports** – Create detailed reports showing your inventory of managed resources in a single cloud or across all clouds in your multi-cloud network
+
 - **Network Behavior Analytics** – Alert on anomalies detected that deviate from the custom routine traffic patterns of your own cloud workloads  
 
 
@@ -33,11 +42,13 @@ Deployment Model
 ------------------
 
 CoPilot is deployed as an all-in-one virtual appliance and is available on AWS, Azure, GCP, and OCI MarketPlaces.
+
 CoPilot works in tandem with Aviatrix Controller; in order to use CoPilot, you must have an operational 
-Aviatrix Controller. Aviatrix Controller and CoPilot are not required to be collocated. It is possible to run them in separate VPCs/VNets or separate cloud providers (in multi-cloud environments).
+Aviatrix Controller. 
+
+Aviatrix Controller and CoPilot are not required to be collocated. It is possible to run them in separate VPCs/VNets or separate cloud providers (in multi-cloud environments).
 
 Licensing and Trials
 ---------------------
 
-CoPilot is offered with BYOL model. If you are interested in a trial of CoPilot, contact us through our chat window below, or contact your
-Aviatrix Sales representative. 
+If you are interested in a trial of CoPilot, contact us through our chat window below, or contact your Aviatrix Sales representative. 
