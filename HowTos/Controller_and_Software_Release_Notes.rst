@@ -34,14 +34,15 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
-Feature Enhancements in 6.7.1480 
-=================================
+6.7.1480 (09/20/2022) 
+=========================
+
+**Feature Enhancements in 6.7.1480** 
 
 * **AVX-23493** - You can now use the secondary IP as the Destination CIDR in SNAT/DNAT rules as long as the gateway is not in Insane Mode. 
 * **AVX-25957** - Improved the performance of enabling an Egress FQDN tag so that the process is 5x faster. With this enhancement, adding a rule to an Egress FQDN tag is up to 50x faster. 
 
-Issues Corrected in 6.7.1480 
-=============================
+**Issues Corrected in 6.7.1480** 
 
 * **AVX-17842** - Exception error displayed in version 6.7.1186 with spoke gateways in Azure, with SNAT and Insane Mode Encryption enabled. 
 * **AVX-25499** - An Aviatrix regular gateway (as opposed to a Transit or Spoke Gateway), did not have routes to local VPC CIDRs. 
