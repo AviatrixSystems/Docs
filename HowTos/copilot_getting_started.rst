@@ -43,7 +43,7 @@ Instance (VM) Configuration Details for CoPilot
 After launching CoPilot, you must configure integration points for CoPilot to connect and communicate with other components in the Aviatrix platform.
 
 .. tip::
-  Starting from Controller 6.8, you can enable the "CoPilot Security Group Management" option in Aviatrix Controller to help automate opening CoPilot access to the below ports (in Controller > Settings > CoPilot > CoPilot Security Group Management). See `CoPilot Security Group Management <https://docs.aviatrix.com/HowTos/Settings_CoPilot.html>`_.
+  Starting from Controller 6.8, you can enable the "CoPilot Security Group Management" option in Aviatrix Controller to help automate opening CoPilot access to the below ports (in Controller > Settings > CoPilot > CoPilot Security Group Management). See `CoPilot Security Group Management <https://docs.aviatrix.com/HowTos/Settings_CoPilot.html#copilot-security-group-management>`_.
 
 - Open your CoPilot access (security group) for: 
 
@@ -280,7 +280,7 @@ To perform an initial setup of CoPilot:
 
 4.  When prompted for a **CoPilot Service Account**, enter the login credentials for a valid user account in Aviatrix Controller to be used as the CoPilot service account.
 
-    See `About CoPilot User Accounts <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#about-copilot-user-accounts>`_. 
+    See `About CoPilot User Accounts`_. 
 
     |copilot_login_service_account|
 
