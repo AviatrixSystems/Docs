@@ -46,9 +46,9 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 * **AVX-17842** - Exception error displayed in version 6.7.1186 with spoke gateways in Azure, with SNAT and Insane Mode Encryption enabled. 
 * **AVX-25499** - An Aviatrix regular gateway (as opposed to a Transit or Spoke Gateway), did not have routes to local VPC CIDRs. 
-* **AVX-26933** - When you created a route-based Site2Cloud connection from the Controller’s Site2Cloud setup page and selected the HA gateway as the primary source gateway, the route table was not populated correctly. 
+* **AVX-26933** - When you created a route-based Site2Cloud connection from the Controller's Site2Cloud setup page and selected the HA gateway as the primary source gateway, the route table was not populated correctly. 
 * **AVX-27658** - Updated API call to retrieve specific transit Firenet spoke policies. 
-* **AVX-27716** - An error may show “configuration not up-to-date? while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error. 
+* **AVX-27716** - An error may show "configuration not up-to-date" while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error.
 
 6.8.1311 (09/12/2022) 
 =========================
