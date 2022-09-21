@@ -11,7 +11,6 @@ This section describes new features and enhancements for Aviatrix CoPilot softwa
 
 For information about Aviatrix CoPilot image releases, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
 
-
 Public Preview Features 
 -------------------------
 
@@ -34,6 +33,12 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - Aviatrix does not charge for using features in private preview mode. You could be charged if the private preview feature is promoted to an officially supported feature. 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
+
+CoPilot and Controller Interoperability
+----------------------------------------
+
+CoPilot is deployed as an all-in-one virtual appliance and is available on multiple clouds including AWS, Azure, GCP, and OCI MarketPlaces. CoPilot works in tandem with Aviatrix Controller; in order to use CoPilot, you must have an operational Aviatrix Controller. CoPilot works with all Controller versions that are not End of Life (EOL). If you need information about `Aviatrix End of Engineering and End of Life (Support) policies <https://support.aviatrix.com/Aviatrix-EOL-Policy>`_ or how to plan and update to the latest software, please contact Aviatrix Support.
+
 
 CoPilot Release 2.5.3 (9/16/2022)
 ---------------------------------------------
