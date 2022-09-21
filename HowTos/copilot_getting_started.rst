@@ -7,6 +7,11 @@
 Aviatrix CoPilot Deployment Guide
 ============================================================
 
+CoPilot and Controller Interoperability
+========================================
+
+CoPilot is deployed as an all-in-one virtual appliance and is available on multiple clouds including AWS, Azure, GCP, and OCI MarketPlaces. CoPilot works in tandem with Aviatrix Controller; in order to use CoPilot, you must have an operational Aviatrix Controller. CoPilot works with all Controller versions that are not End of Life (EOL). If you need information about `Aviatrix End of Engineering and End of Life (Support) policies <https://support.aviatrix.com/Aviatrix-EOL-Policy>`_ or how to plan and update to the latest software, please contact Aviatrix Support.
+
 
 Launch CoPilot
 ==================
@@ -18,8 +23,6 @@ Typically, you can apply the default configurations for resources settings that 
 
 You can deploy CoPilot using different methods. See `CoPilot Deployment Methods`_. 
 
-Please note that you will need an Aviatrix Controller to use CoPilot. CoPilot works in tandem with Aviatrix Controller. Each one requires a separate license. See `CoPilot Customer IDs and Licensing`_.
-
 Aviatrix Controller and CoPilot are not required to be collocated. It is possible to run them in separate VPCs/VNets or separate cloud providers (in multi-cloud environments). Typically, Aviatrix Controller and Aviatrix CoPilot are run in the same VPC/VNet.
 
 After launching CoPilot, you must configure integration points for CoPilot to connect and communicate with other components in the Aviatrix platform. See `Instance (VM) Configuration Details for CoPilot`_.
@@ -29,11 +32,11 @@ If you are launching a new instance of CoPilot and need to migrate CoPilot data 
 CoPilot Deployment Methods
 ===========================
 
-You can deploy Aviatrix CoPilot directly from any supported cloud service provider (CSP) marketplace, by using Terraform scripts, or by using the Aviatrix Controller user interface (available for AWS from Controller release 6.7.1185). 
+You can deploy Aviatrix CoPilot directly from any supported cloud service provider (CSP) marketplace, by using Terraform scripts, or by using the Aviatrix Controller user interface (available for AWS starting from Controller release 6.7.1185). 
 
-Deploying from the CSP marketplace takes only a few clicks to provision and launch the instance. Since you must subscribe to a CoPilot offer at a marketplace as a first step for all deployment methods, this method is commonly used right after subscribing. This deploy method is often used for a CoPilot simple (single instance) deployment. See `Subscribe to a CoPilot Offer`_. 
+Deploying from the CSP marketplace takes only a few clicks to provision and launch the instance. Since you must subscribe to a CoPilot offer at a marketplace as a first step for all deployment methods, this method is commonly used right after subscribing. This deploy method is often used for a CoPilot simple (single instance) deployment. The marketplace deployment method is not supported for a fault tolerant (clustered) deployment. See `Subscribe to a CoPilot Offer`_. 
 
-If your Controller is in AWS, you can also conveniently launch a CoPilot simple or fault tolerant (clustered) deployment from the Aviatrix Controller user interface. See `CoPilot instance launch using Controller UI (AWS Only)`_ and `CoPilot cluster launch using Controller UI (AWS Only)`_. 
+If your Controller is in AWS, you can launch a CoPilot simple or fault tolerant (clustered) deployment from the Aviatrix Controller user interface. See `CoPilot instance launch using Controller UI (AWS Only)`_ and `CoPilot cluster launch using Controller UI (AWS Only)`_. This deployment method has its advantages because the associated auto-deploy process configures security group rules that are required for CoPilot and Controller and gateway inter-connectivity.
 
 If you are knowledgeable in deploying infrastructure-as-code using Terraform, you might find it convenient to launch CoPilot by using Terraform scripts. You can launch a simple or clustered deployment using Terraform scripts. At this time only AWS is supported for launching a CoPilot clustered deployment using Terraform. A summary of steps for launching a single instance using Terraform is provided at `(Terraform) CoPilot instance launch using Terraform`_.  Please refer to the Aviatrix Terraform Module for CoPilot for the most current instructions and samples on GitHub here: https://github.com/AviatrixSystems/terraform-modules-copilot.
 
