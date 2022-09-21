@@ -18,7 +18,7 @@ Typically, you can apply the default configurations for resources settings that 
 
 You can deploy CoPilot using different methods. See `CoPilot Deployment Methods`_. 
 
-Please note that you will need an Aviatrix Controller to use CoPilot. CoPilot works in tandem with Aviatrix Controller.
+Please note that you will need an Aviatrix Controller to use CoPilot. CoPilot works in tandem with Aviatrix Controller. Each one requires a separate license. See `CoPilot Customer IDs and Licensing`_.
 
 Aviatrix Controller and CoPilot are not required to be collocated. It is possible to run them in separate VPCs/VNets or separate cloud providers (in multi-cloud environments). Typically, Aviatrix Controller and Aviatrix CoPilot are run in the same VPC/VNet.
 
@@ -43,7 +43,7 @@ Instance (VM) Configuration Details for CoPilot
 After launching CoPilot, you must configure integration points for CoPilot to connect and communicate with other components in the Aviatrix platform.
 
 .. tip::
-  Starting from Controller 6.8, you can enable the "CoPilot Security Group Management" option in Aviatrix Controller to help automate opening CoPilot access to the below ports (in Controller > Settings > CoPilot > CoPilot Security Group Management). See `CoPilot Security Group Management <https://docs.aviatrix.com/HowTos/Settings_CoPilot.html>`_.
+  Starting from Controller 6.8, you can enable the "CoPilot Security Group Management" option in Aviatrix Controller to help automate opening CoPilot access to the below ports (in Controller > Settings > CoPilot > CoPilot Security Group Management). See `CoPilot Security Group Management <https://docs.aviatrix.com/HowTos/Settings_CoPilot.html#copilot-security-group-management>`_.
 
 - Open your CoPilot access (security group) for: 
 
@@ -133,6 +133,26 @@ Amazon EC2 instance type: 			m5n.8xlarge
 - For a fault tolerant (clustered) deployment, each instance (VM) in the cluster must meet the minimum requirements. In addition, each cluster instance must use the same instance sizing. In a cluster, the data instances will have a disk/volume attached for storage in the size you specify during your launch process. Data volume sizes must be the same across all data instances. 
 
 - If you already have a CoPilot simple deployment (single instance) and you are planning on migrating your data from the simple deployment to a new clustered deployment, the size of the disk volume you specify for each data instance should be the same size or larger than the storage used in your old single copilot. See `CoPilot Disk (Volume) Management`_ in Aviatrix CoPilot Deployment Guide for more information and CoPilot storage.
+
+
+CoPilot Customer IDs and Licensing
+====================================
+
+This section discusses Aviatrix CoPilot customer IDs and licensing.
+
+**NOTE:** The CoPilot customer ID is separate from the Aviatrix Controller customer ID.
+
+CoPilot is offered with a Bring Your Own License (BYOL) license model. If you are interested in a trial of CoPilot, contact us through the Aviatrix chat window of our doc website, or contact your Aviatrix Sales representative.
+
+With a BYOL license model, you need to have a customer ID provided by Aviatrix to be able to use the product. Your Aviatrix Sales representative will provide you with a customer ID. Customer IDs for CoPilot contain the letters `-cplt-`.
+
+When you perform the initial setup of CoPilot, you will be prompted to enter your customer ID and CoPilot will allocate a license to you based on your customer ID. Your customer ID can be associated with more than one license. The license key has the quantity or *allocation count* for the number of CoPilot instances that can use the license at a given time (the default count is 2). If the license key is greater than one, the key can be used by more than one instance. You can see when the license will expire and see the used and total allocation count of your license in CoPilot Settings > Licensing.
+
+If you plan to launch a CoPilot clustered deployment, your Aviatrix Sales representative will provide an ID associated with the number of licenses you require for each cluster instance.  
+
+When your customer ID expires, you can ask for a license extension from your Sales representative. In this case, you must reset your customer ID for the extension by navigating to CoPilot Settings > Licensing and clicking the **RESET** button. 
+
+If you need to terminate your current instance of CoPilot and deploy a new instance using the same license associated with your customer ID, first release the CoPilot license of the current instance by navigating to CoPilot Settings > Licensing and clicking the **RESET** button. After you deploy the new instance of CoPilot, you will be prompted to enter the customer ID during initial setup. Re-enter the same customer ID. 
 
 Subscribe to a CoPilot Offer
 ============================
@@ -225,19 +245,12 @@ Perform initial setup of CoPilot after you have launched the instance/virtual ma
 For initial setup of CoPilot, have the following information available:
 
 -   The static public IP address of your recently deployed CoPilot software instance/virtual machine (obtained from the cloud provider portal).
-
 -   The static IP address for your Aviatrix Controller.
-
 -   The login credentials of your Aviatrix Controller user account.
-
 -   The login credentials for the user account to be used as the CoPilot service account. If you plan to use the ThreatGuard feature, the CoPilot service account must have a minimum of `all_firewall_write` permissions.
+-   The CoPilot customer ID obtained from your Aviatrix Sales representative. See .
 
-
-For initial setup of CoPilot, verify the following:
-
--   Your Aviatrix Controller is up and running and the controller instance's inbound rules have port 443 open to the public static IP address of the CoPilot instance (so that CoPilot can reach your controller). If you launched your CoPilot instance from the Aviatrix Controller user interface, the controller instance's inbound rules will have port 443 open to the public static IP address of the CoPilot instance. 
-
--   Your CoPilot software instance/virtual machine is up and running.
+**NOTE:** This procedure assumes your Aviatrix Controller is up and running and the controller instance's inbound rules have port 443 open to the public static IP address of the CoPilot instance (so that CoPilot can reach your controller). If you launched your CoPilot instance from the Aviatrix Controller user interface, the controller instance's inbound rules will have port 443 open to the public static IP address of the CoPilot instance. This procedure also assumes your CoPilot software instance/virtual machine is up and running.
 
 To perform an initial setup of CoPilot:
 
@@ -265,24 +278,26 @@ To perform an initial setup of CoPilot:
 
     |copilot_login_user_account|
 
-4.  When prompted for a **CoPilot Service Account**, enter the login credentials for a valid user account in Aviatrix Controller to be used as the CoPilot service account.
-
-    See `About CoPilot User Accounts <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#about-copilot-user-accounts>`_. 
+4.  When prompted for a **CoPilot Service Account**, enter the login credentials for a valid user account in Aviatrix Controller to be used as the CoPilot service account. See `About CoPilot User Accounts`_. 
 
     |copilot_login_service_account|
 
-5.  If a Data Disk Setup dialog does not appear, skip to step 8 to verify connectivity with your controller.
+5.  When prompted for **CoPilot Customer ID**, enter the CoPilot customer ID provided by your Aviatrix Sales representative. See `CoPilot Customer IDs and Licensing`_.
 
-6.  In Data Disk Setup, select the disk/volume you created for CoPilot storage and click START. When the process is complete, click FINISH.
+    |copilot_login_customer_id|
+
+6.  If a Data Disk Setup dialog does not appear, skip to step 8 to verify connectivity with your controller.
+
+7.  In Data Disk Setup, select the disk/volume you created for CoPilot storage and click START. When the process is complete, click FINISH.
 
     Note that when you launch CoPilot at first your version number will be based on the version of the image release. Within an hour, the CoPilot version will be updated to the latest software release.
 
-7.  (Controller 6.8 or later) In Controller, enable the CoPilot Security Group Management feature in Controller > Settings > CoPilot > CoPilot Security Group Management). With this feature enabled, the Controller sends NetFlow and Syslog data to CoPilot (can be verified by steps 9 and 10 below) and the CoPilot virtual machine ports 31283 and 5000 will be open to each IP of your existing gateways (and **not** open to any IP (0.0.0.0/0)). If you have a pre-6.8 Controller release version, perform steps 10 and 11 manually. 
+8.  (Controller 6.8 or later) In Controller, enable the CoPilot Security Group Management feature in Controller > Settings > CoPilot > CoPilot Security Group Management). With this feature enabled, the Controller sends NetFlow and Syslog data to CoPilot (can be verified by steps 9 and 10 below) and the CoPilot virtual machine ports 31283 and 5000 will be open to each IP of your existing gateways (and **not** open to any IP (0.0.0.0/0)). If you have a pre-6.8 Controller release version, perform steps 10 and 11 manually. 
 
-8.  (Verify connectivity with your controller) To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see the inventory of all resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VPNs/VNETs are represented on the geographic map.
+9.  (Verify connectivity with your controller) To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see the inventory of all resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VPNs/VNETs are represented on the geographic map.
 
 
-9.  (For FlowIQ feature) To use the FlowIQ feature in CoPilot, ensure that the controller is configured to forward NetFlow logs to CoPilot.
+10.  (For FlowIQ feature) To use the FlowIQ feature in CoPilot, ensure that the controller is configured to forward NetFlow logs to CoPilot.
 
     a.  Log in to Aviatrix Controller.
 
@@ -301,7 +316,7 @@ To perform an initial setup of CoPilot:
 
     You should start seeing NetFlow in CoPilot after a few minutes.
 
-10. (For Security audit page feature) Remote syslog index 9 is used for the CoPilot > Security audit page. Ensure the controller is configured to specify CoPilot as the loghost server.
+11. (For Security audit page feature) Remote syslog index 9 is used for the CoPilot > Security audit page. Ensure the controller is configured to specify CoPilot as the loghost server.
 
     a.  Log in to Aviatrix Controller.
 
@@ -499,13 +514,10 @@ System Design Considerations
 ==================================
 
 - For production, it is best practice to inspect your gateways sizing and load prior to enabling flow logging. 
-
 - You have the option of selecting which gateways generate flows should you want to enable visibility in subsections of the network (configured in the controller).
 
 Example - Deploy CoPilot in Microsoft Azure
 ===========================================
-
-Deployment from a marketplace supports simple deployments only (not clustered).
 
 To deploy CoPilot in Azure:
 
@@ -522,8 +534,6 @@ To deploy CoPilot in Azure:
     |cplt_azr_email|
 
 5.  In the "Create this app in Azure" dialog, click **Continue**.
-
-    |cplt_azr_create_app|
 
 6.  In the Aviatrix CoPilot page, click the blue **Create** button. If you want to view Azure recommended size choices, click "Start with a pre-set configuration". Do not choose the "Deploy programmatically" option.
 
@@ -555,8 +565,6 @@ Example - Deploy CoPilot in Google Cloud Platform
 
 This example shows a CoPilot offer in the GCP marketplace. It is recommended to deploy CoPilot based on the latest CoPilot image release. For information about Aviatrix CoPilot image releases, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
 
-Deployment from a marketplace supports simple deployments only (not clustered).
-
 - Go to GCP marketplace.
 
 - Find the product "Aviatrix CoPilot - BYOL".
@@ -565,11 +573,17 @@ Deployment from a marketplace supports simple deployments only (not clustered).
 
 |gcp_copilot_1|
 
-When deploying:
+If deploying the Aviatrix CoPilot 1.5.1 image release:
 
 - For Machine type, take note of the `Minimum Instance (VM) System Requirements for CoPilot`_.
 
 - You must attach at least one data disk (data volume) to your CoPilot instance to be used for expandable storage; this is a secondary data storage separate from the root disk that comes with CoPilot. For more information, see `CoPilot Disk (Volume) Management`_. Create your disk (volume) and attach the disk (volume) to your CoPilot instance. You can choose the disk type (volume type) that meets your business needs given the size of your environment and performance requirements. There is no minimum requirement for the storage you add at this stage.
+
+If deploying Pre-1.5.1 image releases:
+
+- For Machine type, take note of the `Minimum Instance (VM) System Requirements for CoPilot`_. 
+
+- Boot Disk is SSD Persistent Disk with 2000 GB.
 
 |gcp_copilot_2|
 
@@ -643,19 +657,23 @@ To deploy CoPilot from the controller UI (AWS Only):
 
 8.  When prompted for a **CoPilot Service Account**, enter the login credentials of the user account you created previously on the controller to be the service account.
 
-9.  When prompted to add a data disk, select the disk/volume to be used for CoPilot storage and click **START**.
+9.  When prompted, enter your **CoPilot customer ID**.
 
-10. After the data disk setup completes, click **Finish**.
+    This is the customer ID obtained from your Aviatrix Sales representative. Note that the CoPilot customer ID is separate from the Aviatrix Controller customer ID.
+
+10. When prompted to add a data disk, select the disk/volume to be used for CoPilot storage and click **START**.
+
+11. After the data disk setup completes, click **Finish**.
 
     CoPilot opens to the Dashboard page.
 
-11. (Verify connectivity with your controller) You are now successfully logged into CoPilot. To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see your resource inventory across all clouds in your multi-cloud network that is managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VNets are represented on the geographic map.
+12. (Verify connectivity with your controller) You are now successfully logged into CoPilot. To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see your resource inventory across all clouds in your multi-cloud network that is managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VNets are represented on the geographic map.
 
-12. After deployment, the CoPilot virtual machine ports 31283 and 5000 will be open for any IP (0.0.0.0/0). It is strongly recommended to remove the 0.0.0.0 entry from the CoPilot security group for these ports and add entries for all of your gateway IP addresses as described in the next steps.
+13. After deployment, the CoPilot virtual machine ports 31283 and 5000 will be open for any IP (0.0.0.0/0). It is strongly recommended to remove the 0.0.0.0 entry from the CoPilot security group for these ports and add entries for all of your gateway IP addresses as described in the next steps.
  
     **Note:** In Controller 6.8, the CoPilot Security Group Management feature (in Controller > Settings > CoPilot > CoPilot Security Group Management) is automatically enabled so this configuration is expected to be completed. This is only a verification step.
 
-13. (For FlowIQ feature) To use the FlowIQ feature in CoPilot, ensure that the controller is configured to forward NetFlow logs to CoPilot.
+14. (For FlowIQ feature) To use the FlowIQ feature in CoPilot, ensure that the controller is configured to forward NetFlow logs to CoPilot.
 
     **Note:** In Controller 6.8, the CoPilot Security Group Management feature (in Controller > Settings > CoPilot > CoPilot Security Group Management) is automatically enabled so this configuration is expected to be completed. This is only a verification step.
 
@@ -673,7 +691,7 @@ To deploy CoPilot from the controller UI (AWS Only):
 
         Note that if you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List here. In addition, in your native cloud console, you must open your CoPilot security group for UDP 31283 from each newly launched gateway.
 
-14. (For Security audit page feature) Remote syslog index 9 is used for the CoPilot > Security audit page. Ensure the controller is configured to specify CoPilot as the loghost server.
+15. (For Security audit page feature) Remote syslog index 9 is used for the CoPilot > Security audit page. Ensure the controller is configured to specify CoPilot as the loghost server.
 
     **Note:** In Controller 6.8, the CoPilot Security Group Management feature (in Controller > Settings > CoPilot > CoPilot Security Group Management) is automatically enabled so this configuration is expected to be completed. This is only a verification step.
 
@@ -691,7 +709,7 @@ To deploy CoPilot from the controller UI (AWS Only):
 
         Note that if you launch new gateways from your controller later, you must transfer the newly launched gateways to the Include List here. In addition, in your native cloud console, you must open your CoPilot security group for UDP 5000 from each newly launched gateway.    
 
-15. (**If you want to delete the CoPilot instance**) If you deployed your CoPilot from the Controller user interface, you can delete the existing CoPilot by using the **Delete Deployed CoPilot Instance** option in Aviatrix Controller > Settings > CoPilot. You would delete the existing CoPilot, for example, if you accidentally launched the instance in the wrong VPC during deployment. 
+16. (**If you want to delete the CoPilot instance**) If you deployed your CoPilot from the Controller user interface, you can delete the existing CoPilot by using the **Delete Deployed CoPilot Instance** option in Aviatrix Controller > Settings > CoPilot. You would delete the existing CoPilot, for example, if you accidentally launched the instance in the wrong VPC during deployment. 
 
 CoPilot cluster launch using Controller UI (AWS Only)
 ======================================================
@@ -717,29 +735,18 @@ By default, the controller UI deploy process will launch the cluster *server ins
 Before you begin, obtain the following information and perform the tasks indicated.
 
 -   Verify your controller is version 6.8 or later.
-
 -   Subscribe to a CoPilot offer at the Amazon Web Services (AWS) Marketplace and accept the terms and conditions (this is described in the first step of the procedure if you haven't done this yet).
-
 -   Verify that your AWS account has been created in your controller. You create your AWS account by navigating to Controller > Account > Access Accounts > +Add New).
-
 -   Verify that your controller instance has the IAM role `aviatrix-role-ec2` attached to it. The CoPilot deployment will fail if this role is not attached to your controller.
-
 -   Obtain the login credentials of your Aviatrix Controller user account. Use a controller user account that has full admin permissions. To confirm that the user account has full admin permissions, log in to your Controller, go to Accounts > Account Users, and verify the "Permissions Groups" column is set to **admin** for the account in question.
-
 -   Obtain the login credentials of the user account to be used as the CoPilot service account. See `About CoPilot User Accounts`_.
-
 -   Obtain the CoPilot customer ID provided by your Aviatrix Sales representative. See `CoPilot Customer IDs and Licensing`_.
-
 -   Obtain the number of *data instances* to deploy for your cluster. Work with your Aviatrix Sales representative to determine the minimum data instances you should deploy in the cluster for your specific environment. For more information, see `Minimum Instance (VM) System Requirements for CoPilot`_.
-
 -   Obtain the VM size to be used for *data instances* in the cluster. Each data instance must use the same VM sizing. The size of the VM you provision for your data instances depends on the scale and the kind of networking infrastructure you have planned according to your business requirements. Work with your Aviatrix Sales representative to determine your VM sizing requirements. For more information, see `Minimum Instance (VM) System Requirements for CoPilot`_.
-
 -   Obtain the size to be used for the data volumes attached to *data instance*s for CoPilot storage. The deploy process will attach a data volume of the size specified to each data instance. Data volume sizes must be the same across all data instances.
-
 -   Note the following points when considering storage size for your cluster data instances:
 
     -   After you deploy the cluster, you will not be able to expand or increase the size of the data volumes attached to the data instances. Expandable storage is still possible for simple deployments (as in prior releases) but not for clustered deployments at this time.
-
     -   If you already have a CoPilot simple deployment (single instance) and you are planning on migrating your data from the simple deployment to the new clustered deployment, the size of the disk volume you specify for each data instance should be the same size or larger than the *storage used* in your *old copilot*. See `CoPilot Disk (Volume) Management`_ in *Aviatrix CoPilot Deployment Guide* for more information.
 
 **Launch instructions:**
@@ -760,7 +767,6 @@ To launch a CoPilot cluster (fault tolerant deployment) from the controller UI (
 2.  In Aviatrix Controller, do one of the following to begin the deployment process:
 
     -   From the onboarding page, click the Aviatrix CoPilot tile.
-
     -   From the action bar, click the app icon and select **Deploy CoPilot**.
 
 3.  Select **Fault Tolerant Deployment**.
@@ -830,11 +836,8 @@ To launch a CoPilot cluster (fault tolerant deployment) from the controller UI (
 15. (**Verify the cluster is intact via the AWS environment**) In your EC2 console, check the following:
 
     -   Verify the *server instance* is created and running after deployment (“Aviatrix-CoPilot-Cluster-Main-Node” is the server instance name.)
-
     -   Verify all *data instances* are created and running after deployment (“Aviatrix-CoPilot-Cluster-Data-Node_node_number” is the data instance name format.)
-
     -   Verify the CoPilot IP address was added on port 443 to the user Security Groups of the controller (to the groups that do not have an "Aviatrix-SG" prefix).
-
     -   Verify the user Security Groups exist for the server instance and the data instances.
 
 16. (**Verify security group configurations**) When you deploy CoPilot from the controller UI, the process will automatically do the following:
@@ -1065,7 +1068,6 @@ This section provides instructions for migrating CoPilot data from one CoPilot i
 These instructions apply for migrating CoPilot data:
 
 -   From a single CoPilot instance (simple deployment) to another single CoPilot instance (simple deployment).
-
 -   From a single CoPilot instance (simple deployment) to a CoPilot clustered deployment (to the main CoPilot Server instance).
 
 Migrating data from one clustered deployment to another clustered deployment is not supported at this time. 
@@ -1073,25 +1075,17 @@ Migrating data from one clustered deployment to another clustered deployment is 
 The following terms are used in these instructions:
 
 -   *old copilot* — Refers to your current (source) CoPilot instance that you want to migrate data from.
-
 -   *new copilot* — Refers to your newly deployed (destination) CoPilot instance that you want to migrate data to. If migrating data to a clustered deployment, this is the main CoPilot Server instance.
 
 **Important:** Please consider the following points about the data migration process in the current release:
 
 -   A backup and restore solution for CoPilot data is currently not available.
-
 -   Migration of CoPilot data is not supported across CSPs. Data migration is supported across regions, availability zones, and VPCs/VNets of the same CSP.
-
 -   Aviatrix has tested data migration for infrastructures with up to a total of 500 GB of data. If you have a much larger infrastructure, please contact Aviatrix Support for more information about how to migrate your data.
-
 -   If data migration fails and you want to retry the migration, please contact Aviatrix Support for assistance.
-
 -   If the data migration utility fails to migrate all indexes, you cannot revert the migration but the data remains intact on the old copilot.
-
 -   During the migration process, you cannot make configuration changes to the *old copilot*. 
-
 -   Upon starting the data migration, the netflow and syslog data sent by your Aviatrix gateways is automatically switched to be sent to your *new copilot*. If the migration fails, and you decide to terminate your *new copilot*, the netflow and syslog data that was directed to the *new copilot* during migration will be lost.
-
 -   If data migration fails and you decide to cancel the data migration, you can terminate your *new copilot* and continue to use your *old copilot* (by following the instructions indicated in the procedure).
 
 CoPilot data may take a few hours for small environments and a few days for large environments. Environments with 500 GB of data may take 3 to 4 days to complete data migration.
@@ -1107,17 +1101,13 @@ Before you begin the data migration process, perform the following tasks. Prereq
 **Obtain the following information:**
 
 -   The IP address of your Aviatrix Controller.
-
 -   The IP address of your *old copilot*. The *old copilot* IP address can be the private IP, public IP, or Elastic IP address (EIP) used for reachability of the instance.
-
 -   The amount of *storage used* on your *old copilot* for the data volume containing CoPilot data. To look up the storage used, navigate to CoPilot > Settings > Resources and refer to the Used column of the volume. If your CoPilot is based on CoPilot image release version 1.5.1, you will see a **cpltLV** volume listed on the Resources page. In that case, refer to the Used column of the cpltLV volume to take note of the storage used.
 
 **Launch your *new copilot* where:**
 
 -   The size of the disk/volume you specify for the Instance is the same size or larger than the *storage used* in your *old copilot*. If you deploy in AWS using the controller UI deploy process, you specify the size in the "Data Disk" column for the instance.
-
 -   Take note of your *new copilot* IP address. The new copilot IP address can be the private IP, public IP, or Elastic IP address (EIP) used for reachability of the instance. It is highly recommended that a persistent IP is used such as an EIP or statically assigned private IP.
-
 -   After launch, your *new copilot* will take about an hour to automatically update to the latest software release version. Your *new copilot* and *old copilot* must be the same software version before starting data migration. You will verify this later when following the data migration procedure.
 
 **Open required ports on each CoPilot instance:**
@@ -1125,11 +1115,8 @@ Before you begin the data migration process, perform the following tasks. Prereq
 At the applicable CSP portal, on the ***new copilot*** VM:
 
 -   **Note:** After initial deployment, your *new copilot* ports 31283 and 5000 will be open for any IP (0.0.0.0/0) . It is strongly recommended to remove the 0.0.0.0 entry from the inbound access rules for these ports and add entries for all your gateway IP addresses.
-
 -   Open port 443 to receive TCP traffic from the *old copilot* (*old copilot* IP address).
-
 -   Open port 31283 to receive UDP traffic from each of your Aviatrix gateways.
-
 -   Open port 5000 to receive UDP traffic from each of your Aviatrix gateways. **For private mode**, you open **TCP** port 5000.
 
 NOTE: If you launched your *new copilot* from the Controller UI starting from Controller release 6.8, the above security group configurations will be automatically applied.
@@ -1137,7 +1124,6 @@ NOTE: If you launched your *new copilot* from the Controller UI starting from Co
 At the applicable CSP portal, on the ***old copilot*** VM:
 
 -   Open port 9200 to receive TCP traffic from the *new copilot*(new copilot IP address).
-
 -   Open port 443 to receive TCP traffic from the *new copilot*(new copilot IP address).
 
 **Data Migration Procedure**
@@ -1194,13 +1180,12 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
 10. (**Verify data migration**) To verify the data are migrated on the *new copilot*:
 
     -   Navigate to the Settings > Index Management page and verify all indexes are visible.
-
     -   Navigate to the CoPilot functional screens and verify you can see your configuration data for notifications, alerts, anomalies, threat IPs, GeoBlocking, and other configurations.
 
 11. (**Post-migration tasks**) After your *new copilot* is running with your migrated data intact, you can perform the following tasks:
 
     -   On your *new copilot*, if you use your own SSL certificate (rather than the CoPilot self signed certificate), update the DNS servers associated with your certificate in Settings > Configuration.
-
+    -   On your *old copilot*, release the license in Settings > Licensing by clicking the **RESET** button.
     -   Remove your *old copilot* and associated cloud resources:
 
         -   EIP
@@ -1216,7 +1201,7 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
 Deleting an Existing CoPilot Instance
 =========================================================== 
 
-You may need to delete (terminate) an existing CoPilot instance. For example, after you migrate CoPilot data to a new CoPilot instance, it is recommended that you delete the old instance.  
+You may need to delete (terminate) an existing CoPilot instance. For example, after you migrate CoPilot data to a new CoPilot instance, it is recommended that you delete the old instance. Before deleting, be sure to release any license on the CoPilot in CoPilot > Settings > Licensing by clicking the **RESET** button.  
 
 If you deployed your CoPilot from the Controller user interface, you can delete the existing CoPilot — simple or fault tolerant (cluster) deployment — by using the **Delete Deployed CoPilot Instance** option in Aviatrix Controller > Settings > CoPilot. You would delete the existing CoPilot, for example, if you accidentally launched the instance in the wrong VPC during deployment. 
 
@@ -1276,9 +1261,6 @@ If you can log in to your CoPilot instance, the following options are available 
    :scale: 70%
 
 .. |cplt_azr_create| image:: copilot_getting_started_media/cplt_azr_create.png
-   :scale: 70%
-
-.. |cplt_azr_create_app| image:: copilot_getting_started_media/cplt_azr_create_app.png
    :scale: 70%
 
 .. |cplt_azr_email| image:: copilot_getting_started_media/cplt_azr_email.png
