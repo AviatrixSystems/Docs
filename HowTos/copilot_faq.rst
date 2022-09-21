@@ -22,7 +22,7 @@ The configuration of the virtual machine that you provision for your CoPilot dep
 
   - 32 GB of RAM (or more)
 
-  - 1 attached disk/volume for storage — See `CoPilot Disk (Volume) Management`_.
+  - 1 attached disk/volume for storage — See `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#copilot-disk-volume-management>`_.
 
   - 8 vCPUs (or more)
 
@@ -86,7 +86,7 @@ Amazon EC2 instance type: 			m5n.8xlarge
 
 - For a fault tolerant (clustered) deployment, each instance (VM) in the cluster must meet the minimum requirements. In addition, each cluster instance must use the same instance sizing. In a cluster, the data instances will have a disk/volume attached for storage in the size you specify during your launch process. Data volume sizes must be the same across all data instances. 
 
-- If you already have a CoPilot simple deployment (single instance) and you are planning on migrating your data from the simple deployment to a new clustered deployment, the size of the disk volume you specify for each data instance should be the same size or larger than the storage used in your old single copilot. See `CoPilot Disk (Volume) Management`_ in Aviatrix CoPilot Deployment Guide for more information and CoPilot storage.
+- If you already have a CoPilot simple deployment (single instance) and you plan to migrate your data from the simple deployment to a new clustered deployment, the size of the disk volume you specify for each data instance should be the same size or larger than the storage used in your old single copilot. See `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#copilot-disk-volume-management>`_ in *Aviatrix CoPilot Deployment Guide* for more information about CoPilot storage.
 
 
 CoPilot supports automatic memory sizing for the ETL and datastore based on the physical memory of the instance at boot. Base images default to the automatic settings. This auto-scaling memory support became available with the release of Aviatrix CoPilot image version 1.5.1. 
@@ -187,7 +187,7 @@ Frequently asked questions about attached disks (volumes) used for CoPilot data.
 Can I use the disk (volume) management feature for expandable storage?
 ------------------------------------------------------------------------------
 
-To use the disk (volume) feature for expandable storage, you must deploy an instance of Aviatrix CoPilot that is based on the Aviatrix CoPilot image version 1.5.1 (that released on 01/14/2022). Instances based on the 1.5.1 image show “Appliance Version 2” in the version information (older images display “Appliance Version 1”). To use the expandable storage feature, you must launch a new CoPilot instance from the marketplace based on CoPilot image version 1.5.1. For more information about expandable storage, see `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#id4>`_.
+To use the disk (volume) feature for expandable storage, you must deploy an instance of Aviatrix CoPilot that is based on the Aviatrix CoPilot image version 1.5.1 (that released on 01/14/2022). Instances based on the 1.5.1 image show “Appliance Version 2” in the version information (older images display “Appliance Version 1”). To use the expandable storage feature, you must launch a new CoPilot instance from the marketplace based on CoPilot image version 1.5.1. For more information about expandable storage, see `CoPilot Disk (Volume) Management <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#copilot-disk-volume-management>`_.
 
 What disk type should I use for CoPilot expandable storage?
 ------------------------------------------------------------------------------
@@ -199,7 +199,7 @@ What are sizing guidelines for the data disk (volume) to attach for CoPilot expa
 
 Your Aviatrix support/cloud service team can help you determine an initial size that is suitable for your business needs. The size of storage for CoPilot data depends on several factors. For example, an infrastructure that has 100 gateways with 1 G of traffic per day will require a different size than an infrastructure with 10 gateways with 10 TB of traffic per day. 
 
-You can start with the initial size and monitor your system for a set time period to see how much CoPilot data is stored/indexed in your environment (Settings > Index Management) to help determine whether to allocate new storage to meet your needs. You can always add additional data disks (volumes) as needed. See `Add a Disk (Volume) for CoPilot Storage after Deployment <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#id5>`_.
+You can start with the initial size and monitor your system for a set time period to see how much CoPilot data is stored/indexed in your environment (Settings > Index Management) to help determine whether to allocate new storage to meet your needs. You can always add additional data disks (volumes) as needed. See `Add a Disk (Volume) for CoPilot Storage after Deployment <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#id3>`_.
 
 Can I encrypt volumes for CoPilot?
 ------------------------------------------------------------------------------
