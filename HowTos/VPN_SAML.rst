@@ -20,7 +20,7 @@ This step-by-step guide shows you how to use an Aviatrix SAML client to authenti
 For different IdPs, there will be links to each individual IdP integration.
 
 Pre-Deployment Checklist
------------------------------
+---------------------------------------
 Before configuring the SAML integration between Aviatrix and your IdP, make sure the following is completed:
 
 	#. The `Aviatrix Controller <#pdc-21>`__ is setup and running.
@@ -57,12 +57,12 @@ Configuration
 
 The configuration consists of 8 parts:
 
-  1. Create `temporary Aviatrix SP Endpoint <#config-31>`__ for Aviatrix.
-  2. Create `SAML IdP App <#config-32>`__ with specific IdP.
+  1. Create a `temporary Aviatrix SP Endpoint <#config-31>`__ for Aviatrix.
+  2. Create a `SAML IdP App <#config-32>`__ with specific IdP.
   3. Retrieve `IdP Metadata <#config-33>`__ from IdP.
-  4. Update `Aviatrix SP Endpoint <#config-34>`__ with IdP metadata.
-  5. `Test SAML Integration <#config-35>`__.
-  6. Launch `Aviatrix Gateway <#config-36>`__.
+  4. Update the `Aviatrix SP Endpoint <#config-34>`__ with IdP metadata.
+  5. `Test the SAML Integration <#config-35>`__.
+  6. Launch an `Aviatrix Gateway <#config-36>`__.
   7. Create `Aviatrix VPN user(s) <#config-37>`__.
   8. `Test VPN Connectivity <#config-38>`__.
 
@@ -78,15 +78,7 @@ Creating a Temporary Aviatrix SP Endpoint
    Choose an endpoint name for your Aviatrix SAML endpoint which will be used throughout the guide.
    This guide will use ``aviatrix_saml_controller`` as an example for the endpoint name.
 
-#. Log in to the Aviatrix Controller.
-#. Click **OpenVPN®** on the left sidebar.
-#. Select **Advanced**.
-#. Select the **SAML** tab.
-#. Click **+ Add New**.
-
-
-   |image3-1-1|
-
+#. Log in to the Aviatrix Controller and go to OpenVPN > Advanced > SAML > click **+ Add New**.
       
    +-------------------------+--------------------------------------------------------+
    | Field                   | Value                                                  |
@@ -113,7 +105,7 @@ Creating a Temporary Aviatrix SP Endpoint
    | Template                | IdP, you may have to mark this checkbox.               |
    +-------------------------+--------------------------------------------------------+
    
-   |image3-1-2|
+   |create-endpoint|
    
    SP Metadata looks like:
 
@@ -125,7 +117,7 @@ Creating a Temporary Aviatrix SP Endpoint
 #. Click **OK**.
 #. Depending on your IdP provider, you may need to upload SP metadata. After temporary SAML endpoint is created:
 
-- Right click the **SP Metadata** button next to the SAML endpoint and save the file to your local machine.
+- Right-click the **SP Metadata** button next to the SAML endpoint and save the file to your local machine.
 - Click **SP Metadata** and copy the SP metadata as text.
 
 .. _Config_32:
@@ -143,19 +135,22 @@ Create a SAML 2.0 app with the IdP Provider with the following values.
 
 #. Assertion Consumer Service URL*
 #. Audience URI(Entity ID)*
-#. SP Metadata URL
-#. SP Login URL
+#. SP Metadata URL*
+#. SP Login URL*
 #. Default RelayState* = <empty>
 #. Application username = IdP username
 
 .. important::
 
-   You can find these values in the Controller under the Settings navigation item.  Then, select **Controller** and go to the **SAML Login** tab.
-   Click on the button for the respective value, and copy the URL on the new page.
+   You can find these values in the Controller under Settings > Controller > select the SAML Login tab.
+   * Assertion Consumer Service URL (ACS URL)  - Click **SP ACS URL** in the URL column of the SAML Endpoints table.
+   * Audience URI (Entity ID)  Click **SP Metadata** to open the metadata. Find this URL listed by "entityID." 
+   * SP Metadata URL - Click **SP Metadata** to open this metadata. You can also click the download icon next to SP Metadata in the SAML Endpoints table to download the metadata file.
+   * SP Login URL - Click **Test** to open this URL.
+
    RelayState is currently not used by the Aviatrix SP.
 
-|image3-2|
-
+|values-in-controller|
 
 The following SAML attributes are expected:
 
@@ -214,9 +209,7 @@ Updating Aviatrix SP Endpoint
   Take note of the IdP Metadata type along with Text/URL your IdP provides, and if you need a custom SAML request template in the previous section.
 
 
-#. Log in to the Aviatrix Controller.
-#. Select OpenVPN® > Advanced on the left sidebar.
-#. Stay on the SAML tab and click **+ Add New**.
+#. In your Controller, go to OpenVPN® > Advanced > on the SAML tab, click **+ Add New**.
 
    +----------------------------+----------------------------------------------------------+
    | Field                      | Description                                              |
@@ -271,16 +264,14 @@ Launching Aviatrix Gateway
 
   This step is usually completed by the Aviatrix admin.
 
-1. Log in to the Aviatrix Controller.
-2. Click **Gateway** on the left sidebar.
-3. Click **+ New Gateway**.
-4. Select the appropriate values for where to provision this Gateway.
-5. Mark the **VPN Access** checkbox and then the **Enable SAML** checkbox.
+1. In your Controller, go to Gateway > click **+ New Gateway**.
+2. Select the appropriate values for where to provision this Gateway.
+3. Mark the **VPN Access** checkbox, the **Advanced** checkbox, and then the **Enable SAML** checkbox.
 
-	|image3-6|
+	|gateway-options|
 
-6. Leave the default settings for everything else.
-7. Click **OK** to launch the gateway.
+4. Leave the default settings for everything else.
+5. Click **OK** to launch the gateway.
 
 .. _Config_37:
 
@@ -322,8 +313,6 @@ Testing VPN Connectivity
 4. If the connection is successful, the client icon should turn green.
 5. You can ensure VPN connectivity by trying to ping the private IP of the gateway you launched or any other instance in the same cloud network.
 
-
-
 ============================
 SAML Profile as an Attribute
 ============================
@@ -350,11 +339,11 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |image3-1-1| image:: SSL_VPN_SAML_media/image3-1-1.png
 
-.. |image3-1-2| image:: SSL_VPN_SAML_media/image3-1-2.png
+.. |create-endpoint| image:: SSL_VPN_SAML_media/create-endpoint.png
 
-.. |image3-2| image:: SSL_VPN_SAML_media/image3-2.png
+.. |values-in-controller| image:: SSL_VPN_SAML_media/values-in-controller.png
 
-.. |image3-6| image:: SSL_VPN_SAML_media/image3-6.png
+.. |gateway-images| image:: SSL_VPN_SAML_media/gateway-images.png
 
 .. |imagespmetadata| image:: SSL_VPN_SAML_media/SPMetadata.png
 
