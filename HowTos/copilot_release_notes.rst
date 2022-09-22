@@ -11,7 +11,6 @@ This section describes new features and enhancements for Aviatrix CoPilot softwa
 
 For information about Aviatrix CoPilot image releases, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
 
-
 Public Preview Features 
 -------------------------
 
@@ -35,20 +34,10 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
-CoPilot Release 3.0.0 (10/04/2022)
----------------------------------------------
+CoPilot and Controller Interoperability
+----------------------------------------
 
--   Improved overall look and feel of the user interface.
-
--   Improved sidebar menu organization.
-
--   Search capability for navigating to the functional areas you want more quickly.
-
--   Topology Experience V2 — Improved topology map capable of rendering larger network topologies.
-
--   Ability to perform the following tasks in CoPilot that previously could only be done in Aviatrix Controller. You can still perform these tasks in Controller also:
-
-    -   Create spoke gateways.
+CoPilot is deployed as an all-in-one virtual appliance and is available on multiple clouds including AWS, Azure, GCP, and OCI MarketPlaces. CoPilot works in tandem with Aviatrix Controller; in order to use CoPilot, you must have an operational Aviatrix Controller. CoPilot works with all Controller versions that are not End of Life (EOL). If you need information about `Aviatrix End of Engineering and End of Life (Support) policies <https://support.aviatrix.com/Aviatrix-EOL-Policy>`_ or how to plan and update to the latest software, please contact Aviatrix Support.
 
 
 CoPilot Release 2.5.3 (9/16/2022)
