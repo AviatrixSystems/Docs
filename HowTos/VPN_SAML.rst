@@ -338,14 +338,19 @@ These are guides with specific IdP's that were tested to work with Aviatrix SAML
 OpenVPN is a registered trademark of OpenVPN Inc.
 
 .. |image3-1-1| image:: SSL_VPN_SAML_media/image3-1-1.png
+   :scale: 70%
 
 .. |create-endpoint| image:: SSL_VPN_SAML_media/create-endpoint.png
+   :scale: 60%
 
 .. |values-in-controller| image:: SSL_VPN_SAML_media/values-in-controller.png
+   :scale: 60%
 
 .. |gateway-options| image:: SSL_VPN_SAML_media/gateway-options.png
+   :scale: 60%
 
 .. |imagespmetadata| image:: SSL_VPN_SAML_media/SPMetadata.png
+   :scale: 80%
 
 .. disqus::
 
