@@ -40,7 +40,7 @@ CoPilot and Controller Interoperability
 CoPilot is deployed as an all-in-one virtual appliance and is available on multiple clouds including AWS, Azure, GCP, and OCI MarketPlaces. CoPilot works in tandem with Aviatrix Controller; in order to use CoPilot, you must have an operational Aviatrix Controller. CoPilot works with all Controller versions that are not End of Life (EOL). If you need information about `Aviatrix End of Engineering and End of Life (Support) policies <https://support.aviatrix.com/Aviatrix-EOL-Policy>`_ or how to plan and update to the latest software, please contact Aviatrix Support.
 
 
-CoPilot Release 2.5.4 (9/22/2022)
+CoPilot Release 2.5.4 (9/23/2022)
 ---------------------------------------------
 
 -   Performance improvements
