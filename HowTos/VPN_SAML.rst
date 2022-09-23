@@ -11,7 +11,7 @@ Overview
 
 There are two methods to authenticate a VPN client: `Okta API Token <https://docs.aviatrix.com/HowTos/HowTo_Setup_Okta_for_Aviatrix.html>`_ or an Aviatrix SAML client.
 
-This document shows you how to setup VPN authentication using an Aviatrix SAML client.
+This document shows you how to set up VPN authentication using an Aviatrix SAML client.
 
 The Aviatrix user VPN is one of the OpenVPN® based remote VPN solutions that provides a VPN client with SAML authentication capability.
 
@@ -23,7 +23,7 @@ Pre-Deployment Checklist
 ---------------------------------------
 Before configuring the SAML integration between Aviatrix and your IdP, make sure the following is completed:
 
-	#. The `Aviatrix Controller <#pdc-21>`__ is setup and running.
+	#. The `Aviatrix Controller <#pdc-21>`__ is set up and running.
 	#. You have a valid `IdP account <#pdc-22>`__ with admin access.
 	#. You have `Downloaded and installed <#pdc-23>`__ the Aviatrix SAML client.
 
@@ -50,7 +50,7 @@ Administrator access is required to create IdP endpoints for SAML. For a list of
 Aviatrix VPN Client
 #######################
 
-All users must use the Aviatrix VPN client to connect to the system.  Download the client for your OS `here <http://docs.aviatrix.com/Downloads/samlclient.html>`__.
+All users must use the Aviatrix VPN client to connect to the system. Download the client for your OS `here <http://docs.aviatrix.com/Downloads/samlclient.html>`__.
 
 Configuration
 --------------------
@@ -106,10 +106,6 @@ Creating a Temporary Aviatrix SP Endpoint
    +-------------------------+--------------------------------------------------------+
    
    |create-endpoint|
-   
-   SP Metadata looks like:
-
-   |imagespmetadata| 
 
 .. note::
    Each endpoint only supports one type of access. If you need admin and read-only access, create two separate SAML apps.
@@ -140,11 +136,12 @@ Create a SAML 2.0 app with the IdP Provider with the following values.
 #. Default RelayState* = <empty>
 #. Application username = IdP username
 
-.. important::
-
-   You can find these values in the Controller under Settings > Controller > select the SAML Login tab.
+   You can find these values in your Controller. Go to Settings > Controller > select the SAML Login tab.
    * Assertion Consumer Service URL (ACS URL)  - Click **SP ACS URL** in the URL column of the SAML Endpoints table.
    * Audience URI (Entity ID)  Click **SP Metadata** to open the metadata. Find this URL listed by "entityID." 
+
+   |imagespmetadata| 
+
    * SP Metadata URL - Click **SP Metadata** to open this metadata. You can also click the download icon next to SP Metadata in the SAML Endpoints table to download the metadata file.
    * SP Login URL - Click **Test** to open this URL.
 
@@ -308,7 +305,7 @@ Testing VPN Connectivity
 #########################
 
 1. Download and install the Aviatrix VPN client for your platform from `here <https://aviatrix-systems-inc-docs.readthedocs-hosted.com/Downloads/samlclient.html>`__.
-2. Launch the Aviatrix client and load the certificate ("Load config")that you downloaded/received from email on the Testing the Integration" section above.
+2. Launch the Aviatrix client and load the certificate ("Load config") that you downloaded/received from email on the Testing the Integration section above.
 3. Click **Connect**. This should launch the browser instance and prompt you for authentication, if not already logged in.
 4. If the connection is successful, the client icon should turn green.
 5. You can ensure VPN connectivity by trying to ping the private IP of the gateway you launched or any other instance in the same cloud network.
@@ -353,5 +350,3 @@ OpenVPN is a registered trademark of OpenVPN Inc.
    :scale: 80%
 
 .. disqus::
-
-
