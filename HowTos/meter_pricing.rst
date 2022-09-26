@@ -75,8 +75,12 @@ yes HA, yes HPE, no SameCloud    Not supported                          2 inter-
 3. Aviatrix Edge
 --------------------------------------------------------------
 
+.. note::
+
+  License count in the table is per Edge GW attachment to Transit. Increase the count for additional Edge Gateways. 
+
 +---------------------------+------------------------------+-------------------------------+--------------------------------+---------------------------------+
-|Edge GW*                   |no HA, no HPE Transit Gateway |yes HA, no HPE Transit Gateway | no HA, yes HPE Transit Gateway | yes HA, yes HPE Transit Gateway |
+|Edge GW                    |no HA, no HPE Transit Gateway |yes HA, no HPE Transit Gateway | no HA, yes HPE Transit Gateway | yes HA, yes HPE Transit Gateway |
 +---------------------------+------------------------------+-------------------------------+--------------------------------+---------------------------------+
 |All GW sizes, no HPE       |1 intra-cloud license         | 1 intra-cloud license         | 1 intra-cloud license          | 1 intra-cloud license           |
 +---------------------------+------------------------------+-------------------------------+--------------------------------+---------------------------------+
@@ -85,11 +89,10 @@ yes HA, yes HPE, no SameCloud    Not supported                          2 inter-
 |Medium GW size, yes HPE    |1 intra-cloud license         |1 intra-cloud license          |1 intra-cloud license           |1 intra-cloud license            |
 +---------------------------+------------------------------+-------------------------------+--------------------------------+---------------------------------+
 |Large/Extra-large GW size, | 1 intra-cloud license        |1 intra-cloud license          |minimum (configurable tunnel    |minimum (configurable tunnel     |
-|yes HPE                    |                              |                               |count, 8) intra-cloud licenses**|count, 8) intra-cloud licenses** |
+|yes HPE                    |                              |                               |count, 8) intra-cloud licenses* |count, 8) intra-cloud licenses*  |
 +---------------------------+------------------------------+-------------------------------+--------------------------------+---------------------------------+
 
-*License count in the table is per Edge GW attachment to Transit. Increase the count for additional Edge Gateways. 
-** Up to 8 licenses. If you configure fewer than 8 tunnels, the number of licenses billed will equal the number of tunnels in your account. For example, if you configure 10 tunnels, then your account will be billed for 8 licenses. If you configure 6 tunnels, your account will be billed for 6 licenses.
+* Up to 8 licenses. If you configure fewer than 8 tunnels, the number of licenses billed will equal the number of tunnels in your account. For example, if you configure 10 tunnels, then your account will be billed for 8 licenses. If you configure 6 tunnels, your account will be billed for 6 licenses.
 
 4. Multi-cloud Transit Gateway Connection to On-prem 
 -----------------------------------------------------------------------
