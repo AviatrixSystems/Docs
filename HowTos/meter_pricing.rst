@@ -68,7 +68,7 @@ no HA, yes HPE, yes SameCloud    1 intra-cloud license                  Not supp
 yes HA, yes HPE, yes SameCloud   Not supported                          2 intra-cloud licenses                 Not supported                          16 intra-cloud licenses
 no HA, no HPE, no SameCloud      1 inter-cloud license                  Not supported                          1 inter-cloud license                  Not supported
 yes HA, no HPE, no SameCloud     Not supported                          2 inter-cloud licenses                 Not supported                          2 inter-cloud licenses
-no HA, yes HPE, no SameCloud     1 inter-cloud license                  Not supported                          8 inter-cloud licenses                 min (configurable tunnel count, 8) inter-cloud licenses
+no HA, yes HPE, no SameCloud     1 inter-cloud license                  Not supported                          8 inter-cloud licenses                 Not supported
 yes HA, yes HPE, no SameCloud    Not supported                          2 inter-cloud licenses                 Not supported                          16 inter-cloud licenses
 ===============================  =====================================  ====================================== ====================================== ======================================
 
