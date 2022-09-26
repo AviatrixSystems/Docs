@@ -68,11 +68,29 @@ no HA, yes HPE, yes SameCloud    1 intra-cloud license                  Not supp
 yes HA, yes HPE, yes SameCloud   Not supported                          2 intra-cloud licenses                 Not supported                          16 intra-cloud licenses
 no HA, no HPE, no SameCloud      1 inter-cloud license                  Not supported                          1 inter-cloud license                  Not supported
 yes HA, no HPE, no SameCloud     Not supported                          2 inter-cloud licenses                 Not supported                          2 inter-cloud licenses
-no HA, yes HPE, no SameCloud     1 inter-cloud license                  Not supported                          8 inter-cloud licenses                 Not supported
+no HA, yes HPE, no SameCloud     1 inter-cloud license                  Not supported                          8 inter-cloud licenses                 min (configurable tunnel count, 8) inter-cloud licenses
 yes HA, yes HPE, no SameCloud    Not supported                          2 inter-cloud licenses                 Not supported                          16 inter-cloud licenses
 ===============================  =====================================  ====================================== ====================================== ======================================
 
-3. Multi-cloud Transit Gateway Connection to On-prem 
+3. Aviatrix Edge
+--------------------------------------------------------------
+
++---------------------------+------------------------------+-------------------------------+--------------------------------+---------------------------------+
+|Edge GW*                   |no HA, no HPE Transit Gateway |yes HA, no HPE Transit Gateway | no HA, yes HPE Transit Gateway | yes HA, yes HPE Transit Gateway |
++---------------------------+------------------------------+-------------------------------+--------------------------------+---------------------------------+
+|All GW sizes, no HPE       |1 intra-cloud license         | 1 intra-cloud license         | 1 intra-cloud license          | 1 intra-cloud license           |
++---------------------------+------------------------------+-------------------------------+--------------------------------+---------------------------------+
+|Small GW size, yes HPE     |1 intra-cloud license         |1 intra-cloud license          | 1 intra-cloud license          |1 intra-cloud license            |
++---------------------------+------------------------------+-------------------------------+--------------------------------+---------------------------------+
+|Medium GW size, yes HPE    |1 intra-cloud license         |1 intra-cloud license          |1 intra-cloud license           |1 intra-cloud license            |
++---------------------------+------------------------------+-------------------------------+--------------------------------+---------------------------------+
+|Large/Extra-large GW size, | 1 intra-cloud license        |1 intra-cloud license          |minimum (configurable tunnel    |minimum (configurable tunnel     |
+|yes HPE                    |                              |                               |count, 8) intra-cloud licenses* |count, 8) intra-cloud licenses*  |
++---------------------------+------------------------------+-------------------------------+--------------------------------+---------------------------------+
+
+* Up to 8 licenses. If you configure fewer than 8 tunnels, the number of licenses billed will equal the number of tunnels in your account. For example, if you configure 10 tunnels, then your account will be billed for 8 licenses. If you configure 6 tunnels, your account will be billed for 6 licenses.
+
+4. Multi-cloud Transit Gateway Connection to On-prem 
 -----------------------------------------------------------------------
 
 ========================= ======================    ======================      ===========================
@@ -84,7 +102,7 @@ no HA, yes HPE            1 inter-cloud license     1 inter-cloud license       
 yes HA, yes HPE           2 inter-cloud licenses    2 inter-cloud licenses      16 intra-cloud licenses
 ========================= ======================    ======================      ===========================
 
-4. Native Spoke Network Attachment
+5. Native Spoke Network Attachment
 ------------------------------------------------
 
 Native Spoke refers to a spoke VPC or VNet in a hub-and-spoke architecture. In this scenario, there is no Aviatrix Spoke gateway deployed in the Spoke network. 
@@ -97,7 +115,7 @@ AWS VPC                1 intra-cloud license     Not supported
 GCP VPC                Not supported             Not supported
 =====================  =======================   ==============================
 
-5. Cloud Native Network Peering
+6. Cloud Native Network Peering
 -------------------------------------------
 
 ====================================================     ======================
@@ -108,7 +126,7 @@ AWS VPC Peering                                          0 intra-cloud license
 Azure VNet Peering                                       0 intra-cloud license
 ====================================================     ======================
 
-6. FQDN Egress Control
+7. FQDN Egress Control
 ---------------------------------
 
 ====================================================     ===========================
@@ -119,7 +137,7 @@ yes HA                                                   2 security-service lice
 3 AZ                                                     3 security-service licenses
 ====================================================     ===========================
 
-7. Site2Cloud 
+8. Site2Cloud 
 ------------------------
 
 ====================================================     ======================
@@ -129,7 +147,7 @@ no HA                                                    1 inter-cloud license
 yes HA                                                   2 inter-cloud licenses
 ====================================================     ======================
 
-8. PrivateS3
+9. PrivateS3
 -------------------------
 
 ====================================================     ==============================
@@ -139,7 +157,7 @@ no HA                                                    1 security-service lice
 N number of gateways                                     N security-service licenses
 ====================================================     ==============================
 
-9. User VPN
+10. User VPN
 ------------------
 
 ====================================================     ======================
