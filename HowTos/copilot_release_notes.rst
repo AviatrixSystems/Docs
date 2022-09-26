@@ -40,6 +40,7 @@ CoPilot and Controller Interoperability
 CoPilot is deployed as an all-in-one virtual appliance and is available on multiple clouds including AWS, Azure, GCP, and OCI MarketPlaces. CoPilot works in tandem with Aviatrix Controller; in order to use CoPilot, you must have an operational Aviatrix Controller. CoPilot works with all Controller versions that are not End of Life (EOL). If you need information about `Aviatrix End of Engineering and End of Life (Support) policies <https://support.aviatrix.com/Aviatrix-EOL-Policy>`_ or how to plan and update to the latest software, please contact Aviatrix Support.
 
 
+
 CoPilot Release 3.0.0 (10/04/2022)
 ---------------------------------------------
 
@@ -63,6 +64,12 @@ CoPilot Release 3.0.0 (10/04/2022)
 
 -   Gateway Groups Table
 
+CoPilot Release 2.5.4 (9/23/2022)
+---------------------------------------------
+
+-   Performance improvements
+
+
 CoPilot Release 2.5.3 (9/16/2022)
 ---------------------------------------------
 
@@ -71,6 +78,7 @@ CoPilot Release 2.5.3 (9/16/2022)
 **Feature Enhancement in CoPilot release 2.5.3**
 
 -   **FlightCheck SAP Destination Report** – If your enterprise runs SAP, you can quickly identify SAP known ports to see the resources in your network communicating with SAP services. When you generate a Flight Check Report, the report results now include a **Potential SAP Services** section that shows where SAP may be running in the environment. For more information about Reports, see `Working with Reports <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-reports>`_ in *Aviatrix CoPilot User Reference Guide*.
+
 
 CoPilot Release 2.5.2 (9/06/2022)
 ---------------------------------------------

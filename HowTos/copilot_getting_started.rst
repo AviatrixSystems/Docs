@@ -19,13 +19,13 @@ Launch CoPilot
 Aviatrix CoPilot is available as an all-in-one virtual appliance that is hosted in a user's own IaaS cloud environment. 
 It can be launched as an EC2 instance in AWS, a virtual machine in Azure, or a VM instance in GCP and OCI. 
 
-Typically, you can apply the default configurations for resources settings that are recommended by marketplaces during launch. Take note of the `Minimum Instance (VM) System Requirements for CoPilot`_. 
+Before launching CoPilot, take note of the `Minimum Instance (VM) System Requirements for CoPilot`_. 
 
 You can deploy CoPilot using different methods. See `CoPilot Deployment Methods`_. 
 
 Aviatrix Controller and CoPilot are not required to be collocated. It is possible to run them in separate VPCs/VNets or separate cloud providers (in multi-cloud environments). Typically, Aviatrix Controller and Aviatrix CoPilot are run in the same VPC/VNet.
 
-After launching CoPilot, you must configure integration points for CoPilot to connect and communicate with other components in the Aviatrix platform. See `Instance (VM) Configuration Details for CoPilot`_.
+After launching CoPilot, you must configure integration points for CoPilot to connect and communicate with other components in the Aviatrix platform. See `Instance (VM) Configuration Details for CoPilot`_. 
 
 If you are launching a new instance of CoPilot and need to migrate CoPilot data from an existing (source) CoPilot to a newly launched (destination) CoPilot, see `About Migrating CoPilot Data`_.
 
@@ -45,8 +45,10 @@ Instance (VM) Configuration Details for CoPilot
 ================================================
 After launching CoPilot, you must configure integration points for CoPilot to connect and communicate with other components in the Aviatrix platform.
 
+If you launch CoPilot from the Aviatrix Controller user interface, the controller's auto-deploy process configures the integration points upon deployment.
+
 .. tip::
-  Starting from Controller 6.8, you can enable the "CoPilot Security Group Management" option in Aviatrix Controller to help automate opening CoPilot access to the below ports (in Controller > Settings > CoPilot > CoPilot Security Group Management). See `CoPilot Security Group Management <https://docs.aviatrix.com/HowTos/Settings_CoPilot.html#copilot-security-group-management>`_.
+  Starting from Controller 6.8, you can enable the "CoPilot Security Group Management" option in Aviatrix Controller so that controller can open CoPilot access to the below ports for all your gateways. For more information, see `CoPilot Security Group Management <https://docs.aviatrix.com/HowTos/Settings_CoPilot.html#copilot-security-group-management>`_.
 
 - Open your CoPilot access (security group) for: 
 
@@ -60,7 +62,26 @@ After launching CoPilot, you must configure integration points for CoPilot to co
 
 Each CoPilot instance must be launched in a *subnet (availability zone)* that has outbound Internet access. In a clustered (fault tolerant) deployment, you must select a subnet with outbound Internet access for the server instance as well as for each data instance in the cluster. This is true if you are using private mode as well.
 
-If you need to manually add IPs for gateways in your access control lists (security groups), you can view the IP addresses of all your gateways from the Gateways page in Aviatrix Controller. 
+If you need to manually add IPs for gateways to your security groups, you can view the IP addresses of all your gateways from the Gateways page in Aviatrix Controller. 
+
+Note: After CoPilot’s VM is launched and assigned a static public IP address, the Controller’s SG on 443 must be open to CoPilot’s public IP.
+
+Security Group (SG) Rule Quotas and CoPilot
+============================================
+
+In the CSP environment, check the quota you have for security group rules. Make sure you have enough quota to support the SG rules you require for CoPilot and Controller. 
+
+For *each* Aviatrix gateway in your infrastructure:
+
+- 2 rules are required for the CoPilot SG (port 5000 for syslog, port 31283 for Netflow), and 
+
+- 1 rule is required for the Controller SG (port 443) 
+
+For example, if you have 100 gateways, you require 200 SG rules for CoPilot and 100 SG rules for Controller. 
+
+In addition, consider the number of future gateways you may deploy if you decide to expand your infrastructure. When obtaining the rule quota in the CSP environment, obtain enough quota to account for future gateways so the quota limit is not reached when you deploy them.
+
+**Important:** If CoPilot Security Group Management is enabled and the AWS security group quota or Azure Network Security Group (NSG) rule limit is reached, the CoPilot Security Group Management feature will be disabled. For more information, see `CoPilot Security Group Management <https://docs.aviatrix.com/HowTos/Settings_CoPilot.html#copilot-security-group-management>`_.
 
 
 Minimum Instance (VM) System Requirements for CoPilot
@@ -75,7 +96,7 @@ The configuration of the virtual machine that you provision for your CoPilot dep
 
   - 8 vCPUs (or more)
 
-Examples: 
+**Examples:** 
 
 Amazon EC2 instance type: m5n.2xlarge
 
@@ -84,9 +105,14 @@ Googld Cloud: n2-standard-8
 Oracle Cloud Infrastructure: VM.Standard3.Flex (8core x 32G mem)
 
 
+**Minimum VM size based on the number of existing gateways**
+
 If you are deploying CoPilot for the first time (new launch) and have existing gateways, below are general guidelines for a minimum VM size *based on the number of existing gateways* in an infrastructure. 
 
 The information is intended as a general guide only. After you deploy CoPilot, you will be able to monitor the indexing of data for traffic in your specific environment and tune configuration settings, such as index retention periods, that will help determine the best instance size for your business needs.
+
+
+**If you have less than 500 gateways**
 
 For infrastructures with **< 500 GWs**, the minimum instance/VM size guideline:
 
@@ -105,6 +131,8 @@ Oracle Cloud Infrastructure: 			VM.Standard3.Flex (8core x 32G mem)
 Microsoft Azure virtual machine:                Standard_D8_v4
 
 
+**If you have more than 500 but less than 1000 gateways**
+
 For infrastructures with **> 500 but < 1000 GWs**, the minimum instance/VM size guideline:
 
   - 64 GB of RAM (or more)
@@ -115,6 +143,8 @@ Example:
 
 Amazon EC2 instance type: 			m5n.4xlarge
 
+
+**If you have more than 1000 gateways**
 
 For infrastructures with **>=1000 GWs**, the minimum instance/VM size guideline:
 
@@ -127,7 +157,7 @@ Example:
 Amazon EC2 instance type: 			m5n.8xlarge
 
 
-**Note the following points**:
+**Note the following points about VM requirements**:
 
 - (AWS) For CoPilot ARM-based images, Amazon EC2 A1 instances are currently not supported.
 
