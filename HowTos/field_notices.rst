@@ -19,7 +19,7 @@ For customers running version 6.8 of the Aviatrix Controller and an older AMI re
  
 **Issue Description**
 
-Performing a dry run in 6.8 and later versions will fail if the CSP gateways are running on an older AMI, but the upgrade from version 6.8 to 7.0 will not be blocked. Aviatrix recommends that you perform an Image Upgrade from the Controller (Settings > Maintenance > Upgrade) prior to performing a software upgrade as soon as possible. Gateways running older AMIs will not be able to upgrade from 7.0 to 7.1 without first performing an Image Upgrade.
+Performing a dry run in 6.8 and later versions will fail if the CSP gateways are running on an older AMI, but the upgrade from version 6.8 to 6.9 will not be blocked. Aviatrix recommends that you perform an Image Upgrade from the Controller (Settings > Maintenance > Upgrade) prior to performing a software upgrade as soon as possible. Gateways running older AMIs will not be able to upgrade from 6.9 to 7.0 without first performing an Image Upgrade.
  
 If you run into any issues during the upgrade, please open a ticket on the `Aviatrix Support Portal <https://support.aviatrix.com>`_.
 
