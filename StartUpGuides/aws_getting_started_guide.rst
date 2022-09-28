@@ -72,44 +72,44 @@ Region – Before configuring any settings, click on the dropdown menu in the to
 
 |choose_vpc_region|
 
-+----------------------------+----------------------------------------------------------------+
-| Setting                    | Value                                                          |
-+============================+================================================================+
-| Resources to create        | Select the **VPC and more** radio button.                      |
-+----------------------------+----------------------------------------------------------------+
-| Name tag                   | Enter a clear and recognizable name (such as                   |
-|                            | "aviatrix-mgt" or "aviatrix-management").                      |
-+----------------------------+----------------------------------------------------------------+
-| IPv4 CIDR block            | Enter the IPv4 CDIR block for the Controller                   |
-|                            | VPC. The minimum is /24; the maximum is /16. A                 |
-|                            | best practice is to use RFC1918 ranges.                        |
-+----------------------------+----------------------------------------------------------------+
-| IPv6 CDIR block            | No IPv6 CIDR block                                             |
-+----------------------------+----------------------------------------------------------------+
-| Tenancy                    | Default                                                        |                     
-+----------------------------+----------------------------------------------------------------+
-| Number of Availability     | Select **1** if you choose **not** to                          |
-| Zones (AZs)                | configure                                                      |
-|                            | `HA <https://docs.aviatrix.com/HowTos/controller_ha.html>`_.   |        
-|                            | One Availability Zone offers a simpler deployment but no       |
-|                            | resiliency.                                                    |
-|                            |                                                                |
-|                            | Select **2** if you require Controller resiliency through HA.  |
-+----------------------------+----------------------------------------------------------------+
-| Number of public subnets   | Select **1** if you choose not to configure HA.                |
-| Services - Migration       |                                                                |
-|                            | Select **2** if you choose to configure HA (make sure you have |        
-|                            | also selected two Availability Zones).                         |
-+----------------------------+----------------------------------------------------------------+
-| Number of private subnets  | 0                                                              |
-+----------------------------+----------------------------------------------------------------+
-| NAT gateways ($)           | None                                                           |
-+----------------------------+----------------------------------------------------------------+
-| VPC endpoints              | None                                                           |
-+----------------------------+----------------------------------------------------------------+
-| DNS options                | Leave these settings at their defaults (both checkboxes        |
-|                            | marked).                                                       |
-+----------------------------+----------------------------------------------------------------+
++----------------------------+-----------------------------------------------------------------------------------------------+
+| Setting                    | Value                                                                                         |
++============================+===============================================================================================+
+| Resources to create        | Select the **VPC and more** radio button.                                                     |
++----------------------------+-----------------------------------------------------------------------------------------------+
+| Name tag                   | Enter a clear and recognizable name (such as                                                  |
+|                            | "aviatrix-mgt" or "aviatrix-management").                                                     |
++----------------------------+-----------------------------------------------------------------------------------------------+
+| IPv4 CIDR block            | Enter the IPv4 CDIR block for the Controller                                                  |
+|                            | VPC. The minimum is /26; the maximum is /16. A                                                |
+|                            | best practice is to use RFC1918 ranges.                                                       |
++----------------------------+-----------------------------------------------------------------------------------------------+
+| IPv6 CDIR block            | No IPv6 CIDR block                                                                            |
++----------------------------+-----------------------------------------------------------------------------------------------+
+| Tenancy                    | Default                                                                                       |                     
++----------------------------+-----------------------------------------------------------------------------------------------+
+| Number of Availability     | Select **1** if you choose **not** to                                                         |
+| Zones (AZs)                | configure                                                                                     |
+|                            | `HA <https://docs.aviatrix.com/HowTos/controller_ha.html>`_.                                  |        
+|                            | One Availability Zone offers a simpler deployment but no                                      |
+|                            | resiliency.                                                                                   |
+|                            |                                                                                               |
+|                            | Select **2** if you require Controller resiliency through HA.                                 |
++----------------------------+-----------------------------------------------------------------------------------------------+
+| Number of public subnets   | Select **1** if you choose not to configure HA.                                               |
+| Services - Migration       |                                                                                               |
+|                            | Select **2** if you choose to configure HA (make sure you have                                |        
+|                            | also selected two Availability Zones).                                                        |
++----------------------------+-----------------------------------------------------------------------------------------------+
+| Number of private subnets  | 0                                                                                             |
++----------------------------+-----------------------------------------------------------------------------------------------+
+| NAT gateways ($)           | None                                                                                          |
++----------------------------+-----------------------------------------------------------------------------------------------+
+| VPC endpoints              | None                                                                                          |
++----------------------------+-----------------------------------------------------------------------------------------------+
+| DNS options                | Leave these settings at their defaults (both checkboxes                                       |
+|                            | marked).                                                                                      |
++----------------------------+-----------------------------------------------------------------------------------------------+
 
 3. Click **Create VPC**. See the screenshot below to confirm your settings. This example VPC uses two Availability Zones and two public subnets to enable HA.
 
