@@ -81,8 +81,12 @@ Region – Before configuring any settings, click on the dropdown menu in the to
 |                            | "aviatrix-mgt" or "aviatrix-management").                      |
 +----------------------------+----------------------------------------------------------------+
 | IPv4 CIDR block            | Enter the IPv4 CDIR block for the Controller                   |
-|                            | VPC. The minimum is /24; the maximum is /16. A                 |
+|                            | VPC. The minimum is /26; the maximum is /16. A                 |
 |                            | best practice is to use RFC1918 ranges.                        |
+|                            |                                                                |
+|                            |* Use /28 if you plan to configure `HA                          |
+|                            |<https://docs.aviatrix.com/HowTos/controller_ha.html>`_.        |
+|                            |* Use /26 if you plan to deploy Spoke Gateways from this VPC.   |
 +----------------------------+----------------------------------------------------------------+
 | IPv6 CDIR block            | No IPv6 CIDR block                                             |
 +----------------------------+----------------------------------------------------------------+
