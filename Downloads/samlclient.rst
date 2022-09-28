@@ -132,6 +132,8 @@ These are preview images for the next release.
 
 `Windows <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_win_x64.exe>`__,
 `MacOS <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_mac.pkg>`__ ,
+`Debian Jammy Jellyfish <https://aviatrix-download.s3.us-west-2.amazonaws.com/AviatrixVPNClient/dev/AVPNC_linux_JammyJellyfish.deb>`__,
+`Linux Jammy Jellyfish <https://aviatrix-download.s3.us-west-2.amazonaws.com/AviatrixVPNClient/dev/AVPNC_linux_JammyJellyfish.tar.gz>`__,
 `Debian Focal Fossa  <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/AVPNC_linux_FocalFossa.deb>`__,
 `Linux tar Focal Fossa <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/AVPNC_linux_FocalFossa.tar.gz>`__,
 `Linux tar <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/dev/AVPNC_linux.tar.gz>`__,
@@ -148,10 +150,12 @@ FIPS140-2 Dev version
 
 `Windows <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_win_x64_FIPS.exe>`__,
 `Mac <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_mac_FIPS.pkg>`__ ,
+`Ubuntu-22 tar <https://aviatrix-download.s3.us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_linux_JammyJellyfish_FIPS.tar.gz>`__ ,
+`Ubuntu-22 deb <https://aviatrix-download.s3.us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_linux_JammyJellyfish_FIPS.deb>`__ ,
 `Ubuntu-20 tar <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_linux_FocalFossa_FIPS.tar.gz>`__ ,
 `Ubuntu-20 deb <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_linux_FocalFossa_FIPS.deb>`__ ,
 `Ubuntu-18 tar <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_linux_FIPS.tar.gz>`__,
-`deb <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_debian_FIPS.deb>`__
+`Ubuntu 18 deb <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/dev/fips/AVPNC_debian_FIPS.deb>`__
 
 OpenVPN is a registered trademark of OpenVPN Inc.
 
