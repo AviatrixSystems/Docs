@@ -7,6 +7,10 @@
 Aviatrix CoPilot Deployment Guide
 ============================================================
 
+This section describes how to deploy Aviatrix CoPilot.
+
+For information about Aviatrix CoPilot image releases, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
+
 CoPilot and Controller Interoperability
 ========================================
 

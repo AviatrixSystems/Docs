@@ -21,13 +21,13 @@ Key Benefits
 
 - **Dynamic Topology Map** – Accurate, multi-cloud network topology, layout control and search
 
-- **FlowIQ** – Detailed application traffic flow analysis, global heat map and trends, filter traffic by native CSP tags
+- **FlowIQ** – Detailed application traffic flow analysis, global heat map and trends, filter traffic by native CSP tags, drill down
 
 - **Multi-Cloud Tagging** – Tag multi-cloud resources, search by tag, filter traffic data by tag
 
 - **CloudRoutes** – Detailed searchable routing tables across cloud providers
 
-- **Notifications** – Alert on resources status/utilization across multi-Cloud
+- **Notifications** – Alert on resources' status and telemetry data across multi-cloud
 
 - **AppIQ** – Comprehensive reports to analyze network path between any two cloud instances
 
@@ -37,16 +37,23 @@ Key Benefits
 
 - **Network Behavior Analytics** – Alert on anomalies detected that deviate from the custom routine traffic patterns of your own cloud workloads  
 
+ - **Secured Networking** – Network segmentation for inter-VPC/VNet connectivity (reachability) of your Aviatrix multi-cloud transit 
+
+ - **Egress Control** – Egress traffic details of URLs, domains, and IP addresses being accessed outside of your Aviatrix transit network 
+
+ - **Geoblocking** – Block IP traffic coming into and coming from a country 
+
+- **CostIQ** – Detailed traffic distribution analysis for your cost centers, including traffic flowing to shared-service resource hosts by Cloud Account, by Cost Center, by VPC/VNet, and by Gateway 
+
 
 Deployment Model
 ------------------
 
-CoPilot is deployed as an all-in-one virtual appliance and is available on AWS, Azure, GCP, and OCI MarketPlaces.
+CoPilot is deployed as an all-in-one virtual appliance and is available on AWS, Azure, GCP, and OCI marketplaces.
 
-CoPilot works in tandem with Aviatrix Controller; in order to use CoPilot, you must have an operational 
-Aviatrix Controller. 
+CoPilot works in tandem with Aviatrix Controller; in order to use CoPilot, you must have an operational Aviatrix Controller. 
 
-Aviatrix Controller and CoPilot are not required to be collocated. It is possible to run them in separate VPCs/VNets or separate cloud providers (in multi-cloud environments).
+Aviatrix Controller and CoPilot are not required to be collocated. It is possible to run them in separate VPCs/VNets or separate cloud providers (in multi-cloud environments). If CoPilot is located in the same VPC/VNet as your Controller, specifying a private IP can increase operational bandwidth and potentially save on cost.
 
 Licensing and Trials
 ---------------------

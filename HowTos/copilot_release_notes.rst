@@ -40,29 +40,57 @@ CoPilot and Controller Interoperability
 CoPilot is deployed as an all-in-one virtual appliance and is available on multiple clouds including AWS, Azure, GCP, and OCI MarketPlaces. CoPilot works in tandem with Aviatrix Controller; in order to use CoPilot, you must have an operational Aviatrix Controller. CoPilot works with all Controller versions that are not End of Life (EOL). If you need information about `Aviatrix End of Engineering and End of Life (Support) policies <https://support.aviatrix.com/Aviatrix-EOL-Policy>`_ or how to plan and update to the latest software, please contact Aviatrix Support.
 
 
-
 CoPilot Release 3.0.0 (10/04/2022)
 ---------------------------------------------
 
--   Improved overall look and feel of the user interface.
+**Feature Enhancements in CoPilot release 3.0.0**
 
--   Improved organization of navigation menu
+-   Improved overall look and feel of the user interface: 
 
--   Search feature for navigation menu items to access functional areas quickly by name.
+    -   Color and layout of the user interface is updated to give a streamlined, simplified, and consistent design
 
--   Topology Experience V2 — Improved topology map capable of rendering larger network topologies.
+    -   Formats for tables, search, and filter mechanisms consistent across functional areas
 
--   Application toolbar includes an icon for announcements
+-   New navigation menu with improved organization of functional areas
 
--   (`Private Preview Features`_ in Release 3.0.0) The following private preview feature is available in this release:
+-   New navigation search. Search on menu names or key words related to pages and views you want to access.
 
-    -   **CostIQ** – CostIQ offers visibility into shared services that are used by enterprise cost centers for shared service billback. For more information about CostIQ, see `Working with CostIQ <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-costiq>`_ in *Aviatrix CoPilot User Reference Guide*.
- 
--   CoPilot SKU Workflows for enabling or disabling CoPilot key features.
+-   New icon for announcements in application toolbar 
 
--   New FlowIQ Geo Page
+-   Topology Experience V2 — Improved topology map
+
+    -   Displays large network topologies
+
+    -   Streamlined and simplified design
+
+    -   Apply any number of filters to search for resources in the map
+
+    -   Zoom in to the map for selection of granular nodes to display their properties
+
+    -   Note that some functions in Topology Experience V1 have not yet migrated to Topology Experience V2. You can use the toggle switch to migrate back to Topology Experience V1.
+
+-   FlowIQ Enriched Experience
+
+    -   New FlowIQ Geo Page
+
+    -   New Application View for application administrators to see trends and risk score
 
 -   Gateway Groups Table
+
+-   (`Public Preview Features`_ in Release 3.0.0) The following public preview feature is available in this release:
+
+    -   **CostIQ** – CostIQ offers visibility into shared services that are used by enterprise cost centers for shared service billback. For more information about CostIQ, see `Working with CostIQ <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-costiq>`_ in *Aviatrix CoPilot User Reference Guide*.
+
+    -   View which teams are creating the most traffic to your shared services
+ 
+-   Aviatrix Billing
+
+    -   View which regions in a cloud are costing you the most for Aviatrix hosts
+
+    -   View a department wide breakdown across clouds of Aviatrix costs by cloud accounts
+
+-   CoPilot SKU workflows for application administrators to enable and disable CoPilot features.
+
 
 CoPilot Release 2.5.4 (9/23/2022)
 ---------------------------------------------

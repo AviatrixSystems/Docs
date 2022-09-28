@@ -9,11 +9,9 @@ Aviatrix CoPilot Image Release Notes
 
 Aviatrix CoPilot is delivered via one image that should be maintained with the latest version for managing security and support for the product. You launch the Aviatrix CoPilot image instance in the AWS, Microsoft Azure, Google Cloud, Oracle Cloud, or respective cloud marketplace. 
 
-After a base image is launched from a marketplace, the CoPilot instance will update to the latest software release version upon startup. 
+After a base image is launched from a marketplace, the CoPilot instance automatically updates to the latest software release version upon startup. It is recommended to allow updates to your CoPilot image for receiving the latest software versions. For information about new features and enhancements for CoPilot software releases, see `Aviatrix CoPilot Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes.html>`_.
 
-If you have an existing CoPilot and you want to uptake a new image release version, you must first launch a new CoPilot based on the new image release version and then migrate data from the old instance to the new instance. For information, see the discussion about migrating CoPilot data in *Aviatrix CoPilot Deployment Guide*. 
-
-For information about new features and enhancements for CoPilot software releases, see `Aviatrix CoPilot Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes.html>`_.
+If you have an existing CoPilot and want to uptake the latest release version of a CoPilot image, you must first launch a new CoPilot based on the latest image, and then migrate data from the old CoPilot to the new CoPilot. For more information, see `the discussion about migrating CoPilot data <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#about-migrating-copilot-data>`_.
 
 
 CoPilot Image: Version 2.0.6 (08/25/22) — Azure
