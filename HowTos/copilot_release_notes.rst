@@ -45,51 +45,55 @@ CoPilot Release 3.0.0 (10/04/2022)
 
 **Feature Enhancements in CoPilot release 3.0.0**
 
--   Improved overall look and feel of the user interface: 
+- **Overall UI Improvements** with updated colors and layout for a streamlined, simplified, and consistent design. Consistent formats for tables and search/filter controls across user interface. Improved dark mode. 
 
-    -   Color and layout of the user interface is updated to give a streamlined, simplified, and consistent design
+  |appIQ_1| |appIQ_2| |appIQ_3|
 
-    -   Formats for tables, search, and filter mechanisms consistent across functional areas
+- **New navigation menu and menu search ** offers improved organization of functional areas. Search on menu names or key words related to pages and views you want to access.
 
--   New navigation menu with improved organization of functional areas
+  |appIQ_1| |appIQ_2| |appIQ_3|
 
--   New navigation search. Search on menu names or key words related to pages and views you want to access.
+- **CostIQ Shared Services** offers visibility into shared services used by cost centers for shared service billback. Shows which teams are creating the most traffic to your shared services.
 
--   New icon for announcements in application toolbar 
+  |appIQ_1| |appIQ_2| |appIQ_3|
 
--   Topology Experience V2 — Improved topology map
+- **New Topology Experience** with improved topology map that displays large network topologies. Streamlined and simplified design. Apply any number of filters to search for resources in the map. Zoom in to the map for selection of granular nodes to display their properties. Use the toggle switch to migrate back to Topology Experience V1. Some functions in Topology Experience V1 have not migrated to V2 such as gateway diagnostics. Note that you can use Cloud Routes to perform gateway diagnostics.
 
-    -   Displays large network topologies
+  |bgp_1| |bgp_2| |bgp_3|
 
-    -   Streamlined and simplified design
+- **New FlowIQ Experience** . 
 
-    -   Apply any number of filters to search for resources in the map
+  |bgp_1| |bgp_2| |bgp_3|
 
-    -   Zoom in to the map for selection of granular nodes to display their properties
+- **New FlowIQ Experience** with updated design, improved Geolocation page and Sankey chart. New Application View where application administrators can see trends and risk score for application-level traffic.
 
-    -   Note that some functions in Topology Experience V1 have not yet migrated to Topology Experience V2. You can use the toggle switch to migrate back to Topology Experience V1.
+  |bgp_1| |bgp_2| |bgp_3|
 
--   FlowIQ Enriched Experience
+- **Aviatrix Billing** offers visibility into costs for Aviatrix hosts, including which regions in a cloud are costing the most and a breakdown across clouds of Aviatrix costs by cloud account.
 
-    -   New FlowIQ Geo Page
+  |latency_1| |latency_2|
 
-    -   New Application View for application administrators to see trends and risk score
+- **Disk Utilization UI in Settings** shows expected number of days/weeks before current data disk will hit the free space threshold. Provides recommendations for what disk size would meet data retention needs based on existing disk usage.
 
--   Gateway Groups Table
+  |latency_1| |latency_2|
+
+- **UI Walkthrough** demonstrates tips for what's new upon initial login. New navigation menu and search. New icon for announcements in application toolbar.
+
+  |latency_1| |latency_2|
+
+- **Performance Improvements** for Alerts (Notifications) and database lookup tasks that run behind the scenes.
+
+- **CoPilot Feature Enablement** CoPilot SKU workflows for application administrators to enable and disable CoPilot features.
+
+- **New Gateways Page** for viewing a list of all Aviatrix gateways in your multi-cloud network and creating spoke and transit gateways.
+  
+- **Performance Improvements** for Alerts (Notifications) and database lookup tasks that run behind the scenes.
+
+- **Security updates**
 
 -   (`Public Preview Features`_ in Release 3.0.0) The following public preview feature is available in this release:
 
     -   **CostIQ** – CostIQ offers visibility into shared services that are used by enterprise cost centers for shared service billback. For more information about CostIQ, see `Working with CostIQ <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-costiq>`_ in *Aviatrix CoPilot User Reference Guide*.
-
-    -   View which teams are creating the most traffic to your shared services
- 
--   Aviatrix Billing
-
-    -   View which regions in a cloud are costing you the most for Aviatrix hosts
-
-    -   View a department wide breakdown across clouds of Aviatrix costs by cloud accounts
-
--   CoPilot SKU workflows for application administrators to enable and disable CoPilot features.
 
 
 CoPilot Release 2.5.4 (9/23/2022)
