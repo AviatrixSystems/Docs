@@ -51,6 +51,9 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-29002** - If you mapped a Site2Cloud configuration to a Spoke Gateway and then upgraded your gateway image with version 6.8.1148 software, traffic to your remote Site2Cloud connection would break.
 * **AVX-29016** - When you registered a CAAG or Edge Gateway while your LAN/WAN interface was down, the CloudN list would fail to display. You could not perform basic actions like Diag, Deregister, or Reset Configuration.
 
+**Known Issues in Aviatrix Release 6.9.161**
+
+* **AVX-29643** - There is an MSS clamp at 1370 whenever packets need to cross an AWS inter-region peering or any other underlay that does not support jumbo frames.
 
 6.8.1342 (09/30/2022)
 ===============================
