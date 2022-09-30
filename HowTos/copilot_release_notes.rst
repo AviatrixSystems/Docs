@@ -51,7 +51,9 @@ CoPilot Release 3.0.0 (10/04/2022)
 
 - **New navigation menu and menu search ** offers improved organization of functional areas. Search on menu names or key words related to pages and views you want to access.
 
-  |tip_walk_1| |tip_walk_2| |tip_walk_3|
+  |tip_walk_1| |tip_walk_2|
+
+  |tip_walk_3|
 
 - **UI Walkthrough** upon initial login provides tips for what's new.
 
@@ -59,7 +61,9 @@ CoPilot Release 3.0.0 (10/04/2022)
 
 - **CostIQ Shared Services** offers visibility into shared services used by cost centers for billback purposes. Shows which teams are creating the most traffic to your shared services. CostIQ is available as a public preview feature in CoPilot Release 3.0.0. See `Public Preview Features`_.
 
-  |cost-overview| |cost-centers| |cost-shared-services|
+  |cost-overview| |cost-centers|
+
+  |cost-shared-services|
 
 - **New Topology Experience** with improved topology map that displays large network topologies. Streamlined and simplified map design. Use the toggle switch to switch to Topology Experience V1. Some functions have not migrated to V2 such as gateway diagnostics (note you can run gateway diagnostics from the Cloud Routes page also).
 
@@ -76,8 +80,6 @@ CoPilot Release 3.0.0 (10/04/2022)
 - **Performance Improvements** for Alerts (Notifications) and database lookup tasks that run behind the scenes.
 
 - **CoPilot Feature Enablement** SKU workflows for application administrators to enable and disable CoPilot features.
-  
-- **Performance Improvements** for Alerts (Notifications) and database lookup tasks that run behind the scenes.
 
 - **Security updates**
 
