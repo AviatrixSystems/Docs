@@ -13,6 +13,10 @@ After a base image is launched from a marketplace, the CoPilot instance automati
 
 If you have an existing CoPilot and want to uptake the latest release version of a CoPilot image, you must first launch a new CoPilot based on the latest image, and then migrate data from the old CoPilot to the new CoPilot. For more information, see `the discussion about migrating CoPilot data <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#about-migrating-copilot-data>`_.
 
+**Note:** CoPilot instances that were launched using base image version 1.5.1 or later are labeled Appliance Version 2 as shown in the CoPilot release information dropdown:
+
+|appliance_version|
+
 
 CoPilot Image: Version 2.0.6 (08/25/22) — Azure
 ------------------------------------------------------
@@ -78,6 +82,6 @@ If you are deploying the 1.5.1 image version from the marketplace, the following
 
 .. disqus::
 
-.. |service_account_modal| image:: copilot_releases/service_account_modal.png
-.. |appIQ_1| image:: copilot_releases/appIQ_1.png
+.. |appliance_version| image:: copilot_releases/appliance_version.png
     :width: 30%
+

@@ -47,53 +47,39 @@ CoPilot Release 3.0.0 (10/04/2022)
 
 - **Overall UI Improvements** with updated colors and layout for a streamlined, simplified, and consistent design. Consistent formats for tables and search/filter controls across user interface. Improved dark mode. 
 
-  |appIQ_1| |appIQ_2| |appIQ_3|
+  |tip_walk| 
 
 - **New navigation menu and menu search ** offers improved organization of functional areas. Search on menu names or key words related to pages and views you want to access.
 
-  |appIQ_1| |appIQ_2| |appIQ_3|
+  |tip_walk_1| |tip_walk_2| |tip_walk_3|
 
-- **CostIQ Shared Services** offers visibility into shared services used by cost centers for shared service billback. Shows which teams are creating the most traffic to your shared services.
+- **UI Walkthrough** upon initial login provides tips for what's new.
 
-  |appIQ_1| |appIQ_2| |appIQ_3|
+  |tip_walk_4|
 
-- **New Topology Experience** with improved topology map that displays large network topologies. Streamlined and simplified design. Apply any number of filters to search for resources in the map. Zoom in to the map for selection of granular nodes to display their properties. Use the toggle switch to migrate back to Topology Experience V1. Some functions in Topology Experience V1 have not migrated to V2 such as gateway diagnostics. Note that you can use Cloud Routes to perform gateway diagnostics.
+- **CostIQ Shared Services** offers visibility into shared services used by cost centers for billback purposes. Shows which teams are creating the most traffic to your shared services. CostIQ is available as a public preview feature in CoPilot Release 3.0.0. See `Public Preview Features`_.
 
-  |bgp_1| |bgp_2| |bgp_3|
+  |cost-overview| |cost-centers| |cost-shared-services|
 
-- **New FlowIQ Experience** . 
+- **New Topology Experience** with improved topology map that displays large network topologies. Streamlined and simplified map design. Use the toggle switch to switch to Topology Experience V1. Some functions have not migrated to V2 such as gateway diagnostics (note you can run gateway diagnostics from the Cloud Routes page also).
 
-  |bgp_1| |bgp_2| |bgp_3|
+  |topology_v2| |topology_map_v2| 
 
-- **New FlowIQ Experience** with updated design, improved Geolocation page and Sankey chart. New Application View where application administrators can see trends and risk score for application-level traffic.
+- **New FlowIQ Experience** with updated UI design for Geolocation page, Sankey chart, and other views (CoPilot > Monitor > FlowIQ).
 
-  |bgp_1| |bgp_2| |bgp_3|
+- **Disk Utilization UI in Settings** shows the number of days/weeks before the current data disk usage is expected to reach the free space threshold. Provides recommendations for what disk size would meet data retention needs based on existing disk usage. Set data retention policies for CoPilot data. CoPilot > Settings > Disk Utilization.
 
-- **Aviatrix Billing** offers visibility into costs for Aviatrix hosts, including which regions in a cloud are costing the most and a breakdown across clouds of Aviatrix costs by cloud account.
+  |disk_util_1| |disk_util_2|
 
-  |latency_1| |latency_2|
-
-- **Disk Utilization UI in Settings** shows expected number of days/weeks before current data disk will hit the free space threshold. Provides recommendations for what disk size would meet data retention needs based on existing disk usage.
-
-  |latency_1| |latency_2|
-
-- **UI Walkthrough** demonstrates tips for what's new upon initial login. New navigation menu and search. New icon for announcements in application toolbar.
-
-  |latency_1| |latency_2|
+- **CoPilot licensing unified with Controller** — A separate license for CoPilot is no longer required. The Aviatrix Controller license covers the use of CoPilot. The CoPilot > Settings > Licensing page now displays the Aviatrix Controller license details.
 
 - **Performance Improvements** for Alerts (Notifications) and database lookup tasks that run behind the scenes.
 
-- **CoPilot Feature Enablement** CoPilot SKU workflows for application administrators to enable and disable CoPilot features.
-
-- **New Gateways Page** for viewing a list of all Aviatrix gateways in your multi-cloud network and creating spoke and transit gateways.
+- **CoPilot Feature Enablement** SKU workflows for application administrators to enable and disable CoPilot features.
   
 - **Performance Improvements** for Alerts (Notifications) and database lookup tasks that run behind the scenes.
 
 - **Security updates**
-
--   (`Public Preview Features`_ in Release 3.0.0) The following public preview feature is available in this release:
-
-    -   **CostIQ** – CostIQ offers visibility into shared services that are used by enterprise cost centers for shared service billback. For more information about CostIQ, see `Working with CostIQ <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-costiq>`_ in *Aviatrix CoPilot User Reference Guide*.
 
 
 CoPilot Release 2.5.4 (9/23/2022)
@@ -794,6 +780,30 @@ The Service Account can be changed in **Settings** .
 .. disqus::
 
 .. |service_account_modal| image:: copilot_releases/service_account_modal.png
+.. |tip_walk| image:: copilot_releases/tip_walk.png
+    :width: 40%
+.. |tip_walk_1| image:: copilot_releases/tip_walk_1.png
+    :width: 30%
+.. |tip_walk_2| image:: copilot_releases/tip_walk_2.png
+    :width: 30%
+.. |tip_walk_3| image:: copilot_releases/tip_walk_3.png
+    :width: 30%
+.. |tip_walk_4| image:: copilot_releases/tip_walk_4.png
+    :width: 30%
+.. |topology_v2| image:: copilot_releases/topology_v2.png
+    :width: 30%
+.. |topology_map_v2| image:: copilot_releases/topology_map_v2.png
+    :width: 30%
+.. |cost-centers| image:: copilot_releases/cost-centers.png
+    :width: 30%
+.. |cost-overview| image:: copilot_releases/cost-overview.png
+    :width: 30%
+.. |cost-shared-services| image:: copilot_releases/cost-shared-services.png
+    :width: 30%
+.. |disk_util_1| image:: copilot_releases/disk_util_1.png
+    :width: 30%
+.. |disk_util_2| image:: copilot_releases/disk_util_2.png
+    :width: 30%
 .. |appIQ_1| image:: copilot_releases/appIQ_1.png
     :width: 30%
 .. |appIQ_2| image:: copilot_releases/appIQ_2.png
