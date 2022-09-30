@@ -1818,7 +1818,7 @@ To add a new Cost Center, click the **+ Cost Center** near the top left.
 * The maximum length of a name is 128 characters.
 * Special characters are not allowed.
 
-2. Click on the **Associate VPC/VNets** dropdown menu and select the VPCs/VNets to include in the Cost Center. These VPCs or VNets should be the ones used by your real-life cost centers.
+2. Click on the **Associate VPC/VNets** dropdown menu and select the VPCs/VNets to include in the Cost Center. These VPCs or VNets should be the ones used by your real-life cost centers. The VPC/VNets defined in each cost center are typically mutually exclusive. You can include the same VPC/VNet in multiple cost centers, but doing so can skew cost-reporting results. For example, if you define 2 cost centers with VPC/VNets that overlap, the shared services report will show them both as consumers of the shared service.
 3. Click **Save**.
 
 Editing Cost Centers
