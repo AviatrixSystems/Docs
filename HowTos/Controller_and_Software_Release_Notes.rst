@@ -34,6 +34,42 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
+6.9.161 (09/30/2022)
+===========================
+
+**Issues Corrected in Aviatrix Release 6.9.161**
+
+* **AVX-26004** – Resolved an issue involving AWS accounts and permissions. If you onboarded an AWS account to your Controller, but your Controller didn’t have permission for some regions in that account, your account would print traceback logs, sometimes in large amounts. These logs did not affect performance but were unhelpful for managing your accounts. This fix suppressed those logs.
+* **AVX- 27653** – Resolved two issues that could cause gateways to crash: the conduit binary could become overwhelmed by Linux kernel netlink messages, and IP fragmented packets could trigger a kernel crash if the packet fragment was smaller than the UDP header.  This fix included releasing a new kernel driver.
+
+.. important::
+
+  If you experienced this issue, **restart your gateway** to use the new kernel driver.
+
+* **AVX-27657** – A full memory would cause the gateway’s tunnels to flap.
+* **AVX-28242** – Fixed an issue that prevented OpenVPN users from connecting to their VPN after adding a second search domain separated by a comma (Controller > Edit Config > Modify Split Tunnel). Now, OpenVPN users can enter multiple search domain names separated by commas in a split  tunnel configuration.
+* **AVX-29002** – If you mapped a Site2Cloud configuration to a Spoke Gateway and then upgraded your gateway image with version 6.8 software, traffic to your remote Site2Cloud remote   would break.
+* **AVX-29016** – When you registered a CAAG or Edge Gateway while your LAN/WAN interface was down, the CloudN list would fail to display. You could not perform basic actions like Diag, Deregister, or Reset Configuration.
+
+
+6.8.1342 (09/30/2022)
+===============================
+
+**Issues Corrected in Aviatrix Release 6.8.1342**
+
+* **AVX-26004** – Resolved an issue involving AWS accounts and permissions. If you onboarded an AWS account to your Controller, but your Controller didn’t have permission for some regions in that account, your account would print traceback logs, sometimes in large amounts. These logs did not affect performance but were unhelpful for managing your accounts. This fix suppressed those logs.
+* **AVX- 27653** – Resolved two issues that could cause gateways to crash: the conduit binary could become overwhelmed by Linux kernel netlink messages, and IP fragmented packets could trigger a kernel crash if the packet fragment was smaller than the UDP header.  This fix included releasing a new kernel driver.
+
+.. important::
+
+  If you experienced this issue, **restart your gateway** to use the new kernel driver.
+
+* **AVX-27657** – A full memory would cause the gateway’s tunnels to flap.
+* **AVX-28242** – Fixed an issue that prevented OpenVPN users from connecting to their VPN after adding a second search domain separated by a comma (Controller > Edit Config > Modify Split Tunnel). Now, OpenVPN users can enter multiple search domain names separated by commas in  a split tunnel configuration.
+* **AVX-29002** – If you mapped a Site2Cloud configuration to a Spoke Gateway and then upgraded your gateway image with version 6.8 software, traffic to your remote Site2Cloud remote would break.
+* **AVX-29016** – When you registered a CAAG or Edge Gateway while your LAN/WAN interface was down, the CloudN list would fail to display. You could not perform basic actions like Diag, Deregister, or Reset Configuration.
+
+
 6.7.1480 (09/20/2022) 
 =========================
 
