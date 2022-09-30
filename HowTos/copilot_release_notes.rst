@@ -49,7 +49,7 @@ CoPilot Release 3.0.0 (10/04/2022)
 
   |tip_walk| 
 
-- **New navigation menu and menu search ** offers improved organization of functional areas. Search on menu names or key words related to pages and views you want to access.
+- **New navigation menu and menu search** offers improved organization of functional areas. Search on menu names or key words related to pages and views you want to access.
 
   |tip_walk_1| |tip_walk_2|
 
