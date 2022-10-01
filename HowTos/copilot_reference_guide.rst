@@ -13,6 +13,103 @@ CoPilot delivers, end-to-end, in-depth, historical analytics of multi cloud netw
 This guide provides descriptions and definitions of functionalities that are available in Aviatrix CoPilot.
 
 
+Getting Started with CoPilot
+=============================
+
+This section covers how to log in to CoPilot and describes how main functional areas of CoPilot are organized in the navigation menu.
+
+Logging in to CoPilot 
+-----------------------
+
+To log in to CoPilot, use the following steps:
+
+1.  Launch CoPilot in your web browser:
+
+    `https://<copilot static public ip address>/`
+
+    where `<copilot static public ip address>` is the static public IP address of your deployed CoPilot software instance/virtual machine.
+
+    Alternatively, you can launch CoPilot in your web browser directly from Aviatrix Controller as described in the next step.
+
+2.  (Optional) To launch CoPilot in your web browser directly from Aviatrix Controller:
+
+    a.  In Aviatrix Controller, under Settings, select CoPilot.
+
+    b.  For the CoPilot Association, set the status to **Enabled**. 
+
+    c.  In the **IP Address/Hostname field**, enter the static IP address for your running CoPilot instance/virtual machine. This can be the private or public IP address of your CoPilot instance/virtual machine. The IP address specified here is used for connectivity between the controller and CoPilot for intra-platform communication (such as API message exchanges). If CoPilot is located in the same VPC/VNet as your controller, specifying a private IP can increase operational bandwidth and potentially save on cost. If you enter the private IP address here, then go to the next step to specify the public IP address.
+
+    d.  If you specified the private IP address of your CoPilot instance in “IP Address/Hostname”, enter the public IP address of your CoPilot instance in the **Public IP (Optional)** field. This enables you to open CoPilot in your web browser directly from your Controller.
+
+    e.  In the action bar of your Controller homepage, click on the application icon, and then select **CoPilot**. 
+
+3.  Enter your Controller account credentials or SAML credentials.
+
+
+CoPilot navigation menu
+------------------------
+ 
+The navigation menu organizes CoPilot functional areas as follows: 
+
+|nav_menu|
+
+**Dashboard**
+
+- The dashboard shows the inventory of all managed resources in your networks and the status of those resources (up or down). See `CoPilot Dashboard`_.
+
+**Networking**
+
+- **Topology** shows the logical and physical layout of your networks, latencies for all connections, and recorded changes made to the network over time. See `Working with Topology`_.
+
+**Secured Networking**
+
+- **Network Segmentation** shows how network domains can or cannot communicate with eachother and ability to configure network segmentation for inter-VPC/VNet connectivity (reachability). See `Working with Security`_.
+
+- **Micro-Segmentation** provides granular network security policy enforcement for distributed applications in the cloud. See the discussion about `secure networking with micro-segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_.
+
+- **Egress Control** shows egress FQDN data, search and live monitoring of what sites are being accessed outside of your network. 
+
+**Security Services**
+
+- **ThreatIQ** provides ability to monitor for security threats in your Aviatrix cloud network, set alerts when threats are detected in the network traffic flows, and block traffic that is associated with threats. See `Working with ThreatIQ`_.
+
+- **Anomaly Detection** provides continuous network behavior analysis on your cloud workloads for detecting unusual behaviors or anomalies in the network. See `Working with Anomalies`_.
+
+- **Geoblocking** provides ability to block IP traffic coming into and coming from a country. 
+
+**Monitor**
+
+- **FlowIQ** shows detailed traffic flow analysis of the network displaying metadata about traffic that flows across each link, global heat map and trends, provides ability to filter traffic based on many conditions including native CSP tags and identify top talkers in the network. See `Working with FlowIQ`_.
+
+- **Performance** shows the resource utilization (telemetry) data for all managed resources across your Aviatrix transit network and provides ability to resize gateways based on policies. See `Working with Performance`_.
+
+- **Traffic & Latencies** shows detailed metrics on data sent and received in the last hour and day for instances, regions, GWs and VPCs/VNets. Shows detailed latencies, historically for the last hour, last day, last week, and last month, for all connections between managed resources. 
+
+- **Notifications** provides ability to configure alerts so that you can be notified about changes in your Aviatrix transit network, see all triggered alerts, pause alerts, and set preferred notification channel (webhooks/email). See `Working with Notifications`_.
+
+**Troubleshoot**
+
+- **AppIQ** shows security domain and traffic information between any two cloud instances that are connected by way of your Aviatrix transit network. 
+
+- **Cloud Routes** shows all routing information for managed resources spanning your Aviatrix transit network, including resources across clouds and on-prem (for Site 2 Cloud connections). View routing information for gateways, VPC/VNets, Site 2 Cloud connections, and BGP connections across all clouds without having to log in to individual cloud provider consoles. 
+
+**Administration**
+
+- **Reports** offers detailed reports showing your inventory of managed resources and telemetry statistics for them in a single cloud or across all clouds in your multi-cloud network. 
+
+- **Audit** shows changes performed by users on your system and which users made API calls to Aviatrix Controller. 
+
+**Billing & Cost**
+
+- **Aviatrix Billing** shows costs for Aviatrix services. 
+
+- **CostIQ** provides visibility into the traffic data of your deployed networks that are managed by the Aviatrix Controller as they relate to your cost centers. This traffic data are reported as percentages of traffic generated by end instances in Spoke VPC/VNets. 
+
+**Settings**
+
+- The Settings pages are used by application administrators to configure and tune the platform and perform system administrative tasks. See `CoPilot Settings`_.
+
+
 CoPilot Dashboard
 ================= 
 
@@ -27,6 +124,7 @@ The number on the inventory chip represents the total number of instances of tha
 To view the status of a managed resource, click the status marker in its associated inventory chip. The status marker is:  
 
 - A green checkmark when all instances of that resource type are on (connected, running). 
+
 - A red exclamation mark when one or more instances of that resource type are off (disconnected, shut down). 
 
 - Virtual Data Center 
@@ -2464,4 +2562,8 @@ You can configure periodic snapshots, based on your preferred interval, to be ab
 
 ..  |delete-icon| image:: copilot_reference_guide_media/delete-icon.png
     :scale: 100%
+
+..  |nav_menu| image:: copilot_reference_guide_media/nav_menu.png
+    :scale: 70%
+
 
