@@ -144,7 +144,7 @@ Review the configuration and click `Create`.   Give the Load Balancer a few minu
  
 Step 2: Create and Configure Remote Site Web Server
 ---------------------------------------------------
-The remote site can be any network not in AWS.  For this demo, I've provisioned an Ubuntu VM with Apache on my laptop's VMware Fusion environment.
+The remote site can be any network not in AWS.  For this demo, I've provisioned a VM with Apache on my laptop's VMware Fusion environment.
 
 On this VM, I've also added a simple `index.html` file::
 
@@ -244,7 +244,7 @@ Back in the AWS console, go to the Target Groups in the EC2 Dashboard.  Click on
 
 |imageTestTG0|
 
-Change the `Network` drop down to `Other private IP address` and then enter the private IP address of the Ubuntu Apache VM we set up earlier on the remote side. Click `Add to list` and then `Register`.
+Change the `Network` drop down to `Other private IP address` and then enter the private IP address of the Apache VM we set up earlier on the remote side. Click `Add to list` and then `Register`.
 
 |imageTestTG1|
 

@@ -21,7 +21,7 @@ Update controller version info in the DB                                        
 Apply xml file patch for Splunk year 2020 bug                                       5.4 or earlier      This patch is required due to changes in Splunk. Click `here <https://docs.splunk.com/Documentation/Splunk/8.0.1/ReleaseNotes/FixDatetimexml2020>`_ for more details.
 
                                                                                                         Patch applied to Avitrix Controller and Gateway both.
-Mitigation for Datadog Agent installation issue on Ubuntu 14.04                     5.2 or earlier      DataDog will not be installed properly without the patch on Controller due to
+Mitigation for Datadog Agent installation issue on opensource OS                     5.2 or earlier      DataDog will not be installed properly without the patch on Controller due to
                                                                                                         known DataDog issue with "hash sum mismatch" in APT repositories.
                                                                                                         Applicable to Aviatrix Gateway and Controller both.
 =================================================================             ====================      ===============================================================

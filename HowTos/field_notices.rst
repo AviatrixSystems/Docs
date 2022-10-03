@@ -300,7 +300,7 @@ Please look to our `release notes <https://docs.aviatrix.com/HowTos/UCC_Release_
 
 **End of Life (EOL) announcement for Gateway AMI's**
 
-Gateway AMI's based on Ubuntu 14 and Ubuntu 16 are designated EOL effective 5/3/2021. Aviatrix is discontinuing support because these operating systems have reached their end of standard support from the provider. Please see the Ubuntu release information at https://wiki.ubuntu.com/Releases and https://ubuntu.com/about/release-cycle.
+Gateway AMI's based on old opensource OS versions are designated EOL effective 5/3/2021. Aviatrix is discontinuing support because these operating systems have reached their end of standard support from the provider. 
  
 What is the impact if you remain on a deprecated release that is designated EOL?
 
@@ -313,7 +313,7 @@ Replace the deprecated gateways and use the new AMIs. To update your Aviatrix ga
  
 Discover all deprecated AMIs. Download the "Generate list of Aviatrix Gateways using deprecated AMIs" utility from "Settings->Maintenance->Software Patches->Update Available Patches". Run this utility to send an email to the admin with a list of all gateways running deprecated AMI's. 
  
-We recommend that you replace gateways running Ubuntu14 and Ubuntu16 based AMIs before upgrading to 6.4.
+We recommend that you replace gateways running on old opensource OS versions based AMIs before upgrading to 6.4.
  
 Upgrade your Aviatrix Controller to the latest 6.3 release following the instructions at https://docs.aviatrix.com/HowTos/inline_upgrade.html and replace these gateways using the procedures at https://docs.aviatrix.com/HowTos/image_release_notes.html#existing-customers-gateway-image-upgrade. 
  
@@ -353,9 +353,9 @@ Version 6.3 and higher: Newly created spoke and transit gateway names are checke
 
 **Date** 04/28/2021
 
-**End of Life (EOL) announcement for Aviatrix VPN Clients for Ubuntu 14.04 and Ubuntu 16.04**
+**End of Life (EOL) announcement for Aviatrix VPN Clients for old opensource OS versions**
 
-VPN Clients running on Ubuntu 14.04 are designated EOL effective immediately. VPN Clients running on Ubuntu 16.04 are designated EOL effective 6/1/2021. Aviatrix is discontinuing support because these operating systems have reached their end of standard support from the provider. Please see the Ubuntu release information at https://wiki.ubuntu.com/Releases and https://ubuntu.com/about/release-cycle.
+VPN Clients running on old opensource OS versions are designated EOL effective immediately. VPN Clients running on old opensource OS versions are designated EOL effective 6/1/2021. Aviatrix is discontinuing support because these operating systems have reached their end of standard support from the provider.
  
 What is the impact if you remain on a deprecated release that is designated EOL?
 The Aviatrix Support team does not provide assistance on EOL releases.

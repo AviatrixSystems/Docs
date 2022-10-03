@@ -120,7 +120,7 @@ Follow `Aviatrix Transit FireNet Workflow <https://docs.aviatrix.com/HowTos/tran
 Launching an Apache2 Web server in Application Spoke VNET 
 ------------------------------------------------------------------------------
 
-In Application Spoke VNET, create an Ubuntu Server 18.04 LTS virtual machine and install Apache2 HTTP Server with custom port 8080.
+In Application Spoke VNET, create an opensource OS virtual machine and install Apache2 HTTP Server with custom port 8080.
 
 ========================	==============
 **Example setting**		**Example value**
@@ -131,7 +131,7 @@ Port				8080
 
 .. Note::
 
-	Refer to `Install The Latest Apache2 HTTP Server ( 2.4.34 ) On Ubuntu 16.04 | 17.10 | 18.04 LTS Servers <https://websiteforstudents.com/install-the-latest-apache2-2-4-34-on-ubuntu-16-04-17-10-18-04-lts-servers/>`_ to install Apache2 HTTP Server.
+	Refer to `Install The Latest Apache2 HTTP Server ( 2.4.34 ) On opensource OS servers <https://websiteforstudents.com/install-the-latest-apache2-2-4-34-on-ubuntu-16-04-17-10-18-04-lts-servers/>`_ to install Apache2 HTTP Server.
 	
 	Refer to `How To Change Apache Default Port To A Custom Port <https://www.ostechnix.com/how-to-change-apache-ftp-and-ssh-default-port-to-a-custom-port-part-1/>`_ to use custom port 8080.
 
