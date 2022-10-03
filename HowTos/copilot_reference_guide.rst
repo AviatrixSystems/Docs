@@ -2103,6 +2103,147 @@ Deleting Shared Services
 
 Deleting a Shared Service does not affect the IP addresses or CIDRs it includes or any data; it only removes the Shared Service as a way of organizing and visualizing historical cost data for your network. 
 
+Working with Aviatrix Billing 
+==============================
+
+This section describes the Aviatrix Billing feature of Aviatrix CoPilot. 
+
+Aviatrix Billing enables you to analyze the costs of your Aviatrix Controller and gateways. You can review your account's Total Cost and review costs by CSP (Cloud Service Provider), region, group of Cloud Accounts, and individual Cloud Account.
+
+You access Aviatrix Billing in CoPilot by going to Home > Billing & Cost > Aviatrix Billing or typing Aviatrix Billing in the navigation search.
+
+
+Overview of Aviatrix Billing
+------------------------------
+
+The graphs, donut charts, and components on the Overview tab display costs and cost metrics for your Aviatrix account.
+
+.. important::
+
+  * The Aviatrix Billing feature requires that your Controller use software version 6.8.1148 or later. 
+  * Only users logged in as admin, with the username "admin," can review this page.
+  * Any timestamps on this page are in UTC time. This time zone is set because your account bill is cut off at midnight UTC.
+
+Year to Date Cost  - Your total Aviatrix costs from January 1, in dollars.
+Billing Plan  - Your billing plan for the year:
+
+* Standard (Public Rate) – The standard rate as published on the CSP marketplace listing.
+* Custom (Private Offer) – A modified rate from a private offer from Aviatrix.
+
+Total Cost  - Your total Aviatrix cost for this year in dollars, broken down by month. 
+
+Use the donut charts, horizontal bar charts, and line graph on the lower section of the page to see more detailed analytics of our Aviatrix costs. Use the Time Period options at the top of the page to adjust the time period for the data in each component.
+
+* Top Costs by Cloud - Use this donut chart to compare costs for each of your CSP accounts: AWS, Azure, Alibaba Cloud, GCP, and others.
+* Top Costs by Region - Use this donut chart to compare costs for each region in your network, for all CSPs. 
+* Top Costs by VPC/VNet - Use this horizontal bar chart to compare costs for each VPC or VNet in every CSP.
+* Cloud Account Breakdown - Use this donut chart and horizontal bar graph to compare costs for each individual cloud account and cloud Account Group in every CSP.
+* Billing Metrics Breakdown  - Use this donut chart to compare costs for various aspects or components of your network, including:
+  * Inter tunnels, Intra tunnels, Security, and Usercount.
+  * Usercount - Charge per total user count, based on the number of VPN users.
+
+* Trend - Use this line graph to compare total costs in dollars for each billing metric or Cloud Account in your network per day. Use the dropdown menu in the top right to select which data categorization to use: Billing Metric or Cloud Account. 
+
+|aviatrix-billing-overview-tab|
+
+Explore tab of Aviatrix Billing
+----------------------------------
+
+|aviatrix-billing-explore-tab|
+
+Use the Explore tab to break down your costs in each CSP (Cloud Service Provider). This page offers data visualization and drilldown so that you can see more granular data. 
+
+Use the Time Period options at the top to change the time period covered in your view.
+
+Cost graph in Aviatrix Billing
+--------------------------------
+
+This tiled graph represents your account's cost in each CSP by using the size of a tile to visually compare each cost to other network costs. Click on any title to drill down further on the cost for each CSP. 
+
+**Drill Down to Region**
+
+When you click on any tile, the graph zooms in and uses a new set of tiles to represent the cost of each region in which your accounts are located in this CSP. 
+
+**Drill Down to VPC/VNet**
+
+Click on one of the region titles to drill down another level and see the costs for each VPC or VNet in that region.
+
+**Drill Down to Gateways**
+
+Click on one of the VPC/VNet tiles to see the costs for the primary and, if relevant, HA gateways in this VPC/VNet.
+
+To drill up from any level, select the drilldown level you want to review from the breadcrumbs about the graph: for example, select one level in _Cost > OCI > us-ashburn-1 > copilot-oci-use-t1_ to see that level of detail.
+
+In each level of drilldown, see the table on the right side of the page to see each cost and the relative cost.
+
++------------------------------------------+----------------------+----------------------------------------------+
+|**Name**                                  |**Cost**              |**Rel %**                                     |
++==========================================+======================+==============================================+
+|The name of the component                 |The cost in dollars   |The percent cost of this component out of     |
+|in each level of drill down: CSP, region, |for this component.   |the total cost of all components in this      |
+|VPC/VNet, or gateway.                     |                      |level of drilldown. For example, the          |
+|                                          |                      |cost of your accounts in this CSP out of costs|
+|                                          |                      |for your whole network, or the cost of this   |
+|                                          |                      |VPC/VNet out of all VPCs/VNets in this region.|
+|                                          |                      |This column should sum to 100%.               |
++------------------------------------------+----------------------+----------------------------------------------+
+
+Cloud Accounts tab in Aviatrix Billing
+-----------------------------------------
+
+Use the Cloud Accounts tab to review costs by individual Cloud Account. This page is organized by Account Groups, which help organize and categorize your cloud accounts. Refer to the Cloud Account Breakdown component on the Aviatrix Billing Overview tab of this page for a donut chart and horizontal bar graph visualization of this data.
+
+In the table, each individual Cloud Account is left-indented and appears below the Account Group's row. 
+
+.. important::
+
+  Each account can only appear in one Account Group at a time.
+
++---------------------------------+-----------------------+-------------------+--------------------+-----------------+--------------------+
+|Account Group/Accounts           |Clouds                 |Prev. Week         |Prev. Month         |Year to Date     |CY' *year*          |
++=================================+=======================+===================+====================+=================+====================+
+|The name of each Account Group   |The Cloud Service      |The previous week's|The previous month's|The cost of this |The cost of this    | 
+|and account. Each account is     |Providers (CSPs) of    |costs for this     |costs for this      |account or       |account or Account  |
+|indented in the table and listed |the accounts in this   |account or Account |account or Account  |Account Group in |Group in the last   |
+|below its Account Group.         |account group. You can |Group.             |Group.              |this calendar    |calendar year.      |
+|                                 |have multiple CSPs     |                   |                    |year.            |                    |
+|                                 |represented in a group.|                   |                    |                 |                    |
++---------------------------------+-----------------------+-------------------+--------------------+-----------------+--------------------+
+
+Creating Account Groups
+-------------------------------------------
+
+1. To create a new Account Group, click the Actions dropdown menu in the top left and select **Create New Account Group**.
+
+|aviatrix-billing-cost-account-actions-menu|
+
+2. Enter the Account Group's name.
+3. Click on the dropdown menu to select the accounts that should belong to this Account Group. Note that only accounts that are not in existing Account Groups are available to add.
+4. Click **Save**.
+
+Editing Account Groups
+-------------------------------------------
+
+1. To edit the name of an Account Group, click the More icon |more-icon| at the right end of the Account Group's row in the table.
+2. Edit the Account Group's name and click **Save**.
+
+**Moving Account Groups**
+1. To move an Account Group, click the **Actions** menu in the top left and select **Move Account Group**.
+
+**Removing Accounts from an Account Group**
+1. To move an account from one Account Group to another, select the group in the table and click the **Actions** dropdown menu in the top left. Click **Remove from Account Group**.
+2. Click **Confirm**. 
+
+.. note::
+
+  If you move the only account in an Account Group into another group, that Account Group disappears. You can recreate that Account Group by following the steps in the "Creating Account Groups" section above.
+
+Deleting Account Groups
+-------------------------------------------
+
+1. To delete an Account Group, click on the Delete icon |delete-icon| at the right end of the Account Group's row in the table.
+2. Click **Confirm**.
+
 
 CoPilot WebHooks
 ===================
@@ -2661,5 +2802,21 @@ You can configure periodic snapshots, based on your preferred interval, to be ab
 
 ..  |nav_menu| image:: copilot_reference_guide_media/nav_menu.png
     :scale: 70%
+
+.. |aviatrix-billing-overview-tab| image:: copilot_reference_guide_media/aws-billing-overview-tab.png
+   :scale: 70%
+
+.. |aviatrix-billing-explore-tab| image:: copilot_reference_guide_media/aws-billing-explore-tab.png
+   :scale: 70%
+
+.. |aviatrix-cost-account-billing-actions-menu| image:: copilot_reference_guide_media/aws-billing-explore-tab.png
+   :scale: 50%
+
+.. |more-icon| image:: copilot_reference_guide_media/more-icon.png
+   :scale: 100%
+
+.. |delete-icon| image:: copilot_reference_guide_media/delete-icon.png
+   :scale: 100%
+
 
 
