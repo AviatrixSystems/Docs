@@ -43,6 +43,8 @@ CoPilot is deployed as an all-in-one virtual appliance and is available on multi
 CoPilot Release 3.0.0 (10/04/2022)
 ---------------------------------------------
 
+(Note: The following releases were built for internal use only: 2.6.0, 2.7.0)
+
 **Feature Enhancements in CoPilot release 3.0.0**
 
 - **Overall UI Improvements** with updated colors and layout for a streamlined, simplified, and consistent design. Consistent formats for tables and search/filter controls across user interface. Improved dark mode. 
