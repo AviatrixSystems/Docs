@@ -80,14 +80,11 @@ Migrating an AWS Controller
 
 For Controllers launched from AWS, there are two methods you can use to migrate your Controller AMI (Amazon Machine Image):
 
-1. **Controller-driven method** (simplest method)  - You can easily migrate your AMI directly from the Controller. Note that you can only migrate between AMIs with the same license (BYOL, Metered, or another license) using this method.
+1. **Controller-driven method** (simplest method)  - You can easily migrate your AMI directly from the Controller.
 2. **Manual method** (longer method which offers more visibility)  - You can migrate your Controller by going through the AWS marketplace and stopping your Controller instance, disassociating your EIP, and so on. This method requires more steps but allows you to see the network and account changes involved in each step. You can also use this method to change licenses if needed.
 
 .. note::
-      The Controller-driven method can only migrate between AMIs using the same license. To change your license, use the manual method.
-
-      * To migrate to a BYOL license model, please contact your Aviatrix Sales Account Manager or email sales@aviatrix.com to acquire the appropriate BYOL license. Make sure you already have subscribed to the BYOL AMI. 
-      * To migrate to a metered license, subscribe to the Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support offer on the AWS Marketplace.
+      All Controllers need to migrate to the universal license. To migrate to a universal license, subscribe to the Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support offer on the AWS Marketplace.
 
 AWS Method 1: Migrating your Controller AMI and Gateway Image Directly from Your Controller
 ------------------------------------------------------------------------------------------------------------------------------------------
