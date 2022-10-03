@@ -18,16 +18,18 @@ You may need to migrate your Aviatrix Controller in the following situations:
 
 .. note::
 
-  A machine image is named an "AMI (Amazon Machine Image) in AWS, a "VM image" (Virtual Machine Image) in Azure, a "machine image" in GCP, and a "custom image" in OCI.
+  * If you launched an existing Controller with a BYOL license and have it updated to software version 6.7.1185 or later, you only need to apply to the newest metered license through your Controller. Log in as an admin and go to Settings > Controller > License. You do not need to follow the migration steps in this document.
+  * A machine image is named an "AMI (Amazon Machine Image) in AWS, a "VM image" (Virtual Machine Image) in Azure, a "machine image" in GCP, and a "custom image" in OCI.
 
-The Controller Migration process involves three main steps:
+This document describes how to migrate from one type of machine image to another for each CSP, including: 
 
-* Fulfill the prerequisites, including backing up your old Controller.
-* Delete your old Controller in the CSP Account from which you originally launched it: AWS, Azure, GCP, or OCI.
-* Launch a new Controller from the relevant CSP marketplace.
-* Restore the data from your old Controller to your new Controller.
-
-This document explains how to migrate from one type of machine image to another for each CSP.
+* `Prerequisites <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#prerequisites>`_ for all clouds.
+* `Controller Migration in AWS <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#migrating-an-aws-controller>`_.
+* `Controller Migration in Azure <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#controller-migration-in-azure>`_.
+* `Controller Migration in GCP <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#controller-migration-in-gcp>`_.
+* `Controller Migration in OCI <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#controller-migration-in-oci>`_.
+* `Setting up <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#post-migration-tasks>`_ your new Controller.
+* Controller Migration for all clouds during `Disaster Recovery <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#controller-migration-during-disaster-recovery>`_.
 
 .. tip::
 
