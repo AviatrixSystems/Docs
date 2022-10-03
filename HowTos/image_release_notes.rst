@@ -61,7 +61,7 @@ Release version 110421 includes the following updates:
 
 - Added support for AWS IMDSv2.
 - Corrected issue with the Aviatrix Controller initialization hanging after image migrating to a new image.
-- Closed potential vulnerability in Ubuntu.
+- Closed potential vulnerability in old opensource OS versions.
 
 AWS Controller Images: AWS AMI – Version: 100621 (10/13/2021)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -93,7 +93,7 @@ AWS Gateway Image: hvm-cloudx-aws-080322 (09/09/2022)
 This image includes the following updates:
 
 * Updated the kernel version to 5.4.0-1080-aws.
-* Upgraded the version of Ubuntu dist to 18.04.6 LTS.
+* Upgraded the version of an opensource OS versions.
 * Hardened to 80% of CIS Server L1 benchmark.
 * Passed a vulnerability scan up to July 2022.
 
@@ -130,7 +130,7 @@ AWS Gateway Image: hvm-cloudx-aws-080322 (09/09/2022)
 This image includes the following updates:
 
 * Updated the kernel version to 5.4.0-1080-aws.
-* Upgraded the version of Ubuntu dist to 18.04.6 LTS.
+* Upgraded the opensource OS versions.
 * Hardened to 80% of CIS Server L1 benchmark.
 * Passed a vulnerability scan up to July 2022.
 

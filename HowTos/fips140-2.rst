@@ -6,21 +6,21 @@
 FIPS 140-2 Module
 ###################################
 
-Aviatrix supports the FIPS 140-2 crypto module.
+Aviatrix OpenVPN supports the FIPS 140-2 crypto module. This security policy does not affect any other controller or gateway features. When FIPS 140-2 is enabled, the Controller and all gateways will be installed with the FIPS 140-2 module to support OpenVPN. 
 
 The Aviatrix Certificate number is #3475 which you can find from the `NIST site <https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3475>`_.
 
 The Aviatrix FIPS 140-2 Security Policy can be found at this `link. <https://csrc.nist.gov/CSRC/media/projects/cryptographic-module-validation-program/documents/certificates/FIPS140ConsolidatedCertAug2018.pdf>`_
 
-Before enabling FIPS 140-2, the FIPS 140-2 Security patch needs to be applied , 
+Before enabling FIPS 140-2, the FIPS 140-2 Security patch needs to be applied.
 
-To apply FIPS patch go to the Controller Console, Settings -> Maintainence -> Security Patches -> Click FIPS 140-2  
+- To apply FIPS patch go to the Controller Console, Settings -> Maintainence -> Security Patches -> Click FIPS 140-2  
 
-To enable, go to the Controller Console, Settings -> Advanced -> FIPS 140-2. Click Enable. 
+- To enable, go to the Controller Console, Settings -> Advanced -> FIPS 140-2. Click Enable. 
 
-When it is enabled, the Controller and all gateways will be installed with the FIPS 140-2 module. OpenVPN services will be restarted and this will cause your VPN clients to disconnect and reconnect to the gateways. 
+.. note::
 
-
+   OpenVPN services will be restarted and this will cause your VPN clients to disconnect and reconnect to the gateways.
 
 
 

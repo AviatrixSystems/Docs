@@ -3,7 +3,7 @@ Aviatrix VPN Client Release Notes
 2.14.14 - April 27 2021
   - Support non-ASCII Windows user login account
   - Support non-ASCII VPN connection profile name on the client UI
-  - Support Ubuntu 20.04.01 deb format installer
+  - Support opensource OS deb format installer
   - `Enhance the Windows client security <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31776>`_
 
 2.13.12 - Jan 28 2021
@@ -12,7 +12,7 @@ Aviatrix VPN Client Release Notes
   - Verify the settings before exiting the Settings UI
 
 2.12.10 - September 3 2020
-  - Support Ubuntu 20.04 FIPS
+  - Support opensource OS FIPS
   - A toggle to support Cisco Umbrella DNS servers or the VPC DNS servers on MacOS
   - Support multiple MacOS system login accounts
   - Allow override of manually set DNS flag to be enabled by default on MacOS
@@ -24,7 +24,6 @@ Aviatrix VPN Client Release Notes
  - Boost the Windows client data throughput
  - Improve the connectivity of the MacOS client under the unstable WiFi connection
  - Improve the connectivity of the Windows client under the high data throughput
- - New clients to support Ubuntu 20.4 LTS
 
 2.10.8 - May 14 2020
  - Address client vulnerabilities of elevation in privilege and arbitrary file write.
@@ -111,7 +110,7 @@ Aviatrix VPN Client Release Notes
  - Windows VPN Service to run the client without Admin access
  - Graceful VPN exit on windows(8.0 and above) disconnect
  - Add platform, GUI version and peer info
- - Add resolvconf dependency for Ubuntu18
+ - Add resolvconf dependency for opensource OS.
  - Fix some connection issues on Mac
 
 
