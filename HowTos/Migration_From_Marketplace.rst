@@ -18,7 +18,7 @@ You may need to migrate your Aviatrix Controller in the following situations:
 
 .. note::
 
-  * If you launched an existing Controller with a BYOL license and have it updated to software version 6.7.1185 or later, you only need to apply to the newest metered license through your Controller. Log in as an admin and go to Settings > Controller > License. You do not need to follow the migration steps in this document.
+  * If you launched an existing AWS, Azure, or GCP Controller with a BYOL license and have it updated to software version 6.7.1185 or later, you only need to subscribe to the 2208 metered license through your Controller. Log in as an admin and go to Settings > Controller > License to subscribe. You do not need to follow the migration steps in this document.
   * A machine image is named an "AMI (Amazon Machine Image) in AWS, a "VM image" (Virtual Machine Image) in Azure, a "machine image" in GCP, and a "custom image" in OCI.
 
 This document describes how to migrate from one type of machine image to another for each CSP, including: 
@@ -275,6 +275,10 @@ Controller Migration in GCP
 
 Controller Migration in OCI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+  The Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support offer is not yet available for OCI Controllers. For more information about OCI Controller migration, please contact Aviatrix Support.
 
 1. Before terminating the old Controller instance, document the following information from your OCI account:
 
