@@ -152,7 +152,7 @@ To view the status of a managed resource, click the status marker in its associa
 Working with Topology
 =====================
 
-This section describes the Topology feature of Aviatrix CoPilot.
+This section describes the Topology feature of Aviatrix CoPilot. 
 
 Topology provides a visual representation of deployed networks, gateways, instances, and gateway connections.
 
@@ -176,6 +176,11 @@ The Topology feature gives you visibility into your network as follows:
 
     In Topology Replay, CoPilot shows what changed in your environment and when it changed. CoPilot shows when route, credential, and other metrics in your cloud network constructs have changed over time. A timeline panel shows you all of the changes (as change sets) that were recorded over the last month. You can analyze the additions, modifications, and deletions recorded in each change set. You can delete change sets when you no longer need them.
 
+You access Topology in CoPilot by going to Home > Networking > Topology or typing Topology in the navigation search.
+
+You can click the New Topology Experience toggle to see a new version of the map introduced in CoPilot release 3.0.0.
+
+
 Highlights of Topology capabilities 
 -------------------------------------
 
@@ -186,6 +191,7 @@ Highlights of Topology capabilities
     - Connections between Aviatrix gateways are drawn with color codes representing the status of their connections.
     - Aviatrix gateway icons represent the state of the gateway. A gateway that is down is shown as a black line. 
     - Tunnels statuses are shown with green or red lines, representing the status of the link.
+
 - Search for any objects and their properties
 
   In Topology, you can search for any objects that are plotted. This allows you to quickly isolate and identify
@@ -270,7 +276,7 @@ This section describes the physics options that control how objects move in the 
 Performing diagnostics from Topology
 -------------------------------------
 
-The Aviatrix gateways running in your multi-cloud network enable you to run diagnostics from them directly from Topology. Performing diagnostics from Topology can dramatically reduce the time spent troubleshooting issues.
+You can run diagnostics from Aviatrix gateways running in your multi-cloud network directly from Topology (V1 Topology only). Performing diagnostics from Topology can dramatically reduce the time spent troubleshooting issues. You can also run diagnostics from gateways directly from Cloud Routes.
 
 To perform diagnostics from Topology (from an Aviatrix Gateway):
 
@@ -370,19 +376,17 @@ Create and save topology filters
 
 Create filters to narrow down the network constructs to include in your topology maps and save the filters to your local system.
 
-To create and save filters for topology:
+To create and save filters for topology, use the following steps:
 
-1.  Log in to CoPilot.
+1.  In CoPilot, go to Home > Networking > Topology.
 
-2.  From the sidebar, select Topology.
+2.  In Network view, click the **Toggle Filter** slider to enable the topology filter editor page.
 
-3.  In Network view, click the **Toggle Filter** slider to enable the topology filter editor page.
+3.  In Select a Key to Filter on, select a key and value to filter on. You can apply any number of filters to a given filter group.
 
-4.  In Select a Key to Filter on, select a key and value to filter on. You can apply any number of filters to a given filter group.
+4.  In Filter Group Name, assign a name to your filter/filter group.
 
-5.  In Filter Group Name, assign a name to your filter/filter group.
-
-6.  Click **Save**.
+5.  Click **Save**.
 
     The filter is saved to your local system.
 
@@ -398,15 +402,13 @@ Search and filter for custom tags you created in your cloud provider environment
 
 This feature is available starting from Controller release 6.6. 
 
-To filter for cloud native VPC/VNet tags and instance tags:
+To filter for cloud native VPC/VNet tags and instance tags, use the following steps:
 
-1.  Log in to CoPilot.
+1.  In CoPilot, go to Home > Networking > Topology.
 
-2.  From the sidebar, select Topology.
+2.  In Network view, click the **Toggle Filter** slider to enable the topology filter editor page.
 
-3.  In Network view, click the **Toggle Filter** slider to enable the topology filter editor page.
-
-4.  From the Select a Key to Filter on list, under the CSP Tags category, select the cloud native tag to filter on.
+3.  From the Select a Key to Filter on list, under the CSP Tags category, select the cloud native tag to filter on.
 
 
 View Topology Changes (Topology Replay)
@@ -416,15 +418,13 @@ This section describes how to use the Topology Replay feature of Aviatrix CoPilo
 
 Topology Replay shows when route, credential, and other metrics in your cloud network constructs changed. The changes are shown for all constructs regardless if they are located in one or multiple clouds. You can view the changes (additions, modifications, and deletions) that were made to the properties of subnets, gateways, and gateway connections. A time series visualization graphs change-set data as points (blue dots) with each change set collected at one-minute intervals. Clicking on a change set in the time series panel loads it into the topology map and changes details pane where you can inspect the data. For more information about UI controls in topology replay, see Topology Replay Properties.
 
-To view topology changes in your environment:
+To view topology changes in your environment, use the following steps:
 
-1.  Log in to CoPilot.
-
-2.  From the sidebar, click Topology, and then click the Topology Replay tab.
+1.  In CoPilot, go to Home > Networking > Topology, and then click the Replay tab.
 
     The topology replay page opens showing a topology map, a changes details pane, and a time series panel.
 
-3.  Locate and load the changes you want to inspect:
+2.  Locate and load the changes you want to inspect:
 
     -   (**To locate the most recent changes**) When the page first opens or is refreshed, the most recent change set is automatically loaded in the topological map and details pane. In the time series panel, the change set is shown as a dark blue box that indicates the number of changes within it. For example, **120 Changes** (this is the default title of the change set).
 
@@ -438,7 +438,7 @@ To view topology changes in your environment:
 
     -   (**To locate a specific change by title or note**) You can change the titles of change sets. You can also associate notes with them. To search for a specific change set based on a previously applied title or note, click the search icon in the changes details pane, enter any text that is part of the title or note, and then click Search. Change sets matching the search criteria are listed. Click on one from the list to load it.
 
-4.  **Inspect changes for a loaded change set.**
+3.  **Inspect changes for a loaded change set.**
 
     You inspect changes for a change set in the changes details pane.
 
@@ -451,11 +451,11 @@ To view topology changes in your environment:
     -   For each selected construct in the changes details pane, select or deselect the eyeball icon to toggle between showing only changed data for a construct or showing all data for a construct (to put the changes in context).
 
     -   Click the AUDIT button to open the Audit tab of the Security section where you can see which users made API calls to Aviatrix Controller during the time period of the change set.
-5.  (**To modify the title of a change set**) To modify the title of a change set that is loaded in the changes details pane, click on the red notepad icon to open note view. The title is displayed over the dates (the default title is the number of changes in the change set). Click the blue pen icon. Select the title and change it, and then click the Save icon. When you search the timeline for change sets, you can now search by your title text.
+4.  (**To modify the title of a change set**) To modify the title of a change set that is loaded in the changes details pane, click on the red notepad icon to open note view. The title is displayed over the dates (the default title is the number of changes in the change set). Click the blue pen icon. Select the title and change it, and then click the Save icon. When you search the timeline for change sets, you can now search by your title text.
 
-6.  (**To associate a note with a change set**) To associate a note with a change set that is loaded in the changes details pane, click on the red notepad icon to open note view. Click the blue pen icon, type your note, and then click the Save icon. When you search the timeline for change sets, you can now search by your note text.
+5.  (**To associate a note with a change set**) To associate a note with a change set that is loaded in the changes details pane, click on the red notepad icon to open note view. Click the blue pen icon, type your note, and then click the Save icon. When you search the timeline for change sets, you can now search by your note text.
 
-7.  (**To delete a change set**) To delete a change set that is loaded, in the time series panel, click on the red X associated with the dark blue box that represents it. It will be permanently deleted from the topology-replay database. You can also choose to delete all previous change sets recorded up to that point.
+6.  (**To delete a change set**) To delete a change set that is loaded, in the time series panel, click on the red X associated with the dark blue box that represents it. It will be permanently deleted from the topology-replay database. You can also choose to delete all previous change sets recorded up to that point.
 
 
 
@@ -550,6 +550,10 @@ This section describes the FlowIQ feature of Aviatrix CoPilot.
 
 FlowIQ provides you with critical visibility capability to the traffic that traverses your network, displaying metadata about traffic that flows across each link. FlowIQ provides visualization of traffic flows, enabling you to inspect any network traffic that is moving across any gateway managed by the Aviatrix Controller in your Aviatrix transit network (multi-cloud or single cloud network). FlowIQ enables you to identify where data in your network is going to and where it is coming from and you can filter for detailed information about the traffic down to the packet level. 
 
+You access FlowIQ in CoPilot by going to Home > Monitor > FlowIQ or typing FlowIQ in the navigation search.
+
+You can click the New FlowIQ Experience toggle to see a new version of the flows screens in CoPilot release 3.0.0.
+
 
 Interacting with the flows
 --------------------------
@@ -626,6 +630,8 @@ Working with Performance
 ========================
 
 This section describes the Performance feature of Aviatrix CoPilot.
+
+You access Performance in CoPilot by going to Home > Monitor > Performance or typing Performance in the navigation search.
 
 In Performance, CoPilot displays the resource utilization (telemetry) data for all managed resources (your Aviatrix controller and gateways) across your Aviatrix transit network (multi-cloud and single cloud). You can filter telemetry data based on one or more resources (hosts) located in any cloud. When choosing multiple resources, CoPilot displays the telemetry data for those resources in a comparative graph.
 
@@ -705,6 +711,8 @@ Working with Cloud Routes
 
 This section describes the Cloud Routes feature of Aviatrix CoPilot.
 
+You access Cloud Routes in CoPilot by going to Home > Troubleshoot > Cloud Routes or typing Cloud Routes in the navigation search.
+
 In Cloud Routes, you can view all routing information for managed resources spanning your Aviatrix transit network, including resources across clouds (multi-cloud) and on-prem (for Site 2 Cloud connections). For multi-cloud, cloud engineers can view the information in a central place without having to log in to individual cloud provider consoles.
 
 In Cloud Routes, you can view routing information for:
@@ -737,6 +745,38 @@ In Cloud Routes, you can view routing information for:
 
   You can view advertised routes being sent to the remote site, learned routes that are being received from the remote site, and a map showing how the BGP connection is connected. The map shows the gateway the BGP connection is established on, the local ASN and IP, the connection name you defined, the remote ASN IP and the remote ASN. 
 
+Performing diagnostics from Cloud Routes
+------------------------------------------
+
+You can run diagnostics from Aviatrix gateways running in your multi-cloud network directly from Cloud Routes. Performing diagnostics from Cloud Routes can dramatically reduce the time spent troubleshooting issues. You can also run diagnostics from gateways directly from Topology (Topology V1).
+
+To perform diagnostics from Cloud Routes, use the following steps:
+
+1.  In CoPilot, go to Home > Troubleshoot > Cloud Routes, and then click on the Gateway Routes tab.
+
+2.  In the Gateway Routes view, locate the gateway from which you want to run diagnostics, and click the Gateway Diagnostics icon in its table row.
+
+3.  Perform any of the following diagnostic tasks for the gateway:
+
+    a.  PING: Run pings directly from the gateway to outside of the Aviatrix managed network or to any resource inside the network.
+
+    b.  TRACEROUTE: Run trace route.
+
+    c.  TRACEPATH: Discover the MTU on the path if router supports it.
+
+    d.  TRACELOG: Upload a gateway's tracelog directly to Aviatrix Support. The controller and gateway tracelog is uploaded and the support team notified.
+
+    e.  Test Connectivity: Test the connectivity of the gateway to a specified host running on a specified TCP or UDP port.
+
+    f.  ACTIVE SESSIONS: View sessions that are active on the selected gateway. You can filter active sessions by search criteria. For example, a search on a specific port to see if the gateway has an action session on that port.
+
+    g.  INTERFACE STATS: View interface statistics about the gateway. The number of interfaces or tunnels associated with the gateway is displayed. Click on the name of an interface or tunnel to see its statistical information.
+
+    h.  PACKET CAPTURE: Capture packets on any gateway. Filter on host and port number and specify the capture time. Search and filter by time, source address, destination address, source port, destination port, protocol, flags, length, and info. Select the interface on the physical or virtual interface you want to capture on. Click Start to start the capture, click Stop to stop the capture, then click Download to download the pcap file. The pcap file can be viewed by Wireshark.
+
+    i.  SERVICE ACTIONS: Check the status of gateway services and restart services.
+ 
+
 Working with Notifications
 ==========================
 
@@ -749,6 +789,8 @@ CoPilot supports Webhook alerts. Webhooks allow you to send notifications to thi
 You can pause alerts. For example, if you are going to perform maintenance tasks on the network that you know will trigger pre-configured alerts, you can pause the alerts temporarily and unpause them when the maintenance is complete. See `Pause Alerts`_. 
 
 In the Notification tab, CoPilot lists all alerts and shows if they are in a triggerd (open) or closed state. You can open an alert from the list to view its lifecycle. CoPilot closes the alert automatically when the alert metric no longer meets the condition to trigger the alert. The alert lifecycle provides a history for every alert that happens in your network environment.
+
+You access Notifications in CoPilot by going to Home > Monitor > Notifications or typing Notifications in the navigation search.
 
 Configure Alerts 
 -----------------------
@@ -774,7 +816,7 @@ You can edit alert settings you previously configured.
 
 To edit a previously configured notification:
 
-1.  From the sidebar, click Notifications.
+1.  In CoPilot, go to Home > Monitor > Notifications.
 
 2.  From the Configured Alerts list, locate the alert whose configuration you want to change and click on the blue pen icon.
 
@@ -800,7 +842,7 @@ You can pause alerts.
 
 To pause a previously configured alert.
 
-1.  From the sidebar, click Notifications.
+1.  In CoPilot, go to Home > Monitor > Notifications.
 
 2.  From the Configured Alerts list, locate the alert you want to pause and click the bell icon.
 
@@ -1235,9 +1277,9 @@ If you decide to build Aviatrix network segmentation in your network, you must e
 
 To enable a transit gateway for network segmentation:
 
-1.  From the sidebar, select Security.
+1.  In CoPilot, go to Home > Secured Networking > Network Segmentation.
 
-2.  In the Network Segmentation > Network Domain view, click **Transit Gateway**.
+2.  In the Network Domain view, click **Transit Gateways**.
 
 3.  In the transit gateway list, set the network segmentation option to **Enabled** for each transit gateway in your infrastructure that will route traffic for the spoke VPC/VNets that will be members of your network domains.
 
@@ -1257,9 +1299,9 @@ Create a network domain to be used for network segmentation. See also "About net
 
 To create a network domain:
 
-1.  From the sidebar, select Security.
+1.  In CoPilot, go to Home > Secured Networking > Network Segmentation.
 
-2.  In the Network Segmentation > Network Domain view, click **+ Network Domain**.
+2.  In the Network Domain view, click **+ Network Domain**.
 
 3.  In Name, specify a unique name for the network domain. 
 
@@ -1278,36 +1320,45 @@ To create a network domain:
 Network segmentation visualizations
 ------------------------------------
 
-In Security, CoPilot uses visual elements to demonstrate the segments of your Aviatrix transit network that can and cannot communicate with each other if you created Aviatrix enforced network domains. The segments (*network domains*) and their ability to communicate with each other is dictated by the connection relationships you configure. You can enable network segmentation in Aviatrix Controller or in Aviatrix CoPilot. After your network segmentation configuration is enabled and saved, CoPilot dynamically shows the logical and physical view of your network-domain segments and their connection relationships in the network graph logical and physical views.
+In Secured Networking > Network Segmentation, CoPilot uses visual elements to demonstrate the segments of your Aviatrix transit network that can and cannot communicate with each other if you created Aviatrix enforced network domains. The segments (*network domains*) and their ability to communicate with each other is dictated by the connection relationships you configure. You can enable network segmentation in Aviatrix Controller or in Aviatrix CoPilot. After your network segmentation configuration is enabled and saved, CoPilot dynamically shows the logical and physical view of your network-domain segments and their connection relationships in the network graph logical and physical views.
 
 In **Security Logical View**, CoPilot lists the network domains defined and shows how they can and cannot communicate with each other (Network Domain Relationships). CoPilot also shows the connectivity between gateway VPCs/VNets (spoke or Site2Cloud instances) based on their network domains (Multi Cloud Network Domain Connectivity). The thick colored lines on the circle's edge represent the network domain assigned to the gateway's nodes resting on them and the thin colored lines within the circle represent the connectivity between the gateways.
 
 In **Security Physical View**, CoPilot shows how spoke VPCs/VNets can communicate with other spoke VPCs/VNets based on their allowed network-domain connection relationships. When you hover over a spoke node on the circle, the thin colored lines within the circle represent the connectivity from that spoke to other spokes allowed to communicate with it.
 
 
-Egress
---------
-
-In Security Egress view, CoPilot shows the URLs, domains, IP addresses that are being accessed outside of your Aviatrix transit network, including:
-
--   The top ten visited URLs.
--   The top 10 users (source IPs) that are accessing the top 10 visited URLs.
--   The URLs that are being accessed that are not allowed to go through (violating egress rules).
--   The countries that the top 10 visited URLs belong to.
--   The Aviatrix gateways the egress traffic is traversing.
--   The rules configured on the Egress Gateway.
-
-
 About App Domains
 ----------------------
 
-An *app domain* is a grouping of workloads, subnets, or VPC/VNets that require a uniform policy enforcement. When the micro-segmentation feature is enabled, you can create app domains in CoPilot under Security > Micro-segmentation. For detailed information about micro-segmentation and app domains, see the discussion about `secure networking with micro-segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
+In CoPilot, in the Secured Networking > Micro-Segmentation page, you can create app domains. An *app domain* is a grouping of workloads, subnets, or VPC/VNets that require a uniform policy enforcement. When the micro-segmentation feature is enabled, you can create app domains in CoPilot under Security > Micro-segmentation. For detailed information about micro-segmentation and app domains, see the discussion about `secure networking with micro-segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
+
+
+Working with Egress Control
+============================
+
+In Egress Control, CoPilot shows the URLs, domains, IP addresses that are being accessed outside of your Aviatrix transit network, including:
+
+-   The top ten visited URLs.
+
+-   The top 10 users (source IPs) that are accessing the top 10 visited URLs.
+
+-   The URLs that are being accessed that are not allowed to go through (violating egress rules).
+
+-   The countries that the top 10 visited URLs belong to.
+
+-   The Aviatrix gateways the egress traffic is traversing.
+
+-   The rules configured on the Egress Gateway.
+
+You access Egress Control in CoPilot by going to Home > Secured Networking > Egress Control or typing Egress in the navigation search.
 
 
 Working with ThreatIQ
 =====================
 
 This section describes the ThreatIQ feature of Aviatrix CoPilot.
+
+You access ThreatIQ in CoPilot by going to Home > Security Services > ThreatIQ or typing ThreatIQ in the navigation search.
 
 ThreatIQ enables you to monitor for security threats in your Aviatrix cloud network, set alerts when threats are detected in the network traffic flows, and block traffic that is associated with threats. All of these capabilities apply to your entire cloud network (multi-cloud or single cloud) that is managed by Aviatrix Controller.
 
@@ -1332,10 +1383,10 @@ Enable ThreatGuard alerts to receive notifications when threat IPs are detected 
 
 To enable ThreatGuard alerts, you must log in to CoPilot with a user account that belongs to a group that has either ``all_write`` or ``all_security_write`` permissions.
 
-To enable ThreatGuard alerts:
+To enable ThreatGuard alerts, use the following steps:
 
-1. Log in to CoPilot.
-2. From the sidebar, click ThreatIQ, and then click the ThreatGuard tab.
+1. In CoPilot, go to Home > Security Services > ThreatIQ.
+2. Click the ThreatGuard tab.
 3. Click the **Send Alert** button and then click the Send Alert slider so that it slides to the right.
 4. In the ThreatGuard Configuration dialog, click Add Recipients. Select the email address destination to which you want to send ThreatGuard alerts. Repeat this for each recipient you want to receive the alert.
 5. Click **CONFIRM**. ThreatGuard alerts are enabled. When a threat IP is detected in a traffic flow, CoPilot will now send a notification to the email you specified. The notification will state the threat IP that was detected in the blocked traffic.
@@ -1372,9 +1423,9 @@ To enable ThreatGuard blocking, you must log in to CoPilot with a user account t
 
 To enable ThreatGuard blocking:
 
-1.  Log in to CoPilot.
+1.  In CoPilot, go to Home > Security Services > ThreatIQ.
 
-2.  From the sidebar, click ThreatIQ, and then click the ThreatGuard tab.
+2.  Click the ThreatGuard tab.
 
 3.  Verify that ThreatGuard alerts are enabled. The alerts are enabled when the Send Alert status has a green checkmark. ThreatGuard alerts must be enabled before blocking can be enabled. See *Enable ThreatGuard Alerts* for instructions.
 
@@ -1404,9 +1455,9 @@ You must log in to CoPilot with a user account that has `all_write` or `all_secu
 
 To add a custom ThreatIQ IP list:
 
-1.  Log in to CoPilot.
+1.  In CoPilot, go to Home > Security Services > ThreatIQ.
 
-2.  From the sidebar, click ThreatIQ, and then click the Custom Threat List tab.
+2.  Click the Custom Threat List tab.
 
 3.  Click **Add Threat IP** and enter the details:
 
@@ -1506,30 +1557,37 @@ Descriptions of the properties in the CoPilot ThreatIQ ThreatGuard view listed i
     The View Rules dialog shows the ThreatGuard firewall rules that are applied on Aviatrix gateways.
 
 
-Enable GeoBlocking
+Working with Geoblocking
+=========================
+
+This section describes the Geoblocking feature of Aviatrix CoPilot.
+
+You access Geoblocking in CoPilot by going to Home > Security Services > Geoblocking or typing Geoblocking in the navigation search.
+
+Geoblocking allow you to select a country to block IP traffic coming into and coming from the country. When GeoBlocking is enabled for a country, a tag-based security policy is implemented on each gateway to deny traffic for IP addresses associated with the country. 
+
+All gateways in your VPC/VNets will block. When you unblock a country, the tag is removed from all gateways and the stateful firewall rules instantiated on them for that country are removed.
+
+Enable Geoblocking
 --------------------
 
-Enable GeoBlocking to block IP traffic coming into and coming from a country. 
-
-When GeoBlocking is enabled for a country, a tag-based security policy is implemented on each gateway to deny traffic for IP addresses associated with the country. All gateways in your VPC/VNets will block. When you unblock a country, the tag is removed from all gateways and the stateful firewall rules instantiated on them for that country are removed. 
+Enable GeoBlocking to block IP traffic coming into and coming from a country.  
 
 **Attention**: A CSP-region IP may be blocked if that region is in the blocked country. For example, if the public IP for your service is registered in a specific country by the CSP and you block that country.
 
 By clicking on the country name, you can view recent IP traffic going to or coming from that selected country in the time range you specify.
 
-To enable GeoBlocking, you must log in to CoPilot with a user account that belongs to a group that has either ``all_write`` or ``all_security_write`` permissions.
+To enable Geoblocking, you must log in to CoPilot with a user account that belongs to a group that has either ``all_write`` or ``all_security_write`` permissions.
 
-To enable GeoBlocking:
+To enable Geoblocking, use the following steps:
 
-1. Log in to CoPilot.
-
-2. From the sidebar, click Security, and then click the GeoBlocking tab.
+1. In CoPilot, go to Home > Security Services > Geoblocking.
 
    A list of the countries you can block and unblock displays. The IPs Observed column shows you the number of IP addresses CoPilot observed from each country when scanning Netflow records over the last seven days. If you click on a country name, you can view recent IP traffic going to or coming from that selected country in the time range you specify.
 
-3. In the Status column, toggle the switch to **Blocked** for each country you want to block IP traffic. 
+2. In the Status column, toggle the switch to **Blocked** for each country you want to block IP traffic. 
 
-4. Click **Save**. 
+3. Click **Save**. 
 
    IP traffic coming into and coming from that country will be blocked on each Aviatrix gateway.
 
@@ -1541,9 +1599,20 @@ Working with Reports
 
 This section describes the Reports feature of Aviatrix CoPilot.
 
-In Reports, you can create detailed reports showing your inventory of managed resources (resources managed by Aviatrix Controller) in a single cloud or across all clouds in your multi-cloud network.
+You access Reports in CoPilot by going to Home > Administration > Reports or typing Reports in the navigation search.
 
-You can quickly create reports that show on which cloud, region, and VPC/VNet specific managed resources are running. You can add columns to the report for different properties associated with resource types. You can apply complex filters to customize the data that gets included in the report for each resource type.
+In Reports, you can create an inventory report, a resource utilization (telemetry statistics) report, and a FlightCheck report. 
+
+About Inventory Reports
+--------------------------
+
+Inventory reports give you detailed information about your inventory of managed resources (resources managed by Aviatrix Controller) in a single cloud or across all clouds in your multi-cloud network.
+
+You can quickly create reports that show on which cloud, region, and VPC/VNet specific managed resources are running. 
+
+You can add columns to the report for different properties associated with resource types. 
+
+You can apply complex filters to customize the data that gets included in the report for each resource type.
 
 Create an Inventory Report
 --------------------------
@@ -1665,7 +1734,9 @@ Working with Anomalies
 
 This section describes the network behavior analytics feature of Aviatrix CoPilot.
 
-In Anomalies, you can enable CoPilot to perform continuous network behavior analysis on your cloud workloads on a per VPC/VNet basis so that CoPilot can learn the routine behaviors of the VPC/VNets based on a group of metrics. The analysis enables CoPilot to detect any unusual network behaviors (anomalies) that could represent threats on your network, systems being down, high traffic for a planned launch, or some other abnormal behavior. You can choose to be alerted when anomalies are detected so you can carry out any needed network operations activities to secure your workloads.
+You access the network behavior analytics feature in CoPilot by going to Home > Security Services > Anomaly Detection or typing Anomaly in the navigation search.
+
+In the Anomaly Detection page, you can enable CoPilot to perform continuous network behavior analysis on your cloud workloads on a per VPC/VNet basis so that CoPilot can learn the routine behaviors of the VPC/VNets based on a group of metrics. The analysis enables CoPilot to detect any unusual network behaviors (anomalies) that could represent threats on your network, systems being down, high traffic for a planned launch, or some other abnormal behavior. You can choose to be alerted when anomalies are detected so you can carry out any needed network operations activities to secure your workloads.
 
 **How Does Network Behavior Analytics Work?**
 
@@ -1817,6 +1888,8 @@ Working with CostIQ
 =========================
 
 This section describes the CostIQ feature of Aviatrix CoPilot. 
+
+You access CostIQ in CoPilot by going to Home > Billing & Cost > CostIQ or typing CostIQ in the navigation search.
 
 The CostIQ feature gives you visibility into the traffic data of your deployed networks that are managed by the Aviatrix Controller. This traffic data are reported as percentages of traffic generated by end instances in Spoke VPC/VNets.
 
@@ -2433,17 +2506,15 @@ SSL Certificate Key: **aviatrixCustomerKey** example: ::
   <private key>
   -----END RSA PRIVATE KEY-----
  
-**Disk Space Management**
-
-**Min. disk space % avail. threshold**
-  Allows you to set a threshold based on available disk space, at which point automatic 
-  data deletion start. When this threshold is reached, CoPilot will start deleting records in order of 
-  first in first out. 
-**Set threshold**
-  This option defines at what time of the day this check is run 
+**Controller Public IP/FQDN**
+  This option can be the public IP address or the FQDN of your Controller. If your organization's team members log in to Aviatrix Controller via SAML, and you want them to be able to log in to CoPilot via SAML authentication also, this value must match the value you specified for the **Single sign on URL** SAML setting of your IdP application. If you specified the Controller's IP address in the SSO URL, specify the Controller IP address here. If you specified the Controller's FQDN in the SSO URL, specify the Controller FQDN here. For more information, see CoPilot Login vai SAML in *Aviatrix CoPilot Deployment Guide*.
 
 **Reset Controller IP**
-  The resets the IP to which CoPilot is tied to
+  This option resets the IP address of the Controller with which CoPilot is associated.
+
+**Reset Service Account**
+  This option resets the account to be used as the CoPilot service account. 
+
 
 Services
 ----------
@@ -2460,7 +2531,7 @@ Resources
 -----------
 The CoPilot > Settings > Resources page provides resource utilization levels about the virtual machine (instance) on which CoPilot runs as well as the storage allocated to the instance.
 
-**Disk Usage:**
+**Disk Usage**
 
 The size, used disk space, and free disk space of the attached root disk (volume). The bar chart shows used space in blue.
 
@@ -2477,12 +2548,37 @@ The amount of total memory used. CoPilot fetches the current value at your speci
 
 Licensing 
 -----------
-This page shows information about your CoPilot customer ID and the Aviatrix license with which it is associated. 
+This page shows application administrators details about the licensing and features assocated with their CoPilot platform. 
 
-If you plan to terminate your current instance of CoPilot and deploy a new instance using the same license, copy the Customer ID of the current instance first and save it for reuse later, and then release the CoPilot license of the current instance. To release the license of the current instance, click the RESET button. After you deploy the new instance of CoPilot, you will be prompted to enter the customer ID during initial setup. Re-enter the same customer ID you copied.
+**Add-on Features**
+
+The list of Aviatrix features available to enable.
+
+**Feature Previews**
+
+The list of Public Preview or Private Preview features that are available in Aviatrix CoPilot. For a description of public preview and priviate preview, see *Aviatrix Controller and Gateways Release Notes*. 
+
+**Controller**
+
+License details of the Controller associated with this CoPilot: Controller license ID number, issue date, expiration date, allocation (the number used by controller instances), and total (the total number of controller instances that can use the license).
+
+Note: Prior to CoPilot release 3.0.0, CoPilot required its own license (customer ID). CoPilot now uses the Controller license (a separate CoPilot license is no longer used).
 
 Index Management
 -----------------
+This page shows details about CoPilot database indices.
+
+Advanced Settings
+------------------
+This page has options for setting a minimum disk space threshold, various task server intervals, and some other settings related to CoPilot functions. For task server intervals, the default entries are usually sufficient. Ensure that you understand the impact of changing an option before making the change.
+
+**Disk Space Management**
+
+**Min. disk space % avail. threshold**
+  Allows you to set a threshold based on available disk space, at which point automatic 
+  data deletion start. When this threshold is reached, CoPilot will start deleting records in order of 
+  first in first out. 
+
 
 Managing Your Appliance 
 ========================================
