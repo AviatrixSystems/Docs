@@ -2126,27 +2126,23 @@ Enabling the CostIQ Feature
 
 You access CostIQ in CoPilot by going to Home > Billing & Cost > CostIQ or typing CostIQ in the navigation search. 
 
-If you see a message on the CostIQ page that you must first migrate to a metered license, you need to perform a few tasks before you can enable the CostIQ feature.
+If you see a message on the CostIQ page that you must first subscribe to the new Universal Image subscription, you need to perform a few tasks before you can enable the CostIQ feature.
 
 If you want to schedule a demo of CostIQ, you can click **Schedule Demo** from the CostIQ page to go to the Aviatrix demonstration request page. 
 
-If you decide to enable the CostIQ feature, you will need to subscribe to the “Aviatrix Secure Networking Platform Metered 2208” subscription offer in the CSP marketplace and obtain the Customer ID. 
+If you decide to enable the CostIQ feature, use the following steps:
 
-Please refer to the *Aviatrix Controller and Gateways Release Notes* for restrictions that may apply to the “Aviatrix Secure Networking Platform Metered 2208” subscription offer.
+1.  Subscribe to the “Aviatrix Secure Networking Platform Metered 2208” subscription offer in the CSP marketplace and obtain the Customer ID. Refer to the *Aviatrix Controller and Gateways Release Notes* for any restrictions that may apply to the “Aviatrix Secure Networking Platform Metered 2208” subscription offer. 
 
-After you subscribe to the offer, you will need to migrate your Controller to the latest Controller AMI. The **Migrate Controller** button on the CostIQ page is a shortcut to the Controller Migration page (in Controller, Home > Settings > Maintenance > Migration). 
+2.  In Controller, go to Home > Settings > Controller > License.
 
-In the Controller Migration page, use the documentation link to access the Controller documentation and follow the instructions for migrating your Controller to the latest Controller AMI. The instructions can differ between Cloud Service Providers.
+3.  Input the Customer ID into the **Setup Aviatrix Customer ID** field, and click **Save**..
 
-After you have subscribed to the offer and migrated the Controller to the latest Controller AMI, you can enable the CostIQ feature in CoPilot. 
+4.  Log in to CoPilot with a user account that has adminstrative privileges. 
 
-To enable CostIQ as an add-on feature in CoPilot, use the following steps:
+5.  In CoPilot, go to Home > Settings > Licensing.
 
-1.  Log in to CoPilot with a user account that has adminstrative privileges. 
-
-2.  Go to Home > Settings > Licensing.
-
-3.  In the Add-on Features list, click **Enable** for the CostIQ feature.
+6.  In the Add-on Features list, click **Enable** for the CostIQ feature.
 
 
 Working with Aviatrix Billing 
