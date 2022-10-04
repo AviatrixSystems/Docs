@@ -2138,13 +2138,13 @@ Enabling the CostIQ Feature
 
 You access CostIQ in CoPilot by going to Home > Billing & Cost > CostIQ or typing CostIQ in the navigation search. 
 
-If you see a message on the CostIQ page that you must first subscribe to the new Universal Image subscription, you need to perform a few tasks before you can enable the CostIQ feature.
+If you see a message on the CostIQ page that you require the Aviatrix universal subscription, it means you are not yet subscribed to the **Aviatrix Secure Networking Platform 2208-Universal 24x7 Support** subscription offer. Before you can enable the CostIQ feature, you must subscribe to and accept terms for this offer in the CSP marketplace.
 
 If you want to schedule a demo of CostIQ, you can click **Schedule Demo** from the CostIQ page to go to the Aviatrix demonstration request page. 
 
 If you decide to enable the CostIQ feature, use the following steps:
 
-1.  Subscribe to the “Aviatrix Secure Networking Platform Metered 2208” subscription offer in the CSP marketplace and obtain the Customer ID. Refer to the *Aviatrix Controller and Gateways Release Notes* for any restrictions that may apply to the “Aviatrix Secure Networking Platform Metered 2208” subscription offer. 
+1.  At the CSP marketplace, subscribe to and accept terms for the **Aviatrix Secure Networking Platform 2208-Universal 24x7 Support** offer and take note of your Customer ID for this offer.  
 
 2.  In Controller, go to Home > Settings > Controller > License.
 
