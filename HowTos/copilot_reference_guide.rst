@@ -549,7 +549,11 @@ In CoPilot release 3.0.1, a new topology map was introduced (Topology V2). Use t
 
   |topology_v2| |topology_map_v2| 
 
-Some functions have not migrated to V2 such as gateway diagnostics (note you can run gateway diagnostics from the Cloud Routes page also).
+You can apply any number of filters to search for resources in the map.
+
+For large topologies that have many constructs, you can zoom in to the map for selection of granular nodes to display their properties.
+
+Note: Some functions have not migrated to V2 such as gateway diagnostics (note you can run gateway diagnostics from the Cloud Routes page also).
 
 Working with FlowIQ
 ===================
@@ -2144,7 +2148,9 @@ If you decide to enable the CostIQ feature, use the following steps:
 
 2.  In Controller, go to Home > Settings > Controller > License.
 
-3.  Input the Customer ID into the **Setup Aviatrix Customer ID** field, and click **Save**..
+3.  Input the Customer ID into the **Setup Aviatrix Customer ID** field, and click **Save**.
+
+    |controller-customer-id-field|   
 
 4.  Log in to CoPilot with a user account that has adminstrative privileges. 
 
@@ -2212,7 +2218,7 @@ Use the Explore tab to break down your costs in each CSP (Cloud Service Provider
 
 Use the Time Period options at the top to change the time period covered in your view.
 
-Cost graph in Aviatrix Billing
+Cost graph in Explore tab
 --------------------------------
 
 This tiled graph represents your account's cost in each CSP by using the size of a tile to visually compare each cost to other network costs. Click on any title to drill down further on the cost for each CSP. 
@@ -2760,7 +2766,6 @@ The approximate total CPU usage of all processors. CoPilot fetches the current v
 
 The amount of total memory used. CoPilot fetches the current value at your specified refresh interval. The chart displays data for the last 20 intervals.
 
-
 Licensing 
 -----------
 This page shows application administrators details about the licensing and features assocated with their CoPilot platform. 
@@ -2777,7 +2782,11 @@ The list of Public Preview or Private Preview features that are available in Avi
 
 License details of the Controller associated with this CoPilot: Controller license ID number, issue date, expiration date, allocation (the number used by controller instances), and total (the total number of controller instances that can use the license).
 
-Note: Prior to CoPilot release 3.0.0, CoPilot required its own license (customer ID). CoPilot now uses the Controller license (a separate CoPilot license is no longer used).
+Note: Prior to CoPilot release 3.0.1, CoPilot required its own license (customer ID). CoPilot now uses the Controller license (a separate CoPilot license is no longer used).
+
+Disk Utilization
+-------------------
+This page shows the number of days/weeks before the current data disk usage is expected to reach the free space threshold. The page provides recommendations for what disk size would meet data retention needs based on existing disk usage. You can also set data retention policies for CoPilot data.
 
 Index Management
 -----------------
@@ -2805,6 +2814,9 @@ In order to provide backup to your data, you can leverage instance snapshot meth
 
 You can configure periodic snapshots, based on your preferred interval, to be able retain data in case of corruption or disk loss on EBS.  
 
+
+..  |controller-customer-id-field| image:: copilot_reference_guide_media/controller-customer-id-field.png
+    :scale: 60%
 
 ..  |copilot-paused-notification| image:: copilot_reference_guide_media/copilot-paused-notification.png
     :scale: 80%
