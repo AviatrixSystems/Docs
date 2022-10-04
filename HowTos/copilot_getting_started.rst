@@ -1109,8 +1109,6 @@ These instructions apply for migrating CoPilot data:
 -   From a single CoPilot instance (simple deployment) to another single CoPilot instance (simple deployment).
 -   From a single CoPilot instance (simple deployment) to a CoPilot clustered deployment (to the main CoPilot Server instance).
 
-Migrating data from one clustered deployment to another clustered deployment is not supported at this time. 
-
 The following terms are used in these instructions:
 
 -   *old copilot* — Refers to your current (source) CoPilot instance that you want to migrate data from.
