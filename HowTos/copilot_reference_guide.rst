@@ -3,9 +3,9 @@
   :keywords: CoPilot,visibility
 
 
-====================================
+=====================================
 Aviatrix CoPilot User Reference Guide
-====================================
+=====================================
 
 Aviatrix CoPilot is a component of Aviatrix platform offering that extends visibility into complex, multi-cloud networks deployed and managed by Aviatrix Controller. 
 CoPilot delivers, end-to-end, in-depth, historical analytics of multi cloud networks with a single pane of glass that offers application flows, inventory, health, and complete topological view of the network.  
@@ -178,7 +178,7 @@ The Topology feature gives you visibility into your network as follows:
 
 You access Topology in CoPilot by going to Home > Networking > Topology or typing Topology in the navigation search.
 
-You can click the New Topology Experience toggle to see a new version of the map introduced in CoPilot release 3.0.0.
+You can click the New Topology Experience toggle to see a new version of the map introduced in CoPilot release 3.0.1 (Topology V2). See `Topology Map Version 2 Layout`_ for a description of what constructs are shown on the 5 rings of the Topology V2 map.
 
 
 Highlights of Topology capabilities 
@@ -542,6 +542,14 @@ Properties of the time series panel include:
 
     The View icon indicates a change set at that point in time. Click on a View control to load a change set; this populates the network constructs associated with the changes in the topology map and displays the details for their changes in the changes details pane. The constructs associated with the changes are circled in the map.
 
+Topology Map Version 2 Layout
+-------------------------------
+
+In CoPilot release 3.0.1, a new topology map was introduced (Topology V2). Use the **New Topology Experience** toggle to switch to Topology V2. Topology V2 can display large network topologies. The illustration below shows the network constructs that get laid out in the 5 circles of Topology V2. The following constructs are placed on the circle working from the most outer circle to the most inner circle: 1) External Connections (S2C), 2) Instances, 3) Subnets, 4) Spoke Gateway VPC/VNets, 5) Transit Gateway VPC/VNets.
+
+  |topology_v2| |topology_map_v2| 
+
+Some functions have not migrated to V2 such as gateway diagnostics (note you can run gateway diagnostics from the Cloud Routes page also).
 
 Working with FlowIQ
 ===================
@@ -552,7 +560,7 @@ FlowIQ provides you with critical visibility capability to the traffic that trav
 
 You access FlowIQ in CoPilot by going to Home > Monitor > FlowIQ or typing FlowIQ in the navigation search.
 
-You can click the New FlowIQ Experience toggle to see a new version of the flows screens in CoPilot release 3.0.0.
+You can click the New FlowIQ Experience toggle to see a new version of the flows screens in CoPilot release 3.0.1.
 
 
 Interacting with the flows
@@ -2299,6 +2307,18 @@ Deleting Account Groups
 2.  Click **Confirm**.
 
 
+Viewing latencies between connections in your Aviatrix managed network
+========================================================================
+
+CoPilot provides ways for you to see the latencies between connections/links in your Aviatrix transit network as follows. 
+ 
+-   **Latency page**: In CoPilot Home > Monitor > Traffic & Latencies, you can see detailed latencies, historically for the last hour, last day, last week, and last month, for all links (connections) between managed resources. You can use the date picker to view historical latencies for a custom timeframe. You can filter the historical latency information by search field, such as by the name of a specific gateway to view historical latencies that relate only to that gateway, endpoint: ‘/trafficlatency/latencymonitor’
+
+-   **Topology map**: In CoPilot Home > Networking > Topology, click a link in the topology map and the latency information for that link is shown in the properties pane.
+ 
+-   **AppIQ report**: In CoPilot Home > Troubleshoot> AppIQ, the latency information for the connections between the two instances you specify (for source and destination instances) is included in the AppIQ report results.
+
+
 CoPilot WebHooks
 ===================
 
@@ -2789,10 +2809,14 @@ You can configure periodic snapshots, based on your preferred interval, to be ab
 ..  |copilot-paused-notification| image:: copilot_reference_guide_media/copilot-paused-notification.png
     :scale: 80%
 
+.. |topology_v2| image:: copilot_releases/topology_v2.png
+    :width: 30%
+
+.. |topology_map_v2| image:: copilot_releases/topology_map_v2.png
+    :width: 30%
 
 ..  |transit_segmentation| image:: copilot_reference_guide_media/transit_segmentation.png
     :scale: 60%
-
 
 ..  |dashboard_image| image:: CoPilot_reference_guide_media/CoPilot_dashboard.png
     :width: 200

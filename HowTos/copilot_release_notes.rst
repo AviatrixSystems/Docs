@@ -40,14 +40,14 @@ CoPilot and Controller Interoperability
 CoPilot is deployed as an all-in-one virtual appliance and is available on multiple clouds including AWS, Azure, GCP, and OCI MarketPlaces. CoPilot works in tandem with Aviatrix Controller; in order to use CoPilot, you must have an operational Aviatrix Controller. CoPilot works with all Controller versions that are not End of Life (EOL). If you need information about `Aviatrix End of Engineering and End of Life (Support) policies <https://support.aviatrix.com/Aviatrix-EOL-Policy>`_ or how to plan and update to the latest software, please contact Aviatrix Support.
 
 
-CoPilot Release 3.0.0 (10/04/2022)
+CoPilot Release 3.0.1 (10/04/2022)
 ---------------------------------------------
 
-(Note: The following releases were built for internal use only: 2.6.0, 2.7.0)
+(Note: The following releases were built for internal use only: 2.6.0, 2.7.0, 3.0.0)
 
-**Feature Enhancements in CoPilot release 3.0.0**
+**Feature Enhancements in CoPilot release 3.0.1**
 
-- **Overall UI Improvements** with updated colors and layout for a streamlined, simplified, and consistent design. Consistent formats for tables and search/filter controls across user interface. Improved dark mode. 
+- **Improved UI Experience** with updated color scheme and layout for a streamlined, simplified, and consistent design. Consistent formats for tables and search/filter controls across user interface. Improved dark mode. 
 
   |tip_walk| 
 
@@ -61,27 +61,29 @@ CoPilot Release 3.0.0 (10/04/2022)
 
   |tip_walk_4|
 
-- **CostIQ Shared Services** offers visibility into shared services used by cost centers for billback purposes. Shows which teams are creating the most traffic to your shared services. CostIQ is available as a public preview feature in CoPilot Release 3.0.0. See `Public Preview Features`_.
+- **CostIQ Shared Services** offers visibility into shared services used by cost centers for billback purposes. Shows which teams are creating the most traffic to your shared services. CostIQ is available as a public preview feature in CoPilot Release 3.0.0. See `Public Preview Features`_. For information about enabling and using the CostIQ feature, see `Aviatrix CoPilot User Reference Guide <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html>`_. CoPilot Home > Billing & Cost > CostIQ.
 
   |cost-overview| |cost-centers|
 
   |cost-shared-services|
 
-- **New Topology Experience** with improved topology map that displays large network topologies. Streamlined and simplified map design. Use the toggle switch to switch to Topology Experience V1. Some functions have not migrated to V2 such as gateway diagnostics (note you can run gateway diagnostics from the Cloud Routes page also).
+- **Aviatrix Billing Page** offers visibility into costs of your Aviatrix Controller and gateways. You can review your account's Total Cost and review costs by CSP (Cloud Service Provider), region, group of Cloud Accounts, and individual Cloud Account. For information about the Aviatrix Billing page, see `Aviatrix CoPilot User Reference Guide <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html>`_. CoPilot Home > Monitor > FlowIQ.
+
+- **New Topology Experience** with improved topology map that displays large network topologies. Streamlined and simplified map design. Use the toggle switch to switch to Topology Experience V1. Some functions have not migrated to V2 such as gateway diagnostics (note you can run gateway diagnostics from the Cloud Routes page also). CoPilot Home > Networking > Topology.
 
   |topology_v2| |topology_map_v2| 
 
-- **New FlowIQ Experience** with updated UI design for Geolocation page, Sankey chart, and other views (CoPilot > Monitor > FlowIQ).
+- **New FlowIQ Experience** with updated UI design for Geolocation page, visualization of source and destination flows (Sankey chart), and other views. Updated FlowIQ overview page with more capabilities for viewing flow details. CoPilot Home > Monitor > FlowIQ.
 
-- **Disk Utilization UI in Settings** shows the number of days/weeks before the current data disk usage is expected to reach the free space threshold. Provides recommendations for what disk size would meet data retention needs based on existing disk usage. Set data retention policies for CoPilot data. CoPilot > Settings > Disk Utilization.
+- **Disk Utilization UI in Settings** shows the number of days/weeks before the current data disk usage is expected to reach the free space threshold. Provides recommendations for what disk size would meet data retention needs based on existing disk usage. Set data retention policies for CoPilot data. CoPilot Home > Settings > Disk Utilization.
 
   |disk_util_1| |disk_util_2|
 
-- **CoPilot licensing unified with Controller** — A separate license for CoPilot is no longer required. The Aviatrix Controller license covers the use of CoPilot. The CoPilot > Settings > Licensing page now displays the Aviatrix Controller license details.
+- **CoPilot licensing unified with Controller** — A separate license for CoPilot is no longer required. The Aviatrix Controller license covers the use of CoPilot. The CoPilot licensing page now displays the Aviatrix Controller license details. CoPilot Home > Settings > Licensing.
 
 - **Performance Improvements** for Alerts (Notifications) and database lookup tasks that run behind the scenes.
 
-- **CoPilot Feature Enablement** SKU workflows for application administrators to enable and disable CoPilot features.
+- **CoPilot Feature Enablement** SKU workflows for application administrators to enable and disable CoPilot features. CoPilot Home > Settings > Licensing.
 
 - **Security updates**
 
