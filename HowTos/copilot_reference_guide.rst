@@ -2312,7 +2312,7 @@ Viewing latencies between connections in your Aviatrix managed network
 
 CoPilot provides ways for you to see the latencies between connections/links in your Aviatrix transit network as follows. 
  
--   **Latency page**: In CoPilot Home > Monitor > Traffic & Latencies, you can see detailed latencies, historically for the last hour, last day, last week, and last month, for all links (connections) between managed resources. You can use the date picker to view historical latencies for a custom timeframe. You can filter the historical latency information by search field, such as by the name of a specific gateway to view historical latencies that relate only to that gateway, endpoint: ‘/trafficlatency/latencymonitor’
+-   **Latency page**: In CoPilot Home > Monitor > Traffic & Latencies, you can see detailed latencies, historically for the last hour, last day, last week, and last month, for all links (connections) between managed resources. You can use the date picker to view historical latencies for a custom timeframe. You can filter the historical latency information by search field, such as by the name of a specific gateway to view historical latencies that relate only to that gateway.
 
 -   **Topology map**: In CoPilot Home > Networking > Topology, click a link in the topology map and the latency information for that link is shown in the properties pane.
  
