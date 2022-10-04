@@ -18,16 +18,18 @@ You may need to migrate your Aviatrix Controller in the following situations:
 
 .. note::
 
-  A machine image is named an "AMI (Amazon Machine Image) in AWS, a "VM image" (Virtual Machine Image) in Azure, a "machine image" in GCP, and a "custom image" in OCI.
+  * If you launched an existing AWS, Azure, or GCP Controller with a BYOL license and have it updated to software version 6.7.1185 or later, you only need to subscribe to the Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support through your Controller. Log in as an admin and go to Settings > Controller > License to subscribe. You do not need to follow the migration steps in this document.
+  * A machine image is named an "AMI (Amazon Machine Image) in AWS, a "VM image" (Virtual Machine Image) in Azure, a "machine image" in GCP, and a "custom image" in OCI.
 
-The Controller Migration process involves three main steps:
+This document describes how to migrate from one type of machine image to another for each CSP, including: 
 
-* Fulfill the prerequisites, including backing up your old Controller.
-* Delete your old Controller in the CSP Account from which you originally launched it: AWS, Azure, GCP, or OCI.
-* Launch a new Controller from the relevant CSP marketplace.
-* Restore the data from your old Controller to your new Controller.
-
-This document explains how to migrate from one type of machine image to another for each CSP.
+* `Prerequisites <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#prerequisites>`_ for all clouds.
+* `Controller Migration in AWS <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#migrating-an-aws-controller>`_.
+* `Controller Migration in Azure <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#controller-migration-in-azure>`_.
+* `Controller Migration in GCP <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#controller-migration-in-gcp>`_.
+* `Controller Migration in OCI <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#controller-migration-in-oci>`_.
+* `Setting up <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#post-migration-tasks>`_ your new Controller.
+* Controller Migration for all clouds during `Disaster Recovery <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#controller-migration-during-disaster-recovery>`_.
 
 .. tip::
 
@@ -78,14 +80,11 @@ Migrating an AWS Controller
 
 For Controllers launched from AWS, there are two methods you can use to migrate your Controller AMI (Amazon Machine Image):
 
-1. **Controller-driven method** (simplest method)  - You can easily migrate your AMI directly from the Controller. Note that you can only migrate between AMIs with the same license (BYOL, Metered, or another license) using this method.
+1. **Controller-driven method** (simplest method)  - You can easily migrate your AMI directly from the Controller.
 2. **Manual method** (longer method which offers more visibility)  - You can migrate your Controller by going through the AWS marketplace and stopping your Controller instance, disassociating your EIP, and so on. This method requires more steps but allows you to see the network and account changes involved in each step. You can also use this method to change licenses if needed.
 
 .. note::
-      The Controller-driven method can only migrate between AMIs using the same license. To change your license, use the manual method.
-
-      * To migrate to a BYOL license model, please contact your Aviatrix Sales Account Manager or email sales@aviatrix.com to acquire the appropriate BYOL license. Make sure you already have subscribed to the BYOL AMI. 
-      * To migrate to a metered license, subscribe to the Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support offer on the AWS Marketplace.
+      All Controllers need to migrate to the universal license. To migrate to a universal license, subscribe to the Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support offer on the AWS Marketplace.
 
 AWS Method 1: Migrating your Controller AMI and Gateway Image Directly from Your Controller
 ------------------------------------------------------------------------------------------------------------------------------------------
@@ -270,6 +269,10 @@ Controller Migration in GCP
 
 Controller Migration in OCI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+  The Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support offer is not yet available for OCI Controllers. For more information about OCI Controller migration, please contact Aviatrix Support.
 
 1. Before terminating the old Controller instance, document the following information from your OCI account:
 
