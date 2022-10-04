@@ -1417,7 +1417,7 @@ R6.4.2499 (05/10/2021)
 
 R6.3.2475 (05/22/2021)
 =======================
-- **End of life** Gateway images based on Ubuntu 14 and Ubuntu 16 are deprecated. You MUST replace these with Ubuntu 18 based images before upgrading to 6.4. Refer to FN28 for more details.
+- **End of life** Gateway images based on old opensource OS versions deprecated. You MUST replace these with new opensource OS version images before upgrading to 6.4. Refer to FN28 for more details.
 - **Bug fix** Fixed exception for OCI gateway launch.
 - **Bug fix** Fixed bug in GCP FireNet with Palo Alto VM-Series image version listing.
 - **Bug fix** In some corner cases Controller HA, backup/restore breaks the control connection between the controller and CloudN.
@@ -2080,7 +2080,7 @@ migration beyond release 5.3:
  - **Dynamically display packets while packet capture is on** allows you to view the packet summary on the Controller console while they are being captured. 
  - **User VPN Cert Issue Date** displays the date of a VPN user creation. The display is on the Dashboard page. 
  - **User VPN Client Software Control** allows you to set a minimum Aviatrix VPN client software version that is allowed to connect successfully. To configure, go to OpenVPN -> Edit Config -> MINIMUM VPN CLIENT VERSION to set the Aviatrix VPN client version.
- - **Migrate Controller** allows you to migrate your Controller AMI image from ubuntu 14.04 distribution to 18.04 distribution. To migrate, go to Settings -> Maintenance -> Migration.
+ - **Migrate Controller** allows you to migrate your Controller AMI image from older opensource OS versions. To migrate, go to Settings -> Maintenance -> Migration.
 
 R5.2.2153 (2/7/2020)
 
@@ -3261,8 +3261,7 @@ UserConnect-013017
    -  Changed: connect\_container & add\_vpn\_user
 
 -  In the Aviatrix VPN client 1.2.49 release, Linux version AVPN client
-   is now in the supported list. Linux version is only supported on
-   Ubuntu.
+   is now in the supported list.
 
 UserConnect-121516
 ==================

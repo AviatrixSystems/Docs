@@ -99,13 +99,13 @@ On the manager/counsul instance:
         cluster
   |      *docker network ls*
 
-7. Launch Ubuntu container
+7. Launch a container
 ----------------------------
 
 On each container hosting instance:
 
   |   a. ssh into the host
-  |   b. Launch a Ubuntu container “test01” within the overlay network “my-overlay-network:
+  |   b. Launch a container “test01” within the overlay network “my-overlay-network:
   |      *sudo docker run -itd --net my-overlay-network --name test01 ubuntu /bin/bash*
   |   c. Find out the overlay IP address for container “test01” assigned by consul. There are at least three ways:
 

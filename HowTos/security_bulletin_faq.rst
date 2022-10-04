@@ -75,7 +75,7 @@ No, you don’t. One Aviatrix Controller manages cloud deployment in AWS, Azure,
 How are Aviatrix instances hardened?
 ------------------------------------
 
-The Aviatrix Controller and Gateway instances are virtual machines using Ubuntu OS which is maintained specifically for Aviatrix for infrastructure services. All OS patches go through our full QA process and are managed in the releases of the Aviatrix software.
+The Aviatrix Controller and Gateway instances are virtual machines using an opensource OS which is maintained specifically for Aviatrix for infrastructure services. All OS patches go through our full QA process and are managed in the releases of the Aviatrix software.
 
   * Users cannot login to Aviatrix Controller or Gateway instances, as SSH access is disabled. 
   

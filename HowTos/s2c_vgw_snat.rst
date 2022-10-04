@@ -106,9 +106,9 @@ Test site2cloud Connection and SNAT
 
 |image4|
 
-**b.** Pings from an Ubuntu VM in VPC-1 to another Ubuntu VM in VPC-2.
+**b.** Pings from an opensource OS VM in VPC-1 to another opensource OS version VM in VPC-2.
 
-**c.** Turn on "tcpdump icmp -n" at the Ubuntu VM in VPC-2. Verify the source IP of the pings is 192.168.1.10.
+**c.** Turn on "tcpdump icmp -n" at the opensource OS VM in VPC-2. Verify the source IP of the pings is 192.168.1.10.
  
 
 .. |image1| image:: s2c_vgw_snat_media/s2c-snat.png

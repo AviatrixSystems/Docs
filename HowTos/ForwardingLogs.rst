@@ -26,10 +26,10 @@ Steps to complete:
 
 |imageOverview|
 
-#. Create an `EC2 Ubuntu instance <#step1>`__ that will receive logs from all gateways
-#. Configure `rsyslogd <#step2>`__ on the Ubuntu instance
-#. `Configure Aviatrix <#step3>`__ to forward logs your new Ubuntu instance
-#. Update the `security group <#step4>`__ for the Ubuntu instance to allow traffic from each Aviatrix Gateway
+#. Create an `EC2 instance <#step1>`__ that will receive logs from all gateways
+#. Configure `rsyslogd <#step2>`__ on the instance
+#. `Configure Aviatrix <#step3>`__ to forward logs your new instance
+#. Update the `security group <#step4>`__ for the instance to allow traffic from each Aviatrix Gateway
 #. Implement `processing logic <#step5>`__ (or use one provided by Aviatrix) to process and forward the logs
 
 .. _step1:
@@ -37,7 +37,7 @@ Steps to complete:
 Create an EC2 instance
 ----------------------
 
-#. Create a new EC2 Ubuntu instance to receive logs from the gateways
+#. Create a new EC2 instance to receive logs from the gateways
 
 .. _step2:
 

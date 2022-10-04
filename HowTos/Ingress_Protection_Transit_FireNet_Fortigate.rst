@@ -205,7 +205,7 @@ In Transit FireNet VPC, create an internet-facing AWS Application Load Balancer 
 Step 2.2. Launch an Apache2 Web server in Application Spoke
 -----------------------------------------------------------
 
-In Application Spoke, create an Ubuntu Server 18.04 LTS virtual machine and install Apache2 HTTP Server with custom port 8080 as a web application server.
+In Application Spoke, create a virtual machine and install Apache2 HTTP Server with custom port 8080 as a web application server.
 
 +---------------------+-------------------+
 | **Example setting** | **Example value** |
@@ -217,7 +217,7 @@ In Application Spoke, create an Ubuntu Server 18.04 LTS virtual machine and inst
 
 .. Note::
 
-	Refer to `Install The Latest Apache2 HTTP Server ( 2.4.34 ) On Ubuntu 16.04 | 17.10 | 18.04 LTS Servers <https://websiteforstudents.com/install-the-latest-apache2-2-4-34-on-ubuntu-16-04-17-10-18-04-lts-servers/>`_ to install Apache2 HTTP Server
+	Refer to `Install The Latest Apache2 HTTP Server ( 2.4.34 ) On other opensource OS Servers <https://websiteforstudents.com/install-the-latest-apache2-2-4-34-on-ubuntu-16-04-17-10-18-04-lts-servers/>`_ to install Apache2 HTTP Server
 	
 	Refer to `How To Change Apache Default Port To A Custom Port <https://www.ostechnix.com/how-to-change-apache-ftp-and-ssh-default-port-to-a-custom-port-part-1/>`_ to use custom port 8080
 	
