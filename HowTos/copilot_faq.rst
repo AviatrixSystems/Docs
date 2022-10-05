@@ -110,7 +110,7 @@ Frequently asked questions about CoPilot/Controller licensing.
 If my Controller license expires, will I lose data in CoPilot?
 ----------------------------------------------------------------
 
-No. If your Controller license expires, you will be unable to log in to CoPilot but your data will remain intact. Contact your Sales representative to request a license extension and obtain instructions for logging back in to your instance.
+No. If your Controller license expires, you will be unable to log in to CoPilot but your data will remain intact.
 
 
 FAQs about CoPilot login 

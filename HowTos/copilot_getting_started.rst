@@ -172,44 +172,36 @@ Amazon EC2 instance type: 			m5n.8xlarge
 - If you already have a CoPilot simple deployment (single instance) and you are planning on migrating your data from the simple deployment to a new clustered deployment, the size of the disk volume you specify for each data instance should be the same size or larger than the storage used in your old single copilot. See `CoPilot Disk (Volume) Management`_ in Aviatrix CoPilot Deployment Guide for more information and CoPilot storage.
 
 
-CoPilot Customer IDs and Licensing
+CoPilot Licensing
 ====================================
 
-This section discusses Aviatrix CoPilot customer IDs and licensing.
+This section discusses Aviatrix CoPilot licensing.
 
-**NOTE:** The CoPilot customer ID is separate from the Aviatrix Controller customer ID.
+CoPilot licensing is unified with Controller licensing. The customer ID that is used to license your Aviatrix Controller will enable your use of CoPilot.
 
-CoPilot is offered with a Bring Your Own License (BYOL) license model. If you are interested in a trial of CoPilot, contact us through the Aviatrix chat window of our doc website, or contact your Aviatrix Sales representative.
+You can see when your Aviatrix Controller license will expire and see the used and total allocation count of your license in CoPilot Home > Settings > Licensing.
 
-With a BYOL license model, you need to have a customer ID provided by Aviatrix to be able to use the product. Your Aviatrix Sales representative will provide you with a customer ID. Customer IDs for CoPilot contain the letters `-cplt-`.
+If your Controller license ID(s) is nearing its expiration date, contact your Aviatrix Sales representative for information about how to extend or renew your license.
 
-When you perform the initial setup of CoPilot, you will be prompted to enter your customer ID and CoPilot will allocate a license to you based on your customer ID. Your customer ID can be associated with more than one license. The license key has the quantity or *allocation count* for the number of CoPilot instances that can use the license at a given time (the default count is 2). If the license key is greater than one, the key can be used by more than one instance. You can see when the license will expire and see the used and total allocation count of your license in CoPilot Settings > Licensing.
+Subscribe to an Aviatrix Controller/CoPilot Offer
+==================================================
 
-If you plan to launch a CoPilot clustered deployment, your Aviatrix Sales representative will provide an ID associated with the number of licenses you require for each cluster instance.  
+CoPilot works in tandem with Aviatrix Controller to provide visibility into your cloud resources managed by the controller. You must subscribe to an Aviatrix Controller offer in a cloud provider marketplace in order to use CoPilot. You first accept the terms for an offer in the CSP marketplace and then you provision and launch your CoPilot VM/instance. You can provision and launch your CoPilot VM/instance either via the marketplace website (right after accepting the terms for the offer there), or via Terraform scripts, or via the Aviatrix Controller UI.
 
-When your customer ID expires, you can ask for a license extension from your Sales representative. In this case, you must reset your customer ID for the extension by navigating to CoPilot Settings > Licensing and clicking the **RESET** button. 
+You subscribe to an Aviatrix Controller/CoPilot offer in your CSP marketplace. For some CoPilot features, such as the CostIQ feature, subscription to **Aviatrix Secure Networking Platform 2208-Universal x 24x7 Support** is required. Contact your Aviatrix Sales representative if you have any questions about Aviatrix Controller subscription offers as they relate to your use of CoPilot.
 
-If you need to terminate your current instance of CoPilot and deploy a new instance using the same license associated with your customer ID, first release the CoPilot license of the current instance by navigating to CoPilot Settings > Licensing and clicking the **RESET** button. After you deploy the new instance of CoPilot, you will be prompted to enter the customer ID during initial setup. Re-enter the same customer ID. 
+To subscribe to an Aviatrix Controller/CoPilot offer:
 
-Subscribe to a CoPilot Offer
-============================
-
-Subscribe to an Aviatrix CoPilot offer in a cloud provider marketplace and provision and launch your CoPilot instance.
-
-For licensing and trials, CoPilot is offered with a BYOL model. Before subscribing to CoPilot in a cloud marketplace, obtain a license key for CoPilot by contacting your Aviatrix Sales representative. Since CoPilot works in tandem with Aviatrix Controller to provide visibility into your cloud resources managed by the controller, it is assumed that you already have a controller.
-
-To subscribe to a CoPilot offer:
-
-1.  Log in to the marketplace of your chosen cloud provider using your provider user account credentials. CoPilot is available in the marketplaces for:
+1.  Log in to the marketplace of your chosen cloud provider using your cloud provider user account credentials. Controller and CoPilot are available in the marketplaces for:
 
     -   Amazon Web Services (AWS)
     -   Google Cloud Platform
     -   Microsoft Azure Marketplace
     -   Oracle Cloud Infrastructure (OCI)
 
-2.  Locate the Aviatrix CoPilot software offer you want to subscribe to and click **Subscribe**.
+2.  Locate the Aviatrix subscription offer you will subscribe to and click **Subscribe**.
 
-    It is recommended to use the latest image release version. For information about Aviatrix CoPilot image versions, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
+    It is recommended to use the latest base image release version of CoPilot. For information about Aviatrix CoPilot image versions, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
 
 
 3.  When prompted, review the subscription pricing information and accept the terms and conditions. You may be prompted to confirm your subscription before moving on to configuration.
@@ -552,7 +544,8 @@ If you use an identity provider (IdP) to allow your organization's team members 
 System Design Considerations 
 ==================================
 
-- For production, it is best practice to inspect your gateways sizing and load prior to enabling flow logging. 
+- For production, it is best practice to inspect your gateways sizing and load prior to enabling flow logging.
+ 
 - You have the option of selecting which gateways generate flows should you want to enable visibility in subsections of the network (configured in the controller).
 
 Example - Deploy CoPilot in Microsoft Azure
@@ -1222,7 +1215,7 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
 11. (**Post-migration tasks**) After your *new copilot* is running with your migrated data intact, you can perform the following tasks:
 
     -   On your *new copilot*, if you use your own SSL certificate (rather than the CoPilot self signed certificate), update the DNS servers associated with your certificate in Settings > Configuration.
-    -   On your *old copilot*, release the license in Settings > Licensing by clicking the **RESET** button.
+
     -   Remove your *old copilot* and associated cloud resources:
 
         -   EIP
