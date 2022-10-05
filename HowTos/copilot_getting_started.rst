@@ -20,12 +20,14 @@ CoPilot is deployed as an all-in-one virtual appliance and is available on multi
 Launch CoPilot
 ==================
 
-Aviatrix CoPilot is available as an all-in-one virtual appliance that is hosted in a user's own IaaS cloud environment. 
+Aviatrix CoPilot is available as an all-in-one virtual appliance that is hosted in your own IaaS cloud environment. 
 It can be launched as an EC2 instance in AWS, a virtual machine in Azure, or a VM instance in GCP and OCI. 
 
 Before launching CoPilot, take note of the `Minimum Instance (VM) System Requirements for CoPilot`_. 
 
 You can deploy CoPilot using different methods. See `CoPilot Deployment Methods`_. 
+
+You must subscribe to an Aviatrix offer in the CSP marketplace for Aviatrix CoPilot. To be able to enable some add-on features in CoPilot, you also must subscribe to the `Aviatrix Secure Networking Platform 2208-Universal Subscription`_ offer. 
 
 Aviatrix Controller and CoPilot are not required to be collocated. It is possible to run them in separate VPCs/VNets or separate cloud providers (in multi-cloud environments). Typically, Aviatrix Controller and Aviatrix CoPilot are run in the same VPC/VNet.
 
@@ -38,7 +40,7 @@ CoPilot Deployment Methods
 
 You can deploy Aviatrix CoPilot directly from any supported cloud service provider (CSP) marketplace, by using Terraform scripts, or by using the Aviatrix Controller user interface (available for AWS starting from Controller release 6.7.1185). 
 
-Deploying from the CSP marketplace takes only a few clicks to provision and launch the instance. Since you must subscribe to a CoPilot offer at a marketplace as a first step for all deployment methods, this method is commonly used right after subscribing. This deploy method is often used for a CoPilot simple (single instance) deployment. The marketplace deployment method is not supported for a fault tolerant (clustered) deployment. See `Subscribe to a CoPilot Offer`_. 
+Deploying from the CSP marketplace takes only a few clicks to provision and launch the instance. Since you must subscribe to a CoPilot offer at a marketplace as a first step for all deployment methods, this method is commonly used right after subscribing. This deploy method is often used for a CoPilot simple (single instance) deployment. The marketplace deployment method is not supported for a fault tolerant (clustered) deployment. See `Subscribe to a CoPilot Offer in the Marketplace`_. 
 
 If your Controller is in AWS, you can launch a CoPilot simple or fault tolerant (clustered) deployment from the Aviatrix Controller user interface. See `CoPilot instance launch using Controller UI (AWS Only)`_ and `CoPilot cluster launch using Controller UI (AWS Only)`_. This deployment method has its advantages because the associated auto-deploy process configures security group rules that are required for CoPilot and Controller and gateway inter-connectivity.
 
@@ -172,43 +174,77 @@ Amazon EC2 instance type: 			m5n.8xlarge
 - If you already have a CoPilot simple deployment (single instance) and you are planning on migrating your data from the simple deployment to a new clustered deployment, the size of the disk volume you specify for each data instance should be the same size or larger than the storage used in your old single copilot. See `CoPilot Disk (Volume) Management`_ in Aviatrix CoPilot Deployment Guide for more information and CoPilot storage.
 
 
-CoPilot Licensing
-====================================
-
-This section discusses Aviatrix CoPilot licensing.
+CoPilot and Controller Unified Licensing
+===========================================
 
 CoPilot licensing is unified with Controller licensing. The customer ID that is used to license your Aviatrix Controller will enable your use of CoPilot.
 
-You can see when your Aviatrix Controller license will expire and see the used and total allocation count of your license in CoPilot Home > Settings > Licensing.
+To enable the latest CoPilot add-on features, such as CostIQ and Aviatrix Billing, you must have a Controller customer ID that is associated with the **Aviatrix Secure Networking Platform 2208-Universal x 24x7 Support** subscription offer. See `Aviatrix Secure Networking Platform 2208-Universal Subscription`_ for instructions on how to obtain the customer ID and update your Controller license with the new ID. 
 
-If your Controller license ID(s) is nearing its expiration date, contact your Aviatrix Sales representative for information about how to extend or renew your license.
+You can see details about your Aviatrix Controller license in CoPilot Home > Settings > Licensing.
 
-Subscribe to an Aviatrix Controller/CoPilot Offer
-==================================================
 
-CoPilot works in tandem with Aviatrix Controller to provide visibility into your cloud resources managed by the controller. You must subscribe to an Aviatrix Controller offer in a cloud provider marketplace in order to use CoPilot. You first accept the terms for an offer in the CSP marketplace and then you provision and launch your CoPilot VM/instance. You can provision and launch your CoPilot VM/instance either via the marketplace website (right after accepting the terms for the offer there), or via Terraform scripts, or via the Aviatrix Controller UI.
+Aviatrix Secure Networking Platform 2208-Universal Subscription
+=================================================================
 
-You subscribe to an Aviatrix Controller/CoPilot offer in your CSP marketplace. For some CoPilot features, such as the CostIQ feature, subscription to **Aviatrix Secure Networking Platform 2208-Universal x 24x7 Support** is required. Contact your Aviatrix Sales representative if you have any questions about Aviatrix Controller subscription offers as they relate to your use of CoPilot.
+For existing Controller deployments, if you want to enable the latest CoPilot add-on features such as CostIQ and Aviatrix Billing, you must subscribe to and accept terms for the **Aviatrix Secure Networking Platform 2208-Universal 24x7 Support** subscription offer in the CSP marketplace. 
 
-To subscribe to an Aviatrix Controller/CoPilot offer:
+To obtain the Aviatrix Secure Networking Platform 2208-Universal Subscription, use the following steps:
 
-1.  Log in to the marketplace of your chosen cloud provider using your cloud provider user account credentials. Controller and CoPilot are available in the marketplaces for:
+1.  At the CSP marketplace, subscribe to and accept terms for the **Aviatrix Secure Networking Platform 2208-Universal 24x7 Support** offer and take note of your Customer ID for this offer.  
+
+2.  In Controller, go to Home > Settings > Controller > License.
+
+3.  Input the Customer ID into the **Setup Aviatrix Customer ID** field, and click **Save**.
+
+    |controller-customer-id-field|   
+
+4.  Log in to CoPilot with a user account that has adminstrative privileges. 
+
+5.  In CoPilot, go to Home > Settings > Licensing.
+
+6.  In the Add-on Features list, click **Enable** for the CoPilot add-on features that you ewant to enable. 
+
+
+You first accept the terms for an offer in the CSP marketplace and then you provision and launch your CoPilot VM/instance. You can provision and launch your CoPilot VM/instance either via the marketplace website (right after accepting the terms for the offer there), or via Terraform scripts, or via the Aviatrix Controller UI.
+
+
+Subscribe to a CoPilot Offer in the Marketplace
+================================================
+
+Subscribe to an Aviatrix CoPilot offer in a cloud provider marketplace.
+
+CoPilot works in tandem with Aviatrix Controller to provide visibility into your cloud resources managed by the controller. It is assumed that you already have a Controller customer ID for your existing Controller. 
+
+If you want to enable the latest CoPilot add-on features such as CostIQ and Aviatrix Billing, you must subscribe to and accept terms for the **Aviatrix Secure Networking Platform 2208-Universal 24x7 Support** subscription offer in the CSP marketplace. See `Aviatrix Secure Networking Platform 2208-Universal Subscription`_.
+
+In addition to having a Controller customer ID, you must also accept terms and conditions for an Aviatrix CoPilot offer in your respective cloud marketplace before you can provision and launch the VM for the CoPilot instance. 
+
+To subscribe to a CoPilot offer in the cloud markeplace, use these steps:
+
+1.  Log in to the marketplace of your chosen cloud provider using your provider user account credentials. CoPilot is available in the marketplaces for:
 
     -   Amazon Web Services (AWS)
     -   Google Cloud Platform
     -   Microsoft Azure Marketplace
     -   Oracle Cloud Infrastructure (OCI)
 
-2.  Locate the Aviatrix subscription offer you will subscribe to and click **Subscribe**.
+2.  Locate the Aviatrix subscription offer you will subscribe to and click **Subscribe**. Typically the offer has "Aviatrix CoPilot" in the name. 
 
-    It is recommended to use the latest base image release version of CoPilot. For information about Aviatrix CoPilot image versions, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
+    Use the latest base image release version of CoPilot listed on the marketplace. For information about when Aviatrix CoPilot image versions were released, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
 
 
 3.  When prompted, review the subscription pricing information and accept the terms and conditions. You may be prompted to confirm your subscription before moving on to configuration.
 
-    -   If you want to deploy CoPilot via the Controller UI or via Terraform scripts, you can stop here and refer to the instructions for each deploy method. If you want to deploy CoPilot from your CSP marketplace, you can continue with the rest of the steps.
+    -   If you want to deploy CoPilot via the Controller UI or via Terraform scripts, you can stop here and refer to the instructions for each deploy method. If you want to deploy CoPilot from your CSP marketplace, you can continue with the rest of the steps in `Provision and launch your CoPilot instance from the marketplace`_.
 
-4.  Each marketplace will prompt you to configure and launch the CoPilot software. For CoPilot instance (VM) configurations and launch requirements, note the following:
+ 
+Provision and launch your CoPilot instance from the marketplace
+================================================================= 
+
+After following the steps in `Subscribe to a CoPilot Offer in the Marketplace`_, follow these stepts to provision the VM and launch your CoPilot instance from the marketplace. 
+
+1.  Each marketplace will prompt you to configure and launch the CoPilot software. For CoPilot instance (VM) configurations and launch requirements, note the following:
 
     -   (VM Sizing)
 
@@ -235,7 +271,7 @@ To subscribe to an Aviatrix Controller/CoPilot offer:
 
         - CoPilot requires Internet access. You must select a *subnet* (availability zone) with outbound Internet access when specifying the subnet for each CoPilot instance. This is also true if you are using *private mode*.
         
-5.  (Pre-6.8 Controller releases only) 
+2.  (Pre-6.8 Controller releases only) 
 
     -   If your Controller is a pre-6.8 release version: In your cloud console, in the security group page of your CoPilot VM/instance, add entries FOR EACH of your Aviatrix gateways:
 
@@ -249,17 +285,17 @@ To subscribe to an Aviatrix Controller/CoPilot offer:
     .. tip::
         Starting from Controller 6.8, you can enable the CoPilot Security Group Management feature to allow your Controller to open CoPilot access to the above ports for all of your Aviatrix gateways. You enable the feature in Controller > Settings > CoPilot > CoPilot Security Group Management. See `CoPilot Security Group Management <https://docs.aviatrix.com/HowTos/Settings_CoPilot.html>`_.
        
-6.  After specifying all values for the marketplace configuration prompts, deploy/launch the CoPilot instance/virtual machine.
+3.  After specifying all values for the marketplace configuration prompts, deploy/launch the CoPilot instance/virtual machine.
 
     For example, in AWS, you select the region and click **Continue to Launch**.
 
     You should receive a message from the cloud provider stating that the instance of CoPilot software is deployed/launched.
 
-7.  Assign a static public IP address to the CoPilot software instance/virtual machine. For example, in the AWS EC2 console, you would go to the Elastic IP section, allocate a new EIP, and then associate it with your CoPilot instance.
+4.  Assign a static public IP address to the CoPilot software instance/virtual machine. For example, in the AWS EC2 console, you would go to the Elastic IP section, allocate a new EIP, and then associate it with your CoPilot instance.
 
     Take note of the public IP address to use later during initial setup.
 
-8.  Start the CoPilot instance/virtual machine.
+5.  Start the CoPilot instance/virtual machine.
 
     For example, in the AWS EC2 Dashboard, check the instance checkbox and from the Actions menu, choose Start Instance.
 
@@ -313,22 +349,18 @@ To perform an initial setup of CoPilot:
 
     |copilot_login_service_account|
 
-5.  When prompted for **CoPilot Customer ID**, enter the CoPilot customer ID provided by your Aviatrix Sales representative. See `CoPilot Customer IDs and Licensing`_.
+5.  If a Data Disk Setup dialog does not appear, skip to step 8 to verify connectivity with your controller.
 
-    |copilot_login_customer_id|
-
-6.  If a Data Disk Setup dialog does not appear, skip to step 8 to verify connectivity with your controller.
-
-7.  In Data Disk Setup, select the disk/volume you created for CoPilot storage and click START. When the process is complete, click FINISH.
+6.  In Data Disk Setup, select the disk/volume you created for CoPilot storage and click START. When the process is complete, click FINISH.
 
     Note that when you launch CoPilot at first your version number will be based on the version of the image release. Within an hour, the CoPilot version will be updated to the latest software release.
 
-8.  (Controller 6.8 or later) In Controller, enable the CoPilot Security Group Management feature in Controller > Settings > CoPilot > CoPilot Security Group Management). With this feature enabled, the Controller sends NetFlow and Syslog data to CoPilot (can be verified by steps 9 and 10 below) and the CoPilot virtual machine ports 31283 and 5000 will be open to each IP of your existing gateways (and **not** open to any IP (0.0.0.0/0)). If you have a pre-6.8 Controller release version, perform steps 10 and 11 manually. 
+7.  (Controller 6.8 or later) In Controller, enable the CoPilot Security Group Management feature in Controller > Settings > CoPilot > CoPilot Security Group Management). With this feature enabled, the Controller sends NetFlow and Syslog data to CoPilot (can be verified by steps 9 and 10 below) and the CoPilot virtual machine ports 31283 and 5000 will be open to each IP of your existing gateways (and **not** open to any IP (0.0.0.0/0)). If you have a pre-6.8 Controller release version, perform steps 10 and 11 manually. 
 
-9.  (Verify connectivity with your controller) To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see the inventory of all resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VPNs/VNETs are represented on the geographic map.
+8.  (Verify connectivity with your controller) To verify Copilot has connected successfully to your controller, from the CoPilot dashboard, confirm that you can see the inventory of all resources across all clouds in your multi-cloud network that are managed by Aviatrix Controller. Confirm that the inventory tiles show the number and status of each of your managed resources and the global location of your managed VPCs/VPNs/VNETs are represented on the geographic map.
 
 
-10.  (For FlowIQ feature) To use the FlowIQ feature in CoPilot, ensure that the controller is configured to forward NetFlow logs to CoPilot.
+9.  (For FlowIQ feature) To use the FlowIQ feature in CoPilot, ensure that the controller is configured to forward NetFlow logs to CoPilot.
 
     a.  Log in to Aviatrix Controller.
 
@@ -347,7 +379,7 @@ To perform an initial setup of CoPilot:
 
     You should start seeing NetFlow in CoPilot after a few minutes.
 
-11. (For Security audit page feature) Remote syslog index 9 is used for the CoPilot > Security audit page. Ensure the controller is configured to specify CoPilot as the loghost server.
+10. (For Security audit page feature) Remote syslog index 9 is used for the CoPilot > Security audit page. Ensure the controller is configured to specify CoPilot as the loghost server.
 
     a.  Log in to Aviatrix Controller.
 
@@ -629,11 +661,11 @@ CoPilot instance launch using Controller UI (AWS Only)
 
 This feature is available starting from Aviatrix Controller release 6.7.1185. If you deployed Aviatrix Controller in AWS and you want to deploy Aviatrix CoPilot in AWS in the same region/AZ as the controller, you can deploy CoPilot directly from the controller UI by following these instructions. 
 
-The instance will be launched in the same AWS region/availability zone as your controller. If you want to deploy CoPilot in a different AWS region/availability zone or in a different cloud, follow the instructions in `Subscribe to a CoPilot Offer <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#subscribe-to-a-copilot-offer>`_ to perform the CoPilot instance launch from your cloud provider marketplace.
+The instance will be launched in the same AWS region/availability zone as your controller. If you want to deploy CoPilot in a different AWS region/availability zone or in a different cloud, follow the instructions in `Subscribe to a CoPilot Offer in the Marketplace`_ to perform the CoPilot instance launch from your cloud provider marketplace.
 
 Your controller instance must have the `aviatrix-role-ec2` IAM role attached for the deployment to succeed. 
 
-After you deploy a CoPilot instance from your controller, if you decide to terminate the instance, you must terminate it from the AWS environment.
+After you deploy a CoPilot instance from your controller, if you decide to terminate the instance, you can use the Delete Deployed CoPilot button in Aviatrix Controller > Settings > CoPilot to delete the instance. This comes in handy, for example, if you accidentally deployed the instance into an incorrect VPC. You can also terminate it from the AWS environment if preferred.
 
 Obtain the following information before you begin. You will need it for the initial setup of CoPilot after instance launch:
 
@@ -654,7 +686,7 @@ To deploy CoPilot from the controller UI (AWS Only):
 
     c.  When prompted, review the subscription pricing information and accept the terms and conditions.
 
-        You only need to subscribe, review the subscription pricing information, and accept the terms and conditions in the marketplace before proceeding to the next step. You would not move on to the configuration steps in the marketplace.
+        You only need to subscribe, review the subscription pricing information, and accept the terms and conditions in the marketplace before proceeding to the next step. You would not move on to the configuration steps in the marketplace. Note that to use the latest CoPilot add-on features, you must also subscribe to the `Aviatrix Secure Networking Platform 2208-Universal Subscription`_.
 
 2.  In Aviatrix Controller, do one of the following to begin the deployment process:
 
@@ -767,7 +799,7 @@ By default, the controller UI deploy process will launch the cluster *server ins
 Before you begin, obtain the following information and perform the tasks indicated.
 
 -   Verify your controller is version 6.8 or later.
--   Subscribe to a CoPilot offer at the Amazon Web Services (AWS) Marketplace and accept the terms and conditions (this is described in the first step of the procedure if you haven't done this yet).
+-   Subscribe to a CoPilot offer at the Amazon Web Services (AWS) Marketplace and accept the terms and conditions (this is described in the first step of the procedure if you haven't done this yet). Note that to use the latest CoPilot add-on features, you must also subscribe to the `Aviatrix Secure Networking Platform 2208-Universal Subscription`_.
 -   Verify that your AWS account has been created in your controller. You create your AWS account by navigating to Controller > Account > Access Accounts > +Add New).
 -   Verify that your controller instance has the IAM role `aviatrix-role-ec2` attached to it. The CoPilot deployment will fail if this role is not attached to your controller.
 -   Obtain the login credentials of your Aviatrix Controller user account. Use a controller user account that has full admin permissions. To confirm that the user account has full admin permissions, log in to your Controller, go to Accounts > Account Users, and verify the "Permissions Groups" column is set to **admin** for the account in question.
@@ -794,7 +826,7 @@ To launch a CoPilot cluster (fault tolerant deployment) from the controller UI (
     b.  Locate the Aviatrix CoPilot software offer you want to subscribe to and click **Subscribe**.
     c.  When prompted, review the subscription pricing information and accept the terms and conditions.
 
-        You only need to subscribe, review the subscription pricing information, and accept the terms and conditions in the marketplace before proceeding to the next step. You would not move on to the configuration steps in the marketplace.
+        You only need to subscribe, review the subscription pricing information, and accept the terms and conditions in the marketplace before proceeding to the next step. You would not move on to the configuration steps in the marketplace. Note that to use the latest CoPilot add-on features, you must also subscribe to the `Aviatrix Secure Networking Platform 2208-Universal Subscription`_.
 
 2.  In Aviatrix Controller, do one of the following to begin the deployment process:
 
@@ -923,7 +955,7 @@ A CoPilot application launched using Terraform is typically based on the latest 
 
 1.  If you haven't already done so, subscribe to a CoPilot offer in the CSP marketplace. See `Subscribe to a CoPilot Offer`_.
 
-    You only need to subscribe, review the subscription pricing information, and accept the terms and conditions in the marketplace before proceeding to the next step. You would not move on to the configuration steps in the marketplace.
+    You only need to subscribe, review the subscription pricing information, and accept the terms and conditions in the marketplace before proceeding to the next step. You would not move on to the configuration steps in the marketplace. Note that to use the latest CoPilot add-on features, you must also subscribe to the `Aviatrix Secure Networking Platform 2208-Universal Subscription`_.
 
 2.  Verify you have your CSP account credentials and you know which CSP region in which to launch CoPilot.
 
@@ -1101,6 +1133,7 @@ These instructions apply for migrating CoPilot data:
 
 -   From a single CoPilot instance (simple deployment) to another single CoPilot instance (simple deployment).
 -   From a single CoPilot instance (simple deployment) to a CoPilot clustered deployment (to the main CoPilot Server instance).
+-   From a CoPilot clustered deployment (from the main CoPilot Server instance) to a CoPilot clustered deployment (to the main CoPilot Server instance).
 
 The following terms are used in these instructions:
 
@@ -1262,6 +1295,9 @@ If you can log in to your CoPilot instance, the following options are available 
 
 -   Use **Remote Support** to grant privileged level access to your CoPilot instance to the Aviatrix Support team. This establishes a trusted connection between your instance and the Aviatrix diagnostic server for diagnostic purposes. Set the option to **Enabled** and provide the port number shown to your Support representative so they can initiate a debugging session. After access to your instance is no longer needed, disable Remote Support to prevent further access to your CoPilot.
 
+
+..  |controller-customer-id-field| image:: copilot_reference_guide_media/controller-customer-id-field.png
+    :scale: 60%
 
 .. |samlsso| image:: copilot_getting_started_media/samlsso.png
    :scale: 50%
