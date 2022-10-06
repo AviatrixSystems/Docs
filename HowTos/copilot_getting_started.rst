@@ -38,13 +38,21 @@ If you are launching a new instance of CoPilot and need to migrate CoPilot data 
 CoPilot Deployment Methods
 ===========================
 
-You can deploy Aviatrix CoPilot directly from any supported cloud service provider (CSP) marketplace, by using Terraform scripts, or by using the Aviatrix Controller user interface (available for AWS starting from Controller release 6.7.1185). 
+You can deploy Aviatrix CoPilot directly from any supported cloud service provider (CSP) marketplace (single instance only), by using Terraform scripts, or by using the Aviatrix Controller user interface (available for AWS starting from Controller release 6.7.1185). 
 
-Deploying from the CSP marketplace takes only a few clicks to provision and launch the instance. Since you must subscribe to a CoPilot offer at a marketplace as a first step for all deployment methods, this method is commonly used right after subscribing. This deploy method is often used for a CoPilot simple (single instance) deployment. The marketplace deployment method is not supported for a fault tolerant (clustered) deployment. See `Subscribe to a CoPilot Offer in the Marketplace`_. 
+General recommendations for which deployment method to use are as follows:
 
-If your Controller is in AWS, you can launch a CoPilot simple or fault tolerant (clustered) deployment from the Aviatrix Controller user interface. See `CoPilot instance launch using Controller UI (AWS Only)`_ and `CoPilot cluster launch using Controller UI (AWS Only)`_. This deployment method has its advantages because the associated auto-deploy process configures security group rules that are required for CoPilot and Controller and gateway inter-connectivity.
+-  For Amazon Web Services, use Terraform scripts or use the Aviatrix Controller user interface
 
-If you are knowledgeable in deploying infrastructure-as-code using Terraform, you might find it convenient to launch CoPilot by using Terraform scripts. You can launch a simple or clustered deployment using Terraform scripts. At this time only AWS is supported for launching a CoPilot clustered deployment using Terraform. A summary of steps for launching a single instance using Terraform is provided at `(Terraform) CoPilot instance launch using Terraform`_.  Please refer to the Aviatrix Terraform Module for CoPilot for the most current instructions and samples on GitHub here: https://github.com/AviatrixSystems/terraform-modules-copilot.
+-  For Microsoft Azure, Google Cloud, or Oracle Cloud Infrastructure, use Terraform scripts
+
+-  For simple (single instance) use case, use marketplace to launch
+
+If your Controller is in AWS, you can launch a CoPilot simple or fault tolerant (clustered) deployment from the Aviatrix Controller user interface. This deployment method has its advantages because the associated auto-deploy process configures security group rules that are required for CoPilot and Controller and gateway inter-connectivity. See `CoPilot instance launch using Controller UI (AWS Only)`_ and `CoPilot cluster launch using Controller UI (AWS Only)`_. 
+
+If you are knowledgeable in deploying infrastructure-as-code using Terraform, it is convenient to launch CoPilot by using Terraform scripts. You can launch a simple or clustered deployment using Terraform scripts. At this time only AWS is supported for launching a CoPilot clustered deployment using Terraform. A summary of steps for launching a single instance using Terraform is provided at `(Terraform) CoPilot instance launch using Terraform`_.  Please refer to the Aviatrix Terraform Module for CoPilot for the most current instructions and samples on GitHub here: https://github.com/AviatrixSystems/terraform-modules-copilot.
+
+Deploying from the CSP marketplace takes only a few clicks to provision and launch the instance. Since you must subscribe to a CoPilot offer at a marketplace as a first step for all deployment methods, this method is commonly used for single node use cases right after subscribing. The marketplace deployment method is not supported for a fault tolerant (clustered) deployment. See `Subscribe to a CoPilot Offer in the Marketplace`_. 
 
 
 Instance (VM) Configuration Details for CoPilot
@@ -106,7 +114,7 @@ The configuration of the virtual machine that you provision for your CoPilot dep
 
 Amazon EC2 instance type: m5n.2xlarge
 
-Googld Cloud: n2-standard-8
+Google Cloud: n2-standard-8
 
 Oracle Cloud Infrastructure: VM.Standard3.Flex (8core x 32G mem)
 
@@ -130,7 +138,7 @@ Examples:
 
 Amazon EC2 instance type: 			m5n.2xlarge
 
-Googld Cloud: 			                n2-standard-8
+Google Cloud: 			                n2-standard-8
 
 Oracle Cloud Infrastructure: 			VM.Standard3.Flex (8core x 32G mem)
 
@@ -1264,7 +1272,7 @@ To migrate CoPilot data from your *old copilot* to your *new copilot*:
 Deleting an Existing CoPilot Instance
 =========================================================== 
 
-You may need to delete (terminate) an existing CoPilot instance. For example, after you migrate CoPilot data to a new CoPilot instance, it is recommended that you delete the old instance. Before deleting, be sure to release any license on the CoPilot in CoPilot > Settings > Licensing by clicking the **RESET** button.  
+You may need to delete (terminate) an existing CoPilot instance. For example, after you migrate CoPilot data to a new CoPilot instance, it is recommended that you delete the old instance.  
 
 If you deployed your CoPilot from the Controller user interface, you can delete the existing CoPilot — simple or fault tolerant (cluster) deployment — by using the **Delete Deployed CoPilot Instance** option in Aviatrix Controller > Settings > CoPilot. You would delete the existing CoPilot, for example, if you accidentally launched the instance in the wrong VPC during deployment. 
 
@@ -1294,6 +1302,13 @@ If you can log in to your CoPilot instance, the following options are available 
 -   Use **Upload Log Bundle to Support** to send your support log bundle directly to Aviatrix Support (the log bundle is uploaded to s3).
 
 -   Use **Remote Support** to grant privileged level access to your CoPilot instance to the Aviatrix Support team. This establishes a trusted connection between your instance and the Aviatrix diagnostic server for diagnostic purposes. Set the option to **Enabled** and provide the port number shown to your Support representative so they can initiate a debugging session. After access to your instance is no longer needed, disable Remote Support to prevent further access to your CoPilot.
+
+
+CoPilot Platform Administration
+=================================
+
+For a deployed CoPilot, application administrators can tune and maintain the CoPilot platform by using the options in CoPilot Home > Settings. For information about the options available in CoPilot Home > Settings, see `CoPilot Settings <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#copilot-settings>`_ in *Aviatrix CoPilot User Reference Guide*.
+
 
 
 ..  |controller-customer-id-field| image:: copilot_reference_guide_media/controller-customer-id-field.png

@@ -12,6 +12,8 @@ CoPilot delivers, end-to-end, in-depth, historical analytics of multi cloud netw
 
 This guide provides descriptions and definitions of functionalities that are available in Aviatrix CoPilot.
 
+For instructions on deploying CoPilot, see `Aviatrix CoPilot Deployment Guide <https://docs.aviatrix.com/HowTos/copilot_getting_started.html>`_.
+
 
 Getting Started with CoPilot
 =============================
@@ -1918,8 +1920,8 @@ The cost information displayed in CostIQ is grouped by:
 
 - Shared Service  - A cloud or network resource shared by multiple teams or cost centers. You define Shared Services by listing the IP addresses or IP CIDR ranges of the shared resource hosts. 
 
-Overview
-^^^^^^^^^^^^^^^^^^^^^
+Overview of CostIQ
+---------------------
 |costiq-overview-tab|
 
 The CostIQ Overview tab shows cost information about Aviatrix-managed resources across your entire multi-cloud network. The charts and tables included show the traffic and cost data of your Cost Centers and Shared Services.
@@ -1956,8 +1958,8 @@ Use the Time Period options at the top of the page to adjust the time period for
 |                      | traffic of each Shared Service.                            | 
 +----------------------+------------------------------------------------------------+
 
-Cost Centers
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Cost Centers in CostIQ
+-------------------------
 
 The Cost Centers tab lists the Cost Centers you have created, the CSPs that contain the Cost Center resources, and the percentage of total traffic for which each Cost Center is responsible.
 
@@ -2029,8 +2031,8 @@ Deleting Cost Centers
 
 Deleting a Cost Center does not affect the VPCs/VNets it includes or any data; it only removes the Cost Center as a way of organizing and visualizing historical cost data for your network. 
 
-Shared Services
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Shared Services in CostIQ
+----------------------------
 
 The Shared Services page displays cost data for your Shared Services, or networking resources used by multiple teams or departments in your network. Shared Services are organized by the IP addresses of the resources hosts. 
 
@@ -2788,19 +2790,39 @@ This page shows the number of days/weeks before the current data disk usage is e
 
 Index Management
 -----------------
-This page shows details about CoPilot database indices.
+This page shows details about indices that store CoPilot data.
 
 Advanced Settings
 ------------------
 This page has options for setting a minimum disk space threshold, various task server intervals, and some other settings related to CoPilot functions. For task server intervals, the default entries are usually sufficient. Ensure that you understand the impact of changing an option before making the change.
 
-**Disk Space Management**
+**Free disk threshold**
 
-**Min. disk space % avail. threshold**
-  Allows you to set a threshold based on available disk space, at which point automatic 
-  data deletion start. When this threshold is reached, CoPilot will start deleting records in order of 
-  first in first out. 
+This option allows you to set a threshold based on available disk space (percentage disk space available), at which point automatic data deletion starts. When this threshold is reached, CoPilot will start deleting records in order of first in first out. 
 
+**Task Server Settings**
+
+For task server settings, the default entries are usually sufficient. Ensure that you understand the impact of changing an option before making the change.  
+
+**Topology Settings**
+
+The **Limit Topology Render** configuration option can be used when using the Topology V1 map to display very large topologies. Enable this option if your network infrastructure is large and the full visible topology cannot be rendered in the topology map. In this case, you can still use the topology map feature by using filters to load scaled down portions of your topology. When this option is disabled (default), CoPilot will automatically attempt to load the full topology of your infrastructure in the map when the Topology page is opened. To enable the option, set the option to **Enabled** and click **Save**.
+
+**Micro-Segmentation Settings**
+
+The **CSP Resource Poll Interval** configuration option can be set to specify how often in minutes Aviatrix Controller waits between polling your CSPs for the latest resources; for example, for fetching the latest inventory of CSP tags if you modified your CSP tags. The default value is 60 minutes. Accepted values can be 1-180. Click **Save** after changing the value.
+
+Update 
+----------
+The update page is used for applying updates to CoPilot manually if Internet access is not available to receive updates. You obtain your CoPilot upgrade bundle (.tgz file) from your Support representative.
+
+Migration
+-----------
+The migration page is used for migrating CoPilot data from one instance of CoPilot to another. For instructions on migrating CoPilot data, see `About Migrating CoPilot Data <https://docs.aviatrix.com/HowTos/copilot_getting_started.html#about-migrating-copilot-data>`_.
+
+CoPilot Management
+--------------------
+(AWS Only) The CoPilot management page **Data Management** options pertain to the CoPilot data that is stored in the Aviatrix Controller backup S3 bucket if you have created that backup for your controller. The folder in the S3 bucket that pertains to CoPilot data can be backed up regularly using this option and restored if needed. 
 
 Managing Your Appliance 
 ========================================
