@@ -51,7 +51,7 @@ CoPilot Release 3.0.2 (10/07/2022)
 
   |tip_walk| 
 
-- **New navigation menu and menu search** offers improved organization of functional areas. Search on menu names or key words related to pages and views you want to access.
+- **New navigation menu and menu search** offers improved organization of functional areas. Search on menu names or key words related to pages and views you want to access. For descriptions of functional areas organized in the menu, see see `CoPilot navigation menu <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#copilot-navigation-menu>`_.
 
   |tip_walk_1| |tip_walk_2|
 
@@ -61,13 +61,13 @@ CoPilot Release 3.0.2 (10/07/2022)
 
   |tip_walk_4|
 
-- **CostIQ Shared Services** offers visibility into shared services used by cost centers for billback purposes. Shows which teams are creating the most traffic to your shared services. CostIQ is available as a public preview feature in CoPilot Release 3.0.0. See `Public Preview Features`_. CostIQ requires Controller release 6.7 or later. For information about enabling and using the CostIQ feature, see `Aviatrix CoPilot User Reference Guide <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html>`_. CoPilot Home > Billing & Cost > CostIQ.
+- **CostIQ Shared Services** offers visibility into shared services used by cost centers for billback purposes. Shows which teams are creating the most traffic to your shared services. CostIQ is available as a public preview feature in CoPilot Release 3.0.0. See `Public Preview Features`_. CostIQ requires Controller release 6.7 or later. For information about enabling and using the CostIQ feature, see `Working with CostIQ <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-costiq>`_ in *Aviatrix CoPilot User Reference Guide*. CoPilot Home > Billing & Cost > CostIQ.
 
   |cost-overview| |cost-centers|
 
   |cost-shared-services|
 
-- **Aviatrix Billing Page** offers visibility into costs of your Aviatrix Controller and gateways. You can review your account's Total Cost and review costs by CSP (Cloud Service Provider), region, group of Cloud Accounts, and individual Cloud Account. For information about the Aviatrix Billing page, see `Aviatrix CoPilot User Reference Guide <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html>`_. CoPilot Home > Monitor > FlowIQ.
+- **Aviatrix Billing Page** offers visibility into costs of your Aviatrix Controller and gateways. You can review your account's Total Cost and review costs by CSP (Cloud Service Provider), region, group of Cloud Accounts, and individual Cloud Account. For information about the Aviatrix Billing page, see `Working with Aviatrix Billing <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-aviatrix-billing>`_ in *Aviatrix CoPilot User Reference Guide*. CoPilot Home > Billing & Cost > Aviatrix Billing.
 
 - **New Topology Experience** with improved topology map that displays large network topologies. Streamlined and simplified map design. Use the toggle switch to switch to Topology Experience V1. Some functions have not migrated to V2 such as gateway diagnostics (note you can run gateway diagnostics from the Cloud Routes page also). CoPilot Home > Networking > Topology.
 
