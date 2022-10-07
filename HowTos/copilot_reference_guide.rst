@@ -2241,7 +2241,7 @@ Click on one of the region titles to drill down another level and see the costs 
 
 Click on one of the VPC/VNet tiles to see the costs for the primary and, if relevant, HA gateways in this VPC/VNet.
 
-To drill up from any level, select the drilldown level you want to review from the breadcrumbs about the graph: for example, select one level in _Cost > OCI > us-ashburn-1 > copilot-oci-use-t1_ to see that level of detail.
+To drill up from any level, select the drilldown level you want to review from the breadcrumbs about the graph: for example, select one level in Cost > OCI > us-ashburn-1 > copilot-oci-use-t1 to see that level of detail.
 
 In each level of drilldown, see the table on the right side of the page to see each cost and the relative cost.
 
@@ -2828,17 +2828,18 @@ The migration page is used for migrating CoPilot data from one instance of CoPil
 
 CoPilot Management
 --------------------
-(AWS Only) The CoPilot management page **Data Management** options pertain to the CoPilot data that is stored in the Aviatrix Controller backup S3 bucket if you have created that backup for your controller. The folder in the S3 bucket that pertains to CoPilot data can be backed up regularly using this option and restored if needed. 
+(AWS Only) The CoPilot management page **Data Management** options pertain to the CoPilot data that is stored in the Aviatrix Controller backup S3 bucket if you have created an S3 backup for your controller. The folder in the S3 bucket that pertains to CoPilot data can be backed up regularly using this option and restored if needed. The data is the data for CoPilot indexes. If you have more than one CoPilot associated with your controller, the S3 bucket will have a folder that pertains to the CoPilot data for each CoPilot instance. It is recommended to do backups of your CoPilot index data at least once per week. You use the Setup tile to specify the frequency for creating backups and the maximum number of backups you want to retain before CoPilot will delete the oldest one. You use the Restore tile to choose the backup you want to restore (based on backup name or UUID) and perform the backup. Schedule your restore for a maintenance window as it is not recommended to make changes to CoPilot data using the CoPilot UI during the restore process. 
 
 Managing Your Appliance 
 ========================================
  
-
 **Backup and recovery**
 
 In order to provide backup to your data, you can leverage instance snapshot methodology in the cloud.
 
 You can configure periodic snapshots, based on your preferred interval, to be able retain data in case of corruption or disk loss on EBS.  
+
+To back up CoPilot index data, you can use the options in the CoPilot Managment tab.
 
 
 ..  |controller-customer-id-field| image:: copilot_reference_guide_media/controller-customer-id-field.png
@@ -2925,7 +2926,7 @@ You can configure periodic snapshots, based on your preferred interval, to be ab
 .. |aviatrix-billing-explore-tab| image:: copilot_reference_guide_media/aviatrix-billing-explore-tab.png
    :scale: 70%
 
-.. |aviatrix-cost-account-billing-actions-menu| image:: copilot_reference_guide_media/aviatrix-billing-explore-tab.png
+.. |aviatrix-billing-cost-account-actions-menu| image:: copilot_reference_guide_media/aviatrix-billing-cost-account-actions-menu.png
    :scale: 50%
 
 .. |more-icon| image:: copilot_reference_guide_media/more-icon.png
