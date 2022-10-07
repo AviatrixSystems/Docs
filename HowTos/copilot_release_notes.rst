@@ -45,7 +45,7 @@ CoPilot Release 3.0.2 (10/07/2022)
 
 (Note: The following releases were built for internal use only: 2.6.0, 2.7.0, 3.0.0, 3.0.1)
 
-**Feature Enhancements in CoPilot release 3.0.1**
+**Feature Enhancements in CoPilot release 3.0.2**
 
 - **Improved UI Experience** with updated color scheme and layout for a streamlined, simplified, and consistent design. Consistent formats for tables and search/filter controls across user interface. Improved dark mode. 
 
@@ -61,7 +61,7 @@ CoPilot Release 3.0.2 (10/07/2022)
 
   |tip_walk_4|
 
-- **CostIQ Shared Services** offers visibility into shared services used by cost centers for billback purposes. Shows which teams are creating the most traffic to your shared services. CostIQ is available as a public preview feature in CoPilot Release 3.0.0. See `Public Preview Features`_. For information about enabling and using the CostIQ feature, see `Aviatrix CoPilot User Reference Guide <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html>`_. CoPilot Home > Billing & Cost > CostIQ.
+- **CostIQ Shared Services** offers visibility into shared services used by cost centers for billback purposes. Shows which teams are creating the most traffic to your shared services. CostIQ is available as a public preview feature in CoPilot Release 3.0.0. See `Public Preview Features`_. CostIQ requires Controller release 6.7 or later. For information about enabling and using the CostIQ feature, see `Aviatrix CoPilot User Reference Guide <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html>`_. CoPilot Home > Billing & Cost > CostIQ.
 
   |cost-overview| |cost-centers|
 
