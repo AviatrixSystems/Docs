@@ -230,7 +230,7 @@ We recommend customers to deploy the latest image, upgrading to the latest softw
 
 Does Aviatrix have a ISO 27002 Certification?
 --------------------------------------------------------------------------------------------
-We currently don't but this is on the roadmap for 4Q2021. 
+ISO 27001 is a work in progress. 
 
 
 
