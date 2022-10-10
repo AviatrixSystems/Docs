@@ -230,7 +230,7 @@ We recommend customers to deploy the latest image, upgrading to the latest softw
 
 Does Aviatrix have a ISO 27002 Certification?
 --------------------------------------------------------------------------------------------
-ISO 27001 is a work in progress. 
+ISO 27002 is a work in progress. 
 
 
 
