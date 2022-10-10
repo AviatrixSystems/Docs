@@ -14,7 +14,7 @@ The Aviatrix FIPS 140-2 Security Policy can be found at this `link. <https://csr
 
 Before enabling FIPS 140-2, the FIPS 140-2 Security patch needs to be applied.
 
-- To apply FIPS patch go to the Controller Console, Settings -> Maintainence -> Security Patches -> Click FIPS 140-2  
+- To apply FIPS patch go to the Controller Console, Settings -> Maintenance -> Security Patches -> Click FIPS 140-2  
 
 - To enable, go to the Controller Console, Settings -> Advanced -> FIPS 140-2. Click Enable. 
 
