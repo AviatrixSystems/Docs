@@ -94,7 +94,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **New Features in Release 6.8.1311** 
 
-* (`Public Preview <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html#public-preview-features>`_ feature) **Network Security Scanner** â€“ The Security Scanner enables you to detect vulnerabilities of instances that an attacker could potentially exploit within your Aviatrix-managed VPCs/VNets. 
+* (`Public Preview <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html#public-preview-features>`_ feature) **Network Security Scanner** - The Security Scanner enables you to detect vulnerabilities of instances that an attacker could potentially exploit within your Aviatrix-managed VPCs/VNets. 
 
   * To run the scanner, open Aviatrix CoPilot and navigate to Topology. 
   * Select an instance (not a gateway) in the map and click the **Security Scanner** button in the resource's properties pane. 
@@ -102,17 +102,17 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
  
 **Enhanced Features in Release 6.8.1311** 
 
-* **Secondary IP as Destination CIDR** â€“ If you tried to set a gatewayâ€™s secondary IP as the Destination CIDR of NAT rules, you received an error message. You can now use this secondary IP as the Destination CIDR as long as the gateway is not in Insane Mode.â€¯ 
-* **Micro-segmentation** â€“ Micro-segmentation is now supported on AWS GovCloud and Azure Government as well as AWS, Azure, and GCP.â€¯ 
-* **Performance Improvements for Egress FQDN Tags** â€“ Improved the performance of enabling an Egress FQDN tag so that the process is 5x faster. With this enhancement, adding a rule to an Egress FQDN tag is up to 50x faster. 
+* **Secondary IP as Destination CIDR** - If you tried to set a gateway's secondary IP as the Destination CIDR of NAT rules, you received an error message. You can now use this secondary IP as the Destination CIDR as long as the gateway is not in Insane Mode. 
+* **Micro-segmentation** - Micro-segmentation is now supported on AWS GovCloud and Azure Government as well as AWS, Azure, and GCP. 
+* **Performance Improvements for Egress FQDN Tags** - Improved the performance of enabling an Egress FQDN tag so that the process is 5x faster. With this enhancement, adding a rule to an Egress FQDN tag is up to 50x faster. 
 
 **Issues Corrected in Aviatrix Release 6.8.1311** 
 
-* **AVX-25499** â€“ An Aviatrix regular gateway (as opposed to a Transit or Spoke Gateway), did not have routes to local VPC CIDRs.
-* **AVX-26020** â€“ When you did a Controller backup and restore, the Controller temporarily lost its BGP routes. This loss caused network flapping and a loss of traffic until the routes were restored.
-* **AVX-26933** â€“ When you created a route-based Site2Cloud connection from the Controllerâ€™s Site2Cloud setup page and selected the HA gateway as the primary source gateway, the route table was not populated correctly.
+* **AVX-25499** - An Aviatrix regular gateway (as opposed to a Transit or Spoke Gateway), did not have routes to local VPC CIDRs.
+* **AVX-26020** - When you did a Controller backup and restore, the Controller temporarily lost its BGP routes. This loss caused network flapping and a loss of traffic until the routes were restored.
+* **AVX-26933** - When you created a route-based Site2Cloud connection from the Controller's Site2Cloud setup page and selected the HA gateway as the primary source gateway, the route table was not populated correctly.
 * **AVX-27215** - When you have a large network with FireNet gateways, applying Terraform took a long time and may have overused the Controller CPU.
-* **AVX-27323** â€“ When you exported a Terraform configuration from your Controller, the downloaded config file may have shown incorrect information. For example, if you exported a gateway configuration by navigating to Useful Tools > Export To Terraform > Gateway > gateway_snat OR gateway_dnat, the downloaded config file may have incorrectly shown that the snat_policy:
+* **AVX-27323** - When you exported a Terraform configuration from your Controller, the downloaded config file may have shown incorrect information. For example, if you exported a gateway configuration by navigating to Useful Tools > Export To Terraform > Gateway > gateway_snat OR gateway_dnat, the downloaded config file may have incorrectly shown that the snat_policy:
  
      - Has an interface argument with the tunnel interface ID. 
      - Has a connection argument with the transit connection ID.  
@@ -122,19 +122,19 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
      - Has an interface argument with an empty value. 
      - Has a connection argument with the transit connection ID.
 
-* **AVX-27330** â€“ Fixed upgrade issue if the customer deployed GW before 5.3.
-* **AVX-27716** â€“ An error may show â€œconfiguration not up-to-dateâ€ while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error.
-* **AVX-27732** â€“ FIPS 140-2 is neither supported nor required for Edge devices. Previously, if you tried to enable FIPS on the Controller, the edge gateway configuration would fail. Now, if you try to enable user-vpn in FIPS mode silently, the Edge gateways will bypass the request.
-* **AVX-27820** - Resolved an issue that sometimes caused a Controller to read the VPC CIDR of a gateway incorrectly. This issue caused an error message when OpenVPN was enabled: â€œFailed to initialize GlobalConfigDB:â€¯ 
-Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1.â€â€¯ 
+* **AVX-27330** - Fixed upgrade issue if the customer deployed GW before 5.3.
+* **AVX-27716** - An error may show â€œconfiguration not up-to-dateâ€ while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error.
+* **AVX-27732** - FIPS 140-2 is neither supported nor required for Edge devices. Previously, if you tried to enable FIPS on the Controller, the edge gateway configuration would fail. Now, if you try to enable user-vpn in FIPS mode silently, the Edge gateways will bypass the request.
+* **AVX-27820** - Resolved an issue that sometimes caused a Controller to read the VPC CIDR of a gateway incorrectly. This issue caused an error message when OpenVPN was enabled: "Failed to initialize GlobalConfigDB:" 
+Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1." 
 
 6.9.128 (09/09/2022) 
 =====================
 
 **Enhanced Features in Release 6.9.128** 
 
-* **Micro-segmentation** â€“ `Micro-segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ is now supported on AWS GovCloud and Azure Government as well as AWS, Azure, and GCP. 
-* **NAT Support for Private Mode** â€“ NAT (Network Address Translation) is now supported on gateways while using `Private Mode <https://docs.aviatrix.com/HowTos/privatemode.html>`_. This enhancement includes: 
+* **Micro-segmentation** - `Micro-segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ is now supported on AWS GovCloud and Azure Government as well as AWS, Azure, and GCP. 
+* **NAT Support for Private Mode** - NAT (Network Address Translation) is now supported on gateways while using `Private Mode <https://docs.aviatrix.com/HowTos/privatemode.html>`_. This enhancement includes: 
 
   * DNAT and customized SNAT. 
   * Terraform support for NAT. 
@@ -144,11 +144,11 @@ Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1.â€â
   * New customers can subscribe to this license using the `AWS Getting Started Guide <https://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html>`_ or `Azure Startup Guide <https://docs.aviatrix.com/StartUpGuides/azure-aviatrix-cloud-controller-startup-guide.html>`_.  
   * Existing customers, migrate to this license as soon as possible to access upcoming new features and flexible billing options. See the AWS or Azure sections of `this document <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_. 
 
-* **Secondary IP as Destination CIDR** â€“ If you tried to set a gatewayâ€™s secondary IP as the Destination CIDR of NAT rules, you received an error message. You can now use this secondary IP as the Destination CIDR as long as the gateway is not in Insane Mode. 
+* **Secondary IP as Destination CIDR** - If you tried to set a gateway's secondary IP as the Destination CIDR of NAT rules, you received an error message. You can now use this secondary IP as the Destination CIDR as long as the gateway is not in Insane Mode. 
 
 **Public Preview Features in Aviatrix Release 6.9.128**
 
-(`Public Preview <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html#public-preview-features>`_ feature) **Network Security Scanner** â€“ The Security Scanner enables you to detect vulnerabilities of instances that an attacker could potentially exploit within your Aviatrix-managed VPCs/VNets.
+(`Public Preview <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html#public-preview-features>`_ feature) **Network Security Scanner** - The Security Scanner enables you to detect vulnerabilities of instances that an attacker could potentially exploit within your Aviatrix-managed VPCs/VNets.
 
 * To run the scanner, open Aviatrix CoPilot and navigate to Topology.
 * Select an instance (not a gateway) in the map and click the **Security Scanner** button in the resource's properties pane.
@@ -157,9 +157,9 @@ Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1.â€â
 **Issues Corrected in Aviatrix Release 6.9.128** 
 
 * **AVX-27215** - When you have a large network with FireNet gateways, applying Terraform took a long time and may have overused the Controller CPU. 
-* **AVX-27716** â€“ An error may show â€œconfiguration not up-to-dateâ€ while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error. 
-* **AVX-27732** â€“ FIPS 140-2 is neither supported nor required for Edge devices. Previously, if you tried to enable FIPS on the Controller, the edge gateway configuration would fail. Now, if you try to enable user-vpn in FIPS mode silently, the Edge gateways will bypass the request. 
-* **AVX-27820** - Resolved an issue that sometimes caused a Controller to read the VPC CIDR of a gateway incorrectly. This issue caused an error message when OpenVPN was enabled: â€œFailed to initialize GlobalConfigDB: Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1.â€ 
+* **AVX-27716** - An error may show â€œconfiguration not up-to-dateâ€ while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error. 
+* **AVX-27732** - FIPS 140-2 is neither supported nor required for Edge devices. Previously, if you tried to enable FIPS on the Controller, the edge gateway configuration would fail. Now, if you try to enable user-vpn in FIPS mode silently, the Edge gateways will bypass the request. 
+* **AVX-27820** - Resolved an issue that sometimes caused a Controller to read the VPC CIDR of a gateway incorrectly. This issue caused an error message when OpenVPN was enabled: "Failed to initialize GlobalConfigDB: Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1." 
 
 6.8.1149 (08/17/2022)
 =====================
@@ -170,7 +170,7 @@ Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1.â€â
 
 **Known Issues in Aviatrix Release 6.8.1149**
 
-- **AVX-27716** - An error may show â€œconfiguration not up-to-dateâ€ while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error.
+- **AVX-27716** - An error may show "configuration not up-to-date" while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error.
 
 
 6.7.1436 (08/16/2022)
@@ -180,22 +180,22 @@ Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1.â€â
 
 - **AVX-18788** - When a GCP spoke/transit using insane mode and attached to other gateway is resized to a larger size the network throughput does not increase as expected. This fix ensures that spoke/transit gateway throughput increases the network throughput when resized to a larger size. 
 - **AVX-24610** - When the AWS TGW API returns an error to search routes from a route table, the VPN /Direct Connect learned routes are withdrawn. It should be treated as no change. 
-- **AVX-24730** - The user should be able to go to the â€œSettings â†’ Controller â†’ Login Customizationâ€ page, the page allows the user to change the admin login restriction setting and set controller banner. 
+- **AVX-24730** - The user should be able to go to the Settings > Controller > Login Customization page, the page allows the user to change the admin login restriction setting and set controller banner. 
 - **AVX-24860** - Enabled support for legacy Azure Germany North Region.  Azure does not allow users to create a new resource group in the legacy Germany North Region however users can still access or update the resource created in the legacy region previously. 
 - **AVX-25128** - An exception is seen when migrating transit gateway tunnel status in MongoDB to etc. when transit gateway has CloudN attached. When migrating transit gateway tunnel status in MongoDB to etcd, for transit gateways that have CloudN attached, use CloudN private_ip for peer_ip to fix the exception. If tunnel status in MongoDB does not have peer_ip, update it with peer_ip based on peer info from tunnel status msg controller received from a gateway. When a GCP spoke/transit using insane mode and attached to another gateway is resized to a larger size the network throughput does not increase as expected. This fix ensures that spoken/transit gateway throughput increases the network throughput when resized to a larger size. 
 - **AVX-25641** - When the customer configures the route-based mapped site2cloud connections (including enabling Forward Traffic to Transit) with tunnel or gateway failover or subnet editing, some customer traffic could be dropped. This is because the code incorrectly updates the routing parts of the connection. To fix the issue, the customer should update the versions with the fix, and image upgrades the gateways to get rid of the incorrect routing information on the gateway so that the new code can rebuild the correct routing. 
 - **AVX-25721** - For a spoke gateway, if the CIDR propagated from transit gateway has longer prefix than the CIDR propagated from S2C connection, existing software ignores the route/CIDR from transit gateway. The patch fixes this error and keeps longer prefix route from transit gateway.
 - **AVX-25976** - With this change, we will not program unnecessary entries in the VPC route table for DNAT configured with s2c connection. Thus, there is nothing to be cleaned up when the DNAT configuration is removed. 
-- **AVX-25993** - The logging service for Rsyslog supports up to 9 profiles. It is a bug in which the configuration during restore allows each profile enablement to start the Rsyslog service (6 times or more) in less than 2 seconds. The system service defaults 5 times in 10 seconds; otherwise, the Rsyslog service will fail in â€œstartingâ€. The fix is to ensure that the Rsyslog service is only restarted once for all profiles. 
+- **AVX-25993** - The logging service for Rsyslog supports up to 9 profiles. It is a bug in which the configuration during restore allows each profile enablement to start the Rsyslog service (6 times or more) in less than 2 seconds. The system service defaults 5 times in 10 seconds; otherwise, the Rsyslog service will fail in "starting". The fix is to ensure that the Rsyslog service is only restarted once for all profiles. 
 - **AVX-26086** - Corrected the logic to program the learned 0.0.0.0/0 route on the Azure cloud route table. 
 - **AVX-26208** - Corrected issue with Security Group Management in certain cases when restoring from a backup. 
 - **AVX-26374** - The controller database can go into a state where it has empty peer IPs for tunnels between transit gateways and CloudN devices. This prevents the gateway snapshot creation and prevents configuration/route updates being propagated to the gateway. This Software patch script will correct the controller database entries.
-- **AVX-26852** - If users have/use 65535 in their BGP route AS path at the beginning of the path before any other ASNâ€™s, it is replaced with IMPLICIT. This prevents an exception from occurring and prevents BGP route flapping. 
+- **AVX-26852** - If users have/use 65535 in their BGP route AS path at the beginning of the path before any other ASN's, it is replaced with IMPLICIT. This prevents an exception from occurring and prevents BGP route flapping. 
 
 **Known Issues in Aviatrix Release 6.7.1436**
 
 - **AVX-24701** - When the AWS TGW API returns an error to search routes from a route table, the VPN /Direct Connect learned routes are withdrawn. It should be treated as no change. 
-- **AVX-25459** - If you have one of the VPC CIDRs as same as the spoke gatewayâ€™s subnet CIDR, some routes cannot be updated correctly in the spoke gateway route table. 
+- **AVX-25459** - If you have one of the VPC CIDRs as same as the spoke gateway's subnet CIDR, some routes cannot be updated correctly in the spoke gateway route table. 
 - **AVX-25709** - Exception seen when disabling TGW Firenet la launched before the 6.3 release. 
 - **AVX-26684** - GRE external connection may miss routes on the HA Transit. 
 
@@ -212,16 +212,16 @@ Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1.â€â
 
 - **AVX-18788** - When a GCP spoke/transit using insane mode and attached to other gateway is resized to a larger size the network throughput does not increase as expected. This fix ensures that spoke/transit gateway throughput increases the network throughput when resized to a larger size. 
 - **AVX-24610** - When the AWS TGW API returns an error to search routes from a route table, the VPN /Direct Connect learned routes are withdrawn. It should be treated as no change. 
-- **AVX-24730** - The user should be able to go to the â€œSettings â†’ Controller â†’ Login Customizationâ€ page, the page allows the user to change the admin login restriction setting and set controller banner. 
+- **AVX-24730** - The user should be able to go to the Settings > Controller > Login Customization page, the page allows the user to change the admin login restriction setting and set controller banner. 
 - **AVX-24860** - Enabled support for legacy Azure Germany North Region.  Azure does not allow users to create a new resource group in the legacy Germany North Region however users can still access or update the resource created in the legacy region previously. 
-- **AVX-25459** - If you have one of the VPC CIDRs as same as the spoke gatewayâ€™s subnet CIDR, some routes cannot be updated correctly in the spoke gateway route table. 
+- **AVX-25459** - If you have one of the VPC CIDRs as same as the spoke gateway's subnet CIDR, some routes cannot be updated correctly in the spoke gateway route table. 
 - **AVX-25490** - New controller versions could be hit with error messages upon upgrade, such as "TypeError: '1370' has type str, but expected one of: int, long". This is because the previous version has some gateway level tunnel configurations which could have some values of the string type, and the newer version expects the integer type. The latest controller image versions with the fix will automatically convert the string values into integer values so that the upgrade could finish. 
-- **AXV-25514** - If users have/use 65535 in their BGP route AS path at the beginning of the path before any other ASNâ€™s, it is replaced with IMPLICIT. This prevents an exception from occurring and prevents BGP route flapping. 
+- **AXV-25514** - If users have/use 65535 in their BGP route AS path at the beginning of the path before any other ASN's, it is replaced with IMPLICIT. This prevents an exception from occurring and prevents BGP route flapping. 
 - **AVX-25641** - When the customer configures the route-based mapped site2cloud connections (including enabling Forward Traffic to Transit) with tunnel or gateway failover or subnet editing, some customer traffic could be dropped. This is because the code incorrectly updates the routing parts of the connection. To fix the issue, the customer should update the versions with the fix, and image upgrades the gateways to get rid of the incorrect routing information on the gateway so that the new code can rebuild the correct routing. 
 - **AVX-25673** - After using SITE2CLOUD Diagnostics 'Enable verbose logging', 'Disable verbose logging' fails to disable verbose logging. 
 - **AVX-25721** - For a spoke gateway, if the CIDR propagated from transit gateway has longer prefix than the CIDR propagated from S2C connection, existing software ignores the route/CIDR from transit gateway. The patch fixes this error and keeps longer prefix route from transit gateway.
 - **AVX-25976** - With this change, we will not program unnecessary entries in the VPC route table for DNAT configured with s2c connection. Thus, there is nothing to be cleaned up when the DNAT configuration is removed. 
-- **AVX-25993** - The logging service for Rsyslog supports up to 9 profiles. It is a bug in which the configuration during restore allows each profile enablement to start the Rsyslog service (6 times or more) in less than 2 seconds. The system service defaults 5 times in 10 seconds; otherwise, the Rsyslog service will fail in â€œstartingâ€. The fix is to ensure that the Rsyslog service is only restarted once for all profiles. 
+- **AVX-25993** - The logging service for Rsyslog supports up to 9 profiles. It is a bug in which the configuration during restore allows each profile enablement to start the Rsyslog service (6 times or more) in less than 2 seconds. The system service defaults 5 times in 10 seconds; otherwise, the Rsyslog service will fail in "starting". The fix is to ensure that the Rsyslog service is only restarted once for all profiles. 
 - **AVX-26086** - Corrected the logic to program the learned 0.0.0.0/0 route on the Azure cloud route table. 
 - **AVX-26208** - Corrected issue with Security Group Management in certain cases when restoring from a backup. 
 - **AVX-27359** - CloudN SW upgrade from image prior to 6.6.5721 need to use "upgrade to a custom release" to upgrade to latest 6.6 (6.6.5721).
@@ -238,8 +238,8 @@ Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1.â€â
 
 **Important Notices in Aviatrix Release 6.8.1148** 
 
-- **AVX-26666** â€“ For gateway rollback to work in 6.8, your Controller and gateways must be on the latest version of 6.7 (6.7.1376) before upgrading to 6.8.
-- **AVXSRE-395** â€“ Aviatrix is continuously improving its products and services, requiring to migrate to new IP addresses. Therefore, if you are filtering out part of all the traffic from your controllers to the Internet, please update your rules to allow â€œAviatrix Central Servicesâ€ according to our Support Portal: Aviatrix Products: `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Required-Access-for-External-Sites>`_
+- **AVX-26666** - For gateway rollback to work in 6.8, your Controller and gateways must be on the latest version of 6.7 (6.7.1376) before upgrading to 6.8.
+- **AVXSRE-395** - Aviatrix is continuously improving its products and services, requiring to migrate to new IP addresses. Therefore, if you are filtering out part of all the traffic from your controllers to the Internet, please update your rules to allow â€œAviatrix Central Servicesâ€ according to our Support Portal: Aviatrix Products: `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Required-Access-for-External-Sites>`_
 
 The following Private Preview Features are available in this release:
 
@@ -252,7 +252,7 @@ The following Private Preview Features are available in this release:
 - **Certificate-Based Authentication for Site2Cloud VPN** - You can now use certificate-based authentication when configuring a Site2Cloud connection between your Aviatrix gateways and external devices. Currently only the Palo Alto VM-Series firewall is supported as an external device. See `here <https://docs.aviatrix.com/HowTos/site2cloud-cacert.html>`_ for more information. 
 - **HPE for AWS/Azure China** - AWS China and Azure China CSPs now support High Performance Encryption (HPE).
 - **Aviatrix Controller Deployment from Azure China** - Aviatrix now supports deploying a Controller from Azure China. See `this document <https://docs.aviatrix.com/HowTos/aviatrix_china_overview.html>`_ for more information about which Aviatrix features and services are available for China marketplaces. Please note that Aviatrix CoPilot is still only available in AWS China.
-- **Preserve AS Path** - In 6.7.1319, we introduced a new toggle, â€œPreserve AS Pathâ€. When enabled, this toggle ensured gateways retained the AS path in manually advertised routes, and that routes would be advertised as local if the route did not exist in best route DB. This change improves failover behavior; gateways will stop advertising any manually advertised CIDR if it is no longer in the best DB (the route is no longer advertised as local).
+- **Preserve AS Path** - In 6.7.1319, we introduced a new toggle, "Preserve AS Path". When enabled, this toggle ensured gateways retained the AS path in manually advertised routes, and that routes would be advertised as local if the route did not exist in best route DB. This change improves failover behavior; gateways will stop advertising any manually advertised CIDR if it is no longer in the best DB (the route is no longer advertised as local).
 - **Private Mode Phase 1** - Private Mode is a global setting that offers secure orchestrated intra- and multi-cloud networking by removing the need for public IPs for Aviatrix gateways. `Click here for more information about Private Mode <https://docs.aviatrix.com/HowTos/privatemode.html>`_.
 
 **Enhanced Features in Aviatrix Release 6.8.1148**
@@ -282,12 +282,12 @@ The following Private Preview Features are available in this release:
 - **AVX-17284** - Fixed Stateful firewall log throttling. The logs no longer undergo quick rotation.
 - **AVX-17650** - Previously the Controller was stuck at 99% when performing a custom upgrade dry run on CloudN. This no longer occurs.
 - **AVX-18788** - When the instance size of a GCP Spoke/Transit Gateway using Insane Mode that is attached to another gateway is increased network throughput increases accordingly. 
-- **AVX-19569** - Fixed the issue of â€˜TCPâ€™ protocol FQDN rules for port 8443 not being enforced when an â€˜HTTPâ€™ protocol FQDN rule for port 8443 exists.
-- **AVX-20038** - Fixed the issue where the â€œaviatrix-Aviatrix-Ingress-routing" edge route table was not programmed correctly when PSF gateway was deployed to a public subnet matching its VPCâ€™s CIDR. 
+- **AVX-19569** - Fixed the issue of "TCP" protocol FQDN rules for port 8443 not being enforced when an "HTTP" protocol FQDN rule for port 8443 exists.
+- **AVX-20038** - Fixed the issue where the "aviatrix-Aviatrix-Ingress-routing" edge route table was not programmed correctly when PSF gateway was deployed to a public subnet matching its VPC's CIDR. 
 - **AVX-21889** - You can now successfully insert a stateful Firewall Rule using a reference rule from previously existing rules.
-- **AVX-22495** - Occasionally an AWS Transit FireNet Gateway Image upgrade would result in config_fail with the error message â€œfailed to bring up interface eth3â€. This error no longer occurs.
+- **AVX-22495** - Occasionally an AWS Transit FireNet Gateway Image upgrade would result in config_fail with the error message "failed to bring up interface eth3". This error no longer occurs.
 - **AVX-22928** - If you delete a GCP gateway that is connected to an external gateway, you now see an error in the Controller indicating that deletion is not possible because of the external connection. Previously, the gateway was removed from the database and an error was not displayed in the Controller. To delete the GCP gateway, you must first delete the connection to the external gateway. 
-- **AVX-23292** - On Edge gateways, if the â€œclishâ€ command â€˜diagnosticsâ€™ is typed before Controller registration is run, it will show an exception saying the diagnostics file does not exist. After the fix, an error message displays indicating that gateway registration is not triggered.
+- **AVX-23292** - On Edge gateways, if the "clish" command "˜diagnostics" is typed before Controller registration is run, it will show an exception saying the diagnostics file does not exist. After the fix, an error message displays indicating that gateway registration is not triggered.
 - **AVX-23383** - Improved the function of Aviatrix gateways in High-Performance Encryption (HPE) mode by increasing the number of interfaces an NTP service can handle from 1024 to 4096.
 - **AVX-23407** - The best route may not have been selected correctly based on the AS path lengths and metric values among routes of the same BGP connection. When this route was used to represent the BGP source and compared with route from other sources, the result could be incorrect.
 - **AVX-23725** - Improved the storage methods for FQDN tags. The domain names in FQDN tags for Egress FQDN Filter will now be stored in a case-insensitive manner. For example, tag1: www.Google.com, TCP, 443 and tag2: www.google.com, TCP, 443 will be stored as one tag (www.google.com, TCP, 443).
@@ -302,11 +302,11 @@ The following Private Preview Features are available in this release:
 - **AVX-25256** - A control plane service running on a gateway no longer consumes multiple gigabytes of memory when there are many IPsec tunnels.
 - **AVX-25257** - An inefficient lookup routine in our internal routing service on Transit gateways running in Azure resulted in a persistently high CPU usage for a large number (1000+) of tunnels. This has been corrected.
 - **AVX-25289** - A bug in the Preserve AS Path feature resulted in manual summary CIDRs not present in the best route database being listed in BGP Advertise CIDRs on the BGP page for the HA gateway. The routes are programmed correctly; this is a display-only issue. Customers who have enabled this feature must disable and re-enable the feature on the Transit gateway to correct the display issue. 
-- **AVX-25425** - The dry run for 6.8.1148 will fail if the CSP gateways are using an older AMI, but the upgrade will succeed. To prevent any issues with your gateways, performing an â€œImage Upgradeâ€ from the Controller (Settings > Maintenance > Upgrade) is recommended. CSP gateways with older AMIs (released in early 2021) may not be able to upgrade after 7.0.
+- **AVX-25425** - The dry run for 6.8.1148 will fail if the CSP gateways are using an older AMI, but the upgrade will succeed. To prevent any issues with your gateways, performing an "Image Upgrade" from the Controller (Settings > Maintenance > Upgrade) is recommended. CSP gateways with older AMIs (released in early 2021) may not be able to upgrade after 7.0.
 - **AVX-25524** - Fix filter removed after auto-refresh gateway list.
 - **AVX-25632** - Fixed the issue where the Aviatrix Controller was creating more tunnels which exceeds the maximum throughput of the CSP, for the same gateway instance sizes in terms of core counts.
 - **AVX-25687** - When single SNAT is enabled, traffic toward the Spoke VPC CIDRs is no longer SNAT'ed. Before this change, all traffic egress from Spoke GW eth0 interface would be SNAT'ed, leading to asymmetric traffic on Transit gateways.  
-- **AVX-25993** - The logging service for Rsyslog supports up to nine profiles. The configuration during restore allowed each profile enablement to start the Rsyslog service (6 times or more) in less than 2 seconds. The system service defaults five times in 10 seconds; otherwise, the Rsyslog service will fail in â€œstartingâ€. The fix ensures that the Rsyslog service is only restarted once for all profiles.
+- **AVX-25993** - The logging service for Rsyslog supports up to nine profiles. The configuration during restore allowed each profile enablement to start the Rsyslog service (6 times or more) in less than 2 seconds. The system service defaults five times in 10 seconds; otherwise, the Rsyslog service will fail in "starting". The fix ensures that the Rsyslog service is only restarted once for all profiles.
 - **AVX-26007** - The only user actions possible during a restore are enabling remote support or uploading tracelog. All other actions are blocked.
 - **AVX-26086** - Corrected the logic to program the learned 0.0.0.0/0 route on the Azure CSP route table.
 - **AVX-26095** - An improperly configured security group prevented gateways from sending keepalive checks to the Aviatrix Controller. This should have marked the gateways as down. However, because of a bug in our internal service, the Controller continued to mark those gateways as up. 
@@ -325,7 +325,7 @@ The following Private Preview Features are available in this release:
 
 
 - **AVX-25673** - After Site2Cloud verbose logging is enabled, it cannot be disabled in the UI.
-- **AVX-26419** - If you are connecting to another Aviatrix device, using IKEv2 is preferred. IKEv2 support started in version 5.0.2667. If you configure IKEv1 in a Site2Cloud connection that uses certificate-based authentication and is connecting to another Aviatrix device, you must add the intermediate CAâ€™s in addition to the root CA. When an intermediate CA is renewed and re-authentication is attempted, the Site2Cloud connection will go down until you add the new certificate.
+- **AVX-26419** - If you are connecting to another Aviatrix device, using IKEv2 is preferred. IKEv2 support started in version 5.0.2667. If you configure IKEv1 in a Site2Cloud connection that uses certificate-based authentication and is connecting to another Aviatrix device, you must add the intermediate CA's in addition to the root CA. When an intermediate CA is renewed and re-authentication is attempted, the Site2Cloud connection will go down until you add the new certificate.
 
 
 6.7.1376 (08/02/2022) 
@@ -337,7 +337,7 @@ The following Private Preview Features are available in this release:
 
 **Enhancements in Aviatrix Release 6.7.1376** 
 
-- **AVX-25470: Create single HPE tunnel for Transit and Spoke Attachments** - By default, when HPE is used for Transit peering and Spoke attachments over private IPs, Aviatrix creates the maximum number of HPE tunnels possible given the instance sizes. This enhancement adds the ability to create a single HPE tunnel for Transit peering and spoke attachments over private IPs. Both Transit and Spoke Gateways must have HPE enabled. In Terraform you can enable this by setting the â€œenable_max_performanceâ€ field to â€œfalseâ€ when creating Transit peering and Spoke attachments. If using HPE for private Transit peering and Spoke attachments, please re-create those connections once â€œenable_max_performanceâ€ option is enabled.  
+- **AVX-25470: Create single HPE tunnel for Transit and Spoke Attachments** - By default, when HPE is used for Transit peering and Spoke attachments over private IPs, Aviatrix creates the maximum number of HPE tunnels possible given the instance sizes. This enhancement adds the ability to create a single HPE tunnel for Transit peering and spoke attachments over private IPs. Both Transit and Spoke Gateways must have HPE enabled. In Terraform you can enable this by setting the "enable_max_performance" field to "false" when creating Transit peering and Spoke attachments. If using HPE for private Transit peering and Spoke attachments, please re-create those connections once â€œenable_max_performanceâ€ option is enabled.  
 - **AVX25657: CoPilot Notification Thresholds** - Notification thresholds can be set on gateway tunnel counts configured in CoPilot to send alert notifications via the UI and email. 
 
 **Issues Corrected in Aviatrix Release 6.7.1376** 
@@ -352,7 +352,7 @@ The following Private Preview Features are available in this release:
 - **AVX-25289** - A bug in the Preserve AS Path feature resulted in manual summary CIDRs not present in the best route database being listed in BGP Advertise CIDRs on the BGP page for the HA gateway. The routes are programmed correctly; this is a display-only issue. Customers who have enabled this feature must disable and reenable the feature on the Transit gateway to correct the display issue.
 - **AVX-25632** - Fixed the issue where the Aviatrix Controller was creating more tunnels which exceeds the maximum throughput of the CSP, for the same gateway instance sizes in terms of core counts. 
 - **AVX-25687** - When single SNAT is enabled, traffic toward the Spoke VPC CIDRs is no longer SNAT'ed. Before this change, all traffic egress from Spoke GW eth0 interface would be SNAT'ed, leading to asymmetric traffic on Transit gateways. 
-- **AVX-25993** - The logging service for Rsyslog supports up to nine profiles. The configuration during restore allowed each profile enablement to start the Rsyslog service (6 times or more) in less than 2 seconds. The system service defaults five times in 10 seconds; otherwise, the Rsyslog service will fail in â€œstartingâ€. The fix ensures that the Rsyslog service is only restarted once for all profiles.
+- **AVX-25993** - The logging service for Rsyslog supports up to nine profiles. The configuration during restore allowed each profile enablement to start the Rsyslog service (6 times or more) in less than 2 seconds. The system service defaults five times in 10 seconds; otherwise, the Rsyslog service will fail in "starting". The fix ensures that the Rsyslog service is only restarted once for all profiles.
 - **AVX-26007** - The only user actions possible during a restore are enabling remote support or uploading tracelog. All other actions are blocked.
 - **AVX-26086** - Corrected the logic to program the learned 0.0.0.0/0 route on the Azure CSP route table.
 - **AVX-26095** - An improperly configured security group prevented gateways from sending keepalive checks to the Aviatrix Controller. This should have marked the gateways as down. However, because of a bug in our internal service, the Controller continued to mark those gateways as up. 
@@ -370,7 +370,7 @@ The following Private Preview Features are available in this release:
 
 **New Features in Aviatrix Release 6.6.5712**
 
-- **AVX-25289** - In 6.7.1319, Aviatrix introduced a new toggle, â€œPreserve AS Pathâ€. When enabled, this toggle ensured gateways retained the AS path in manually advertised routes, and that routes would be advertised as local if the route did not exist in the best route DB. 
+- **AVX-25289** - In 6.7.1319, Aviatrix introduced a new toggle, "Preserve AS Path". When enabled, this toggle ensured gateways retained the AS path in manually advertised routes, and that routes would be advertised as local if the route did not exist in the best route DB. 
 This change improves failover behavior; gateways will stop advertising any manually advertised CIDR if it is no longer in the best DB (the route is no longer advertised as local).  
 
 **Issues Corrected in Aviatrix Release 6.6.5712** 
@@ -382,7 +382,7 @@ This change improves failover behavior; gateways will stop advertising any manua
 - **AVX-25082/25598** - Stale transit peering entries in the database resulted in an issue listing transit peers. This resulted in incorrect metered billing. 
 - **AVX-25128** - An exception occurs when migrating Transit Gateway tunnel status in MongoDB to etcd when the Transit Gateway has a CloudN attached. To fix this issue, when migrating Transit Gateway tunnel status in MongoDB to etcd that have CloudN attached, use the CloudN private_ip for peer_ip. If the tunnel status in MongoDB does not a peer_ip, update it with the peer_ip based on the peer information from the gateway tunnel status message received by the Controller.
 - **AVX-25257** - An inefficient lookup routine in our internal routing service on Transit gateways running in Azure resulted in a persistently high CPU usage for a large number (1000+) of tunnels. This has been corrected.
-- **AVX-25993** - The logging service for Rsyslog supports up to nine profiles. The configuration during restore allowed each profile enablement to start the Rsyslog service (6 times or more) in less than 2 seconds. The system service defaults five times in 10 seconds; otherwise, the Rsyslog service will fail in â€œstartingâ€. The fix ensures that the Rsyslog service is only restarted once for all profiles.
+- **AVX-25993** - The logging service for Rsyslog supports up to nine profiles. The configuration during restore allowed each profile enablement to start the Rsyslog service (6 times or more) in less than 2 seconds. The system service defaults five times in 10 seconds; otherwise, the Rsyslog service will fail in "starting". The fix ensures that the Rsyslog service is only restarted once for all profiles.
 - **AVX-26007** - The only user actions possible during a restore are enabling remote support or uploading tracelog. All other actions are blocked.
 - **AVX-26086** - Corrected the logic to program the learned 0.0.0.0/0 route on the Azure CSP route table.
 - **AVX-26095** - An improperly configured security group prevented gateways from sending keepalive checks to the Aviatrix Controller. This should have marked the gateways as down. However, because of a bug in our internal service, the Controller continued to mark those gateways as up. 
@@ -396,7 +396,7 @@ This change improves failover behavior; gateways will stop advertising any manua
 
 **Issues Corrected in Aviatrix Release 6.7.1325**  
 
-- **AVX-25128** â€“ An exception is seen when migrating Transit Gateway tunnel status in MongoDB to etcd when Transit Gateway has CloudN attached. Fix:
+- **AVX-25128** - An exception is seen when migrating Transit Gateway tunnel status in MongoDB to etcd when Transit Gateway has CloudN attached. Fix:
 
 #. When migrating Transit Gateway tunnel status in MongoDB to etcd, for Transit Gateways that have CloudN attached, use CloudN private_ip for peer_ip to fix the exception.
 #. If tunnel status in MongoDB does not have peer_ip, update it with peer_ip based on peer info from the tunnel status msg controller received from a gateway.
@@ -416,38 +416,38 @@ This change improves failover behavior; gateways will stop advertising any manua
 
 **Feature Enhancements in 6.7.1324** 
 
-- **AVX-25293** â€“ Jumbo frames can be enabled and disabled for GRE tunnels.
+- **AVX-25293** - Jumbo frames can be enabled and disabled for GRE tunnels.
 
 6.6.5662 (06/15/2022) 
 ========================= 
 
 **Feature Enhancements in 6.6.5662** 
 
-- **AVX-21263** â€“ Improved email notifications. When a GRE tunnel in your account goes down or up, the Aviatrix Controller sends the GRE tunnel status change to the registered email address(es). This email notification contains the timestamp for the tunnel status change. 
-- **AVX-23383** â€“ Improved the function of Aviatrix gateways in High-Performance Encryption (HPE) mode by increasing the number of interfaces an NTP service can handle from 1024 to 4096. 
+- **AVX-21263** - Improved email notifications. When a GRE tunnel in your account goes down or up, the Aviatrix Controller sends the GRE tunnel status change to the registered email address(es). This email notification contains the timestamp for the tunnel status change. 
+- **AVX-23383** - Improved the function of Aviatrix gateways in High-Performance Encryption (HPE) mode by increasing the number of interfaces an NTP service can handle from 1024 to 4096. 
 
 **Issues Corrected in Aviatrix Release 6.6.5662** 
 
-- **AVX-21823** â€“ Image upgrade causing incorrect firewall_rtb config on AWS Transit FireNet with network exclude list. 
-- **AVX-21889** â€“ You can now successfully insert a stateful Firewall Rule using a reference rule from previously existing rules. 
-- **AVX-22791** â€“ Starting with release 6.6, the Controller consolidates emails so that emails with the same email address and subject line are combined (helping limit the number of emails while still delivering important status notifications). These email notifications were being consolidated incorrectly. 
-- **AVX-23407** â€“ The best route may not have been selected correctly based on the AS path lengths and metric values among routes of the same BGP connection. When this route was used to represent the BGP source and compared with route from other sources, the result could be incorrect. 
+- **AVX-21823** - Image upgrade causing incorrect firewall_rtb config on AWS Transit FireNet with network exclude list. 
+- **AVX-21889** - You can now successfully insert a stateful Firewall Rule using a reference rule from previously existing rules. 
+- **AVX-22791** - Starting with release 6.6, the Controller consolidates emails so that emails with the same email address and subject line are combined (helping limit the number of emails while still delivering important status notifications). These email notifications were being consolidated incorrectly. 
+- **AVX-23407** - The best route may not have been selected correctly based on the AS path lengths and metric values among routes of the same BGP connection. When this route was used to represent the BGP source and compared with route from other sources, the result could be incorrect. 
 
 6.7.1319 (06/10/2022) 
 ========================= 
 
 **Feature Enhancements in 6.7.1319** 
 
-* **AVX-21263** â€“ Improved email notifications. When a GRE tunnel in your account goes down or up, the Aviatrix Controller sends the GRE tunnel status change to the registered-email-address(es). This email notification contains the timestamp for the tunnel status change. 
-* **AVX-23069** â€“ Added a new toggle switch, â€œPreserve AS Path,â€ to Multi-Cloud Transit > Advanced Config. This option allows you to preserve an AS Path during manual BGP route advertisements, which reduces the chances of routing loops and wrong route selection on the peer side. 
+* **AVX-21263** - Improved email notifications. When a GRE tunnel in your account goes down or up, the Aviatrix Controller sends the GRE tunnel status change to the registered-email-address(es). This email notification contains the timestamp for the tunnel status change. 
+* **AVX-23069** - Added a new toggle switch, â€œPreserve AS Path,â€ to Multi-Cloud Transit > Advanced Config. This option allows you to preserve an AS Path during manual BGP route advertisements, which reduces the chances of routing loops and wrong route selection on the peer side. 
 
 * You can enable this option in both the Gateway Manual BGP Advertised Network List and the Connection Manual BGP Advertised Network List, and on Transit and Spoke Gateways.  
 * When the â€œPreserve AS Pathâ€ option is disabled, the AS path is stripped during BGP route advertisements from Transit or Spoke Gateways to neighbors. 
 
-* **AVX-23105** â€“ Enhanced Controller validation for micro-segmentation. The Controller now checks that gateway kernel version is greater or equal to 5.4.0 before allowing you to configure micro-segmentation. Micro-segmentation requires this minimum kernel for data plane enforcement. 
-* **AVX-23163** â€“ The account/gateway auditing interval has been changed from every hour to every 24 hours. This change improves the memory performance of the Controller. 
-* **AVX-23383** â€“ Improved the function of Aviatrix gateways in High Performance Encryption (HPE) mode by increasing the number of interfaces an NTP service can handle from 1024 to 4096. 
-* **AVX-23725** â€“ Improved the storage methods for FQDN tags. The domain names in FQDN tags for Egress FQDN Filter will now be stored in a case insensitive manner. For example, tag1: www.Google.com, tcp, 443 and tag2: www.google.com, tcp, 443 will be stored as one tag (www.google.com, tcp, 443). 
+* **AVX-23105** - Enhanced Controller validation for micro-segmentation. The Controller now checks that gateway kernel version is greater or equal to 5.4.0 before allowing you to configure micro-segmentation. Micro-segmentation requires this minimum kernel for data plane enforcement. 
+* **AVX-23163** - The account/gateway auditing interval has been changed from every hour to every 24 hours. This change improves the memory performance of the Controller. 
+* **AVX-23383** - Improved the function of Aviatrix gateways in High Performance Encryption (HPE) mode by increasing the number of interfaces an NTP service can handle from 1024 to 4096. 
+* **AVX-23725** - Improved the storage methods for FQDN tags. The domain names in FQDN tags for Egress FQDN Filter will now be stored in a case insensitive manner. For example, tag1: www.Google.com, tcp, 443 and tag2: www.google.com, tcp, 443 will be stored as one tag (www.google.com, tcp, 443). 
 
 **Public Preview Features in 6.7.1319** 
 
@@ -463,21 +463,21 @@ The **Micro-segmentation** public preview feature has the following enhancements
 **Issues Corrected in Aviatrix Release 6.7.1319** 
 
 * **AVX-21889** â€“ You can now successfully insert a stateful Firewall Rule using a reference rule from previously existing rules. 
-* **AVX-21946** â€“ Micro-segmentation policy logging could display the incorrect policy UUID. 
-* **AVX-22110** â€“ Micro-segmentation policy statistics could be overcounted. 
-* **AVX-22181** â€“ The Controller crashed when using an Azure API to get VNet routing tables. The crash occurred because the system did not consider the possibility of a failure case in which â€œNoneTypeâ€ is returned. 
-* **AVX-22184** â€“ When an Edge Gateway expires, its state is listed as â€œwaitingâ€ on the Upgrade page. This â€œwaitingâ€ Gateway prevents the Controller from successfully upgrading. The actual state of the edge is â€œExpired,â€ which is shown in the CloudN > List.  
+* **AVX-21946** - Micro-segmentation policy logging could display the incorrect policy UUID. 
+* **AVX-22110** - Micro-segmentation policy statistics could be overcounted. 
+* **AVX-22181** - The Controller crashed when using an Azure API to get VNet routing tables. The crash occurred because the system did not consider the possibility of a failure case in which â€œNoneTypeâ€ is returned. 
+* **AVX-22184** - When an Edge Gateway expires, its state is listed as â€œwaitingâ€ on the Upgrade page. This â€œwaitingâ€ Gateway prevents the Controller from successfully upgrading. The actual state of the edge is â€œExpired,â€ which is shown in the CloudN > List.  
 
    If an Edge Gateway is expired in your Controller, navigate to CloudN > List on the left sidebar. On the Registered Devices page, select the Edge Gateway with the state â€œwaiting,â€ click the Diag dropdown menu, and select Reset Configuration. Then, your Controller can successfully upgrade. 
 
-* **AVX-22208** â€“ Launching a new GCP Gateway with Insane Mode and peering it with another GCP Insane Mode Gateway failed to program the Linux route table correctly. This issue is caused by GCE HPE Gateways with HA pairs to have incorrect entries for secondary IP addresses. The gateway could not recover from this error; you had to terminate the existing gateway and launch a new one. 
-* **AVX-22504** â€“ An error displayed when the Alibaba Cloud subnet list was empty: â€œTypeError: 'NoneType' object is not subscriptable.â€ Now, the Controller resolves the error automatically without displaying an error message.  
-* **AVX-22791** â€“ Starting with release 6.6, the Controller consolidates emails so that emails with the same email address and subject line are combined (helping limit the number of emails while still delivering important status notifications). These email notifications were being consolidated incorrectly. 
-* **AVX-22903** â€“ After a new Controller was launched for the first time, there were no routes from the Transit Gateway to the Spoke Gateway. 
-* **AVX-22929** â€“ Potential micro-segmentation app domain filter issue: If an account ID was associated with more than one account name, an app domain may have shown an empty list of resolved CIDRs when one of those account names was used as match criteria for a VM or VPC/VNet filter. 
-* **AVX-22934** â€“ ICMP packets could have nonfunctioning associated ports. 
-* **AVX-23077** â€“ A gateway would continue trying to enforce micro-segmentation policies on deleted network interfaces. 
-* **AVX-23187** â€“ On the Selective Gateway Upgrade page (available in your Controller through Settings > Maintenance), the table has been improved to display more information about your gateways. The table has two new columns: State and Update Status.  
+* **AVX-22208** - Launching a new GCP Gateway with Insane Mode and peering it with another GCP Insane Mode Gateway failed to program the Linux route table correctly. This issue is caused by GCE HPE Gateways with HA pairs to have incorrect entries for secondary IP addresses. The gateway could not recover from this error; you had to terminate the existing gateway and launch a new one. 
+* **AVX-22504** - An error displayed when the Alibaba Cloud subnet list was empty: â€œTypeError: 'NoneType' object is not subscriptable.â€ Now, the Controller resolves the error automatically without displaying an error message.  
+* **AVX-22791** - Starting with release 6.6, the Controller consolidates emails so that emails with the same email address and subject line are combined (helping limit the number of emails while still delivering important status notifications). These email notifications were being consolidated incorrectly. 
+* **AVX-22903** - After a new Controller was launched for the first time, there were no routes from the Transit Gateway to the Spoke Gateway. 
+* **AVX-22929** - Potential micro-segmentation app domain filter issue: If an account ID was associated with more than one account name, an app domain may have shown an empty list of resolved CIDRs when one of those account names was used as match criteria for a VM or VPC/VNet filter. 
+* **AVX-22934** - ICMP packets could have nonfunctioning associated ports. 
+* **AVX-23077** - A gateway would continue trying to enforce micro-segmentation policies on deleted network interfaces. 
+* **AVX-23187** - On the Selective Gateway Upgrade page (available in your Controller through Settings > Maintenance), the table has been improved to display more information about your gateways. The table has two new columns: State and Update Status.  
 
 1. **State** - This column displays the state of a gateway: up, down, waiting (for a newly launched gateway waiting to go up), and config_fail (if the gateway configuration failed). 
 2. **Update Status** - This column displays the status of a gateway that you just updated:  
@@ -488,22 +488,22 @@ The **Micro-segmentation** public preview feature has the following enhancements
 * **installing** - The gateway is installing the update. 
 * **initializing** - The gateway is running the gateway upgrade service which includes initializing modules and restarting services.
 * **complete** - The latest update is complete. 
-* **upgrade_fail** - The upgrade failed due to a gateway being stopped, a hardware failure, network reachability, or another issue. Try restarting the gateway from your Controller or directly from the related CSP, and then redo the software upgrade. If the â€œupgrade_failâ€ status persists, please do an image upgrade. 
+* **upgrade_fail** - The upgrade failed due to a gateway being stopped, a hardware failure, network reachability, or another issue. Try restarting the gateway from your Controller or directly from the related CSP, and then redo the software upgrade. If the "upgrade_fail" status persists, please do an image upgrade. 
 
-* **AVX-23407** â€“ The best route may not have been selected correctly based on the AS path lengths and metric values among routes of the same BGP connection. When this route was used to represent the BGP source and compared with route from other sources, the result could be incorrect. 
-* **AVX-23437** â€“ A packet that matched both a source and a destination app domain could be misclassified. 
-* **AVX-23925** â€“ Having many micro-segmentation policies (the maximum is 64 policies) might result in performance degradation. 
+* **AVX-23407** - The best route may not have been selected correctly based on the AS path lengths and metric values among routes of the same BGP connection. When this route was used to represent the BGP source and compared with route from other sources, the result could be incorrect. 
+* **AVX-23437** - A packet that matched both a source and a destination app domain could be misclassified. 
+* **AVX-23925** - Having many micro-segmentation policies (the maximum is 64 policies) might result in performance degradation. 
 
 **Known Issues in 6.7.1319** 
 
-* **AVX-21307** â€“ In the 6.7 release, when you create a large number of gateways using Terraform, some gateways may end in a config_fail state. This rare issue may be related to a transient network or release server connectivity (too many gatewaysâ€™ connections for download of packages). To resolve this issue, replace the gateways that show the â€œconfig_failâ€ state. 
+* **AVX-21307** - In the 6.7 release, when you create a large number of gateways using Terraform, some gateways may end in a config_fail state. This rare issue may be related to a transient network or release server connectivity (too many gateways' connections for download of packages). To resolve this issue, replace the gateways that show the â€œconfig_failâ€ state. 
 
 6.4.3057 (05/26/2022) 
 =======================
 
 Issues Corrected in Aviatrix Release 6.4.3057
 
-- **AVI-2022-0002** â€“ A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
+- **AVI-2022-0002** - A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
 - **AVX-23200** - When connectivity is lost between a Controller and a Gateway, and the Controller is unable to perform a health check on the Gateway by establishing an HTTPS connection, then an SSH-based connection will be used to perform the health check. The results of the health check are supposed to assist the Controller in determining whether a data-plane change is necessary (e.g., routing table updates).
 
 
@@ -512,18 +512,18 @@ Issues Corrected in Aviatrix Release 6.4.3057
 
 Issues Corrected in Aviatrix Release 6.5.3233
 
-- **AVI-2022-0002** â€“ A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
-- **AVX-10577** â€“ Licensing metrics were not visible. 
-- **AVX-19811** â€“ You can now insert a stateful firewall policy by specifying the position where you want to insert the policy. This feature is presently available through **Insert Stateful Firewall Rules** API using **position** param. The **position** param is 1 indexed. 
-- **AVX-20271** â€“ Restricted concurrent uploads to make it harder for a remote attacker to fill the disk to defend against a denial-of-service attack. The check was too restrictive and causing concurrent uploads to overwrite each other. We enhanced the feature to allow for concurrency without sacrificing the original defense. 
-- **AVX-21238** â€“ High Performance Encryption (HPE) Gateways with many HPE peerings that have transit segmentation enabled would encounter an Out of Memory (OOM) issue. The gateway failed to recover even after a reboot.â€¯ 
-- **AVX-21332** â€“ You can now use â€œinsert_stateful_firewall_rulesâ€ API to insert stateful firewall rules, even when the table is empty. 
-- **AVX-22040** â€“ Exception seen when disconnecting a firewall domain from Aviatrix edge domain on an AWS Transit Gateway.  
+- **AVI-2022-0002** - A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
+- **AVX-10577** - Licensing metrics were not visible. 
+- **AVX-19811** - You can now insert a stateful firewall policy by specifying the position where you want to insert the policy. This feature is presently available through **Insert Stateful Firewall Rules** API using **position** param. The **position** param is 1 indexed. 
+- **AVX-20271** - Restricted concurrent uploads to make it harder for a remote attacker to fill the disk to defend against a denial-of-service attack. The check was too restrictive and causing concurrent uploads to overwrite each other. We enhanced the feature to allow for concurrency without sacrificing the original defense. 
+- **AVX-21238** - High Performance Encryption (HPE) Gateways with many HPE peerings that have transit segmentation enabled would encounter an Out of Memory (OOM) issue. The gateway failed to recover even after a reboot.â€¯ 
+- **AVX-21332** - You can now use â€œinsert_stateful_firewall_rulesâ€ API to insert stateful firewall rules, even when the table is empty. 
+- **AVX-22040** - Exception seen when disconnecting a firewall domain from Aviatrix edge domain on an AWS Transit Gateway.  
 - **AVX-23200** - When connectivity is lost between a Controller and a Gateway, and the Controller is unable to perform a health check on the Gateway by establishing an HTTPS connection, then an SSH-based connection will be used to perform the health check. The results of the health check are supposed to assist the Controller in determining whether a data-plane change is necessary (e.g., routing table updates).
 
 Known Issues in Release 6.5.3233
 
-- **AVX-22976** â€“ When you roll back a non-AWS primary and HA gateway together in any of the following patterns, one of the rollbacks fails:  
+- **AVX-22976** - When you roll back a non-AWS primary and HA gateway together in any of the following patterns, one of the rollbacks fails:  
 
 * 6.6.5612 to 6.6
 * 6.6.5612 to 6.5
@@ -536,25 +536,25 @@ To avoid this issue, roll back one gateway at a time between primary and HA gate
 
 **Important Notices in Aviatrix Release 6.6.5612** 
 
-- **AVX-20579** â€“ In order for release 6.7 to roll back to 6.6 correctly, the Controller and gateways must be running official **6.6.5612** or a release after **6.6.5612** before moving to 6.7. 
-- **AVX-22443** â€“ For a rollback from 6.7 to **6.6.5612** to run successfully, upgrade from **6.6.5404** or **6.6.5545** to **6.6.5612** before upgrading to 6.7. 
+- **AVX-20579** - In order for release 6.7 to roll back to 6.6 correctly, the Controller and gateways must be running official **6.6.5612** or a release after **6.6.5612** before moving to 6.7. 
+- **AVX-22443** - For a rollback from 6.7 to **6.6.5612** to run successfully, upgrade from **6.6.5404** or **6.6.5545** to **6.6.5612** before upgrading to 6.7. 
 
 **Issues Corrected in Aviatrix Release 6.6.5612** 
 
-- **AVI-2022-0002** â€“ A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
-- **AVX-10577** â€“ Licensing metrics were not visible. 
-- **AVX-20408** â€“ Added an extra check to prevent an exception that can occur while adding a VPC object. The exception caused the VPC to unexpectedly become unavailable from a Spoke Gateway. 
-- **AVX-20485** â€“ When you added a Site2Cloud Connection with HA that had Local/Remote Tunnel IP (Primary) settings, but the connection was missing Local/Remote Tunnel IP (Backup), the configuration failed with an error.  
-- **AVX-20978** â€“ Only one active profile rsyslog config showed up in gateways, even when the gateway had multiple profiles.  
-- **AVX-21238** â€“ High Performance Encryption (HPE) Gateways with many HPE peerings that have transit segmentation enabled encountered an Out of Memory (OOM) issue. The gateway failed to recover even after a reboot. 
-- **AVX-21332** â€“ You can now use â€œinsert_stateful_firewall_rulesâ€ API command to insert stateful firewall rules, even when the table is empty. 
-- **AVX-22040** â€“ Exception seen when disconnecting a firewall domain from an Aviatrix Edge domain on an AWS Transit Gateway. 
-- **AVX-22396** â€“ Due to a VPC ID exception, upgrading an OCI Transit FireNet Gateway failed if the gateway had an associated firewall and an HAGW (High Availability Gateway). 
+- **AVI-2022-0002** - A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
+- **AVX-10577** - Licensing metrics were not visible. 
+- **AVX-20408** - Added an extra check to prevent an exception that can occur while adding a VPC object. The exception caused the VPC to unexpectedly become unavailable from a Spoke Gateway. 
+- **AVX-20485** - When you added a Site2Cloud Connection with HA that had Local/Remote Tunnel IP (Primary) settings, but the connection was missing Local/Remote Tunnel IP (Backup), the configuration failed with an error.  
+- **AVX-20978** - Only one active profile rsyslog config showed up in gateways, even when the gateway had multiple profiles.  
+- **AVX-21238** - High Performance Encryption (HPE) Gateways with many HPE peerings that have transit segmentation enabled encountered an Out of Memory (OOM) issue. The gateway failed to recover even after a reboot. 
+- **AVX-21332** - You can now use â€œinsert_stateful_firewall_rulesâ€ API command to insert stateful firewall rules, even when the table is empty. 
+- **AVX-22040** - Exception seen when disconnecting a firewall domain from an Aviatrix Edge domain on an AWS Transit Gateway. 
+- **AVX-22396** - Due to a VPC ID exception, upgrading an OCI Transit FireNet Gateway failed if the gateway had an associated firewall and an HAGW (High Availability Gateway). 
 
 **Known Issues in Release 6.6.5612** 
 
-- **AVX-22630** â€“ If you are running an older Controller image, you may experience an error (*pymongo.errors.OperationFailure: exception: invalid operator '$filter'*) while trying to view the transit tunnel status. A workaround for this issue is to migrate to the latest Controller image. 
-- **AVX-22976** â€“ When you roll back a non-AWS primary and HA gateway together in any of the following patterns, one of the rollbacks fails:  
+- **AVX-22630** - If you are running an older Controller image, you may experience an error (*pymongo.errors.OperationFailure: exception: invalid operator '$filter'*) while trying to view the transit tunnel status. A workaround for this issue is to migrate to the latest Controller image. 
+- **AVX-22976** - When you roll back a non-AWS primary and HA gateway together in any of the following patterns, one of the rollbacks fails:  
 
 * 6.6.5612 to 6.6. 
 * 6.6.5612 to 6.5. 
@@ -562,11 +562,11 @@ To avoid this issue, roll back one gateway at a time between primary and HA gate
 To avoid this issue, roll back one gateway at a time between primary and HA gateways.   
 If you experience a configuration failure, roll back the config_fail gateway again. 
 
-- **AVX-23006** â€“ When you create a regular gateway immediately after creating a Public Subnet Filtering (PSF) gateway with GuardDuty enabled, a RACE occurs. The RACE can accidentally block the newly created gateway, which is front ended by this PSF gateway. Please wait for the PSF Gateway to finish creation before creating the regular gateway. 
+- **AVX-23006** - When you create a regular gateway immediately after creating a Public Subnet Filtering (PSF) gateway with GuardDuty enabled, a RACE occurs. The RACE can accidentally block the newly created gateway, which is front ended by this PSF gateway. Please wait for the PSF Gateway to finish creation before creating the regular gateway. 
 
 **Feature Upgrade Notice**
 
-- **AVX-22884** â€“ The Standalone CloudN workflow is not supported for releases later than 6.5. A Standalone CloudN upgrade from Release 6.5 to 6.6 or from Release 6.6 to 6.7 is not supported.
+- **AVX-22884** - The Standalone CloudN workflow is not supported for releases later than 6.5. A Standalone CloudN upgrade from Release 6.5 to 6.6 or from Release 6.6 to 6.7 is not supported.
 
 You should plan to migrate your Standalone CloudN deployment to Managed CloudN. To migrate to Managed CloudN, see `this document <https://docs.aviatrix.com/HowTos/CloudN_workflow.html#migrating-a-standalone-cloudn-to-a-managed-cloudn>`_.
 
@@ -577,22 +577,22 @@ You should plan to migrate your Standalone CloudN deployment to Managed CloudN. 
 
 **Issues Corrected in Aviatrix Release 6.7.1186** 
 
-- **AVX-22903** â€“ After a new controller is launched for the first time, there are no routes from the Transit Gateway to the Spoke Gateway. 
+- **AVX-22903** - After a new controller is launched for the first time, there are no routes from the Transit Gateway to the Spoke Gateway. 
 
 6.7.1185 (05/09/2022) 
 =======================
 
 **New Features in Aviatrix Release 6.7.1185** 
 
-* **Aviatrix Secure Edge** â€“ Aviatrix Secure Edge has a virtual from factor that lets you deploy an Edge Gateway as a standard virtual machine (VM). It is designed to enable enterprises migrating to the cloud to integrate their on-premises footprint as spokes into the enterprise cloud backbone. For more information about Secure Edge, refer to `Secure Edge FAQ <http://docs.aviatrix.com/HowTos/secure_edge_faq.html>`_. 
-* **Deploy CoPilot from your controller UI (AWS cloud only)** â€“ If you deployed Aviatrix Controller in AWS, you now have the option to deploy Aviatrix CoPilot directly from your controller UI. This eliminates the need to go to the AWS marketplace and simplifies a few steps for provisioning the CoPilot instance. When deploying this way, the controller deploys CoPilot in the same region/availability zone where it is homed. For instructions, see the discussion about launching a CoPilot instance from the Controller UI in Aviatrix CoPilot Deployment Guide. 
+* **Aviatrix Secure Edge** - Aviatrix Secure Edge has a virtual from factor that lets you deploy an Edge Gateway as a standard virtual machine (VM). It is designed to enable enterprises migrating to the cloud to integrate their on-premises footprint as spokes into the enterprise cloud backbone. For more information about Secure Edge, refer to `Secure Edge FAQ <http://docs.aviatrix.com/HowTos/secure_edge_faq.html>`_. 
+* **Deploy CoPilot from your controller UI (AWS cloud only)** - If you deployed Aviatrix Controller in AWS, you now have the option to deploy Aviatrix CoPilot directly from your controller UI. This eliminates the need to go to the AWS marketplace and simplifies a few steps for provisioning the CoPilot instance. When deploying this way, the controller deploys CoPilot in the same region/availability zone where it is homed. For instructions, see the discussion about launching a CoPilot instance from the Controller UI in Aviatrix CoPilot Deployment Guide. 
 
   Note: If you want to deploy CoPilot in a different AWS region/availability zone than where your controller is homed or in a different cloud, please deploy CoPilot manually from the CSP marketplace.
 
 **Enhanced Features in Aviatrix Release 6.7.1185** 
 
-* **Transit Peering over Public Network** â€“ Aviatrix Transit Gateway peering over public network now supports Transit Gateway peering over the internet using Insane Mode High-Performance Encryption (HPE) between GCP and Azure, AWS, OCI. `<http://docs.aviatrix.com/HowTos/transit_gateway_peering.html#peering-over-public-network>`_. 
-* **Subnet-Level Inspection in Azure** â€“ Subnet-Level inspection in Azure is enhanced to optimize intra-VNet traffic behavior. With this optimization, traffic between VMs in the same subnet and intra-VNet traffic between VMs in different subnets and the same subnet group is routed through the Azure native Virtual Network instead of the Aviatrix Spoke Gateway. If traffic inspection is desired between subnets in a VNet, the subnets must be in different subnet groups. For more information, refer to Using Subnet Inspection in Azure to Redirect Subnet-Level Traffic to `Aviatrix Transit FireNet and NGFW <http://docs.aviatrix.com/HowTos/transit_subnet_inspection_azure.html>`_. 
+* **Transit Peering over Public Network** - Aviatrix Transit Gateway peering over public network now supports Transit Gateway peering over the internet using Insane Mode High-Performance Encryption (HPE) between GCP and Azure, AWS, OCI. `<http://docs.aviatrix.com/HowTos/transit_gateway_peering.html#peering-over-public-network>`_. 
+* **Subnet-Level Inspection in Azure** - Subnet-Level inspection in Azure is enhanced to optimize intra-VNet traffic behavior. With this optimization, traffic between VMs in the same subnet and intra-VNet traffic between VMs in different subnets and the same subnet group is routed through the Azure native Virtual Network instead of the Aviatrix Spoke Gateway. If traffic inspection is desired between subnets in a VNet, the subnets must be in different subnet groups. For more information, refer to Using Subnet Inspection in Azure to Redirect Subnet-Level Traffic to `Aviatrix Transit FireNet and NGFW <http://docs.aviatrix.com/HowTos/transit_subnet_inspection_azure.html>`_. 
 
 **UI enhancements in Aviatrix Release 6.7.1185** 
 
@@ -608,48 +608,48 @@ In releases prior to Controller 6.7, the term security domain was used to refer 
 
 **Known Issues in Aviatrix Release 6.7.1185** 
 
-- **AVI-2022-0002** â€“ A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
-- **AVX-22184** â€“ When an Edge Gateway expires, its state is listed as â€œwaitingâ€ on the Upgrade page. This â€œwaitingâ€ Gateway prevents the Controller from successfully upgrading. The actual state of the edge is â€œExpired,â€ which is shown in the CloudN > List. 
+- **AVI-2022-0002** - A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
+- **AVX-22184** - When an Edge Gateway expires, its state is listed as â€œwaitingâ€ on the Upgrade page. This â€œwaitingâ€ Gateway prevents the Controller from successfully upgrading. The actual state of the edge is â€œExpired,â€ which is shown in the CloudN > List. 
  
    If an Edge Gateway is expired in your Controller, navigate to CloudN > List on the left sidebar. On the Registered Devices page, select the Edge Gateway with the state â€œwaiting,â€ click the Diag dropdown menu, and select Reset Configuration. Then, your Controller can successfully upgrade.
-- **AVX-22810** â€“ After a successful platform upgrade, the gateway status indicates the operation is complete before the operation actually completes.
-- **AVX-22851** â€“ During a rare telemetry related timing issue, gateway deletion and creation operations may experience exceptions that send the admin an exception email. This was caused by the software attempting to access a gateway object that does not exist.
+- **AVX-22810** - After a successful platform upgrade, the gateway status indicates the operation is complete before the operation actually completes.
+- **AVX-22851** - During a rare telemetry related timing issue, gateway deletion and creation operations may experience exceptions that send the admin an exception email. This was caused by the software attempting to access a gateway object that does not exist.
 
   **Workaround**: If the newly created gateway does not come up because of this issue, the workaround is to upgrade the gateway image.
 
 **Issues Corrected in Aviatrix Release 6.7.1185** 
 
-- **AVI-2022-0002** â€“ A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
-- **AVX-10577** â€“ Licensing metrics were not visible. 
-- **AVX-16122** â€“ The Packet Logging toggle switch on the Stateful Firewall > Policy tab page was not working. 
-- **AVX-17174** â€“ Controller traceroute utility not showing first-hop when HPE is enabled between Spoke and Transit. 
-- **AVX-18291** â€“ Failed daily and manual controller backups due to a rare corner case condition. 
-- **AVX-18700** â€“ When the Stateful firewall rules reach above 500 rows of rules during add/insert/delete the firewall rule, it will throw error as â€œCommand to execute is too long.â€ 
-- **AVX-18796** â€“ The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets re-certified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction. 
+- **AVI-2022-0002** - A vulnerability was discovered which could allow an unauthenticated attacker to run arbitrary commands against Aviatrix gateways. This is not known to be exploited. 
+- **AVX-10577** - Licensing metrics were not visible. 
+- **AVX-16122** - The Packet Logging toggle switch on the Stateful Firewall > Policy tab page was not working. 
+- **AVX-17174** - Controller traceroute utility not showing first-hop when HPE is enabled between Spoke and Transit. 
+- **AVX-18291** - Failed daily and manual controller backups due to a rare corner case condition. 
+- **AVX-18700** - When the Stateful firewall rules reach above 500 rows of rules during add/insert/delete the firewall rule, it will throw error as â€œCommand to execute is too long.â€ 
+- **AVX-18796** - The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets re-certified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction. 
 
-  Note that after this fix, the certificateâ€™s validity changes from 60 days to 30 days. The rotation frequency also changes from 30 days to 15 days. 
+  Note that after this fix, the certificate's validity changes from 60 days to 30 days. The rotation frequency also changes from 30 days to 15 days. 
 
-- **AVX-18876** â€“ For BGP connections associated with the domain, "seen" routes learned from this connection got re-advertised back to the same connection when these BGP routes are in the best DB. 
-- **AVX-19811** â€“ You can now insert a stateful firewall policy by specifying the position where you want to insert the policy. This feature is presently available through â€œInsert Stateful Firewall Rulesâ€ API using â€œpositionâ€ param. The â€œpositionâ€ param is 1 indexed. 
-- **AVX-20022** â€“ You can now configure the gateway interfaces to enable or disable generic receive offload (GRO) and generic segmentation offload (GSO). 
-- **AVX-20173** â€“ Incorrect gateways configured when disabling Transit FireNet on the gateway. 
-- **AVX-20271** â€“ Restricted concurrent uploads to make it harder for a remote attacker to fill the disk to defend against a denial-of-service attack. The check was too restrictive and causing concurrent uploads to overwrite each other. We reworked the feature to allow for concurrency without sacrificing the original defense. 
-- **AVX-20616** â€“ Supported filtering and pagination of security domain policies. This change makes the Add/Modify Connection Policy feature easier to use, especially in accounts that have a large number of policies. 
-- **AVX-20706** â€“ While configuring the Panorama integration for FireNet on the vendor integration page, selecting â€œFW to showâ€ caused an exception. 
-- **AVX-20970** â€“ Ignore the default RFC1918 routes check in the unselected route tables when you attach a Spoke Gateway with the selective route tables. 
-- **AVX-21215** â€“ Changed the terms â€œRBAC Groupâ€ and â€œPermission Groupâ€œ to â€œPermission Groupâ€œ on the â€œAccount Userâ€ page to avoid confusion. 
-- **AVX-21332** â€“ You can now use "insert_stateful_firewall_rules" API command to insert stateful firewall rules, even when the table is empty. 
-- **AVX-21740** â€“ Terraform error prevented an interface from being specified for SNAT and DNAT policies when using policy-based connections. 
-- **AVX-22040** â€“ Exception seen when disconnecting a firewall domain from Aviatrix edge domain on an AWS Transit Gateway. 
-- **AVX-22443** â€“ In order for 6.7 to rollback back to 6.6 correctly, upgrade controllers to any 6.6 release after 6.6.5545 before upgrading to 6.7.
-- **AVX-22808** â€“ Insert_stateful_firewall_rules now inserts the rule in a correct order both in the control plane and the IP tables when it is done using the reference rule.
-- **AVX-22847** â€“ The gateway is stuck in an upgrade "initializing" state and needs ways to recover effectively during scaling.
+- **AVX-18876** - For BGP connections associated with the domain, "seen" routes learned from this connection got re-advertised back to the same connection when these BGP routes are in the best DB. 
+- **AVX-19811** - You can now insert a stateful firewall policy by specifying the position where you want to insert the policy. This feature is presently available through â€œInsert Stateful Firewall Rulesâ€ API using â€œpositionâ€ param. The â€œpositionâ€ param is 1 indexed. 
+- **AVX-20022** - You can now configure the gateway interfaces to enable or disable generic receive offload (GRO) and generic segmentation offload (GSO). 
+- **AVX-20173** - Incorrect gateways configured when disabling Transit FireNet on the gateway. 
+- **AVX-20271** - Restricted concurrent uploads to make it harder for a remote attacker to fill the disk to defend against a denial-of-service attack. The check was too restrictive and causing concurrent uploads to overwrite each other. We reworked the feature to allow for concurrency without sacrificing the original defense. 
+- **AVX-20616** - Supported filtering and pagination of security domain policies. This change makes the Add/Modify Connection Policy feature easier to use, especially in accounts that have a large number of policies. 
+- **AVX-20706** - While configuring the Panorama integration for FireNet on the vendor integration page, selecting â€œFW to showâ€ caused an exception. 
+- **AVX-20970** - Ignore the default RFC1918 routes check in the unselected route tables when you attach a Spoke Gateway with the selective route tables. 
+- **AVX-21215** - Changed the terms â€œRBAC Groupâ€ and â€œPermission Groupâ€œ to â€œPermission Groupâ€œ on the â€œAccount Userâ€ page to avoid confusion. 
+- **AVX-21332** - You can now use "insert_stateful_firewall_rules" API command to insert stateful firewall rules, even when the table is empty. 
+- **AVX-21740** - Terraform error prevented an interface from being specified for SNAT and DNAT policies when using policy-based connections. 
+- **AVX-22040** - Exception seen when disconnecting a firewall domain from Aviatrix edge domain on an AWS Transit Gateway. 
+- **AVX-22443** - In order for 6.7 to rollback back to 6.6 correctly, upgrade controllers to any 6.6 release after 6.6.5545 before upgrading to 6.7.
+- **AVX-22808** - Insert_stateful_firewall_rules now inserts the rule in a correct order both in the control plane and the IP tables when it is done using the reference rule.
+- **AVX-22847** - The gateway is stuck in an upgrade "initializing" state and needs ways to recover effectively during scaling.
 
 **Private Preview Features in Release 6.7.1185**
 
 The following `Private Preview Features`_ are available in this release:
 
-- **Micro-segmentation** â€“ Micro-segmentation provides granular network security policy enforcement for distributed applications in the cloud. It enables a unified network access policy model for your applications with distributed points of policy enforcement throughout your network. For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
+- **Micro-segmentation** - Micro-segmentation provides granular network security policy enforcement for distributed applications in the cloud. It enables a unified network access policy model for your applications with distributed points of policy enforcement throughout your network. For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
 - **Web Application Firewall** - The Aviatrix Web Application Firewall (WAF) feature detects and blocks malicious traffic before it reaches your controller. Enabling the Aviatrix WAF helps protect your applications from malicious activity by filtering the HTTP and HTTPS traffic. The WAF is enabled by with a button on the WAF tab in the Aviatrix Controller settings.
 
 6.4.3049 (04/08/2022) 
@@ -657,102 +657,102 @@ The following `Private Preview Features`_ are available in this release:
 
 **Issues Corrected in Aviatrix Release 6.4.3049**
 
-- **AVX-16838** â€“ A newly created Controller failed to get its public IP, causing some gateways to fail to start. 
-- **AVX-18878** â€“ Sessions may be prevented from getting immediately logged out after certain API calls. 
-- **AVX-19811** â€“ You can now insert a stateful firewall policy by specifying the position where you want to insert the policy. This feature is presently available through â€œInsert Stateful Firewall Rulesâ€ API using â€œpositionâ€ param. The â€œpositionâ€ param is 1 indexed. 
-- **AVX-20064** â€“ Enabled users to insert a Force Drop rule on the top of the list of Stateful Firewall rules without changing the order of the rules in the table. 
-- **AVX-20159** â€“ When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback. 
-- **AVX-20271** â€“ Restricted concurrent uploads to make it harder for a remote attacker to fill the disk to defend against a denial-of-service attack. The check was too restrictive and causing concurrent uploads to overwrite each other. We reworked the feature to allow for concurrency without sacrificing the original defense. 
-- **AVI-2022-0004** â€“ Fixed an internally-reported vulnerability that would allow an authenticated user to gain command line privileges on the controller. This is not known to be exploited. 
+- **AVX-16838** - A newly created Controller failed to get its public IP, causing some gateways to fail to start. 
+- **AVX-18878** - Sessions may be prevented from getting immediately logged out after certain API calls. 
+- **AVX-19811** - You can now insert a stateful firewall policy by specifying the position where you want to insert the policy. This feature is presently available through "Insert Stateful Firewall Rulesâ€ API using "positionâ€ param. The "positionâ€ param is 1 indexed. 
+- **AVX-20064** - Enabled users to insert a Force Drop rule on the top of the list of Stateful Firewall rules without changing the order of the rules in the table. 
+- **AVX-20159** - When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback. 
+- **AVX-20271** - Restricted concurrent uploads to make it harder for a remote attacker to fill the disk to defend against a denial-of-service attack. The check was too restrictive and causing concurrent uploads to overwrite each other. We reworked the feature to allow for concurrency without sacrificing the original defense. 
+- **AVI-2022-0004** - Fixed an internally-reported vulnerability that would allow an authenticated user to gain command line privileges on the controller. This is not known to be exploited. 
 
 6.5.3166 (04/06/2022) 
 =======================
 
 **Enhanced Features in Release 6.5.3166**
 
-- **AVX-15117** â€“ Large (4G+) tracelog uploads consumed excessive CPU, which caused gateway flapping. Optimized performance for launching gateways, viewing tunnel status, and uploading trace logs in large deployments. 
-- **AVX-16906** â€“ Extended support for AES-256-GCM encryption for Site2Cloud IPsec tunnels. 
-- **AVX-20064** â€“ Enabled users to insert a Force Drop rule on the top of the list of Stateful Firewall rules without changing the order of the rules in the table. 
+- **AVX-15117** - Large (4G+) tracelog uploads consumed excessive CPU, which caused gateway flapping. Optimized performance for launching gateways, viewing tunnel status, and uploading trace logs in large deployments. 
+- **AVX-16906** - Extended support for AES-256-GCM encryption for Site2Cloud IPsec tunnels. 
+- **AVX-20064** - Enabled users to insert a Force Drop rule on the top of the list of Stateful Firewall rules without changing the order of the rules in the table. 
 
 **UI Enhancements in Release 6.5.3166**
 
-- **AVX-19672** â€“ Added an error message when adding a new Site2Cloud connection to warn users that AES-256-GCM encryption algorithms are not supported on older gateway images. 
+- **AVX-19672** - Added an error message when adding a new Site2Cloud connection to warn users that AES-256-GCM encryption algorithms are not supported on older gateway images. 
 
 **Issues Corrected in Aviatrix Release 6.5.3166**
 
-- **AVX-16122** â€“ The Packet Logging toggle switch on the Stateful Firewall > Policy tab page was not working.
-- **AVX-16838** â€“ A newly created Controller failed to get its public IP, causing some gateways to fail to start. 
-- **AVX-17650** â€“ CloudN custom upgrade dry run GUI hanging at 99%, but commands.log showing succeeded. 
-- **AVX-18796** â€“ The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets re-certified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction. 
+- **AVX-16122** - The Packet Logging toggle switch on the Stateful Firewall > Policy tab page was not working.
+- **AVX-16838** - A newly created Controller failed to get its public IP, causing some gateways to fail to start. 
+- **AVX-17650** - CloudN custom upgrade dry run GUI hanging at 99%, but commands.log showing succeeded. 
+- **AVX-18796** - The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets re-certified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction. 
 
- Note that after this fix, the certificateâ€™s validity changes from 60 days to 30 days. The rotation frequency also changes from 30 days to 15 days. 
+ Note that after this fix, the certificate's validity changes from 60 days to 30 days. The rotation frequency also changes from 30 days to 15 days. 
 
-- **AVX-18878** â€“ Sessions may be prevented from getting immediately logged out after certain API calls. 
-- **AVX-20159** â€“ When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback. 
-- **AVI-2022-0004** â€“ Fixed an internally-reported vulnerability which would allow an authenticated user to gain command line privileges on the controller. This is not known to be exploited. 
-- **AVX-20970** â€“ Ignore the default RFC1918 routes check in the unselected route tables when you attach a Spoke Gateway with the selective route tables. 
+- **AVX-18878** - Sessions may be prevented from getting immediately logged out after certain API calls. 
+- **AVX-20159** - When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback. 
+- **AVI-2022-0004** - Fixed an internally-reported vulnerability which would allow an authenticated user to gain command line privileges on the controller. This is not known to be exploited. 
+- **AVX-20970** - Ignore the default RFC1918 routes check in the unselected route tables when you attach a Spoke Gateway with the selective route tables. 
 
 6.6.5545 (03/31/2022)
 =======================
 
 **New Features in Release 6.6.5545**
 
-- **AVX-14021** â€“ The Aviatrix Controller now supports OCI Gov Cloud accounts. To onboard these accounts, find the Aviatrix image in the OCI Gov Marketplace and subscribe. Then, open the Onboarding page in your Aviatrix Controller and use the `Oracle Onboarding Guide <https://docs.aviatrix.com/HowTos/oracle-aviatrix-cloud-controller-onboard.html>`_ to begin onboarding.
+- **AVX-14021** - The Aviatrix Controller now supports OCI Gov Cloud accounts. To onboard these accounts, find the Aviatrix image in the OCI Gov Marketplace and subscribe. Then, open the Onboarding page in your Aviatrix Controller and use the `Oracle Onboarding Guide <https://docs.aviatrix.com/HowTos/oracle-aviatrix-cloud-controller-onboard.html>`_ to begin onboarding.
 
 **Enhanced Features in Release 6.6.5545**
 
-- **AVX-14100** â€“ Added support for c2-standard-60 instance type for Aviatrix Insane Mode on GCP. For Insane Mode on GCP performance throughput, refer to `GCP Performance Test Results <https://docs.aviatrix.com/HowTos/insane_mode_perf.html?highlight=gcp%20performance%20test%20results#gcp-performance-test-results>`_.
-- **AVX-15117** â€“ Large (4G+) tracelog uploads consumed excessive CPU, which caused gateway flapping. 
-- **AVX-20423** â€“ Optimized performance for launching gateways, viewing tunnel status, and uploading trace logs in large deployments. 
-- **AVX-17030** â€“ In a Site2Cloud connection, the same IP address in the remote gateway peer and the remote subnet is now supported. This is useful when configuring a Site2Cloud connection to a third-party environment where only one public IP address is exposed. For more information, refer to the `Site2Cloud FAQs <https://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_.
-- **AVX-19161** â€“ Added New Site2Cloud RX Balancing option to the Multi-Cloud Transit > Advanced Config > Edit Transit page. Enabling this option can increase forwarding throughput on Aviatrix Transit Gateways for BGP-over-GRE External Device traffic (a.k.a. Site2Cloud or S2C GRE tunnels), in these situations:
+- **AVX-14100** - Added support for c2-standard-60 instance type for Aviatrix Insane Mode on GCP. For Insane Mode on GCP performance throughput, refer to `GCP Performance Test Results <https://docs.aviatrix.com/HowTos/insane_mode_perf.html?highlight=gcp%20performance%20test%20results#gcp-performance-test-results>`_.
+- **AVX-15117** - Large (4G+) tracelog uploads consumed excessive CPU, which caused gateway flapping. 
+- **AVX-20423** - Optimized performance for launching gateways, viewing tunnel status, and uploading trace logs in large deployments. 
+- **AVX-17030** - In a Site2Cloud connection, the same IP address in the remote gateway peer and the remote subnet is now supported. This is useful when configuring a Site2Cloud connection to a third-party environment where only one public IP address is exposed. For more information, refer to the `Site2Cloud FAQs <https://docs.aviatrix.com/HowTos/site2cloud_faq.html>`_.
+- **AVX-19161** - Added New Site2Cloud RX Balancing option to the Multi-Cloud Transit > Advanced Config > Edit Transit page. Enabling this option can increase forwarding throughput on Aviatrix Transit Gateways for BGP-over-GRE External Device traffic (a.k.a. Site2Cloud or S2C GRE tunnels), in these situations:
 
 * On certain topologies that require high throughput, with External Devices that limit the number of GRE tunnels.
 * Where maintaining a high number of GRE tunnels increases operational burden.
 
 Note: This option is only available for Aviatrix Transit Gateways deployed in AWS on C5 and C5n instance types (except for c5.large and c5n.large).
 
-- **AVX-20200** â€“ Clarified a confusing error message in an automated exception email that had little context: â€œAttributeError: 'NoneType' object has no attribute 'resource_guidâ€™â€.
-- **AVX-20022** â€“ You can now configure the gateway interfaces to enable or disable generic receive offload (GRO) and generic segmentation offload (GSO).
-- **AVX-20383** â€“ Added support for updating the secondary CIDRs in firewall-related VPC route tables for Azure FireNet gateways. The secondary CIDRs are usually added by user OOB (Out of Band) in a CSP. Then, an API needs to be called to manually update the changed CIDR set normally to the gateway route tables. However, for an Azure cloud case, the firewall-related VPC route tables also need to be updated. This product enhancement ensures that update. The API involved is â€œupdate_encrypted_spoke_vpc_cidrsâ€.
+- **AVX-20200** - Clarified a confusing error message in an automated exception email that had little context: "AttributeError: 'NoneType' object has no attribute 'resource_guid'â€.
+- **AVX-20022** - You can now configure the gateway interfaces to enable or disable generic receive offload (GRO) and generic segmentation offload (GSO).
+- **AVX-20383** - Added support for updating the secondary CIDRs in firewall-related VPC route tables for Azure FireNet gateways. The secondary CIDRs are usually added by user OOB (Out of Band) in a CSP. Then, an API needs to be called to manually update the changed CIDR set normally to the gateway route tables. However, for an Azure cloud case, the firewall-related VPC route tables also need to be updated. This product enhancement ensures that update. The API involved is "update_encrypted_spoke_vpc_cidrsâ€.
 
 **UI Enhancements in Release 6.6.5545**
 
-- **AVX-15459** â€“ Replaced â€˜vpc_id with â€˜OCIDâ€™ for OCI Gateways to make sure these values are unique. Now, every OCI vpc_id value has been migrated from vpc_name to OCID. For example, â€œvpc-oracle-testâ€ is migrated to â€œocid1.vcn.oc1.iad.aaaaaaaaba3pv6wkcr4jqae5f44n2b2m2yt2j6rx32uzr4h25vqstifsfdsq.â€  The Controller UI will display <vpc_id>~~<vpc_name> in the VPC ID field for better readability: for example, â€œocid1.vcn.oc1.iad.aaaaaaaaba3pv6wkcr4jqae5f44n2b2m2yt2j6rx32uzr4h25vqstifsfdsq~~vpc-oracle-test.â€
-- **AVX-18941** â€“ Removed the Site2Cloud Standalone CloudN feature to improve routing functionality for Controllers upgraded to release 6.6 or above. Customers running Standalone CloudN in earlier releases (6.4 or below) can upgrade existing CloudN hardware or plan for an upgrade to Aviatrix Edge.
-- **AVX-20616** â€“ Supported filtering and pagination of security domain policies. This change makes the Add/Modify Connection Policy feature easier to use, especially in accounts that have large number of policies.
+- **AVX-15459** - Replaced â€˜vpc_id with "OCID" for OCI Gateways to make sure these values are unique. Now, every OCI vpc_id value has been migrated from vpc_name to OCID. For example, "vpc-oracle-testâ€ is migrated to "ocid1.vcn.oc1.iad.aaaaaaaaba3pv6wkcr4jqae5f44n2b2m2yt2j6rx32uzr4h25vqstifsfdsq.â€  The Controller UI will display <vpc_id>~~<vpc_name> in the VPC ID field for better readability: for example, "ocid1.vcn.oc1.iad.aaaaaaaaba3pv6wkcr4jqae5f44n2b2m2yt2j6rx32uzr4h25vqstifsfdsq~~vpc-oracle-test.â€
+- **AVX-18941** - Removed the Site2Cloud Standalone CloudN feature to improve routing functionality for Controllers upgraded to release 6.6 or above. Customers running Standalone CloudN in earlier releases (6.4 or below) can upgrade existing CloudN hardware or plan for an upgrade to Aviatrix Edge.
+- **AVX-20616** - Supported filtering and pagination of security domain policies. This change makes the Add/Modify Connection Policy feature easier to use, especially in accounts that have large number of policies.
 
 **Known Issues in Release 6.6.5545**
 
-- **AVX-20656** â€“ If you have AWS CloudWatch enabled in your deployment, disable it before upgrading from 6.5 to any 6.6 release.
+- **AVX-20656** - If you have AWS CloudWatch enabled in your deployment, disable it before upgrading from 6.5 to any 6.6 release.
    If you upgrade while AWS CloudWatch is still enabled, the system will enter a config fail state and the network will go down. You can return the system to sane condition by using Disable/Enable CloudWatch.
-- **AVX-20978** â€“ Only one active profile rsyslog config shows up in gateways, even when the gateway has multiple profiles. A workaround for this issue is to remove the entire Syslog profile index and then add them back using Terraform. Then, the rsyslog configs appears in all gateways.
+- **AVX-20978** - Only one active profile rsyslog config shows up in gateways, even when the gateway has multiple profiles. A workaround for this issue is to remove the entire Syslog profile index and then add them back using Terraform. Then, the rsyslog configs appears in all gateways.
 
 **Issues Corrected in Aviatrix Release 6.6.5545**
 
-- **AVX-14253** â€“ An Azure Transit Gateway took excessive time to advertise a newly attached Spoke Gateway's CIDRs over BGP.
-- **AVX-16122** â€“ After successfully enabling packet logging for either allow all or deny all base policy for stateful firewalls, packet logging was automatically removed.
-- **AVX-16838** â€“ A newly created Controller failed to get its public IP, causing some gateways to fail to start.
-- **AVX-17058** â€“ The S2C EIPs of Single IP HA gateways were leaked on gateway deletion after stopping/starting the gateway.
-- **AVX-19498** â€“ When using S2C Single IP HA, the gateway EIP was not released after the gateway deletion.
-- **AVX-19811** â€“ You can now insert a stateful firewall policy by specifying the position where they want to insert the policy. This feature is presently available through â€œInsert Stateful Firewall Rulesâ€ API using â€œpositionâ€ param. The â€œpositionâ€ param is 1 indexed.
-- **AVX-20064** â€“ Enabled users to insert a Force Drop rule on the top of the list of Stateful Firewall rules without changing the order of the rules in the table.
-- **AVX-20109** â€“ Some gateway software upgrades failed with an â€œArchive is too shortâ€ message, but a software upgrade succeeded after retrying.
-- **AVX-20159** â€“ When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback.
-- **AVX-20173** â€“ Incorrect gateways configured when disabling Transit FireNet on the gateway.
-- **AVI-2022-0004 ** â€“ Fixed an internally-reported vulnerability which would allow an authenticated user to gain command line privileges on the Controller. This is not known to be exploited.
-- **AVX-20271** â€“ Improved the cleanup of concurrent uploads that temporary files created by concurrent route updates. This fix prevents the overwrite of the temporary update files.
-- **AVX-20471** â€“ When both Transit Gateways of a transit peering didnâ€™t have an AS number configured, CIDRs from static connection at one Transit Gateway would not be propagated to the peering Transit Gateway.
-- **AVX-20647** â€“ Performance fix for route processing in multi-domain environment.
-- **AVX-20765** â€“ If you had a TGW Firewall domain that enabled egress inspection, but this firewallâ€™s domain was not connected to the Aviatrix Edge Domain, this setup enabled management access from the Aviatrix Edge domain. This issue caused the default route 0.0.0.0/0 to be incorrectly propagated to the Transit Gateway in the Aviatrix Edge domain.
-- **AVX-20970** â€“ Ignore the default RFC1918 routes check in the unselected route tables when you attach a Spoke Gateway with the selective route tables.
+- **AVX-14253** - An Azure Transit Gateway took excessive time to advertise a newly attached Spoke Gateway's CIDRs over BGP.
+- **AVX-16122** - After successfully enabling packet logging for either allow all or deny all base policy for stateful firewalls, packet logging was automatically removed.
+- **AVX-16838** - A newly created Controller failed to get its public IP, causing some gateways to fail to start.
+- **AVX-17058** - The S2C EIPs of Single IP HA gateways were leaked on gateway deletion after stopping/starting the gateway.
+- **AVX-19498** - When using S2C Single IP HA, the gateway EIP was not released after the gateway deletion.
+- **AVX-19811** - You can now insert a stateful firewall policy by specifying the position where they want to insert the policy. This feature is presently available through "Insert Stateful Firewall Rulesâ€ API using "positionâ€ param. The "positionâ€ param is 1 indexed.
+- **AVX-20064** - Enabled users to insert a Force Drop rule on the top of the list of Stateful Firewall rules without changing the order of the rules in the table.
+- **AVX-20109** - Some gateway software upgrades failed with an "Archive is too shortâ€ message, but a software upgrade succeeded after retrying.
+- **AVX-20159** - When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback.
+- **AVX-20173** - Incorrect gateways configured when disabling Transit FireNet on the gateway.
+- **AVI-2022-0004 ** - Fixed an internally-reported vulnerability which would allow an authenticated user to gain command line privileges on the Controller. This is not known to be exploited.
+- **AVX-20271** - Improved the cleanup of concurrent uploads that temporary files created by concurrent route updates. This fix prevents the overwrite of the temporary update files.
+- **AVX-20471** - When both Transit Gateways of a transit peering didn't have an AS number configured, CIDRs from static connection at one Transit Gateway would not be propagated to the peering Transit Gateway.
+- **AVX-20647** - Performance fix for route processing in multi-domain environment.
+- **AVX-20765** - If you had a TGW Firewall domain that enabled egress inspection, but this firewall's domain was not connected to the Aviatrix Edge Domain, this setup enabled management access from the Aviatrix Edge domain. This issue caused the default route 0.0.0.0/0 to be incorrectly propagated to the Transit Gateway in the Aviatrix Edge domain.
+- **AVX-20970** - Ignore the default RFC1918 routes check in the unselected route tables when you attach a Spoke Gateway with the selective route tables.
 
 6.6.5413 (03/18/2022)  
 ====================== 
 
 **Issues Corrected in Release 6.6.5413** 
 
-- **AVX-20271** â€“ Restricted concurrent uploads to make it harder for a remote attacker to fill the disk and better defend against denial of service attacks. Overly restrictive checks allowed concurrent uploads to overwrite each other. This update allows for concurrency without sacrificing the original defensive goals.
+- **AVX-20271** - Restricted concurrent uploads to make it harder for a remote attacker to fill the disk and better defend against denial of service attacks. Overly restrictive checks allowed concurrent uploads to overwrite each other. This update allows for concurrency without sacrificing the original defensive goals.
 
 - **AVX-20502** - Controller upgrade from 6.5 to 6.6 causes BGP to go down on Aviatrix Transit Firenet. The issue occurs when the following conditions are met:
 
@@ -765,15 +765,15 @@ Note: This option is only available for Aviatrix Transit Gateways deployed in AW
 
 **Issues Corrected in Aviatrix Release 6.5.3012**
 
-- **AVX-18796** â€“ The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets re-certified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
+- **AVX-18796** - The Controller to Gateway control channel uses certificate-based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period, if any Gateway gets re-certified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
 
-Note that after this fix, the certificateâ€™s validity changes from 60 days to 30 days. The rotation frequency also changes from 30 days to 15 days.
+Note that after this fix, the certificate's validity changes from 60 days to 30 days. The rotation frequency also changes from 30 days to 15 days.
 
-- **AVX-20109** â€“ Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
+- **AVX-20109** - Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
 
 #. From the Aviatrix Controller, go to Settings > Maintenance > Selective upgrade and perform a Platform Upgrade to 6.6 with all gateways selected. For more information, see `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
-#. If you see an â€œArchive is too shortâ€ message of any given gateway during the platform upgrade, you need to perform step 3. Otherwise, you can skip step 3.
-#. After the Upgrade is done, go to Settings > Maintenance > Selective upgrade and select the gateways listed in the â€œArchive is too shortâ€ message. Perform the gateway software upgrade again.
+#. If you see an "Archive is too shortâ€ message of any given gateway during the platform upgrade, you need to perform step 3. Otherwise, you can skip step 3.
+#. After the Upgrade is done, go to Settings > Maintenance > Selective upgrade and select the gateways listed in the "Archive is too short" message. Perform the gateway software upgrade again.
 
 **Known Issues in Aviatrix Release 6.5.3012**
 
@@ -784,12 +784,12 @@ Note that after this fix, the certificateâ€™s validity changes from 60 days
 
 **Issues Corrected in Aviatrix Release 6.4.3015**
 
-- **AVX-18796** â€“ The Controller to Gateway control channel uses certificate based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period if any Gateway gets re-certified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
-- **AVX-20109** â€“ Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
+- **AVX-18796** - The Controller to Gateway control channel uses certificate based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period if any Gateway gets re-certified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
+- **AVX-20109** - Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
 
 #. From the Aviatrix Controller, go to Settings > Maintenance > Selective upgrade and perform a Platform Upgrade to 6.6 with all gateways selected. For more information, see `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
-#. If you see an â€œArchive is too shortâ€ message of any given gateway during the platform upgrade, you need to perform step 3. Otherwise, you can skip step 3.
-#. After the Upgrade is done, go to Settings > Maintenance > Selective upgrade and select the gateways listed in the â€œArchive is too shortâ€ message. Perform the gateway software upgrade again.
+#. If you see an "Archive is too short" message of any given gateway during the platform upgrade, you need to perform step 3. Otherwise, you can skip step 3.
+#. After the Upgrade is done, go to Settings > Maintenance > Selective upgrade and select the gateways listed in the "Archive is too short" message. Perform the gateway software upgrade again.
 
 **Known Issues in Aviatrix Release 6.4.3015**
 
@@ -800,12 +800,12 @@ Note that after this fix, the certificateâ€™s validity changes from 60 days
 
 **Issues Corrected in Release 6.6.5409** 
 
-- **AVX-18796** â€“ The Controller to Gateway control channel uses certificate based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period if any Gateway gets re-certified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
-- **AVX-20109** â€“ Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
+- **AVX-18796** - The Controller to Gateway control channel uses certificate based authentication. The Intermediate Certificate Authority (ICA) certificate TTL is set to renew automatically every 6 months. A week before the TTL expiration, the ICA will prepare the next certificate as part of the rotation. During this period if any Gateway gets re-certified, the Controller will use the newly prepared/activated ICA certificate to sign it. If the Gateway flaps and reconnects during this period, the controller will reject these connections resulting in the Gateway being marked down. Since this issue can result in the controller marking gateways down, Aviatrix strongly recommends upgrading your software to a version that includes the issue correction.
+- **AVX-20109** - Upgrade procedure update. If you are upgrading your controller and gateways from 6.5 to 6.6, you cannot use the selective gateways feature.
 
 #. From the Aviatrix Controller, go to Settings > Maintenance > Selective upgrade and perform a Platform Upgrade to 6.6 with all gateways selected. For more information, see `Upgrading the Aviatrix Cloud Network Platform <https://docs.aviatrix.com/HowTos/selective_upgrade.html>`_.
-#. If you see an â€œArchive is too shortâ€ message of any given gateway during the platform upgrade, you need to perform step 3. Otherwise, you can skip step 3.
-#. After the Upgrade is done, go to Settings > Maintenance > Selective upgrade and select the gateways listed in the â€œArchive is too shortâ€ message. Perform the gateway software upgrade again.
+#. If you see an "Archive is too short" message of any given gateway during the platform upgrade, you need to perform step 3. Otherwise, you can skip step 3.
+#. After the Upgrade is done, go to Settings > Maintenance > Selective upgrade and select the gateways listed in the "Archive is too short" message. Perform the gateway software upgrade again.
 .
 **Known Issues in Aviatrix Release 6.6.5409**
 
@@ -844,7 +844,7 @@ The following `Public Preview Features`_ are available in this release:
 #. The AWS Transit FireNet is enabled.
 #. The Transit FireNet Gateway is attached to the AWS Transit Gateway as an edge gateway.
 #. The AWS Transit Gateway is added to the Transit FireNet inspection list.
-- **AVX-20978** â€“ Only one active profile rsyslog config shows up in gateways, even when the gateway has multiple profiles. A workaround for this issue is to remove the entire Syslog profile index and then add them back using Terraform. Then, the rsyslog configs appears in all gateways.
+- **AVX-20978** - Only one active profile rsyslog config shows up in gateways, even when the gateway has multiple profiles. A workaround for this issue is to remove the entire Syslog profile index and then add them back using Terraform. Then, the rsyslog configs appears in all gateways.
 
 **Issues Corrected in Release 6.6.5404** 
 
@@ -906,7 +906,7 @@ The following `Public Preview Features`_ are available in this release:
 - Improved FireNet and Multi-Cloud Transit workflows reducing clicks and navigation steps.
 - Decommissioning and Renaming of CLOUDWAN to CLOUDN.
 - Notification bar includes message history.
-- Guided â€œWhatâ€™s Newâ€ information for first Aviatrix Controller user login.
+- Guided "What's New" information for first Aviatrix Controller user login.
 - Launch CoPilot from the Aviatrix Controller App Drawer.
 - Enable daily backup added to notification menu.
 - Use consistent naming in action menu and config box for the list view of Transit Gateway.
@@ -919,7 +919,7 @@ The following `Public Preview Features`_ are available in this release:
 
 **Upgrade Behaviors and Restrictions in Release 6.52246**
 
-- To upgrade to 6.6, you must manually enter â€œ6.6â€ in the Aviatrix Controller upgrade window. 
+- To upgrade to 6.6, you must manually enter "6.6" in the Aviatrix Controller upgrade window. 
 - You cannot rollback to Aviatrix version 6.5 after upgrading to 6.6.
 
 **Known Issues in Release 6.6.5224**
@@ -980,7 +980,7 @@ The following `Public Preview Features`_ are available in this release:
 - **AVX-14659** - Tunnel flaps when attaching Spoke Gateways running IPSec strongSwan to Transit Gateways running IPSec racoon, or Transit Gateways running IPSec strongSwan to Transit Gateways running IPSec racoon.
 - **AVX-16967** - When a SNAT rule is added/removed for a gateway, it needs to check if the NAT rule is duplicated in the route tables. The checking is dependent on the NAT routes if load balanced or generic (not load balanced). You must miss the checking for duplicated routes to include the HA gateways in the interface list. It may give a wrong conclusion that some NAT rules were duplicated.
 - **AVX-17214** - If any conntrack module related errors are observed in 6.5. (g's build number) and after, AVXERR format can be used for first level debugging. 'AVXERR-CONNTRACK-0001': 'Gateway Error: {}', 'AVXERR-CONNTRACK-0002': 'Required/Invalid option: {}' 'AVXERR-CONNTRACK-0003': 'Not found/File error: {}' 'AVXERR-CONNTRACK-0004': 'Not Supported: {}' 
-- **AVX-17349** â€“ Closed vulnerability AVI-2021-0008, allowing an unauthenticated attacker partial access to configuration information on controllers and an unauthenticated network-adjacent attacker API access on gateways. 
+- **AVX-17349** - Closed vulnerability AVI-2021-0008, allowing an unauthenticated attacker partial access to configuration information on controllers and an unauthenticated network-adjacent attacker API access on gateways. 
 - **AVX-17420** - If the account is deleted or deactivated from AWS, VPC attachment from AWS TGW is getting deleted. You must manually clean up all blackhole routes (RFC1918 or customized routes) on AWS.
 - **AVX-17628** - Hardened SSH security for legacy users.
 - **AVX-17740** - Launching a gateway on a Native GWLB FireNet VPC was incorrectly allowed. Disabling Native GWLB FireNet before detaching the VPC from its TGW (if it was attached to one) was incorrectly allowed.
@@ -994,7 +994,7 @@ The following `Public Preview Features`_ are available in this release:
   - For CloudN versions < 6.5.2613: Full outbound access on TCP ports 80 and 443 on CloudN Management is required. 
   - For CloudN versions >= 6.5.2613: Please follow the instructions at Standalone `CloudN Deployment Checklist <https://docs.aviatrix.com/HowTos/CloudN_insane_mode.html?highlight=StandAlone%20CloudN%20>`_. For a list of required FDQNs, please see `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/signin?return_to=https%3A%2F%2Faviatrix.zendesk.com%2Fhc%2Fen-us%2Farticles%2F4417312119437-Aviatrix-Products-Access-to-external-FQDN-required>`_.
 
-- **AVX-15458** - After Controller and standalone CloudNâ€™s are upgraded from 6.3 to 6.4, to access CloudN device in web UI:
+- **AVX-15458** - After Controller and standalone CloudN's are upgraded from 6.3 to 6.4, to access CloudN device in web UI:
 
   - Use CloudN management IP address inside on-premises network. 
   - Use CloudN LAN IP address from Spoke workplace in the CSP network.
@@ -1015,7 +1015,7 @@ The following `Public Preview Features`_ are available in this release:
 **Issues Corrected in Aviatrix Release 6.4.2995** 
 
 - **AVX-14537** - Error establishing Raccoon native CaaG attachment with larger transit instance size (Ex: c5.4xlarge, Standard_D8_v3) and number of IPSec Tunnels > 32. 
-- **AVX-17349** â€“ Closed vulnerability AVI-2021-0008, allowing an unauthenticated attacker partial access to configuration information on controllers and an unauthenticated network-adjacent attacker API access on gateways. 
+- **AVX-17349** - Closed vulnerability AVI-2021-0008, allowing an unauthenticated attacker partial access to configuration information on controllers and an unauthenticated network-adjacent attacker API access on gateways. 
 
 6.5.2835 (12/10/2021) 
 =====================
@@ -1028,13 +1028,13 @@ The following `Public Preview Features`_ are available in this release:
 - **AVX-16121** - After a successful image upgrade, the gateway state changes from success to config_fail after about 5 minutes. 
 - **AVX-16563** - Security Group Management feature fails on an Aviatrix Controller deployed in GCP after a Controller Migration operation. 
 - **AVX-16912** - Cannot create Transit GW with HA in OCI using Terraform scripts. 
-- **AVX-16967** - Deleting one or more Customized SNATs generates a â€œroute already exists in route tableâ€ error. 
+- **AVX-16967** - Deleting one or more Customized SNATs generates a "route already exists in route table" error. 
 - **AVX-17489** - When deleting one CIDR from the spoke customized advertise CIDR list, the CIDR should only be removed from the Transit Gateway and the rest of the network. However, during deletion the CIDR was removed from the spoke itself, which deletes the routes added for static S2c. 
  
 **Known Issues in Aviatrix Release 6.5.2835**
 
 - If your Controller is running 6.4 and you have ControllerHA enabled, there is a very small chance that your HA recovery might fail if your Controller goes down by any chance. If that happens, you can manually restore the backup on your new Controller. To avoid this, please upgrade to the 6.5 release.
-- **AVX-16121** - In Aviatrix version 5.x, Logstash Forwarder was replaced by `Filebeat Forwarder <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#filebeat-forwarder>`_ in the supported logging services. If you enabled logstash before this switch, please disable/enable logstash on the Filebeat Forwarder in â€œController/Loggingâ€ before upgrading your Aviatrix Controller, otherwise your Gateways might come up in the â€œconfig_failâ€ state after the upgrade. You might need to update your configuration on your collection side to accommodate this change. If you already upgraded and have Gateways in the â€œconfig_failâ€ state, you can do an â€œImage Upgradeâ€ on the impacted Gateway to resolve the issue. 
+- **AVX-16121** - In Aviatrix version 5.x, Logstash Forwarder was replaced by `Filebeat Forwarder <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#filebeat-forwarder>`_ in the supported logging services. If you enabled logstash before this switch, please disable/enable logstash on the Filebeat Forwarder in "Controller/Logging" before upgrading your Aviatrix Controller, otherwise your Gateways might come up in the "config_fail" state after the upgrade. You might need to update your configuration on your collection side to accommodate this change. If you already upgraded and have Gateways in the "config_fail" state, you can do an "Image Upgrade" on the impacted Gateway to resolve the issue. 
 - **AVX-17221** - If you have Managed CloudN, Aviatrix requires you to follow the Managed instructions and allow access to the sites mentioned for the CloudN Managed Port. If your Managed CloudN ends up in a "config_fail" state after your Controller is upgraded, you have the following options:
 
   Option 1:
@@ -1049,7 +1049,7 @@ The following `Public Preview Features`_ are available in this release:
 =====================
 
 - If your Controller is running 6.4 and you have ControllerHA enabled, there is a very small chance that your HA recovery might fail if your Controller goes down by any chance. If that happens, you can manually restore the backup on your new Controller. To avoid this, please upgrade to the 6.5 release.
-- **AVX-16121** - In Aviatrix version 5.x, Logstash Forwarder was replaced by `Filebeat Forwarder <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#filebeat-forwarder>`_ in the supported logging services. If you enabled logstash before this switch, please disable/enable logstash on the Filebeat Forwarder in â€œController/Loggingâ€ before upgrading your Aviatrix Controller, otherwise your Gateways might come up in the â€œconfig_failâ€ state after the upgrade. You might need to update your configuration on your collection side to accommodate this change. If you already upgraded and have Gateways in the â€œconfig_failâ€ state, you can do an â€œImage Upgradeâ€ on the impacted Gateway to resolve the issue. 
+- **AVX-16121** - In Aviatrix version 5.x, Logstash Forwarder was replaced by `Filebeat Forwarder <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#filebeat-forwarder>`_ in the supported logging services. If you enabled logstash before this switch, please disable/enable logstash on the Filebeat Forwarder in "Controller/Logging" before upgrading your Aviatrix Controller, otherwise your Gateways might come up in the "config_fail" state after the upgrade. You might need to update your configuration on your collection side to accommodate this change. If you already upgraded and have Gateways in the "config_fail" state, you can do an "Image Upgrade" on the impacted Gateway to resolve the issue. 
 - **AVX-17221** - If you have Managed CloudN, Aviatrix requires you to follow the Managed instructions and allow access to the sites mentioned for the CloudN Managed Port. If your Managed CloudN ends up in a "config_fail" state after your Controller is upgraded, you have the following options:
 
   Option 1:
@@ -1126,7 +1126,7 @@ The following `Public Preview Features`_ are available in this release:
 **Feature Enhancements in Aviatrix Release 6.5**
 
 - Added support for AWS BGP over LAN to support multiple peer instances. Scale up to 10 BGP over LAN peers per Transit Gateway, and 20 total per Transit Gateway pair. This provides a higher throughput, better redundancy, and a consolidation of BGP over LAN peers for on-prem connectivity on a pair of Transit Gateways. For more information, see the discussion about `BGP over LAN Multi-Peer <https://docs.aviatrix.com/HowTos/transit_gateway_external_device_bgp_over_lan_workflow.html#bgp-over-lan-multi-peer>`_.
-- Added fields â€œec2 roleâ€ and â€œapp roleâ€ in the Controller UI to support custom roles for AWS IAM based accounts. It is highly recommended to use a customized name for "ec2 role" and "app role" instead of the Aviatrix default roles for better security.
+- Added fields "ec2 role" and "app role" in the Controller UI to support custom roles for AWS IAM based accounts. It is highly recommended to use a customized name for "ec2 role" and "app role" instead of the Aviatrix default roles for better security.
 - **AVX-15101** - Added support for Azure Government Cloud Availability Zones.
 
 **Issues Corrected in Aviatrix Release 6.5**
@@ -1136,7 +1136,7 @@ The following `Public Preview Features`_ are available in this release:
 - **AVX-13851** - Site2cloud edit to update Local Identifier as private IP for External Device connection will update all tunnels correctly.
 - **AVX-14224** - Improvements to Spire Gateway Service for handling a large number of gateways.
 - **AVX-14240** - Improved messaging for CloudN without public IP.
-- **AVX-14397** - CaaGâ€™s state changed to config_fail due to a wrong certificate name.
+- **AVX-14397** - CaaG's state changed to config_fail due to a wrong certificate name.
 - **AVX-14600** - Support Palo Alto Firewall vendor integration with multiple IPs configured on the eth interfaces
 - **AVX-14610** - Corrected non-ASCII characters while displaying the logs from Troubleshoot->Logs.
 - **AVX-14619** - Fixed an issue causing packet drops when migrating from ActiveMesh 1.0 to 2.0.
@@ -1146,7 +1146,7 @@ The following `Public Preview Features`_ are available in this release:
 - **AVX-14820** - Addressed an issue with Gateways being in up state during an upgrade from 6.4 to 6.5.
 - **AVX-15012** - Exception error during disabling OCI transit FireNet function.
 - **AVX-15071** - Fixed firewall tuple setting from changing during Controller upgrade.
-- **AVX-15083** - Fixed issues with Site2Cloud with â€œSingle IP HAâ€ feature having issues with customized SNAT features when â€œsync to HA gatewayâ€ configuration is enabled.
+- **AVX-15083** - Fixed issues with Site2Cloud with "Single IP HA" feature having issues with customized SNAT features when "sync to HA gateway" configuration is enabled.
 - **AVX-15138** - Fixed route table priority to deal with CIDR overlap between advertised routes from Transit and CaaG/CloudN eth2 MGMT interface.
 - **AVX-15198** - Process optimization to avoid db updates when Transit Gateway details are listed by the Aviatrix Controller or CoPilot.
 - **AVX-15238** - Fixed a CaaG registration failure issue after the cert domain is changed from default.
@@ -1406,7 +1406,7 @@ R6.4.2499 (05/10/2021)
  
 - The API "get_transit_or_spoke_gateway_details" result format changed.
 
-- Two CaaG canâ€™t have the same public IP, e.g. mgmt interface behind the same NAT gateway.
+- Two CaaG can't have the same public IP, e.g. mgmt interface behind the same NAT gateway.
 
 7. Before you Upgrade 
 -------------------------- 
@@ -1455,7 +1455,7 @@ R6.3.2364 (03/18/2021)
 - **Bug fix** Improve the route programming mechanism for Spoke VPC to filter the customize CIDRs first before installing into the Spoke VPC route table.
 - **Bug fix** Fix the Dashboard status display issue for BGP over LAN.
 - **Bug fix** Fix the Aviatrix Gateways "Polling" status after Controller Backup & Restore and IP migration
-- **Bug fix** Add the missing parameters in template for â€œExport to Terraformâ€ feature
+- **Bug fix** Add the missing parameters in template for "Export to Terraform" feature
 - **Bug fix** Fix exception for CloudN registration after controller migration.
 
 R6.3.2247 (03/01/2021)
@@ -1480,7 +1480,7 @@ R6.3.2216 (2/22/2021)
 - **Bug fix** Unable to launch Palo Alto VM-Series in AWS GovCloud.
 - **Bug fix** Revert check introduced in 6.3.2092 for ActiveMesh 2.0 that blocks the Aviatrix Transit Peering if ASN# for Aviatrix Transit Gateways are same or not set.
 - **Bug fix** Fix the long security domain names display issue in Aviatrix Controller.
-- **Bug fix** Fix exception when using â€œExport to Terraformâ€ feature for fqdn_tag_rule.
+- **Bug fix** Fix exception when using "Export to Terraform" feature for fqdn_tag_rule.
 - **Bug fix** Fix the route propagation for HPE Aviatrix Transit Gateway eth0 in Azure.
 - **Bug fix** Update RFC1918 routes in OCI VCN for non-default security list.
 - **Bug fix** Fix the default route entry removal issue when "Use VPC/VNET DNS Server" feature in-use.
@@ -2943,10 +2943,10 @@ R2.5
 -  New Aviatrix VPN client (v1.3.9) for user VPN (Mac, PC and Unix). To
    download, go to `this link. <http://docs.aviatrix.com/Downloads/samlclient.html>`__
 
--  Hardened password management for â€œforgot passwordâ€.
+-  Hardened password management for "forgot password".
 
 -  Additional ciphers for site to cloud tunnels for interoperability. To
-   configure, go to Site2Cloud -> â€œAdd Newâ€ -> Algorithms.
+   configure, go to Site2Cloud -> "Add New" -> Algorithms.
 
 2. Public cloud specific features
 ----------------------------------
@@ -2958,11 +2958,11 @@ R2.5
    Document <https://s3-us-west-2.amazonaws.com/aviatrix-download/Cloud-Controller/Cloud+Services+Gateway+Controller+API+reference.pdf>`__.
 
 -  Aviatrix cluster peering over AWS peering. To enable it, go to
-   Peering -> â€œCluster Encrypted Peeringâ€ -> â€œNew Peeringâ€ and select
-   â€œOver AWS Peeringâ€.
+   Peering -> "Cluster Encrypted Peering" -> "New Peering" and select
+   "Over AWS Peering".
 
 -  Aviatrix backup/restore in Google Cloud. To configure back/restore,
-   go to Settings -> â€œBackup & Restoreâ€.
+   go to Settings -> "Backup & Restore".
 
 -  Python script for Google Cloud Controller HA monitoring and
    restarting. `Follow <https://github.com/AviatrixSystems/Controller-HA-for-GCP>`__
@@ -2985,10 +2985,10 @@ R2.5
 -  Automated Aviatrix Controller deployment in AWS using `Cloudformation:
    <http://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`__
 
--  GW Resizing API â€œedit\_gw\_configâ€.
+-  GW Resizing API "edit\_gw\_config".
 
--  Support proxy setting modification through â€œAdvanced Configâ€ ->
-   â€œProxy Settingsâ€.
+-  Support proxy setting modification through "Advanced Config" ->
+   "Proxy Settings".
 
 -  Frictionless install UX [Register Aviatrix on premises Gateway with
    UCC Controller at the time of install to auto-fetch initial
@@ -3000,7 +3000,7 @@ R2.5
 -  Support configurable health check frequency between Aviatrix
    Controller and Gateways for customers to meet their HA failover time
    constraint. To change the health check frequency, go to Settings ->
-   Keepalive. Select â€œslowâ€ only when your network is unstable and
+   Keepalive. Select "slow" only when your network is unstable and
    gateways send too many status alerts.
 
 6. Logs and troubleshooting
@@ -3009,19 +3009,19 @@ R2.5
 -  Aviatrix for Splunk has been published on Splunkbase. To download,
    click `this link <https://splunkbase.splunk.com/app/3585/>`__. For
    instructions on how to use the app, click `this
-   link <https://github.com/AviatrixSystems/SplunkforAviatrix>`__. Â·
+   link <https://github.com/AviatrixSystems/SplunkforAviatrix>`__.
 
 -  Aviatrix for SumoLogic application is available. To download, click
    `this
    link <https://github.com/AviatrixSystems/SumoLogicforAviatrix>`__.
 
 -  Rsyslog over UDP for customers needing UDP based rsyslog. To
-   configure, go to Settings -> Loggings -> â€œRemote Syslogâ€ and select
-   UDP for â€œProtocolâ€
+   configure, go to Settings -> Loggings -> "Remote Syslog" and select
+   UDP for "Protocol".
 
 -  Configurable gateway debug level. To adjust the debug level, go to
-   Troubleshot -> Diagnostics -> â€œGateway Debug Levelâ€ and select the
-   appropriate debug level for your gateway
+   Troubleshot -> Diagnostics -> "Gateway Debug Level" and select the
+   appropriate debug level for your gateway.
 
 7. New Aviatrix OVF for VMWare
 -------------------------------
@@ -3066,7 +3066,7 @@ Monitor and Troubleshooting
 -  During UCC gateway launch, Controller now reports in text the
    progress of gateway creation in addition to the progress bar view.
 
--  â€œDry Runâ€ for system upgrade. Dry Run performs health checks for the
+-  "Dry Run" for system upgrade. Dry Run performs health checks for the
    Controller and gateways to detect potential upgrade failure without
    executing the command. Go to Settings -> Upgrade. Optionally, click
    Dry Run. If it is successful, you may click Upgrade.
@@ -3232,7 +3232,7 @@ UserConnect-013017
 
 -  The ability to setup proxy server setting for Internet connectivity
    in CloudN OVA has been added. To configure proxy server support, use
-   "â€“setup\_network\_only {true\|false}" for clish command
+   "-setup\_network\_only {true\|false}" for clish command
    setup\_interface\_address and setup\_interface\_static\_address. Use
    clish command "setup\_network\_options {test\|save\|cancel}" to
    test/save/remove http/https proxy setting. Currently, "Datacenter
@@ -3676,11 +3676,11 @@ UserConnect-040316
    cloud accounts.
 
 -  Allow to modify site2cloud connection and configuration template by
-   editing â€œCloud Networksâ€ or â€œCustomer Networksâ€ CIDRs. To use this
+   editing "Cloud Networks" or "Customer Networks" CIDRs. To use this
    feature, go to VPC/VNet -> Site2Cloud -> List -> Edit. If changes
-   need to be made for subnets/address spaces in VPC/VNet, select â€œCloud
-   Networksâ€ to enter all VPC/VNet CIDRs. If changes need to be made for
-   subnets in on-prem network, select â€œCustomer Networksâ€ to enter all
+   need to be made for subnets/address spaces in VPC/VNet, select "Cloud
+   Networks" to enter all VPC/VNet CIDRs. If changes need to be made for
+   subnets in on-prem network, select "Customer Networks" to enter all
    on-prem CIDRs. This feature minimizes the configuration changes on
    customer sites by not having to delete the existing site2cloud
    connection.
@@ -3694,7 +3694,7 @@ ARM is the new Azure portal that is significantly different in how API
 works comparing with Azure Classic.
 
 -  Support launching gateways in Microsoft Azure Resource Manager (ARM)
-   VNet. Follow the embedded Aviatrixâ€™s instructions to collect
+   VNet. Follow the embedded Aviatrix instructions to collect
    Application Endpoint, Application Client ID and Application Client
    Secret before creating a cloud account. The main feature supported by
    ARM in this release is Site2Cloud. Peering with ARM VNet is not
@@ -3718,7 +3718,7 @@ UserConnect-031016
 
 -  Support Site2Cloud null encryption. This feature allows you to create
    an IPSec tunnel without encrypting the packets. To configure, go to
-   VPC/VNet -> Site2Cloud -> Add and then select â€œNull Encryptionâ€.
+   VPC/VNet -> Site2Cloud -> Add and then select "Null Encryption".
 
 UserConnect-021516
 ==================
@@ -3758,14 +3758,14 @@ described below:
    changes, users have to delete the existing VPN gateways and re-create
    new ones. With this release, when you add a new VPC/VNet and your VPN
    users need to access them via VPN, you just modify the CIDRs at
-   â€œadditional CIDRsâ€ field at split tunnel configuration without
+   "additional CIDRs" field at split tunnel configuration without
    deleting any existing gateways. To configure, go to VPC/VNet -> Edit
    Configuration-> Modify Split Tunnel. Note all additional CIDRs (the
    CIDRs that are not the VPC/VNet CIDR where VPN gateways are deployed)
    must be entered all together, separated by comma. For example, you
    have two new VPCs, 10.10.0.0/16 and 10.11.0.0/16, and you like to
    access them via split tunnel VPN. You must enter at the Modify Split
-   Tunnel field â€œ10.10.0.0/16,10.11.0.0/16â€ without the quote. In
+   Tunnel field "10.10.0.0/16,10.11.0.0/16" without the quote. In
    addition, you may need to add encrypted peering with the new VPCs in
    order for traffic to go through. The changes are effective
    immediately to the VPN gateway in the VPC/VNet. If there are multiple
@@ -3776,7 +3776,7 @@ described below:
 -  Support Transitive Peering. Transitive Peering enables you to route
    traffic from instances in Source VPC, encrypted, through a NextHop
    VPC gateway to reach a destination. Before creating Transitive
-   Peeringâ€™, you need to make Encrypted Peering between Source VPC and
+   Peering, you need to make Encrypted Peering between Source VPC and
    NextHop VPC first. To create/delete Transitive Peering, go to
    VPC/VNet -> Encrypted Peering -> Transitive Peering.
 
@@ -3795,8 +3795,8 @@ described below:
 -  Support encryption for Azure ExpressRoute. This feature allows to run
    IPSec over Azure Express Route to ensure a higher security level. To
    enable it, first launch a gateway in a subnet dedicated for the
-   gateway, then go to VPC/VNet -> Site2Cloud, click â€œAddâ€ tab and
-   select â€œPrivate Route Encryptionâ€.
+   gateway, then go to VPC/VNet -> Site2Cloud, click "Add" tab and
+   select "Private Route Encryption".
 
 -  Support VNet route diagnostics. Go to Settings -> Troubleshooting ->
    VNet Route Diagnostics to find various VNet routing related
@@ -3830,7 +3830,7 @@ UserConnect-121015
    Remote Syslog.
 
 -  Support the ability to push down to VPN user client the DHCP settings
-   made in AWS VPC Console â€œCreate DHCP Options Setâ€ menu. For example,
+   made in AWS VPC Console "Create DHCP Options Set" menu. For example,
    if you wish to change DNS name after the gateway has been launched,
    you can use this feature to make changes. The active VPN users will
    be disconnected when this feature is executed. To configure, go to
@@ -3901,7 +3901,7 @@ UserConnect-092815
    session. The log describes the VPN user virtual IP address, source
    port and the destination IP address and port. By correlating with VPN
    username and its assigned virtual IP address, IT admin can uniquely
-   track and identify every VPN usersâ€™ access activity history to both
+   track and identify every VPN user's access activity history to both
    internal resource and external resource.
 
 -  Support multiple users in admin privilege. Support multiple users in
@@ -3911,8 +3911,8 @@ UserConnect-092115
 ==================
 
 -  Added hard token authentication support on DUO security. Made DUO
-   authentication configuration optional. When â€œTokenâ€ is configured as
-   the Push Mode for all gateways, user must append the 6 digitsâ€™ token
+   authentication configuration optional. When "Token" is configured as
+   the Push Mode for all gateways, user must append the 6 digits' token
    number to their password.
 
    **Note: **
@@ -3943,7 +3943,7 @@ UserConnect-082515
 -  Support backup DUO push. When both LDAP and DUO are enabled, user can
    type #push1 or #push2 appending to the password field to specify
    which phone in the DUO device list to be notified for approval. For
-   example, if a user John Smithâ€™s password is johnsmith, he can type at
+   example, if a user John Smith's password is johnsmith, he can type at
    password prompt johnsmith#push1 or johnsmith#push2 to specify the
    first phone or the second phone to be notified. If only password is
    typed in, the default phone (the first phone on the device list in
@@ -4076,7 +4076,7 @@ UserConnect-051515
 
 -  Support configurable base policy for user profiles.
 
--  API to change a VPN userâ€™s profile.
+-  API to change a VPN user's profile.
 
 UserConnect-050915
 ==================
