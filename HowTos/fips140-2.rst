@@ -6,7 +6,7 @@
 FIPS 140-2 Module
 ###################################
 
-Aviatrix OpenVPN supports the FIPS 140-2 crypto module. This security policy does not affect any other controller or gateway features. When FIPS 140-2 is enabled, the Controller and all gateways will be installed with the FIPS 140-2 module to support OpenVPN. 
+Aviatrix OpenVPN supports the FIPS 140-2 crypto module.
 
 The Aviatrix Certificate number is #3475 which you can find from the `NIST site <https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3475>`_.
 
