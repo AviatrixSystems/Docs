@@ -47,7 +47,7 @@ CoPilot Release 3.0.5 (10/13/2022)
 
 **Issue Corrected in CoPilot release 3.0.5**
 
-    -   **Bug fix** — This release includes a fix so that CoPilot shows units in binary-prefix notation (pages that used to show units as MB, GB, TB, and PB now show them as MiB, GiB, TiB, and PiB, respectively).
+    -   **Bug fix** — In this release, CoPilot now calculates and shows units in International Electrotechnical Commission (IEC) binary-prefix notation (pages that used to show units as MB, GB, TB, and PB now show them as MiB, GiB, TiB, and PiB, respectively.
 
 
 CoPilot Release 3.0.4 (10/11/2022)
