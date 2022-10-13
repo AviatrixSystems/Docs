@@ -10,7 +10,7 @@ Aviatrix OpenVPN supports the FIPS 140-2 crypto module. This security policy doe
 
 The Aviatrix Certificate number is #3475 which you can find from the `NIST site <https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3475>`_.
 
-The Aviatrix FIPS 140-2 Security Policy can be found at this `link. <https://csrc.nist.gov/CSRC/media/projects/cryptographic-module-validation-program/documents/certificates/FIPS140ConsolidatedCertAug2018.pdf>`_
+The Aviatrix FIPS 140-2 Security Policy can be found at this `link. <https://csrc.nist.gov/CSRC/media/projects/cryptographic-module-validation-program/documents/security-policies/140sp3475.pdf>`_
 
 Before enabling FIPS 140-2, the FIPS 140-2 Security patch needs to be applied.
 
