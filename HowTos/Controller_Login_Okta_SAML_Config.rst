@@ -26,7 +26,7 @@ Before configuring SAML integration between Aviatrix and Okta, make sure the fol
 Aviatrix Controller
 ###################
 
-If you haven’t already deployed the Aviatrix controller, follow `the Controller Startup Guide <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_.
+If you haven’t already deployed the Aviatrix controller, follow `the Controller Startup Guide <https://docs.aviatrix.com/StartUpGuides/aws_getting_started_guide.html>`_.
 
 .. _okta_account:
 
