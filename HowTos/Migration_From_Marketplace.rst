@@ -35,8 +35,8 @@ This document describes how to migrate from one type of machine image to another
 
   In a Disaster Recovery (DR) situation in which you cannot access the old Controller, please see the Controller Migration During Disaster Recovery section below.
 
-Prerequisites
-=============
+Prerequisites for all Clouds
+====================================
 
 * Make sure you have the relevant CSP storage container (an AWS S3 bucket, Azure Blob Storage, Google Cloud Storage, or OCI Object storage service) linked with your Aviatrix Controller. This storage container enables you to back up your data.
 
@@ -64,6 +64,9 @@ As a security best practice, enable versioning on the destination storage contai
 
 * If you are using SAML login for either the Controller login (Settings/Controller/SAMLLogin) and/or for openvpn authentication (OpenVPN/Advanced/SAML), please make sure that the endpoints configured on the Controller and the SAML applications in the IdP match exactly.
 * Do not add any new configurations to your old Controller before migrating, as those updates may be lost in the migration process.
+
+Prerequisites for CoPilot Users
+==================================
 
 .. important::
 
