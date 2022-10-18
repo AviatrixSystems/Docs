@@ -171,7 +171,7 @@ Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1."
 **Known Issues in Aviatrix Release 6.8.1149**
 
 - **AVX-27716** - An error may show "configuration not up-to-date" while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error.
-
+- **AVX-27653** - If you are using software version 6.8.1148 on an outdated gateway image, your Controller could have a memory limitation issue. `Upgrade <https://docs.aviatrix.com/HowTos/gateway-image-migration.html>`_ your gateway images to avoid this issue.
 
 6.7.1436 (08/16/2022)
 =====================
