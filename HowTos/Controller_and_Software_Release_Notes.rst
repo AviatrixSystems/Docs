@@ -171,7 +171,6 @@ Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1."
 **Known Issues in Aviatrix Release 6.8.1149**
 
 - **AVX-27716** - An error may show "configuration not up-to-date" while upgrading an old image (kernel versions prior to version 5.4) to 6.8.1149. The old image will upgrade despite this error.
-- **AVX-27653** - If you are using software version 6.8.1148 on an outdated gateway image, your Controller could have a memory limitation issue. `Upgrade <https://docs.aviatrix.com/HowTos/gateway-image-migration.html>`_ your gateway images to avoid this issue.
 
 6.7.1436 (08/16/2022)
 =====================
@@ -326,7 +325,7 @@ The following Private Preview Features are available in this release:
 
 - **AVX-25673** - After Site2Cloud verbose logging is enabled, it cannot be disabled in the UI.
 - **AVX-26419** - If you are connecting to another Aviatrix device, using IKEv2 is preferred. IKEv2 support started in version 5.0.2667. If you configure IKEv1 in a Site2Cloud connection that uses certificate-based authentication and is connecting to another Aviatrix device, you must add the intermediate CA's in addition to the root CA. When an intermediate CA is renewed and re-authentication is attempted, the Site2Cloud connection will go down until you add the new certificate.
-
+- **AVX-27653** - If you are using software version 6.8.1148 on an outdated gateway image, your Controller could have a memory limitation issue. `Upgrade <https://docs.aviatrix.com/HowTos/gateway-image-migration.html>`_ your gateway images to avoid this issue.
 
 6.7.1376 (08/02/2022) 
 =========================
