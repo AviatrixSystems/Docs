@@ -134,6 +134,16 @@ This image includes the following updates:
 * Hardened to 80% of CIS Server L1 benchmark.
 * Passed a vulnerability scan up to July 2022.
 
+Azure Gateway Images
+================================================
+
+Azure Gateway Images: aviatrix-companion-gateway-v13 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Remediated `CVE-2022-2914 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2914>`_.
+* Image is hardened to 80% of CIS Server L1.
+* Fixed and passed a vulnerability scan up to August 2022.
+
 Alibaba Gateway Images
 ============================================
 
