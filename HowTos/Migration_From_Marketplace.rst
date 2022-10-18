@@ -74,11 +74,11 @@ Prerequisites for CoPilot Users
 
   If you are migrating a Controller earlier than version 6.8.1088 or earlier than version 6.9.161:
 
-  In Copilot Home > Settings > Configuration, click Reset Controller IP. This will bring you to the CoPilot login page where you will enter your new Controller’s IP address once it’s available after the Controller migration. If your new Controller was deployed from the Controller UI, the IP address will be the private IP address of the new Controller.
+  * In Copilot Home > Settings > Configuration, click Reset Controller IP. This will bring you to the CoPilot login page where you will enter your new Controller’s IP address once it’s available after the Controller migration. If your new Controller was deployed from the Controller UI, the IP address will be the private IP address of the new Controller.
 
   If you are migrating a Controller version 6.8.1088 or later or 6.9.161 or later:
 
-  In the CSP environment of your CoPilot, confirm that your old controller’s IP address (the controller you are migrating from) is set in your CoPilot’s security group inbound rule for port 443.
+  * In the CSP environment of your CoPilot, confirm that your old controller’s IP address (the controller you are migrating from) is set in your CoPilot’s security group inbound rule for port 443.
 
 Migrating an AWS Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
