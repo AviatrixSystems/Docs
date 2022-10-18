@@ -19,7 +19,7 @@ This document explains how to launch an Aviatrix Gateway from the Aviatrix Contr
 
 .. note::
 
-  Note: (AWS users) When you launch a gateway, your Controller/CoPilot will use the default encryption key in your AWS account.
+  Note: (AWS users) When you launch a gateway, the gateway will use the default encryption key in your AWS account.
 
   To make sure the gateway launches with the correct key, in your AWS account, go to AWS > EC2 > Settings > EBS encryption. Make sure the default key displayed there is the key you want to use for this gateway. If not, click **Manage** to select a new key.
 
