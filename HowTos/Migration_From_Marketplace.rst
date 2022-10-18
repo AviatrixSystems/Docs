@@ -35,8 +35,8 @@ This document describes how to migrate from one type of machine image to another
 
   In a Disaster Recovery (DR) situation in which you cannot access the old Controller, please see the Controller Migration During Disaster Recovery section below.
 
-Prerequisites
-=============
+Prerequisites for all Clouds
+====================================
 
 * Make sure you have the relevant CSP storage container (an AWS S3 bucket, Azure Blob Storage, Google Cloud Storage, or OCI Object storage service) linked with your Aviatrix Controller. This storage container enables you to back up your data.
 
@@ -52,14 +52,7 @@ As a security best practice, enable versioning on the destination storage contai
 
   In case of a Disaster Recovery (DR) scenario, considering keeping current backups in separate regions of each CSP.
 
-* Back up your existing Controller. In your Controller, go to Settings  >  Maintenance  > Backup & Restore  >  Backup. Click **Backup now**.
-
-.. tip::
-
-  As a security best practice: 
-  * When the backup completes, verify that it is the correct size.
-  * Make a local copy of the backup file (object).
-
+* Back up your existing Controller. In your Controller, go to Settings  >  Maintenance  > Backup & Restore  >  Backup. Click **Backup now**. As a security best practice, when the backup completes, verify that it is the correct size and make a local copy of the backup file (object).
 * Schedule the migration during a maintenance window.
 * Walk through the `pre-op checklist <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_.
 * `Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ to the latest build of your current release. Note that Aviatrix software version upgrade is a version-to-version upgrade. Therefore, you may need to perform multiple upgrades until you reach the latest version on your existing Controller. 
@@ -70,10 +63,16 @@ As a security best practice, enable versioning on the destination storage contai
   Deleting your HA configuration is crucial. If you do not delete your HA configuration before migration, the backup configuration may become corrupted, and the migration may fail.
 
 * If you are using SAML login for either the Controller login (Settings/Controller/SAMLLogin) and/or for openvpn authentication (OpenVPN/Advanced/SAML), please make sure that the endpoints configured on the Controller and the SAML applications in the IdP match exactly.
+* Do not add any new configurations to your old Controller before migrating, as those updates may be lost in the migration process.
 
-.. note::
+Prerequisites for CoPilot Users
+==================================
 
-  Do not add any new configurations to your old Controller before migrating, as those updates may be lost in the migration process.
+.. important::
+
+  (Aviatrix CoPilot users) When you migrate your Controller, your Controller IP address will change. To avoid being unable to log in to your CoPilot, do the following before migration: In Copilot Home > Settings > Configuration, click **Reset Controller IP**. This will bring you to the CoPilot login page where you will enter your new Controller’s IP address once it’s available after the Controller migration. 
+
+  Note: If your new Controller was deployed from the Controller UI, the IP address will be the private IP address of the new Controller. 
 
 Migrating an AWS Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
