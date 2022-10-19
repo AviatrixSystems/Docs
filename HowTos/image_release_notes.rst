@@ -10,6 +10,53 @@ To migrate your Gateways to the latest images, see `this document <https://docs.
 
   New and existing customers should `migrate <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_ to the Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support image as soon as possible to access upcoming new features and flexible billing options.
 
+Built-In Images for each Software Version
+===================================================================
+
++---------------------+-----------------+------------------------------------------------------------------------+
+|Software Version     |Release Date     |Built-In Images for this version                                        |
++=====================+=================+========================================================================+
+|6.8.1311             |09/12/2022       |AWS:hvm-cloudx-aws-080322, hvm-cloudx-aws-china-080422                  |
+|                     |                 |Azure:aviatrix-companion-gateway-v11,                                   |
+|                     |                 |aviatrix-companion-gateway-china-v11                                    |
+|                     |                 |                                                                        |
+|                     |                 |GCP:gw-base-08032022                                                    |
+|                     |                 |                                                                        |
+|                     |                 |OCI aviatrix_gateway_54_20220323                                        |
++---------------------+-----------------+------------------------------------------------------------------------+
+|6.8.1149             |08/17/2022       |AWS: hvm-cloudx-aws-080322, hvm-cloudx-aws-china-080422                 |
+|                     |                 |Azure: aviatrix-companion-gateway-v10,                                  |
+|                     |                 |aviatrix-companion-gateway-china-v10                                    |
+|                     |                 |                                                                        |
+|                     |                 |GCP: gw-base-08032022                                                   |
+|                     |                 |                                                                        |
+|                     |                 |OCI: aviatrix_gateway_54_20220323                                       |
++---------------------+-----------------+------------------------------------------------------------------------+
+|6.7.1436             |08/16/2022       |AWS: hvm-cloudx-aws-031722, hvm-cloudx-aws-050422                       |
+|                     |                 |Azure: aviatrix-companion-gateway-v10.vhd,                              |
+|                     |                 |av-gw-1804-03302021-osDisk.vhd                                          |
+|                     |                 |                                                                        |
+|                     |                 |GCP: gw-base-04092022                                                   |
+|                     |                 |                                                                        |
+|                     |                 |OCI: aviatrix_gateway_54_20220323                                       |
++---------------------+-----------------+------------------------------------------------------------------------+
+|6.6.5721             |08/16/2022       |AWS:hvm-cloudx-aws-031222, hvm-cloudx-aws-031021                        |
+|                     |                 |                                                                        |
+|                     |                 |Azure: aviatrix-companion-gateway-v8                                    |
+|                     |                 |                                                                        |
+|                     |                 |GCP: gw-base-04102021                                                   |
+|                     |                 |                                                                        |
+|                     |                 |OCI: aviatrix_gateway_54_1042_20210426_patched_v2                       |
++---------------------+-----------------+------------------------------------------------------------------------+
+|6.8.1148             |08/09/2022       |AWS: hvm-cloudx-aws-080322, hvm-cloudx-aws-china-080422                 |
+|                     |                 |Azure: aviatrix-companion-gateway-v10,                                  |
+|                     |                 |aviatrix-companion-gateway-china-v10                                    |
+|                     |                 |                                                                        |
+|                     |                 |GCP: gw-base-08032022                                                   |
+|                     |                 |                                                                        |
+|                     |                 |OCI: aviatrix_gateway_54_20220323                                       |
++---------------------+-----------------+------------------------------------------------------------------------+
+
 AWS Controller Images
 ===================================
 
