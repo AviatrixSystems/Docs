@@ -16,13 +16,13 @@ Built-In Images for each Software Version
 +---------------------+-----------------+------------------------------------------------------------------------+
 |**Software Version** | **Release Date**|**Built-In Images for this version**                                    |
 +---------------------+-----------------+------------------------------------------------------------------------+
-|6.8.1311             |09/12/2022	    |AWS: hvm-cloudx-aws-080322, hvm-cloudx-aws-china-080422                 |
+|6.8.1311             |09/12/2022	      |AWS: hvm-cloudx-aws-080322, hvm-cloudx-aws-china-080422                 |
 |                     |                 |Azure: aviatrix-companion-gateway-v11,                                  |
 |                     |                 |aviatrix-companion-gateway-china-v11                                    |
 |                     |                 |GCP: gw-base-08032022                                                   |
 |                     |                 |OCI: aviatrix_gateway_54_20220323                                       |
 +---------------------+-----------------+------------------------------------------------------------------------+
-|6.8.1149             |08/17/2022	    |AWS: hvm-cloudx-aws-080322, hvm-cloudx-aws-china-080422                 |
+|6.8.1149             |08/17/2022	      |AWS: hvm-cloudx-aws-080322, hvm-cloudx-aws-china-080422                 |
 |                     |                 |Azure: aviatrix-companion-gateway-v10,                                  |
 |                     |                 |aviatrix-companion-gateway-china-v10                                    |
 |                     |                 |GCP: gw-base-08032022                                                   |
@@ -34,7 +34,7 @@ Built-In Images for each Software Version
 |                     |                 |GCP: gw-base-04092022                                                   |
 |                     |                 |OCI: aviatrix_gateway_54_20220323                                       |
 +---------------------+-----------------+------------------------------------------------------------------------+
-|6.6.5721             |08/16/2022	    |AWS: hvm-cloudx-aws-031222, hvm-cloudx-aws-031021                       |
+|6.6.5721             |08/16/2022	      |AWS: hvm-cloudx-aws-031222, hvm-cloudx-aws-031021                       |
 |                     |                 |Azure: aviatrix-companion-gateway-v8                                    |
 |                     |                 |GCP: gw-base-04102021                                                   |
 |                     |                 |OCI: aviatrix_gateway_54_1042_20210426_patched_v2                       |
@@ -45,28 +45,28 @@ Built-In Images for each Software Version
 |                     |                 |GCP: gw-base-08032022                                                   |
 |                     |                 |OCI: aviatrix_gateway_54_20220323                                       |
 +---------------------+-----------------+------------------------------------------------------------------------+
-|6.7.1376             |08/02/2022	    |AWS: hvm-cloudx-aws-031722, hvm-cloudx-aws-050422                       |
+|6.7.1376             |08/02/2022	      |AWS: hvm-cloudx-aws-031722, hvm-cloudx-aws-050422                       |
 |                     |                 |Azure: aviatrix-companion-gateway-v10.vhd,                              |
 |                     |                 |av-gw-1804-03302021-osDisk.vhd                                          |
 |                     |                 |GCP: gw-base-04092022                                                   |
 |                     |                 |OCI: aviatrix_gateway_54_20220323                                       |
 +---------------------+-----------------+------------------------------------------------------------------------+
-|6.6.5712	          |08/02/2022       |AWS: hvm-cloudx-aws-031222, hvm-cloudx-aws-031021                       |
+|6.6.5712	          |08/02/2022         |AWS: hvm-cloudx-aws-031222, hvm-cloudx-aws-031021                       |
 |                     |                 |Azure: aviatrix-companion-gateway-v8.vhd, av-gw-1804-03302021-osDisk.vhd|
 |                     |                 |GCP: gw-base-04102021                                                   |
 |                     |                 |OCI: aviatrix_gateway_54_1042_20210426_patched_v2                       |
 +---------------------+-----------------+------------------------------------------------------------------------+
-|6.7.1325	          |07/25/2022       |AWS: hvm-cloudx-aws-031722, hvm-cloudx-aws-032422                       |
+|6.7.1325	          |07/25/2022         |AWS: hvm-cloudx-aws-031722, hvm-cloudx-aws-032422                       |
 |                     |                 |Azure: aviatrix-companion-gateway-v9.vhd, av-gw-1804-03302021-osDisk.vhd|
 |                     |                 |GCP: gw-base-03142022                                                   |
 |                     |                 |OCI: aviatrix_gateway_54_20220323                                       |
 +---------------------+-----------------+------------------------------------------------------------------------+
-|6.6.5667	          |07/25/2022       |AWS: hvm-cloudx-aws-031222, hvm-cloudx-aws-031021                       |
+|6.6.5667	          |07/25/2022         |AWS: hvm-cloudx-aws-031222, hvm-cloudx-aws-031021                       |
 |                     |                 |Azure: aviatrix-companion-gateway-v8.vhd, av-gw-1804-03302021-osDisk.vhd|
 |                     |                 |GCP: gw-base-04102021                                                   |
 |                     |                 |OCI: aviatrix_gateway_54_1042_20210426_patched_v2                       |
 +---------------------+-----------------+------------------------------------------------------------------------+
-|6.7.1324	          |07/06/2022	    |AWS: hvm-cloudx-aws-031722, hvm-cloudx-aws-032422                       |
+|6.7.1324	          |07/06/2022	        |AWS: hvm-cloudx-aws-031722, hvm-cloudx-aws-032422                       |
 |                     |                 |Azure: aviatrix-companion-gateway-v9.vhd, av-gw-1804-03302021-osDisk.vhd|
 |                     |                 |GCP: gw-base-03142022                                                   |
 |                     |                 |OCI: aviatrix_gateway_54_20220323                                       |
@@ -76,7 +76,7 @@ Built-In Images for each Software Version
 |                     |                 |GCP: gw-base-04102021                                                   |
 |                     |                 |OCI: aviatrix_gateway_54_1042_20210426_patched_v2                       |
 +---------------------+-----------------+------------------------------------------------------------------------+
-|6.7.1319	          |06/10/2022       |AWS: hvm-cloudx-aws-031722, hvm-cloudx-aws-032422                       |
+|6.7.1319	          |06/10/2022         |AWS: hvm-cloudx-aws-031722, hvm-cloudx-aws-032422                       |
 |                     |                 |Azure: aviatrix-companion-gateway-v9                                    |
 |                     |                 |GCP: gw-base-03142022                                                   |
 |                     |                 |OCI: aviatrix_gateway_54_20220323                                       |
@@ -171,7 +171,7 @@ Built-In Images for each Software Version
 |                     |                 |Azure: aviatrix-companion-gateway-v8.vhd, av-gw-1804-03302021-osDisk.vhd|
 |                     |                 |GCP: gw-base-02112020                                                   |
 +---------------------+-----------------+------------------------------------------------------------------------+
-|6.5.2835	          |12/10/2021       |AWS: hvm-cloudx-aws-022021, hvm-cloudx-aws-031021                       |
+|6.5.2835	          |12/10/2021         |AWS: hvm-cloudx-aws-022021, hvm-cloudx-aws-031021                       |
 |                     |                 |Azure: aviatrix-companion-gateway-v8.vhd, av-gw-1804-03302021-osDisk.vhd|
 |                     |                 |GCP: gw-base-02112020                                                   |
 |                     |                 |OCI: aviatrix_gateway_54_1042_20210426_patched_v2                       |
