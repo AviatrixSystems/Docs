@@ -70,9 +70,15 @@ Prerequisites for CoPilot Users
 
 .. important::
 
-  (Aviatrix CoPilot users) When you migrate your Controller, your Controller IP address will change. To avoid being unable to log in to your CoPilot, do the following before migration: In Copilot Home > Settings > Configuration, click **Reset Controller IP**. This will bring you to the CoPilot login page where you will enter your new Controller’s IP address once it’s available after the Controller migration. 
+  **(Aviatrix CoPilot users)** When you migrate your Controller, your Controller IP address will change. Depending on which version of controller you are migrating from, perform the following tasks before you start the migration. This is to avoid being unable to log in to your CoPilot after the migration:
 
-  Note: If your new Controller was deployed from the Controller UI, the IP address will be the private IP address of the new Controller. 
+  If you are migrating a Controller earlier than version 6.8.1088 or earlier than version 6.9.161:
+
+  * In Copilot Home > Settings > Configuration, click Reset Controller IP. This will bring you to the CoPilot login page where you will enter your new Controller’s IP address once it’s available after the Controller migration. If your new Controller was deployed from the Controller UI, the IP address will be the private IP address of the new Controller.
+
+  If you are migrating a Controller version 6.8.1088 or later or 6.9.161 or later:
+
+  * In the CSP environment of your CoPilot, confirm that your old controller’s IP address (the controller you are migrating from) is set in your CoPilot’s security group inbound rule for port 443.
 
 Migrating an AWS Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
