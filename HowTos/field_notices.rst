@@ -6,22 +6,6 @@ Field Notices
 
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
 
-39. Field Notice
-------------------
-
-**Date** 08/16/2022
-
-**High Severity Bug Fix: AVX-25425**
-
-**Affected Versions:**
-
-For customers running version 6.8 of the Aviatrix Controller and an older AMI released in February 2021 or prior.
- 
-**Issue Description**
-
-Performing a dry run in 6.8 and later versions will fail if the CSP gateways are running on an older AMI, but the upgrade from version 6.8 to 6.9 will not be blocked. Aviatrix recommends that you perform an Image Upgrade from the Controller (Settings > Maintenance > Upgrade) prior to performing a software upgrade as soon as possible. Gateways running older AMIs will not be able to upgrade from 6.9 to 7.0 without first performing an Image Upgrade.
- 
-If you run into any issues during the upgrade, please open a ticket on the `Aviatrix Support Portal <https://support.aviatrix.com>`_.
 
 38. Field Notice
 ------------------
