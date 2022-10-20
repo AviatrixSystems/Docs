@@ -238,6 +238,16 @@ Why do I get an error Failed to fetch Topology when I open the Topology page?
 
 If you get the error **Failed to fetch Topology data**, CoPilot was unable to access the data it needs for topology. If the issue persists, Contact Aviatrix Support.
 
+FAQs about AppIQ Reports for Flightpath
+====================================================
+
+Frequently asked questions about AppIQ reports in CoPilot.
+
+Why do I get an error Failed to fetch Aviatrix Flightpath Data for instances *OCI instance*?
+---------------------------------------------------------------------------------------------
+
+If you get the error **Failed to fetch Aviatrix Flightpath Data for instances** *OCI instance*, Flightpath does not currently support OCI instances.
+
 FAQs about how CoPilot works
 ====================================================
 

@@ -1209,6 +1209,45 @@ This section describes the AppIQ feature of Aviatrix CoPilot.
 
 In AppIQ, you can generate a report that gives you visibility into security domain and traffic information between any two cloud instances that are connected by way of your Aviatrix transit network. For the source instance and destination instance you specify, CoPilot analyzes network traffic, security domain settings, and route table configurations to provide details that help you understand any problems with the network path between the two instances.
 
+
+Run AppIQ Report for SAP Instances
+-----------------------------------
+
+You can run an AppIQ report for SAP instances using CoPilot Home > Troubleshoot > AppIQ. This report can help SAP Basis engineers diagnose or rule out issues with SAP applications running in their networks.
+
+When selecting the source and destination instances to run the report against, you can specify two managed resources or one managed resource and one external resource. 
+
+When including an unmanaged resource as either the source or destination instance, the report contains FlightPath data for the managed resource. 
+
+You cannot run an AppIQ report for two unmanaged resources (both resources are external to the Aviatrix-managed network).
+
+To run an AppIQ report for SAP instances:
+
+1.  In Source, select the source instance. 
+
+    You can do any of the following in the source selection box:
+
+    - Type 'sap' to search for all potential SAP instances in your Aviatrix-managed network.
+
+    - Search for or type the SAP service name.
+
+    - Search for or type the SAP service port number.
+
+    - Search the instance name or IP address.
+
+2.  If the SAP instance has more than one SAP port, and you want to search for the port number, click the **Discovered SAP Service Instances** link to open the dialog: 
+
+    - In the Search, search for the host name or IP address of the SAP instance.
+
+    - In the row for the instance, right-click on the number of ports in the Port column to open the port list. Scroll through the list to find the desired port number.
+
+    - In the same row, click the vertical ellipses and select the SAP instance as either your source or destination instance.
+
+3.  In Destination, select the destination instance.
+
+4.  Click the **Run AppIQ** button to generate the report. 
+
+
 Working with Security
 =====================
 
