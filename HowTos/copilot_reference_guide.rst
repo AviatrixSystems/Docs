@@ -1411,6 +1411,45 @@ In Egress Control, CoPilot shows the URLs, domains, IP addresses that are being 
 
 You access Egress Control in CoPilot by going to Home > Secured Networking > Egress Control or typing Egress in the navigation search.
 
+Searching in Egress Search
+-----------------------------
+
+For an exact match, use .keyword and quotes. For example, type: hostname.keyword:"aviatrix.aviatrix123.com"
+
+When searching in Egress Search:
+
+**Search will check for a match across 6 fields:**
+
+1) sip = source ip address - example sip:1.2.3.4
+
+2) dip = destination ip address - example dip:1.2.3.4
+
+3) hostname = URL - example hostname:*.aviatrix.com
+
+4) state = match | no_match - example state:match
+
+5) rule = action – example rule:/policy1/
+
+6) action = blacklisted or blank - example action:blacklisted
+
+A search for 1.2.3.4 will match sip=1.2.3.4 or dip=1.2.3.5 or hostname=1.2.3.4.
+
+To match only source address 1.2.3.4 you must specify sip:1.2.3.4 Using Logical AND, OR, NOT and wildcards "*".
+
+Examples:
+
+1) dip:(NOT 8.8.8.8) will match all except with destination ip 8.8.8.8
+
+2) hostname:*.google.com will match any google subdomains
+
+3) rule:/policy[123]/ uses regex, match all with policy1, policy2, or policy3
+
+4) www.sina.com OR www.zillow.com AND sip:10.201.4.43 Combining logical AND, OR, NOT and wildcards "*" and parenthesis.
+
+Example:
+
+(sip:10.0.0.100 OR state:matched) AND hostname:(*.google.com OR *.yahoo.com)
+
 
 Working with ThreatIQ
 =====================
@@ -2893,7 +2932,7 @@ To back up CoPilot index data, you can use the options in the CoPilot Managment 
 .. |sap-appiq| image:: copilot_reference_guide_media/sap-appiq.png
     :width: 40%
 
-.. |sap-discovered| image:: ccopilot_reference_guide_media/sap-discovered.png
+.. |sap-discovered| image:: copilot_reference_guide_media/sap-discovered.png
     :width: 40%
 
 ..  |controller-customer-id-field| image:: copilot_reference_guide_media/controller-customer-id-field.png
