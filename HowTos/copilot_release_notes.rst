@@ -51,11 +51,11 @@ CoPilot Release 3.1.3 (10/21/2022)
 
   |sap-appiq| |sap-discovered|
 
+
 -   (FlowIQ) **Performance Enhancements**
 
-**Issues Corrected in CoPilot release 3.1.3**
+**Issue Corrected in CoPilot release 3.1.3**
 
- -   **Bug fix** — Minor UI fixes for AppIQ.
  -   **Bug fix** — Minor bug fix for micro-segmentation.
 
 
