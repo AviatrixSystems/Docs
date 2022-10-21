@@ -40,17 +40,24 @@ CoPilot and Controller Interoperability
 CoPilot is deployed as an all-in-one virtual appliance and is available on multiple clouds including AWS, Azure, GCP, and OCI MarketPlaces. CoPilot works in tandem with Aviatrix Controller; in order to use CoPilot, you must have an operational Aviatrix Controller. CoPilot works with all Controller versions that are not End of Life (EOL). If you need information about `Aviatrix End of Engineering and End of Life (Support) policies <https://support.aviatrix.com/Aviatrix-EOL-Policy>`_ or how to plan and update to the latest software, please contact Aviatrix Support.
 
 
-CoPilot Release 3.1.2 (10/21/2022)
+CoPilot Release 3.1.3 (10/21/2022)
 ---------------------------------------------
 
-**Feature Enhancements in CoPilot release 3.1.2**
+**Feature Enhancements in CoPilot release 3.1.3**
 
 -   (AppIQ) **Support for SAP Services**: You can now run an AppIQ report for SAP instances using CoPilot Home > Troubleshoot > AppIQ. This report can help SAP Basis engineers diagnose or rule out issues with SAP applications running in their networks. See `Working with AppIQ <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-appiq>`_. 
+
+  |sap-appiq-tip|
+
+  |sap-appiq| |sap-discovered|
+
 -   (FlowIQ) **Performance Enhancements**
 
-**Issue Corrected in CoPilot release 3.1.2**
+**Issues Corrected in CoPilot release 3.1.3**
 
-    -   **Bug fixes** — Minor bug fixes.
+ -   **Bug fix** — Minor UI fixes for AppIQ.
+ -   **Bug fix** — Minor bug fix for micro-segmentation.
+
 
 CoPilot Release 3.0.5 (10/13/2022)
 ---------------------------------------------
@@ -828,6 +835,12 @@ The Service Account can be changed in **Settings** .
 .. disqus::
 
 .. |service_account_modal| image:: copilot_releases/service_account_modal.png
+.. |sap-appiq-tip| image:: copilot_releases/sap-appiq-tip.png
+    :width: 40%
+.. |sap-appiq| image:: copilot_releases/sap-appiq.png
+    :width: 40%
+.. |sap-discovered| image:: copilot_releases/sap-discovered.png
+    :width: 40%
 .. |tip_walk| image:: copilot_releases/tip_walk.png
     :width: 40%
 .. |tip_walk_1| image:: copilot_releases/tip_walk_1.png

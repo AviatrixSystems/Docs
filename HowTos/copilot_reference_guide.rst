@@ -1215,6 +1215,8 @@ Run AppIQ Report for SAP Instances
 
 You can run an AppIQ report for SAP instances using CoPilot Home > Troubleshoot > AppIQ. This report can help SAP Basis engineers diagnose or rule out issues with SAP applications running in their networks.
 
+|sap-appiq-tip|
+
 When selecting the source and destination instances to run the report against, you can specify two managed resources or one managed resource and one external resource. 
 
 When including an unmanaged resource as either the source or destination instance, the report contains FlightPath data for the managed resource. 
@@ -1246,6 +1248,10 @@ To run an AppIQ report for SAP instances:
 3.  In Destination, select the destination instance.
 
 4.  Click the **Run AppIQ** button to generate the report. 
+
+|sap-appiq| 
+
+|sap-discovered|
 
 
 Working with Security
@@ -2880,6 +2886,15 @@ You can configure periodic snapshots, based on your preferred interval, to be ab
 
 To back up CoPilot index data, you can use the options in the CoPilot Managment tab.
 
+
+.. |sap-appiq-tip| image:: copilot_reference_guide_media/sap-appiq-tip.png
+    :width: 40%
+
+.. |sap-appiq| image:: copilot_reference_guide_media/sap-appiq.png
+    :width: 40%
+
+.. |sap-discovered| image:: ccopilot_reference_guide_media/sap-discovered.png
+    :width: 40%
 
 ..  |controller-customer-id-field| image:: copilot_reference_guide_media/controller-customer-id-field.png
     :scale: 60%
