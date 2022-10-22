@@ -34,16 +34,17 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
-6.9.b XXXX! (10/21/2022)
+
+6.9.188 (10/21/2022)
 ==========================================
 
-**Issues Corrected in Aviatrix Release 6.9.b!**
+**Issues Corrected in Aviatrix Release 6.9.188**
 
 * **AVX-28821** - When you changed a Controller’s time zone to any time zone other than UTC, CoPilot did not display host information under Performance > Network Metrics for the Last Hour.
  
 .. note::
   
-  To resolve this issue in versions older than release 6.9.b!, restart cloudxd in your Controller by going to Diagnostics > Services > CloudXD > Actions > Restart.
+  To resolve this issue in versions older than release 6.9.188, restart cloudxd in your Controller by going to Diagnostics > Services > CloudXD > Actions > Restart.
 
 * **AVX-28898** - A large number of Site2Cloud connections degraded your Controller’s responsiveness.
 * **AVX-29343** - In the FQDN feature, if the retransmission of a TCP 443 client hello packet was split, the packet may not have been properly dropped in the case of an FQDN allow list.
@@ -53,20 +54,20 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-30545** - A gateway using a Linux kernel version older than 4.20 will see a configure route failure with an error message: Failed to get get real route: protocol not available. To avoid this issue, upgrade your gateways to the latest image.
 
 
-6.8.c! XXXX (10/21/2022) **
+6.8.1369 (10/21/2022)
 ==============================
 
-**Issues Corrected in Aviatrix Release 6.8.c!**
+**Issues Corrected in Aviatrix Release 6.8.1369**
 
 .. important::
 
-  Before upgrading to 6.8.c!, upgrade your gateway images to the latest image.
+  Before upgrading to 6.8.1369, upgrade your gateway images to the latest image.
 
 * **AVX-28821** - When you changed a Controller’s time zone to any time zone other than UTC, CoPilot did not display host information under Performance > Network Metrics for the Last Hour. 
 
 .. note::
   
-  To resolve this issue in versions older than release 6.9.b!, restart cloudxd in your Controller by going to Diagnostics > Services > CloudXD > Actions > Restart.
+  To resolve this issue in versions older than release 6.8.1369, restart cloudxd in your Controller by going to Diagnostics > Services > CloudXD > Actions > Restart.
 
 * **AVX-28898** - A large number of Site2Cloud connections degraded your Controller’s responsiveness.
 * **AVX-29343** - In the FQDN feature, if the retransmission of a TCP 443 client hello packet was split, the packet may not have been properly dropped in the case of an FQDN allow list.
@@ -74,14 +75,6 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-29691** - Under scale setups with thousands of tunnels, when micro-segmentation was disabled, the process could still run and consume an entire CPU core.
 * **AVX-30443** - BGP learned routes were temporarily removed and then added back when you migrated ActiveMesh 1.0 to ActiveMesh 2.0. This issue could cause traffic interruption.
 * **AVX-30545** - A gateway using a Linux kernel version older than 4.20 will see a configure route failure with an error message: Failed to get real route: protocol not available. To avoid this issue, upgrade your gateways to the latest image.
-
-
-
-
-
-
-
-
 
 6.9.161 (09/30/2022)
 ===========================
