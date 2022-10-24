@@ -51,7 +51,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-29364** – When a GRE tunnel goes down, your gateway withdraws routes. Previously, gateways withdrew routes one at a time, which could take a long time. This enhancement ensures that gateways withdraw routes in bulk to speed up the process.
 * **AVX-29691** - Under scale setups with thousands of tunnels, when micro-segmentation was disabled, the process could still run and consume an entire CPU core.
 * **AVX-30443** – BGP learned routes were temporarily removed and then added back when you migrated ActiveMesh 1.0 to ActiveMesh 2.0. This issue could cause traffic interruption.
-* **AVX-30545** - A gateway using a Linux kernel version older than 4.20 will see a configure route failure with an error message: Failed to get get real route: protocol not available. To avoid this issue, upgrade your gateways to the latest image.
+* **AVX-30545** - A gateway using a Linux kernel version older than 4.20 will see a configure route failure with an error message: Failed to get real route: protocol not available. To avoid this issue, upgrade your gateways to the latest image.
 
 
 6.8.1369 (10/21/2022)
