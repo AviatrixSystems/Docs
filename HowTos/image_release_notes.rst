@@ -290,7 +290,7 @@ This image includes the following updates:
 
 This image also replaces the 122520, 100621, and 110421 Controller versions of utility images, which were delisted from the AWS marketplace on May 26.
 
-AWS Controller Images: 05112022_AWS_utility_controller Version: 051022 (6/2/2022)
+AWS Controller Images: 05112022_AWS_utility_controller Version: 051022 (6/02/2022)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This image includes the following updates:
@@ -412,7 +412,7 @@ Azure Gateway Images: aviatrix-companion-gateway-v13
 GCP Controller Images
 ===========================================
 
-GCP Controller Images: avx-controller-gcp-2022-04-14
+GCP Controller Images: avx-controller-gcp-2022-04-14 (04/14/2022)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This image includes the following updates:
@@ -422,7 +422,7 @@ This image includes the following updates:
 GCP Gateway Images
 ===========================================
 
-GCP Gateway Images: gw-base-04092022
+GCP Gateway Images: gw-base-04092022 (04/09/2022)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This image includes the following updates:
