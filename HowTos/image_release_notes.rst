@@ -13,7 +13,6 @@ To migrate your Gateways to the latest images, see `this document <https://docs.
 Built-In Images for each Software Version
 ===================================================================
 
-
 +---------------------+-----------------+-------------------------------------------------------------------------+
 |Software Version     |Release Date     |Built-In Images for this version                                         |
 +=====================+=================+=========================================================================+
@@ -270,58 +269,40 @@ Built-In Images for each Software Version
 |                     |                 |GCP: gw-base-02112020                                                    |
 +---------------------+-----------------+-------------------------------------------------------------------------+
 
-
-
-
-
 AWS Controller Images
 ===================================
 
-AWS Controller Images: 05112022_AWS_utility_controller Version: 051022 (6/09/2022)
+AWS Controller Images: 05102022_AWS_BYOL_controller Version: 051022 (6/09/2022)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Release 05112022_AWS_utility_controller includes the following updates:
+This image includes the following updates:
 
 * Upgraded Apache, LibNSS3, OpenSSL, Zlib, and Rsync
 
 This image also replaces the 122520, 100621, and 110421 Controller versions of BYOL images, which were delisted from the AWS marketplace on May 26.
 
-AWS Controller Images: 05112022_AWS_utility_controller Version: 051022 (6/09/2022)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Release version 05112022_AWS_utility_controller includes the following updates:
-
-* Upgraded Apache, LibNSS3, OpenSSL, Zlib, and Rsync
-
-This image also replaces the 122520, 100621, and 110421 Controller versions of utility images, which were delisted from the AWS marketplace on May 26.
-
 AWS Controller Images: 05112022_AWS_metered_controller Version: 051022 (6/09/2022)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Release version 05112022_AWS_metered_controller includes the following updates:
+This image includes the following updates:
 
-* Upgraded Apache, LibNSS3, OpenSSL, Zlib, and Rsync
+* Upgraded Apache, LibNSS3, OpenSSL, Zlib, and Rsync.
 
 This image also replaces the 122520, 100621, and 110421 Controller versions of utility images, which were delisted from the AWS marketplace on May 26.
 
-AWS Controller Images: 05112022_AWS_utility_controller Version: 051022 (6/2/2022)
+AWS Controller Images: 05112022_AWS_utility_controller Version: 051022 (6/02/2022)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This image addresses multiple public vulnerabilities impacting Apache, LibNSS3, OpenSSL, Zlib, and Rsync which is included on our Controller: `CVE-2022-22719 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22719>`_, `CVE-2022-22720 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22720>`_, `CVE-2021-43527 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-43527>`_, `CVE-2022-0778 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778>`_, and `CVE-2018-25032 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-25032>`_.
+This image includes the following updates:
 
-This image replaces the 122520, 100621, and 110421 BYOL Controller versions, which were removed from the AWS marketplace on May 26 and are no longer installable.
+* Upgraded Apache, LibNSS3, OpenSSL, Zlib, and Rsync.
 
-AWS Controller Images: 05112022_AWS_metered_controller Version: 051022 (6/2/2022)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-This image addresses multiple public vulnerabilities impacting Apache, LibNSS3, OpenSSL, Zlib, and Rsync which is included on our Controller: `CVE-2022-22719 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22719>`_, `CVE-2022-22720 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22720>`_, `CVE-2021-43527 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-43527>`_, `CVE-2022-0778 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778>`_, and `CVE-2018-25032 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-25032>`_.
-
-This image replaces the 122520, 100621, and 110421 BYOL Controller versions, which were removed from the AWS marketplace on May 26 and are no longer installable.
+This image replaces the 122520, 100621, and 110421 utility Controller versions, which were removed from the AWS marketplace on May 26 and are no longer installable.
 
 AWS Controller Images: AWS AMI – Version: 110421 (11/8/2021)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Release version 110421 includes the following updates:
+This image includes the following updates:
 
 - Added support for AWS IMDSv2.
 - Corrected issue with the Aviatrix Controller initialization hanging after image migrating to a new image.
@@ -383,6 +364,16 @@ Release version 102320 includes the following updates:
 - New network drivers 
 - Fix and pass vulnerabilities scan to Sep/2020 (mid ref: 18262) 
 
+AWS China Gateway Images
+=============================================
+
+AWS China Gateway Image hvm-cloudx-aws-050422 Version 050422 (08/16/2022)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This image includes the following updates:
+
+* Upgraded Apache, LibNSS3, OpenSSL, Zlib, and Rsync.
+
 AWS GovCloud Gateway Images
 =============================================
 
@@ -398,6 +389,16 @@ This image includes the following updates:
 * Hardened to 80% of CIS Server L1 benchmark.
 * Passed a vulnerability scan up to July 2022.
 
+Azure Controller Images
+===============================================
+
+Azure Controller BYOL Image 04152022_Azure_Controller_BYOL Version 041522 (04/15/2022)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This image includes the following updates:
+
+* Upgraded Apache, LibNSS3, OpenSSL, Zlib, and Rsync. 
+
 Azure Gateway Images
 ================================================
 
@@ -407,6 +408,26 @@ Azure Gateway Images: aviatrix-companion-gateway-v13
 * Remediated `CVE-2022-2914 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2914>`_.
 * Image is hardened to 80% of CIS Server L1 compliance.
 * Fixed and passed a vulnerability scan up to September 2022.
+
+GCP Controller Images
+===========================================
+
+GCP Controller Images: avx-controller-gcp-2022-04-14 (04/14/2022)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This image includes the following updates:
+
+* Upgraded Apache, LibNSS3, OpenSSL, Zlib, and Rsync. 
+
+GCP Gateway Images
+===========================================
+
+GCP Gateway Images: gw-base-04092022 (04/09/2022)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This image includes the following updates:
+
+* Upgraded Apache, LibNSS3, OpenSSL, Zlib, and Rsync. 
 
 Alibaba Gateway Images
 ============================================
