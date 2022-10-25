@@ -14,10 +14,10 @@ Introduction
 
 This documentation explains how and why AWS IAM permissions are needed by Aviatrix.
 
-.. Note:: Since Aviatrix IAM Policy, **aviatrix-app-policy** has reached the max-character-limitation. In order to provide simplicity, we have combined some of IAM permissions. This document provides exact AWS APIs being invoked by Aviatrix features.
-..
+.. note:: 
 
-
+  * Since Aviatrix IAM Policy, **aviatrix-app-policy** has reached the max-character-limitation. In order to provide simplicity, we have combined some of IAM permissions. This document provides exact AWS APIs being invoked by Aviatrix features.
+  * Wildcard/all (*) is the default resource for all Aviatrix IAM permissions except for #13, "IAM Policy Scanning Requirement." This is to keep our IAM policy as concise as possible. This configuration is not the most secure configuration, so work with your Aviatrix account team to further secure and reduce what resources are in scope for our IAM policy.
 
 1. SQS Requirement
 --------------------------------
