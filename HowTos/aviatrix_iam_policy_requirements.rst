@@ -43,7 +43,10 @@ permission applies to all use cases where there is an Aviatrix Gateway.
                 "sqs:SendMessage",
                 "sqs:SetQueueAttributes",
                 "sqs:TagQueue"
-            ]
+            ],
+                "Resource": "*",
+                "Effect": "Allow"
+
         }
 
 
@@ -112,7 +115,9 @@ Aviatrix gateway deployment requires permissions from the following categories:
                 "iam:CreateInstanceProfile",
                 "iam:DeleteInstanceProfile",
                 "iam:RemoveRoleFromInstanceProfile"
-            ]
+            ],
+                "Resource": "*",
+                "Effect": "Allow"
         }
 
 
@@ -138,7 +143,9 @@ The Aviatrix Transit Network feature requires the following additional permissio
                 "ec2:DeleteVpcPeeringConnection",                                
                 "ec2:EnableVgwRoutePropagation",                                 
                 "ec2:DisableVgwRoutePropagation"                                 
-            ]
+            ],
+                "Resource": "*",
+                "Effect": "Allow"
         },
         {
             "Effect": "Allow",                                                   
@@ -162,7 +169,9 @@ The Aviatrix Transit Network feature requires the following additional permissio
                 "ec2:ReplaceTransitGatewayRoute",
                 "ec2:EnableRoutePropagation",
                 "ec2:*TransitGatewayPeeringAttachment"
-            ]
+            ],
+                "Resource": "*",
+                "Effect": "Allow"
         },
         {
             "Effect": "Allow",                                                   
@@ -176,7 +185,9 @@ The Aviatrix Transit Network feature requires the following additional permissio
                 "ram:UntagResource",
                 "ram:AcceptResourceShareInvitation",
                 "ram:EnableSharingWithAwsOrganization"
-            ]
+            ],
+                "Resource": "*",
+                "Effect": "Allow"
         },
         {                                                                                    
             "Effect": "Allow",
@@ -188,7 +199,9 @@ The Aviatrix Transit Network feature requires the following additional permissio
                 "directconnect:DeleteDirectConnectGatewayAssociation",
                 "directconnect:DeleteDirectConnectGatewayAssociationProposal",
                 "directconnect:AcceptDirectGatewayAssociationProposal"
-            ]
+             ],
+                "Resource": "*",
+                "Effect": "Allow"
         }
 
 
@@ -208,7 +221,9 @@ Aviatrix features such as Transit Network, Encrypted Peering, Transitive Peering
                 "ec2:CreateRoute",
                 "ec2:DeleteRoute",
                 "ec2:ReplaceRoute"
-            ]
+            ],
+                "Resource": "*",
+                "Effect": "Allow"
         }
 
 
@@ -227,7 +242,9 @@ An Aviatrix gateway needs to be in the STOP state before the instance type/size 
             "Action": [
                 "ec2:StartInstances",
                 "ec2:StopInstances"
-            ]
+            ],
+                "Resource": "*",
+                "Effect": "Allow"
         }
 
 
@@ -268,7 +285,9 @@ An Aviatrix gateway needs to be in the STOP state before the instance type/size 
                 "elasticloadbalancing:RegisterTargets",
                 "elasticloadbalancing:DeregisterTargets",
                 "iam:CreateServiceLinkedRole"
-            ]
+            ],
+                "Resource": "*",
+                "Effect": "Allow"
         }
 
 
@@ -304,7 +323,9 @@ In order to enable a VPN with the AWS-Global-Accelerator feature, the following 
                 "globalaccelerator:UpdateAcceleratorAttributes",
                 "globalaccelerator:UpdateEndpointGroup",
                 "globalaccelerator:UpdateListener"
-            ]
+             ],
+                "Resource": "*",
+                "Effect": "Allow"
         }
 
 
@@ -329,7 +350,9 @@ In order to enable the GuardDuty feature, the following permissions are needed.
                 "ec2:CreateNetworkAclEntry",
                 "ec2:ReplaceNetworkAclEntry",
                 "ec2:DeleteNetworkAclEntry"
-            ]
+            ],
+                "Resource": "*",
+                "Effect": "Allow"
         }
 
 
@@ -347,7 +370,9 @@ In order to enable the Aviatrix Gateway Single AZ HA feature, the following perm
             "Effect": "Allow",
             "Action": [
                 "ec2:RebootInstances"
-            ]
+            ],
+                "Resource": "*",
+                "Effect": "Allow"
         }
 
 
@@ -369,7 +394,9 @@ In order to enable the Controller Backup & Restore feature, the following permis
                 "s3:Get*",
                 "s3:PutObject",
                 "s3:DeleteObject"
-            ]
+            ],
+                "Resource": "*",
+                "Effect": "Allow"
         }
 
 
@@ -398,7 +425,9 @@ In order to enable the EBS Volume Encryption feature, the following permissions 
                 "ec2:CopySnapshot",
                 "ec2:CreateSnapshot",
                 "ec2:DeleteSnapshot"
-            ]
+            ],
+                "Resource": "*",
+                "Effect": "Allow"
         }
 
 
@@ -418,7 +447,9 @@ In order to create an AWS Peering, the following permissions are needed.
                 "ec2:CreateVpcPeeringConnection",
                 "ec2:AcceptVpcPeeringConnection",
                 "ec2:DeleteVpcPeeringConnection"
-            ]
+            ],
+                "Resource": "*",
+                "Effect": "Allow"
         }
 
 
