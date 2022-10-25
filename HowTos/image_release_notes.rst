@@ -278,6 +278,7 @@ AWS Controller Images: 05102022_AWS_BYOL_controller Version: 051022 (6/09/2022)
 This image includes the following updates:
 
 * Upgraded Apache, LibNSS3, OpenSSL, Zlib, and Rsync
+
 This image also replaces the 122520, 100621, and 110421 Controller versions of BYOL images, which were delisted from the AWS marketplace on May 26.
 
 AWS Controller Images: 05112022_AWS_metered_controller Version: 051022 (6/09/2022)
@@ -369,7 +370,9 @@ AWS China Gateway Images
 AWS China Gateway Image hvm-cloudx-aws-050422 Version 050422 (08/16/2022)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This image addresses multiple public vulnerabilities impacting Apache, LibNSS3, OpenSSL, Zlib, and Rsync which is included on our Gateway image.
+This image includes the following updates:
+
+* Upgraded Apache, LibNSS3, OpenSSL, Zlib, and Rsync.
 
 AWS GovCloud Gateway Images
 =============================================
