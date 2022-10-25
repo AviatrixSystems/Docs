@@ -409,6 +409,26 @@ Azure Gateway Images: aviatrix-companion-gateway-v13
 * Image is hardened to 80% of CIS Server L1 compliance.
 * Fixed and passed a vulnerability scan up to September 2022.
 
+GCP Controller Images
+===========================================
+
+GCP Controller Images: avx-controller-gcp-2022-04-14
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This image includes the following updates:
+
+* Upgraded Apache, LibNSS3, OpenSSL, Zlib, and Rsync. 
+
+GCP Gateway Images
+===========================================
+
+GCP Gateway Images: gw-base-04092022
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This image includes the following updates:
+
+* Upgraded Apache, LibNSS3, OpenSSL, Zlib, and Rsync. 
+
 Alibaba Gateway Images
 ============================================
 
