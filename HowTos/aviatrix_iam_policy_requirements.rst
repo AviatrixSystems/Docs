@@ -27,27 +27,25 @@ permission applies to all use cases where there is an Aviatrix Gateway.
 
 ::
 
-        {
-            "Effect": "Allow",
-            "Action": [
-                "sqs:Get*",
-                "sqs:List*",
-                "sqs:AddPermission",
-                "sqs:ChangeMessageVisibility",
-                "sqs:CreateQueue",
-                "sqs:DeleteMessage",
-                "sqs:DeleteQueue",
-                "sqs:PurgeQueue",
-                "sqs:ReceiveMessage",
-                "sqs:RemovePermission",
-                "sqs:SendMessage",
-                "sqs:SetQueueAttributes",
-                "sqs:TagQueue"
-            ],
-                "Resource": "*",
-                "Effect": "Allow"
-
-        }
+{
+    "Action": [
+        "sqs:Get*",
+        "sqs:List*",
+        "sqs:AddPermission",
+        "sqs:ChangeMessageVisibility",
+        "sqs:CreateQueue",
+        "sqs:DeleteMessage",
+        "sqs:DeleteQueue",
+        "sqs:PurgeQueue",
+        "sqs:ReceiveMessage",
+        "sqs:RemovePermission",
+        "sqs:SendMessage",
+        "sqs:SetQueueAttributes",
+        "sqs:TagQueue"
+    ],
+    "Resource":"*",
+    "Effect": "Allow"
+}
 
 
 |
@@ -74,8 +72,7 @@ Aviatrix gateway deployment requires permissions from the following categories:
 ::
 
         {
-            "Effect": "Allow",
-            "Action": [
+                "Action": [
                 "ec2:Describe*",
                 "ec2:Get*",
                 "ec2:Search*",
@@ -132,8 +129,7 @@ The Aviatrix Transit Network feature requires the following additional permissio
 ::
 
         {
-            "Effect": "Allow",
-            "Action": [
+                "Action": [
                 "ec2:CreateCustomerGateway",                                     
                 "ec2:DeleteCustomerGateway",                                     
                 "ec2:CreateVpnConnection",                                       
@@ -148,8 +144,7 @@ The Aviatrix Transit Network feature requires the following additional permissio
                 "Effect": "Allow"
         },
         {
-            "Effect": "Allow",                                                   
-            "Action": [
+               "Action": [
                 "ec2:AssociateTransitGatewayRouteTable",
                 "ec2:AcceptTransitGatewayVpcAttachment",
                 "ec2:CreateTransitGateway",
@@ -174,8 +169,7 @@ The Aviatrix Transit Network feature requires the following additional permissio
                 "Effect": "Allow"
         },
         {
-            "Effect": "Allow",                                                   
-            "Action": [
+                "Action": [
                 "ram:CreateResourceShare",
                 "ram:DeleteResourceShare",
                 "ram:UpdateResourceShare",
@@ -190,8 +184,7 @@ The Aviatrix Transit Network feature requires the following additional permissio
                 "Effect": "Allow"
         },
         {                                                                                    
-            "Effect": "Allow",
-            "Action": [
+                "Action": [
                 "directconnect:CreateDirectConnectGateway",
                 "directconnect:CreateDirectConnectGatewayAssociation",
                 "directconnect:CreateDirectConnectGatewayAssociationProposal",
@@ -216,8 +209,7 @@ Aviatrix features such as Transit Network, Encrypted Peering, Transitive Peering
 ::
 
         {
-            "Effect": "Allow",
-            "Action": [
+               "Action": [
                 "ec2:CreateRoute",
                 "ec2:DeleteRoute",
                 "ec2:ReplaceRoute"
@@ -238,8 +230,7 @@ An Aviatrix gateway needs to be in the STOP state before the instance type/size 
 ::
 
         {
-            "Effect": "Allow",
-            "Action": [
+                "Action": [
                 "ec2:StartInstances",
                 "ec2:StopInstances"
             ],
@@ -264,8 +255,7 @@ An Aviatrix gateway needs to be in the STOP state before the instance type/size 
 ::
 
         {
-            "Effect": "Allow",
-            "Action": [
+                "Action": [
                 "elasticloadbalancing:Describe*",
                 "elasticloadbalancing:ApplySecurityGroupsToLoadBalancer",
                 "elasticloadbalancing:AttachLoadBalancerToSubnets",
@@ -302,8 +292,7 @@ In order to enable a VPN with the AWS-Global-Accelerator feature, the following 
 ::
 
         {                                                                                 
-            "Effect": "Allow",
-            "Action": [
+                "Action": [
                 "globalaccelerator:*"                                                     
                 "globalaccelerator:CreateAccelerator",
                 "globalaccelerator:CreateEndpointGroup",
@@ -340,8 +329,7 @@ In order to enable the GuardDuty feature, the following permissions are needed.
 ::
 
         {
-            "Effect": "Allow",
-            "Action": [
+                "Action": [
                 "guardduty:Get*",
                 "guardduty:List*",
                 "guardduty:CreateDetector",
@@ -367,8 +355,7 @@ In order to enable the Aviatrix Gateway Single AZ HA feature, the following perm
 ::
 
         {
-            "Effect": "Allow",
-            "Action": [
+                "Action": [
                 "ec2:RebootInstances"
             ],
                 "Resource": "*",
@@ -388,8 +375,7 @@ In order to enable the Controller Backup & Restore feature, the following permis
 ::
 
         {
-            "Effect": "Allow",
-            "Action": [
+                "Action": [
                 "s3:List*",
                 "s3:Get*",
                 "s3:PutObject",
@@ -411,8 +397,7 @@ In order to enable the EBS Volume Encryption feature, the following permissions 
 ::
 
         {                                                     
-            "Effect": "Allow",
-            "Action": [
+                "Action": [
                 "ec2:DescribeInstances",                      
                 "ec2:StopInstances",                          
                 "ec2:StartInstances",                                                  
@@ -442,8 +427,7 @@ In order to create an AWS Peering, the following permissions are needed.
 ::
 
         {
-            "Effect": "Allow",
-            "Action": [
+               "Action": [
                 "ec2:CreateVpcPeeringConnection",
                 "ec2:AcceptVpcPeeringConnection",
                 "ec2:DeleteVpcPeeringConnection"
@@ -464,8 +448,7 @@ In order to enable the IAM Policy Scanning feature, the following permissions ar
 ::
 
         {                              
-            "Effect": "Allow",
-            "Action": [
+                "Action": [
                 "iam:List*",
                 "iam:Get*",
                 "iam:DeletePolicyVersion",
@@ -480,7 +463,7 @@ In order to enable the IAM Policy Scanning feature, the following permissions ar
   
   
 14. UDP Load-Balancer Requirement
-----------------------------------------------
+-------------------------------------------------------
 
 In order to enable the UDP Load-Balancer feature, the following permissions are needed.
 
@@ -498,7 +481,7 @@ In order to enable the UDP Load-Balancer feature, the following permissions are 
 
 
 15. Private Mode and GWLB-Based FireNet Requirement
-----------------------------------------------------
+----------------------------------------------------------------------------
 
 In order to enable Private Mode usage and GWLB-based FireNet, the following permissions are needed:
 
