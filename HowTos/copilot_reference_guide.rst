@@ -661,65 +661,6 @@ The telemetry data CoPilot displays for managed resources includes:
 The system and network metrics on which CoPilot reports telemetry data are the same as those used for triggering notifications. For descriptions of the metrics, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id3>`_ in *Aviatrix CoPilot User Reference Guide*.
 
 
-Resizing managed resources (gateways) based on policies
---------------------------------------------------------
-
-CoPilot monitors the resource utilization (telemetry) data for all *managed resources* (your gateways and controller) across your Aviatrix transit network (multi-cloud and single cloud). You can create policies that guide you on when to replace or *scale* the managed resources up or down based on the telemetry data. When virtual machines/instances on which your Aviatrix gateways run exceed your policy thresholds, CoPilot generates an alert with the recommended action to take for scaling the resource. You set resource-scale policies on a per VPC/VNet level. All gateways within the given VPC/VNet are monitored.
-
-When configured alarms are triggered based on the monitored telemetry data, CoPilot generates a resource-scale alert and you can take the recommended action to scale the gateways up or down directly from CoPilot.
-
-**ATTENTION:** Consider the following when resizing:
-
--   When choosing the instance size to scale up or down, the instance sizes displayed are those that are supported for gateways in their respective clouds and CoPilot will use their default configurations for resource settings during launch.
--   The sizes listed do not represent the recommended sizes for your specific scaling needs. It is recommended that you work with your performance team to determine the instance size that best suits the requirements of your network infrastructure prior to scaling.
--   If you resize a gateway that does not have a high availability gateway (HA Gateway does not exist because HA was not enabled on that gateway), a network downtime will occur until the gateway restarts with its new instance size.
--   After you resize a gateway based on a resource-scale alert, it is recommended that you review the resource-scale policy associated with the alert and determine if you want to make any changes to it.
-
-An audit log is kept so you can get a holistic view of how many times your resource-scale policies have been triggered. The audit log is under Performance > Scaling > Events.
-
-For instructions on creating a resource-scale policy, see “Create a resource-scale policy” in *Aviatrix CoPilot User Reference Guide*.
-
-Create a resource-scale policy
---------------------------------
-
-Create policies that guide you on when to replace or *scale* your managed resources (gateways) up or down based on resource utilization (telemetry) data.
-
-To create a resource-scale policy:
-
-1.  Log in to CoPilot.
-
-2.  In Performance > Scaling > Policies, click **+ Scaling Policy**.
-
-3.  In Name, enter the name of your policy. You can enter any value you like.
-
-4.  In VPC/VNets, select the VPC/VNet(s) on which to apply the policy. All gateways within the specified VPC/VNet(s) will be monitored to check if their telemetry data should trigger a resource-scale alert.
-
-5.  In Trigger Condition, configure the alarms you want this policy to raise based on the monitored telemetry data:
-
-    -   Select the metric and the condition for it that must be met to raise an alarm. You can specify multiple alarm conditions. For information about each metric, see `Metrics used for Triggering Notifications`_. 
-    -   When multiple alarm conditions are specified, CoPilot generates a resource-scale alert when all the conditions are met.
-    -   When the policy alarm condition(s) are met on any gateway in the monitored VPC/VNet(s), CoPilot generates a resource-scale alert.
-
-6.  In Action, for the Wait Duration, specify the duration of time an alarm condition (or group of conditions) must be sustained for CoPilot to generate a resource-scale alert. This setting is to avoid raising alarms for network behavior that causes brief spikes in telemetry data.
-
-7.  In Action, for Operation, specify the action you will want to take when alarm conditions are met for this policy.
-
-    -   Select **Scale Up** if you will want to increase the size of the gateway virtual machine/instance(s). When you receive a resource-scale alert based on this policy, you will have the option to increase the size.
-    -   Select **Scale Down** if you will want to decrease the size of the gateway virtual machine/instance(s). When you receive a resource-scale alert based on this policy, you will have the option to decrease the size.
-8.  (Optional) If you want to notifiy people via email when resource-scale alerts are generated for this policy, toggle the **Configure Alerts** slider and specify the email recipient(s) to notify.
-
-9.  Click **Save**.
-
-    After you save the policy, CoPilot begins to monitor the VPC/VNets for any resource-scale policy alarms that get triggered. When an alarm is triggered, CoPilot generates an alert in the Performance > Scaling > Recommendations page. You can choose to scale the resource up or down directly from the Recommendations page by clicking on the link in the Recommendation column and specifying the size to use.
-
-    **ATTENTION:** Consider the following when resizing:
-
-    -   When choosing the instance size to scale up or down, the instance sizes displayed are those that are supported for gateways in their respective clouds and CoPilot will use their default configurations for resource settings during launch.
-    -   The sizes listed do not represent the recommended sizes for your specific scaling needs. It is recommended that you work with your performance team to determine the instance size that best suits the requirements of your network infrastructure prior to scaling.
-    -   If you resize a gateway that does not have a high availability gateway (HA Gateway does not exist because HA was not enabled on that gateway), a network downtime will occur until the gateway restarts with its new instance size.
-    -   After you resize a gateway based on a resource-scale alert, it is recommended that you review the resource-scale policy associated with the alert and determine if you want to make any changes to it.
-
-
 Working with Cloud Routes
 =========================
 
