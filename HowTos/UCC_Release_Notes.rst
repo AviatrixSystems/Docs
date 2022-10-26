@@ -1,7 +1,5 @@
-.. meta::
-  :http-equiv="Refresh" content="1; url="https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html"
-
-
+https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html ->
+https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html
 
 
 .. important::
