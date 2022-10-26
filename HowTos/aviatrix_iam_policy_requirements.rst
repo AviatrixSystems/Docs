@@ -27,25 +27,25 @@ permission applies to all use cases where there is an Aviatrix Gateway.
 
 ::
 
-{
-    "Action": [
-        "sqs:Get*",
-        "sqs:List*",
-        "sqs:AddPermission",
-        "sqs:ChangeMessageVisibility",
-        "sqs:CreateQueue",
-        "sqs:DeleteMessage",
-        "sqs:DeleteQueue",
-        "sqs:PurgeQueue",
-        "sqs:ReceiveMessage",
-        "sqs:RemovePermission",
-        "sqs:SendMessage",
-        "sqs:SetQueueAttributes",
-        "sqs:TagQueue"
-    ],
-    "Resource":"*",
-    "Effect": "Allow"
-}
+        {
+                "Action": [
+                "sqs:Get*",
+                "sqs:List*",
+                "sqs:AddPermission",
+                "sqs:ChangeMessageVisibility",
+                "sqs:CreateQueue",
+                "sqs:DeleteMessage",
+                "sqs:DeleteQueue",
+                "sqs:PurgeQueue",
+                "sqs:ReceiveMessage",
+                "sqs:RemovePermission",
+                "sqs:SendMessage",
+                "sqs:SetQueueAttributes",
+                "sqs:TagQueue"
+            ],
+                "Resource":"*",
+                "Effect": "Allow"
+        }
 
 
 |
