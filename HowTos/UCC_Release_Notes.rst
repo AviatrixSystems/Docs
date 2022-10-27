@@ -1,9 +1,8 @@
 .. meta::
-   :Exact Redirect:
-    From URL: https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html
-    To URL: https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html
-
-
+   :redirect:
+    :From URL :https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html
+    :To URL :https://docs.aviatrix.com/HowTos/UCC_Release_Notes.html
+    
 =========
 Redirect
 =========
