@@ -178,7 +178,7 @@ rate_peak_total
     Peak Total Rate — The highest bit rate that has been received and transmitted or both by the interface on the Aviatrix gateway VM/instance.
 
 rate_pps_limit_exceeded
-    PPS Limit Exceeded Rate — The number of packets processed (bidirectional) by the Aviatrix gateway per second.
+    PPS Limit Exceeded Rate — The number of packets that exceed the maximum for the instance type that are processed (bidirectionally) by the Aviatrix gateway per second.
 
 rate_received
     Received Rate — The rate of bits the Aviatrix gateway has received per second.
