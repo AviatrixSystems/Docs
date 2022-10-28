@@ -392,6 +392,16 @@ This image includes the following updates:
 Azure Controller Images
 ===============================================
 
+Azure Controller Image aviatrix-companion-controller-2022-10-13 (10/22/2022)
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This image includes the following updates: 
+ 
+* Upgraded to Ubuntu version 18.04.6.
+* Upgraded the Linux kernel version to 5.4.0-1080.
+* Image is hardened to 80% of CIS Server L1 compliance.
+* Fixed and passed a vulnerability scan up to October 2022.
+
 Azure Controller BYOL Image 04152022_Azure_Controller_BYOL Version 041522 (04/15/2022)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -405,6 +415,7 @@ Azure Gateway Images
 Azure Gateway Images: aviatrix-companion-gateway-v13 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+* Upgraded to Ubuntu version 18.04.6.
 * Remediated `CVE-2022-2914 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2914>`_.
 * Image is hardened to 80% of CIS Server L1 compliance.
 * Fixed and passed a vulnerability scan up to September 2022.
