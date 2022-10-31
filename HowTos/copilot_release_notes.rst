@@ -11,6 +11,8 @@ This section describes new features and enhancements for Aviatrix CoPilot softwa
 
 For information about Aviatrix CoPilot image releases, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
 
+For information about known issues for Aviatrix CoPilot, see `Known Issues - Aviatrix CoPilot`_.
+
 Public Preview Features 
 -------------------------
 
@@ -831,6 +833,19 @@ The Service Account can be changed in **Settings** .
 - Added ability to delete indexes
 - Added storage auto-delete threshold configuration
 - Added diagnostics (ping/traceroute) to topology
+
+
+Known Issues - Aviatrix CoPilot
+--------------------------------
+
+Use this section to find details about known issues and limitations related to Aviatrix CoPilot features.
+
+*Known Issue for Aviatrix Billing*
+
+**Known Issue**: You cannot retrieve cost data on the Aviatrix Billing page and get the error message **Unable to retrieve YTD costs** or **Unable to retrieve billing plan**.
+
+**Workaround**: Change your CoPilot service account to be your default admin account (username "admin" is expected).
+
 
 .. disqus::
 
