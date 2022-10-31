@@ -9,7 +9,6 @@ Peering
 Encrypted Peering
 ^^^^^^^^^^^^^^^^^^^^
 
-.. note:: The Encrypted Peering feature is deprecated and not supported from Release 6.8 and onwards. This feature functionality is replaced by `Aviatrix Multi-Cloud Transit <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_.
 
 Aviatrix provides a point-and-click solution to create an encrypted tunnel between two VPC/VNets. The two VPC/VNets could be in the same region, in different regions (inter region), and in different clouds (inter cloud).
 
