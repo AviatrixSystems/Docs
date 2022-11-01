@@ -281,6 +281,7 @@ A CloudFormation template provides a layer of abstraction that makes the configu
 
   * If this your first time launching an Aviatrix Controller, select the default setting **New** for IAM Role Creation. 
   * If an Aviatrix IAM role has been created before, select **aviatrix-role-ec2** for IAM Role Creation.
+  * Wildcard/all (*) is the default resource for all `Aviatrix IAM permissions <except for #13, “IAM Policy Scanning Requirement”. This resource needs to be customized per your resource requirements to be secure. We advise you to work with your Aviatrix account team to restrict what resources need to be in scope for your IAM policy.
 
 * **Step 3: Configure stack options** – Leave the settings on this page at their defaults and click **Next**. 
 
