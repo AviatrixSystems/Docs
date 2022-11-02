@@ -171,9 +171,11 @@ Example:
 Amazon EC2 instance type: 			m5n.8xlarge
 
 
-**Note the following points about VM requirements**:
+**Note the following points about CoPilot VM requirements**:
 
 - (AWS) For CoPilot ARM-based images, Amazon EC2 A1 instances are currently not supported.
+
+- (AWS) For CoPilot ARM-based images, Private Mode is currently not supported.
 
 - For a simple deployment, the single instance (VM) must meet the minimum requirements. 
 
