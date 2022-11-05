@@ -35,6 +35,40 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
 
+6.9.221 (11/04/2022)
+==========================================
+**New Features in Release 6.9.221**
+
+**Controller Security Access Control**
+
+Attention AWS users. The Controller Security Access Control feature overcomes the 1000-rule limitation of AWS security group rules per instance. Instead of using AWS Security Groups to control access to the Controller, the Controller itself manages incoming TCP 443 access. You can configure this feature using API 2.5. Please contact Aviatrix Support for more information .
+
+**Issues Corrected in Aviatrix Release 6.9.221**
+
+**AVX-25209** – The Aviatrix rsyslog may have unexpectedly stopped forwarding logging packets to remote 
+
+**Deprecated Features in Aviatrix Release 6.9.221**
+
+* The Encrypted Peering feature and Transitive Peering features are deprecated. These features’ functionality will be replaced by Aviatrix Multi-Cloud Transit. Aviatrix recommends deleting Encrypted and Transitive Peerings from your account, and then upgrading your Controller. 
+* The Sumo Logic logging integration, Logstash logging integration, and Splunk logging integrations are deprecated in this release. Instead, use rsyslog to integrate with external logging systems.
+
+6.8.1398 (11/04/2022)
+======================================
+**New Features in Release 6.8.1398**
+
+**Controller Security Access Control**
+
+Attention AWS users. The Controller Security Access Control feature overcomes the 1000-rule limitation of AWS security group rules per instance. Instead of using AWS Security  Groups to control access to the Controller, the Controller itself manages incoming TCP 443 access. You can configure this feature using API 2.5. Please contact Aviatrix Support for more information.
+
+**Issues Corrected in Aviatrix Release 6.8.1398**
+
+**AVX-25209** – The Aviatrix rsyslog may have unexpectedly stopped forwarding logging packets to remote server(s). 
+
+**Deprecated Features in Aviatrix Release 6.8.1398**
+
+* The Encrypted Peering feature and Transitive Peering features are deprecated. These features’ functionality will be replaced by Aviatrix Multi-Cloud Transit. Aviatrix recommends deleting Encrypted and Transitive Peerings from your account, and then upgrading your Controller. 
+* The Sumo Logic logging integration, Logstash logging integration, and Splunk logging integrations are deprecated in this release. Instead, use rsyslog to integrate with external logging systems.
+
 6.9.188 (10/21/2022)
 ==========================================
 
