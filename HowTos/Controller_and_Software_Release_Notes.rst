@@ -41,7 +41,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Controller Security Access Control**
 
-Attention AWS users. The Controller Security Access Control feature overcomes the 1000-rule limitation of AWS security group rules per instance. Instead of using AWS Security Groups to control access to the Controller, the Controller itself manages incoming TCP 443 access. You can configure this feature using API 2.5. Please contact Aviatrix Support for more information .
+Attention AWS users. The Controller Security Access Control feature overcomes the 1000-rule limitation of AWS security group rules per instance. Instead of using AWS Security Groups to control access to the Controller, the Controller itself manages incoming TCP 443 access. You can configure this feature using API 2.5. Please contact Aviatrix Support for more information.
 
 **Issues Corrected in Aviatrix Release 6.9.221**
 
@@ -58,7 +58,7 @@ Attention AWS users. The Controller Security Access Control feature overcomes th
 
 **Controller Security Access Control**
 
-Attention AWS users. The Controller Security Access Control feature overcomes the 1000-rule limitation of AWS security group rules per instance. Instead of using AWS Security  Groups to control access to the Controller, the Controller itself manages incoming TCP 443 access. You can configure this feature using API 2.5. Please contact Aviatrix Support for more information.
+Attention AWS users. The Controller Security Access Control feature overcomes the 1000-rule limitation of AWS security group rules per instance. Instead of using AWS Security Groups to control access to the Controller, the Controller itself manages incoming TCP 443 access. You can configure this feature using API 2.5. Please contact Aviatrix Support for more information.
 
 **Issues Corrected in Aviatrix Release 6.8.1398**
 
