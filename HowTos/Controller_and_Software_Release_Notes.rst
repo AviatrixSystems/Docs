@@ -49,7 +49,7 @@ Attention AWS users. The Controller Security Access Control feature overcomes th
 
 **Deprecated Features in Aviatrix Release 6.9.221**
 
-* The Encrypted Peering feature and Transitive Peering features are deprecated. These features’ functionality will be replaced by Aviatrix Multi-Cloud Transit. Aviatrix recommends deleting Encrypted and Transitive Peerings from your account, and then upgrading your Controller. 
+* The Encrypted Peering and Transitive Peering features are deprecated. These features’ functionality will be replaced by Aviatrix Multi-Cloud Transit. Aviatrix recommends deleting Encrypted and Transitive Peerings from your account, and then upgrading your Controller. 
 * The Sumo Logic logging integration, Logstash logging integration, and Splunk logging integrations are deprecated in this release. Instead, use rsyslog to integrate with external logging systems.
 
 6.8.1398 (11/04/2022)
@@ -66,7 +66,7 @@ Attention AWS users. The Controller Security Access Control feature overcomes th
 
 **Deprecated Features in Aviatrix Release 6.8.1398**
 
-* The Encrypted Peering feature and Transitive Peering features are deprecated. These features’ functionality will be replaced by Aviatrix Multi-Cloud Transit. Aviatrix recommends deleting Encrypted and Transitive Peerings from your account, and then upgrading your Controller. 
+* The Encrypted Peering and Transitive Peering features are deprecated. These features’ functionality will be replaced by Aviatrix Multi-Cloud Transit. Aviatrix recommends deleting Encrypted and Transitive Peerings from your account, and then upgrading your Controller. 
 * The Sumo Logic logging integration, Logstash logging integration, and Splunk logging integrations are deprecated in this release. Instead, use rsyslog to integrate with external logging systems.
 
 6.9.188 (10/21/2022)
