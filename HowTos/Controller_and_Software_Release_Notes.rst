@@ -45,7 +45,7 @@ Attention AWS users. The Controller Security Access Control feature overcomes th
 
 **Issues Corrected in Aviatrix Release 6.9.221**
 
-**AVX-25209** – The Aviatrix rsyslog may have unexpectedly stopped forwarding logging packets to remote 
+**AVX-25209** – The Aviatrix rsyslog may have unexpectedly stopped forwarding logging packets to remote server(s). 
 
 **Deprecated Features in Aviatrix Release 6.9.221**
 
