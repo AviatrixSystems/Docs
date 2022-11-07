@@ -24,7 +24,10 @@ Performing a dry run in 6.8 and later versions will fail if the CSP gateway’s 
 Settings > Maintenance > Selective Gateway Upgrade > Select the gateway which lists IKE-type Racoon > click **Image Upgrade**.
  
 The Image Upgrade of the Gateway AMIs also includes several Critical security updates. 
-NOTE: Gateways running older AMIs will not be able to upgrade from 6.9 to 7.0 without performing an Image Upgrade of Gateways to switch to IKE-type Strongswan. 
+
+.. note::
+
+  Gateways running older AMIs will not be able to upgrade from 6.9 to 7.0 without performing an Image Upgrade of Gateways to switch to IKE-type Strongswan. 
  
 ** Racoon – Older IKE daemon (to be deprecated starting R7.0)
       Strongswan – Current IKE daemon and requires all gateways to run Strongswan prior to upgrading to R7.0
