@@ -6,6 +6,29 @@ Field Notices
 
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
 
+39. Field Notice
+---------------------------------
+
+**Date**: 08/16/2022 
+
+**High Severity Bug Fix: AVX-25425**
+
+**Affected Versions:**
+
+For customers running version 6.8 of the Aviatrix Controller and an older AMI released in February 2021 or prior. 
+ 
+**Issue Description**
+
+Performing a dry run in 6.8 and later versions will fail if the CSP gateway’s AMI is based on IKE-type Racoon**, even though the upgrade from version 6.8 to 6.9 will succeed. This particular issue is reported in AVX-25425 and Aviatrix recommends performing an Image upgrade of gateways running IKE-type Racoon before performing the Software Upgrade. An image upgrade will upgrade the Gateway AMI version and thereby change the IKE-type on the gateways from Racoon to Strongswan. Please follow the steps below to perform a `Gateway Image Upgrade <https://docs.aviatrix.com/HowTos/gateway-image-migration.html>`_:
+ 
+Settings > Maintenance > Selective Gateway Upgrade > Select the gateway which lists IKE-type Racoon > click **Image Upgrade**.
+ 
+The Image Upgrade of the Gateway AMIs also includes several Critical security updates. 
+NOTE: Gateways running older AMIs will not be able to upgrade from 6.9 to 7.0 without performing an Image Upgrade of Gateways to switch to IKE-type Strongswan. 
+ 
+** Racoon – Older IKE daemon (to be deprecated starting R7.0)
+      Strongswan – Current IKE daemon and requires all gateways to run Strongswan prior to upgrading to R7.0
+
 
 38. Field Notice
 ------------------
