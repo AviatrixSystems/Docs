@@ -6,6 +6,29 @@ Field Notices
 
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
 
+40. Field Notice
+------------------------------------------------
+ 
+**Date:** 11/04/2022
+ 
+**High Priority Product Enhancement: AVX-31334**
+ 
+**Customers affected:**
+ 
+Any customer who:
+ 
+* Has `Encrypted Transitive Peering <https://docs.aviatrix.com/HowTos/TransPeering.html?highlight=encrypted%20transitive#encrypted-transitive-peering>`_ configured in their Aviatrix Controller. This feature was introduced in 2017 and has been superseded by Aviatrix Multi-CloudTransit, a much more advanced and efficient feature set with expanded capabilities.
+* Upgrades to 6.8.1398, 6.9.221, or future releases.
+ 
+**Issue Description:** 
+
+The Encrypted Transitive Peering feature is deprecated. Functionality is replaced by `Aviatrix Multi-Cloud Transit <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_.
+ 
+The Sumo Logic logging integration, Logstash logging integration, and Splunk logging integrations are deprecated in this release. Instead, use `rsyslog <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#remote-syslog>`_ to integrate with external logging systems.
+ 
+Aviatrix recommends transitioning to Aviatrix Multi-Cloud Transit if you are using Encrypted Transitive Peerings. The process is straightforward we can help you make the transition.
+
+
 39. Field Notice
 ---------------------------------
 
