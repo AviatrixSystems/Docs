@@ -64,6 +64,8 @@ CoPilot Release 3.1.3 (10/21/2022)
 
  -   **Known Issue for Aviatrix Billing** — You cannot retrieve cost data on the Aviatrix Billing page and get the error message **Unable to retrieve YTD costs** or **Unable to retrieve billing plan**. **Workaround**: Change your CoPilot service account to be your default admin account (username "admin" is expected).
 
+-   **Known Issue for Logical View Chart** — The logical view of the network segmentation chart shows broken lines.
+
 -   **AVX-28051** — Known Issue for App Domains (Micro-Segmentation). You cannot create a micro-segmentation application domain with IP addresses. If a CIDR is included in the App Domain, it cannot be saved.
 
 CoPilot Release 3.0.5 (10/13/2022)
@@ -850,6 +852,10 @@ Use this section to find details about known issues and limitations related to A
 **Known Issue**: You cannot retrieve cost data on the Aviatrix Billing page and get the error message **Unable to retrieve YTD costs** or **Unable to retrieve billing plan**.
 
 **Workaround**: Change your CoPilot service account to be your default admin account (username "admin" is expected).
+
+*Known Issue for Logical View Chart in 3.1.3* 
+
+**Known Issue**: The logical view of the network segmentation chart shows broken lines.
 
 *Known Issue for App Domains (Micro-Segmentation) in 3.1.3*
 
