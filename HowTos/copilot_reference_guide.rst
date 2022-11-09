@@ -658,7 +658,7 @@ The telemetry data CoPilot displays for managed resources includes:
 - Tx rate of the interface 
 - Rx Tx rate combined of the interfaces 
 
-The system and network metrics on which CoPilot reports telemetry data are the same as those used for triggering notifications. For descriptions of the metrics, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id3>`_ in *Aviatrix CoPilot User Reference Guide*.
+The system and network metrics on which CoPilot reports telemetry data are the same as those used for triggering notifications. For descriptions of the metrics, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id1>`_ in *Aviatrix CoPilot User Reference Guide*.
 
 
 Working with Cloud Routes
