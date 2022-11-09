@@ -658,7 +658,7 @@ The telemetry data CoPilot displays for managed resources includes:
 - Tx rate of the interface 
 - Rx Tx rate combined of the interfaces 
 
-The system and network metrics on which CoPilot reports telemetry data are the same as those used for triggering notifications. For descriptions of the metrics, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id3>`_ in *Aviatrix CoPilot User Reference Guide*.
+The system and network metrics on which CoPilot reports telemetry data are the same as those used for triggering notifications. For descriptions of the metrics, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id1>`_ in *Aviatrix CoPilot User Reference Guide*.
 
 
 Working with Cloud Routes
@@ -758,7 +758,7 @@ To configure alerts:
 
 1. From the sidebar, click Notifications.
 #. In Define Alert, type the name you want to use for the alert.
-#. In Condition, select the metric or condition that must be met to trigger the alert. For descriptions of the system and network metrics used for triggering alerts, see `Metrics used for Triggering Notifications`_.
+#. In Condition, select the metric or condition that must be met to trigger the alert. For descriptions of the system and network metrics used for triggering alerts, see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id1>`_.
 #. Click Add Recipients and select the email address or Webhook destination where you want the alert to be sent. Repeat this step for each recipient you want to receive the notification.
 #. Click Save. The alert is enabled. When the condition is met for the metric you specified, CoPilot will now send a notification to the email or Webhook system you specified.
 
@@ -971,7 +971,7 @@ CoPilot Alert Condition Display Names
 
 The following is a list of all alert condition display names shown by CoPilot. 
 
-Many of the alerts are associated with detecting changes in resource utilization (telemetry) data for managed resources as described in see `Metrics used for Triggering Notifications`_.
+Many of the alerts are associated with detecting changes in resource utilization (telemetry) data for managed resources as described in see `Metrics used for Triggering Notifications <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#id1>`_.
 
 Some alerts are associated with enhanced security services like `Network Behavior Analytics <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-anomalies>`_ (detecting network traffic finterprint anomalies) and `ThreatIQ with ThreatGuard <https://docs.aviatrix.com/HowTos/copilot_reference_guide.html#working-with-threatiq>`_ (detecting threat IPs identified by a well known threat-IP source).  
 
