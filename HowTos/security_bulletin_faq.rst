@@ -179,7 +179,7 @@ No, our instances are appliances and customer SSH access is disabled. To patch A
 Does Aviatrix implement Secure Coding and Development practices to ensure that the software is not vulnerable to DDoS, SQL Injection and/or Cross Site Scripting Attacks?
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Aviatrix security measures for SDLC include access, change, vulnerability, threat intelligence and risk management safeguards. To ensure we protect our software code from known attacks like CSS, SQL Injection, and DDOS, we run vulnerability scans prior to each release to detect and mitigate any possible attacks. We also work closely with security researchers to detect zero day threats and we work with Coalfire to anually perform source code review and independent penetration testing.  
+Aviatrix security measures for SDLC include access, change, vulnerability, threat intelligence and risk management safeguards. To ensure we protect our software code from known attacks like CSS, SQL Injection, and DDOS, we run vulnerability scans prior to each release to detect and mitigate any possible attacks. We also work closely with security researchers to detect zero day threats and we work with Coalfire to annually perform source code review and independent penetration testing.  
 
 Does Aviatrix software support IKEv2?
 --------------------------------------
