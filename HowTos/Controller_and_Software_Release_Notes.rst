@@ -35,6 +35,36 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
 
+6.7.1506 (11/14/2022)
+=================================
+
+**Issues Corrected in Aviatrix Release 6.7.1506
+
+**AVX-13508** – (AWS users) When you launch a gateway, the gateway uses the Default encryption key set in your AWS account > EC2 > Settings > EBS encryption. Previously, to use a key other than the Default key, you had to go to your AWS account > EC2 > Settings > EBS encryption and click Manage. 
+Now, if you want to use a different encryption key than the Default encryption key, you can use Terraform or API to specify which encryption key to use for this gateway.
+
+* **AVX-25209** – The Aviatrix rsyslog may have unexpectedly stopped forwarding logging packets to remote server(s).
+
+* **AVX-26005** - When you did a Controller backup and restore, the Controller temporarily lost its BGP routes. This loss caused network flapping and a loss of traffic until the routes were restored.
+
+* **AVX-26020** – Previously, when a Controller backup and restore was performed, the Controller temporarily lost its BGP routes. This loss caused network flapping and a loss of traffic until the routes were restored.
+
+* **AVX-28821** – When a Controller’s time zone was changed to any time zone other than UTC, CoPilot did not display host information under Performance > Network Metrics for the Last Hour. 
+Note: To resolve this issue in versions older than release 6.9.b, restart cloudxd in your Controller by going to Diagnostics > Services > CloudXD > Actions > Restart.
+
+* **AVX-29016** – When a CAAG or Edge Gateway was registered while your LAN/WAN interface was down, the CloudN list would fail to display. You could not perform basic actions like Diag, Deregister, or Reset Configuration.
+
+* **AVX-30443** – BGP learned routes were temporarily removed and then added back ActiveMesh 1.0 was migrated to ActiveMesh 2.0. This issue could cause traffic interruption.
+
+**Features Deprecated in Aviatrix Release 6.7.1506
+
+**AVX-31334**  
+
+* The Transitive Peering features is deprecated. This features’ functionality will be replaced by Aviatrix Multi-Cloud Transit.
+* The Sumo Logic logging integration, Logstash logging integration, and Splunk logging integrations are deprecated in this release. Instead, use rsyslog to integrate with external logging systems.
+Aviatrix recommends deleting Encrypted and Transitive Peerings from your account, and then upgrading your Controller.
+
+
 6.9.221 (11/04/2022)
 ==========================================
 **New Features in Release 6.9.221**
