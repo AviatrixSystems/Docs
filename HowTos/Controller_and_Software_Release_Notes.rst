@@ -344,7 +344,12 @@ Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1."
 **Important Notices in Aviatrix Release 6.8.1148** 
 
 - **AVX-26666** - For gateway rollback to work in 6.8, your Controller and gateways must be on the latest version of 6.7 (6.7.1376) before upgrading to 6.8.
-- **AVXSRE-395** - Aviatrix is continuously improving its products and services, requiring to migrate to new IP addresses. Therefore, if you are filtering out part of all the traffic from your controllers to the Internet, please update your rules to allow â€œAviatrix Central Servicesâ€ according to our Support Portal: Aviatrix Products: `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Required-Access-for-External-Sites>`_
+- **AVXSRE-395** - Aviatrix is continuously improving its products and services, requiring to migrate to new IP addresses. Therefore, if you are filtering out part of all the traffic from your controllers to the Internet, please update your rules to allow Aviatrix Central Services according to our Support Portal: Aviatrix Products: `Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Required-Access-for-External-Sites>`_
+- **AVX-31465** - **CloudN users**: Before upgrading your Controller to version 6.8.1148, make sure your CloudN base software is upgraded to version 6.6.5721 or a later version. 
+
+.. note::
+
+  To check which CloudN base software version you are currently using, log into your CloudN IP address. 
 
 The following Private Preview Features are available in this release:
 
