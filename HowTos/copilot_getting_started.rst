@@ -160,15 +160,11 @@ Amazon EC2 instance type: 			m5n.4xlarge
 
 **If you have more than 1000 gateways**
 
-For infrastructures with **>=1000 GWs**, the minimum instance/VM size guideline:
+For infrastructures with **>=1000 GWs**, deploy a CoPilot **cluster (fault tolerant deployment)** where each node has a minimum instance/VM size of:
 
-  - 128 GB of RAM (or more)
+  - 32 GB of RAM (or more)
 
-  - 32 vCPUs (or more)
-
-Example:
-
-Amazon EC2 instance type: 			m5n.8xlarge
+  - 8 vCPUs (or more)
 
 
 **Note the following points about CoPilot VM requirements**:
