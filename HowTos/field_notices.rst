@@ -6,6 +6,36 @@ Field Notices
 
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
 
+
+41. Field Notice
+------------------------------------------------
+
+**Date:** 11/17/2022
+
+**Change in Default Behavior**
+
+The latest 7.0 version of Aviatrix controller introduces a token verification to Aviatrix’s private API.
+
+Please take notice of a change in behavior beginning with Aviatrix Controller version 7.0. The 7.0 version introduces token-based Controller API operations that binds Aviatrix’s private API usage by Aviatrix API Legal Terms of Use*.
+
+To allow time for customers to make necessary changes in their infrastructure to support token-based API operations, we will not enforce a strict check for the token in the 7.0 release. Therefore, Aviatrix’s private API will continue to work for your existing use cases while running 7.0. However, token checking will be enforced in a later release.
+
+**Who is impacted?**
+
+Direct users of Aviatrix’s private API would be impacted by this change. There is no impact to users of Aviatrix Terraform Provider, Aviatrix CoPilot and Aviatrix Controller UI. Customers who have a Controller HA set up would also be affected. After upgrading to the release with token enforcement enabled, recreate your Controller HA configuration. Use HA script 2.0.1 or above. For details on HA script version, refer to Controller HA.
+
+**Recommended Solution:**
+
+To insulate customers from our evolving private API, Aviatrix strongly recommends you switch to Aviatrix Terraform Provider for all operations involving automation.
+
+If you have special need to still use Aviatrix’s private API, please reach out to Aviatrix Support by opening a ticket at Support Portal at https://support.aviatrix.com for guidance on Aviatrix’s private API token generation.
+
+Please mention your Aviatrix private API use case(s) in your ticket for us to better understand your automation needs, thereby enhancing our Terraform Support.
+
+**Aviatrix API Legal Terms of Use:**
+
+Use of Aviatrix API software (“Developer Software”) is governed by the Customer Terms of Use. We reserve the right to rescind any license to the Developer Software at our sole discretion without prior notice. DEVELOPER SOFTWARE IS MADE AVAILABLE BY US TO YOU ON AN “AS IS” AND “AS AVAILABLE” BASIS, (I) WITHOUT ANY REPRESENTATION OR WARRANTY OF ANY KIND, WHETHER EXPRESS, IMPLIED OR STATUTORY TO THE FULLEST EXTENT PERMITTED BY LAW AND (II) WITHOUT ANY OBLIGATION OF US TO PROVIDE TECHNICAL SUPPORT OR ANY INDEMNITY FOR YOUR ACCESS TO, AND USE OF, THE DEVELOPER SOFTWARE.
+
 40. Field Notice
 ------------------------------------------------
  
