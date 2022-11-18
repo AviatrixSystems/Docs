@@ -34,11 +34,24 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
+6.8.1400 (11/18/2022)
+===============================
+
+**Known Issues**
+
+**AVX-32273** - Known Aviatrix CSP (Cloud Service Provider) gateway base images launched in release 6.3, 6.4, and 6.5 with default python 2.7.17 are not compatible with python 3.6.9 in the versions (6.8.1148 and newer) of Aviatrix software. To avoid this issue, upgrade your Controller to the latest version and `upgrade <https://read.docs.aviatrix.com/HowTos/gateway-image-migration.html>`_ all gateways images launched in 6.5 or older to the latest version.
+
+6.9.223  (11/18/2022)
+===============================
+
+**Known Issues**
+
+**AVX-32273** - Known Aviatrix CSP (Cloud Service Provider) gateway base images launched in release 6.3, 6.4, and 6.5 with default python 2.7.17 are not compatible with python 3.6.9 in the versions (6.8.1148 and newer) of Aviatrix software. To avoid this issue, upgrade your Controller to the latest version and `upgrade <https://read.docs.aviatrix.com/HowTos/gateway-image-migration.html>`_ all gateways images launched in 6.5 or older to the latest version.
 
 6.7.1506 (11/14/2022)
 =================================
 
-**Issues Corrected in Aviatrix Release 6.7.1506
+**Issues Corrected in Aviatrix Release 6.7.1506**
 
 **AVX-13508** – (AWS users) When you launch a gateway, the gateway uses the Default encryption key set in your AWS account > EC2 > Settings > EBS encryption. Previously, to use a key other than the Default key, you had to go to your AWS account > EC2 > Settings > EBS encryption and click Manage. 
 Now, if you want to use a different encryption key than the Default encryption key, you can use Terraform or API to specify which encryption key to use for this gateway.
