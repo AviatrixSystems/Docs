@@ -37,14 +37,14 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 6.8.1400 (11/18/2022)
 ===============================
 
-**Known Issues**
+**Issues Corrected in Aviatrix Release 6.8.1400**
 
 **AVX-32273** - Known Aviatrix CSP (Cloud Service Provider) gateway base images launched in release 6.3, 6.4, and 6.5 with default python 2.7.17 are not compatible with python 3.6.9 in the versions (6.8.1148 and newer) of Aviatrix software. To avoid this issue, upgrade your Controller to the latest version and `upgrade <https://read.docs.aviatrix.com/HowTos/gateway-image-migration.html>`_ all gateways images launched in 6.5 or older to the latest version.
 
 6.9.223  (11/18/2022)
 ===============================
 
-**Known Issues**
+**Issues Corrected in Aviatrix Release 6.9.223**
 
 **AVX-32273** - Known Aviatrix CSP (Cloud Service Provider) gateway base images launched in release 6.3, 6.4, and 6.5 with default python 2.7.17 are not compatible with python 3.6.9 in the versions (6.8.1148 and newer) of Aviatrix software. To avoid this issue, upgrade your Controller to the latest version and `upgrade <https://read.docs.aviatrix.com/HowTos/gateway-image-migration.html>`_ all gateways images launched in 6.5 or older to the latest version.
 
