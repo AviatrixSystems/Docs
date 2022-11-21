@@ -7,11 +7,9 @@
 Aviatrix CoPilot Release Notes
 ============================================================
 
-This section describes new features and enhancements for Aviatrix CoPilot software releases.
+.. note::
 
-For information about Aviatrix CoPilot image releases, see `Aviatrix CoPilot Image Release Notes <https://docs.aviatrix.com/HowTos/copilot_release_notes_images.html>`_.
-
-For information about known issues for Aviatrix CoPilot, see `Known Issues - Aviatrix CoPilot`_.
+  For the release notes of CoPilot software versions 3.3.1 and later, click `here <https://docs.aviatrix.com/copilot/latest/release-notes/software-release-notes/copilot-release-notes.html>`_. The content below is an archived list of release notes for software versions 3.1.3 and earlier.
 
 Public Preview Features 
 -------------------------
@@ -40,6 +38,14 @@ CoPilot and Controller Interoperability
 ----------------------------------------
 
 CoPilot is deployed as an all-in-one virtual appliance and is available on multiple clouds including AWS, Azure, GCP, and OCI MarketPlaces. CoPilot works in tandem with Aviatrix Controller; in order to use CoPilot, you must have an operational Aviatrix Controller. CoPilot works with all Controller versions that are not End of Life (EOL). If you need information about `Aviatrix End of Engineering and End of Life (Support) policies <https://support.aviatrix.com/Aviatrix-EOL-Policy>`_ or how to plan and update to the latest software, please contact Aviatrix Support.
+
+
+CoPilot Release 3.3.1 release notes
+------------------------------------
+
+.. note::
+
+  For CoPilot software version 3.3.1 release notes, click `here <https://docs.aviatrix.com/copilot/latest/release-notes/software-release-notes/copilot-release-notes.html>`_. The information below is an archived list of release notes for software versions 3.1.3 and earlier.
 
 
 CoPilot Release 3.1.3 (10/21/2022)
