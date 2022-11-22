@@ -10,7 +10,7 @@ Field Notices
 41. Field Notice
 ------------------------------------------------
 
-**Date:** 11/17/2022
+**Date:** 11/28/2022
 
 **Change in Default Behavior**
 
@@ -22,7 +22,7 @@ To allow time for customers to make necessary changes in their infrastructure to
 
 **Who is impacted?**
 
-Direct users of Aviatrix’s private API would be impacted by this change. There is no impact to users of Aviatrix Terraform Provider, Aviatrix CoPilot and Aviatrix Controller UI. Customers who have a Controller HA set up would also be affected. After upgrading to the release with token enforcement enabled, recreate your Controller HA configuration. Use HA script 2.0.1 or above. For details on HA script version, refer to Controller HA.
+Direct users of Aviatrix’s private API would be impacted by this change. There is no impact to users of Aviatrix Terraform Provider, Aviatrix CoPilot and Aviatrix Controller UI. Customers who have a Controller HA set up would also be affected. After upgrading to the release with token enforcement enabled, recreate your Controller HA configuration. Use HA script 2.01 or above. For details on HA script version, refer to Controller HA.
 
 **Recommended Solution:**
 
