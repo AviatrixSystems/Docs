@@ -54,8 +54,6 @@ Any customer who:
 
 The Encrypted Transitive Peering feature is deprecated. Functionality is replaced by `Aviatrix Multi-Cloud Transit <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_.
  
-The Sumo Logic logging integration, Logstash logging integration, and Splunk logging integrations are deprecated in this release. Instead, use `rsyslog <https://docs.aviatrix.com/HowTos/AviatrixLogging.html#remote-syslog>`_ to integrate with external logging systems.
- 
 Aviatrix recommends transitioning to Aviatrix Multi-Cloud Transit if you are using Encrypted Transitive Peerings. The process is straightforward we can help you make the transition.
 
 
