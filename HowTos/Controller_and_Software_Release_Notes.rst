@@ -707,6 +707,12 @@ You should plan to migrate your Standalone CloudN deployment to Managed CloudN. 
 
 **New Features in Aviatrix Release 6.7.1185** 
 
+* **Deploy CoPilot from your controller UI (AWS cloud only)** — If you deployed Aviatrix Controller in AWS, you now have the option to deploy Aviatrix CoPilot directly from your controller UI. This eliminates the need to go to the AWS marketplace and simplifies a few steps for provisioning the CoPilot instance. When deploying this way, the controller deploys CoPilot in the same region/availability zone where it is homed. For instructions, see "CoPilot instance launch using Controller UI (AWS Only)" in the Aviatrix CoPilot documentation.
+
+.. note::
+
+  If you want to deploy CoPilot in a different AWS region/availability zone than where your controller is homed or in a different cloud, follow the instructions in "CoPilot instance launch from cloud provider marketplace" to deploy CoPilot.
+
 * **Aviatrix Secure Edge** - Aviatrix Secure Edge has a virtual from factor that lets you deploy an Edge Gateway as a standard virtual machine (VM). It is designed to enable enterprises migrating to the cloud to integrate their on-premises footprint as spokes into the enterprise cloud backbone. For more information about Secure Edge, refer to `Secure Edge FAQ <http://docs.aviatrix.com/HowTos/secure_edge_faq.html>`_. 
 * **Deploy CoPilot from your controller UI (AWS cloud only)** - If you deployed Aviatrix Controller in AWS, you now have the option to deploy Aviatrix CoPilot directly from your controller UI. This eliminates the need to go to the AWS marketplace and simplifies a few steps for provisioning the CoPilot instance. When deploying this way, the controller deploys CoPilot in the same region/availability zone where it is homed. For instructions, see the discussion about launching a CoPilot instance from the Controller UI in Aviatrix CoPilot Deployment Guide. 
 
