@@ -250,6 +250,20 @@ Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1."
 6.9.128 (09/09/2022) 
 =====================
 
+**Important Notices for Release 6.9.128**
+
+**Upgrading CloudN**
+
+*CloudN users*:
+
+* Make sure that your CloudN hardware is *version 2.1 or a later version*. If your hardware is 2.0 or earlier, you will need a hardware refresh.  
+
+* *Replace* CloudN hardware version prior to 2.1 with *CloudN hardware version 2.1 or later*. You could also migrate to Aviatrix Edge.  
+
+.. note::
+
+  To check which CloudN hardware version you are currently using, check your server. A server with a single SSD is running HW version 2.0 or a prior version and needs an update. A server with dual SSD Hard Disk drives is HW 2.1 or a later version and does not need an update.  
+
 **Enhanced Features in Release 6.9.128** 
 
 * **Micro-segmentation** - `Micro-segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ is now supported on AWS GovCloud and Azure Government as well as AWS, Azure, and GCP. 
