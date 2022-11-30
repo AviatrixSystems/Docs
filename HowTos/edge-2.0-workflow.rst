@@ -151,13 +151,16 @@ Aviatrix Edge Ports and Protocols
 | WAN eth0   | Aviatrix Transit Gateway eth0 private or  | UDP          | 4500     | IPsec                 |
 |            | public IP address.                        |              |          |                       |
 +------------+-------------------------------------------+--------------+----------+-----------------------+
-| Mgmt eth2  | DNS server                                | UDP          | 53       | DNS lookup            |
+| Mgmt eth2  | DNS server.                               | UDP          | 53       | DNS lookup            |
 +------------+-------------------------------------------+--------------+----------+-----------------------+
 | Mgmt eth2  | Aviatrix Controller FQDN or               | TCP          | 443      | Edge to Controller    |
-|            | public IP address.                        |              |          |                       |
-|            | controller.aviatrixnetwork.com            |              |          |                       |
-|            | spire-server.aviatrixnetwork.com          |              |          |                       |
-|            | time-server.aviatrixnetwork.com           |              |          |                       |
+|            | public or private IP address.             |              |          |                       |
++------------+-------------------------------------------+--------------+----------+-----------------------+
+| Mgmt eth2  | Aviatrix CoPilot FQDN or                  | UDP          | 5000     | Syslog                |
+|            | public or private IP address.             |              |          |                       |
++------------+-------------------------------------------+--------------+----------+-----------------------+
+| Mgmt eth2  | Aviatrix CoPilot FQDN or                  | UDP          | 31283    | Netflow               |
+|            | public or private IP address.             |              |          |                       |
 +------------+-------------------------------------------+--------------+----------+-----------------------+
 
 
