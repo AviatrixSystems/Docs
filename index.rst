@@ -182,6 +182,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/edge-2.0-workflow
    HowTos/secure_edge_workflow   
    HowTos/CloudN_workflow
+   HowTos/cloud_wan_workflow
 
 
 .. _Security:
