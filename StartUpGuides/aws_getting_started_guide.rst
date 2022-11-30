@@ -275,7 +275,7 @@ A CloudFormation template provides a layer of abstraction that makes the configu
 |                            |   at **New**.                                   |        
 |                            | * If this is the second or later attempt, click |
 |                            |   on the dropdown menu and select               |
-|                            |   **aviatrix0role-ec2**.                        |
+|                            |   **aviatrix-role-ec2**.                        |
 +----------------------------+-------------------------------------------------+
 
 .. note::
