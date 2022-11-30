@@ -24,6 +24,9 @@ It is a L4 stateful firewall that filters network CIDR, protocol, and port on th
 
 The stateful firewall allows each individual rule to be defined as Allow, Deny and Force Drop, in addition to a base rule. 
 
+.. note:: Aviatrix recommends that you not use the Stateful Firewall feature in HA pairs because the gateways do not synchronize the firewall state.
+
+
 Is there a limitation on the number of tags?
 ----------------------------------------------------------
 
