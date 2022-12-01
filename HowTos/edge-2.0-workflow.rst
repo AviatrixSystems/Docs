@@ -164,6 +164,8 @@ Aviatrix Edge Ports and Protocols
 +------------+-------------------------------------------+--------------+----------+-----------------------+
 
 
+For additional Edge Gateway access requirements, see `Aviatrix Products: Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Required-Access-for-External-Sites>`_.
+
 
 Aviatrix Edge 2.0 Deployment Workflow
 =====================================
