@@ -24,6 +24,7 @@ You may need to migrate your Aviatrix Controller in the following situations:
 This document describes how to migrate from one type of machine image to another for each CSP, including: 
 
 * `Prerequisites <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#prerequisites>`_ for all clouds.
+* `Prerequisites <https://read.docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#prerequisites-for-copilot-users>`_ for CoPilot users.
 * `Controller Migration in AWS <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#migrating-an-aws-controller>`_.
 * `Controller Migration in Azure <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#controller-migration-in-azure>`_.
 * `Controller Migration in GCP <https://docs.aviatrix.com/HowTos/Migration_From_Marketplace.html#controller-migration-in-gcp>`_.
@@ -70,11 +71,11 @@ Prerequisites for CoPilot Users
 
 .. important::
 
-  **(Aviatrix CoPilot users)** When you migrate your Controller, your Controller IP address will change. Depending on which version of controller you are migrating from, perform the following tasks before you start the migration. This is to avoid being unable to log in to your CoPilot after the migration:
+  **(Aviatrix CoPilot users)** When you migrate your Controller, **your Controller's private IP address will change**. Depending on which version of controller you are migrating from, perform the following tasks before you start the migration. This is to avoid being unable to log in to your CoPilot after the migration:
 
   If you are migrating a Controller earlier than version 6.8.1088 or earlier than version 6.9.161:
 
-  * In Copilot Home > Settings > Configuration, click Reset Controller IP. This will bring you to the CoPilot login page where you will enter your new Controller’s IP address once it’s available after the Controller migration. If your new Controller was deployed from the Controller UI, the IP address will be the private IP address of the new Controller.
+  * In Copilot Home > Settings > Configuration, click **Reset Controller IP**. This will bring you to the CoPilot login page where you will enter your new Controller’s IP address once it’s available after the Controller migration.
 
   If you are migrating a Controller version 6.8.1088 or later or 6.9.161 or later:
 
@@ -106,6 +107,10 @@ To migrate to the most current AMI directly from your Controller, use the follow
 .. tip::
 
   In case of a Disaster Recovery (DR) scenario in which an entire AWS region goes down, considering backing up your Controller to at least two separate regions.
+
+.. important::
+
+  Before you perform the migration, you must first reset the IP address of your newly launched Controller in CoPilot > Settings > Configuration > Reset Controller IP button. If you fail to do so, you may be locked out of your CoPilot after the migration.
 
 3. Go to Settings > Maintenance > Migration. 
 
@@ -322,6 +327,10 @@ Move your OCI Controller's Public IP Address
 
 Post Migration Tasks
 ================================
+
+.. important::
+
+  Before deleting your old Controller, first reset the IP address of your newly launched controller in CoPilot > Settings > Configuration > Reset Controller IP button. If you fail to do so, you may be locked out of your CoPilot after the migration.
 
 After testing to ensure that the Controller migration is complete and successful, you can delete the old Controller. It can be left in "Stopped" status for a while, but it should never be started. If it is started, this old Controller will reach out to the gateways and the network could have issues with two Controllers trying to monitor/modify the gateways. 
 

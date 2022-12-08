@@ -16,6 +16,9 @@ This loosely coupled relationship between the Controller and gateways reduces th
 
 	Note: If you have the Controller HA cloud formation stack running, please make sure you delete the stack prior to stopping the existing Controller, to avoid complications and failures in this restore operation.
 
+.. important:: 
+
+  If you choose to migrate your controller using backup and then restoring to a new controller, you must reset the IP address of your newly launched controller in CoPilot before shutting dow your old CoPilot. Reset the IP address of your newly launched controller in CoPilot > Settings > Configuration > Reset Controller IP button. If you fail to do so, you may be locked out of your CoPilot after the migration.
 
 How to backup configuration 
 ---------------------------
@@ -36,7 +39,7 @@ Aviatrix stores the Controller backup in an AWS S3 bucket or an Azure Container.
         By default, only the latest configuration data is stored. Each time the configuration is backed up, it overwrites the previous one.
         If you would like to keep every copy, check the box `Multiple Backup`.
 
-  #. Click `Enable`
+  #. Click `Enable`.
 
      |imageBackupAWS|
   
@@ -75,7 +78,7 @@ If you are starting from a new Controller, follow these steps to get started:
 
 Once you are past the initial configuration steps:
 
-#. Login to the Controller
+#. Log into the Controller.
 
    #. Click on the `Settings` navigation item.
    #. Click on the `Maintenance` sub item.
@@ -93,12 +96,15 @@ Once you are past the initial configuration steps:
        - Enter the `Subscription ID` and `Certificate Path`.
        - Enter the `Storage Name`, `Container Name`, and `File Name` of the file to restore.
 
-  #. Click Restore
+  #. Click Restore.
 
 |imageRestoreAWS|
 
   If Aviatrix Managed CloudN exists in the backup Controller, after the restore operation on the new Controller, you must navigate to the Aviatrix Managed CloudN UI and follow steps of 2.2 and 2.5 in https://docs.aviatrix.com/HowTos/CloudN_workflow.html?highlight=managed%20CloudN by entering the new FQDN or IP of the new Controller to complete the restore.  You must repeat 2.2 and 2.5 on other Aviatrix Managed CloudN devices if you have more than one.
   
+.. important:: 
+
+  If you choose to migrate your controller using backup and then restoring to a new controller, you must reset the IP address of your newly launched controller in CoPilot before shutting dow your old CoPilot. Reset the IP address of your newly launched controller in CoPilot > Settings > Configuration > Reset Controller IP button. If you fail to do so, you may be locked out of your CoPilot after the migration.
 
 How to backup configuration with AWS encrypted storage
 ------------------------------------------------------
