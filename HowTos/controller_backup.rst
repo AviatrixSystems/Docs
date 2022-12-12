@@ -18,14 +18,20 @@ This loosely coupled relationship between the Controller and gateways reduces th
 
 .. important:: 
 
-  If you choose to migrate your controller using backup and then restoring to a new controller, you must reset the IP address of your newly launched controller in CoPilot before shutting dow your old CoPilot. Reset the IP address of your newly launched controller in CoPilot > Settings > Configuration > Reset Controller IP button. If you fail to do so, you may be locked out of your CoPilot after the migration.
+  If you choose to migrate your Controller using backup and then restoring to a new Controller, you must reset the IP address of your newly launched Controller in CoPilot before shutting dow your old CoPilot. Reset the IP address of your newly launched Controller in CoPilot > Settings > Configuration > click **Reset Controller IP**. If you fail to do so, you may be locked out of your CoPilot after the migration.
 
-How to backup configuration 
----------------------------
+How to Backup Configuration 
+-----------------------------------------------------
 
 Aviatrix stores the Controller backup in an AWS S3 bucket or an Azure Container. Before you begin, determine where you would like to store the backup and create either the S3 bucket or Azure Container.
 
-  #. Log in to the Controller.
+.. warning::
+
+  Make sure your Controller backup and Controller restore are in the same CSP (Cloud Service Provider): AWS, Azure, or GCP and share the same basic configuration. For example, an AWS backup can only restore to another AWS Controller. 
+
+  Note that in the case of AWS backups, an AWS Controller set up with IAM roles cannot backup and restore to an AWS Controller set up with a secret key, or vice versa.
+
+  #. Log into the Controller.
   #. Click on the `Settings` navigation item.
   #. Click on the `Maintenance` sub item.
   #. Click on the `Backup & Restore` tab.
@@ -58,11 +64,17 @@ If you want to force an immediate backup (e.g. for a configuration change) you c
 
 
 
-How to restore configuration
+How to Restore Configuration
 --------------------------------
 
 .. note::
 	In Private Mode, restoration can only be done in the same VPC as the previous Controller. You cannot restore a Controller that has been created in a different VPC. Click `here <https://docs.aviatrix.com/HowTos/privatemode.html>`_ for more information on Private Mode.
+
+.. warning::
+
+  Make sure your Controller backup and Controller restore are in the same CSP (Cloud Service Provider): AWS, Azure, or GCP and share the same basic configuration. For example, an AWS backup can only restore to another AWS Controller. 
+
+  Note that in the case of AWS backups, an AWS Controller set up with IAM roles cannot backup and restore to an AWS Controller set up with a secret key, or vice versa.
 
 If you are starting from a new Controller, follow these steps to get started:
 
@@ -83,7 +95,7 @@ Once you are past the initial configuration steps:
    #. Click on the `Settings` navigation item.
    #. Click on the `Maintenance` sub item.
    #. Click on the `Backup & Restore` tab.
-   #. Under the `RESTORE` section:
+   #. Under the `Restore` section:
   
      - Select the `Cloud Type`
      - For AWS
@@ -96,7 +108,7 @@ Once you are past the initial configuration steps:
        - Enter the `Subscription ID` and `Certificate Path`.
        - Enter the `Storage Name`, `Container Name`, and `File Name` of the file to restore.
 
-  #. Click Restore.
+  #. Click **Restore**.
 
 |imageRestoreAWS|
 
@@ -104,9 +116,9 @@ Once you are past the initial configuration steps:
   
 .. important:: 
 
-  If you choose to migrate your controller using backup and then restoring to a new controller, you must reset the IP address of your newly launched controller in CoPilot before shutting dow your old CoPilot. Reset the IP address of your newly launched controller in CoPilot > Settings > Configuration > Reset Controller IP button. If you fail to do so, you may be locked out of your CoPilot after the migration.
+  If you choose to migrate your Controller using backup and then restoring to a new Controller, you must reset the IP address of your newly launched Controller in CoPilot before shutting dow your old CoPilot. Reset the IP address of your newly launched Controller in CoPilot > Settings > Configuration > click **Reset Controller IP**. If you fail to do so, you may be locked out of your CoPilot after the migration.
 
-How to backup configuration with AWS encrypted storage
+How to Backup configuration with AWS Encrypted Storage
 ------------------------------------------------------
 
 AWS S3 allows uploaded backup files to be encrypted in the server side for more secure storage. The encryption is all done in the AWS S3 server side. This server side secure storage is in addition to the already encrypted Aviatrix Controller backups.
