@@ -20,7 +20,7 @@ This loosely coupled relationship between the Controller and gateways reduces th
 
   If you choose to migrate your Controller using backup and then restoring to a new Controller, you must reset the IP address of your newly launched Controller in CoPilot before shutting down your old CoPilot. Reset the IP address of your newly launched Controller in CoPilot > Settings > Configuration > click **Reset Controller IP**. If you fail to do so, you may be locked out of your CoPilot after the migration.
 
-Backup up the Configuration 
+Backing up the Configuration 
 -----------------------------------------------------
 
 Aviatrix stores the Controller backup in an AWS S3 bucket or an Azure Container. Before you begin, determine where you would like to store the backup and create either the S3 bucket or Azure Container.
