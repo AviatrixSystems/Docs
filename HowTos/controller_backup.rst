@@ -12,30 +12,29 @@ When the Controller is down or out of service, your network will continue to be 
 
 This loosely coupled relationship between the Controller and gateways reduces the impact of the availability of the Controller and simplifies your infrastructure. Since the Controller stores configuration data, it should be periodically backed up to the appropriate AWS/Azure/Google account. If a replacement Controller is launched, you can restore the configuration data from your backup. 
 
-     .. note::
+.. note::
 
-	Note: If you have the Controller HA cloud formation stack running, please make sure you delete the stack prior to stopping the existing Controller, to avoid complications and failures in this restore operation.
+  Note: If you have the Controller HA cloud formation stack running, please make sure you delete the stack prior to stopping the existing Controller, to avoid complications and failures in this restore operation.
 
 .. important:: 
 
-  If you choose to migrate your Controller using backup and then restoring to a new Controller, you must reset the IP address of your newly launched Controller in CoPilot before shutting dow your old CoPilot. Reset the IP address of your newly launched Controller in CoPilot > Settings > Configuration > click **Reset Controller IP**. If you fail to do so, you may be locked out of your CoPilot after the migration.
+  If you choose to migrate your Controller using backup and then restoring to a new Controller, you must reset the IP address of your newly launched Controller in CoPilot before shutting down your old CoPilot. Reset the IP address of your newly launched Controller in CoPilot > Settings > Configuration > click **Reset Controller IP**. If you fail to do so, you may be locked out of your CoPilot after the migration.
 
-How to Backup Configuration 
+Backup up the Configuration 
 -----------------------------------------------------
 
 Aviatrix stores the Controller backup in an AWS S3 bucket or an Azure Container. Before you begin, determine where you would like to store the backup and create either the S3 bucket or Azure Container.
 
 .. warning::
 
-  Make sure your Controller backup and Controller restore are in the same CSP (Cloud Service Provider): AWS, Azure, or GCP and share the same basic configuration. For example, an AWS backup can only restore to another AWS Controller. 
-
-  Note that in the case of AWS backups, an AWS Controller set up with IAM roles cannot backup and restore to an AWS Controller set up with a secret key, or vice versa.
+  * Make sure your Controller backup and Controller restore are in the same CSP (Cloud Service Provider): AWS, Azure, or GCP and share the same basic configuration. For example, an AWS backup can only restore to another AWS Controller. 
+  * Note that in the case of AWS backups, an AWS Controller set up with IAM roles cannot backup and restore to an AWS Controller set up with a secret key, or vice versa.
 
   #. Log into the Controller.
   #. Click on the `Settings` navigation item.
   #. Click on the `Maintenance` sub item.
   #. Click on the `Backup & Restore` tab.
-  #. Under the `BACKUP` section:
+  #. Under the `Backup` section:
 
      - Select the appropriate `Cloud Type` and `Account Name`.
      - Populate the `S3 Bucket Name` for AWS or `Region`, `Storage Name`, and `Container Name` for Azure.
@@ -64,17 +63,16 @@ If you want to force an immediate backup (e.g. for a configuration change) you c
 
 
 
-How to Restore Configuration
---------------------------------
+Restoring the Configuration
+---------------------------------------
 
 .. note::
 	In Private Mode, restoration can only be done in the same VPC as the previous Controller. You cannot restore a Controller that has been created in a different VPC. Click `here <https://docs.aviatrix.com/HowTos/privatemode.html>`_ for more information on Private Mode.
 
 .. warning::
 
-  Make sure your Controller backup and Controller restore are in the same CSP (Cloud Service Provider): AWS, Azure, or GCP and share the same basic configuration. For example, an AWS backup can only restore to another AWS Controller. 
-
-  Note that in the case of AWS backups, an AWS Controller set up with IAM roles cannot backup and restore to an AWS Controller set up with a secret key, or vice versa.
+  * Make sure your Controller backup and Controller restore take place in the same CSP (Cloud Service Provider): AWS, Azure, or GCP and share the same basic configuration. For example, an AWS backup can only restore to another AWS Controller. 
+  * Note that in the case of AWS backups, an AWS Controller set up with IAM roles cannot backup and restore to an AWS Controller set up with a secret key, or vice versa.
 
 If you are starting from a new Controller, follow these steps to get started:
 
