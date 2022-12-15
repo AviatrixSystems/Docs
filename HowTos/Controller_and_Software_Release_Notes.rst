@@ -34,6 +34,10 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 - If a feature in private preview mode is promoted to an officially supported product it will be announced in the product release notes.
 - Private preview mode features are clearly marked in the UI but are disabled by default. If you wish to enable a private preview mode feature, please contact your sales representative.
 
+.. important::
+
+  For the release notes of Controller and Gateway software versions 7.0 and later, click `here <https://docs.aviatrix.com/documentation/latest/release-notes/software-release-notes/software-release-notes.html>`_. The content below is an archived list of release notes for software versions 6.9 and earlier.
+
 6.8.1400 (11/18/2022)
 ===============================
 
