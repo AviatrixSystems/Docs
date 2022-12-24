@@ -148,7 +148,7 @@ FAQ
    
 * How do I make lambda talk to the controller privately within the VPC?
     
-	Launch CFT with Private access set to True. Attach lambda to the VPC from the AWS console. Ensure that the VPC that you have attached the lambda to has internet access via NAT gateway or VPC endpoints. You can also ensure that lambda has internet access by attaching an EIP(Elastic IP) to the lambda ENI(Network Interface). Please ensure that everything is reverted before you destroy the stack. Otherwise the lambda will not have internet access to respond to the CFT(CFT may get stuck on destroy).
+	Launch CFT with Private access set to True. Attach lambda to the VPC from the AWS console. Ensure that the VPC that you have attached the lambda to has internet access via NAT gateway or VPC endpoints. You can also ensure that lambda has internet access by attaching an EIP(Elastic IP) to the lambda ENI(Network Interface). Please ensure that everything is reverted before you destroy the stack. Otherwise the lambda will not have internet access to respond to the CFT(CFT may get stuck on destroy). Please note that it takes around 15 minutes for lambda to get attached to the VPC and to be able to talk to the controller. Please wait for this duration of 15 minutes, after the VPC attachment, before attempting to test the HA script.
 
 * Can two controllers in two different regions be linked such that they can detect if one or the other is down? Is this possible?
 	Our Controller HA script leverages EC2 auto scaling. EC2 auto scaling doesn’t support cross regions but it does support cross AZs. The script will automatically bring up a new Controller in case the existing Controller enters an unhealthy state.
