@@ -1,5 +1,13 @@
 Aviatrix VPN Client Release Notes
 -----------------------------
+
+2.16 - Jan 04 2023
+- Prevent connection issues when the existing connection has not completely terminated
+- Update the About window with message to reach out to IT network admin for any issues with VPN client
+- Update OpenSSL version to 1.1.1o for Windows VPN clients
+- VPN client now supports Ubuntu 22.04
+- Ubuntu 16.04 support has been deprecated
+
 2.14.14 - April 27 2021
   - Support non-ASCII Windows user login account
   - Support non-ASCII VPN connection profile name on the client UI

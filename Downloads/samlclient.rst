@@ -28,8 +28,6 @@ Consult the VPN client `user guide <http://docs.aviatrix.com/Downloads/vpnclient
 
 Latest version: 2.14.14 - (April 27 2021) `Changelog <https://docs.aviatrix.com/HowTos/Aviatrix_VPN_Client_Release_Notes.html>`__
 
-Please ask your Aviatrix Administrator to upgrade the Aviatrix Controller to version 4.7.501 + to prevent seeing certificate errors -`Ref. <https://docs.aviatrix.com/HowTos/field_notices.html#field-notice-0005-2019-07-22>`_ 
-
 *************
 Windows |win|
 *************
@@ -63,6 +61,11 @@ If the icon is missing from the launcher, type AVPNC in the terminal to launch t
 Debian/Ubuntu
 =============
 
+Ubuntu22 LTS - ` https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_JammyJellyfish.deb`_
+` https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_JammyJellyfish.deb.checksum.txt`_
+` https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_JammyJellyfish.tar.gz`_
+` https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_JammyJellyfish.tar.gz.checksum.txt`_
+
 Ubuntu20.04 LTS - `Debian file <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_FocalFossa.deb>`__,
 `Tar file <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_FocalFossa.tar.gz>`__,
 `Debian file checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_FocalFossa.deb.checksum.txt>`__,
@@ -78,12 +81,7 @@ Ubuntu18.04.3 LTS - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-do
 `Debian file checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_debian_latest.deb.checksum.txt>`__,
 `Tar file checksum. <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_latest.tar.gz.checksum.txt>`__
 
-Ubuntu16.04 LTS - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_xenial.deb>`__,
-`Tar file <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_xenial.tar.gz>`__,
-`Debian file checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_xenial.deb.checksum.txt>`__,
-`Tar file checksum. <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_xenial.tar.gz.checksum.txt>`__
-
-Note: Currently we do not support Fedora/Arch-Linux. VPN Clients running on Ubuntu 14.04 are designated EOL.
+Note: Currently we do not support Fedora/Arch-Linux. VPN Clients running on Ubuntu 16.04 and older are designated EOL.
 
 
 *************
@@ -103,6 +101,11 @@ FIPS140-2 version
 
 `Mac <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_mac_FIPS.pkg>`__ ,
 `Checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_mac_FIPS.pkg.checksum.txt>`__
+
+`Ubuntu 22 tar <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_linux_JammyJellyfish_FIPS.tar.gz>`__,
+`Checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_linux_JammyJellyfish_FIPS.tar.gz.checksum.txt>`__
+`Ubuntu 22 deb <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_linux_JammyJellyfish_FIPS.deb>`__,
+`Checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_linux_JammyJellyfish_FIPS.deb.checksum.txt>`__
 
 `Ubuntu 20 tar <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_linux_FocalFossa_FIPS.tar.gz>`__,
 `Checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_linux_FocalFossa_FIPS.tar.gz.checksum.txt>`__
