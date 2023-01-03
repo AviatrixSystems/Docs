@@ -102,6 +102,11 @@ FIPS140-2 version
 `Mac <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_mac_FIPS.pkg>`__ ,
 `Checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_mac_FIPS.pkg.checksum.txt>`__
 
+`Ubuntu 22 tar <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_linux_JammyJellyfish_FIPS.tar.gz>`__,
+`Checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_linux_JammyJellyfish_FIPS.tar.gz.checksum.txt>`__
+`Ubuntu 22 deb <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_linux_JammyJellyfish_FIPS.deb>`__,
+`Checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_linux_JammyJellyfish_FIPS.deb.checksum.txt>`__
+
 `Ubuntu 20 tar <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_linux_FocalFossa_FIPS.tar.gz>`__,
 `Checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/fips/AVPNC_linux_FocalFossa_FIPS.tar.gz.checksum.txt>`__
 
