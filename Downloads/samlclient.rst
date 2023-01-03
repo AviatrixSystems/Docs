@@ -61,10 +61,10 @@ If the icon is missing from the launcher, type AVPNC in the terminal to launch t
 Debian/Ubuntu
 =============
 
-Ubuntu22 LTS - `AVPNC_linux_JammyJellyfish.deb`_
-`AVPNC_linux_JammyJellyfish.deb.checksum.txt`_
-`AVPNC_linux_JammyJellyfish.tar.gz`_
-`AVPNC_linux_JammyJellyfish.tar.gz.checksum.txt`_
+Ubuntu22 LTS - ` https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_JammyJellyfish.deb`_
+` https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_JammyJellyfish.deb.checksum.txt`_
+` https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_JammyJellyfish.tar.gz`_
+` https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_JammyJellyfish.tar.gz.checksum.txt`_
 
 Ubuntu20.04 LTS - `Debian file <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_FocalFossa.deb>`__,
 `Tar file <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_FocalFossa.tar.gz>`__,
@@ -81,7 +81,7 @@ Ubuntu18.04.3 LTS - `Debian file <https://s3-us-west-2.amazonaws.com/aviatrix-do
 `Debian file checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_debian_latest.deb.checksum.txt>`__,
 `Tar file checksum. <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_latest.tar.gz.checksum.txt>`__
 
-Note: Currently we do not support Fedora/Arch-Linux. VPN Clients running on Ubuntu 14.04 are designated EOL.
+Note: Currently we do not support Fedora/Arch-Linux. VPN Clients running on Ubuntu 16.04 and older are designated EOL.
 
 
 *************
