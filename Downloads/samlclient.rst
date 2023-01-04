@@ -23,10 +23,9 @@ provides a seamless user experience when authenticating a VPN user through a SAM
 
 The VPN Client can be installed on desktop platforms and is supported on various OS like Windows, Mac and Linux.
 
+Consult the VPN Client `user guide <http://docs.aviatrix.com/Downloads/vpnclientguide.html>`__ to set it up.
 
-Consult the VPN client `user guide <http://docs.aviatrix.com/Downloads/vpnclientguide.html>`__ for how to use it.
-
-Latest version: 2.14.14 - (April 27 2021) `Changelog <https://docs.aviatrix.com/HowTos/Aviatrix_VPN_Client_Release_Notes.html>`__
+Please see the `Release Notes <https://docs.aviatrix.com/documentation/latest/release-notes/vpn-client/vpn-release-notes.html>`_ to find the latest VPN client version.
 
 *************
 Windows |win|
