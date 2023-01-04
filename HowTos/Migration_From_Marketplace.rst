@@ -46,6 +46,14 @@ Prerequisites for all Clouds
 As a security best practice, enable versioning on the destination storage container to preserve, retrieve, and restore every version of every object stored.
 
 * (For AWS, Azure, and GCP Controllers) Get your Customer ID either through Controller > Settings > Controller > License or from your Aviatrix Account Manager. If you are migrating a metered image, subscribe to the Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support offer to receive your Customer ID by email.
+
+.. note::
+
+  To ensure that you receive the license email, please whitelist these email addresses:
+
+  * appalerts@aviatrix.com
+  * admin@aviatrix.io
+
 * Run an audit on the Controller’s primary access account and all the remaining secondary accounts to make sure that the IAM roles and policies are set up as suggested. In your Controller, go to Accounts > Access Accounts > select an account > click **Audit**. Repeat these steps for all access accounts for the CSP where your Controller instance is located (AWS, Azure, GCP, or OCI).
 * Enable a `Controller backup <https://docs.aviatrix.com/HowTos/controller_backup.html>`_ using the access account for the CSP from which you launched the Controller (Azure, GCP, or OCI). 
 
