@@ -21,9 +21,9 @@ Aviatrix VPN Client
 The Aviatrix VPN solution is the only VPN solution that provides SAML authentication from the client itself. The solution is built on OpenVPN®. The Aviatrix VPN Client
 provides a seamless user experience when authenticating a VPN user through a SAML IDP. The client also supports password based authentication methods as well.
 
-The VPN Client can be installed on desktop platforms and is supported on various OS like Windows, Mac and Linux.
+The VPN Client can be installed on desktop platforms and is supported on various operating systems like Windows, Mac and Linux.
 
-Consult the VPN Client `user guide <http://docs.aviatrix.com/Downloads/vpnclientguide.html>`__ to set it up.
+To set up the VPN Client, see the `User Guide <http://docs.aviatrix.com/Downloads/vpnclientguide.html>`_.
 
 Please see the `Release Notes <https://docs.aviatrix.com/documentation/latest/release-notes/vpn-client/vpn-release-notes.html>`_ to find the latest VPN client version.
 
