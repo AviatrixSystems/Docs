@@ -61,10 +61,10 @@ If the icon is missing from the launcher, type AVPNC in the terminal to launch t
 Debian/Ubuntu
 =============
 
-Ubuntu22 LTS - ` https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_JammyJellyfish.deb`_
-` https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_JammyJellyfish.deb.checksum.txt`_
-` https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_JammyJellyfish.tar.gz`_
-` https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_JammyJellyfish.tar.gz.checksum.txt`_
+Ubuntu22 LTS - `Debian file <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_JammyJellyfish.deb>`_
+`Debian file checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_JammyJellyfish.deb.checksum.txt>`_
+`Tar file <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_JammyJellyfish.tar.gz>`_
+`Tar file checksum <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_JammyJellyfish.tar.gz.checksum.txt>`_
 
 Ubuntu20.04 LTS - `Debian file <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_FocalFossa.deb>`__,
 `Tar file <https://aviatrix-download.s3-us-west-2.amazonaws.com/AviatrixVPNClient/AVPNC_linux_FocalFossa.tar.gz>`__,
