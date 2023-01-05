@@ -16,6 +16,11 @@
 ===================
 Aviatrix VPN Client 
 ===================
+
+.. important::
+
+  To download the latest VPN client, click `here <http://docs.aviatrix.com/Downloads/vpnclientguide.html>`_. 
+
 |Client|
 
 The Aviatrix VPN solution is the only VPN solution that provides SAML authentication from the client itself. The solution is built on OpenVPN®. The Aviatrix VPN Client
