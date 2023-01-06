@@ -38,6 +38,83 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   For the release notes of Controller and Gateway software versions 7.0 and later, click `here <https://docs.aviatrix.com/documentation/latest/release-notes/software-release-notes/software-release-notes.html>`_. The content below is a list of release notes for software versions 6.9 and earlier.
 
+6.9.282 (01/06/2022)
+==================================
+
+**Enhanced Features in Release 6.9.282**
+
+* **AVX-26394** - For users authenticated using SAML to log in to Controller, you can now block them from logging in if they do not have a Profile. Previously, such users would be logged in as read-only. 
+
+  You can enable this option using the Block Empty Profiles toggle switch per SAML endpoint in your Controller. Navigate to Settings > Controller > SAML login.
+
+* **AVX-28938 (AWS)** - You can now overcome the 1000-rule limitation in AWS for security group rules per instance by using the Controller Security Access Control feature. Instead of using AWS Security groups to control access to the Controller, the Controller itself manages incoming TCP 443 access. You can configure this feature using API 2.5. Please contact Aviatrix Support for more information.
+* **AVX-32976** - Aviatrix now supports service in the Azure China North 3 region.
+* **AVX-33021** - When authenticating a Site2Cloud connection using PSK-based authentication, you can now ignore or skip the Remote ID check by entering ““ in the Remote Identifier field. This enhancement lets you authenticate connections for Remote ID types that Aviatrix Gateways do not support, including IPv6, FQDN, or email. 
+
+  This change also allows you to check if a tunnel is down because of a mismatched Remote ID. You can enter ““ in the Remote Identifier field, and if the tunnel comes up, the Remote ID could be mismatched.
+
+* **AVX-33814** - When an account had too many S2C connections, transit segmentation pages failed to load.
+* **AVX-34089** - You can now use the KEY_ID as the remote identifier in the Pre-Shared Key authentication for editing Site2Cloud connection configuration.
+
+**Issues Corrected in Aviatrix Release 6.9.282**
+
+* **AVX-25209** - The Aviatrix rsyslog may have unexpectedly stopped forwarding logging packets to remote server(s).
+* **AVX-28175** - If you created an Azure Transit Gateway of size Dv4 and Dsv4 with BGP over LAN interfaces and HPE, you experienced an error: *[AVXERR-TRANSIT-0173] FireNet and BGP over LAN features require at least 4 interfaces*.
+* **AVX-30621 (AWS) ** - Controllers with a large number of access accounts experienced excessive memory usage.
+* **AVX-31614** - When a Cloud VPC/VNet route table was full, new routes were not programmed when old routes were withdrawn.
+* **AVX-32351** - During Packet Capture, if you clicked **Download** multiple times, you received an error message: “Failed to open file.” Now, you can download successfully even if you click **Download** multiple times.
+* **AVX-32283** - Certain web operations related to the Egress FQDN feature stalled due to fragmented TLS handshake packets. As a solution, the Aviatrix team coupled handling of these fragmented packets with the handling of packets with no SNI.
+
+  To allow connections with fragmented client hellos to go through, enable your Controller’s FQDN configuration to allow packets with no SNI to go through.
+
+* **AVX-32730** - You could not modify a UserVPN LDAP configuration and upload a CA certificate when more than one VPN Gateway was deployed behind a load balancer.
+* **AVX-32904** - If the Edge node could not access the Aviatrix release server because of a firewall setting or because the Management was over a private network, enabling the FIPS caused the Edge gateway to fail. The gateway could not be recovered.
+* **AVX-33791** - When the Netflow feature was either enabled or disabled, the NAT iptables rules could have been lost.
+
+**Features Deprecated in Aviatrix Release 6.9.282**
+
+**AVX-31334**  
+
+* The Transitive Peering feature is deprecated. This feature's functionality will be replaced by Aviatrix Multi-Cloud Transit.
+* Aviatrix recommends deleting Transitive Peerings from your account, and then upgrading your Controller.
+
+6.8.1455 (01/06/2022)
+==============================
+
+**Enhanced Features in Release 6.8.1455**
+
+* **AVX-26394** - For users authenticated using SAML to log in to Controller, you can now block them from logging in if they do not have a Profile. Previously, such users would be logged in as read-only. 
+
+  You can enable this option using the Block Empty Profiles toggle switch per SAML endpoint in your Controller. Navigate to Settings > Controller > SAML login.
+
+* **AVX-28938 (AWS)** - You can now overcome the 1000-rule limitation in AWS for security group rules per instance by using the Controller Security Access Control feature. Instead of using AWS Security groups to control access to the Controller, the Controller itself manages incoming TCP 443 access. You can configure this feature using API 2.5. Please contact Aviatrix Support for more information.
+* **AVX-30716** - Previously, Aviatrix Edge gateways were listening on port 111 on all interfaces. Now, Aviatrix has removed the open port 111 to improve security.
+* **AVX-33021** - When authenticating a Site2Cloud connection using PSK-based authentication, you can now ignore or skip the Remote ID check by entering ““ in the Remote Identifier field. This enhancement lets you authenticate connections for Remote ID types that Aviatrix Gateways do not support, including IPv6, FQDN, or email. 
+
+  This change also allows you to check if a tunnel is down because of a mismatched Remote ID. You can enter ““ in the Remote Identifier field, and if the tunnel comes up, the Remote ID could be mismatched.
+
+* **AVX-33814** - When an account had too many S2C connections, transit segmentation pages failed to load.
+* **AVX-34089** - You can now use the KEY_ID as the remote identifier in the Pre-Shared Key authentication for editing Site2Cloud connection configuration.
+
+**Issues Corrected in Aviatrix Release 6.8.1455**
+
+* **AVX-25209** - The Aviatrix rsyslog may have unexpectedly stopped forwarding logging packets to remote server(s).
+* **AVX-28175** - If you created an Azure Transit Gateway of size Dv4 and Dsv4 with BGP over LAN interfaces and HPE, you experienced an error: *[AVXERR-TRANSIT-0173] FireNet and BGP over LAN features require at least 4 interfaces*.
+* **AVX-31614** - When the Cloud VPC/VNet route table was full, new routes were not programmed when old routes were withdrawn.
+* **AVX-32351** - During Packet Capture, if you clicked **Download** multiple times, you received an error message: “Failed to open file.” Now, you can download successfully even if you click **Download** multiple times.
+* **AVX-32283** - Certain web operations related to the Egress FQDN feature stalled due to fragmented TLS handshake packets. As a solution, the Aviatrix team coupled handling of these fragmented packets with the handling of packets with no SNI.
+
+  To allow connections with fragmented client hellos to go through, enable your Controller’s FQDN configuration to allow packets with no SNI to go through.
+
+* **AVX-33791** - When the Netflow feature was either enabled or disabled, the NAT iptables rules could have been lost. 
+
+**Features Deprecated in Aviatrix Release 6.8.1455**
+
+**AVX-31334**  
+
+* The Transitive Peering feature is deprecated. This feature's functionality will be replaced by Aviatrix Multi-Cloud Transit.
+* Aviatrix recommends deleting Transitive Peerings from your account, and then upgrading your Controller.
+
 6.8.1400 (11/18/2022)
 ===============================
 
@@ -113,8 +190,8 @@ Attention AWS users. The Controller Security Access Control feature overcomes th
 
 **Deprecated Features in Aviatrix Release 6.8.1398**
 
-* The Transitive Peering features is deprecated. This features’ functionality will be replaced by Aviatrix Multi-Cloud Transit.
-* Aviatrix recommends deleting Encrypted and Transitive Peerings from your account, and then upgrading your Controller.
+* The Transitive Peering feature is deprecated. This feature's functionality will be replaced by Aviatrix Multi-Cloud Transit.
+* Aviatrix recommends deleting Transitive Peerings from your account, and then upgrading your Controller.
 
 6.9.188 (10/21/2022)
 ==========================================
