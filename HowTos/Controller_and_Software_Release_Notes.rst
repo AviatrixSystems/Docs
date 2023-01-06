@@ -38,7 +38,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   For the release notes of Controller and Gateway software versions 7.0 and later, click `here <https://docs.aviatrix.com/documentation/latest/release-notes/software-release-notes/software-release-notes.html>`_. The content below is a list of release notes for software versions 6.9 and earlier.
 
-6.9.282 (01/06/2022)
+6.9.282 (01/06/2023)
 ==================================
 
 **Enhanced Features in Release 6.9.282**
@@ -59,7 +59,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 **Issues Corrected in Aviatrix Release 6.9.282**
 
 * **AVX-25209** - The Aviatrix rsyslog may have unexpectedly stopped forwarding logging packets to remote server(s).
-* **AVX-28175** - If you created an Azure Transit Gateway of size Dv4 and Dsv4 with BGP over LAN interfaces and HPE, you experienced an error: *[AVXERR-TRANSIT-0173] FireNet and BGP over LAN features require at least 4 interfaces*.
+* **AVX-28175** - If you created an Azure Transit Gateway of size Dv4 and Dsv4 with BGP over LAN interfaces and HPE, you experienced an error: *[AVXERR-TRANSIT-0173] FireNet and BGP over LAN features require at least 4 interfaces.*
 * **AVX-30621 (AWS)** - Controllers with a large number of access accounts experienced excessive memory usage.
 * **AVX-31614** - When a Cloud VPC/VNet route table was full, new routes were not programmed when old routes were withdrawn.
 * **AVX-32351** - During Packet Capture, if you clicked **Download** multiple times, you received an error message: “Failed to open file.” Now, you can download successfully even if you click **Download** multiple times.
@@ -78,7 +78,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * The Transitive Peering feature is deprecated. This feature's functionality will be replaced by Aviatrix Multi-Cloud Transit.
 * Aviatrix recommends deleting Transitive Peerings from your account, and then upgrading your Controller.
 
-6.8.1455 (01/06/2022)
+6.8.1455 (01/06/2023)
 ==============================
 
 **Enhanced Features in Release 6.8.1455**
