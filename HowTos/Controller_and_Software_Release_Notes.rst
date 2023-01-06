@@ -60,7 +60,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 * **AVX-25209** - The Aviatrix rsyslog may have unexpectedly stopped forwarding logging packets to remote server(s).
 * **AVX-28175** - If you created an Azure Transit Gateway of size Dv4 and Dsv4 with BGP over LAN interfaces and HPE, you experienced an error: *[AVXERR-TRANSIT-0173] FireNet and BGP over LAN features require at least 4 interfaces*.
-* **AVX-30621 (AWS) ** - Controllers with a large number of access accounts experienced excessive memory usage.
+* **AVX-30621 (AWS)** - Controllers with a large number of access accounts experienced excessive memory usage.
 * **AVX-31614** - When a Cloud VPC/VNet route table was full, new routes were not programmed when old routes were withdrawn.
 * **AVX-32351** - During Packet Capture, if you clicked **Download** multiple times, you received an error message: “Failed to open file.” Now, you can download successfully even if you click **Download** multiple times.
 * **AVX-32283** - Certain web operations related to the Egress FQDN feature stalled due to fragmented TLS handshake packets. As a solution, the Aviatrix team coupled handling of these fragmented packets with the handling of packets with no SNI.
