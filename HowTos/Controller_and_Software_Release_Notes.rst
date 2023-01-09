@@ -47,7 +47,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Issues Corrected in Aviatrix Release 6.7.1526**
 
-* **AVX-28175** - If you created an Azure Transit Gateway of size Dv4 and Dsv4 with BGP over LAN interfaces and HPE, you experienced an error: _[AVXERR-TRANSIT-0173] FireNet and BGP over LAN features require at least 4 interfaces._
+* **AVX-28175** - If you created an Azure Transit Gateway of size Dv4 and Dsv4 with BGP over LAN interfaces and HPE, you experienced an error: *[AVXERR-TRANSIT-0173] FireNet and BGP over LAN features require at least 4 interfaces.*
 * **AVX-31614** - When the Cloud VPC/VNet route table was full, new routes were not programmed when old routes were withdrawn.
 
 
