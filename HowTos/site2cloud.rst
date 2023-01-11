@@ -201,8 +201,13 @@ By default, Aviatrix configures gateway's public IP as the Local Identifier. Use
 
 Remote Identifier
 -------------------------
+Aviatrix only supports IP_ADDRESS and KEY_ID as the IKE identity type for the remote identifier in the pre-shared key authentication. The IP_ADDRESS must be a valid IPv4 IP address. The KEY_ID is a remote device ID during the key authentication.
 
-By default, Aviatrix configures public IP of peer device as the Remote Identifier. User can adjust these settings to the private IP of peer device.
+By default, Aviatrix configures the public IPv4 address of the peer device as the Remote Identifier for pre-shared key authentication. You can adjust this setting to the private IPv4 address of the peer device.
+
+If you enter string(s) other than an IPv4 address or empty string(""), the string(s) you entered is treated as Key_ID. If KEY_ID value is not correct, this field validation will fail.
+
+If you are unsure about this field's value, enter an empty string("") to skip the validation of this field.
 
 Download Configuration
 ------------------------
