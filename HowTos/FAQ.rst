@@ -96,7 +96,7 @@ communicate back to the Controller.
 
 You can use the Controller Security Management feature to automatically manage the Controller instance's inbound rules from gateways.  
 
-Go to Settings > Controller > Access Security, select the `primary access account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#setup-primary-access-account-for-aws-cloud>`_, and click **Enable**. 
+Go to Settings > Controller > Access Security > Controller Security Group Management, select the `primary access account <http://docs.aviatrix.com/HowTos/aviatrix_account.html#setup-primary-access-account-for-aws-cloud>`_, and click **Enable**. 
 
 .. note::
 
