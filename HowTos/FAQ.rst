@@ -418,22 +418,6 @@ Do you have the CloudFormation source code for launching the Controller?
 
 Yes, the source repository for Controller launch can be found on Github at `here. <https://github.com/AviatrixSystems/aws-controller-launch-cloudformation-templates>`_
 
-How does the user VPN charge work for Metered AMI in AWS Marketplace?
---------------------------------------------------------------------------------------------
-
-If you subscribe to `Aviatrix Secure Networking Platform PAYG - Metered <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1566186364777&sr=0-1&ref_=srh_res_product_title>`_, the user VPN cost is $0.03/hour/connection. 
-$0.03 is counted each hour when the VPN user is connected to the Aviatrix VPN gateway. Once the VPN user disconnects, the metering for that session stops. 
-
-Aviatrix Controller monitors the active VPN sessions and reports to AWS Marketplace engine every hour the number of active VPN sessions in the last hour. Note when a VPN user connects, 
-the session is counted for the next hour.
-
-Can you explain the AWS Marketplace Metered AMI pricing models?
---------------------------------------------------------------------------------------
-
-Aviatrix Metered AMI in the AWS Marketplace is a multi-dimension, pay-as-you-consume model. Each price unit represents one or more use cases. You are charged for the specific use case you consume. For example, "Number of User or Client SSL VPN Connections" is $0.0x/hour/connection, which means if you deploy User VPN use case, each client connection is charged for $0.0x/hour while the VPN client is connected. Once the VPN client disconnects, the charge stops. 
-
-To review the latest metered pricing information, see the `Aviatrix AWS Marketplace listing <https://aws.amazon.com/marketplace/pp/prodview-qzvzwigqw72ek?sr=0-3&ref_=beagle&applicationId=AWSMPContessa>`_. For questions on pricing, please `contact us <https://aviatrix.com/contact/>`_ or reach out to your Aviatrix account team.
-
 How are security updates handled and delivered by Aviatrix?
 ----------------------------------------------------------------------------
 
