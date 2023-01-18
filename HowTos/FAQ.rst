@@ -418,32 +418,6 @@ Do you have the CloudFormation source code for launching the Controller?
 
 Yes, the source repository for Controller launch can be found on Github at `here. <https://github.com/AviatrixSystems/aws-controller-launch-cloudformation-templates>`_
 
-How does the user VPN charge work for Metered AMI in AWS Marketplace?
---------------------------------------------------------------------------------------------
-
-If you subscribe to `Aviatrix Secure Networking Platform PAYG - Metered <https://aws.amazon.com/marketplace/pp/B079T2HGWG?qid=1566186364777&sr=0-1&ref_=srh_res_product_title>`_, the user VPN cost is $0.03/hour/connection. 
-$0.03 is counted each hour when the VPN user is connected to the Aviatrix VPN gateway. Once the VPN user disconnects, the metering for that session stops. 
-
-Aviatrix Controller monitors the active VPN sessions and reports to AWS Marketplace engine every hour the number of active VPN sessions in the last hour. Note when a VPN user connects, 
-the session is counted for the next hour.
-
-Can you explain the AWS Marketplace Metered AMI pricing models?
---------------------------------------------------------------------------------------
-
-Aviatrix Metered AMI in the AWS Marketplace is a multi-dimension, pay-as-you-consume model. Each price unit
-represents one or more use cases. You are charged for the specific use case you consume. For example, "Number of User or Client SSL VPN Connections" is $0.03/hour/connection, which means if you deploy User VPN use case, each client connection is charged for $0.03/hour while the VPN client is connected. Once the VPN client disconnects, the charge stops. 
-
-The details are explained in the table below. 
-
-=============================================================      ===============    ==============================
-**Unit Type**                                                      **Cost/Unit**      **Use Case**
-=============================================================      ===============    ==============================
-Number of VPC-to-VPC IPSec Tunnel Connections within AWS            $0.19             TGW VPC attachment, Aviatrix Spoke VPC attachment, encrypted peering, Transit Peering
-Number of User or Client SSL VPN Connections                        $0.04             User VPN 
-Number of Gateways running Security Services                        $0.19             Aviatrix gateway with FQDN service
-Number of VPC to Site or Multi-cloud IPSec Tunnel Connections       $0.58             Site2Cloud use case
-=============================================================      ===============    ==============================
-
 How are security updates handled and delivered by Aviatrix?
 ----------------------------------------------------------------------------
 
