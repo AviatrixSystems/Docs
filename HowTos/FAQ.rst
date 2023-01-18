@@ -430,19 +430,9 @@ the session is counted for the next hour.
 Can you explain the AWS Marketplace Metered AMI pricing models?
 --------------------------------------------------------------------------------------
 
-Aviatrix Metered AMI in the AWS Marketplace is a multi-dimension, pay-as-you-consume model. Each price unit
-represents one or more use cases. You are charged for the specific use case you consume. For example, "Number of User or Client SSL VPN Connections" is $0.03/hour/connection, which means if you deploy User VPN use case, each client connection is charged for $0.03/hour while the VPN client is connected. Once the VPN client disconnects, the charge stops. 
+Aviatrix Metered AMI in the AWS Marketplace is a multi-dimension, pay-as-you-consume model. Each price unit represents one or more use cases. You are charged for the specific use case you consume. For example, "Number of User or Client SSL VPN Connections" is $0.03/hour/connection, which means if you deploy User VPN use case, each client connection is charged for $0.03/hour while the VPN client is connected. Once the VPN client disconnects, the charge stops. 
 
-The details are explained in the table below. 
-
-=============================================================      ===============    ==============================
-**Unit Type**                                                      **Cost/Unit**      **Use Case**
-=============================================================      ===============    ==============================
-Number of VPC-to-VPC IPSec Tunnel Connections within AWS            $0.19             TGW VPC attachment, Aviatrix Spoke VPC attachment, encrypted peering, Transit Peering
-Number of User or Client SSL VPN Connections                        $0.04             User VPN 
-Number of Gateways running Security Services                        $0.19             Aviatrix gateway with FQDN service
-Number of VPC to Site or Multi-cloud IPSec Tunnel Connections       $0.58             Site2Cloud use case
-=============================================================      ===============    ==============================
+To review the latest metered pricing information, see the `Aviatrix AWS Marketplace listing <https://aws.amazon.com/marketplace/pp/prodview-qzvzwigqw72ek?sr=0-3&ref_=beagle&applicationId=AWSMPContessa>`_. For questions on pricing, please `contact us <https://aviatrix.com/contact/>`_ or reach out to your Aviatrix account team.
 
 How are security updates handled and delivered by Aviatrix?
 ----------------------------------------------------------------------------
