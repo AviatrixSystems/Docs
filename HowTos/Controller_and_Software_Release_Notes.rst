@@ -119,6 +119,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   To allow connections with fragmented client hellos to go through, enable your Controller’s FQDN configuration to allow packets with no SNI to go through.
 
+* **AVX-32807** - Resolved an asymmetric traffic flow issue with the rxhash network setting. Note that this fix is essential for customers who are upgrading Azure Gateway images from v8 to v13.
 * **AVX-33791** - When the Netflow feature was either enabled or disabled, the NAT iptables rules could have been lost. 
 
 **Features Deprecated in Aviatrix Release 6.8.1455**
