@@ -38,6 +38,12 @@ Tasks carried out by an Admin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. The admin creates an account admin group by logging in and navigating to Accounts > Permission Groups > **+Add New**. The admin gives the group a name, such as "account-admins."
+
+.. note:: For every new Permission Group, the admin has two additional options:
+
+ * Toggle Local Login (disabled by default) – This setting determines whether users log into the Controller with a local password vs. an LDAP password. The admin can enable this setting to let users log in with a local password, which will allow users who are not registered in the Active Directory to log into the Controller.
+ * Toggle Concurrent Session (enabled by default) – This setting determines whether users can have concurrent sessions, or multiple login sessions per user on different browser sessions. The admin can disable this setting to ensure that a user can only have one login session at a time.
+
 2. The admin gives this group permission to create Access Accounts by navigating to Accounts > Permission Groups. The admin selects the group in the table > **Manage Permission**> **+Add New**. 
 3. The admin selects **Accounts** in the list of functions and **OK** to confirm. 
 4. The admin creates user Bob to the account_admins group by navigating to Account Users > **+New User**. The admin enters Bob in the name field and completes the other fields. For the field RBAC Groups, the admin selects account-admins created in step 1. 
