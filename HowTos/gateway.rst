@@ -64,7 +64,6 @@ AWS Performance Numbers:
 
 Azure Performance Numbers (without Insane mode):
 
-
 +----------------------------+-------------------------------------------------+
 | Azure Instance Size        | Expected Throughput                             |
 +============================+=================================================+
@@ -74,6 +73,10 @@ Azure Performance Numbers (without Insane mode):
 +----------------------------+-------------------------------------------------+
 | F Series                   | approximately 450Mbps - 1.2Gbps                 |
 +----------------------------+-------------------------------------------------+
+
+.. note::
+
+  SSD-based Virtual Machines are recommended. The names of SSD-based VMS have an “s” before the version number: “Standard_D1**s**_v2,” “Standard_D2**s**_v3,” etc.
 
 GCP Performance Numbers (without Insane mode):
 
