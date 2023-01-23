@@ -76,7 +76,7 @@ Azure Performance Numbers (without Insane mode):
 
 .. note::
 
-  SSD-based Virtual Machines are recommended. The names of SSD-based VMS have an “s” before the version number: “Standard_D1**s**_v2,” “Standard_D2**s**_v3,” etc.
+  SSD-based Virtual Machines are recommended. The names of SSD-based VMs have an “s” before the version number: for example, “Standard_D1**s**_v2,” “Standard_D2**s**_v3,” etc.
 
 GCP Performance Numbers (without Insane mode):
 
