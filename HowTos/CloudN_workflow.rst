@@ -192,7 +192,7 @@ Registering with Aviatrix Controller FQDN Name
 
 			Registering CloudN to Aviatrix Controller via private networks is not a fully supported scenario; please discuss this with the Aviatrix team during the planning phase before you finalize the design for the Managed CloudN deployment. 
 	
-4. Enter Aviatrix Controller Username/Password with an admin user credential (any users in admin RBAC Groups).
+4. Enter Aviatrix Controller Username/Password with an admin or CloudN user credential (any users in admin RBAC Groups or an RBAC Group with the CloudN permission enabled).
 5. Enter the Gateway Name to represent this CloudN device.
 6. Click **Register.**
 7. Click **OK** to confirm. Wait about 40-60 seconds to complete the registration process.
