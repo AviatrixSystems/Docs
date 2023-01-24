@@ -38,24 +38,24 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   For the release notes of Controller and Gateway software versions 7.0 and later, click `here <https://docs.aviatrix.com/documentation/latest/release-notes/software-release-notes/software-release-notes.html>`_. The content below is a list of release notes for software versions 6.9 and earlier.
 
-6.9.289 (01/24/2023)
+6.9.295 (01/24/2023)
 ==================================
 
-**Issues Corrected in Release 6.9.289**
+**Issues Corrected in Release 6.9.295**
 
 * **AVX-34401** - After the Controller was updated to the 6.7.1376 software version with the AVX-25632 bug fix, you could not attach a CloudN as a Gateway (CaaG) to an Azure Transit Gateway.
 
-6.8.1463 (01/24/2023)
+6.8.1469 (01/24/2023)
 ==================================
 
-**Issues Corrected in Release 6.8.1463**
+**Issues Corrected in Release 6.8.1469**
 
 * **AVX-34401** - After the Controller was updated to the 6.7.1376 software version with the AVX-25632 bug fix, you could not attach a CloudN as a Gateway (CaaG) to an Azure Transit Gateway.
 
-6.7.1529 (01/24/2023)
+6.7.1535 (01/24/2023)
 ==================================
 
-**Issues Corrected in Release 6.7.1529**
+**Issues Corrected in Release 6.7.1535**
 
 * **AVX-34401** - After the Controller was updated to the 6.7.1376 software version with the AVX-25632 bug fix, you could not attach a CloudN as a Gateway (CaaG) to an Azure Transit Gateway.
 
