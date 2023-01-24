@@ -44,6 +44,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 **Issues Corrected in Release 6.9.295**
 
 * **AVX-34401** - After the Controller was updated to the 6.7.1376 software version with the AVX-25632 bug fix, you could not attach a CloudN as a Gateway (CaaG) to an Azure Transit Gateway.
+* **AVX-34887**  - BGP learned routes have been optimized to handle 10K routes with long AS Path lengths from multiple neighbors. This update helps you scale your network successfully.
 
 6.8.1469 (01/24/2023)
 ==================================
@@ -51,6 +52,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 **Issues Corrected in Release 6.8.1469**
 
 * **AVX-34401** - After the Controller was updated to the 6.7.1376 software version with the AVX-25632 bug fix, you could not attach a CloudN as a Gateway (CaaG) to an Azure Transit Gateway.
+* **AVX-34887**  - BGP learned routes have been optimized to handle 10K routes with long AS Path lengths from multiple neighbors. This update helps you scale your network successfully.
 
 6.7.1535 (01/24/2023)
 ==================================
@@ -58,6 +60,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 **Issues Corrected in Release 6.7.1535**
 
 * **AVX-34401** - After the Controller was updated to the 6.7.1376 software version with the AVX-25632 bug fix, you could not attach a CloudN as a Gateway (CaaG) to an Azure Transit Gateway.
+* **AVX-34887**  - BGP learned routes have been optimized to handle 10K routes with long AS Path lengths from multiple neighbors. This update helps you scale your network successfully.
 
 6.7.1526 (01/09/2023)
 =================================
