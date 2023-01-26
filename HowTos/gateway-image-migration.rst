@@ -28,7 +28,8 @@ This document shows you how to upgrade an Aviatrix Gateway to a new image.
 
 Prerequisites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- 
+
+- Check the `current software version <https://docs.aviatrix.com/documentation/latest/platform-administration/controller-migration.html>`_ of your Controller. You cannot upgrade your gateways to a newer version than your Controller.
 - Every quarter, or if you receive a field notice about a new image, schedule this gateway image upgrade for an off-peak time on your network, during a maintenance window. These upgrades do require some downtime, but they have minimal impact. 
 - Consider enabling HA (High Availability) on the Transit and Spoke Gateways that require an image upgrade if you have not done so. HA helps minimize downtime. 
  
