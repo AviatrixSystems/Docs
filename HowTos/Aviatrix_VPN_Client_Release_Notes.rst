@@ -9,6 +9,10 @@ Aviatrix VPN Client Release Notes
 - VPN client now supports Ubuntu 22.04
 - Ubuntu 16.04 support has been deprecated
 
+**Issues Corrected in VPN Client 2.16.42**
+
+When you set your minimum version client to 2.16.42 under OpenVPN > Advanced > Global Config > Minimum Aviatrix VPN Client Version, Mac and Ubuntu users received an error: “the required minimum VPN client is 2.16.42.” Note that this issue did not affect Windows users.
+
 **2.14.14 - April 27 2021**
 
   - Support non-ASCII Windows user login account
