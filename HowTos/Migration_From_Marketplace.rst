@@ -64,6 +64,7 @@ As a security best practice, enable versioning on the destination storage contai
 * Back up your existing Controller. In your Controller, go to Settings  >  Maintenance  > Backup & Restore  >  Backup. Click **Backup now**. As a security best practice, when the backup completes, verify that it is the correct size and make a local copy of the backup file (object).
 * Schedule the migration during a maintenance window.
 * Walk through the `pre-op checklist <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_.
+* Check the current software version of your `gateways <https://docs.aviatrix.com/documentation/latest/platform-administration/gateway-image-migration.html>`_. You cannot upgrade your Controller unless all gateways are on the same version as the Controller.
 * `Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ to the latest build of your current release. Note that Aviatrix software version upgrade is a version-to-version upgrade. Therefore, you may need to perform multiple upgrades until you reach the latest version on your existing Controller. 
 * `Disable <https://docs.aviatrix.com/HowTos/controller_ha.html#steps-to-disable-controller-ha>`_ your Controller's HA configuration if HA is set up. You can `reenable <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ HA on the new Controller once migration is complete.
 
