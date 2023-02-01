@@ -38,6 +38,26 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   For the release notes of Controller and Gateway software versions 7.0 and later, click `here <https://docs.aviatrix.com/documentation/latest/release-notes/software-release-notes/software-release-notes.html>`_. The content below is a list of release notes for software versions 6.9 and earlier.
 
+#6.7.g# (02/01/2023)
+==================================
+
+**Issues Corrected in Release #6.7.g#**
+
+* **AVX-34823** - (AWS and Azure) In AWS accounts in the Controller that were onboarded using a key and secret instead of IAM Roles, an error occurred when you tried to bring up an Azure gateway.
+* **AVX-26020** - When you did a Controller backup and restore, the Controller temporarily lost its BGP routes. This loss caused network flapping and a loss of traffic until the routes were restored.
+
+**Known Issues in Release #6.7.g#**
+
+**AVX-30776**  - (Azure) Avoid upgrading your Azure gateway image on gateways with “unmanaged disks” when the Companion Gateway version is “aviatrix-companion-gateway-v8” or an earlier Companion Gateway version.
+
+Azure and Aviatrix have prepared some special images with unmanaged disk support so you can upgrade a gateway image with an unmanaged disk. These are the Companion Gateway versions you can safely upgrade with an unmanaged disk:
+
+* Controller version 6.7 - aviatrix-companion-gateway-v10u
+* Controller version 6.8, 6.9 - aviatrix-companion-gateway-v13u
+* Controller version 7.0, 7.1 - aviatrix-companion-gateway-v14u
+
+
+
 6.9.295 (01/24/2023)
 ==================================
 
