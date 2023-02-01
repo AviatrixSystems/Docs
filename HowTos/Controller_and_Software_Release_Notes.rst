@@ -38,6 +38,68 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   For the release notes of Controller and Gateway software versions 7.0 and later, click `here <https://docs.aviatrix.com/documentation/latest/release-notes/software-release-notes/software-release-notes.html>`_. The content below is a list of release notes for software versions 6.9 and earlier.
 
+6.7.1550 (02/01/2023)
+==================================
+
+**Issues Corrected in Release 6.7.1550**
+
+* **AVX-26020** - When you did a Controller backup and restore, the Controller temporarily lost its BGP routes. This loss caused network flapping and a loss of traffic until the routes were restored.
+* **AVX-34823** - (AWS and Azure) In AWS accounts in the Controller that were onboarded using a key and secret instead of IAM Roles, an error occurred when you tried to bring up an Azure gateway.
+
+**Known Issues in Release 6.7.1550**
+
+* **AVX-30776**  - (Azure) Avoid upgrading your Azure gateway image on gateways with “unmanaged disks” when the Companion Gateway version is “aviatrix-companion-gateway-v8” or an earlier Companion Gateway version.
+
+Azure and Aviatrix have prepared some special images with unmanaged disk support so you can upgrade a gateway image with an unmanaged disk. These are the Companion Gateway versions you can safely upgrade with an unmanaged disk:
+
+* Controller version 6.7 - aviatrix-companion-gateway-v10u
+* Controller version 6.8, 6.9 - aviatrix-companion-gateway-v13u
+* Controller version 7.0, 7.1 - aviatrix-companion-gateway-v14u
+
+6.8.1483 (02/01/2023)
+==================================
+
+**Feature Enhancements in Aviatrix Release 6.8.1483**
+
+* **AVX-34591**  - (AWS) Added support for the UAE (United Arab Emirates) region, or me-central-1, for AWS Gateways and VPCs.
+
+**Issues Corrected in Aviatrix Release 6.8.1483**
+
+* **AVX-34823** - (AWS and Azure) In AWS accounts in the Controller that were onboarded using a key and secret instead of IAM Roles, an error occurred when you tried to bring up an Azure gateway.
+
+**Known Issues in Aviatrix Release 6.8.1483**
+
+* **AVX-27704** - When a gateway had too many routes, the CoPilot Cloud Routes page did not display anything.
+* **AVX-30776** - (Azure) Avoid upgrading your Azure gateway image on gateways with “unmanaged disks” when the Companion Gateway version is “aviatrix-companion-gateway-v8” or an earlier Companion Gateway version.
+
+  Azure and Aviatrix have prepared some special images with unmanaged disk support so you can upgrade a gateway image with an unmanaged disk. These are the Companion Gateway versions you can safely upgrade with an unmanaged disk:
+
+ * Controller version 6.7 - aviatrix-companion-gateway-v10u
+ * Controller version 6.8, 6.9 - aviatrix-companion-gateway-v13u
+ * Controller version 7.0, 7.1 - aviatrix-companion-gateway-v14u
+
+6.9.308 (02/01/2023)
+==================================
+
+**Feature Enhancements in Aviatrix Release 6.9.308**
+
+* **AVX-34591**  - (AWS) Added support for the UAE (United Arab Emirates) region, or me-central-1, for AWS Gateways and VPCs.
+
+**Issues Corrected in Aviatrix Release 6.9.308**
+
+* **AVX-34823** - (AWS and Azure) In AWS accounts in the Controller that were onboarded using a key and secret instead of IAM Roles, an error occurred when you tried to bring up an Azure gateway.
+
+**Known Issues in Aviatrix Release 6.9.308**
+
+* **AVX-27704** - When a gateway had too many routes, the CoPilot Cloud Routes page did not display anything.
+* **AVX-30776** - (Azure) Avoid upgrading your Azure gateway image on gateways with “unmanaged disks” when the Companion Gateway version is “aviatrix-companion-gateway-v8” or an earlier Companion Gateway version.
+
+  Azure and Aviatrix have prepared some special images with unmanaged disk support so you can upgrade a gateway image with an unmanaged disk. These are the Companion Gateway versions you can safely upgrade with an unmanaged disk:
+
+ * Controller version 6.7 - aviatrix-companion-gateway-v10u
+ * Controller version 6.8, 6.9 - aviatrix-companion-gateway-v13u
+ * Controller version 7.0, 7.1 - aviatrix-companion-gateway-v14u
+
 6.9.295 (01/24/2023)
 ==================================
 
@@ -188,7 +250,7 @@ Note: To resolve this issue in versions older than release 6.9.b, restart cloudx
 
 * **AVX-30443** – BGP learned routes were temporarily removed and then added back ActiveMesh 1.0 was migrated to ActiveMesh 2.0. This issue could cause traffic interruption.
 
-**Features Deprecated in Aviatrix Release 6.7.1506
+**Features Deprecated in Aviatrix Release 6.7.1506**
 
 **AVX-31334**  
 
