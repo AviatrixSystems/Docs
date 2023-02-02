@@ -1,7 +1,7 @@
 Aviatrix VPN Client Release Notes
 -------------------------------------------------
 
-**2.16.42 - Jan 04 2023**
+**2.16.42 - Feb 02 2023**
 
 - Prevent connection issues when the existing connection has not completely terminated
 - Update the About window with message to reach out to IT network admin for any issues with VPN client
