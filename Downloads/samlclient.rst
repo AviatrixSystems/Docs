@@ -19,7 +19,7 @@ Aviatrix VPN Client
 
 .. important::
 
-  To download the latest VPN client, click `here <http://docs.aviatrix.com/Downloads/vpnclientguide.html>`_. 
+  To download the latest VPN client, click `here <https://docs.aviatrix.com/documentation/latest/aviatrix-openvpn/download-vpn-client.html>`_. 
 
 |Client|
 
