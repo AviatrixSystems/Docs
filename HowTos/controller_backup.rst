@@ -29,6 +29,7 @@ Aviatrix stores the Controller backup in an AWS S3 bucket or an Azure Container.
 
   * Make sure your Controller backup and Controller restore are in the same CSP (Cloud Service Provider): AWS, Azure, or GCP and share the same basic configuration. For example, an AWS backup can only restore to another AWS Controller. 
   * Note that in the case of AWS backups, an AWS Controller set up with IAM roles cannot backup and restore to an AWS Controller set up with a secret key, or vice versa.
+  * (AWS) The S3 bucket you use or create for Controller HA and Backups does not need to have public access enabled and should be configured to restrict general public access.
 
   #. Log into the Controller.
   #. Click on the `Settings` navigation item.
