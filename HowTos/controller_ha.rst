@@ -75,8 +75,15 @@ Launch CloudFormation Stack
    | Enter Name tag of the existing| Enter the **Name** tag for the existing  |
    | Aviatrix Controller instance. | Controller EC2 instance.                 |
    +-------------------------------+------------------------------------------+
-   | Enter S3 Bucket which will be | Name of S3 bucket that stores the        |
-   | used to store backup files.   | backup files from the AVX Controller.    |
+   | Enter S3 Bucket which will be |Name of S3 bucket that stores the         |
+   | used to store backup files.   |backup files from the AVX Controller.     |
+   |                               |                                          |
+   |                               |                                          |
+   |                               |**Note**: The S3 bucket you use or create |
+   |                               |for Controller HA and Backups does not    |
+   |                               |need to have public access enabled and    |
+   |                               |should be configured to restrict general  |
+   |                               |public access.                            |
    +-------------------------------+------------------------------------------+
    | Enter an email to receive     | Enter an email address that will be      |
    | notifications for autoscaling | notified whenever a new Controller is    |

@@ -127,6 +127,9 @@ AWS S3 allows uploaded backup files to be encrypted in the server side for more 
 
 |S3Create|
 
+.. note::
+
+  Note: The S3 bucket you use or create for Controller HA and Backups does not need to have public access enabled and should be configured to restrict general public access.
 
 2. Configure bucket server side encryption in S3 bucket properties.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -191,9 +194,9 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 .. |imageRestoreAWS| image::  controller_backup_media/backup_restore_restore_aws.png
 
 .. |S3Create| image:: controller_backup_media/S3Create.png
-    :scale: 30%
+    :scale: 20%
 .. |S3Properties| image:: controller_backup_media/S3Properties.png
-    :scale: 30%
+    :scale: 20%
 .. |S3SelectDefaultEncryption| image:: controller_backup_media/S3SelectDefaultEncryption.png
       :scale: 25%
 .. |S3SelectEncryption| image:: controller_backup_media/S3SelectEncryption.png
