@@ -70,7 +70,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Known Issues in Release 6.8.1509**
 
-**AVX-29183 - If you are using the Controller software version 6.7 or later, you must perform an image upgrade of gateways running IKE-type Racoon before performing the software upgrade. An image upgrade will upgrade the gateway image version and change the IKE-type on the gateways from Racoon to Strongswan. Please follow the steps below to perform a Gateway Image Upgrade:
+**AVX-29183**  - If you are using the Controller software version 6.7 or later, you must perform an image upgrade of gateways running IKE-type Racoon before performing the software upgrade. An image upgrade will upgrade the gateway image version and change the IKE-type on the gateways from Racoon to Strongswan. Please follow the steps below to perform a Gateway Image Upgrade:
 
 Controller > Settings > Maintenance > Selective Gateway Upgrade > Select the gateway which lists IKE-type Racoon > click **Image Upgrade**.
 
@@ -91,7 +91,7 @@ Gateways running older images will not be able to upgrade from 6.7 to 6.8 withou
 
 **Known Issues in Release 6.7.1574**
 
-**AVX-29183 - If you are using the Controller software version 6.7 or later, you must perform an image upgrade of gateways running IKE-type Racoon before performing the software upgrade. An image upgrade will upgrade the gateway image version and change the IKE-type on the gateways from Racoon to Strongswan. Please follow the steps below to perform a Gateway Image Upgrade:
+**AVX-29183 **- If you are using the Controller software version 6.7 or later, you must perform an image upgrade of gateways running IKE-type Racoon before performing the software upgrade. An image upgrade will upgrade the gateway image version and change the IKE-type on the gateways from Racoon to Strongswan. Please follow the steps below to perform a Gateway Image Upgrade:
 
 Controller > Settings > Maintenance > Selective Gateway Upgrade > Select the gateway which lists IKE-type Racoon > click **Image Upgrade**.
 
