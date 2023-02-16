@@ -38,9 +38,67 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   For the release notes of Controller and Gateway software versions 7.0 and later, click `here <https://docs.aviatrix.com/documentation/latest/release-notes/software-release-notes/software-release-notes.html>`_. The content below is a list of release notes for software versions 6.9 and earlier.
 
-6.7.1550 (02/01/2023)
+6.9.331 (02/16/2023)
 ==================================
 
+**Enhanced Features in Release 6.9.331**
+
+* **AVX-35773** - During vendor integration with Panorama, increased the wait time for a Panorama commit to 1 minute. Because it can take some time for Panorama to commit template changes, doing a device push before that commit is ready could cause incomplete routes being pushed to devices. The increased wait time ensures that the Panorama commit is complete before the device push.
+* **AVX-36147** - Removed the peering status check during the configuration workflow for NAT gateways. Now, you can configure NAT without waiting for the connection status to be UP.
+
+**Issues Corrected in Release 6.9.331**
+
+* **AVX-32921** - Some VPN user traffic to certain destinations was dropped on the VPN Gateway. This issue could occur when the VPN Gateway was rebooted and old VPN profile rules were not cleaned up from the system iptables.
+* **AVX-34845**  - Removed a file from managed CloudN or the CaaG device during an upgrade to improve security.
+* **AVX-35728**  - Prevented an incorrect passphrase from removing keys for on-prem managed CloudN or CaaG devices while disabling SSH access.
+* **AVX-35077**  - (Azure) If the Azure Spoke Gateways were down and a Transit Gateway propagated to an Azure Spoke Gateway with the default route, the Spoke VNet could not program route table default routes.
+
+6.8.1509 (02/16/2023)
+==================================
+
+**Enhanced Features in Release 6.8.1509**
+
+* **AVX-35773** - During vendor integration with Panorama, increased the wait time for a Panorama commit to 1 minute. Because it can take some time for Panorama to commit template changes, doing a device push before that commit is ready could cause incomplete routes being pushed to devices. The increased wait time ensures that the Panorama commit is complete before the device push.
+* **AVX-36147** - Removed the peering status check during the configuration workflow for NAT gateways. Now, you can configure NAT without waiting for the connection status to be UP.
+
+**Issues Corrected in Release 6.8.1509**
+
+* **AVX-32921** - Some VPN user traffic to certain destinations was dropped on the VPN Gateway. This issue could occur when the VPN Gateway was rebooted and old VPN profile rules were not cleaned up from the system iptables.
+* **AVX-34845**  - Removed a file from managed CloudN or the CaaG device during an upgrade to improve security.
+* **AVX-35728**  - Prevented an incorrect passphrase from removing keys for on-prem managed CloudN or CaaG devices while disabling SSH access.
+* **AVX-35077**  - (Azure) If the Azure Spoke Gateways were down and a Transit Gateway propagated to an Azure Spoke Gateway with the default route, the Spoke VNet could not program route table default routes.
+
+**Known Issues in Release 6.8.1509**
+
+**AVX-29183 - If you are using the Controller software version 6.7 or later, you must perform an image upgrade of gateways running IKE-type Racoon before performing the software upgrade. An image upgrade will upgrade the gateway image version and change the IKE-type on the gateways from Racoon to Strongswan. Please follow the steps below to perform a Gateway Image Upgrade:
+
+Controller > Settings > Maintenance > Selective Gateway Upgrade > Select the gateway which lists IKE-type Racoon > click **Image Upgrade**.
+
+Gateways running older images will not be able to upgrade from 6.7 to 6.8 without performing an image upgrade of gateways to switch to IKE-type Strongswan. All gateways must run Strongswan prior to upgrading to version 6.8.
+
+6.7.1574 (02/16/2023)
+==================================
+
+**Enhanced Features in Release 6.7.1574**
+
+* **AVX-35773** - During vendor integration with Panorama, increased the wait time for a Panorama commit to 1 minute. Because it can take some time for Panorama to commit template changes, doing a device push before that commit is ready could cause incomplete routes being pushed to devices. The increased wait time ensures that the Panorama commit is complete before the device push.
+
+**Issues Corrected in Release 6.7.1574**
+
+* **AVX-34845**  - Removed a file from managed CloudN or the CaaG device during an upgrade to improve security.
+* **AVX-35728**  - Prevented an incorrect passphrase from removing keys for on-prem managed CloudN or CaaG devices while disabling SSH access.
+* **AVX-35077**  - (Azure) If the Azure Spoke Gateways were down and a Transit Gateway propagated to an Azure Spoke Gateway with the default route, the Spoke VNet could not program route table default routes.
+
+**Known Issues in Release 6.7.1574**
+
+**AVX-29183 - If you are using the Controller software version 6.7 or later, you must perform an image upgrade of gateways running IKE-type Racoon before performing the software upgrade. An image upgrade will upgrade the gateway image version and change the IKE-type on the gateways from Racoon to Strongswan. Please follow the steps below to perform a Gateway Image Upgrade:
+
+Controller > Settings > Maintenance > Selective Gateway Upgrade > Select the gateway which lists IKE-type Racoon > click **Image Upgrade**.
+
+Gateways running older images will not be able to upgrade from 6.7 to 6.8 without performing an image upgrade of gateways to switch to IKE-type Strongswan. All gateways must run Strongswan prior to upgrading to version 6.8.
+
+6.7.1550 (02/01/2023)
+==================================
 **Issues Corrected in Release 6.7.1550**
 
 * **AVX-26020** - When you did a Controller backup and restore, the Controller temporarily lost its BGP routes. This loss caused network flapping and a loss of traffic until the routes were restored.
