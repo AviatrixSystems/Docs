@@ -50,8 +50,9 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 * **AVX-32921** - Some VPN user traffic to certain destinations was dropped on the VPN Gateway. This issue could occur when the VPN Gateway was rebooted and old VPN profile rules were not cleaned up from the system iptables.
 * **AVX-34845**  - Removed a file from managed CloudN or the CaaG device during an upgrade to improve security.
-* **AVX-35728**  - If an incorrect passphrase was entered when attempting to enable SSH access to your Controller, a bug was causing all the keys for on-prem managed CloudN or CaaG devices to be removed.
 * **AVX-35077**  - (Azure) If the Azure Spoke Gateways were down and a Transit Gateway propagated to an Azure Spoke Gateway with the default route, the Spoke VNet could not program route table default routes.
+* **AVX-35613** - When the Controller’s timezone was set to any other time zone than UTC (Coordinated Universal Time), a software upgrade became stuck at 99% progress.
+* **AVX-35728**  - If an incorrect passphrase was entered when attempting to enable SSH access to your Controller, a bug was causing all the keys for on-prem managed CloudN or CaaG devices to be removed.
 
 6.8.1509 (02/16/2023)
 ==================================
@@ -65,8 +66,9 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 * **AVX-32921** - Some VPN user traffic to certain destinations was dropped on the VPN Gateway. This issue could occur when the VPN Gateway was rebooted and old VPN profile rules were not cleaned up from the system iptables.
 * **AVX-34845**  - Removed a file from managed CloudN or the CaaG device during an upgrade to improve security.
-* **AVX-35728**  - If an incorrect passphrase was entered when attempting to enable SSH access to your Controller, a bug was causing all the keys for on-prem managed CloudN or CaaG devices to be removed.
 * **AVX-35077**  - (Azure) If the Azure Spoke Gateways were down and a Transit Gateway propagated to an Azure Spoke Gateway with the default route, the Spoke VNet could not program route table default routes.
+* **AVX-35613** - When the Controller’s timezone was set to any other time zone than UTC (Coordinated Universal Time), a software upgrade became stuck at 99% progress.
+* **AVX-35728**  - If an incorrect passphrase was entered when attempting to enable SSH access to your Controller, a bug was causing all the keys for on-prem managed CloudN or CaaG devices to be removed.
 
 **Known Issues in Release 6.8.1509**
 
@@ -86,8 +88,9 @@ Gateways running older images will not be able to upgrade from 6.7 to 6.8 withou
 **Issues Corrected in Release 6.7.1574**
 
 * **AVX-34845**  - Removed a file from managed CloudN or the CaaG device during an upgrade to improve security.
-* **AVX-35728**  - If an incorrect passphrase was entered when attempting to enable SSH access to your Controller, a bug was causing all the keys for on-prem managed CloudN or CaaG devices to be removed.
 * **AVX-35077**  - (Azure) If the Azure Spoke Gateways were down and a Transit Gateway propagated to an Azure Spoke Gateway with the default route, the Spoke VNet could not program route table default routes.
+* **AVX-35613** - When the Controller’s timezone was set to any other time zone than UTC (Coordinated Universal Time), a software upgrade became stuck at 99% progress.
+* **AVX-35728**  - If an incorrect passphrase was entered when attempting to enable SSH access to your Controller, a bug was causing all the keys for on-prem managed CloudN or CaaG devices to be removed.
 
 **Known Issues in Release 6.7.1574**
 
