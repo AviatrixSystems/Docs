@@ -536,6 +536,10 @@ Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1."
 * **AVX-27732** - FIPS 140-2 is neither supported nor required for Edge devices. Previously, if you tried to enable FIPS on the Controller, the edge gateway configuration would fail. Now, if you try to enable user-vpn in FIPS mode silently, the Edge gateways will bypass the request. 
 * **AVX-27820** - Resolved an issue that sometimes caused a Controller to read the VPC CIDR of a gateway incorrectly. This issue caused an error message when OpenVPN was enabled: "Failed to initialize GlobalConfigDB: Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1." 
 
+**Known Issues in Aviatrix Release 6.9.128**
+
+* **AVX-35490** - After a Controller software upgrade or a CloudXD restart, the Controller migrates BGP routes, automatically triggering an “Approve New Routes” email for existing pending CIDRs on gateways with learned CIDRs approval enabled. This issue has no functional impact. Approved CIDRs remain intact and no routes are changed.
+
 6.8.1149 (08/17/2022)
 =====================
 
@@ -703,6 +707,7 @@ The following Private Preview Features are available in this release:
 - **AVX-25673** - After Site2Cloud verbose logging is enabled, it cannot be disabled in the UI.
 - **AVX-26419** - If you are connecting to another Aviatrix device, using IKEv2 is preferred. IKEv2 support started in version 5.0.2667. If you configure IKEv1 in a Site2Cloud connection that uses certificate-based authentication and is connecting to another Aviatrix device, you must add the intermediate CA's in addition to the root CA. When an intermediate CA is renewed and re-authentication is attempted, the Site2Cloud connection will go down until you add the new certificate.
 - **AVX-27653** - If you are using software version 6.8.1148 on an outdated gateway image, your Controller could have a memory limitation issue. `Upgrade <https://docs.aviatrix.com/HowTos/gateway-image-migration.html>`_ your gateway images to avoid this issue.
+- **AVX-35490** - After a Controller software upgrade or a CloudXD restart, the Controller migrates BGP routes, automatically triggering an “Approve New Routes” email for existing pending CIDRs on gateways with learned CIDRs approval enabled. This issue has no functional impact. Approved CIDRs remain intact and no routes are changed.
 
 6.7.1376 (08/02/2022) 
 =========================
@@ -998,6 +1003,8 @@ In releases prior to Controller 6.7, the term security domain was used to refer 
 - **AVX-22851** - During a rare telemetry related timing issue, gateway deletion and creation operations may experience exceptions that send the admin an exception email. This was caused by the software attempting to access a gateway object that does not exist.
 
   **Workaround**: If the newly created gateway does not come up because of this issue, the workaround is to upgrade the gateway image.
+
+- **AVX-35490** - After a Controller software upgrade or a CloudXD restart, the Controller migrates BGP routes, automatically triggering an “Approve New Routes” email for existing pending CIDRs on gateways with learned CIDRs approval enabled. This issue has no functional impact. Approved CIDRs remain intact and no routes are changed.
 
 **Issues Corrected in Aviatrix Release 6.7.1185** 
 
@@ -1299,7 +1306,7 @@ The following `Public Preview Features`_ are available in this release:
 - Before 6.6, when BGP ECMP is enabled, routes from different domain can be combined to form ECMP at gateway. This is incorrect behavior and is fixed in 6.6, such that only BGP routes from the same domain can be combined for ECMP. 
 - Aviatrix no longer supports non-ActiveMesh transit network configurations beginning in release 6.6. Aviatrix recommends that if you are running version 6.5 or earlier, you upgrade to version 6.5.1922 or a higher 6.5 version before upgrading to 6.6.
 
-**Upgrade Behaviors and Restrictions in Release 6.52246**
+**Upgrade Behaviors and Restrictions in Release 6.5224**
 
 - To upgrade to 6.6, you must manually enter "6.6" in the Aviatrix Controller upgrade window. 
 - You cannot rollback to Aviatrix version 6.5 after upgrading to 6.6.
@@ -1315,6 +1322,8 @@ The following `Public Preview Features`_ are available in this release:
   - Workaround: initialize your controller to 6.5 first and upgrade to 6.6. Controllers already installed with 6.3 or newer should be able to upgrade to 6.6 without issue.
 
 - The controller's database version and schema are changed in 6.6. You might notice that there will be a brief period of error messages in the controller's log while this change is happening. The errors should stop without user intervention after the upgrade is complete. 
+
+**AVX-35490** - After a Controller software upgrade or a CloudXD restart, the Controller migrates BGP routes, automatically triggering an “Approve New Routes” email for existing pending CIDRs on gateways with learned CIDRs approval enabled. This issue has no functional impact. Approved CIDRs remain intact and no routes are changed.
 
 **Issues Corrected in Release 6.6.5224**
 
