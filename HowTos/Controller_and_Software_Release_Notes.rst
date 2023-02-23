@@ -103,6 +103,7 @@ Controller > Settings > Maintenance > Selective Gateway Upgrade > Select the gat
 Gateways running older images will not be able to upgrade from 6.7 to 6.8 without performing an image upgrade of gateways to switch to IKE-type Strongswan. All gateways must run Strongswan prior to upgrading to version 6.8.
 
 ** If your account uses Racoon-based CloudN, contact Aviatrix Support to replace your CloudN hardware to Strongswan before upgrading to version 6.8.
+
 6.7.1550 (02/01/2023)
 ==================================
 **Issues Corrected in Release 6.7.1550**
