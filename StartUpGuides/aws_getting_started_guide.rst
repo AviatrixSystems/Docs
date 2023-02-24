@@ -28,6 +28,10 @@ This document shows you how to set up and launch an Aviatrix Controller through 
 
   If you are familiar with Terraform, it is possible to deploy a Controller by using Terraform modules. Please see the Aviatrix Terraform Modules on `GitHub <https://github.com/AviatrixSystems/terraform-modules>`_.
 
+.. important::
+
+  As a general cloud security best practice, do not use the root user credentials of your AWS account to launch the Aviatrix Controller or any other AWS resources in your AWS account.
+
 Prerequisites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
