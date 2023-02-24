@@ -39,17 +39,8 @@ This document describes how to migrate from one type of machine image to another
 Prerequisites for all Clouds
 ====================================
 
-* Make sure you have the relevant CSP storage container (an AWS S3 bucket, Azure Blob Storage, Google Cloud Storage, or OCI Object storage service) linked with your Aviatrix Controller. This storage container enables you to back up your data.
-
-.. tip::
-
-As a security best practice, enable versioning on the destination storage container to preserve, retrieve, and restore every version of every object stored.
-
-* (For AWS, Azure, and GCP Controllers) Get your Customer ID either through Controller > Settings > Controller > License or from your Aviatrix Account Manager. If you are migrating a metered image, subscribe to the Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support offer to receive your Customer ID by email.
-
-.. note::
-
-  To ensure that you receive the license email, please whitelist these email addresses:
+* Make sure you have the relevant CSP storage container (an AWS S3 bucket, Azure Blob Storage, Google Cloud Storage, or OCI Object storage service) linked with your Aviatrix Controller. This storage container enables you to back up your data. As a security best practice, enable versioning on the destination storage container to preserve, retrieve, and restore every version of every object stored.
+* (For AWS, Azure, and GCP Controllers) Get your Customer ID either through Controller > Settings > Controller > License or from your Aviatrix Account Manager. If you are migrating a metered image, subscribe to the Aviatrix Secure Networking Platform Metered 2208-Universal 24x7 Support offer to receive your Customer ID by email. To ensure that you receive the license email, please whitelist these email addresses:
 
   * appalerts@aviatrix.com
   * admin@aviatrix.io
@@ -65,6 +56,11 @@ As a security best practice, enable versioning on the destination storage contai
 * Schedule the migration during a maintenance window.
 * Walk through the `pre-op checklist <https://docs.aviatrix.com/Support/support_center_operations.html#pre-op-procedures>`_.
 * Check the current software version of your `gateways <https://docs.aviatrix.com/documentation/latest/platform-administration/gateway-image-migration.html>`_. You cannot upgrade your Controller unless all gateways are on the same version as the Controller.
+
+.. important::
+
+  You cannot upgrade your Controller to software version 6.7.1185 or 6.8.1148 if you have gateway images and/or CloudN based on IKE-type Racoon. Before upgrading your Controller, make sure to `upgrade your gateway images <https://read.docs.aviatrix.com/HowTos/gateway-image-migration.html>`_ to make sure they switch to IKE-type Strongswan.
+
 * `Upgrade <https://docs.aviatrix.com/HowTos/inline_upgrade.html>`_ to the latest build of your current release. Note that Aviatrix software version upgrade is a version-to-version upgrade. Therefore, you may need to perform multiple upgrades until you reach the latest version on your existing Controller. 
 * `Disable <https://docs.aviatrix.com/HowTos/controller_ha.html#steps-to-disable-controller-ha>`_ your Controller's HA configuration if HA is set up. You can `reenable <https://docs.aviatrix.com/HowTos/controller_ha.html>`_ HA on the new Controller once migration is complete.
 
@@ -72,7 +68,7 @@ As a security best practice, enable versioning on the destination storage contai
 
   Deleting your HA configuration is crucial. If you do not delete your HA configuration before migration, the backup configuration may become corrupted, and the migration may fail.
 
-* If you are using SAML login for either the Controller login (Settings/Controller/SAMLLogin) and/or for openvpn authentication (OpenVPN/Advanced/SAML), please make sure that the endpoints configured on the Controller and the SAML applications in the IdP match exactly.
+* If you are using SAML login for either the Controller login (Settings/Controller/SAMLLogin) and/or for Openvpn authentication (OpenVPN/Advanced/SAML), please make sure that the endpoints configured on the Controller and the SAML applications in the IdP match exactly.
 * Do not add any new configurations to your old Controller before migrating, as those updates may be lost in the migration process.
 
 Prerequisites for CoPilot Users
