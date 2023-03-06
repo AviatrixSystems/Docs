@@ -1,8 +1,10 @@
 Welcome to Aviatrix Docs
 ========================
 
-All Aviatrix product documentation can be found here.
-If you cannot find what you need, please reach out to us via `Aviatrix Support Portal <https://support.aviatrix.com>`_.
+.. important::
+
+Documentation for Aviatrix version 7.x and later products is located on `docs.aviatrix.com <https://docs.aviatrix.com/documentation/latest/index.html>`_
+Documentation for Aviatrix 6.x and earlier products is located on this website.
 
 .. _main website: http://aviatrix.com
 .. _GitHub: https://github.com/AviatrixSystems/Docs
