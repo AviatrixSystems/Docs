@@ -3,8 +3,8 @@ Welcome to Aviatrix Docs
 
 .. important::
 
-Documentation for Aviatrix version 7.x and later products is located on `docs.aviatrix.com <https://docs.aviatrix.com/documentation/latest/index.html>`_
-Documentation for Aviatrix 6.x and earlier products is located on this website.
+  Documentation for Aviatrix version 7.x and later products is located on `docs.aviatrix.com <https://docs.aviatrix.com/documentation/latest/index.html>`_.
+  Documentation for Aviatrix 6.x and earlier products is located on this website.
 
 .. _main website: http://aviatrix.com
 .. _GitHub: https://github.com/AviatrixSystems/Docs
