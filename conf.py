@@ -134,7 +134,7 @@ html_logo =  'aviatrix_logo_final_reverse.png'
 html_static_path = ['_static']
 
 html_js_files = [
-    'js/custom.js',
+    'js/chatbot.js',
 ]
 
 
