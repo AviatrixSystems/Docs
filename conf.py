@@ -60,7 +60,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'aviatrix_docs'
-copyright = '2022, Aviatrix Systems, Inc'
+copyright = '2023, Aviatrix Systems, Inc'
 author = 'Aviatrix'
 
 # Options for extensions
@@ -132,6 +132,10 @@ html_logo =  'aviatrix_logo_final_reverse.png'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+html_js_files = [
+    'js/custom.js',
+]
 
 
 # -- Options for HTMLHelp output ------------------------------------------
