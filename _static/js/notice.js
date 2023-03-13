@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
   const h1Element = document.querySelector("h1");
-
   if (h1Element) {
     const newDiv = document.createElement("div");
     newDiv.classList.add("admonition", "important");
