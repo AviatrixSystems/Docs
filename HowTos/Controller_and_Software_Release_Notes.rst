@@ -121,12 +121,6 @@ Azure and Aviatrix have prepared some special images with unmanaged disk support
 * Controller version 6.8, 6.9 - aviatrix-companion-gateway-v13u
 * Controller version 7.0, 7.1 - aviatrix-companion-gateway-v14u
 
-.. note::
-
-  **Update to memory_free System Metric Definition**
-
-  The system metric *Memory Free* (memory_free) used in CoPilot for configuring alerts had been using a definition that was inconsistent with the operating system (OS) definition. The metric is replaced with *Memory Available* (memory_available) to make it consistent with the OS definition. As a result, alerts based on *Memory Free* (mem_free) are now based on *Memory Available* (memory_available). For more information, see the `CoPilot 3.5.8 Release Notes <https://docs.aviatrix.com/copilot/latest/release-notes/software-release-notes/copilot-release-notes.html#3-5-8-release-notes>`_.
-
 6.8.1483 (02/01/2023)
 ==================================
 
@@ -149,12 +143,6 @@ Azure and Aviatrix have prepared some special images with unmanaged disk support
  * Controller version 6.8, 6.9 - aviatrix-companion-gateway-v13u
  * Controller version 7.0, 7.1 - aviatrix-companion-gateway-v14u
 
-.. note::
-
-  **Update to memory_free System Metric Definition**
-
-  The system metric *Memory Free* (memory_free) used in CoPilot for configuring alerts had been using a definition that was inconsistent with the operating system (OS) definition. The metric is replaced with *Memory Available* (memory_available) to make it consistent with the OS definition. As a result, alerts based on *Memory Free* (mem_free) are now based on *Memory Available* (memory_available). For more information, see the `CoPilot 3.5.8 Release Notes <https://docs.aviatrix.com/copilot/latest/release-notes/software-release-notes/copilot-release-notes.html#3-5-8-release-notes>`_.
-
 6.9.308 (02/01/2023)
 ==================================
 
@@ -176,12 +164,6 @@ Azure and Aviatrix have prepared some special images with unmanaged disk support
  * Controller version 6.7 - aviatrix-companion-gateway-v10u
  * Controller version 6.8, 6.9 - aviatrix-companion-gateway-v13u
  * Controller version 7.0, 7.1 - aviatrix-companion-gateway-v14u
-
-.. note::
-
-  **Update to memory_free System Metric Definition**
-
-  The system metric *Memory Free* (memory_free) used in CoPilot for configuring alerts had been using a definition that was inconsistent with the operating system (OS) definition. The metric is replaced with *Memory Available* (memory_available) to make it consistent with the OS definition. As a result, alerts based on *Memory Free* (mem_free) are now based on *Memory Available* (memory_available). For more information, see the `CoPilot 3.5.8 Release Notes <https://docs.aviatrix.com/copilot/latest/release-notes/software-release-notes/copilot-release-notes.html#3-5-8-release-notes>`_.
 
 6.9.295 (01/24/2023)
 ==================================
@@ -1062,6 +1044,10 @@ The following `Private Preview Features`_ are available in this release:
 
 - **Micro-segmentation** - Micro-segmentation provides granular network security policy enforcement for distributed applications in the cloud. It enables a unified network access policy model for your applications with distributed points of policy enforcement throughout your network. For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
 - **Web Application Firewall** - The Aviatrix Web Application Firewall (WAF) feature detects and blocks malicious traffic before it reaches your controller. Enabling the Aviatrix WAF helps protect your applications from malicious activity by filtering the HTTP and HTTPS traffic. The WAF is enabled by with a button on the WAF tab in the Aviatrix Controller settings.
+
+**Important Notices in release 6.7.1185**
+
+(CoPilot users) The system metric *Memory Free* (memory_free) used in CoPilot for configuring alerts had been using a definition that was inconsistent with the operating system (OS) definition. Starting 6.7 the metrics memory_available and memory_free are consistent with the OS definition.
 
 6.4.3049 (04/08/2022) 
 =======================
