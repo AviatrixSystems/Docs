@@ -121,6 +121,12 @@ Azure and Aviatrix have prepared some special images with unmanaged disk support
 * Controller version 6.8, 6.9 - aviatrix-companion-gateway-v13u
 * Controller version 7.0, 7.1 - aviatrix-companion-gateway-v14u
 
+.. note::
+
+  **Update to memory_free System Metric Definition**
+
+  The system metric *Memory Free* (memory_free) used in CoPilot for configuring alerts had been using a definition that was inconsistent with the operating system (OS) definition. The metric is replaced with *Memory Available* (memory_available) to make it consistent with the OS definition. As a result, alerts based on *Memory Free* (mem_free) are now based on *Memory Available* (memory_available). For more information, see the `CoPilot 3.5.8 Release Notes <https://docs.aviatrix.com/copilot/latest/release-notes/software-release-notes/copilot-release-notes.html#3-5-8-release-notes>`_.
+
 6.8.1483 (02/01/2023)
 ==================================
 
@@ -143,6 +149,12 @@ Azure and Aviatrix have prepared some special images with unmanaged disk support
  * Controller version 6.8, 6.9 - aviatrix-companion-gateway-v13u
  * Controller version 7.0, 7.1 - aviatrix-companion-gateway-v14u
 
+.. note::
+
+  **Update to memory_free System Metric Definition**
+
+  The system metric *Memory Free* (memory_free) used in CoPilot for configuring alerts had been using a definition that was inconsistent with the operating system (OS) definition. The metric is replaced with *Memory Available* (memory_available) to make it consistent with the OS definition. As a result, alerts based on *Memory Free* (mem_free) are now based on *Memory Available* (memory_available). For more information, see the `CoPilot 3.5.8 Release Notes <https://docs.aviatrix.com/copilot/latest/release-notes/software-release-notes/copilot-release-notes.html#3-5-8-release-notes>`_.
+
 6.9.308 (02/01/2023)
 ==================================
 
@@ -164,6 +176,12 @@ Azure and Aviatrix have prepared some special images with unmanaged disk support
  * Controller version 6.7 - aviatrix-companion-gateway-v10u
  * Controller version 6.8, 6.9 - aviatrix-companion-gateway-v13u
  * Controller version 7.0, 7.1 - aviatrix-companion-gateway-v14u
+
+.. note::
+
+  **Update to memory_free System Metric Definition**
+
+  The system metric *Memory Free* (memory_free) used in CoPilot for configuring alerts had been using a definition that was inconsistent with the operating system (OS) definition. The metric is replaced with *Memory Available* (memory_available) to make it consistent with the OS definition. As a result, alerts based on *Memory Free* (mem_free) are now based on *Memory Available* (memory_available). For more information, see the `CoPilot 3.5.8 Release Notes <https://docs.aviatrix.com/copilot/latest/release-notes/software-release-notes/copilot-release-notes.html#3-5-8-release-notes>`_.
 
 6.9.295 (01/24/2023)
 ==================================
