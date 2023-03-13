@@ -1045,7 +1045,7 @@ The following `Private Preview Features`_ are available in this release:
 - **Micro-segmentation** - Micro-segmentation provides granular network security policy enforcement for distributed applications in the cloud. It enables a unified network access policy model for your applications with distributed points of policy enforcement throughout your network. For information about micro-segmentation, see `Secure Networking with Micro-Segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ in the Aviatrix product documentation.
 - **Web Application Firewall** - The Aviatrix Web Application Firewall (WAF) feature detects and blocks malicious traffic before it reaches your controller. Enabling the Aviatrix WAF helps protect your applications from malicious activity by filtering the HTTP and HTTPS traffic. The WAF is enabled by with a button on the WAF tab in the Aviatrix Controller settings.
 
-**Important Notices in release 6.7.1185**
+**Important Notices in Release 6.7.1185**
 
 (CoPilot users) The system metric *Memory Free* (memory_free) used in CoPilot for configuring alerts had been using a definition that was inconsistent with the operating system (OS) definition. Starting 6.7 the metrics memory_available and memory_free are consistent with the OS definition.
 
