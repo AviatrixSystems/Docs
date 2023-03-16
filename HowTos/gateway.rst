@@ -255,6 +255,8 @@ This is an optional parameter. Leave it blank if you do not need it.
 
 When Split Tunnel Mode is enabled, Search Domains let you specify a list of domain names that will use the Nameserver when a specific name is not in the destination.
 
+Windows VPN clients support a maximum of **10** search-domain entries (the OpenVPN service supports only up to 10 on the Windows OS).
+
 Enable ELB
 ^^^^^^^^^^^^^^^^^^^^^
 
