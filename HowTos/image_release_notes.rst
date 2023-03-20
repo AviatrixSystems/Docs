@@ -16,10 +16,14 @@ Built-In Images for each Software Version
 +---------------------+-----------------+-------------------------------------------------------------------------+
 |Software Version     |Release Date     |Built-In Images for this version                                         |
 +=====================+=================+=========================================================================+
+|6.9.349              |3/20/2023        |AWS: hvm-cloudx-aws-030923                                               |
+|                     |                 |                                                                         |
+|                     |                 |Azure: aviatrix-companion-gateway-v15u-6-9                               |
++---------------------+-----------------+-------------------------------------------------------------------------+
 |6.8.1311             |09/12/2022       |AWS:hvm-cloudx-aws-080322, hvm-cloudx-aws-china-080422                   |
 |                     |                 |Azure:aviatrix-companion-gateway-v11,                                    |
 |                     |                 |aviatrix-companion-gateway-china-v11                                     |
-|                     |                 |                                                                         |
+|                     |                 |                                                                         |   
 |                     |                 |GCP:gw-base-08032022                                                     |
 |                     |                 |                                                                         |
 |                     |                 |OCI aviatrix_gateway_54_20220323                                         |
@@ -28,8 +32,7 @@ Built-In Images for each Software Version
 |                     |                 |Azure: aviatrix-companion-gateway-v10,                                   |
 |                     |                 |aviatrix-companion-gateway-china-v10                                     |
 |                     |                 |                                                                         |
-|                     |                 |GCP: gw-base-08032022                                                    |
-|                     |                 |                                                                         |
+|                     |                 |GCP: gw-base-08032022                                                    |                                                                 
 |                     |                 |OCI: aviatrix_gateway_54_20220323                                        |
 +---------------------+-----------------+-------------------------------------------------------------------------+
 |6.7.1436             |08/16/2022       |AWS: hvm-cloudx-aws-031722, hvm-cloudx-aws-050422                        |
@@ -330,6 +333,17 @@ Release version 050120 includes the following updates:
 AWS Gateway Images
 ============================================
 
+AWS Gateway Image hvm-cloudx-aws-030923 (03/20/2023)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This image includes the following updates: 
+
+* Updated security patches to date.
+* Upgraded ENA driver to latest (2.8.3):
+ * Improved memory management, CPU utilization, and lock contention.
+* Rebuilt AWS demuxdriver.
+* Improved CPU efficiency when terminating a large number of IPSec tunnels.
+
 AWS Gateway Image: hvm-cloudx-aws-080322 (09/09/2022)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -411,6 +425,14 @@ This image includes the following updates:
 
 Azure Gateway Images
 ================================================
+
+Azure Gateway Image aviatrix-companion-gateway-v15u-6-9 (03/20/2023)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This image includes the following updates: 
+
+* Updated security patches to date.
+* Improved IPSec CPU utilization scalability with number of tunnels.
 
 Azure Gateway Images: aviatrix-companion-gateway-v13 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
