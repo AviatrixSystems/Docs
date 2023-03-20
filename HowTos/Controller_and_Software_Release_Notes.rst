@@ -49,7 +49,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 * **AVX-32656** - Previously, the Aviatrix Egress Filter enabled on port 443 or other HTTPS-configured ports only evaluated traffic flows that contained a Client Hello. The Egress Filter was not designed to filter telnet, ssh, and other traffic, which do not contain a Client Hello.
 
-Now, the Aviatrix Egress Filter enforces TLS protocol on port 443 or on other HTTPS-configured ports. This change will be configurable with a feature flag up to certain releases.
+Now, the Aviatrix Egress Filter enforces TLS protocol on port 443 or on other HTTPS-configured ports. This change will be configurable with a feature flag up to certain releases. 
 
 6.9.331 (02/16/2023)
 ==================================
