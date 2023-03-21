@@ -120,7 +120,9 @@ Gateways running older images will not be able to upgrade from 6.6.5224 to 6.7.1
 
 **Known Issues in Release 6.7.1550**
 
-* **AVX-30776**  - (Azure) To avoid Azure gateway image upgrade issues with unmanaged disks, upgrade to Controller version 6.7.1550 before upgrading your gateway image.
+.. warning::
+
+  **AVX-30776**  - (Azure) To avoid Azure gateway image upgrade issues with unmanaged disks, `upgrade <https://read.docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_ to Controller version 6.7.1550 before upgrading your gateway image.
 
 6.8.1483 (02/01/2023)
 ==================================
@@ -136,7 +138,10 @@ Gateways running older images will not be able to upgrade from 6.6.5224 to 6.7.1
 **Known Issues in Aviatrix Release 6.8.1483**
 
 * **AVX-27704** - When a gateway had too many routes, the CoPilot Cloud Routes page did not display anything.
-* **AVX-30776** - (Azure) To avoid Azure gateway image upgrade issues with unmanaged disks, upgrade to Controller version 6.8.1483 before upgrading your gateway image.
+
+.. warning::
+
+  **AVX-30776**  - (Azure) To avoid Azure gateway image upgrade issues with unmanaged disks, `upgrade <https://read.docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_ to Controller version 6.7.1550 before upgrading your gateway image.
 
 6.9.308 (02/01/2023)
 ==================================
@@ -152,7 +157,10 @@ Gateways running older images will not be able to upgrade from 6.6.5224 to 6.7.1
 **Known Issues in Aviatrix Release 6.9.308**
 
 * **AVX-27704** - When a gateway had too many routes, the CoPilot Cloud Routes page did not display anything.
-* **AVX-30776** - (Azure) To avoid Azure gateway image upgrade issues with unmanaged disks, upgrade to Controller version 6.9.308 before upgrading your gateway image.
+
+.. warning::
+
+  **AVX-30776**  - (Azure) To avoid Azure gateway image upgrade issues with unmanaged disks, `upgrade <https://read.docs.aviatrix.com/HowTos/Migration_From_Marketplace.html>`_ to Controller version 6.7.1550 before upgrading your gateway image.
 
 6.9.295 (01/24/2023)
 ==================================
