@@ -175,7 +175,7 @@ When you select BGP Activemesh, Aviatrix Controller creates two peers from each 
 |copilot_bgp_info|
 
  .. |ARS_High_Level| image:: azure_bgpolan_multi_peer_ars_media/ARS_High_Level.png
-   :scale: 60%
+   :scale: 20%
 
  .. |prereq_insane_mode_bgpolan| image:: azure_bgpolan_multi_peer_ars_media/prereq_insane_mode_bgpolan.png
    :scale: 60%
