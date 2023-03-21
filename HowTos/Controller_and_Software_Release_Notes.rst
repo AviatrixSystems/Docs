@@ -120,13 +120,7 @@ Gateways running older images will not be able to upgrade from 6.6.5224 to 6.7.1
 
 **Known Issues in Release 6.7.1550**
 
-* **AVX-30776**  - (Azure) Avoid upgrading your Azure gateway image on gateways with “unmanaged disks” when the Companion Gateway version is “aviatrix-companion-gateway-v8” or an earlier Companion Gateway version.
-
-Azure and Aviatrix have prepared some special images with unmanaged disk support so you can upgrade a gateway image with an unmanaged disk. These are the Companion Gateway versions you can safely upgrade with an unmanaged disk:
-
-* Controller version 6.7 - aviatrix-companion-gateway-v10u
-* Controller version 6.8, 6.9 - aviatrix-companion-gateway-v13u
-* Controller version 7.0, 7.1 - aviatrix-companion-gateway-v14u
+* **AVX-30776**  - (Azure) To avoid Azure gateway image upgrade issues with unmanaged disks, upgrade to Controller version 6.7.1550 before upgrading your gateway image.
 
 6.8.1483 (02/01/2023)
 ==================================
@@ -142,13 +136,7 @@ Azure and Aviatrix have prepared some special images with unmanaged disk support
 **Known Issues in Aviatrix Release 6.8.1483**
 
 * **AVX-27704** - When a gateway had too many routes, the CoPilot Cloud Routes page did not display anything.
-* **AVX-30776** - (Azure) Avoid upgrading your Azure gateway image on gateways with “unmanaged disks” when the Companion Gateway version is “aviatrix-companion-gateway-v8” or an earlier Companion Gateway version.
-
-  Azure and Aviatrix have prepared some special images with unmanaged disk support so you can upgrade a gateway image with an unmanaged disk. These are the Companion Gateway versions you can safely upgrade with an unmanaged disk:
-
- * Controller version 6.7 - aviatrix-companion-gateway-v10u
- * Controller version 6.8, 6.9 - aviatrix-companion-gateway-v13u
- * Controller version 7.0, 7.1 - aviatrix-companion-gateway-v14u
+* **AVX-30776** - (Azure) To avoid Azure gateway image upgrade issues with unmanaged disks, upgrade to Controller version 6.8.1483 before upgrading your gateway image.
 
 6.9.308 (02/01/2023)
 ==================================
@@ -164,13 +152,7 @@ Azure and Aviatrix have prepared some special images with unmanaged disk support
 **Known Issues in Aviatrix Release 6.9.308**
 
 * **AVX-27704** - When a gateway had too many routes, the CoPilot Cloud Routes page did not display anything.
-* **AVX-30776** - (Azure) Avoid upgrading your Azure gateway image on gateways with “unmanaged disks” when the Companion Gateway version is “aviatrix-companion-gateway-v8” or an earlier Companion Gateway version.
-
-  Azure and Aviatrix have prepared some special images with unmanaged disk support so you can upgrade a gateway image with an unmanaged disk. These are the Companion Gateway versions you can safely upgrade with an unmanaged disk:
-
- * Controller version 6.7 - aviatrix-companion-gateway-v10u
- * Controller version 6.8, 6.9 - aviatrix-companion-gateway-v13u
- * Controller version 7.0, 7.1 - aviatrix-companion-gateway-v14u
+* **AVX-30776** - (Azure) To avoid Azure gateway image upgrade issues with unmanaged disks, upgrade to Controller version 6.9.308 before upgrading your gateway image.
 
 6.9.295 (01/24/2023)
 ==================================
