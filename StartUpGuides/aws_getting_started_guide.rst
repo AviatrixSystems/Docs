@@ -64,6 +64,10 @@ Choosing to Use an Existing VPC vs. Creating a New VPC
 
 If you choose to use an existing VPC, make sure it uses the settings specified below in the “Creating a New VPC” section.
 
+.. note::
+
+  Note that if you use a shared VPC, different accounts are not allowed to see each other’s instances. This is by design by AWS. In this case, put in a feature request with AWS to allow users inside RAM permissions to allow all accounts in each shared subnet to see all the instances in the subnet. Otherwise, certain Aviatrix features will not work properly in your account.
+
 Creating a New VPC
 ***********************
 
