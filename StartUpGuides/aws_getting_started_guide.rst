@@ -66,7 +66,7 @@ If you choose to use an existing VPC, make sure it uses the settings specified b
 
 .. note::
 
-  Note that if you use a shared VPC, different accounts are not allowed to see each other’s instances. This is by design by AWS. In this case, put in a feature request with AWS to allow users inside RAM permissions to allow all accounts in each shared subnet to see all the instances in the subnet. Otherwise, features like CoPilot AppIQ, SmartGroups, and others will not work properly in your account.
+  Note that if you use a shared VPC, different accounts are not allowed to see each other’s instances. This is by design by AWS. In this case, put in a feature request with AWS to allow users inside RAM permissions to allow all accounts in each shared subnet to see all the instances in the subnet. Otherwise, certain Aviatrix features will not work properly in your account.
 
 Creating a New VPC
 ***********************
