@@ -1,13 +1,9 @@
-.. meta::
-   :description: Documentation for Controller and Gateway Software Patches
-   :keywords: software patches, patches, software
-
 ###################################
 Software Patches
 ###################################
 
 
-The following software patches are recently released by Aviatrix.
+For detailed information about specific software patches, please see see `Controller and Gateway Release Notes <https://read.docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_.
 
 =================================================================             ====================      ===============================================================
 **Patch Name**                                                                **Version**               **Description**
