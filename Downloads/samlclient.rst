@@ -1,6 +1,4 @@
-﻿.. meta::
-   :description: Aviatrix SAML Client download
-   :keywords: SAML, openvpn, SSL VPN, remote user vpn, SAML client. Openvpn with SAML
+﻿
    
 .. |win| image:: AVPNC_img/Win.png
    
@@ -41,7 +39,11 @@ The Windows client checksum can be downloaded from `this link <https://aviatrix-
 
 At the end of the installation, please install the TUN TAP driver if you haven't done so earlier.
 
-Please note that the client uses the default browser, and Microsoft Edge/IE is not supported
+Please note that the client uses the default browser, and Microsoft Edge/IE is not supported.
+
+.. important::
+
+  When a Windows client UserVPN search-domain length is > 180 characters, VPN clients may fail to connect to the gateway.
 
 *********
 Mac |mac|
