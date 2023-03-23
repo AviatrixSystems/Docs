@@ -507,6 +507,11 @@ Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1."
 
   To check which CloudN hardware version you are currently using, check your server. A server with a single SSD is running HW version 2.0 or a prior version and needs an update. A server with dual SSD Hard Disk drives is HW 2.1 or a later version and does not need an update.  
 
+- **AVX-37948** - (CoPilot users) The system metric Memory Free (memory_free) used in CoPilot for configuring alerts had been using a definition that was inconsistent with the operating system (OS) definition. Starting in 6.9.128 the metrics memory_available and memory_free are consistent with the OS definition.
+
+  Due to this change, after upgrading your Controller, you may receive many Memory Free alerts indicating the memory free dropped. To mitigate this issue, you can change your alert configurations from using mem_free to using memory_available instead.
+
+
 **Enhanced Features in Release 6.9.128** 
 
 * **Micro-segmentation** - `Micro-segmentation <https://docs.aviatrix.com/HowTos/secure_networking_microsegmentation.html>`_ is now supported on AWS GovCloud and Azure Government as well as AWS, Azure, and GCP. 
@@ -626,6 +631,9 @@ Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1."
 The following Private Preview Features are available in this release:
 
 - **Managed CloudN for AWS and Azure China** - Managed CloudN for AWS and Azure China provides High-Performance Encryption (Insane Mode) to on-premises locations in China with CloudN. Refer to `Managed CloudN Workflows <https://docs.aviatrix.com/HowTos/CloudN_workflow.html>`_.
+- **AVX-37948** - (CoPilot users) The system metric Memory Free (memory_free) used in CoPilot for configuring alerts had been using a definition that was inconsistent with the operating system (OS) definition. Starting in 6.8.1148 the metrics memory_available and memory_free are consistent with the OS definition.
+
+  Due to this change, after upgrading your Controller, you may receive many Memory Free alerts indicating the memory free dropped. To mitigate this issue, you can change your alert configurations from using mem_free to using memory_available instead.
 
 **New Features in Aviatrix Release 6.8.1148**
 
@@ -963,6 +971,12 @@ You should plan to migrate your Standalone CloudN deployment to Managed CloudN. 
 
 6.7.1185 (05/09/2022) 
 =======================
+
+**Important Notice in Release 6.7.1185**
+
+* **AVX-37948** - (CoPilot users) The system metric Memory Free (memory_free) used in CoPilot for configuring alerts had been using a definition that was inconsistent with the operating system (OS) definition. Starting in 6.7.1185 the metrics memory_available and memory_free are consistent with the OS definition.
+
+  Due to this change, after upgrading your Controller, you may receive many Memory Free alerts indicating the memory free dropped. To mitigate this issue, you can change your alert configurations from using mem_free to using memory_available instead.
 
 **New Features in Aviatrix Release 6.7.1185** 
 
