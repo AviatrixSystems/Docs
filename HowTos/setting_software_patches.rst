@@ -3,7 +3,7 @@ Software Patches
 ###################################
 
 
-For detailed information about specific software patches, please see see `Controller and Gateway Release Notes <https://read.docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_.
+For detailed information about specific software patches, please see `Controller and Gateway Release Notes <https://read.docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_.
 
 =================================================================             ====================      ===============================================================
 **Patch Name**                                                                **Version**               **Description**
