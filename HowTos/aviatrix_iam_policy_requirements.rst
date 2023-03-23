@@ -1,7 +1,4 @@
 
-.. meta::
-   :description: Aviatrix IAM Policy Requirements
-   :keywords: AWS, IAM, Policy, Aviatrix, Requirement
 
 
 ================================================

@@ -1,6 +1,3 @@
-.. meta::
-  :description: TGW Route Limit
-  :keywords: Transit Gateway, AWS Transit Gateway, AWS TGW, TGW orchestrator, VPN, Cisco CSR, Route
 
 
 =========================================================

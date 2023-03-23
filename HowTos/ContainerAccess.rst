@@ -1,6 +1,3 @@
-.. meta::
-   :description: Docker Container Access Reference Design
-   :keywords: docker, docker container, docker container access, Aviatrix, openvpn
 
 
 

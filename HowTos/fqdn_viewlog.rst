@@ -1,6 +1,3 @@
-.. meta::
-   :description: FQDN View Log
-   :keywords: FQDN, whitelist, Aviatrix, Egress Control, AWS VPC
 
 
 =================================

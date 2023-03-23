@@ -1,6 +1,3 @@
-.. meta::
-  :description: Multi-Cloud Transit Network Advanced
-  :keywords: Transit VPC, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering, AWS VPC Peering, VPN
 
 
 ================================================================

@@ -1,6 +1,3 @@
-.. meta::
-  :description: Deployment limitation for TGWs--VPN+BGP+ECMP--Palo Alto Networks
-  :keywords: Transit Gateway, AWS Transit Gateway, AWS TGW, TGW orchestrator, PAN Firewall, Transit Gateway Attachment, BGP, ECMP
 
 
 =======================================================================

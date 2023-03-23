@@ -1,6 +1,3 @@
-.. meta::
-  :description: Aviatrix Controller and Gateway Deployment Guide in AWS Discrete Regions
-  :keywords: Aviatrix, AWS
 
 
 =====================================================================================

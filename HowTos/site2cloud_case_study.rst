@@ -1,6 +1,4 @@
 ﻿.. meta::
-   :description: Site 2 Cloud
-   :keywords: Site2cloud, site to cloud, aviatrix, ipsec vpn, tunnel
 
 
 ==============================

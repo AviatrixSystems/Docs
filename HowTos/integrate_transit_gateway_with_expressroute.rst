@@ -1,6 +1,3 @@
-.. meta::
-  :description: Transit Gateway integration with ExpressRoute Workflow
-  :keywords: Azure ExpressRoute, Aviatrix Transit Gateway integration with ExpressRoute
 
 ==================================================================
 Multi-Cloud Transit Integration with Azure VNG

@@ -1,6 +1,4 @@
 ﻿.. meta::
-   :description: DNS UDP LoadBalancer Reference Design
-   :keywords: DNS VPN, Route 53, VPN, aviatrix, remote user vpn, openvpn, user vpn, ELB, ssl vpn
 
 
 

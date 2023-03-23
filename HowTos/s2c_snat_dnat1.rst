@@ -1,8 +1,5 @@
 
 
-.. meta::
-   :description: Create Site2Cloud connection to VGW with customized SNAT and DNAT on gateway
-   :keywords: site2cloud, VGW, SNAT, DNAT
 
 =========================================================================================
 Site2Cloud with Customized SNAT and DNAT to a virtual ip address

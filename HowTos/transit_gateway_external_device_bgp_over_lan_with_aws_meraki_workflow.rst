@@ -1,6 +1,3 @@
-.. meta::
-  :description: AWS Multi-cloud Transit BGP over LAN with Cisco Meraki Workflow
-  :keywords: Aviatrix Transit network, Private Network, BGP over LAN, External Device, SD-WAN, Meraki
 
 ==========================================================================================
 Aviatrix BGP over LAN with Cisco Meraki in AWS

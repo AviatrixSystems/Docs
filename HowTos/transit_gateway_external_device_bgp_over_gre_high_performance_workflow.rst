@@ -1,6 +1,3 @@
-.. meta::
-  :description: Multi-cloud Transit Gateway to External Device with BGP over GRE high performance workflow
-  :keywords: Aviatrix Transit network, Private Network, AWS Direct Connect, BGP over GRE, External Device, High Performance
 
 ==========================================================================================
 GRE Tunneling for Multi-cloud Transit Gateway to On-Prem Workflow

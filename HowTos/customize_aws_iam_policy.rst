@@ -1,6 +1,4 @@
 ﻿.. meta::
-   :description: Customize AWS-IAM-Policy
-   :keywords: AWS, IAM-Policy, Aviatrix
 
 
 ================================================

@@ -1,6 +1,3 @@
-.. meta::
-   :description: Configure LDAP authentication for VPN Users
-   :keywords: user vpn, ldap, authentication, ad, active directory, u2c
 
 .. raw:: html
 

@@ -1,6 +1,3 @@
-.. meta::
-  :description: Multi-Cloud Rosetta Stone or comparison of terms across Cloud Service Providers
-  :keywords: Rosetta Stone, Cloud Service Provider, CSP, AWS, Azure, GCP, OCI, virtual machine, disk, volume, gateway, synonym
 
 =========================
 Multi-Cloud Rosetta Stone

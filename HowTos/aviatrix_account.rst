@@ -1,6 +1,3 @@
-.. meta::
-  :description: Explain what Aviatrix account is
-  :keywords: account, aviatrix, AWS IAM role, Azure API credentials, Google credentials 
 
 
 =================================

@@ -1,6 +1,4 @@
 ﻿.. meta::
-   :description: Admin users and Duo Authentication Management
-   :keywords: Admin users, Duo authentication, Duo, Aviatrix
 
 .. raw:: html
 

@@ -1,6 +1,3 @@
-.. meta::
-  :description: Ingress Protection via Aviatrix Transit FireNet with Fortigate
-  :keywords: AVX Transit Architecture, Aviatrix Transit network, Transit DMZ, Ingress, Firewall, Fortigate
   
 ==============================================================
 Ingress Protection via Aviatrix Transit FireNet with Fortigate

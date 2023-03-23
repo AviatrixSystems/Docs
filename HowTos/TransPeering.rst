@@ -1,6 +1,4 @@
 ﻿.. meta::
-   :description: Encrypted Transitive Peering Ref Design
-   :keywords: peering, encrypted peering, transitive peering, encrypted transitive, aviatrix
 
 ====================================
 Encrypted Transitive Peering

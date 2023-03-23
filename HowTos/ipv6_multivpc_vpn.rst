@@ -1,6 +1,4 @@
 ﻿.. meta::
-   :description: Use IPv6 to connect overlapping VPC CIDRs
-   :keywords: IPv6, Peering,  SNAT, DNAT, Aviatrix Transit network
 
 
 =========================================================================================

@@ -1,6 +1,3 @@
-.. meta::
-   :description: FIPS 140-2
-   :keywords: FIPS 140-2  
 
 ###################################
 FIPS 140-2 Module

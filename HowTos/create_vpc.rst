@@ -1,6 +1,3 @@
-.. meta::
-   :description: VPC Network CIDR Management Tool
-   :keywords: Aviatrix VPC Tracker, AWS VPC, Azure VNet
 
 ###################################
 Create a VPC/VNet

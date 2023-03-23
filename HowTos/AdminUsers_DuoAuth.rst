@@ -1,6 +1,4 @@
 ﻿.. meta::
-   :description: Admin users and Duo Authentication Management
-   :keywords: Admin users, Duo authentication, Duo, Aviatrix
    :github_url: https://github.com/AviatrixSystems/Docs/blob/master/HowTos/AdminUsers_DuoAuth.rst
 
 =============================================

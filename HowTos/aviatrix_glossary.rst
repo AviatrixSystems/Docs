@@ -1,6 +1,3 @@
-.. meta::
-   :description: Aviatrix Glossary
-   :keywords: glossary, dictionary, Aviatrix, ACE
 
 ============================
 Aviatrix Glossary

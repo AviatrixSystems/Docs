@@ -1,6 +1,3 @@
-.. meta::
-   :description: instructions on migrating Aviatrix TGW Orchestrator deployment to multi-cloud Transit
-   :keywords: Transit Gateway, AWS Transit Gateway, TGW, TGW Migration
 
 ==================================================================
 Migrating TGW Orchestrator to Multi-Cloud Transit 

@@ -1,6 +1,3 @@
-.. meta::
-  :description: ActiveMesh Design Notes
-  :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, Ingress, Egress, Firewall
 
 
 =========================================================

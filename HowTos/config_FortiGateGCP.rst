@@ -1,6 +1,3 @@
-.. meta::
-  :description: Firewall Network
-  :keywords: GCP, Aviatrix Transit network, Transit DMZ, Egress, Fortigate
 
 
 =========================================================

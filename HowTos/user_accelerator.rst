@@ -1,6 +1,3 @@
-.. meta::
-   :description: User Accelerator VPN Reference Design
-   :keywords: AWS Global Accelerator, Geo VPN, VPN, aviatrix, remote user vpn, openvpn, user vpn
 
 ===================================================
 VPN User Accelerator 

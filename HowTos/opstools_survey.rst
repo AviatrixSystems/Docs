@@ -1,6 +1,3 @@
-.. meta::
-   :description: Survey of DevOps Tools
-   :keywords: Chef, Puppet, Jenkins, Ansible, Encryption, 
 
 
 ===========================================================================================

@@ -1,6 +1,3 @@
-.. meta::
-  :description: Aviatrix China Product Overview
-  :keywords: cloud networking, aviatrix, IPsec VPN, Global Transit Network, site2cloud
 
 ===================================
 Aviatrix in China Regions Overview

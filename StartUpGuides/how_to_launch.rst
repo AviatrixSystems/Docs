@@ -1,6 +1,3 @@
-.. meta::
-  :description: How to launch Aviatrix 
-  :keywords: cloud networking, aviatrix, OpenVPN®, SSL VPN, Global Transit Network, site2cloud
 
 
 =============================================

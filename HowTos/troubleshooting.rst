@@ -1,6 +1,3 @@
-.. meta::
-   :description: How to troubleshoot for Aviatrix
-   :keywords: Aviatrix troubleshooting, upload log, packet capture, encrypted peering, AWS VPC
 
 ###################################
 Troubleshoot

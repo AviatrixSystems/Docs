@@ -1,6 +1,3 @@
-.. meta::
-   :description: Advanced Config
-   :keywords: BGP, Advanced Config, BGP diagnostics
 
 
 Controller Configuration

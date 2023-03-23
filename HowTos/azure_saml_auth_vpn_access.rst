@@ -1,6 +1,3 @@
-.. meta::
-  :description: Azure Controller Security for SAML Based Authentication VPN Deployment
-  :keywords: Azure, Controller, VPN, OpenVPN, SAML
 
 ======================================================================
 Azure Controller Security for SAML Based Authentication VPN Deployment

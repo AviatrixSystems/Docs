@@ -1,6 +1,3 @@
-.. meta::
-  :description: Multi-cloud Transit Gateway to External Device with BGP over LAN simulation workflow
-  :keywords: Aviatrix Transit network, Private Network, BGP over LAN, External Device, High Performance, SD-WAN
 
 ==========================================================================================
 Azure Multi-Cloud Transit BGP over LAN Workflow

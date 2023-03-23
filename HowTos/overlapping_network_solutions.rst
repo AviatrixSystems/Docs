@@ -1,8 +1,5 @@
 
 
-.. meta::
-   :description: Create site2cloud connection with overlap network address ranges 
-   :keywords: Mapped site2cloud, VGW, SNAT, DNAT, Overlap Network CIDR, overlap CIDRs
 
 
 ===========================================================================================

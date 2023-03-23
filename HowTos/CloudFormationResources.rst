@@ -1,6 +1,3 @@
-.. meta::
-   :description: Manage Aviatrix resources in CloudFormation
-   :keywords: cloudformation, api, automation
 
 ==========================================================
 Managing Aviatrix Resources in CloudFormation

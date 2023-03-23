@@ -1,6 +1,3 @@
-.. meta::
-  :description: Firewall Network
-  :keywords: OCI Transit Gateway, Aviatrix Transit network, Transit DMZ, Egress, Firewall, OCI Palo Alto, VM-Series
 
 
 =========================================================

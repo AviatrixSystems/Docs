@@ -1,6 +1,3 @@
-.. meta::
-   :description: Description of fields and settings on the BGP page
-   :keywords: bgp, Border Gateway patrol, BGP Diagnostics, BGP Connections, maximum AS limits, AS, transit network, multi-cloud transit
 
 ========
 BGP

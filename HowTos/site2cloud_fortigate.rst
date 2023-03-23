@@ -1,6 +1,3 @@
-.. meta::
-   :description: Site2Cloud (Aviatrix Gateway - FortiGate)
-   :keywords: fortigate, aviatrix, site2cloud
 
 =====================================================================
 Aviatrix Gateway to FortiGate

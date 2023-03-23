@@ -1,6 +1,3 @@
-.. meta::
-   :description: Site2Cloud (Aviatrix Gateway - pfSense)
-   :keywords: pfsense, aviatrix, site2cloud
 
 .. role:: orange
 

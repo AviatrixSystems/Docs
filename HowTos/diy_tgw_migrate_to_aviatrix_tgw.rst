@@ -1,6 +1,3 @@
-.. meta::
-   :description: instructions on migrating from DIY TGW to Aviatrix managed TGW	deployment
-   :keywords: Transit Gateway, AWS Transit Gateway, TGW, TGW Migration
 
 ==================================================================
 Migrating a DIY TGW to Aviatrix Managed TGW Deployment 

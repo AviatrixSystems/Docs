@@ -1,6 +1,3 @@
-.. meta::
-  :description: AWS TGW Connect over Direct Connect
-  :keywords: AWS TGW Connect,DX
 
 
 ============================================================

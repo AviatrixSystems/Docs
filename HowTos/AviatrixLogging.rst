@@ -1,6 +1,3 @@
-.. meta::
-   :description: Data Analytics with Aviatrix Logs
-   :keywords: Rsyslog, Datadog, Splunk, Elastic Filebeat, Sumo, Netflow, Cloudwatch, aviatrix logs, data analytics
 
 
 

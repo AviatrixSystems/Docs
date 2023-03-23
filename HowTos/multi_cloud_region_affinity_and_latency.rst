@@ -1,6 +1,3 @@
-.. meta::
-   :description: Multi cloud region affinity and latency measured in ms
-   :keywords: AWS, Azure, Google, Multi Cloud, Latency 
 
 
 ===========================================================================================

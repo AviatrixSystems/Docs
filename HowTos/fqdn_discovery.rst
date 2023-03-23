@@ -1,6 +1,3 @@
-.. meta::
-   :description: FQDN Discovery reference design
-   :keywords: FQDN, whitelist, Aviatrix, Egress Control, AWS VPC
 
 
 =================================

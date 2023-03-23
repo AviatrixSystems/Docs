@@ -1,6 +1,3 @@
-.. meta::
-   :description: Aviatrix Transit for Azure
-   :keywords: Aviatrix Transit Architecture for Azure
 
 ============================================
 Aviatrix Transit Architecture for Azure

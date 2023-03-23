@@ -1,6 +1,3 @@
-.. meta::
-   :description: Site2Cloud connection between Aviatrix Gateway and Sonicwall
-   :keywords: Site2cloud, site to cloud, aviatrix, ipsec vpn, tunnel, sonicwall
 
 ============================================
 Aviatrix Gateway to Sonicwall

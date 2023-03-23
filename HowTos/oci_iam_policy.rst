@@ -1,6 +1,3 @@
-.. meta::
-  :description: Describe how to customize OCI IAM role
-  :keywords: account, aviatrix, OCI IAM policy, OCI, compartment
 
 
 ==================================

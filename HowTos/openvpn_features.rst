@@ -1,6 +1,4 @@
 ﻿.. meta::
-  :description: Aviatrix Client VPN Features 
-  :keywords: cloud working, Openvpn, SSL vpn, remote vpn, client vpn, Aviatrix 
 
 
 ====================================

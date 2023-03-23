@@ -1,6 +1,4 @@
 ﻿.. meta::
-   :description: Anonymous Internet surfing, VPN
-   :keywords: Site2cloud, site to cloud, OpenVPN, ipsec vpn, tunnel, peering, PBR, Policy Based Routing
 
 
 ========================================================

@@ -1,6 +1,3 @@
-.. meta::
-   :description: UCC Frequently Asked Questions
-   :keywords: ucc, faq, frequently asked questions, ucc faq, aviatrix faq
 
 ===========================
 Frequently Asked Questions

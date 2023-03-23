@@ -1,6 +1,3 @@
-.. meta::
-  :description: Aviatrix in AWS Outposts
-  :keywords: Outposts, AWS Transit Network, AWS LGW, Local Gateway, Aviatrix Outposts
 
 
 =========================================================

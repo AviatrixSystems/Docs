@@ -1,6 +1,3 @@
-.. meta::
-   :description: Aviatrix Controller Login Okta SAML Configuration
-   :keywords: Okta, SAML, controller login, okta saml, Aviatrix
 
 .. toctree::
    :numbered:

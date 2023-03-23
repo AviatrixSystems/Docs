@@ -1,6 +1,4 @@
 ﻿.. meta::
-   :description: launch a gateway and edit it
-   :keywords: security policies, Aviatrix, AWS VPC, stateful firewall, UCX, controller, gateway
 
 =====================
 Launching a Gateway

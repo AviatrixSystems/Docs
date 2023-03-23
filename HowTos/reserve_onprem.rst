@@ -1,6 +1,3 @@
-.. meta::
-   :description: Reserve on-prem sub segments
-   :keywords: Datacenter Extension, cloud burst 
 
 
 Reserve For On-Prem Use

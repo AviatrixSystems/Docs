@@ -1,6 +1,3 @@
-.. meta::
-   :description: Documentation for Controller and Gateway Security Patches
-   :keywords: security patches, patches
 
 ###################################
 Security Patches

@@ -1,6 +1,3 @@
-.. meta::
-   :description: Create GCloud Account on Aviatrix Controller
-   :keywords: GCloud, create GCloud, create GCloud account, Aviatrix, GCP credentials
 
 
 

@@ -1,6 +1,3 @@
-.. meta::
-   :description: Site2Cloud (Aviatrix Gateway - Aviatrix Gateway)
-   :keywords: aviatrix, site2cloud
 
 =====================================================================
 Aviatrix Gateway to Aviatrix Gateway

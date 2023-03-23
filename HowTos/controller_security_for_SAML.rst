@@ -1,6 +1,3 @@
-.. meta::
-   :description: Securing Aviatrix Controller for VPN access and Management access.
-   :keywords: Security VPN Management access
 
 
 ===============================================================

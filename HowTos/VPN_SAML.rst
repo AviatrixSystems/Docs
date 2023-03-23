@@ -1,6 +1,4 @@
 ﻿.. meta::
-   :description: Aviatrix User SSL VPN Okta SAML Configuration
-   :keywords: SAML, user vpn, saml, Aviatrix, OpenVPN, IdP, sp
 
 =================================
 OpenVPN® with SAML Authentication

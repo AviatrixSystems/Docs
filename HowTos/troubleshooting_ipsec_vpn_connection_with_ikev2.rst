@@ -1,6 +1,3 @@
-.. meta::
-  :description: Troubleshooting IPsec VPN connection with IKEv2
-  :keywords: Aviatrix Transit network, Private Network, Site2cloud, site to cloud, aviatrix, ipsec vpn, tunnel, Encrypted Peering
 
 ================================================
 Troubleshooting IPsec VPN connection with IKEv2

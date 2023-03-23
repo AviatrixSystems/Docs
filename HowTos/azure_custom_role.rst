@@ -1,6 +1,3 @@
-.. meta::
-  :description: Describe how to customize Azure IAM role
-  :keywords: account, aviatrix, AWS IAM role, Azure API credentials, Google credentials 
 
 
 =================================

@@ -1,6 +1,4 @@
 ﻿.. meta::
-    :description: Set up the Aviatrix Controller from Google Cloud
-    :keywords: Google, Google Cloud, GCloud, GCP, Controller setup, Startup Guides
 
 ===========================================
 Google Startup Guide

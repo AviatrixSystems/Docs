@@ -1,6 +1,3 @@
-.. meta::
-   :description: Aviatrix VPN Client Guide
-   :keywords: SAML, openvpn, SSL VPN, remote user vpn, SAML client. Openvpn with SAML
 
 .. |win| image:: AVPNC_img/Win.png
 

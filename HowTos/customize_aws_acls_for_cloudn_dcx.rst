@@ -1,6 +1,3 @@
-.. meta::
-   :description: Customize AWS ACLs for CloudN Datacenter Extension Gateway
-   :keywords: AWS, Aviatrix Cloud Interconnect, CloudN, datacenter extension gateway
 
 
 =========================================================================

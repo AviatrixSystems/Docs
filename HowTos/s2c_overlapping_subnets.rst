@@ -1,8 +1,5 @@
 
 
-.. meta::
-   :description: Site2Cloud with NAT to fix overlapping VPC subnets 
-   :keywords: site2cloud, DNAT, mapped, overlapping subnets
 
 
 ===========================================================================================

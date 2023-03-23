@@ -1,6 +1,3 @@
-.. meta::
-   :description: Site2Cloud (Aviatrix Gateway - Meraki MX64)
-   :keywords: meraki, aviatrix, site2cloud
 
 =====================================================================
 Aviatrix Gateway to Meraki MX64

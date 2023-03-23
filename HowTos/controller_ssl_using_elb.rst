@@ -1,6 +1,3 @@
-.. meta::
-    :description: Aviatrix Controller with SSL using an ALB
-    :keywords: Aviatrix, AWS, ALB, SSL, load balancer
 
 
 ==========================================================================

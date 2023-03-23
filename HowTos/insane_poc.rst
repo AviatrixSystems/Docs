@@ -1,6 +1,3 @@
-.. meta::
-  :description: Global Transit Network
-  :keywords: Transit Network, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering, Insane mode, Transit Gateway, TGW
 
 
 ===============================================

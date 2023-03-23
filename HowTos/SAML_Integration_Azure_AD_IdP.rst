@@ -1,6 +1,3 @@
-.. meta::
-   :description: Aviatrix User SSL VPN with Azure AD SAML Configuration
-   :keywords: Azure AD, Azure Active Directory, SAML, user vpn, Aviatrix, OpenVPN
 
 .. raw:: html
 

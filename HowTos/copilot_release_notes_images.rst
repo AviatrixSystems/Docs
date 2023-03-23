@@ -1,6 +1,3 @@
-.. meta::
-  :description: Aviatrix CoPilot Image Release Notes
-  :keywords: CoPilot,visibility, monitoring, performance, operations
 
 
 ====================================

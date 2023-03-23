@@ -1,6 +1,3 @@
-.. meta::
-    :description: Add an AWS account to Azure Controller
-    :keywords: Aviatrix, AWS, Azure
 
 
 ==================================================================

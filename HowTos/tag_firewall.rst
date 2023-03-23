@@ -1,6 +1,3 @@
-.. meta::
-   :description: Stateful firewall 
-   :keywords: iptables, stateful firewall
 
 ###################################
 Tag Based Security Policy

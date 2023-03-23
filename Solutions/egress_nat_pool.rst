@@ -1,6 +1,3 @@
-.. meta::
-  :description: How to setup egress NAT to a pool of IP addresses
-  :keywords: Egress Control, AWS NAT Gateway,  AWS Global Transit Network, Encrypted Peering, Transitive Peering, AWS VPC Peering, VPN
 
 
 =================================================================

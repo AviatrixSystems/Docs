@@ -1,8 +1,5 @@
 
 
-.. meta::
-   :description: Create site2cloud connection with VGW and run customized SNAT on gateway
-   :keywords: site2cloud, VGW, SNAT
 
 
 ===========================================================================================

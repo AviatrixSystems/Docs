@@ -1,6 +1,3 @@
-.. meta::
-  :description: Global Transit Network to External Device
-  :keywords: Spoke VPC, S2C Connection, AWS Global Transit Network, Azure Global Transit Network, BGP,
 
 
 ==============================================================

@@ -1,6 +1,3 @@
-.. meta::
-  :description: Aviatrix CoPilot Reference Documentation
-  :keywords: CoPilot,reference
 
 
 ==========================================

@@ -1,6 +1,3 @@
-.. meta::
-   :description: 3.1-preview
-   :keywords: Transit Network solution, 3.1-preview
 
 ============================
 Aviatrix Release 3.1 Preview 

@@ -1,6 +1,3 @@
-.. meta::
-    :description: Using Aviatrix to Connect Azure to AWS or GCP
-    :keywords: Aviatrix, Azure, AWS, GCP, multi cloud
 
 .. _AWS billing: https://console.aws.amazon.com/billing/home?#/account
 

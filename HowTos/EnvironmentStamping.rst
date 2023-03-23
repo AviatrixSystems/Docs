@@ -1,6 +1,3 @@
-.. meta::
-   :description: Environment Stamping
-   :keywords: environment stamping, aviatrix
 
 =====================================
 Environment Stamping 

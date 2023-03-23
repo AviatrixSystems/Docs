@@ -1,6 +1,3 @@
-.. meta::
-  :description: Transit Gateway Peering
-  :keywords: Transit Gateway Peering, AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network
 
 
 =========================================================

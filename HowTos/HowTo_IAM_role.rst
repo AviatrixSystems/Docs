@@ -1,6 +1,4 @@
 ﻿.. meta::
-   :description: How to Set Up an IAM Role for Aviatrix through AWS
-   :keywords: IAM, IAM role, IAM role Aviatrix, AWS
 
 #######################################
 IAM Roles for Secondary Access Accounts

@@ -1,6 +1,3 @@
-.. meta::
-   :description: Aviatrix NAT gateway load-balance with AZ affinity
-   :keywords: NAT, Aviatrix Gateway, Load-balance, VPC route table
 
 ====================================
 NAT GW Load-balance with AZ affinity

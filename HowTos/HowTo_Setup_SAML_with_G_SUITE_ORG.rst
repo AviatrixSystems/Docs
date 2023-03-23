@@ -1,6 +1,3 @@
-.. meta::
-   :description: Enable SAML App for a group of users in G-Suite using Organization
-   :keywords: SAML, G-Suite, Organization
 
 Enable SAML App for a group of users in G-Suite using Organization
 -------------------------------------------------------------------

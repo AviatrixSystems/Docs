@@ -1,6 +1,3 @@
-.. meta::
-   :description: Instructions on how to connect Meraki vMX100 to Aviatrix Transit Network
-   :keywords: meraki, transit, site2cloud, AWS Global Transit Network
 
 =====================================================
 Connecting Meraki Network to Aviatrix Transit Network

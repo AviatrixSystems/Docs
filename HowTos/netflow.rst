@@ -1,6 +1,3 @@
-.. meta::
-   :description: Netflow integration
-   :keywords: Logging, Netflow, Egress Control, AWS VPC
 
 
 =================================

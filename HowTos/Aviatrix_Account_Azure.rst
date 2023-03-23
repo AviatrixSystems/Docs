@@ -1,6 +1,3 @@
-.. meta::
-   :description: Aviatrix Cloud Account for Azure
-   :keywords: Aviatrix account, Azure, Aviatrix Azure account credential, API credential
 
 ===========================================================
 Azure Account Credential Setup 

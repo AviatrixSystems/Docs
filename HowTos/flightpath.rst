@@ -1,6 +1,4 @@
 ﻿.. meta::
-   :description: FlightPath is a troubleshooting tool
-   :keywords: Flightpath, troubleshooting, Aviatrix, AWS VPC 
 
 ###################################
 FlightPath

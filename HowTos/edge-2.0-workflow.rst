@@ -1,6 +1,3 @@
-.. meta::
-   :description: Aviatrix Edge 2.0
-   :keywords: Edge as a spoke, KVM, ESXi, secure edge, edge gateway
 
 ============================
 Deploying Aviatrix Edge  2.0

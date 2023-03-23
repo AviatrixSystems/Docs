@@ -1,6 +1,3 @@
-.. meta::
-   :description: controller Certificate Management
-   :keywords: Controller Certificate Management 
 
 ###################################
 Controller Certificate Management

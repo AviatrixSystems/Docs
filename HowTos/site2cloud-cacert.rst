@@ -1,6 +1,3 @@
-.. meta::
-   :description: Site2Cloud CA Certificate
-   :keywords: Site2Cloud, certificate, CA certificate, authentication
 
 
 

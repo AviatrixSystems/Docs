@@ -1,6 +1,4 @@
-﻿.. meta::
-   :description: Aviatrix User SSL VPN Okta SAML Configuration
-   :keywords: Okta, SAML, user vpn, okta saml, Aviatrix, OpenVPN
+﻿
 
 .. toctree::
    :numbered:

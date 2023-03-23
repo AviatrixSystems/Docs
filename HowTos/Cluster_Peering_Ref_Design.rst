@@ -1,6 +1,4 @@
 ﻿.. meta::
-   :description: Cluster peering reference design
-   :keywords: cluster, peering, cluster peering, Aviatrix, AWS VPC, Egress control
 
 =====================================
 Cluster Peering 

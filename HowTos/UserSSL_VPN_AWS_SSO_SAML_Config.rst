@@ -1,6 +1,4 @@
 ﻿.. meta::
-   :description: Aviatrix User SSL VPN with AWS SSO SAML Configuration
-   :keywords: AWS SSO, AWSSSO, SAML, user vpn, Aviatrix, OpenVPN
 
 .. toctree::
    :numbered:

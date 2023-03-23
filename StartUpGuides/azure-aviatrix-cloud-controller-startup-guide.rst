@@ -1,6 +1,4 @@
 ﻿.. meta::
-    :description: Set up the Aviatrix Controller from Azure
-    :keywords: Aviatrix, Azure, set up accounts, Controller, startup guides, VNets
 
 =======================================
 Azure Startup Guide

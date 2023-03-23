@@ -1,6 +1,3 @@
-.. meta::
-   :description: Documentation for Controller and Gateway Software Patches
-   :keywords: software patches, patches, software
 
 ###################################
 Software Patches

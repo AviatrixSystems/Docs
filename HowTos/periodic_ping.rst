@@ -1,6 +1,3 @@
-.. meta::
-   :description: Periodic Ping
-   :keywords: site2cloud troubleshooting tunnel drop stability IPsec
 
 
 ============================================

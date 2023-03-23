@@ -1,6 +1,3 @@
-.. meta::
-   :description: The Service Description of Troubleshoot Diagnostic result
-   :keywords: Aviatrix troubleshooting, Diagnostic, Diagnostic Result, gateway, reachable
 
 ###################################
 Troubleshoot - Diagnostic Result

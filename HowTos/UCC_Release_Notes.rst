@@ -1,4 +1,3 @@
-.. meta::
    :redirect: https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html
 
 =========

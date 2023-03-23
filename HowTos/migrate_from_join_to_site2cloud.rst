@@ -1,6 +1,3 @@
-.. meta::
-   :description: Migrate an early Join function based deployment to site2cloud deployment.
-   :keywords: Datacenter Extension, Aviatrix Cloud Interconnect, Site2Cloud, migration, AWS VPC, IPSEC tunnel
 
 
 Migrating a Join deployment to Site2Cloud deployment 

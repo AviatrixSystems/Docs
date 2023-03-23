@@ -1,6 +1,3 @@
-.. meta::
-   :description: [TODO]
-   :keywords: Site2cloud, site to cloud, aviatrix, ipsec vpn, tunnel, peering, encrypted peering, transitive peering, encrypted transitive, aviatrix, cloud address planning
 
 
 ========================================================

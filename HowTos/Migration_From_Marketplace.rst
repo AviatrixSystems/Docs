@@ -1,6 +1,3 @@
-.. meta::
-   :description: Migrating Your Aviatrix Controller
-   :keywords: Marketplace, migration, licensing, Aviatrix, AWS, Azure, GCP, OCI, S3, object storage, cloud storage, image, AMI, machine image, migrating, update, upgrade
 
 ============================================================
 Migrating Your Aviatrix Controller

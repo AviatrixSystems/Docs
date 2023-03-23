@@ -1,6 +1,4 @@
 ﻿.. meta::
-  :description: AWS Global Transit VPC
-  :keywords: AWS Global Transit Network, Aviatrix site2cloud, Transitive Peering, Openvpn, SSL vpn, remote vpn, client vpn, CSR1000V
 
 |image0|
 

@@ -1,6 +1,4 @@
 ﻿.. meta::
-  :description: Firewall Network FAQ	
-  :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, Firewall, DMZ, Cloud DMZ, Firewall Network, FireNet
 
 
 =========================================================

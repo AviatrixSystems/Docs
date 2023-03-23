@@ -1,6 +1,3 @@
-.. meta::
-   :description: Setup Transit VPC Solution using terraform
-   :keywords: terraform, terraform provider, api, Transit network
 
 ============================================================
 Setting up a Transit Network using Aviatrix Terraform Provider

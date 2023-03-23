@@ -1,6 +1,3 @@
-.. meta::
-  :description: Aviatrix Getting Started
-  :keywords: CoPilot,visibility
 
 
 ============================================================

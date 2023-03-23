@@ -1,6 +1,3 @@
-.. meta::
-  :description: Role-Based Access Control
-  :keywords: account, aviatrix, AWS IAM role, Azure API credentials, Google credentials, RBAC
 
 
 =================================
