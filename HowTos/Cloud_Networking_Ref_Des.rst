@@ -1,4 +1,4 @@
-﻿.. meta::
+﻿
 
 
 .. Note:: This guide references AWS for illustration purposes and also applies to Azure (VNet) and Google (VPC).

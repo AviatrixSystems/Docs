@@ -1,4 +1,4 @@
-﻿.. meta::
+﻿
 
 =====================
 Launching a Gateway

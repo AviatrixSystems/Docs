@@ -1,4 +1,4 @@
-﻿.. meta::
+﻿
 
 .. raw:: html
 

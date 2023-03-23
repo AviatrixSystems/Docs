@@ -1,4 +1,4 @@
-﻿.. meta::
+﻿
 
 ===============================
 Metered AMI Pricing Book

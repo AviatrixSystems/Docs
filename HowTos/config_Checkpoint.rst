@@ -1,4 +1,4 @@
-﻿.. meta::
+﻿
 
 **A few important notes before we launch the instance:**
 

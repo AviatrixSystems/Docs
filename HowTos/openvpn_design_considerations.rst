@@ -1,4 +1,4 @@
-﻿.. meta::
+﻿
 
 ===========================================
 User VPN Performance Guide for Deployment

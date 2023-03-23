@@ -1,4 +1,4 @@
-﻿.. meta::
+﻿
 
 ===========================
 Aviatrix OpenVPN® FAQs

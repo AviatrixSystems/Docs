@@ -1,4 +1,4 @@
-﻿.. meta::
+﻿
 
 **Some notes before deployment:**
 

@@ -1,4 +1,4 @@
-﻿.. meta::
+﻿
 
 =========================================
 AWS Managed Microsoft AD for Aviatrix
