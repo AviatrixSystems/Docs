@@ -1,5 +1,5 @@
-﻿.. meta::
-   :github_url: https://github.com/AviatrixSystems/Docs/blob/master/HowTos/AdminUsers_DuoAuth.rst
+﻿
+
 
 =============================================
 Admin Users and Duo Sign in

@@ -1,4 +1,4 @@
-﻿.. meta::
+﻿
 
 ####################################################
 Inline Software Upgrade for 6.4 and Earlier Releases

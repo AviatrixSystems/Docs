@@ -1,4 +1,4 @@
-﻿.. meta::
+﻿
 
 #######################################
 IAM Roles for Secondary Access Accounts

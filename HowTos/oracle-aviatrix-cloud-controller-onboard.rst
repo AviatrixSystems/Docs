@@ -1,4 +1,4 @@
-﻿.. meta::
+﻿
 
 ==================================================
 Oracle Cloud Infrastructure (OCI) Onboarding Guide

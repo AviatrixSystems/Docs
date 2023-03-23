@@ -1,4 +1,4 @@
-﻿.. meta::
+﻿
    
 .. |win| image:: AVPNC_img/Win.png
    

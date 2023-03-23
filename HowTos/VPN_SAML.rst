@@ -1,4 +1,4 @@
-﻿.. meta::
+﻿
 
 =================================
 OpenVPN® with SAML Authentication

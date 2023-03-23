@@ -1,4 +1,4 @@
-﻿.. meta::
+﻿
 
 ======================================
 Aviatrix Companion Gateway in Azure
