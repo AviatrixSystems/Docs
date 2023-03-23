@@ -1,6 +1,3 @@
-.. meta::
-  :description: Firewall Network Workflow
-  :keywords: GCP Transit Gateway, Aviatrix Transit network, Transit DMZ, Egress, Firewall, Firewall Network, FireNet, GCP FireNet
 
 
 =========================================================

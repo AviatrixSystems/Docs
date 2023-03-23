@@ -1,6 +1,3 @@
-.. meta::
-   :description: Setup PingOne for Customers web SAML app with Profile Attribute
-   :keywords: Profile, PingOne, PingOne for Customers, SAML, user vpn, PingOne saml, Aviatrix, OpenVPN, Controller
 
 ===============================================================
 Setting up PingOne for Customers Web SAML App with Profile Attribute

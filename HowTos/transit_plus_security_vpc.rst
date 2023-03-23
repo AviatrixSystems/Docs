@@ -1,6 +1,3 @@
-.. meta::
-   :description: Set up a security VPC for egress traffic filtering
-   :keywords: egress, security vpc, transit
 
 ==============================================
 Route Traffic to an Egress Security Appliance

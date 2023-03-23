@@ -1,8 +1,5 @@
 
 
-.. meta::
-   :description: Create Transit connection with VGW and run customized DNAT on gateway
-   :keywords: site2cloud, VGW, SNAT, DNAT, Public IP, Virtual IP Address
 
 
 ===========================================================================================

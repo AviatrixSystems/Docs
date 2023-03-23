@@ -1,6 +1,4 @@
-﻿.. meta::
-   :description: software upgrade of controller and gateways
-   :keywords: hitless upgrade, inline upgrade, upgrade gateway software, no packet loss upgrade
+﻿
 
 ####################################################
 Inline Software Upgrade for 6.4 and Earlier Releases

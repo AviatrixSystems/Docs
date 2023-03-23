@@ -1,7 +1,4 @@
 
-.. meta::
-   :description: Site2Cloud Fast Timer and Convergence
-   :keywords: site2cloud, convergence, fast timers, overlapping subnets, netmap, ipsec
 
 
 ===========================================================================================

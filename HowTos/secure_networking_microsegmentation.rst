@@ -1,6 +1,3 @@
-.. meta::
-  :description: Aviatrix Micro-Segmentation
-  :keywords: security,micro-segmentation,AWS,Azure
 
 
 =========================================

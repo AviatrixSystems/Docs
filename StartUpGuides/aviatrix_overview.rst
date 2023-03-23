@@ -1,6 +1,4 @@
-﻿.. meta::
-  :description: Aviatrix Product Overview
-  :keywords: cloud networking, aviatrix, OpenVPN®, SSL VPN, Global Transit Network, site2cloud
+﻿
 
 
 =============================================

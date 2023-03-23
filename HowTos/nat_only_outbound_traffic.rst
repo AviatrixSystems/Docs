@@ -1,6 +1,3 @@
-.. meta::
-   :description: How to set up SNAT so only traffic destined for Internet is NAT'd
-   :keywords: NAT, SNAT, outbound traffic
 
 =================================
 NAT for non-tunnel-bound Traffic

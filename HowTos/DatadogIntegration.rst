@@ -1,6 +1,3 @@
-.. meta::
-   :description: Integrating the Aviatrix Controller with Datadog
-   :keywords: Datadog, aviatrix, metrics
 
 ================================================================================
 |imageLogo| Datadog Integration

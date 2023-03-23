@@ -1,6 +1,3 @@
-.. meta::
-   :description: instructions on migrating from CSR to Aviatrix Transit Gateway
-   :keywords: Transit Gateway, AWS Transit Gateway, TGW, CSR Migration
 
 ==============================================================
 Migrating a CSR Transit to AWS Transit Gateway (TGW)

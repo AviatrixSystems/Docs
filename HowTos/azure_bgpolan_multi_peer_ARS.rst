@@ -1,6 +1,3 @@
-.. meta::
-   :description: azure multi-peer BGP over LAN connections with Azure Route Server Integration
-   :keywords: azure, BGP, LAN, multi-peer, BGPoLAN, ARS, Azure Route Server integration
 
 ================================================================================
 Configuring Azure Multi-Peer BGP over LAN with Azure Route Server Integration 

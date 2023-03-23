@@ -1,6 +1,3 @@
-.. meta::
-   :description: Aviatrix Support Center
-   :keywords: Aviatrix, Support, Support Center, Operations
 
 ===========================================================================
 Operations

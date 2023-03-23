@@ -1,6 +1,3 @@
-.. meta::
-   :description: azure multi-peer BGP over LAN connections
-   :keywords: azure, BGP, LAN, multi-peer, BGPoLAN
 
 ===============================================
 Configuring Azure Multi-Peer BGP Over LAN Workflow 

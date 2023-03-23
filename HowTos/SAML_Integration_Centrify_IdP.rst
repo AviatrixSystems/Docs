@@ -1,6 +1,3 @@
-.. meta::
-   :description: Aviatrix User SSL VPN with Centrify Configuration
-   :keywords: Centrify, SAML, user vpn, Aviatrix, OpenVPN
 
 .. toctree::
    :numbered:

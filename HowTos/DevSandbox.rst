@@ -1,6 +1,4 @@
-﻿.. meta::
-   :description: Developer's Sandbox Ref Design
-   :keywords: Developer sandbox, sandbox, aviatrix
+﻿
 
 ====================================
 Developer’s Sandbox

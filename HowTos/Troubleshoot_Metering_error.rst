@@ -1,6 +1,3 @@
-.. meta::
-   :description: Troubleshoot Metering error 
-   :keywords: AWS billing issue, EC2
 
 =====================
 Resolve the AWS billing issue

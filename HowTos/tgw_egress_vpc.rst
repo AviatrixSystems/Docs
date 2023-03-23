@@ -1,6 +1,3 @@
-.. meta::
-  :description: TGW Egress VPC
-  :keywords: Transit Gateway, AWS Transit Gateway, AWS TGW, TGW orchestrator, Egress VPC, Palo Alto Networks Firewall
 
 
 =============================================================

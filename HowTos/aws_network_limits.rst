@@ -1,6 +1,3 @@
-.. meta::
-   :description: AWS Network Limits
-   :keywords: VPC limits, AWS Route limits, AWS Peering limits, VPN Limits, AWS Network limits, SMTP 
 
 
 ===========================================================================================

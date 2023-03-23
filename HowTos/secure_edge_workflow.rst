@@ -1,6 +1,3 @@
-.. meta::
-   :description: Secure Edge Deployment
-   :keywords: Edge, Edge Gateway, EaaG, Edge ZTP, VMware ESXi
 
 
 ==================================================

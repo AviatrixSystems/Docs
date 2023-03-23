@@ -1,6 +1,3 @@
-.. meta::
-   :description: PingOne for Customers for SAML Integration 
-   :keywords: PingOne, SAML, user vpn, PingOne saml, Aviatrix, OpenVPN, Controller
 
 .. toctree::
    :numbered:

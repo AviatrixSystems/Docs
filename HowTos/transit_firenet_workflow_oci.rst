@@ -1,6 +1,3 @@
-.. meta::
-  :description: Firewall Network Workflow
-  :keywords: OCI Transit Gateway, OCI, Aviatrix Transit network, Transit DMZ, Egress, Firewall, Firewall Network, FireNet OCI
 
 
 =========================================================

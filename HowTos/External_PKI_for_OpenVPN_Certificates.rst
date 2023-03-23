@@ -1,6 +1,4 @@
-﻿.. meta::
-   :description: External PKI for OpenVPN Certificates
-   :keywords: PKI, OpenVPN, Certificates, SSL
+﻿
 
 ######################################################
 External PKI for OpenVPN Certificates

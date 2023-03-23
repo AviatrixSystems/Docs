@@ -1,8 +1,5 @@
 ﻿
 
-.. meta::
-   :description: Using Aviatrix to connect from one site to another site with IPsec VPN
-   :keywords: site, IPsec, VPN
 
 
 ======================================================================================

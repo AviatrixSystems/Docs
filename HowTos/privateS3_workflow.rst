@@ -1,6 +1,3 @@
-.. meta::
-  :description: Transfer data from on-prem to S3 using private VIF	
-  :keywords: AWS Storage gateway, Secure File Copy, Secure File Transfer, AWS Transit Gateway, AWS TGW, S3, Public VIF
 
 
 =========================================================

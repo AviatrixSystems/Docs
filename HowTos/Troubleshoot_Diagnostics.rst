@@ -1,6 +1,3 @@
-.. meta::
-   :description: Documentation for Network/Gateway/VPN User/CLoud/Database
-   :keywords: network, gateway, controller, connectivity, ping, traceroute, tracepath, packet capture, ip, diagnostic, force upgrade, service, keep gateway, migration, gateway replace, vpn user, cloud, account diagnostic, vpc diagnostic, vnet diagnostic, database, perfmon, cloudxd, rsyslog, bgp diagnostic, threshold
 
 
 ###################################

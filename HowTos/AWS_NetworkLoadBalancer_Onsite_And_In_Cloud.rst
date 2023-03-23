@@ -1,6 +1,3 @@
-.. meta::
-   :description: Using the AWS Network Load Balancer and Aviatrix Gateway to balance loads between the cloud and a remote office or datacenter
-   :keywords: NLB, network load balancer, aviatrix, balance workload
 
 .. role:: orange
 

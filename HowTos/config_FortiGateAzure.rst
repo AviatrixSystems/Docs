@@ -1,6 +1,3 @@
-.. meta::
-  :description: Firewall Network
-  :keywords: Azure Transit Gateway, Azure, TGW orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Fortigate
 
 
 =========================================================

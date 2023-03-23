@@ -1,6 +1,3 @@
-.. meta::
-   :description: Aviatrix Gateway HA Options
-   :keywords: HA, gateway, active-active, active-standby
 
 ===========================================================================
 Gateway and Tunnel HA Options

@@ -1,6 +1,4 @@
-﻿.. meta::
-   :description: Quick Tour
-   :keywords: Aviatrix Quick Tour, Aviatrix, remote user VPN, AWS user VPN, OpenVPN, SSL VPN
+﻿
 
 
 Quick Tour

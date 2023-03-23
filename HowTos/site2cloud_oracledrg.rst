@@ -1,6 +1,3 @@
-.. meta::
-   :description: Site2Cloud (Aviatrix Gateway - Oracle DRG)
-   :keywords: aviatrix, site2cloud, oracle, drg
 
 .. raw:: html
 

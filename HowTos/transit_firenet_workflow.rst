@@ -1,6 +1,3 @@
-.. meta::
-  :description: Firewall Network Workflow
-  :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall, Firewall Network, FireNet, AWS GWLB, Azure Load Balancer, Azure LB, Gateway Load balancer, GCP, GCP FireNet, Azure FireNet, GCP ILB
 
 
 =========================================================

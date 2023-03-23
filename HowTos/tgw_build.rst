@@ -1,6 +1,3 @@
-.. meta::
-  :description: TGW Build
-  :keywords: AWS Transit Gateway, Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, TGW Build
 
 
 =========================================================

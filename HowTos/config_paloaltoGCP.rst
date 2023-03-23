@@ -1,6 +1,3 @@
-.. meta::
-  :description: Firewall Network
-  :keywords: GCP Transit Gateway, Aviatrix Transit network, Transit DMZ, Egress, Firewall, PAN, Palo Alto, VM Series, GCP, GCP FireNet
 
 
 =========================================================

@@ -1,6 +1,3 @@
-.. meta::
-  :description: Transit Segmentation FAQ
-  :keywords: Aviatrix Transit Gateway, AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network
 
 
 ============================================================

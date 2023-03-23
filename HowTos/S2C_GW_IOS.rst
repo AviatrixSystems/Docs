@@ -1,6 +1,3 @@
-.. meta::
-   :description: Site2Cloud connection between Aviatrix Gateway and Cisco IOS devices
-   :keywords: Site2Cloud, site to cloud, aviatrix, ipsec vpn, tunnel, Cisco ASR, Cisco ISR, IOS
 
 
 =================================================

@@ -1,6 +1,3 @@
-.. meta::
-   :description: UCC Frequently Asked Questions
-   :keywords: Aviatrix encrypted peering, multi-cloud peering
 
 ===========================
 Peering FAQ

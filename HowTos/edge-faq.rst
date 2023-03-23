@@ -1,6 +1,3 @@
-.. meta::
-   :description: Aviatrix Edge Overview
-   :keywords: Edge, Edge Gateway, ESXi, KVM, EaaS, Edge ZTP, Edge as a Spoke
 
 
 ==================

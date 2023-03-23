@@ -1,6 +1,3 @@
-.. meta::
-   :description: Certificate Management
-   :keywords: Controller Certificate Management, Gateway Certificate Management
 
 ###################################
 Certificate Management Overview

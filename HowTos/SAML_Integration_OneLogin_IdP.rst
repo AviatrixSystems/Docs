@@ -1,6 +1,3 @@
-.. meta::
-   :description: Aviatrix User SSL VPN with OneLogin SAML Configuration
-   :keywords: OneLogin, SAML, user vpn, Aviatrix, OpenVPN
 
 .. toctree::
    :numbered:

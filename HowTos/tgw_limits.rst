@@ -1,6 +1,3 @@
-.. meta::
-   :description: AWS Transit Gateway Limits
-   :keywords: AWS Transit Gateway, AWS TGW, VPC limits, AWS Route limits, AWS Peering limits, VPN Limits, AWS Network limits, SMTP 
 
 .. raw:: html
 

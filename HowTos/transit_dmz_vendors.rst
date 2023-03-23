@@ -1,6 +1,3 @@
-.. meta::
-  :description: Transit DMZ
-  :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall
 
 
 =========================================================

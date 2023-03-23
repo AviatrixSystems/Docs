@@ -1,6 +1,3 @@
-.. meta::
-   :description: Encryption over Express Route
-   :keywords: Encryption, Azure, encryption over azure, ExpressRoute, Aviatrix
 
 ######################################################
 Encryption over Direct Connect/ExpressRoute

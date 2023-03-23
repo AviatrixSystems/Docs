@@ -1,6 +1,3 @@
-.. meta::
-   :description: Configure LDAP authentication for Controller Users
-   :keywords: controller, ldap, authentication, ad, active directory
 
 .. raw:: html
 

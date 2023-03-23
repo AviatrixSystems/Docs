@@ -1,6 +1,3 @@
-.. meta::
-   :description: Forward logs from the gateways to a central logging server for processing
-   :keywords: Aviatrix, Logging, Forward
 
 
 ==========================================

@@ -1,6 +1,3 @@
-.. meta::
-   :description: Azure gateway launch troubleshooting 
-   :keywords: Aviatrix troubleshooting, Azure gateway launch failure, subscription problem
 
 ####################################################
 How to Troubleshoot Azure RM Gateway Launch Failure

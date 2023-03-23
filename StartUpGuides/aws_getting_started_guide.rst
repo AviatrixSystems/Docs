@@ -1,6 +1,3 @@
-.. meta::
-  :description: AWS Getting Started Guide
-  :keywords: AWS, Amazon Web Services, VPC, getting started, marketplace, subscription, BYOL, metered, AMI, onboarding, CloudFormation, stack, IAM, IP address, CIDR, Availability Zone, public subnet, private subnet
 
 =========================================================
 AWS Getting Started Guide

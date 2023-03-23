@@ -1,6 +1,3 @@
-.. meta::
-   :description: AWS CloudWatch integration
-   :keywords: Logging, CloudWatch
 
 
 =================================

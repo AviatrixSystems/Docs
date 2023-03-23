@@ -1,6 +1,3 @@
-.. meta::
-  :description: How to setup access key and secret key
-  :keywords: account, aviatrix, AWS IAM role, Azure API credentials, Google credentials 
 
 
 =====================================

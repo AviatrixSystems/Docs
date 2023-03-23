@@ -1,6 +1,3 @@
-.. meta::
-  :description: CloudN FAQ
-  :keywords: SD-WAN, Cisco IOS, Transit Gateway, AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network
 
 
 ============================================================

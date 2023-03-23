@@ -1,6 +1,3 @@
-.. meta::
-    :description: Use Aviatrix to Connect to NetApp and SAP Floating IPs across multiple Availability Zones
-    :keywords: Aviatrix, NetApp, SAP, Floating IPs
 
 
 ======================================================================

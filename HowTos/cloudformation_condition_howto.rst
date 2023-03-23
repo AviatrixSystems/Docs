@@ -1,6 +1,3 @@
-.. meta::
-   :description: How to use AWS CloudFormation Conditions
-   :keywords: CloudFormation, Conditions, Fn::Or, Fn::Equals, Aviatrix, AWS
 
 
 ===========================================================================================

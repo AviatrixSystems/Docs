@@ -1,6 +1,3 @@
-.. meta::
-  :description: Azure Transit Network
-  :keywords: Azure Transit Network, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering
 
 
 =======================================

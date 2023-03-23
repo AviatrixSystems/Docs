@@ -1,6 +1,3 @@
-.. meta::
-   :description: alert message handling
-   :keywords: Emails, email source, alert message handling, Aviatrix alert
 
 ###################################
 Emails and Alert Configuration 

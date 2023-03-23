@@ -1,6 +1,3 @@
-.. meta::
-  :description: Use AWS Transit Gateway to Access Multiple VPCs in One Region
-  :keywords: AWS, Transit Gateway, Multiple VPCs, VPCs, OpenVPN, VPN
 
 
 Use AWS Transit Gateway to Access Multiple VPCs in One Region

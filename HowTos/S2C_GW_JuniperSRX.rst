@@ -1,6 +1,3 @@
-.. meta::
-   :description: Aviatrix Gateway to Juniper SRX
-   :keywords: Site2Cloud, Juniper SRX, IPsec, Aviatrix Gateway
 
 ============================================
 Aviatrix Gateway to Juniper SRX

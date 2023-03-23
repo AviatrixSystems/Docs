@@ -1,6 +1,3 @@
-.. meta::
-   :description: FQDN whitelists reference design
-   :keywords: FQDN, whitelist, Aviatrix, Egress Control, AWS VPC
 
 
 .. raw:: html

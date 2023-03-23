@@ -1,6 +1,4 @@
-﻿.. meta::
-  :description: Aviatrix Client VPN Solution build a zero trust cloud network
-  :keywords: Zero Trust network architecture, Aviatrix Zero Trust network, OpenVPN
+﻿
 
 
 ####################################################################

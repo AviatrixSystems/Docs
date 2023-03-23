@@ -1,6 +1,4 @@
-﻿.. meta::
-   :description: Okta Integration in Aviatrix for User SSL VPN authentication
-   :keywords: Okta, Aviatrix
+﻿
 
 .. raw:: html
 

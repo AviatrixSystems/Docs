@@ -1,6 +1,3 @@
-.. meta::
-  :description: Migrating Gateway Images
-  :keywords: gateway, migrating, upgrading, gateway replacement, image, Azure, GCP, OCI
 
 ===================================================
 Migrating Gateway Images

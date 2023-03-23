@@ -1,6 +1,3 @@
-.. meta::
-   :description: Site2Cloud (Aviatrix Gateway - AWS VGW)
-   :keywords: aviatrix, site2cloud, aws, vgw
 
 .. raw:: html
 

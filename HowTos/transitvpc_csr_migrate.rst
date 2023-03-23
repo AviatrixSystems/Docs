@@ -1,6 +1,3 @@
-.. meta::
-   :description: instructions on migrating from CSR to Aviatrix
-   :keywords: AWS Global Transit Network
 
 =============================================================
 Migrating a CSR Transit Solution to Aviatrix Transit Solution

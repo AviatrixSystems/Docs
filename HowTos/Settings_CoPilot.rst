@@ -1,6 +1,3 @@
-.. meta::
-   :description: Documentation for associating CoPilot with controller
-   :keywords: CoPilot, association
 
 ###################################
 CoPilot

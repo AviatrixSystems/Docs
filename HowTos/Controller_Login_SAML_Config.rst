@@ -1,6 +1,3 @@
-.. meta::
-   :description: Aviatrix Controller Login SAML Configuration
-   :keywords: SAML, controller login, Aviatrix, idp, sp
 
 .. toctree::
    :numbered:

@@ -1,6 +1,4 @@
-﻿.. meta::
-   :description: Onboarding guide for OCI
-   :keywords: aviatrix, Oracle, Oracle Cloud Infrastructure, OCI, onboarding, user OCID, tenancy OCID, compartment OCID, API Private key file
+﻿
 
 ==================================================
 Oracle Cloud Infrastructure (OCI) Onboarding Guide

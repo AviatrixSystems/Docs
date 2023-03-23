@@ -1,6 +1,3 @@
-.. meta::
-  :description: Ingress Protection via Aviatrix Transit FireNet with Palo Alto
-  :keywords: AVX Transit Architecture, Aviatrix Transit network, Transit DMZ, Ingress, Firewall, Palo Alto, GCP, Google Cloud
 
 =====================================================================
 Ingress Protection via Aviatrix Transit FireNet with Palo Alto in GCP

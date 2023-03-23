@@ -1,6 +1,3 @@
-.. meta::
-  :description: configuring Private Mode for AWS, AWS GovCloud, Azure, Azure Government	
-  :keywords: Private Mode, multi-cloud, single cloud, AWS, AWS GovCloud, Azure, Azure Government
 
 
 ====================

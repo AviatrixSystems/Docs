@@ -1,6 +1,3 @@
-.. meta::
-   :description: Peering
-   :keywords: Encrypted peering, inter region peering, inter cloud peering, AWS route limit
 
 
 Peering Over Route Limit

@@ -1,6 +1,3 @@
-.. meta::
-   :description: monitoring your network
-   :keywords: aviatrix logs, logging, monitoring, emails, alerts
 
 
 

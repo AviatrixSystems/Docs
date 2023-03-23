@@ -1,6 +1,3 @@
-.. meta::
-   :description: Aviatrix Active Mesh with customized SNAT and DNAT on spoke gateway
-   :keywords: Transit VPC, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering, VPN, SNAT, DNAT
 
 
 =========================================================================================

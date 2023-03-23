@@ -1,6 +1,3 @@
-.. meta::
-   :description: Glossary of general cloud computing and networking terms
-   :keywords: glossary, definitions, dictionary
 
 
 =================

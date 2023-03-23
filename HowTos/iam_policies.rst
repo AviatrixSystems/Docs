@@ -1,6 +1,3 @@
-.. meta::
-  :description: How to update the Aviatrix AWS IAM policies
-  :keywords: account, aviatrix, AWS IAM role, IAM policies, audit, policy
 
 
 =================================

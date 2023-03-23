@@ -1,6 +1,3 @@
-.. meta::
-   :description: Error messages and how to fix them
-   :keywords: error messages, troubleshoot, debug
 
 ###################################
 Error Messages

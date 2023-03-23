@@ -1,6 +1,3 @@
-.. meta::
-   :description: Site2Cloud Frequently Asked Questions
-   :keywords: Aviatrix Site2Cloud, Aviatrix, AWS
 
 ============================
 Site2Cloud FAQs

@@ -1,6 +1,3 @@
-.. meta::
-   :description: Connecting OpenVPN users to Onprem
-   :keywords: site2cloud user vpn openvpn routing onprem on-prem client
 
 
 ============================================

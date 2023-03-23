@@ -1,6 +1,3 @@
-.. meta::
-   :description: Discover unencrypted flows in a VPC
-   :keywords: AWS VPC, VPC flow log, unencrypted traffic
 
 ###################################
 Discover Unencrypted Traffic

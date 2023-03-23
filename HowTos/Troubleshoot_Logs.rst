@@ -1,6 +1,3 @@
-.. meta::
-   :description: Documentation for Logs
-   :keywords: upload tracelog, command log
 
 ###################################
 Logs

@@ -1,6 +1,3 @@
-.. meta::
-  :description: Firewall Network Workflow
-  :keywords: AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network, GWLB, Egress, Firewall, Firewall Network, FireNet, AGW, GWLBe
 
 
 ==============================================================

@@ -1,6 +1,3 @@
-.. meta::
-   :description: Setup Okta SAML with Profile Attribute
-   :keywords: Okta, Profile
 
 =======================================
 Setting up Okta SAML with Profile Attribute

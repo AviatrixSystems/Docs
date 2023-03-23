@@ -1,6 +1,3 @@
-.. meta::
-   :description: Site2Cloud connection between Aviatrix Gateway and Palo Alto Networks
-   :keywords: Site2cloud, site to cloud, aviatrix, ipsec vpn, tunnel, PAN, Palo Alto Networks
 
 
 =============================================

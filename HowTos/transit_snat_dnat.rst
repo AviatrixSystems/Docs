@@ -1,6 +1,4 @@
-﻿.. meta::
-   :description: Aviatrix NEXT GEN TRANSIT with customized SNAT and DNAT features
-   :keywords: VGW, SNAT, DNAT, Transit Gateway, AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network
+﻿
 
 
 =========================================================================================

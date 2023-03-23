@@ -1,6 +1,3 @@
-.. meta::
-   :description: onboarding Frequently Asked Questions
-   :keywords: Aviatrix Getting Started, Aviatrix, AWS
 
 ============================
 Onboarding and Account FAQs

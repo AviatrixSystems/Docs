@@ -1,6 +1,3 @@
-.. meta::
-   :description: Aviatrix Global Transit Network with AWS S3 end point
-   :keywords: Transit VPC, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering, AWS VPC Peering, VPN, AWS S3 service
 
 =========================================================================================
 Aviatrix Global Transit Network with AWS S3 end point

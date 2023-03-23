@@ -1,6 +1,3 @@
-.. meta::
-   :description: Geo VPN Reference Design
-   :keywords: Geo VPN, VPN, aviatrix, remote user vpn, openvpn, user vpn, aws
 
 
 

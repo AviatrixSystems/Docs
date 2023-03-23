@@ -1,6 +1,3 @@
-.. meta::
-   :description: Amazon GuardDuty Integration
-   :keywords: AWS Guard Duty, FQDN, Egress Control, IDS/IPS 
 
 
 =================================

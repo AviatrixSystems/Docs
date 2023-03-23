@@ -1,6 +1,3 @@
-.. meta::
-  :description: Firewall Network
-  :keywords: Azure Transit Gateway, Aviatrix Transit network, Transit DMZ, Egress, Firewall
 
 
 =========================================================

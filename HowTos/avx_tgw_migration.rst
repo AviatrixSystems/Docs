@@ -1,6 +1,3 @@
-.. meta::
-   :description: instructions on migrating from Aviatrix Transit Network to AWS TGW 
-   :keywords: Transit Gateway, AWS Transit Gateway, TGW, Migration
 
 ========================================================================
 Migrating an Aviatrix Transit Network to AWS Transit Gateway (TGW)

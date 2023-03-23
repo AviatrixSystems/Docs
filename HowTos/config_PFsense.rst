@@ -1,6 +1,3 @@
-.. meta::
-   :description: Example Config for PFsense VM in AWS
-   :keywords: PFsense, AWS Transit Gateway, AWS TGW, TGW Orchestrator, Aviatrix Transit network, Transit DMZ, Egress, Firewall
 
 
 

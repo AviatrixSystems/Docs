@@ -1,6 +1,3 @@
-.. meta::
-   :description: Encrypt EBS Volume
-   :keywords: encrypt, ebs, volume, gateway
 
 
 ############################

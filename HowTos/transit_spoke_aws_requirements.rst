@@ -1,6 +1,3 @@
-.. meta::
-  :description: AWS Prerequisites for Aviatrix Transit Architecture
-  :keywords: Transit Network, Transit hub, AWS Global Transit Network, Prerequisites
 
 
 ==========================================

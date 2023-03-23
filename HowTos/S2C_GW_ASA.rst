@@ -1,6 +1,3 @@
-.. meta::
-   :description: Site2Cloud connection between Aviatrix Gateway and Cisco ASA
-   :keywords: Site2cloud, site to cloud, aviatrix, ipsec vpn, tunnel, Cisco ASA
 
 
 ============================================

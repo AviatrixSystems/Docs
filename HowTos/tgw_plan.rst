@@ -1,6 +1,3 @@
-.. meta::
-  :description: TGW Plan
-  :keywords: Transit Gateway, AWS Transit Gateway, AWS TGW, TGW orchestrator, Aviatrix Transit network
 
 
 =========================================================

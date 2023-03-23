@@ -1,6 +1,4 @@
-﻿.. meta::
-   :description: Metered offering pricing
-   :keywords: Aviatrix Transit, AWS Transit Gateway, TGW
+﻿
 
 ===============================
 Metered AMI Pricing Book

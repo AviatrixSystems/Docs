@@ -1,6 +1,4 @@
-﻿.. meta::
-   :description: Aviatrix User SSL VPN Google SAML Configuration
-   :keywords: Google, SAML, user vpn, google saml, Aviatrix, OpenVPN
+﻿
 
 .. toctree::
    :numbered:

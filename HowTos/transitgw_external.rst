@@ -1,6 +1,3 @@
-.. meta::
-  :description: Global Transit Network to External Device
-  :keywords: Transit VPC, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering, AWS VPC Peering, VPN
 
 
 =========================================================

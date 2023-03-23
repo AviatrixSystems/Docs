@@ -1,6 +1,3 @@
-.. meta::
-   :description: OpenVPN FQDN filter solution, VPN
-   :keywords: OpenVPN, PBR, Policy Based Routing, FQDN, whitelist, Aviatrix, Egress Control, AWS VPC
 
 
 ========================================================

@@ -1,6 +1,3 @@
-.. meta::
-  :description: Simple Transit with NAT and AWS Peering
-  :keywords: Transit VPC, Transit hub, AWS Global Transit Network, Encrypted Peering, Transitive Peering, AWS VPC Peering, VPN
 
 
 =================================================================

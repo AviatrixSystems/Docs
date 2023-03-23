@@ -1,6 +1,3 @@
-.. meta::
-  :description: Auditing gateway IAM roles and policies correctness
-  :keywords: account, aviatrix, AWS IAM role, Azure API credentials, Google credentials 
 
 
 =================================

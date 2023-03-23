@@ -1,6 +1,4 @@
-﻿.. meta::
-   :description: AWS Managed Microsoft AD for Aviatrix Controller and OpenVPN Server
-   :keywords: AWS AD, aviatrix, Microsoft AD, Active Directory, LDAP, OpenVPN
+﻿
 
 =========================================
 AWS Managed Microsoft AD for Aviatrix

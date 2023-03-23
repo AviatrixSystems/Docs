@@ -1,6 +1,4 @@
-﻿.. meta::
-  :description: Aviatrix Companion Gateway
-  :keywords: aviatrix, companion, gateway, v2, version 2
+﻿
 
 ======================================
 Aviatrix Companion Gateway in Azure

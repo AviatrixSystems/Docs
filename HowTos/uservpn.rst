@@ -1,6 +1,4 @@
-﻿.. meta::
-  :description: Cloud Networking Ref Design
-  :keywords: cloud networking, aviatrix, Openvpn, SSL vpn, remote vpn, client vpn 
+﻿
 
 
 ===================================
