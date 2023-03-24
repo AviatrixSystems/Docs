@@ -45,9 +45,9 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 * **AVX-32231** - A new safety check has been added to help avoid configuration errors. With this safety check, you cannot set up your Spoke Gateway with Custom Mapped/Mapped configuration with Overlapping CIDRs in any of the following:
 
-** Local Initiated Traffic Destination Virtual CIDRs
-** Remote Initiated Traffic Source Virtual CIDRs
-** Remote Subnet (Virtual)
+ * Local Initiated Traffic Destination Virtual CIDRs
+ * Remote Initiated Traffic Source Virtual CIDRs
+ * Remote Subnet (Virtual)
 
 **Issues Corrected in Release 6.9-post04**
 
@@ -67,9 +67,9 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 * **AVX-32231** - A new safety check has been added to help avoid configuration errors. With this safety check, you cannot set up your Spoke Gateway with Custom Mapped/Mapped configuration with Overlapping CIDRs in any of the following:
 
-** Local Initiated Traffic Destination Virtual CIDRs
-** Remote Initiated Traffic Source Virtual CIDRs
-** Remote Subnet (Virtual)
+ * Local Initiated Traffic Destination Virtual CIDRs
+ * Remote Initiated Traffic Source Virtual CIDRs
+ * Remote Subnet (Virtual)
 
 **Issues Corrected in Release 6.8-post03**
 
@@ -81,6 +81,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 **Known Issues in Release 6.8-post03**
 
 * **AVX-37020**  - (Azure) Upgrading certain older Azure gateways was unsuccessful because they did not have the “gw_subnet_cidr” attribute. When you upgrade a gateway image, make sure the “gw_subnet_cidr” has been added to the database.
+
 
 
 6.9.349 (03/20/2023)
