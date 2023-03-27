@@ -58,7 +58,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Known Issues in Release 6.9.355**
 
-* **AVX-37020**  - (Azure) Upgrading certain older Azure gateways was unsuccessful because they did not have the “gw_subnet_cidr” attribute. When you upgrade a gateway image, make sure the “gw_subnet_cidr” has been added to the database.
+* **AVX-37020**  - (Azure) Upgrading certain older Azure gateways was unsuccessful because they did not have the “gw_subnet_cidr” attribute. 
 
 6.8.1512 (03/24/2023)
 ====================================
@@ -80,9 +80,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Known Issues in Release 6.8.1512**
 
-* **AVX-37020**  - (Azure) Upgrading certain older Azure gateways was unsuccessful because they did not have the “gw_subnet_cidr” attribute. When you upgrade a gateway image, make sure the “gw_subnet_cidr” has been added to the database.
-
-
+* **AVX-37020**  - (Azure) Upgrading certain older Azure gateways was unsuccessful because they did not have the “gw_subnet_cidr” attribute.
 
 6.9.349 (03/20/2023)
 ====================================
