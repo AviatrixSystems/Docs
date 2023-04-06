@@ -4,7 +4,7 @@
 AWS IAM Policies
 =================================
 
-The Aviatrix Controller in AWS is launched by `a CloudFormation script  <https://docs.aviatrix.com/StartUpGuides/aviatrix-cloud-controller-startup-guide.html>`_. 
+The Aviatrix Controller in AWS is launched by `a CloudFormation script  <https://docs.aviatrix.com/documentation/latest/getting-started/getting-started-guide-aws.html>`_. 
 During the launch time, two IAM roles are created, aviatrix-role-ec2 and aviatrix-role-app. Two associated IAM policies are also created, `aviatrix-assume-role-policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/iam_assume_role_policy.txt>`_ and `aviatrix-app-policy <https://s3-us-west-2.amazonaws.com/aviatrix-download/IAM_access_policy_for_CloudN.txt>`_.
 
 These two roles and their associated policies allow the Controller to use AWS APIs to launch gateway instances, 
