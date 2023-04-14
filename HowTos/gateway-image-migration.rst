@@ -27,6 +27,13 @@ Prerequisites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Check the `current software version <https://docs.aviatrix.com/documentation/latest/platform-administration/controller-migration.html>`_ of your Controller. You cannot upgrade your gateways to a newer version than your Controller.
+- (Cloud gateways) An image upgrade to 6.7.1574 and later versions will fail if the Cloud Gateway is based on IKE-type Racoon**. You must perform an image upgrade of Cloud gateways running IKE-type Racoon before performing the software upgrade. An image upgrade will upgrade the gateway image version and thereby change the IKE-type on the gateways from Racoon to Strongswan. 
+
+Cloud gateways running older images will not be able to upgrade from 6.6 to 6.7.1574 without performing an image upgrade of gateways to switch to IKE-type Strongswan. All Cloud gateways must run Strongswan prior to upgrading to version 6.1574.
+
+** If your account uses Racoon-based Cloud, contact Aviatrix Support to replace your Cloud hardware to Strongswan before upgrading to version 6.7.1574.
+** Note that CloudN Gateways, as opposed to Cloud gateways, can run Racoon-based gateways up to release 6.8.1148.
+
 - Every quarter, or if you receive a field notice about a new image, schedule this gateway image upgrade for an off-peak time on your network, during a maintenance window. These upgrades do require some downtime, but they have minimal impact. 
 - Consider enabling HA (High Availability) on the Transit and Spoke Gateways that require an image upgrade if you have not done so. HA helps minimize downtime. 
  
