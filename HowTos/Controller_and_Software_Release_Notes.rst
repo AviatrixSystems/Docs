@@ -269,6 +269,18 @@ Gateways running older images will not be able to upgrade from 6.7.1185 to 6.8.1
 6.7.1574 (02/16/2023)
 ==================================
 
+**Upgrade Prerequisites in Release 6.7.1574**
+
+* **AVX-29183** - (Cloud gateways) An image upgrade to 6.7.1574 and later versions will fail if the Cloud Gateway is based on IKE-type Racoon**. You must perform an image upgrade of Cloud gateways running IKE-type Racoon before performing the software upgrade. An image upgrade will upgrade the gateway image version and thereby change the IKE-type on the gateways from Racoon to Strongswan. Please follow the steps below to upgrade these Cloud gateways:
+
+  Controller > Settings > Maintenance > Selective Gateway Upgrade > Select the gateway which lists IKE-type Racoon > click Image Upgrade.
+
+  Cloud gateways running older images will not be able to upgrade from 6.6.5224 to 6.7.1574 without performing an image upgrade of gateways to switch to IKE-type Strongswan. All Cloud gateways must run Strongswan prior to upgrading to version 6.1574.
+
+  ** If your account uses Racoon-based Cloud, contact Aviatrix Support to replace your Cloud hardware to Strongswan before upgrading to version 6.7.1574.
+  ** Note that CloudN Gateways, as opposed to Cloud gateways, can run Racoon-based gateways up to release 6.8.1148.
+  
+
 **Enhanced Features in Release 6.7.1574**
 
 * **AVX-35773** - During vendor integration with Panorama, increased the wait time for a Panorama commit to 1 minute. Because it can take some time for Panorama to commit template changes, doing a device push before that commit is ready could cause incomplete routes being pushed to devices. The increased wait time ensures that the Panorama commit is complete before the device push.
@@ -282,13 +294,7 @@ Gateways running older images will not be able to upgrade from 6.7.1185 to 6.8.1
 
 **Known Issues in Release 6.7.1574**
 
-* **AVX-29183**  - Performing a dry run in 6.7.1185 and later versions will fail if the CSP Gateway’s image and/or CloudNs are based on IKE-type Racoon**, even though the upgrade from version 6.7.1185 to 6.8.1148 will succeed. Aviatrix recommends performing an image upgrade of gateways running IKE-type Racoon before performing the software upgrade. An image upgrade will upgrade the gateway image version and thereby change the IKE-type on the gateways from Racoon to Strongswan. Please follow the steps below to perform a `Gateway Image Upgrade <https://docs.aviatrix.com/documentation/latest/platform-administration/gateway-image-migration.html?expand=true>`_:
-
-Controller > Settings > Maintenance > Selective Gateway Upgrade > Select the gateway which lists IKE-type Racoon > click **Image Upgrade**.
-
-Gateways running older images will not be able to upgrade from 6.6.5224 to 6.7.1185 without performing an image upgrade of gateways to switch to IKE-type Strongswan. All gateways must run Strongswan prior to upgrading to version 6.7.1185.
-
-** If your account uses Racoon-based CloudN, contact Aviatrix Support to replace your CloudN hardware to Strongswan before upgrading to version 6.7.1185.
+* **AVX-29183** - (Cloud gateways) An image upgrade to 6.7.1574 and later versions will fail if the Cloud Gateway is based on IKE-type Racoon**. See the Upgrade Prerequisites section.
 
 6.7.1550 (02/01/2023)
 ==================================
