@@ -43,7 +43,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 6.9.521 (04/13/2023)
 =====================
 
-* **AVX-10154** - (Azure) You can now convert your unmanaged disk to a managed disk with an Azure gateway image upgrade. We recommend performing this `upgrade <https://docs.aviatrix.com/documentation/latest/platform-administration/gateway-image-migration.html>`_ as possible, as Azure will `retire <https://azure.microsoft.com/en-gb/updates/azure-unmanaged-disks-will-be-retired-on-30-september-2025/>`_ unmanaged disks.
+* **AVX-10154** - (Azure) You can now convert your unmanaged disk to a managed disk with an Azure gateway image upgrade. We recommend performing this `upgrade <https://docs.aviatrix.com/documentation/latest/platform-administration/gateway-image-migration.html>`_, as Azure will `retire <https://azure.microsoft.com/en-gb/updates/azure-unmanaged-disks-will-be-retired-on-30-september-2025/>`_ unmanaged disks.
 * **AVX-27396** - (Azure) You can now use HPE (High Performance Encryption) on the following Azure instances:
 
  * B2ms
@@ -114,7 +114,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Enhanced Features in Release 6.8.1621
 
-* **AVX-10154** - (Azure) You can now convert your unmanaged disk to a managed disk with an Azure gateway image upgrade. We recommend performing this `upgrade <https://docs.aviatrix.com/documentation/latest/platform-administration/gateway-image-migration.html>`_ as possible, as Azure will `retire <https://azure.microsoft.com/en-gb/updates/azure-unmanaged-disks-will-be-retired-on-30-september-2025/>`_ unmanaged disks.
+* **AVX-10154** - (Azure) You can now convert your unmanaged disk to a managed disk with an Azure gateway image upgrade. We recommend performing this `upgrade <https://docs.aviatrix.com/documentation/latest/platform-administration/gateway-image-migration.html>`_, as Azure will `retire <https://azure.microsoft.com/en-gb/updates/azure-unmanaged-disks-will-be-retired-on-30-september-2025/>`_ unmanaged disks.
 * **AVX-27396** - (Azure) You can now use HPE (High Performance Encryption) on the following Azure instances:
 
  * B2ms
