@@ -13,7 +13,7 @@ Field Notices
 
 **Issue Description**:
 
-For all current Controller software versions (all versions 7.0.1307 and earlier), Aviatrix gateways are exporting files to a remote log collection entity. This export sometimes resulted in missing logs. Starting in Controller software version 7.0.1307, instead of exporting files to a remote log collection entity, Aviatrix gateways will start exporting log lines being written to “Syslog” and “Auth.log”.
+For all current Controller software versions (all versions 7.0.1724 and earlier), Aviatrix gateways are exporting files to a remote log collection entity. This export sometimes resulted in missing logs. Starting in Controller software version 7.0.1724, instead of exporting files to a remote log collection entity, Aviatrix gateways will start exporting log lines being written to “Syslog” and “Auth.log”.
 
 In the rsyslog collectors, instead of two files, “auth.log” and syslog, by default logs are directed to separate files. Each file will be named with the application name that generated the log.
 
