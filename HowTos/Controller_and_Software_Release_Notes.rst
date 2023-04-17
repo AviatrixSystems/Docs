@@ -40,7 +40,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 
 
-6.9.521 (04/13/2023)
+6.9.522 (04/17/2023)
 =====================
 
 * **AVX-10154** - (Azure) If you have deployed Aviatrix gateways in Azure that use a companion-gateway-version less than or equal to “aviatrix-companion-gateway-v8,” upgrade to software release 6.7.1185 or newer before performing an image upgrade of these gateways. No immediate action is required. Do not perform any `Out-of-band <https://read.docs.aviatrix.com/HowTos/general_glossary.html#oob-out-of-band>`_ or Manual activity related to Azure unmanaged disks, as they will be `retired <https://azure.microsoft.com/en-gb/updates/azure-unmanaged-disks-will-be-retired-on-30-september-2025/>`_ in 2025.
