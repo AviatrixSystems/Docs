@@ -29,6 +29,7 @@ New format:
 2023-04-13T06:08:24+00:00 GW-gg-aws-usw2-s127-35.162.124.66 charon: 81[IKE] <gw-10_123_2_41-54_190_121_148|26> CHILD_SA closed","@version":"1","@timestamp":"2023-04-14T23:02:56.967Z","host":"35.162.124.66","type":"syslog","tags":["_grokparsefailure"],"src_gateway_name":"","dst_gateway_name":""
 
 Before Prefix: Apr 14 23:02:57 GW-gg-aws-usw2-s127-35.162.124.66 syslog 2023-03-05T19:17:50+00:00
+
 New format: Apr 14 23:02:57 GW-gg-aws-usw2-s127-35.162.124.66 
 
 41. Field Notice
