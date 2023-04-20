@@ -9,7 +9,9 @@ Field Notices
 42. Field Notice
 ------------------------------------------------
 
-**Date**: 04/17/2023
+**Date**: 04/13/2023
+
+(The content of this field notice was revised for clarity on 04/17/2023.)
 
 **Issue Description**:
 
