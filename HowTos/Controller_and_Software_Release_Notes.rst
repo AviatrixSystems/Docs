@@ -113,7 +113,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 6.8.1621 (04/13/2023)
 ============================================
 
-**Enhanced Features in Release 6.8.1621
+**Enhanced Features in Release 6.8.1621**
 
 * **AVX-10154** - (Azure) If you have deployed Aviatrix gateways in Azure that use a companion-gateway-version less than or equal to “aviatrix-companion-gateway-v8,” upgrade to software release 6.7.1185 or newer before performing an image upgrade of these gateways. No immediate action is required. Do not perform any `Out-of-band <https://read.docs.aviatrix.com/HowTos/general_glossary.html#oob-out-of-band>`_ or Manual activity related to Azure unmanaged disks, as they will be `retired <https://azure.microsoft.com/en-gb/updates/azure-unmanaged-disks-will-be-retired-on-30-september-2025/>`_ in 2025.
 * **AVX-27396** - (Azure) You can now use HPE (High Performance Encryption) on the following Azure instances:
@@ -1334,7 +1334,7 @@ Note: This option is only available for Aviatrix Transit Gateways deployed in AW
 - **AVX-20109** - Some gateway software upgrades failed with an "Archive is too shortâ€ message, but a software upgrade succeeded after retrying.
 - **AVX-20159** - When a user does an image upgrade/rollback on multiple gateways simultaneously, it could hit an exception in race condition, causing some gateway upgrade/rollback failures. These failures could cause the FireNet Gateway to not function properly after the upgrade/rollback.
 - **AVX-20173** - Incorrect gateways configured when disabling Transit FireNet on the gateway.
-- **AVI-2022-0004 ** - Fixed an internally-reported vulnerability which would allow an authenticated user to gain command line privileges on the Controller. This is not known to be exploited.
+- **AVI-2022-0004** - Fixed an internally-reported vulnerability which would allow an authenticated user to gain command line privileges on the Controller. This is not known to be exploited.
 - **AVX-20271** - Improved the cleanup of concurrent uploads that temporary files created by concurrent route updates. This fix prevents the overwrite of the temporary update files.
 - **AVX-20471** - When both Transit Gateways of a transit peering didn't have an AS number configured, CIDRs from static connection at one Transit Gateway would not be propagated to the peering Transit Gateway.
 - **AVX-20647** - Performance fix for route processing in multi-domain environment.
@@ -1450,13 +1450,13 @@ The following `Public Preview Features`_ are available in this release:
 6.6.5230 (02/09/2022)  
 ====================== 
 
-**Issues Corrected in Release 6.6.5230 **  
+**Issues Corrected in Release 6.6.5230**  
 
 - **AVX-14504** - Terraform relies on the API get_instance_by_id / CLI "firewall_instance get instance --instance_id <ID>" to refresh the state of the aviatrix_firewall_instance resource. However, in some Azure FireNet deployments the API returns the incorrect value for the attached Transit Gateway. 
 - **AVX-18700** - When the stateful firewall rules configured on a gateway reaches a limit of 500 and above, while performing "Add/Delete/Insert" operations the following error may be encountered - "Command to execute too long".
 
 
-**Known Issues in Release 6.6.5230 ** 
+**Known Issues in Release 6.6.5230** 
 
 - **AVX-20502** - Controller upgrade from 6.5 to 6.6 causes BGP to go down on Aviatrix Transit FireNet. The issue occurs when the following conditions are met:
 #. The AWS Transit FireNet is enabled.
