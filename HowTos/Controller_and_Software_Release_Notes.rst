@@ -73,7 +73,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-36425** - You can now configure DNAT in non-active gateways.
 * **AVX-36747** - Aviatrix Controller and gateway images are switching from IKE-type Racoon to IKE-type Strongswan. Your Controller and gateways will use the image’s Linux kernel version to determine which IKE-type to enable. If the Linux kernel version is 5.4(or newer), Strongswan is enabled.
 
-**Issues Corrected in Aviatrix Release 6.9.521**
+**Issues Corrected in Aviatrix Release 6.9.522**
 
 * **AVX-28468** - Equinix can workaround this issue by allowing the Controller’s IP address access SSH port 22 in the VNF's ACL. By doing this, sshgw can directly SSH to the VM via its public IP.
 * **AVX-20197** - After the Single AZ HA setting on a gateway was enabled and the GSO/GRO setting was disabled, the gateway may have auto-restarted multiple times.
@@ -94,8 +94,9 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-38471** - If the quagga bgp Debian packages were not installed properly, the Aviatrix Controller would try to reinstall the package instead of failing the gateway configuration.
 * **AVX-38682** - (GCP) When you selected the CheckPoint BYOL image as the third-party firewall option, the CheckPoint PAYG image came up instead.
 * **AVX-39037** - If you added policy rules to Distributed Firewalling, additional and unnecessary code could always run, even if the rules were deleted.
+* **AVX-39040** - Gateways reconnecting to the Controller could cause a resource leak on the gateway.
 
-**Known Issues in Release 6.9.521**
+**Known Issues in Release 6.9.522**
 
 * **AVX-36138** - Gateway initialization, including Cloud Gateway creation, Cloud Gateway Image Upgrade, or Cloud Gateway Software Rollback fails if you completed both of the operations below (regardless of order):
 
