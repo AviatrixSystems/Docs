@@ -13,7 +13,7 @@ You may need to upgrade your gateway image outside of a periodic upgrade in the 
 * Aviatrix has released a new gateway image as part of a security update or product enhancement.
 * A gateway requires significant repair.
 
-This document shows you how to upgrade an Aviatrix Gateway to a new image. 
+This document shows you how to upgrade an Aviatrix Gateway to a new image.
 
 .. note::
 
@@ -27,18 +27,18 @@ Prerequisites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Check the `current software version <https://docs.aviatrix.com/documentation/latest/platform-administration/controller-migration.html>`_ of your Controller. You cannot upgrade your gateways to a newer version than your Controller.
-- (Cloud gateways) An image upgrade to 6.7.1574 and later versions will fail if the Cloud Gateway is based on IKE-type Racoon**. You must perform an image upgrade of Cloud gateways running IKE-type Racoon before performing the software upgrade. An image upgrade will upgrade the gateway image version and thereby change the IKE-type on the gateways from Racoon to Strongswan. 
+- (Cloud gateways) An image upgrade to 6.7.1574 and later versions will fail if the Cloud Gateway is based on IKE-type Racoon**. You must perform an image upgrade of Cloud gateways running IKE-type Racoon before performing the software upgrade. An image upgrade will upgrade the gateway image version and thereby change the IKE-type on the gateways from Racoon to Strongswan.
 
 Cloud gateways running older images will not be able to upgrade from 6.6 to 6.7.1574 without performing an image upgrade of gateways to switch to IKE-type Strongswan. All Cloud gateways must run Strongswan prior to upgrading to version 6.1574.
 
 ** If your account uses Racoon-based Cloud, contact Aviatrix Support to replace your Cloud hardware to Strongswan before upgrading to version 6.7.1574.
 ** Note that CloudN Gateways, as opposed to Cloud gateways, can run Racoon-based gateways up to release 6.8.1148.
 
-- Every quarter, or if you receive a field notice about a new image, schedule this gateway image upgrade for an off-peak time on your network, during a maintenance window. These upgrades do require some downtime, but they have minimal impact. 
-- Consider enabling HA (High Availability) on the Transit and Spoke Gateways that require an image upgrade if you have not done so. HA helps minimize downtime. 
- 
-  * If you do not have HA configured, a gateway image upgrade requires downtime. 
-  * If you have HA configured, when you perform a gateway image upgrade, your Controller routes all traffic to the gateway that is not being replaced. Performance during the upgrade depends on the size of the gateway and the amount of traffic. 
+- Every quarter, or if you receive a field notice about a new image, schedule this gateway image upgrade for an off-peak time on your network, during a maintenance window. These upgrades do require some downtime, but they have minimal impact.
+- Consider enabling HA (High Availability) on the Transit and Spoke Gateways that require an image upgrade if you have not done so. HA helps minimize downtime.
+
+  * If you do not have HA configured, a gateway image upgrade requires downtime.
+  * If you have HA configured, when you perform a gateway image upgrade, your Controller routes all traffic to the gateway that is not being replaced. Performance during the upgrade depends on the size of the gateway and the amount of traffic.
 
 .. tip::
 
@@ -96,6 +96,19 @@ Replacing a gateway can take 5-7 minutes. After the gateway is up, it takes more
 .. note::
 
   Upgrading gateway images for gateways with many tunnels can take some time. For example, depending on the software version of the Controller, it may take up to one hour to upgrade 4,000 tunnels.
+
+
+Migrating Unmanaged Disk to Managed Disk (Azure)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you have a gateway deployed on Azure and you intend to migrate your unmanaged disk to a managed disk, it is recommended to follow the process of `gateway image upgrade <https://docs.aviatrix.com/HowTos/gateway-image-migration.html#upgrade-gateway-image>`_. This gateway image upgrade will automatically migrate the unmanaged disk to a managed disk after the gateway image upgrade.
+
+
+
+.. important::
+   It is highly recommended to migrate your unmanaged disk to a managed disk as soon as possible, as Azure will be `retiring <https://azure.microsoft.com/en-gb/updates/azure-unmanaged-disks-will-be-retired-on-30-september-2025>`_ unmanaged disks soon.
+
+
 
 Verify
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
