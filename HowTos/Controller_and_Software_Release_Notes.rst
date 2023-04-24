@@ -38,7 +38,37 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   For the release notes of Controller and Gateway software versions 7.0 and later, click `here <https://docs.aviatrix.com/documentation/latest/release-notes/software-release-notes/software-release-notes.html>`_. The content below is a list of release notes for software versions 6.9 and earlier.
 
+6.9.529 (04/24/2023)
+=========================
 
+**Enhanced Features in Aviatrix Release 6.9.529**
+
+* **AVX-36880** - You can now upgrade images for multiple non-Activemesh Aviatrix Gateways in batches, instead of individually. This improvement makes the image upgrade process faster and more efficient for this type of gateway.
+
+  You can upgrade non-Activemesh gateway images in batch if they have no peerings, or if only one of the gateways has a peering. If more than one non-Activemesh gateway has a peering, the batch image upgrade will fail.
+
+.. note::
+ 
+ Only one image-upgrade session is allowed for non-Activemesh gateways. This means that all desired gateways must be included in a single upgrade session. However, multiple non-Activemesh gateways can be upgraded simultaneously as part of a single upgrade session.
+ 
+Please see Upgrading Gateway Images <https://docs.aviatrix.com/documentation/latest/platform-administration/gateway-image-migration.html>_ for more information.
+
+* **AVX-36880** - You can now upgrade images for multiple non-Activemesh, standalone Aviatrix Gateways in batches, instead of individually. This improvement makes the image upgrade process faster and more efficient for this type of gateway.
+
+  You can upgrade non-Activemesh gateway images in batch if they have no peerings, or if only one of the gateways has a peering. If more than one non-Activemesh gateway has a peering, the batch image upgrade will fail.
+
+.. note::
+
+  * Only one image-upgrade session is allowed for non-Activemesh gateways. This means that all desired gateways must be included in a single upgrade session. However, multiple non-Activemesh gateways can be upgraded simultaneously as part of a single upgrade session.
+  * This enhancement is for standalone gateways, not UserVPN or NAT gateways.
+
+ Please see Upgrading Gateway Images <https://docs.aviatrix.com/documentation/latest/platform-administration/gateway-image-migration.html>_ for more information.
+
+**Issues Corrected in Aviatrix Release 6.9.529**
+
+* **AVX-38158** - (Alibaba) With CoPilot Security Group Management enabled, when you brought up gateways in Ali cloud, they would be missing Security Group rules on CoPilot. This issue meant there would be no visibility of netflow and syslog data from the gateways.
+* **AVX-38161** - If a Spoke Gateway has multiple Custom Mapped or Mapped Site2Cloud connections, Forward Traffic to Transit configuration enabled, and the same virtual destination CIDRs are configured in other Site2Cloud connections, a failover in one connection will cause TCP sessions belonging to the other connections to drop.
+* **AVX-39023** - Gateway Diagnostics would encounter an error and not display the results.
 
 6.9.522 (04/17/2023)
 =====================
