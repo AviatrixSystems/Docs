@@ -51,18 +51,19 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
  
  Only one image-upgrade session is allowed for non-Activemesh gateways. This means that all desired gateways must be included in a single upgrade session. However, multiple non-Activemesh gateways can be upgraded simultaneously as part of a single upgrade session.
  
-Please see Upgrading Gateway Images <https://docs.aviatrix.com/documentation/latest/platform-administration/gateway-image-migration.html>_ for more information.
+Please see `Upgrading Gateway Images <https://docs.aviatrix.com/documentation/latest/platform-administration/gateway-image-migration.html>_` for more information.
 
-* **AVX-36880** - You can now upgrade images for multiple non-Activemesh, standalone Aviatrix Gateways in batches, instead of individually. This improvement makes the image upgrade process faster and more efficient for this type of gateway.
+* **AVX-39732** - (Azure) Aviatrix has added support for the following Standard_Dxs_v5 instance types for VMs (Virtual Machines):
 
-  You can upgrade non-Activemesh gateway images in batch if they have no peerings, or if only one of the gateways has a peering. If more than one non-Activemesh gateway has a peering, the batch image upgrade will fail.
+ * Standard_D2ds_v5
+ * Standard_D4ds_v5
+ * Standard_D8ds_v5
+ * Standard_D16ds_v5
+ * Standard_D32ds_v5
+ * Standard_D48ds_v5
+ * Standard_D64ds_v5
 
-.. note::
-
-  * Only one image-upgrade session is allowed for non-Activemesh gateways. This means that all desired gateways must be included in a single upgrade session. However, multiple non-Activemesh gateways can be upgraded simultaneously as part of a single upgrade session.
-  * This enhancement is for standalone gateways, not UserVPN or NAT gateways.
-
- Please see Upgrading Gateway Images <https://docs.aviatrix.com/documentation/latest/platform-administration/gateway-image-migration.html>_ for more information.
+ This enhancement was added to enable you to resize from Standard_Dx_v3 instance types to the Standard_Dxs_v5 instance types listed above. This resizing was not possible with previously-supported Standard_Dxs_v5 instance types. See `here <https://learn.microsoft.com/en-us/azure/virtual-machines/azure-vms-no-temp-disk>_` for more information about resizing VMs in Azure.
 
 **Issues Corrected in Aviatrix Release 6.9.529**
 
