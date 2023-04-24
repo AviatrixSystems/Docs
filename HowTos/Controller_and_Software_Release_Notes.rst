@@ -55,15 +55,15 @@ Please see Upgrading Gateway Images <https://docs.aviatrix.com/documentation/lat
 
 * **AVX-39732** - (Azure) Aviatrix has added support for the following Standard_Dxs_v5 instance types for VMs (Virtual Machines):
 
-* Standard_D2ds_v5
-* Standard_D4ds_v5
-* Standard_D8ds_v5
-* Standard_D16ds_v5
-* Standard_D32ds_v5
-* Standard_D48ds_v5
-* Standard_D64ds_v5
+ * Standard_D2ds_v5
+ * Standard_D4ds_v5
+ * Standard_D8ds_v5
+ * Standard_D16ds_v5
+ * Standard_D32ds_v5
+ * Standard_D48ds_v5
+ * Standard_D64ds_v5
 
-This enhancement was added to enable you to resize from Standard_Dx_v3 instance types to the Standard_Dxs_v5 instance types listed above. This resizing was not possible with previously-supported Standard_Dxs_v5 instance types. See here <https://learn.microsoft.com/en-us/azure/virtual-machines/azure-vms-no-temp-disk{{ >}}_ for more information about resizing VMs in Azure.
+  This enhancement was added to enable you to resize from Standard_Dx_v3 instance types to the Standard_Dxs_v5 instance types listed above. This resizing was not possible with previously-supported Standard_Dxs_v5 instance types. See here <https://learn.microsoft.com/en-us/azure/virtual-machines/azure-vms-no-temp-disk{{ >}}_ for more information about resizing VMs in Azure.
 
 **Issues Corrected in Aviatrix Release 6.9.529**
 
