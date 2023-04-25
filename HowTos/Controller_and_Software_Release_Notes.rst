@@ -38,6 +38,20 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   For the release notes of Controller and Gateway software versions 7.0 and later, click `here <https://docs.aviatrix.com/documentation/latest/release-notes/software-release-notes/software-release-notes.html>`_. The content below is a list of release notes for software versions 6.9 and earlier.
 
+6.7.1583 (04/24/24)
+=============================
+  
+**Important Notices in Aviatrix Release 6.7.1583**
+
+**AVX-34656** - 
+
+ * ActiveMesh 1.0 is no longer supported in release 6.8.1148. A Controller upgrade from 6.7.1583 to 6.8.1148 will be blocked if the Controller is running ActiveMesh 1.0. To migrate to ActiveMesh 2.0, go to Settings > Maintenance > Migration > ActiveMesh 2.0 before you upgrade to 6.8.1148.
+ * (Azure) Azure FireNet gateway without a Load Balancer is no longer supported in 6.8.1148. A Controller upgrade from 6.7.1583 to 6.8.1148 will be blocked if you have such a deployment. Before you upgrade, rebuild any Azure FireNet gateway to enable a Load Balancer.
+
+**Enhanced Features in Aviatrix Release 6.7.1583**
+
+**AVX-36747** - Aviatrix Controller and gateway images are switching from IKE-type Racoon to IKE-type Strongswan. Your Controller and gateways will use the image’s Linux kernel version to determine which IKE-type to enable. If the Linux kernel version is 5.4 (or newer), Strongswan is enabled.
+
 6.9.529 (04/24/2023)
 =========================
 
