@@ -50,7 +50,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Enhanced Features in Aviatrix Release 6.7.1583**
 
-**AVX-36747** - Aviatrix Controller and gateway images are switching from IKE-type Racoon to IKE-type Strongswan. Your Controller and gateways will use the image’s Linux kernel version to determine which IKE-type to enable. If the Linux kernel version is 5.4 (or newer), Strongswan is enabled.
+**AVX-36747** - Aviatrix Controller and gateway images are switching from Racoon based IKE to Strongswan based IKE. Your Controller and gateways will use the image’s Linux kernel version to determine which IKE-type to enable. If the Linux kernel version is 5.4 (or newer), upgrade is supported.
 
 6.9.529 (04/24/2023)
 =========================
