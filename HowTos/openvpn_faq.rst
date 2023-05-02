@@ -315,14 +315,6 @@ How do I fix the Aviatrix VPN timing out too quickly?
 
 |imageRenegotiationInterval|
 
-.. note::
-
-  We have a known issue of "Aviatrix VPN times out too quickly", but it is fixed in the releases after UCC 3.2. If you are using a VPN gateway that was created before release UCC 3.2 and would like to solve this issue, please first follow the above steps for "Renegotiation interval" and then disable it as below:
-
-#. Click on the **Name** dropdown menu and select **Renegotiation interval**.
-#. Click on the **Status** toggle switch to set it to **Disabled**.
-#. Click **OK**.
-
 
 - How do I change the idle timeout?
 
@@ -337,12 +329,6 @@ How do I fix the Aviatrix VPN timing out too quickly?
 
 |imageIdleTimeout|
 
-.. note::
-
-  We have a known issue "Aviatrix VPN times out too quickly", but it is fixed in the releases after UCC 3.2. If you are using a VPN gateway which was created before release UCC 3.2 and would like to solve this issue, please first follow the above steps for "idle timeout" and then disable it as below:
-#. Set the `Name` drop down to **Idle timeout**.
-#. Change the `Status` to **Disabled**.
-#. Click **OK**.
 
 Where do I find the log for the Aviatrix Client?
 -------------------------------------------------------------
