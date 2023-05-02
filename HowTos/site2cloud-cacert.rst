@@ -85,7 +85,6 @@ Limitations
 - Only the PEM certificate file type is supported in this version. 
 - You can only use one certificate group (all the certificates with the same tag name) per Site2Cloud connection.
 - You can only roll back the platform version if the previous version supports certificate-based authentication (not supported prior to 6.8).
-- The Aviatrix OpenVPN® feature cannot be used in conjunction with Site2Cloud certificate-based authentication.
 
 .. |site2cloud| image:: site2cloud_cacert_media/ca-cert.png
    :scale: 50%
