@@ -72,9 +72,9 @@ Windows |win|
 
 1. Download the Aviatrix VPN Client installer from `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/AVPNC_win_x64.exe>`__
 
-    Run the installer and follow the on screen instructions to install the application.
+    Run the installer and follow the on-screen instructions to install the application.
 
-    If you have installed OpenVPN previously, TUN TAP drivers would have been installed. If they are not installed , you can install the same from the `this link <https://s3-us-west-2.amazonaws.com/aviatrix-download/AviatrixVPNClient/tap-windows-9.21.2.exe>`__
+    If you have installed OpenVPN previously, TUN TAP drivers would have been installed. If they are not installed, you can install the TUN TAP at the end of the installation.
 
 2. Save the OpenVPN configuration file (with the extension .ovpn) that was sent to you by your Admin, on to your machine.
 
@@ -104,8 +104,8 @@ Mac |mac|
 
 3. Start the Aviatrix VPN Client application by going to LaunchPad and clicking on “Aviatrix VPN Client”.
 
-   |MacClientLocation| 
-   
+   |MacClientLocation|
+
    |MacClientLocation2|
 
 4. A popup comes up to request sudo privelages to modify routing tables
@@ -237,7 +237,7 @@ CloudN VPC supports a variety of authentication methods to verify VPN user crede
 LDAP:
 
   Enter username and password stored on LDAP server.
-  
+
   Check doc `LDAP Configuration for Authenticating VPN Users <https://docs.aviatrix.com/HowTos/VPNUsers_LDAP.html>`__ for detail.
 
 Google 2-step verification:
