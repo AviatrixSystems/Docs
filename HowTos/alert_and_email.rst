@@ -46,7 +46,15 @@ By default, Alert Bell notification is enabled for the following features:
 
 |alert_bell_notify_|
 
-To change these Alert Bell settings, navigate to Settings > Controller > select the **Alert Bell* tab.
+To change these Alert Bell settings, navigate to Settings > Controller > select the **Alert Bell** tab.
+
+Clearing Alert Bell Notifications
+------------------------------------------------------
+
+Alert Bell Notifications are cleared as follows, depending on their type:
+
+* System — System-type bell notifications are persisted in the Controller Database. You can manually clear the notifications by clicking **CLEAR ALL** in the notification dialog.
+* Activity — Activity-type bell notifications are user-session based **and are automatically cleared out when you log out of Controller**. You can manually clear the notifications during your session by clicking **CLEAR ALL** in the notification dialog.
 
 
 Changing the Email Notification Source (AWS)
