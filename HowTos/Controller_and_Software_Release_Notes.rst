@@ -41,8 +41,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 6.9.540 Release Notes (05/04/2023)
 ===============================================
 
-
-**Enhanced Features in Aviatrix Release 6.8.1642**
+**Enhanced Features in Aviatrix Release 6.9.540**
 
 * **AVX-36880** - You can now upgrade images for multiple non-Activemesh Standalone Aviatrix Gateways in batches, instead of individually. This improvement makes the image upgrade process faster and more efficient for this type of gateway.
 
