@@ -37,6 +37,39 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 .. important::
 
   For the release notes of Controller and Gateway software versions 7.0 and later, click `here <https://docs.aviatrix.com/documentation/latest/release-notes/software-release-notes/software-release-notes.html>`_. The content below is a list of release notes for software versions 6.9 and earlier.
+  
+6.9.540 Release Notes (05/04/2023)
+===============================================
+
+
+**Enhanced Features in Aviatrix Release 6.8.1642**
+
+* **AVX-36880** - You can now upgrade images for multiple non-Activemesh Aviatrix Gateways in batches, instead of individually. This improvement makes the image upgrade process faster and more efficient for this type of gateway.
+
+You can upgrade non-Activemesh gateway images in batch if they have no peerings, or if only one of the gateways has a peering. If more than one non-Activemesh gateway has a peering, the batch image upgrade will fail.
+
+.. note::
+
+  Only one image-upgrade session is allowed for non-Activemesh gateways. This means that all desired gateways must be included in a single upgrade session. However, multiple non-Activemesh gateways can be upgraded simultaneously as part of a single upgrade session.
+
+Please see `Upgrading Gateway Images <https://docs.aviatrix.com/documentation/latest/platform-administration/gateway-image-migration.html?expand=true>`_ for more information.
+* **AVX-38963** - Previously, the Aviatrix OpenVPN® feature cannot be used in conjunction with Site2Cloud certificate-based authentication. Now, you can use both features at the same time.
+
+6.8.1642 Release Notes (05/04/2023)
+================================================
+
+**Enhanced Features in Aviatrix Release 6.8.1642**
+
+* **AVX-36880** - You can now upgrade images for multiple non-Activemesh Aviatrix Gateways in batches, instead of individually. This improvement makes the image upgrade process faster and more efficient for this type of gateway.
+
+You can upgrade non-Activemesh gateway images in batch if they have no peerings, or if only one of the gateways has a peering. If more than one non-Activemesh gateway has a peering, the batch image upgrade will fail.
+
+.. note::
+
+  Only one image-upgrade session is allowed for non-Activemesh gateways. This means that all desired gateways must be included in a single upgrade session. However, multiple non-Activemesh gateways can be upgraded simultaneously as part of a single upgrade session.
+
+Please see `Upgrading Gateway Images <https://docs.aviatrix.com/documentation/latest/platform-administration/gateway-image-migration.html?expand=true>`_ for more information.
+* **AVX-38963** - Previously, the Aviatrix OpenVPN® feature cannot be used in conjunction with Site2Cloud certificate-based authentication. Now, you can use both features at the same time.
 
 6.7.1583 (04/24/24)
 =============================
