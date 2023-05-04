@@ -44,7 +44,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Enhanced Features in Aviatrix Release 6.8.1642**
 
-* **AVX-36880** - You can now upgrade images for multiple non-Activemesh Aviatrix Gateways in batches, instead of individually. This improvement makes the image upgrade process faster and more efficient for this type of gateway.
+* **AVX-36880** - You can now upgrade images for multiple non-Activemesh Standalone Aviatrix Gateways in batches, instead of individually. This improvement makes the image upgrade process faster and more efficient for this type of gateway.
 
 You can upgrade non-Activemesh gateway images in batch if they have no peerings, or if only one of the gateways has a peering. If more than one non-Activemesh gateway has a peering, the batch image upgrade will fail.
 
