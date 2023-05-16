@@ -189,7 +189,7 @@ FQDN Name Caching
 This is a global configuration that applies to  all FQDN gateways. 
 
 If FQDN Name caching is enabled, the resolved IP address from FQDN filter is cached so that if subsequent TCP session matches the 
-cached IP address list, FQND domain name is not checked and the session is allowed to pass. 
+cached IP address list, FQDN domain name is not checked and the session is allowed to pass. 
 
 We recommend disabling Caching to prevent unwanted domain names to bypass filter as they resolve to the same IP address. For example, youtube.com shares the same destination IP address range as google.com. There is minimal performance impact by disabling the cache. 
 
