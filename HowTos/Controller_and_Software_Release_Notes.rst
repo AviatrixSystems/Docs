@@ -632,7 +632,6 @@ Attention AWS users. The Controller Security Access Control feature overcomes th
   To resolve this issue in versions older than release 6.9.188, restart cloudxd in your Controller by going to Diagnostics > Services > CloudXD > Actions > Restart.
 
 * **AVX-28898** - A large number of Site2Cloud connections degraded your Controller’s responsiveness.
-* **AVX-29343** - In the FQDN feature, if the retransmission of a TCP 443 client hello packet was split, the packet may not have been properly dropped in the case of an FQDN allow list.
 * **AVX-29364** – When a GRE tunnel goes down, your gateway withdraws routes. Previously, gateways withdrew routes one at a time, which could take a long time. This enhancement ensures that gateways withdraw routes in bulk to speed up the process.
 * **AVX-29691** - Under scale setups with thousands of tunnels, when micro-segmentation was disabled, the process could still run and consume an entire CPU core.
 * **AVX-30443** – BGP learned routes were temporarily removed and then added back when you migrated ActiveMesh 1.0 to ActiveMesh 2.0. This issue could cause traffic interruption.
@@ -655,7 +654,6 @@ Attention AWS users. The Controller Security Access Control feature overcomes th
   To resolve this issue in versions older than release 6.8.1369, restart cloudxd in your Controller by going to Diagnostics > Services > CloudXD > Actions > Restart.
 
 * **AVX-28898** - A large number of Site2Cloud connections degraded your Controller’s responsiveness.
-* **AVX-29343** - In the FQDN feature, if the retransmission of a TCP 443 client hello packet was split, the packet may not have been properly dropped in the case of an FQDN allow list.
 * **AVX-29364** - When a GRE tunnel goes down, your gateway withdraws routes. Previously, gateways withdrew routes one at a time, which could take a long time. This enhancement ensures that gateways withdraw routes in bulk to speed up the process.
 * **AVX-29691** - Under scale setups with thousands of tunnels, when micro-segmentation was disabled, the process could still run and consume an entire CPU core.
 * **AVX-30443** - BGP learned routes were temporarily removed and then added back when you migrated ActiveMesh 1.0 to ActiveMesh 2.0. This issue could cause traffic interruption.
