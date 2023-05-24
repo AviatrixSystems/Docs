@@ -642,7 +642,11 @@ Troubleshooting Edge Gateway Connectivity
 
 You can use the Clish commands below to troubleshoot the Edge Gateway.
 
-To run Clish on the Edge Gateway, log in with the username **admin**.
+To run Clish on the Edge Gateway, log in with the username **admin** and password **Aviatrix123#**.
+
+.. Note::
+    Once the Edge Gateway registers with the Aviatrix Controller, the password changes to the WAN IP of the Edge Gateway.
+
 
 +-----------------------------------+--------------------------------------------------------+
 | Command                           | Description                                            |
