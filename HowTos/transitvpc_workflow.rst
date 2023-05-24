@@ -170,10 +170,16 @@ To attach a Spoke Gateway to a Transit Gateway:
 
 #. Click on the Spoke Gateway/SourceGateway dropdown menu and select the Spoke Gateway to attach.
 #. Click on the Transit Gateway/NextHop Gateway dropdown menu and select a Transit Gateway.
-#. (Optional) Check **Max Performance** to create the maximum number of tunnels for the spoke-to-transit attachment. If **Max Performance** is not checked, then only 1 tunnel is created.
+#. (Optional) To create the maximum number of tunnels for the Spoke-to-Transit gateway attachment, check **Max Performance**. 
 
    .. Note::
       Max Performance option is valid when both the Spoke and Transit gateways are launched with Insane Mode enabled and are in the same cloud type.
+	  
+	  The number of tunnels that are created depends on the gateway instance sizes.
+	  
+	  If **Max Performance** is not checked, then only 1 tunnel is created even when Insane Mode is enabled for both Spoke and Transit Gateway.
+	  
+	  To switch between multiple tunnels or one tunnel, detach and reattach the Spoke Gateway to the Transit Gateway.
 
 #. Click Attach.
 
