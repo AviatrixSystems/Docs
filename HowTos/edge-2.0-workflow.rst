@@ -1,38 +1,35 @@
 
-============================
-Deploying Aviatrix Edge  2.0
-============================
+===============================
+Deploying Aviatrix Secure Edge
+===============================
 
-This document provides instructions for deploying Aviatrix Edge 2.0 on VMware ESXi or on open-source Kernel-based Virtual Machine (KVM).
+This document provides instructions for deploying Aviatrix Secure Edge on VMware ESXi or on open-source Kernel-based Virtual Machine (KVM).
 
 
-For additional information about Aviatrix Edge 2.0, see `Aviatrix Edge FAQ <http://docs.aviatrix.com/HowTos/edge-faq.html>`_. 
+For additional information about Aviatrix Secure Edge, see `Aviatrix Secure Edge FAQ <http://docs.aviatrix.com/HowTos/edge-faq.html>`_. 
  
 
-For examples of Edge 2.0 design patterns, see `Aviatrix Edge Design Patterns <http://docs.aviatrix.com/HowTos/edge-design-patterns.html>`_.
-
-
-For the Aviatrix Edge 1.0 for ESXi workflow, see `Deploying Aviatrix Edge 1.0 for VMware ESXi <http://docs.aviatrix.com/HowTos/secure_edge_workflow.html>`_.
+For examples of Aviatrix Secure Edge design patterns, see `Aviatrix Secure Edge Design Patterns <http://docs.aviatrix.com/HowTos/edge-design-patterns.html>`_.
    
 
-Aviatrix Edge Network Connectivity
-==================================
+Aviatrix Secure Edge Network Connectivity
+=========================================
 
-The following diagram shows an example of network connectivity for Edge Gateway to Transit Gateway in AWS.
+The following diagram shows an example of network connectivity for Aviatrix Edge Gateway to Transit Gateway in AWS.
 
 |edge-network-connectivity|
 
 Prerequisites
 =============
 
-Aviatrix Edge 2.0 requires the following:
+Aviatrix Secure Edge requires the following:
 
 -	Aviatrix Controller 6.8
 -	VMware ESXi
 
     -	OVA image for VMware ESXi (see `Requesting Aviatrix Edge Gateway Image File <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#requesting-an-aviatrix-edge-gateway-image-file>`_).
     -	VMware ESXi 6.7 or 7.0.1
-    -	Sufficient VMware ESXi resources to run Edge Gateway (see `Aviatrix Edge 2.0 Installation Requirements`_).
+    -	Sufficient VMware ESXi resources to run Edge Gateway (see `Aviatrix Secure Edge Installation Requirements`_).
     -	(Optional) VMware vCenter Server
 	
 	For information about installing VMware products, refer to the VMware product documentation.
@@ -43,7 +40,7 @@ Aviatrix Edge 2.0 requires the following:
     -	KVM server running in Linux Bare Metal Server
     -	CentOS 7.6-1810
     -	QEMU Version 1.5.3, Release 160.el7_6.3
-    -	Sufficient KVM resources to run Edge Gateway (see `Aviatrix Edge 2.0 Installation Requirements`_).
+    -	Sufficient KVM resources to run Edge Gateway (see `Aviatrix Secure Edge Installation Requirements`_).
 	
 	For information about installing KVM products, refer to KVM product documentation.
 	
@@ -51,10 +48,10 @@ Aviatrix Edge 2.0 requires the following:
 -	Access to Aviatrix Controller using the Internet or private network with DNS resolution from the Edge Gateway Management interface
 -	BGP-enabled router to peer with Edge Gateway LAN interface via BGP over LAN
 
-Requesting an Aviatrix Edge Gateway Image File
+Requesting an Aviatrix Secure Edge Image File
 ----------------------------------------------
 
-Before you begin the deployment of the Edge Gateway, submit a request to Aviatrix Support for a link to the Edge Gateway image file. You will use the image file to deploy the Edge virtual machine.
+Before you begin the deployment of the Edge Gateway, submit a request to Aviatrix Support for a link to the Aviatrix Secure Edge image file. You will use the image file to deploy the Edge virtual machine.
 
 1. Log in to the Aviatrix Support Portal: `<https://support.aviatrix.com>`_.
 
@@ -62,7 +59,7 @@ Before you begin the deployment of the Edge Gateway, submit a request to Aviatri
 
 3. For **Subject**, enter **Requesting access to Edge image**.
 
-4. For **Edge Location**, enter the physical address of the location where you will install the Edge VM(s), such as a data center, headend, co-location site, or office. If you are installing Edge VMs at more than one location, provide the following information for each physical location:
+4. For **Edge Location**, enter the physical address of the location where you will install the Aviatrix Secure Edge VM(s), such as a data center, headend, co-location site, or office. If you are installing Edge VMs at more than one location, provide the following information for each physical location:
 
     - Physical Address (Do not enter a P.O.Box.)
     - City
@@ -72,12 +69,12 @@ Before you begin the deployment of the Edge Gateway, submit a request to Aviatri
 
 5. For **Type of VM**, enter **OVA** for VMware ESXi or **QCOW2** for KVM.
 
-6. Click **Submit**. Aviatrix Support will respond with a link you can use to download the Edge Gateway image file.
+6. Click **Submit**. Aviatrix Support will respond with a link you can use to download the Aviatrix Secure Edge image file.
 
 
 
-Aviatrix Edge 2.0 Installation Requirements
-===========================================
+Aviatrix Secure Edge Installation Requirements
+==============================================
 
 The following sections describe the virtual machine instance configuration, network interfaces, ports and protocols, and access requirements for the Edge Gateway to communicate with the Aviatrix Controller and the Aviatrix Transit Gateway.
 
@@ -99,19 +96,21 @@ The following table provides CPU and memory configurations of the virtual machin
 +---------------------+----------------------+--------------------------+------------------------+
 
 .. Important::
-   We recommend that you not change the Edge VM resource allocation after deploying it. Aviatrix support may not be able to assist with any issue that occurs on a system with customized resource allocation.
+   Aviatrix recommends that you not change the Aviatrix Secure Edge VM resource allocation after deploying it. Aviatrix support may not be able to assist with any issue that occurs on a system with customized resource allocation.
 
-Oversubscription of host resources can lead to a reduction of performance and your instance could become unstable. We recommend that you follow the guidelines and the best practices for your host hypervisor.
+Over subscription of host resources can lead to a reduction of performance and your instance could become unstable. We recommend that you follow the guidelines and the best practices for your host hypervisor.
 
-Aviatrix Edge Networking and Ports and Protocols
-------------------------------------------------
+Aviatrix Secure Edge Networking and Ports and Protocols
+-------------------------------------------------------
 
 |edge-network-port-protocol|
 
-The following sections describe the Edge network interfaces, port, and protocols.
+The following sections describe the Aviatrix Secure Edge network interfaces, port, and protocols.
 
-Aviatrix Edge Network Interfaces
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Aviatrix Secure Edge Network Interfaces
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Aviatrix Edge Gateway has three interfaces: one WAN interface on eth0, one LAN interface on eth1, and one Management interface on eth2.
 
 +-----------------------+------------------------------------------------------------------------+
 |**Interface**          | **Description**                                                        |
@@ -128,8 +127,8 @@ Aviatrix Edge Network Interfaces
 |                       | Aviatrix software download, and tracelog upload.                       |
 +-----------------------+------------------------------------------------------------------------+
 
-Aviatrix Edge Ports and Protocols
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Aviatrix Secure Edge Ports and Protocols
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. Important::
 
@@ -164,18 +163,18 @@ Aviatrix Edge Ports and Protocols
 For additional Edge Gateway access requirements, see `Aviatrix Products: Required Access for External Sites <https://aviatrix.zendesk.com/hc/en-us/articles/4417312119437-Aviatrix-Products-Required-Access-for-External-Sites>`_.
 
 
-Aviatrix Edge 2.0 Deployment Workflow
-=====================================
+Aviatrix Secure Edge Deployment Workflow
+========================================
 
-The diagram below provides a high-level view of the four-step process for deploying Aviatrix Edge 2.0 in Aviatrix Controller. You have the option to use either VMware ESXi or an open-source Kernel-based Virtual Machine (KVM) to deploy the Edge VM and attach the ZTP **.iso** file.
+The diagram below provides a high-level view of the four-step process for deploying Aviatrix Secure Edge in Aviatrix Controller. You have the option to use either VMware ESXi or an open-source Kernel-based Virtual Machine (KVM) to deploy the Aviatrix Secure Edge VM and attach the ZTP **.iso** file.
 
 |edge-deploy-workflow|
  
-1. Create Edge Gateway ZTP ISO Image File
------------------------------------------
+1. Create the Edge Gateway ZTP ISO Image File
+---------------------------------------------
 
 .. note::
-   You must have port 443 open to the IP address of the Aviatrix Controller. For the required access for Edge Gateway deployment, refer to `Aviatrix Edge Ports and Protocols <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#aviatrix-edge-ports-and-protocols>`_.
+   You must have port 443 open to the IP address of the Aviatrix Controller. For the required access for Edge Gateway deployment, refer to `Aviatrix Secure Edge Ports and Protocols <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#aviatrix-edge-ports-and-protocols>`_.
 
 To create the Edge Gateway ISO image file, follow these steps.
 
@@ -246,7 +245,7 @@ Next, deploy the Edge virtual machine and attach the ZTP **.iso** file in the VM
 Edge Site ID Guidelines
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Aviatrix Edge 2.0 uses Site ID to identify an Edge location and Edge Gateway pair. This allows to group multiple Edge Gateways at the same Edge location using the same Site ID.
+Aviatrix Secure Edge uses Site ID to identify an Edge location and Edge Gateway pair. This allows to group multiple Edge Gateways at the same Edge location using the same Site ID.
 Multiple Edge Gateways can be grouped and deployed in Active-Active or Active-Standby mode.
 
 Follow these guidelines to decide whether to use an existing Site ID or create a new one.
@@ -265,17 +264,17 @@ Follow these guidelines to decide whether to use an existing Site ID or create a
 -	If you want to configure FireNet management on the Edge Gateway, you need to configure it per site.
 -	When multiple Edge Gateways are attached to a common transit, the transit will propagate routes from Edge Gateways with the same Site ID to other Edge Gateways with a different Site ID but will not propagate routes from the Edge Gateways to other Edge Gateways with the same Site ID.
 
-2. Deploy Edge Virtual Machine and Attach ZTP ISO File
-------------------------------------------------------
+2. Deploy Aviatrix Secure Edge Virtual Machine and Attach ZTP ISO File
+----------------------------------------------------------------------
 
-To deploy the Edge virtual machine on KVM, skip to step `2c. Deploying the Edge Virtual Machine in KVM`_.
+To deploy the Edge virtual machine on KVM, skip to step `2c. Deploying the Aviatrix Secure Edge Virtual Machine in KVM`_.
 
-2a. Deploying the Edge Virtual Machine in VMware ESXi
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2a. Deploying the Aviatrix Secure Edge Virtual Machine in VMware ESXi
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To deploy the Edge virtual machine in VMware ESXi, follow these steps. 
+To deploy the Aviatrix Secure Edge virtual machine in VMware ESXi, follow these steps. 
 
-1. Download the ESXi OVA file by using the link provided to you by Aviatrix Support. See `Requesting an Aviatrix Edge Gateway Image File <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#requesting-an-aviatrix-edge-gateway-image-file>`_.
+1. Download the ESXi OVA file by using the link provided to you by Aviatrix Support. See `Requesting an Aviatrix Secure Edge Image File <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#requesting-an-aviatrix-edge-gateway-image-file>`_.
 
 2. Log in to VMware vSphere Web client to access the ESXi host.
 
@@ -304,8 +303,8 @@ To deploy the Edge virtual machine in VMware ESXi, follow these steps.
 
 Next, attach the ZTP **.iso** and the Edge will auto-mount the media which contains the configuration file to be provisioned to the Edge.
 
-2b. Attaching the ISO Image to the Edge Virtual Machine in VMware ESXi
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2b. Attaching the ISO Image to the Aviatrix Secure Edge Virtual Machine in VMware ESXi
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
    * The ZTP ISO file can only be used for a single Edge VM instance, and only one time for that instance. 
@@ -332,12 +331,12 @@ Next, attach the ZTP **.iso** and the Edge will auto-mount the media which conta
 
 Next, verify Edge in Controller. See `Verifying Edge in Controller`_.
 
-2c. Deploying the Edge Virtual Machine in KVM
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2c. Deploying the Aviatrix Secure Edge Virtual Machine in KVM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Before you begin, on the KVM Linux host ensure the LAN, WAN, and MGMT network bridges are associated with the physical ethernet interfaces on the KVM sever. Refer to the KVM product documentation.
 
-1. Download the KVM QCOW2 file by using the link provided to you by Aviatrix Support. See `Requesting an Aviatrix Edge Gateway Image File <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#requesting-an-aviatrix-edge-gateway-image-file>`_.
+1. Download the KVM QCOW2 file by using the link provided to you by Aviatrix Support. See `Requesting an Aviatrix Secure Edge Image File <http://docs.aviatrix.com/HowTos/edge-2.0-workflow.html#requesting-an-aviatrix-edge-gateway-image-file>`_.
 
 2. Launch Virtual Machine Manager UI to access the KVM host.
 
@@ -413,7 +412,7 @@ where, *N* is the number of vCPUs.
 .. Note::
     KVM Hypervisor does not support configuration of RX/TX queue size during runtime. RX/TX queue size should be configured during Edge VM bootup.
 
-2e. Verifying Edge in Controller
+2e. Verifying the Edge in Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To verify the Edge Gateway is up, wait for 5 minutes after you have attached the ZTP **.iso** file then do the following:
@@ -429,10 +428,10 @@ To verify the Edge Gateway is up, wait for 5 minutes after you have attached the
 
 Next, attach the Edge Gateway to the Transit Gateway. See `Attach Edge Gateway to Transit Gateway`_.
 
-3. Attach Edge Gateway to Transit Gateway
-------------------------------------------
+3. Attach the Edge Gateway to the Transit Gateway
+-------------------------------------------------
 
-For Edge Gateway attachment over a public network, you must update the WAN Public IP on the Edge Gateway and configure BGP ASN on the Edge Gateway before you attach Edge Gateway.
+For Edge Gateway attachment over a public network, you must update the WAN Public IP on the Edge Gateway and configure BGP ASN on the Edge Gateway before you attach Edge Gateway to the Transit Gateway.
 
 3a. Update WAN Public IP
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -491,8 +490,8 @@ After you have updated the WAN Public IP on the Edge Gateway and configured the 
    * From Controller: Navigate to **Multi-Cloud Transit** > **List** > **Spoke**
    * From CoPilot: Navigate to **Topology** > **Network Graph** > **Network**.
 
-4. Connect Edge Gateway to External Device (BGP over LAN)
----------------------------------------------------------
+4. Connect the Edge Gateway to an External Device (BGP over LAN)
+----------------------------------------------------------------
 
 To connect the Edge Gateway to LAN Routing using BGP over LAN, follow these steps.
 
@@ -534,13 +533,13 @@ Active-Standby mode provides the flexibility on Aviatrix Transit Gateways and Av
 |edge-active-standby|
 
 .. Important::
-    *  The Active-Standby Preemptive setting is per site or location and is decided when you create the first Edge Gateway for that site. You cannot choose a different setting when you add more Edge Gateways to that site. For more information about preemptive and non-preemptive active-standby modes, see `Active-Standby`_.
+    *  The Active-Standby Preemptive setting is per site or location and is decided when you create the first Edge Gateway for that site. You cannot choose a different setting when you add more Edge Gateways to that site. For more information about preemptive and non-preemptive Active-Standby modes, see `Active-Standby`_.
 
 
 Transitive Routing
 ==================
 
-The Transitive Routing feature allows an Edge Gateway to forward routes between multiple Transit Gateways that are connected to it. In Edge 2.0, you have the option to enable or disable Transitive Routing for an Edge Gateway; it is disabled by default.
+The Transitive Routing feature allows an Edge Gateway to forward routes between multiple Transit Gateways that are connected to it. In Aviatrix Secure Edge, you have the option to enable or disable Transitive Routing for an Edge Gateway; it is disabled by default.
 
 |edge-transitive-routing|
 
@@ -549,11 +548,12 @@ Configuring Transitive Routing
 
 To configure Transitive Routing, follow these steps.
 
-1. Attach the Edge Gateway to the first Transit Gateway. Follow the steps in `3b. Attach Edge Gateway to Transit Gateway`_.
-2. Repeat and attach the Edge Gateway to the second Transit Gateway.
-3. Navigate to **MULTI-CLOUD TRANSIT** > **Advanced Config** > **Transitive Routing**.
-4. Click the toggle to enable Transitive Routing.
-5. Verify routes on each Aviatrix Transit Gateway.
+1. Log in to Aviatrix Controller.
+2. Attach the Edge Gateway to the first Transit Gateway. Follow the steps in `3b. Attach Edge Gateway to Transit Gateway`_.
+3. Repeat and attach the Edge Gateway to the second Transit Gateway.
+4. Navigate to **MULTI-CLOUD TRANSIT** > **Advanced Config** > **Transitive Routing**.
+5. Click the toggle to enable Transitive Routing.
+6. Verify routes on each Aviatrix Transit Gateway.
 
 
 Transit Peering over Public Network for Backup Path
@@ -583,7 +583,7 @@ To create Transit Peering over public network to use as backup path, follow thes
 Interactions with NAT
 =====================
 
-In Aviatrix Edge 2.0, the following NAT scenarios are supported:
+In Aviatrix Secure Edge, the following NAT scenarios are supported:
 
 -  Customized SNAT on Edge Gateway - For traffic initiated from Edge location towards Transit Gateway or CSP.
 -  DNAT on Edge Gateway - For traffic initiated from CSP towards Edge location.
@@ -594,7 +594,7 @@ In Aviatrix Edge 2.0, the following NAT scenarios are supported:
 Default RBAC Access Account for Edge
 ====================================
 
-In Aviatrix Edge 2.0, you have the option to create a default RBAC group and assign users to this group with permissions to create, delete, and manage Edge Gateways.
+In Aviatrix Secure Edge, you have the option to create a default RBAC group and assign users to this group with permissions to create, delete, and manage Edge Gateways.
 
 Creating the Default RBAC Access Account for Edge
 -------------------------------------------------
@@ -630,12 +630,12 @@ To create an RBAC group with permissions to create, delete, and manage Edge gate
 You can now create or assign a user account with the newly created RBAC group.
 
 
-Selective Gateway Upgrade for Edge 2.0
------------------------------------------
+Selective Gateway Upgrade for Aviatrix Secure Edge
+--------------------------------------------------
 
-The Aviatrix Edge 2.0 base OS is not upgradeable. To update the base OS to a newer version, you need to deploy the latest version of the Aviatrix Edge image to a new VM.
+The Aviatrix Secure Edge base OS is not upgradeable. To update the base OS to a newer version, you need to deploy the latest version of the Aviatrix Edge image to a new VM.
 
-As Edge 2.0 base OS is not field upgradeable, Edge 2.0 does not support selective gateway image update and software rollback.
+As Aviatrix Secure Edge base OS is not field upgradeable, Aviatrix Secure Edge does not support selective gateway image update and software rollback.
 
 Troubleshooting Edge Gateway Connectivity
 -----------------------------------------
