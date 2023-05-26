@@ -6,7 +6,7 @@ Aviatrix CloudWAN Workflow
 
 .. important::
 
-  This feature has been **deprecated** from release 6.8.1148. Instead, use Aviatrix Edge to attach on-prem hardware to the cloud.
+  This feature has been **deprecated** from release 6.8.1148. Instead, use Aviatrix Secure Edge to attach on-prem hardware to the cloud. See `Aviatrix Secure Edge FAQ <http://docs.aviatrix.com/HowTos/edge-faq.html>`_.
 
 Registering a Branch Router
 ---------------------------------------
