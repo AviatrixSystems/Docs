@@ -441,6 +441,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/transit_gateway_external_device_bgp_over_lan_with_aws_meraki_workflow
    HowTos/azure_bgpolan_multi_peer
    HowTos/azure_bgpolan_multi_peer_ARS
+   HowTos/rescure_pki_agent_cert
 
 .. _Good To Know:
 
