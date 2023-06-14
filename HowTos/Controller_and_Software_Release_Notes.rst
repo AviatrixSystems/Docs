@@ -38,10 +38,10 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   For the release notes of Controller and Gateway software versions 7.0 and later, click `here <https://docs.aviatrix.com/documentation/latest/release-notes/software-release-notes/software-release-notes.html>`_. The content below is a list of release notes for software versions 6.9 and earlier.
 
-6.8.j Release Notes (06/14/23)
+6.8.1686 Release Notes (06/14/23)
 ==============================
 
-**Enhanced Features in Aviatrix Release 6.8.j**
+**Enhanced Features in Aviatrix Release 6.8.1686**
 
 * **AVX-36880** - You can now upgrade images for multiple non-ActiveMesh Aviatrix Standalone Gateways in batches, instead of individually. This improvement makes the image upgrade process faster and more efficient for this type of gateway.
 
@@ -57,7 +57,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-39882** - Reduced the latency for applying configuration changes to the data path and for gateway upgrades.
 * **AVX-41036** - (AWS) Added support for the UAE (United Arab Emirates) region, or me-central-1, for AWS Gateways and VPCs.
 
-**Issues Corrected in Aviatrix Release 6.8.j**
+**Issues Corrected in Aviatrix Release 6.8.1686**
 
 * **AVX-37394** - (Azure) An Azure FireNet route table would fill up and not allow any more gateways after you attached more than 400 non-HPE Spoke Gateways.
 * **AVX-38161** - When two separate Site2Cloud connections shared the same remote initiated traffic source real CIDR and destination virtual CIDR, after one Site2Cloud connection failed over, the other connection's traffic could be dropped.
@@ -69,10 +69,10 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-41340** - (GCP) Upgrading a GCP Transit Gateway with BGPoLAN and Firenet features enabled might have resulted in a BGP session failure.
 * **AVX-41622** - An error occurred when you enabled CoPilot Security Group Management for a Controller that had no Aviatrix Gateways currently deployed.
 
-6.9.j Release Notes (06/14/23)
+6.9.595 Release Notes (06/14/23)
 ==============================
 
-**Enhanced Features in Aviatrix Release 6.9.j**
+**Enhanced Features in Aviatrix Release 6.9.595**
 
 * **AVX-36880** - You can now upgrade images for multiple non-ActiveMesh Aviatrix Standalone Gateways in batches, instead of individually. This improvement makes the image upgrade process faster and more efficient for this type of gateway.
 
@@ -88,7 +88,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-39882** - Reduced the latency for applying configuration changes to the data path and for gateway upgrades.
 * **AVX-41036** - (AWS) Added support for the UAE (United Arab Emirates) region, or me-central-1, for AWS Gateways and VPCs.
 
-**Issues Corrected in Aviatrix Release 6.9.j**
+**Issues Corrected in Aviatrix Release 6.9.595**
 
 * **AVX-39662** - (GCP) Upgrading a GCP Transit Gateway with BGPoLAN and Firenet features enabled might have resulted in the loss of direct connectivity to firewall appliance management.
 * **AVX-39749** - (OCI) When you removed a peering connection for a Transit or Spoke Gateway using High Performance Encryption, routes for Local Peering Gateways and Dynamic Routing Gateways were not properly removed.
@@ -118,10 +118,10 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 * **AVX-41622** - An error occurred when you enabled CoPilot Security Group Management for a Controller that had no Aviatrix Gateways currently deployed.
 
-6.7-post06 Release Notes (06/14/23)
+6.7.1601 Release Notes (06/14/23)
 =========================================
 
-**Enhanced Features in Aviatrix Release 6.7-post06**
+**Enhanced Features in Aviatrix Release 6.7.1601**
 
 * **AVX-41036** - (AWS) Added support for the UAE (United Arab Emirates) region, or me-central-1, for AWS Gateways and VPCs.
 
