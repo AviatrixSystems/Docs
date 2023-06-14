@@ -564,15 +564,7 @@ An Aviatrix Gateway could be in any of the following states over its lifetime.
 - The Gateway instance (VM) is not in running state.
 - Critical services are down on the gateway.
 
-**CHECK**: The Controller did not receive expected number of keepalive messages from the gateway during a health check. This is usually caused by the controller security group port 443 not being open to the gateway's EIP.
-
-**UPGRADE-FAIL**: The gateway could not be upgraded due to some failure encountered during the upgrade process. To upgrade the gateway again, go to the section "FORCE UPGRADE" which can be found here.
-
-::
-
-  Troubleshoot > Diagnostics > Gateway
-
-
+**KEEPALIVE_FAIL: The Controller did not receive the expected number of keepalive messages from the gateway during a health check. However, a tunnel to this gateway from a peered gateway is reported as UP.
 
 **CONFIG-FAIL**: Gateway could not process a configuration command from the Controller successfully. Please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ for assistance.
 
