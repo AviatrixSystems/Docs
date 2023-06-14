@@ -275,7 +275,15 @@ Scroll down to Event Triggered HA and click **Enable**.
 Jumbo Frame
 -------------
 
-Jumbo Frame improves the performance between Aviatrix Transit gateway  or an OCI Transit Gateway and CloudN. This feature is only supported for AWS and OCI; Azure and GCP do not support Jumbo frame. To configure:
+Jumbo Frame improves the performance between an Aviatrix Transit gateway and CloudN or an Aviatrix Edge Gateway.
+
+.. note::
+     - Jumbo Frame feature is only supported on private connections that support Jumbo Frame.
+     - Jumbo Frame is not supported for Transit Gateway connections to other devices such as, firewalls and routers.
+     - Jumbo Frame is supported with High Performance Encryption and BGP over IPsec and BGP over GRE connections only. High Performance Encryption must be enabled on all gateways in the end-to-end path of the traffic flow.
+     - Jumbo Frame is supported for AWS and OCI only; it is not supported for Azure and GCP.
+
+To configure:
 
 1. Navigate to Site2Cloud > select a connection and click **Edit**. 
 #. Scroll down to Jumbo Frame and click **Enable**. 
