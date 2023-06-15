@@ -564,7 +564,7 @@ An Aviatrix Gateway could be in any of the following states over its lifetime.
 - The Gateway instance (VM) is not in running state.
 - Critical services are down on the gateway.
 
-**KEEPALIVE_FAIL: The Controller did not receive the expected number of keepalive messages from the gateway during a health check. However, a tunnel to this gateway from a peered gateway is reported as UP.
+**KEEPALIVE_FAIL**: The Controller did not receive the expected number of keepalive messages from the gateway during a health check. However, a tunnel to this gateway from a peered gateway is reported as UP.
 
 **CONFIG-FAIL**: Gateway could not process a configuration command from the Controller successfully. Please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_ for assistance.
 
