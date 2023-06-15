@@ -159,7 +159,7 @@ Please see `Upgrading Gateway Images <https://docs.aviatrix.com/documentation/la
 
 * **AVX-38963** - Previously, the Aviatrix OpenVPN® feature could not be used in conjunction with Site2Cloud certificate-based authentication. Now, you can use both features at the same time.
 
-6.7.1583 (04/24/24)
+6.7.1583 (04/24/23)
 =============================
   
 **Important Notices in Aviatrix Release 6.7.1583**
