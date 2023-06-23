@@ -38,6 +38,13 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   For the release notes of Controller and Gateway software versions 7.0 and later, click `here <https://docs.aviatrix.com/documentation/latest/release-notes/software-release-notes/software-release-notes.html>`_. The content below is a list of release notes for software versions 6.9 and earlier.
 
+6.7.1601 Release Notes (06/14/23)
+=========================================
+
+**Enhanced Features in Aviatrix Release 6.7.1601**
+
+* **AVX-41036** - (AWS) Added support for the UAE (United Arab Emirates) region, or me-central-1, for AWS Gateways and VPCs.
+
 6.9.545 Release Notes (05/04/2023)
 ===============================================
 
