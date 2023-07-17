@@ -1,10 +1,13 @@
 
+
 =============================================
 Upgrading Aviatrix Controller and Gateways
 =============================================
 
 
+
 .. contents:: Section Overview
+.. keywords:: Upgrade Aviatrix, Upgrade Controller, Upgrade Gateways, Upgrade Gateway Images
 
 .. important::
 
