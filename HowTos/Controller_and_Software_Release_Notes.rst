@@ -855,7 +855,14 @@ Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1."
 
 **Deprecated Features in Aviatrix Release 6.7.1436**
 
+Transitive Peering Feature Deprecated
+
 -  The Transitive Peering feature is deprecated. This feature's functionality will be replaced by `Aviatrix Multi-Cloud Transit <https://docs.aviatrix.com/HowTos/transit_gateway_peering.html>`_.
+ 
+(AWS) UserVPN Gateways Do Not Support Classic Load Balancers
+ 
+**AVX-24015** - (AWS) AWS classic Load Balancers are not supported with UserVPN gateways. Instead, `migrate <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/migrate-classic-load-balancer.html>`_ to Network Load Balancers in your AWS account.
+
 
 6.6.5721 (08/16/2022)
 =====================
@@ -987,6 +994,12 @@ The following Private Preview Features are available in this release:
 - **AVX-26419** - If you are connecting to another Aviatrix device, using IKEv2 is preferred. IKEv2 support started in version 5.0.2667. If you configure IKEv1 in a Site2Cloud connection that uses certificate-based authentication and is connecting to another Aviatrix device, you must add the intermediate CA's in addition to the root CA. When an intermediate CA is renewed and re-authentication is attempted, the Site2Cloud connection will go down until you add the new certificate.
 - **AVX-27653** - If you are using software version 6.8.1148 on an outdated gateway image, your Controller could have a memory limitation issue. `Upgrade <https://docs.aviatrix.com/HowTos/gateway-image-migration.html>`_ your gateway images to avoid this issue.
 - **AVX-35490** - After a Controller software upgrade or a CloudXD restart, the Controller migrates BGP routes, automatically triggering an “Approve New Routes” email for existing pending CIDRs on gateways with learned CIDRs approval enabled. This issue has no functional impact. Approved CIDRs remain intact and no routes are changed.
+
+**Features Deprecated in Aviatrix Release 6.8.1148**
+
+(AWS) UserVPN Gateways Do Not Support Classic Load Balancers
+ 
+**AVX-24015** - (AWS) AWS classic Load Balancers are not supported with UserVPN gateways. Instead, `migrate <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/migrate-classic-load-balancer.html>`_ to Network Load Balancers in your AWS account.
 
 6.7.1376 (08/02/2022) 
 =========================
