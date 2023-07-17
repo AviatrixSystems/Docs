@@ -27,6 +27,7 @@ While all content is searchable, the site is organized into the following sectio
 * :ref:`Settings`
 * :ref:`Downloads`
 * :ref:`Release Notes`
+* :ref:`Upgrade Aviatrix`
 * :ref:`Security Updates`
 * :ref:`Field Notices`
 * :ref:`Tech Notes`
@@ -370,6 +371,17 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/copilot_release_notes
    HowTos/copilot_release_notes_images
    HowTos/Aviatrix_VPN_Client_Release_Notes
+
+.. _Upgrade Aviatrix
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Upgrade Aviatrix
+
+   HowTos/selective_upgrade
+   
+
+
 
 .. _Security Updates:
 
