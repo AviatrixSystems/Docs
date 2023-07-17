@@ -8,7 +8,10 @@ Upgrading Aviatrix Controller and Gateways
 
 .. important::
 
-Aviatrix strongly recommends you perform the tasks in the operations checklist including a dry run upgrade before upgrading your deployment of the Aviatrix network platform. Taking the time to perform dry runs and backing up your Aviatrix Platform configuration reduces the potential for issues during the upgrade and allows you to easily restore your configuration if there are issues after the upgrade. Correct any issues you find during your preparation before proceeding with an Aviatrix upgrade. If you cannot resolve all issues after following the preparation and dry run procedures, please open a ticket with `Aviatrix Support <https://support.aviatrix.com/>`_.
+              Aviatrix strongly recommends you perform the tasks in the operations checklist including a dry run upgrade before upgrading your deployment of the Aviatrix network platform. Taking the time to perform dry runs and backing up your Aviatrix Platform configuration reduces the potential for issues during the upgrade and allows you to easily restore your configuration if there are issues after the upgrade. Correct any issues you find during your preparation before proceeding with an Aviatrix upgrade. If you cannot resolve all issues after following the preparation and dry run procedures, please open a ticket with `Aviatrix Support <https://support.aviatrix.com/>`_.
+              
+
+             
 
 Overview of the Aviatrix Controller and Gateways Upgrade
 -----------------------------------------------------------
@@ -293,23 +296,23 @@ This section outlines the general Controller and gateway upgrade instructions.
 General Controller and Gateways Upgrade Guidance
 ******************************************************************
 * Upgrade the Controller before upgrading the Gateways:
-  
+
   - It is important to upgrade the Controller first, ensuring it is at the desired release version.
   - Once the Controller is successfully upgraded, proceed to upgrade the Gateways.
 * Upgrade from the current version to the latest release version within the current release:
-  
+
   - Verify that the latest release version is available for your current release.
   - Consult the documentation specific to your current release version for detailed upgrade instructions.
   - Follow the provided steps to upgrade both the Controller and Gateways to the latest release version.
 
 * Upgrade from the current release (e.g., version N) to a higher release (N+1 release):
-  
+
   - Note that both the Controller and Gateways do not support multi-hop upgrades.
   - Upgrade sequentially from one adjacent version to another.
   - Determine the higher release version (N+1) to which you wish to upgrade.
 
 * Upgrade HA (High Availability) gateways first, then upgrade primary gateways:
- 
+
   - To ensure proper continuity and system availability, it is recommended to upgrade HA gateways before upgrading primary gateways. This sequence minimizes any potential disruptions during the upgrade process.
 
 .. note::
@@ -334,9 +337,9 @@ General Controller and Gateways Upgrade Guidance
      -    Upgrade Controller from current release (e.g., version N) to a higher release (N+1 release).
    * - 6
      -    Upgrade HA Gateways from current release (e.g., version N) to a higher release (N+1 release).
-   * - 
+   * -
      -    Upgrade primary gateways from current release (e.g., version N) to a higher release (N+1 release).
-          
+
 
 Single-Version Upgrade for Controller and Gateways
 **************************************************
@@ -423,7 +426,7 @@ Perform the following steps to upgrade your Gateways to a desired version:
 .. note::
 
    * Upgrade HA (High Availability) gateways first, then upgrade primary gateways:
-     
+
      - To ensure proper continuity and system availability, it is recommended to upgrade HA gateways before upgrading primary gateways. This sequence minimizes any potential disruptions during the upgrade process.
    * After upgrading your HA gateways, upgrade the primary gateways.
 
@@ -487,11 +490,11 @@ Determine your Controller License and Image
 Log into your cloud provider to check your license information and Controller image information.
 
 * If your Controller is not using the Bring Your Own License  (BYOL) license or your Controller image is 2021 or earlier:
-  
+
   #. Perform Controller Migration to use the latest BYOL controller image.
   #.  If your Controller did not have a fixed EIP, go to **Controller UI > SETTINGS > CoPilot Association** to update your CoPilot Association to point to the new EIP of the Controller.
 * If your Controller is already using a BYOL license but does not have an ABUP (Aviatrix Bring Your Own Support) customer ID:
- 
+
   #. Subscribe to the *Aviatrix Secure Networking Platform 2208-Universal 24x7 Support* subscription offer license .
   #. Apply your new Customer ID on the **Controller UI > SETTINGS > License** page.
 
@@ -514,7 +517,7 @@ After performing an upgrade, it is important to verify the upgrade status to ens
 
 Verify Controller Upgrade Status
 **************************************************
-#. Go to your Controller upgrade window from **Controller UI > Settings > Maintenance > Upgrade**. 
+#. Go to your Controller upgrade window from **Controller UI > Settings > Maintenance > Upgrade**.
 #. Check if the upgrade window displays a message indicating that the Controller upgrade has been completed successfully.
 #. Ensure that the displayed Controller version is updated to the latest version.
 
@@ -526,8 +529,8 @@ Verify Gateway Upgrade Status
 After you have completed upgrade, you can:
 
 #. Go to **Controller UI > Settings > Maintenance > Selective Gateway Upgrade** to check the gateway upgrade status. Alternatively, you can also go to *CoPilot UI > Gateways >  Gateway Management > Upgrade Controller* to check the gateway upgrade status.
-#. Look for the **Update Status** field. 
-   
+#. Look for the **Update Status** field.
+
    * If the **Update Status** displays "complete" on the Controller UI or "Upgrade Completed" on the CoPilot UI, it indicates that the gateway upgrade has been successfully completed. Alternatively, you can check the current version on the *Controller Upgrade* card.
    * If the **Update Status** shows any other status, it means that your gateway upgrade has failed.
 
@@ -544,7 +547,7 @@ Multiple-Version Upgrade Starting from Version 6.5
      - Upgrade Steps
    * - 6.5
      - 6.8
-     - #. Upgrade your Controller Software to version 6.6.     
+     - #. Upgrade your Controller Software to version 6.6.
        #.  Upgrade your gateway images [Note1]_  to version 6.6.
        #.  Upgrade your Controller Software to version 6.7.
        #.  Upgrade the software of gateways to version 6.7.
@@ -555,7 +558,7 @@ Multiple-Version Upgrade Starting from Version 6.5
 
    * - 6.5
      - 6.9
-     - #. Upgrade your Controller Software to version 6.6.     
+     - #. Upgrade your Controller Software to version 6.6.
        #.  Upgrade your gateway images [Note1]_  to version 6.6.
        #.  Upgrade your Controller Software to version 6.7.
        #.  Upgrade the software of gateways to version 6.7.
@@ -564,12 +567,12 @@ Multiple-Version Upgrade Starting from Version 6.5
        #.  Upgrade your Controller Software to version 6.9.
        #.  Upgrade your gateway images [Note3]_ to version 6.9.
 
-.. note:: 
+.. note::
 
    .. [Note1] Image upgrade required if the gateways are not running the latest released image for that version. See table below.
-   
+
    .. [Note2] Image upgrade required for raccoon to strongswan gateway migration, gateway pull mode migration, and active-mesh migration.
-   
+
    .. [Note3] There is a performance enhancement in the latest images for 6.9 and 7.0. Image upgrades are highly recommended for transit gateways and optional for spoke gateways.
 
 
@@ -584,7 +587,7 @@ Gateway Images that Do not Require Additional Image Upgrade
      -  Azure
      -  GCP
      -  OCI
-     -  Alibaba 
+     -  Alibaba
    * - 6.6
      - hvm-cloudx-aws-031222
      - aviatrix-companion-gateway-v8
@@ -623,7 +626,7 @@ Multiple-Version Upgrade Starting from Version 6.6
      - Upgrade Steps
    * - 6.6
      - 6.8
-     - #. Upgrade your Controller Software to version 6.7.    
+     - #. Upgrade your Controller Software to version 6.7.
        #.  Upgrade the software of gateways to version 6.7.
        #.  Upgrade your Controller Software to version 6.8.
        #.  Upgrade your gateway images [Note2]_ to version 6.8.
@@ -632,16 +635,16 @@ Multiple-Version Upgrade Starting from Version 6.6
 
    * - 6.6
      - 6.9
-     - #. Upgrade your Controller Software to version 6.7.     
+     - #. Upgrade your Controller Software to version 6.7.
        #.  Upgrade the software of gateways to version 6.7.
        #.  Upgrade your Controller Software to version 6.8.
        #.  Upgrade your gateway images [Note2]_ to version 6.8.
        #.  Upgrade your Controller Software to version 6.9.
        #.  Upgrade your gateway images [Note3]_ to version 6.9.
 
-.. note:: 
+.. note::
    .. [Note2] Image upgrade required for raccoon to strongswan gateway migration, gateway pull mode migration, and active-mesh migration.
-   
+
    .. [Note3] There is a performance enhancement in the latest images for 6.9 and 7.0. Image upgrades are highly recommended for transit gateways and optional for spoke gateways.
 
 
@@ -658,22 +661,22 @@ Multiple-Version Upgrade Starting from Version 6.7
      - Upgrade Steps
    * - 6.7
      - 6.8
-     - #. Upgrade your Controller Software to version 6.8.     
+     - #. Upgrade your Controller Software to version 6.8.
        #.  Upgrade your gateway images [Note2]_ to version 6.8.
 
 
 
    * - 6.7
      - 6.9
-     - #. Upgrade your Controller Software to version 6.8.     
+     - #. Upgrade your Controller Software to version 6.8.
        #.  Upgrade your gateway images [Note2]_ to version 6.8.
        #.  Upgrade your Controller Software to version 6.9.
        #.  Upgrade your gateway images [Note3]_ to version 6.9.
 
-.. note:: 
-  
+.. note::
+
    .. [Note2] Image upgrade required for raccoon to strongswan gateway migration, gateway pull mode migration, and active-mesh migration.
-   
+
    .. [Note3] There is a performance enhancement in the latest images for 6.9 and 7.0. Image upgrades are highly recommended for transit gateways and optional for spoke gateways.
 
 
@@ -690,10 +693,10 @@ Multiple-Version Upgrade Starting from Version 6.8
      - Upgrade Steps
    * - 6.8
      - 6.9
-     - #. Upgrade your Controller Software to version 6.9.     
+     - #. Upgrade your Controller Software to version 6.9.
        #.  Upgrade your gateway images [Note3]_ to version 6.9.
 
-.. note:: 
+.. note::
 
    .. [Note3] There is a performance enhancement in the latest images for 6.9 and 7.0. Image upgrades are highly recommended for transit gateways and optional for spoke gateways.
 
