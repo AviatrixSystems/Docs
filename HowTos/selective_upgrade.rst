@@ -8,7 +8,7 @@ Upgrading Aviatrix Controller and Gateways
 
 .. important::
 
-              Aviatrix strongly recommends you perform the tasks in the operations checklist including a dry run upgrade before upgrading your deployment of the Aviatrix network platform. Taking the time to perform dry runs and backing up your Aviatrix Platform configuration reduces the potential for issues during the upgrade and allows you to easily restore your configuration if there are issues after the upgrade. Correct any issues you find during your preparation before proceeding with an Aviatrix upgrade. If you cannot resolve all issues after following the preparation and dry run procedures, please open a ticket with `Aviatrix Support <https://support.aviatrix.com/>`_.
+              Aviatrix strongly recommends you perform the tasks in the operations checklist including a dry run upgrade and system backup before upgrading your deployment of the Aviatrix network platform. Taking the time to perform dry runs and backing up your Aviatrix Platform configuration reduces the potential for issues during the upgrade and allows you to easily restore your configuration if there are issues after the upgrade. Correct any issues you find during your preparation before proceeding with an Aviatrix upgrade. If you cannot resolve all issues after following the preparation and dry run procedures, please open a ticket with `Aviatrix Support <https://support.aviatrix.com/>`_.
               
 
              
@@ -163,9 +163,9 @@ Before you perform the Aviatrix Upgrade, perform the following tasks:
 Understanding the Release Contents
 ##################################
 
-To understand the contents and potential impact of upgrading to specific software release, see `Aviatrix Controller and Gateway Software Release Notes <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_.
+To understand the contents and potential impact of upgrading to a specific software release, see `Aviatrix Controller and Gateway Software Release Notes <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_.
 
-To understand the contents and potential impact of upgrading to specific image release, see `Aviatrix Controller and Gateway Image Release Notes <https://docs.aviatrix.com/HowTos/image_release_notes.html>`_.
+To understand the contents and potential impact of upgrading to a specific image release, see `Aviatrix Controller and Gateway Image Release Notes <https://docs.aviatrix.com/HowTos/image_release_notes.html>`_.
 
 **Verify DNS Settings**
 
