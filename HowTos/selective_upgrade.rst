@@ -1,10 +1,18 @@
+.. meta::
+    :description: Upgrade Aviatrix Controller and Gateways
+    :keywords: Style Guide, Documentation
+
 
 =============================================
-Upgrading Aviatrix Controller and Gateways
+Upgrade Aviatrix Controller and Gateways
 =============================================
-
 
 .. contents:: Section Overview
+
+
+
+
+
 
 .. important::
 
