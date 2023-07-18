@@ -19,12 +19,16 @@ and the gateways.
 
    .. note::
 
-      GeoVPN service is  currently only available for AWS cloud.
+      GeoVPN service is currently only available for AWS cloud.
 
 VPN Access Details
 ==================
 
 An example deployment in AWS is shown below. In this configuration, there are two VPN access gateways: one in us-west-2 and another in eu-central-1. Each VPN access gateway is fronted by a load balancer in AWS.
+
+.. note::
+
+  After releases 6.7.1436 and 6.8.1148, AWS classic Load Balancers are not supported with UserVPN gateways. Instead, `migrate <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/migrate-classic-load-balancer.html>`_ to Network Load Balancers.
 
 |imageArchitecture|
 
