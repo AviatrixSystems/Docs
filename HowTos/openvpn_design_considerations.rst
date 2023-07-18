@@ -13,6 +13,10 @@ scales to unlimited number of VPN Gateways capable of supporting unlimited numbe
 OpenVPN® is a single process application running on a gateway. The best measured throughput is 1.1Gbps. t3.medium, c5.large, and
 c5.xlarge have similar performance.
 
+.. note::
+
+  AWS classic Load Balancers are not supported with UserVPN gateways. Instead, `migrate <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/migrate-classic-load-balancer.html>`_ to Network Load Balancers in your AWS account. 
+
 VPN Client throughput benchmark
 ----------------------------------------------------------------
 

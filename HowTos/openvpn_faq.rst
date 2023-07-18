@@ -409,7 +409,7 @@ client package to start the VPN client software and then load the client certifi
 
 .. important::
 
-  1. Only one load balancer is supported on a given Controller, implying that the system supports a fleet of UserVPN gateways behind one load balancer. 
+  1. Only one load balancer is supported on a given Controller, implying that the system supports a fleet of UserVPN gateways behind one load balancer. Note that after releases 6.7.1436 or 6.8.1148, AWS classic Load Balancers are not supported with UserVPN gateways. Instead, `migrate <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/migrate-classic-load-balancer.html>`_ to Network Load Balancers in your AWS account.
   2. `Client Certificate Sharing <https://docs.aviatrix.com/HowTos/gateway.html#enable-client-certificate-sharing>`_ must be enabled for the UserVPN solution, implying you must first configure the VPN user on SAML IDP and on the Aviatrix Controller you need to configure only one VPN user. 
 
 OpenVPN® is a registered trademark of OpenVPN Inc.
