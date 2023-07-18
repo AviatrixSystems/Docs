@@ -10,16 +10,15 @@
        white-space: normal !important;
     .toc-backref {
     display: none !important;
-}
    }
-   </style>
+  </style>
    <script>
     window.addEventListener('DOMContentLoaded', function() {
-    var elements = document.getElementsByClassName('toc-backref');
-    while (elements.length > 0) {
-        elements[0].classList.remove('toc-backref');
-    }
-   });
+    var elements = document.querySelectorAll('.toc-backref');
+    elements.forEach(function(element) {
+        element.classList.remove('toc-backref');
+    });
+  });
   </script>
    
 =============================================
