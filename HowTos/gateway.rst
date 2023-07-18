@@ -270,6 +270,10 @@ new .ovpn cert file. This helps reduce friction to VPN users.
 When the ELB option is enabled, you can launch multiple VPN gateways behind ELB, thus
 achieving a scale out VPN solution.
 
+.. note::
+
+  AWS classic Load Balancers are not supported with UserVPN gateways. Instead, `migrate <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/migrate-classic-load-balancer.html>`_ to Network Load Balancers in your AWS account.
+
 ELB Name
 ^^^^^^^^^^^^^^^^^^
 
