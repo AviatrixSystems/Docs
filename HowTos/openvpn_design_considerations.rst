@@ -15,7 +15,7 @@ c5.xlarge have similar performance.
 
 .. note::
 
-  AWS classic Load Balancers are not supported with UserVPN gateways. Instead, `migrate <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/migrate-classic-load-balancer.html>`_ to Network Load Balancers in your AWS account.
+  AWS classic Load Balancers are not supported with UserVPN gateways. Instead, `migrate <https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/migrate-classic-load-balancer.html>`_ to Network Load Balancers in your AWS account. 
 
 VPN Client throughput benchmark
 ----------------------------------------------------------------
