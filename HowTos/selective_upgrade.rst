@@ -2,7 +2,15 @@
     :description: Upgrade Aviatrix Controller and Gateways
     :keywords: Style Guide, Documentation
 
+.. raw:: html
 
+   <style>
+    /* override table no-wrap */
+   .wy-table-responsive table td, .wy-table-responsive table th {
+       white-space: normal !important;
+   }
+   </style>
+   
 =============================================
 Upgrade Aviatrix Controller and Gateways
 =============================================
@@ -22,7 +30,7 @@ Upgrade Aviatrix Controller and Gateways
              
 
 Overview of the Aviatrix Controller and Gateways Upgrade
------------------------------------------------------------
+===========================================================================
 
 
 Aviatrix encourages you to keep your platform controller and gateways up to date to ensure you are operating the most secure and highest performing versions available. To facilitate less disruptive upgrades and reduce maintenance windows Aviatrix provides a rolling selective upgrade process. You can choose to upgrade all Aviatrix gateways in all regions simultaneously or select specific gateways and regions to upgrade in logical groups conforming to your network update policies and maintenance windows.
@@ -42,7 +50,7 @@ Incremental upgrades are only available in Aviatrix 6.5 and later releases. If y
 
 
 About Aviatrix Upgrade
-**************************************************
+----------------------------
 
 There are two types of upgrades for the Aviatrix Platform and gateways:
 
@@ -55,7 +63,7 @@ There are two types of patch updates:
 * **Software Patches** Software patches are released to address compatibility issues when they arise. You should apply the patches to the Aviatrix system when they become available if you are using any applications or configurations affected by the patch.  Most software patches are hitless. Review the release notes for the patch to discover if the upgrade is hitless or disruptive.
 
 About Release Numbers
-##################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Aviatrix release numbers follow the Major.Minor.Build format. For example, the release number 6.5.100 indicates:
 
@@ -70,7 +78,7 @@ Each release type has different functionality parameters.
 * **Build** Corrected issues and feature enhancements.
 
 Upgrade Options
-##################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When you initiate an upgrade, Aviatrix automatically presents the most
 recently published build for the selected major or minor release
@@ -96,13 +104,13 @@ When upgrading from one major release to another, it is required to perform a se
 
 For example, if you are currently on version 6.6.current and want to upgrade to version 8.0, you need to:
 
-#. Upgrade from 6.6 to the latest minor release in the 6.x series (e.g., 6.6.current to 6.6.latest, then to 6.7.latest, then 6.7.latest to 6.8.latest, and so on) until you reach the latest minor release in the 6.x series.
+#. Upgrade from 6.6 to the latest minor release in the 6.x series (for example, 6.6.current to 6.6.latest, then to 6.7.latest, then 6.7.latest to 6.8.latest, and so on) until you reach the latest minor release in the 6.x series.
 #. Once you have upgraded through all the minor releases in the 6.x series, you can then move on to the major release 7.0.
 #. From 7.0, continue upgrading through all the minor releases in the 7.x series until you reach the latest minor release in the 7.x series.
 #. Upgrade from the latest minor release in the 7.x series to version 8.0.
 
 Upgrade Parameter Definitions
-##################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Platform Upgrade Window Parameter Definitions**
 
@@ -132,14 +140,14 @@ Upgrade Parameter Definitions
 
 
 Upgrading OpenVPN Users
-**************************************************
+--------------------------------------------------------
 
 Most upgrades do not impact connected OpenVPN users. In some cases, OpenVPN service needs to be restarted as part of the software upgrade. For example, upgrading to a new SSL version for security patches. In these cases, connected OpenVPN users are disconnected and need to reconnect after the upgrade. If a release requires stopping and restarting the service, the information is included in the release notes.
 
 Rollbacks do disrupt services. If there is only one OpenVPN gateway in service, all user connections are lost and users cannot reconnect until the gateway is available. If there are other OpenVPN gateways available, the disconnected users can attempt to log in again and land on the available gateways.
 
 Upgrading HA Gateways in an Active Mesh Topology
-**************************************************
+--------------------------------------------------------
 
 
 Gateway traffic is briefly affected and there is a drop in throughput when you perform a gateway image upgrade, and when a gateway software upgrade is rolled back. If Aviatrix ActiveMesh mode is enabled and only one gateway in an ActiveMesh pair is selected for an upgrade, the system gracefully drains the traffic away from one of the gateways so it can be replaced. If both gateways in an ActiveMesh pair are selected, the gateways are replaced simultaneously without any additional safeguards.
@@ -154,7 +162,8 @@ Gateway traffic is briefly affected and there is a drop in throughput when you p
 
 
 Prepare for the Aviatrix Upgrade
---------------------------------------------------
+===========================================================================
+
 
 Aviatrix recommends you perform the tasks in the Operations Checklist before upgrading your deployment of the Aviatrix network platform. Taking the time perform dry runs and backing up your Aviatrix Platform configuration reduces the potential for issues during the upgrade and allows you to easily restore your configuration if there are issues after the upgrade. Correct any issues you find during your preparation before proceeding with an Aviatrix upgrade.
 
@@ -166,10 +175,10 @@ Before you perform the Aviatrix Upgrade, perform the following tasks:
 
 
 **Upgrade Operations Checklist**
-*********************************
+--------------------------------------------------------
 
 Understanding the Release Contents
-##################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To understand the contents and potential impact of upgrading to a specific software release, see `Aviatrix Controller and Gateway Software Release Notes <https://docs.aviatrix.com/HowTos/Controller_and_Software_Release_Notes.html>`_.
 
@@ -184,7 +193,7 @@ The Aviatrix Controller must have a reliable DNS resolution service available. A
 If the controller is running on AWS or Azure, you can go to the controller Settings for the DNS and Disable the VPC or VNET DNS Server to force the controller to use 8.8.8.8.
 
 Verify Public Internet Access
-##################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Verify access to the public internet from the Aviatrix Controller. The controller must be open for inbound traffic on port 443 and outbound traffic on port 22. Aviatrix recommends you enable security groups to restrict access. Go to the Network tab on the Diagnostics page under Troubleshooting and perform the following tasks.
 
@@ -194,7 +203,7 @@ Verify access to the public internet from the Aviatrix Controller. The controlle
 * Ping www.github.com from port TCP/22 with the Network Connectivity Utility.
 
 Verify Account Permissions and Access
-####################################################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Go to the Accounts page and perform the following tasks.
 
@@ -205,7 +214,7 @@ Go to the Accounts page and perform the following tasks.
 * If you are migrating your Aviatrix Platform Controller to a new image, verify the new image has all required accounts and permissions before migrating the controller. If you are restoring an image from a backup, the required accounts and permissions should all be available. Migration operations fail if there is not at least one Aviatrix backup file available.
 
 Verify Controller and Gateway Status
-####################################################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Go to the Controller Dashboard and check the status of the Aviatrix Platform Controller and gateways.
 
@@ -213,7 +222,7 @@ Go to the Controller Dashboard and check the status of the Aviatrix Platform Con
 * Verify all tunnels are up and the status is green.
 
 AWS Specific Upgrade Checklist
-##################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Verify Controller HA Version**
 
@@ -228,7 +237,7 @@ If you use Controller HA do not disable your HA configuration before upgrading t
 If your Aviatrix Controller is in AWS and running on a t2 or t3 instance type and you are planning a platform image upgrade, you must set the T2/T3 Unlimited attribute to enabled.  For more information, see https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/burstable-performance-instances-unlimited-mode-concepts.html.
 
 Rules for Upgrading the Controller and Gateways
-####################################################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In addition to satisfying the requirements and following recommendations in the Operations Checklist, you must follow these rules when you are upgrading your Aviatrix Platform.
 
@@ -246,14 +255,14 @@ In addition to satisfying the requirements and following recommendations in the 
 
 
 Preupgrade Tasks for Controller and Gateways
-***************************************************************
+--------------------------------------------------------
 Check the following prerequisites before you upgrade your controller and gateways:
 
 
 Before upgrading your controller and gateways, check the following prerequisites:
 
 Inspect the Current Controller CPU Utilization
-####################################################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 . Inspect the current Controller's overall CPU and memory utilization from *CoPilot UI > Monitor > Performance* or from
 *Controller UI > DASHBOARD > Controller Metrics*:
 - Ensure that the CPU utilization of the Controller is no more than 50%.
@@ -267,7 +276,7 @@ These utilization thresholds should be met before initiating the upgrade.
 - If the available disk space is insufficient, resize the Controller disk to an appropriate size before proceeding with the upgrade.
 
 Perform Controller and CoPilot Backup
-####################################################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Perform a full backup of the CoPilot and the Controller:
 
 - Before initiating the upgrade process, it is crucial to perform a full backup of both Copilot and the Controller.
@@ -278,7 +287,7 @@ For more details, see `Controller Backup and Restore <https://docs.aviatrix.com/
 
 
 Check for the Non-HA (High Availability) Gateways
-####################################################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Check for the non-HA gateways:
 
 - Determine whether your environment includes any non-HA gateways.
@@ -286,7 +295,8 @@ Check for the non-HA gateways:
 - If your environment does not have HA gateways and extensively uses S2C, it is recommended to consult Aviatrix Support before proceeding with the upgrade.
 
 (Optional) Set up a Testing Environment
-####################################################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 Before proceeding with the upgrade in the production environment, it is highly recommended to establish a dedicated testing environment. This environment should closely mirror the production setup, including hardware, software, and configurations. By doing so, you can simulate the production conditions and assess the compatibility and performance of the upgraded software in a controlled manner.
 
@@ -297,12 +307,12 @@ Only when the testing phase is successfully completed, and all identified issues
 
 
 Procedures for Upgrading Aviatrix Controller and Gateways
---------------------------------------------------------------------------
+===========================================================================
 
 This section outlines the general Controller and gateway upgrade instructions.
 
 General Controller and Gateways Upgrade Guidance
-******************************************************************
+--------------------------------------------------------
 * Upgrade the Controller before upgrading the Gateways:
 
   - It is important to upgrade the Controller first, ensuring it is at the desired release version.
@@ -345,18 +355,18 @@ General Controller and Gateways Upgrade Guidance
      -    Upgrade Controller from current release (for example, version N) to a higher release (N+1 release).
    * - 6
      -    Upgrade HA Gateways from the current release (for example, version N) to a higher release (N+1 release).
-   * -
+   * - 7
      -    Upgrade primary gateways from the current release (for example, version N) to a higher release (N+1 release).
 
 
 Single-Version Upgrade for Controller and Gateways
-**************************************************
+--------------------------------------------------------
 
 A single-version Controller and Gateway upgrade refer to:
 
 * Upgrade from the current version to the latest release version within the current release.
 
-* Upgrade from the current release (e.g., version N) to a higher release (N+1 release).
+* Upgrade from the current release (for example, version N) to a higher release (N+1 release).
 
 
 Before you upgrade your Controller and Gateways, it is highly recommended to check the `Preupgrade Tasks for Controller and Gateways`_.
@@ -377,7 +387,7 @@ This section instructs on how to perform single-version Controller and Gateway u
 
 
 Performing a Platform Software Upgrade Dry Run
-##############################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To perform a platform software upgrade dry run:
 
@@ -394,7 +404,7 @@ To perform a platform software upgrade dry run:
 
 
 Upgrade your Controller
-##############################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Perform the following steps to upgrade your Controller to a desired version:
 
@@ -405,7 +415,7 @@ Perform the following steps to upgrade your Controller to a desired version:
 #. Click *PLATFORM UPGRADE* to initiate the Controller upgrade process.
 
 Performing a Gateway Software Upgrade Dry Run
-##############################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To perform a gateway software upgrade dry run:
 
@@ -418,7 +428,7 @@ To perform a gateway software upgrade dry run:
 
 
 Upgrade your Gateways
-##############################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Perform the following steps to upgrade your Gateways to a desired version:
 
@@ -444,7 +454,7 @@ Perform the following steps to upgrade your Gateways to a desired version:
 
 
 Multiple-Version Upgrade for Controller and Gateways
-********************************************************************
+--------------------------------------------------------
 
 The multiple-version upgrade refers to:
 
@@ -454,7 +464,7 @@ Upgrade Controller and Gateways from one version to another, where there are mul
 When upgrading from one minor version of a major release to another or from one major release to another, it is necessary to follow a sequential upgrade process and cannot skip over intermediate release versions.
 
 Before Upgrade
-##############################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Before you upgrade your Controller and Gateways, it is highly recommend to check the xref:controller-upgrade-workflow.adoc[General Controller and Gateways Upgrade Guidance].
 
@@ -466,7 +476,7 @@ Before you upgrade your Controller and Gateways, it is highly recommend to check
 
 
 Perform the Pre-upgrade Tasks
-##############################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Check and perform all the pre-upgrade tasks.
 
@@ -478,14 +488,14 @@ Perform the Pre-upgrade Tasks
 
 
 Check your Controller Version and Determine the Upgrade Path
-##############################################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You need to identify your current Controller release version and the major release version that you want to upgrade to.
 
 Determine the Controller version you are running:
 
-. On CoPilot UI, click the caret (^) symbol on the top left.
-. Look for the version number under *Aviatrix Controller*.
+#. On CoPilot UI, click the caret (^) symbol on the top left.
+#. Look for the version number under *Aviatrix Controller*.
 
 .. note::
    If you are currently using Aviatrix Controller version 6.5 or earlier, it is strongly recommended to open a ticket with `Aviatrix Support <https://support.aviatrix.com/>`_ before proceeding with any upgrade. This is necessary to ensure a thorough review and redesign of your network architecture to align with the latest best practices and supported versions.
@@ -494,7 +504,7 @@ Determine the Controller version you are running:
 
 
 Determine your Controller License and Image
-##############################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Log into your cloud provider to check your license information and Controller image information.
 
 * If your Controller is not using the Bring Your Own License  (BYOL) license or your Controller image is 2021 or earlier:
@@ -509,41 +519,15 @@ Log into your cloud provider to check your license information and Controller im
 
 
 
+
 Upgrade Controller and Gateways
-##############################################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Follow the outlined steps below to upgrade your Controller and Gateways basing on your start version and end version.
 
 For the detailed upgrade procedure for a single-version upgrade, see `Single-Version Upgrade for Controller and Gateways`_.
 
-
-
-
-Verify your Upgrade Status
------------------------------------------------------------
-
-After performing an upgrade, it is important to verify the upgrade status to ensure that it has been completed successfully.
-
-Verify Controller Upgrade Status
-**************************************************
-#. Go to your Controller upgrade window from **Controller UI > Settings > Maintenance > Upgrade**.
-#. Check if the upgrade window displays a message indicating that the Controller upgrade has been completed successfully.
-#. Ensure that the displayed Controller version is updated to the latest version.
-
-If the above conditions are met, it means that your Controller upgrade has been successfully completed.
-
-
-Verify Gateway Upgrade Status
-**************************************************
-After you have completed the upgrade, you can:
-
-#. Go to **Controller UI > Settings > Maintenance > Selective Gateway Upgrade** to check the gateway upgrade status. Alternatively, you can also go to *CoPilot UI > Gateways >  Gateway Management > Upgrade Controller* to check the gateway upgrade status.
-#. Look for the **Update Status** field.
-
-   * If the **Update Status** displays "complete" on the Controller UI or "Upgrade Completed" on the CoPilot UI, it indicates that the gateway upgrade has been successfully completed. Alternatively, you can check the current version on the *Controller Upgrade* card.
-   * If the **Update Status** shows any other status, it means that your gateway upgrade has failed.
-
 Multiple-Version Upgrade Starting from Version 6.5
-***********************************************************************
+*******************************************************
 
 
 .. list-table:: Multi-Version Upgrade Starting from Version 6.5
@@ -556,7 +540,7 @@ Multiple-Version Upgrade Starting from Version 6.5
    * - 6.5
      - 6.8
      - #. Upgrade your Controller Software to version 6.6.
-       #.  Upgrade your gateway images [Note1]_  to version 6.6.
+       #.  Upgrade your gateway images [Note1]_ to version 6.6.
        #.  Upgrade your Controller Software to version 6.7.
        #.  Upgrade the software of gateways to version 6.7.
        #.  Upgrade your Controller Software to version 6.8.
@@ -579,13 +563,15 @@ Multiple-Version Upgrade Starting from Version 6.5
 
    .. [Note1] Image upgrade required if the gateways are not running the latest released image for that version. See table below.
 
+
    .. [Note2] Image upgrade required for raccoon to strongswan gateway migration, gateway pull mode migration, and active-mesh migration.
+
 
    .. [Note3] There is a performance enhancement in the latest images for 6.9 and 7.0. Image upgrades are highly recommended for transit gateways and optional for spoke gateways.
 
 
 Gateway Images that Do not Require Additional Image Upgrade
-***********************************************************************
+*************************************************************
 .. list-table:: Gateway Images that Do not Require Additional Image Upgrade
    :widths: 13 16 16 16 16 18
    :header-rows: 1
@@ -622,7 +608,7 @@ Gateway Images that Do not Require Additional Image Upgrade
      - hvm-cloudx-aliyun-062422
 
 Multiple-Version Upgrade Starting from Version 6.6
-***********************************************************************
+*************************************************************
 
 
 .. list-table:: Multi-Version Upgrade Starting from Version 6.6
@@ -657,7 +643,7 @@ Multiple-Version Upgrade Starting from Version 6.6
 
 
 Multiple-Version Upgrade Starting from Version 6.7
-***********************************************************************
+************************************************************
 
 
 .. list-table:: Multi-Version Upgrade Starting from Version 6.7
@@ -689,7 +675,7 @@ Multiple-Version Upgrade Starting from Version 6.7
 
 
 Multiple-Version Upgrade Starting from Version 6.8
-***********************************************************************
+******************************************************************
 
 
 .. list-table:: Multi-Version Upgrade Starting from Version 6.8
@@ -711,9 +697,8 @@ Multiple-Version Upgrade Starting from Version 6.8
 
 
 
-
 Upgrading the Gateway Image
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Traffic is briefly disrupted during the image upgrade in cluster configurations.
 
@@ -727,8 +712,33 @@ To perform a gateway image upgrade:
 #. Verify the gateway upgrade by reviewing the gateway information in the Current Image Version column.
 
 
+Verify your Upgrade Status
+===========================================================================
+
+After performing an upgrade, it is important to verify the upgrade status to ensure that it has been completed successfully.
+
+Verify Controller Upgrade Status
+--------------------------------------------------------
+#. Go to your Controller upgrade window from **Controller UI > Settings > Maintenance > Upgrade**.
+#. Check if the upgrade window displays a message indicating that the Controller upgrade has been completed successfully.
+#. Ensure that the displayed Controller version is updated to the latest version.
+
+If the above conditions are met, it means that your Controller upgrade has been successfully completed.
+
+
+Verify Gateway Upgrade Status
+--------------------------------------------------------
+After you have completed the upgrade, you can:
+
+#. Go to **Controller UI > Settings > Maintenance > Selective Gateway Upgrade** to check the gateway upgrade status. Alternatively, you can also go to *CoPilot UI > Gateways >  Gateway Management > Upgrade Controller* to check the gateway upgrade status.
+#. Look for the **Update Status** field.
+
+   * If the **Update Status** displays "complete" on the Controller UI or "Upgrade Completed" on the CoPilot UI, it indicates that the gateway upgrade has been successfully completed. Alternatively, you can check the current version on the *Controller Upgrade* card.
+   * If the **Update Status** shows any other status, it means that your gateway upgrade has failed.
+
+
 Rolling Back Gateway Software
------------------------------
+===========================================================================
 
 You can roll back gateway software upgrades to the previous version. However, you cannot roll back platform Controller, CA Access Gateway (CAAG), or CloudN upgrades.
 
@@ -744,7 +754,7 @@ Gateway software rollbacks are briefly disruptive. You can only roll back the ga
 
 
 Troubleshooting
----------------
+===========================================================================
 
 In rare cases where the controller and a group of gateways are selected for upgrade and a fatal bug is discovered in the new software, a situation where the controller and gateways are stuck running different versions could develop. If this condition occurs assistance from Aviatrix Support is required.
 For example:
