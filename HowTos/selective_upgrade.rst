@@ -6,7 +6,7 @@
 
 
 
-   
+
 =============================================
 Upgrade Aviatrix Controller and Gateways
 =============================================
@@ -21,9 +21,9 @@ Upgrade Aviatrix Controller and Gateways
 .. important::
 
               Aviatrix strongly recommends you perform the tasks in the operations checklist including a dry run upgrade and system backup before upgrading your deployment of the Aviatrix network platform. Taking the time to perform dry runs and backing up your Aviatrix Platform configuration reduces the potential for issues during the upgrade and allows you to easily restore your configuration if there are issues after the upgrade. Correct any issues you find during your preparation before proceeding with an Aviatrix upgrade. If you cannot resolve all issues after following the preparation and dry run procedures, please open a ticket with `Aviatrix Support <https://support.aviatrix.com/>`_.
-              
 
-             
+
+
 
 Overview of the Aviatrix Controller and Gateways Upgrade
 ===========================================================================
@@ -784,17 +784,16 @@ For example:
 
 
 
-.. raw:: html 
+.. raw:: html
 
-    <script>
-    window.addEventListener('DOMContentLoaded', function() {
-        var removeTocBackref = function() {
-            var elements = document.getElementsByClassName('toc-backref');
-            while (elements.length > 0) {
-                elements[0].classList.remove('toc-backref');
-            }
-        };
+  <style>
 
-        removeTocBackref();
-    });
-    </script>
+   .wy-table-responsive table td, .wy-table-responsive table th {
+    white-space: normal !important;
+     }
+
+
+  .toc-backref {
+    all: none !important;
+    }
+ </style>
