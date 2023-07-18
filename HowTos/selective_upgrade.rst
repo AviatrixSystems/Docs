@@ -2,24 +2,10 @@
     :description: Upgrade Aviatrix Controller and Gateways
     :keywords: Style Guide, Documentation
 
-.. raw:: html
 
-   <style>
-    /* override table no-wrap */
-   .wy-table-responsive table td, .wy-table-responsive table th {
-       white-space: normal !important;
-    .toc-backref {
-    display: none !important;
-   }
-  </style>
-   <script>
-    window.addEventListener('DOMContentLoaded', function() {
-    var elements = document.querySelectorAll('.toc-backref');
-    elements.forEach(function(element) {
-        element.classList.remove('toc-backref');
-    });
-  });
-  </script>
+
+
+
    
 =============================================
 Upgrade Aviatrix Controller and Gateways
@@ -797,3 +783,18 @@ For example:
    :scale: 100%
 
 
+
+.. raw:: html 
+
+    <script>
+    window.addEventListener('DOMContentLoaded', function() {
+        var removeTocBackref = function() {
+            var elements = document.getElementsByClassName('toc-backref');
+            while (elements.length > 0) {
+                elements[0].classList.remove('toc-backref');
+            }
+        };
+
+        removeTocBackref();
+    });
+    </script>
