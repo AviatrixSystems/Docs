@@ -2,32 +2,77 @@
     :description: Upgrade Aviatrix Controller and Gateways
     :keywords: Style Guide, Documentation
 
+
 .. raw:: html
 
-   <style>
-    /* override table no-wrap */
+  <style>
+
    .wy-table-responsive table td, .wy-table-responsive table th {
-       white-space: normal !important;
-    .toc-backref {
-    display: none !important;
+    white-space: normal !important;
+     }
+   </style>
+
+   <style>
+   /* Heading styles */
+   h1 .toc-backref{
+    font-family: "Interstate Lt";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 300;
+    color: #9B59B6 ;
+  }
+
+  h2 .toc-backref {
+    font-family: "Interstate Lt";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 300;
+    color: #9B59B6 !important;
+  }
+
+  h3 .toc-backref {
+    font-family: "Avenir";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    color: #9B59B6 !important;
+  }
+
+  h4  .toc-backref{
+    font-family: "Interstate Lt";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    color: #9B59B6 !important;
+  }
+
+  h5  .toc-backref{
+    font-family: "Interstate Lt";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    color: #9B59B6 !important;
    }
+
+  h6 * {
+    font-family: "Avenir", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    color: #9B59B6 !important;
+  } 
+
   </style>
-   <script>
-    window.addEventListener('DOMContentLoaded', function() {
-    var elements = document.querySelectorAll('.toc-backref');
-    elements.forEach(function(element) {
-        element.classList.remove('toc-backref');
-    });
-  });
-  </script>
-   
+
+
+
 =============================================
 Upgrade Aviatrix Controller and Gateways
 =============================================
 
-.. contents:: Section Overview
-
-
+.. contents:: 
+   :local:
+   :backlinks: entry
 
 
 
@@ -35,9 +80,9 @@ Upgrade Aviatrix Controller and Gateways
 .. important::
 
               Aviatrix strongly recommends you perform the tasks in the operations checklist including a dry run upgrade and system backup before upgrading your deployment of the Aviatrix network platform. Taking the time to perform dry runs and backing up your Aviatrix Platform configuration reduces the potential for issues during the upgrade and allows you to easily restore your configuration if there are issues after the upgrade. Correct any issues you find during your preparation before proceeding with an Aviatrix upgrade. If you cannot resolve all issues after following the preparation and dry run procedures, please open a ticket with `Aviatrix Support <https://support.aviatrix.com/>`_.
-              
 
-             
+
+
 
 Overview of the Aviatrix Controller and Gateways Upgrade
 ===========================================================================
@@ -795,5 +840,6 @@ For example:
    :scale: 75%
 .. |upgrade.gateway.reroute| image:: selective_upgrade_media/upgrade.gateway.reroute.png
    :scale: 100%
+
 
 
