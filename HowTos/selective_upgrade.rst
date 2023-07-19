@@ -3,7 +3,66 @@
     :keywords: Style Guide, Documentation
 
 
+.. raw:: html
 
+  <style>
+
+   .wy-table-responsive table td, .wy-table-responsive table th {
+    white-space: normal !important;
+     }
+   </style>
+
+   <style>
+   /* Heading styles */
+   h1 .toc-backref{
+    font-family: "Interstate Lt";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 300;
+    color: #9B59B6 ;
+  }
+
+  h2 .toc-backref {
+    font-family: "Interstate Lt";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 300;
+    color: #9B59B6 !important;
+  }
+
+  h3 .toc-backref {
+    font-family: "Avenir";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    color: #9B59B6 !important;
+  }
+
+  h4  .toc-backref{
+    font-family: "Interstate Lt";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    color: #9B59B6 !important;
+  }
+
+  h5  .toc-backref{
+    font-family: "Interstate Lt";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    color: #9B59B6 !important;
+   }
+
+  h6 * {
+    font-family: "Avenir", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    color: #9B59B6 !important;
+  } 
+
+  </style>
 
 
 
@@ -11,9 +70,9 @@
 Upgrade Aviatrix Controller and Gateways
 =============================================
 
-.. contents:: Section Overview
-
-
+.. contents:: 
+   :local:
+   :backlinks: entry
 
 
 
@@ -784,16 +843,3 @@ For example:
 
 
 
-.. raw:: html
-
-  <style>
-
-   .wy-table-responsive table td, .wy-table-responsive table th {
-    white-space: normal !important;
-     }
-
-
-  .toc-backref {
-    all: none !important;
-    }
- </style>
