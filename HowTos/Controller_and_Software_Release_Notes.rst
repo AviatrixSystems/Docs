@@ -38,6 +38,20 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   For the release notes of Controller and Gateway software versions 7.0 and later, click `here <https://docs.aviatrix.com/documentation/latest/release-notes/software-release-notes/software-release-notes.html>`_. The content below is a list of release notes for software versions 6.9 and earlier.
 
+6.9-1804.733 Release Notes (08/29/23)
+==========================================
+
+**Issues Corrected in Aviatrix Release 6.9-1804.733**
+
+**Known Issues in Aviatrix Release 6.9-1804.733**
+
+6.8-1804.1826 Release Notes (08/29/23)
+===========================================
+
+**Issues Corrected in Aviatrix Release 6.8-1804.1826**
+
+**Known Issues in Aviatrix Release 6.8-1804.1826**
+
 6.7.1601 Release Notes (06/14/23)
 =========================================
 
