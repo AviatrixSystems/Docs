@@ -52,7 +52,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-45569** - Linux auditd logs filled the disk space of some instances.
 * **AVX-45571** - (Azure) After an Azure FireNet-enabled gateway image upgrade, the gateway went into the “config_fail” state.
 
-Action required: To resolve this issue, try restarting the gateway. If the gateway state does not change, please contact Aviatrix Support.
+  Action required: To resolve this issue, try restarting the gateway. If the gateway state does not change, please contact Aviatrix Support.
 
 **Known Issues in Aviatrix Release 6.9-1804.733**
 
@@ -60,8 +60,8 @@ Action required: To resolve this issue, try restarting the gateway. If the gatew
 
   Use the following two attributes in Terraform to provide sufficient time for the firewalls to be configured via Bootstrap so that the configuration is applied to the firewalls. Note that the specific values for these attributes
 
-** number_of_retries - (Optional) Number of retries for save or synchronize. (Set to at least 1, default is 0)
-** retry_interval - (Optional) Retry interval in seconds for save or synchronize. Example: 900. Default value: 300. Recommended: 900.
+  * number_of_retries - (Optional) Number of retries for save or synchronize. (Set to at least 1, default is 0)
+  * retry_interval - (Optional) Retry interval in seconds for save or synchronize. Example: 900. Default value: 300. Recommended: 900.
 * **AVX-45156** - On an AEP Dell device, when you configure a Transit Gateway attachment with HPE (High Performance Encryption) mode, you could not set the tunnel count to more than 2.
 
   If you have a higher bandwidth/performance requirement which requires more tunnels, please contact Aviatrix Support for help.
@@ -71,7 +71,6 @@ Action required: To resolve this issue, try restarting the gateway. If the gatew
 * **AVX-45684** - This issue occurs when you try to do a dry run for a Controller software version upgrade with more than one version in the pending list for upgrading. When you choose “latest” as the default version for the upgrade, the Controller incorrectly runs the dry run for the last version to upgrade to instead of the next upgrade version. For example, if you are running a dry run for 6.8 > 6.9 > 7.0 > 7.1, the Controller ran the dry run for 7.1 instead of 6.9.
 
   To resolve this issue, when you do a dry run, make sure to manually enter the next upgrade version instead of leaving the default, “latest.” For example, when you upgrade from 6.8 > 6.9 > 7.0 > 7.1, enter “6.9” as the version for the dry run.
-
 
 6.8-1804.1826 Release Notes (08/29/23)
 ===========================================
@@ -92,8 +91,8 @@ Action required: To resolve this issue, try restarting the gateway. If the gatew
 
   Use the following two attributes in Terraform to provide sufficient time for the firewalls to be configured via Bootstrap so that the configuration is applied to the firewalls. Note that the specific values for these attributes
 
-** number_of_retries - (Optional) Number of retries for save or synchronize. (Set to at least 1, default is 0)
-** retry_interval - (Optional) Retry interval in seconds for save or synchronize. Example: 900. Default value: 300. Recommended: 900.
+  * number_of_retries - (Optional) Number of retries for save or synchronize. (Set to at least 1, default is 0)
+  * retry_interval - (Optional) Retry interval in seconds for save or synchronize. Example: 900. Default value: 300. Recommended: 900.
 
 * **AVX-45156** - On an AEP Dell device, when you configure a Transit Gateway attachment with HPE (High Performance Encryption) mode, you could not set the tunnel count to more than 2.
 
