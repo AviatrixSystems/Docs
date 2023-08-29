@@ -38,6 +38,73 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   For the release notes of Controller and Gateway software versions 7.0 and later, click `here <https://docs.aviatrix.com/documentation/latest/release-notes/software-release-notes/software-release-notes.html>`_. The content below is a list of release notes for software versions 6.9 and earlier.
 
+6.9-1804.733 Release Notes (08/29/23)
+==========================================
+
+**Issues Corrected in Aviatrix Release 6.9-1804.733**
+
+* **AVX-42989** - On a newly registered CloudN, users could not create attachments to multiple transits from a single CloudN Gateway.
+* **AVX-43546**	- After the Aviatrix Controller lost Management connection to a Transit/Edge Gateway, the Gateway lost all learned routes from the on-prem environment.
+* **AVX-43552**	- A previous method for adding new metrics to interface RRD files caused unnecessary delay and decreased performance. Resolved this issue so that the new metrics are available without the extra expense of time and performance. You must upgrade to software version 7.0.1307 or 7.1.XXXX or later to access the new metrics.
+* **AVX-44525**	- (GCP) Upgrading a GCP Transit Gateway with BGPoLAN and Firenet features enabled might have resulted in the loss of direct connectivity to firewall appliance management.
+* **AVX-45566** - VPN NAT for gateway traffic didn’t work as expected because one of the NAT-related chains is missing in the iptables.
+  Action required: Upgrade your gateway image.
+* **AVX-45569** - Linux auditd logs filled the disk space of some instances.
+* **AVX-45571** - (Azure) After an Azure FireNet-enabled gateway image upgrade, the gateway went into the “config_fail” state.
+
+  Action required: To resolve this issue, try restarting the gateway. If the gateway state does not change, please contact Aviatrix Support.
+
+**Known Issues in Aviatrix Release 6.9-1804.733**
+
+* **AVX-44818** - Bootstrap configuration for a firewall took longer than expected, causing traffic loss from the Transit Gateway.
+
+  Use the following two attributes in Terraform to provide sufficient time for the firewalls to be configured via Bootstrap so that the configuration is applied to the firewalls. Note that the specific values for these attributes
+
+  * number_of_retries - (Optional) Number of retries for save or synchronize. (Set to at least 1, default is 0)
+  * retry_interval - (Optional) Retry interval in seconds for save or synchronize. Example: 900. Default value: 300. Recommended: 900.
+* **AVX-45156** - On an AEP Dell device, when you configure a Transit Gateway attachment with HPE (High Performance Encryption) mode, you could not set the tunnel count to more than 2.
+
+  If you have a higher bandwidth/performance requirement which requires more tunnels, please contact Aviatrix Support for help.
+
+* **AVX-45567** - (GCP) Simultaneous, multiple GCP gateway image upgrades in the same GCP project might fail. To resolve this issue, try upgrading the gateway images again.
+* **AVX-45682** - A rare issue with a gateway software upgrade may cause the BGP neighbor status to go down. To resolve this issue, restart the gateway.
+* **AVX-45684** - This issue occurs when you try to do a dry run for a Controller software version upgrade with more than one version in the pending list for upgrading. When you choose “latest” as the default version for the upgrade, the Controller incorrectly runs the dry run for the last version to upgrade to instead of the next upgrade version. For example, if you are running a dry run for 6.8 > 6.9 > 7.0 > 7.1, the Controller ran the dry run for 7.1 instead of 6.9.
+
+  To resolve this issue, when you do a dry run, make sure to manually enter the next upgrade version instead of leaving the default, “latest.” For example, when you upgrade from 6.8 > 6.9 > 7.0 > 7.1, enter “6.9” as the version for the dry run.
+
+6.8-1804.1826 Release Notes (08/29/23)
+===========================================
+
+**Issues Corrected in Aviatrix Release 6.8-1804.1826**
+
+* **AVX-42989** - On a newly registered CloudN, users could not create attachments to multiple transits from a single CloudN Gateway.
+* **AVX-43546**	- After the Aviatrix Controller lost Management connection to a Transit/Edge Gateway, the Gateway lost all learned routes from the on-prem environment.
+* **AVX-44525**	- (GCP) Upgrading a GCP Transit Gateway with BGPoLAN and Firenet features enabled might have resulted in the loss of direct connectivity to firewall appliance management.
+* **AVX-45566** - VPN NAT for gateway traffic didn’t work as expected because one of the NAT-related chains is missing in the iptables.
+  Action required: Upgrade your gateway image.
+* **AVX-45569** - Linux auditd logs filled the disk space of some instances.
+* **AVX-45571** - (Azure) After an Azure FireNet-enabled gateway image upgrade, the gateway went into the “config_fail” state.
+
+**Known Issues in Aviatrix Release 6.8-1804.1826**
+
+* **AVX-44818** - Bootstrap configuration for a firewall took longer than expected, causing traffic loss from the Transit Gateway.
+
+  Use the following two attributes in Terraform to provide sufficient time for the firewalls to be configured via Bootstrap so that the configuration is applied to the firewalls. Note that the specific values for these attributes
+
+  * number_of_retries - (Optional) Number of retries for save or synchronize. (Set to at least 1, default is 0)
+  * retry_interval - (Optional) Retry interval in seconds for save or synchronize. Example: 900. Default value: 300. Recommended: 900.
+
+* **AVX-45156** - On an AEP Dell device, when you configure a Transit Gateway attachment with HPE (High Performance Encryption) mode, you could not set the tunnel count to more than 2.
+
+  If you have a higher bandwidth/performance requirement which requires more tunnels, please contact Aviatrix Support for help.
+
+* **AVX-45567** - (GCP) Simultaneous, multiple GCP gateway image upgrades in the same GCP project might fail. To resolve this issue, try upgrading the gateway images again.
+* **AVX-45682** - A rare issue with a gateway software upgrade may cause the BGP neighbor status to go down. To resolve this issue, restart the gateway.
+* **AVX-45683**	- (GCP) Upgrading a GCP Transit Gateway with BGPoLAN and FireNet features enabled from any in 6.7 or 6.8 releases might result in 7-10 seconds of traffic loss of direct connectivity to firewall appliance management.
+* **AVX-45684** - This issue occurs when you try to do a dry run for a Controller software version upgrade with more than one version in the pending list for upgrading. When you choose “latest” as the default version for the upgrade, the Controller incorrectly runs the dry run for the last version to upgrade to instead of the next upgrade version. For example, if you are running a dry run for 6.8 > 6.9 > 7.0 > 7.1, the Controller ran the dry run for 7.1 instead of 6.9.
+
+  To resolve this issue, when you do a dry run, make sure to manually enter the next upgrade version instead of leaving the default, “latest.” For example, when you upgrade from 6.8 > 6.9 > 7.0 > 7.1, enter “6.9” as the version for the dry run.
+
 6.7.1601 Release Notes (06/14/23)
 =========================================
 
