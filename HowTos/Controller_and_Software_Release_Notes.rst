@@ -41,7 +41,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 6.9.733 Release Notes (08/29/23)
 ==========================================
 
-**Issues Corrected in Aviatrix Release 6.9-1804.733**
+**Issues Corrected in Aviatrix Release 6.9.733**
 
 * **AVX-42989** - On a newly registered CloudN, users could not create attachments to multiple transits from a single CloudN Gateway.
 * **AVX-43546**	- After the Aviatrix Controller lost Management connection to a Transit/Edge Gateway, the Gateway lost all learned routes from the on-prem environment.
@@ -54,7 +54,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   Action required: To resolve this issue, try restarting the gateway. If the gateway state does not change, please contact Aviatrix Support.
 
-**Known Issues in Aviatrix Release 6.9-1804.733**
+**Known Issues in Aviatrix Release 6.9.733**
 
 * **AVX-44818** - Bootstrap configuration for a firewall took longer than expected, causing traffic loss from the Transit Gateway.
 
@@ -75,7 +75,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 6.8.1826 Release Notes (08/29/23)
 ===========================================
 
-**Issues Corrected in Aviatrix Release 6.8-1804.1826**
+**Issues Corrected in Aviatrix Release 6.8.1826**
 
 * **AVX-42989** - On a newly registered CloudN, users could not create attachments to multiple transits from a single CloudN Gateway.
 * **AVX-43546**	- After the Aviatrix Controller lost Management connection to a Transit/Edge Gateway, the Gateway lost all learned routes from the on-prem environment.
@@ -85,7 +85,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-45569** - Linux auditd logs filled the disk space of some instances.
 * **AVX-45571** - (Azure) After an Azure FireNet-enabled gateway image upgrade, the gateway went into the “config_fail” state.
 
-**Known Issues in Aviatrix Release 6.8-1804.1826**
+**Known Issues in Aviatrix Release 6.8.1826**
 
 * **AVX-44818** - Bootstrap configuration for a firewall took longer than expected, causing traffic loss from the Transit Gateway.
 
