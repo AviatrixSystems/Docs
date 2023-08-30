@@ -43,8 +43,8 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Issues Corrected in Aviatrix Release 6.9.733**
 
-* **AVX-42989** - On a newly registered CloudN, users could not create attachments to multiple transits from a single CloudN Gateway.
 * **AVX-43546**	- After the Aviatrix Controller lost Management connection to a Transit/Edge Gateway, the Gateway lost all learned routes from the on-prem environment.
+* **AVX-43547** - On a newly registered CloudN, users could not create attachments to multiple transits from a single CloudN Gateway.
 * **AVX-43552**	- A previous method for adding new metrics to interface RRD files caused unnecessary delay and decreased performance. Resolved this issue so that the new metrics are available without the extra expense of time and performance. You must upgrade to software version 7.0.1307 or 7.1.XXXX or later to access the new metrics.
 * **AVX-44525**	- (GCP) Upgrading a GCP Transit Gateway with BGPoLAN and Firenet features enabled might have resulted in the loss of direct connectivity to firewall appliance management.
 * **AVX-45566** - VPN NAT for gateway traffic didn’t work as expected because one of the NAT-related chains is missing in the iptables.
@@ -53,15 +53,15 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-45571** - (Azure) After an Azure FireNet-enabled gateway image upgrade, the gateway went into the “config_fail” state.
 
   Action required: To resolve this issue, try restarting the gateway. If the gateway state does not change, please contact Aviatrix Support.
-
-**Known Issues in Aviatrix Release 6.9.733**
-
 * **AVX-44818** - Bootstrap configuration for a firewall took longer than expected, causing traffic loss from the Transit Gateway.
 
   Use the following two attributes in Terraform to provide sufficient time for the firewalls to be configured via Bootstrap so that the configuration is applied to the firewalls. Note that the specific values for these attributes
 
   * number_of_retries - (Optional) Number of retries for save or synchronize. (Set to at least 1, default is 0)
   * retry_interval - (Optional) Retry interval in seconds for save or synchronize. Example: 900. Default value: 300. Recommended: 900.
+
+**Known Issues in Aviatrix Release 6.9.733**
+
 * **AVX-45156** - On an AEP Dell device, when you configure a Transit Gateway attachment with HPE (High Performance Encryption) mode, you could not set the tunnel count to more than 2.
 
   If you have a higher bandwidth/performance requirement which requires more tunnels, please contact Aviatrix Support for help.
@@ -77,22 +77,21 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Issues Corrected in Aviatrix Release 6.8.1826**
 
-* **AVX-42989** - On a newly registered CloudN, users could not create attachments to multiple transits from a single CloudN Gateway.
 * **AVX-43546**	- After the Aviatrix Controller lost Management connection to a Transit/Edge Gateway, the Gateway lost all learned routes from the on-prem environment.
+* **AVX-43547** - On a newly registered CloudN, users could not create attachments to multiple transits from a single CloudN Gateway.
 * **AVX-44525**	- (GCP) Upgrading a GCP Transit Gateway with BGPoLAN and Firenet features enabled might have resulted in the loss of direct connectivity to firewall appliance management.
 * **AVX-45566** - VPN NAT for gateway traffic didn’t work as expected because one of the NAT-related chains is missing in the iptables.
   Action required: Upgrade your gateway image.
 * **AVX-45569** - Linux auditd logs filled the disk space of some instances.
 * **AVX-45571** - (Azure) After an Azure FireNet-enabled gateway image upgrade, the gateway went into the “config_fail” state.
-
-**Known Issues in Aviatrix Release 6.8.1826**
-
 * **AVX-44818** - Bootstrap configuration for a firewall took longer than expected, causing traffic loss from the Transit Gateway.
 
   Use the following two attributes in Terraform to provide sufficient time for the firewalls to be configured via Bootstrap so that the configuration is applied to the firewalls. Note that the specific values for these attributes
 
   * number_of_retries - (Optional) Number of retries for save or synchronize. (Set to at least 1, default is 0)
   * retry_interval - (Optional) Retry interval in seconds for save or synchronize. Example: 900. Default value: 300. Recommended: 900.
+
+**Known Issues in Aviatrix Release 6.8.1826**
 
 * **AVX-45156** - On an AEP Dell device, when you configure a Transit Gateway attachment with HPE (High Performance Encryption) mode, you could not set the tunnel count to more than 2.
 
