@@ -80,7 +80,7 @@ Creating a Secret Identifier
 
 After registering your Aviatrix Controller as an app and assigning it the Contributor role, create a Secret identifier. Azure Active Directory uses this Secret identifier to authenticate the Aviatrix Controller application.
 
-1. Navigate back to All services > Azure Active Directory > App registrations and select the application you registered early.
+1. Navigate back to All services > Azure Active Directory > App registrations and select the application you registered earlier.
 2. Select **Certificates & secrets** on the left. Then, click **+New client secret**.
 2. On the right, under Add a client secret, enter:
 
