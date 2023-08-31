@@ -43,10 +43,10 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Issues Corrected in Aviatrix Release 6.9.733**
 
+* **AVX-39662**	- (GCP) Upgrading a GCP Transit Gateway with BGPoLAN and Firenet features enabled might have resulted in the loss of direct connectivity to firewall appliance management.
 * **AVX-43546**	- After the Aviatrix Controller lost Management connection to a Transit/Edge Gateway, the Gateway lost all learned routes from the on-prem environment.
 * **AVX-43547** - On a newly registered CloudN, users could not create attachments to multiple transits from a single CloudN Gateway.
 * **AVX-43552**	- A previous method for adding new metrics to interface RRD files caused unnecessary delay and decreased performance. Resolved this issue so that the new metrics are available without the extra expense of time and performance. You must upgrade to software version 7.0.1307 or 7.1.XXXX or later to access the new metrics.
-* **AVX-44525**	- (GCP) Upgrading a GCP Transit Gateway with BGPoLAN and Firenet features enabled might have resulted in the loss of direct connectivity to firewall appliance management.
 * **AVX-45566** - VPN NAT for gateway traffic didn’t work as expected because one of the NAT-related chains is missing in the iptables.
   Action required: Upgrade your gateway image.
 * **AVX-45569** - Linux auditd logs filled the disk space of some instances.
@@ -77,9 +77,9 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 **Issues Corrected in Aviatrix Release 6.8.1826**
 
+* **AVX-39662**	- (GCP) Upgrading a GCP Transit Gateway with BGPoLAN and Firenet features enabled might have resulted in the loss of direct connectivity to firewall appliance management.
 * **AVX-43546**	- After the Aviatrix Controller lost Management connection to a Transit/Edge Gateway, the Gateway lost all learned routes from the on-prem environment.
 * **AVX-43547** - On a newly registered CloudN, users could not create attachments to multiple transits from a single CloudN Gateway.
-* **AVX-44525**	- (GCP) Upgrading a GCP Transit Gateway with BGPoLAN and Firenet features enabled might have resulted in the loss of direct connectivity to firewall appliance management.
 * **AVX-45566** - VPN NAT for gateway traffic didn’t work as expected because one of the NAT-related chains is missing in the iptables.
   Action required: Upgrade your gateway image.
 * **AVX-45569** - Linux auditd logs filled the disk space of some instances.
