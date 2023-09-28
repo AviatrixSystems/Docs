@@ -122,11 +122,13 @@ Aviatrix Secure Edge Ports and Protocols
 
 .. Important::
 
-   The Aviatrix Controller requires access to the following ports for Edge Gateway deployment. You must allow access on these ports on your firewall.
+   The Aviatrix Edge Gateway requires outbound access to communicate with the Aviatrix Controller. You must allow access on these ports on your firewall.
 
       - MGMT: TCP 443 access to the Aviatrix Controller’s public IP address 
       - MGMT: TCP 443 access to the Aviatrix Controller’s private IP address (only permit this access if you selected **Management over Private Network** for management IP connectivity) 
       - WAN: UDP 500/4500
+
+   Additional required outbound ports are described in the table below.
 
 +------------+-------------------------------------------+--------------+----------+-----------------------+
 |**Source**  | **Destination**                           | **Protocol** | **Port** | **Purpose**           |

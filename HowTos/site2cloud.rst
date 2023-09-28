@@ -97,12 +97,22 @@ Remote Gateway Type
 Authentication Type
 ^^^^^^^^^^^^^^^^^^^
 
-You can authenticate the connection using PSK or certificate-based authentication.
+You can authenticate the connection using Pre-Shared Key (PSK) or certificate-based authentication.
 
 PSK-Based 
 +++++++++
 
-If you select PSK-based authentication, you can provide the Pre-shared Key when prompted (this is optional). This key comes from your firewall UI.
+If you select PSK-based authentication, you can provide the Pre-Shared Key. A Pre-Shared Key is a string of random characters that is used to authenticate the IPsec tunnel connection between the Aviatrix Gateway and your on-premise router or firewall. You must ensure that this key is the same as the Pre-Shared Key that is configured for your on-premise firewall or router. 
+
+For Site2Cloud ActiveMesh connections, where both the local Aviatrix Gateway and remote on-premise router or firewall have high availability (HA) enabled, four IPsec tunnels are created (Local gateway to remote router/firewall, local HA gateway to remote router/firewall, local gateway to remote HA router/firewall, local HA gateway to remote HA router/firewall). If you want the tunnels that are created to have different PSK values, you will need to enter the PSKs separated by a comma.
+
+|s2c_pre_shared_key|
+
+.. note::
+     - A comma denotes two separate PSK values. Do not include a comma in a single PSK string.
+     - The double quote ASCII character (“) is not allowed. A tunnel connection cannot be established if the PSK string contains double quote character.
+
+
 
 Certificate-Based
 +++++++++++++++++
@@ -349,6 +359,9 @@ Diagnostics and troubleshooting options are available in the **Diagnostics** tab
    :scale: 50%
 
 .. |site2cloud_new| image:: site2cloud_media/site2cloud_new.png
+   :scale: 50%
+
+.. |s2c_pre_shared_key| image:: site2cloud_media/s2c_pre_shared_key.png
    :scale: 50%
 
 .. disqus::
