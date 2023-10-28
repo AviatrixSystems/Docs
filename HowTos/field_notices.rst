@@ -5,6 +5,22 @@ Field Notices
 .. Note::
 
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
+
+43. Field Notice
+------------------------------------------------
+
+**Date**: 26 October 2023
+
+**Severity**: High
+
+**Who is impacted**: Customers who applied the “Remove unnecessary packages from gateway” software patch
+
+**Issue Description**:
+
+A gateway state on an Aviatrix Controller might change to “Config_fail” when it is created or just after its image is upgraded. This configuration failure could occur if the setup had previously applied a patch named 'Remove unnecessary packages from gateway' under Aviatrix Controller > Settings > Maintenance > Software Patches.
+
+**Action Required**:
+Though this issue does not always occur in all regions and clouds, all users who have applied the “Remove unnecessary packages from gateway” patch should update the patches before deploying or upgrading gateways. Otherwise, the gateways might move into a config fail state.
  
 42. Field Notice
 ------------------------------------------------
