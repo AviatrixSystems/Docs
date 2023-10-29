@@ -25,12 +25,12 @@ import sphinx_rtd_theme
 #from better import better_theme_path
 
 def setup(app):
-    app.add_stylesheet('css/custom.css')
-    app.add_javascript('js/custom.js')
-    app.add_javascript('js/digitalpi-utm-tracker-aviatrix.com.js')
-    app.add_javascript('js/marketo-munchkin.js')
-    app.add_javascript('js/6sense.js')
-    app.add_javascript('js/drift.js')
+    app.add_css_file('css/custom.css')
+    app.add_js_file('js/custom.js')
+    app.add_js_file('js/digitalpi-utm-tracker-aviatrix.com.js')
+    app.add_js_file('js/marketo-munchkin.js')
+    app.add_js_file('js/6sense.js')
+    app.add_js_file('js/drift.js')
 
 # -- General configuration ------------------------------------------------
 
@@ -81,7 +81,7 @@ release = ''
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
