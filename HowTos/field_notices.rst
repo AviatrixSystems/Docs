@@ -45,7 +45,6 @@ The gateway will display the **config_fail** state in the gateway page of the Co
 
 |imagegateway-image-config-fail|
 
-
 In addition, the following log entries appear on the Controller under **Aviatrix Controller > Troubleshoot > Logs > Display Aviatrix Command Log > DISPLAY**.
 
 |imagegdisplay-log-warning|
@@ -632,10 +631,10 @@ If you have any questions about your Aviatrix network, please open a `support ti
 .. |imagecontroller-patch-update| image:: field_notices_media/controller-patch-update.png
    :width: 600
 
-.. |imagedisplay-log-warning| image:: field_notices_media/display-log-warning.png
+.. |imagegateway-image-config-fail| image:: field_notices_media/gateway-image-config-fail.png
    :width: 600
 
-.. |imagegateway-image-config-fail| image:: field_notices_media/gateway-image-config-fail.png
+.. |imagegateway-image-config-fail| image:: image:: field_notices_media/display-log-warning.png
    :width: 600
 
 .. |imagestatus-partly-patched| image:: field_notices_media/status-partly-patched.png
