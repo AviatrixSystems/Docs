@@ -43,7 +43,9 @@ Aviatrix strongly recommends not to attempt a gateway image upgrade or to deploy
 
 The gateway will display the **config_fail** state in the gateway page of the Controller:
 
+
 |imagegateway-image-config-fail|
+
 
 In addition, the following log entries appear on the Controller under **Aviatrix Controller > Troubleshoot > Logs > Display Aviatrix Command Log > DISPLAY**.
 
