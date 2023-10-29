@@ -39,9 +39,11 @@ Aviatrix Systems has updated the patch, and it is now available as a **Software 
 
 Aviatrix strongly recommends not to attempt a gateway image upgrade or to deploy a new gateway until you update the available patches.
 
+
 **How to detect issue?**
 
 The gateway will display the **config_fail** state in the gateway page of the Controller:
+
 
 |imagegateway-image-config-fail|
 
