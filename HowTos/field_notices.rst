@@ -634,7 +634,7 @@ If you have any questions about your Aviatrix network, please open a `support ti
 .. |imagegateway-image-config-fail| image:: field_notices_media/gateway-image-config-fail.png
    :width: 600
 
-.. |imagegateway-image-config-fail| image:: image:: field_notices_media/display-log-warning.png
+.. |imagegateway-image-config-fail| image:: field_notices_media/display-log-warning.png
    :width: 600
 
 .. |imagestatus-partly-patched| image:: field_notices_media/status-partly-patched.png
