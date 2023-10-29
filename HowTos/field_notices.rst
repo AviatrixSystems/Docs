@@ -635,7 +635,7 @@ If you have any questions about your Aviatrix network, please open a `support ti
    :width: 600
 
 .. |imagedisplay-log-warning| image:: field_notices_media/display-log-warning.png
-   :width: 600
+   :width: 800
 
 .. |imagestatus-partly-patched| image:: field_notices_media/status-partly-patched.png
    :width: 600
