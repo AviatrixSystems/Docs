@@ -49,7 +49,9 @@ The gateway will display the **config_fail** state in the gateway page of the Co
 
 In addition, the following log entries appear on the Controller under **Aviatrix Controller > Troubleshoot > Logs > Display Aviatrix Command Log > DISPLAY**.
 
+
 |imagegdisplay-log-warning|
+
 
 Log entry text::
 
