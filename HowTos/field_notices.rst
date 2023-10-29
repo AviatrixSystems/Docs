@@ -6,21 +6,74 @@ Field Notices
 
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
 
-43. Field Notice
+45. Field Notice
 ------------------------------------------------
 
-**Date**: 26 October 2023
+**Date**: 28 October 2023
 
 **Severity**: High
 
-**Who is impacted**: Customers who applied the “Remove unnecessary packages from gateway” software patch
+**Image upgrade and new gateway deployment fails.**
 
-**Issue Description**:
+A gateway state on an Aviatrix Controller might change to **"Config_fail"** when it is created or just after the image is upgraded. This could occur if the setup had previously applied a patch named **"Remove unnecessary packages from gateway"** under the Controller's **Software patches** section. This issue does not always occur in all regions and clouds, but out of an abundance of caution we recommend all users who have applied the **"Remove unnecessary packages from gateway"** patch take action.
 
-A gateway state on an Aviatrix Controller might change to “Config_fail” when it is created or just after its image is upgraded. This configuration failure could occur if the setup had previously applied a patch named 'Remove unnecessary packages from gateway' under Aviatrix Controller > Settings > Maintenance > Software Patches.
+**What is the impact?**
 
-**Action Required**:
-Though this issue does not always occur in all regions and clouds, all users who have applied the “Remove unnecessary packages from gateway” patch should update the patches before deploying or upgrading gateways. Otherwise, the gateways might move into a config fail state.
+Customers who applied the **"Remove unnecessary packages from gateway"** patch need to update the patches before deploying or upgrading gateways. Otherwise, the gateways might move into a **"Config_fail"** state.
+
+**Who is impacted?**
+
+To encounter this problem, the below conditions should be met:
+
+The **"Remove unnecessary packages from gateway"** patch should show as **Patched** or **Partly Patched** on the Controller. To verify the status, go to **Aviatrix Controller > Settings > Maintenance > Software Patches**.
+
+|imagestatus-patched|
+
+|imagestatus-partly-patched|
+
+**What is the recommendation?**
+
+Aviatrix Systems has updated the patch, and it is now available as a **Software Patch**.
+
+.. WARNING::
+
+Aviatrix strongly recommends not to attempt a gateway image upgrade or to deploy a new gateway until you update the available patches.
+
+**How to detect issue?**
+
+The gateway will display the **config_fail** state in the gateway page of the Controller:
+
+|imagegateway-image-config-fail|
+
+
+In addition, the following log entries appear on the Controller under **Aviatrix Controller > Troubleshoot > Logs > Display Aviatrix Command Log > DISPLAY**.
+
+Log entry text::
+
+    2023-10-26T23:03:05.846367+00:00 ip-10-61-86-154 CLOUDX[25238 26208]:
+    WARNING email_notifications_manager get_status_change_notif_email_address 216 : Status change
+    notification email address cannot be retrieved.'NoneType' object has no attribute 'get'
+    tools.packages.PackageUpdateError: Command '['apt-get', 'purge', '-y', 'apport', 'aptitude',
+    'apt-show-versions', 'apt-xapian-index', 'man-db', 'mlocate', 'nginx-core', 'nginx-common',
+    'nginx', 'ubuntu-advantage-tools', 'update-notifier-common']' returned non-zero exit status 100.
+
+
+**How to fix and avoid the issue?**
+
+Aviatrix has updated the **"Remove unnecessary packages from gateway"** patch.
+
+1. Prior to performing an image upgrade or deploying a gateway in the current release, please go to **Aviatrix Controller > Settings > Maintenance > Software Patches** and click on **UPDATE AVAILABLE PATCHES**. Once the patches are updated, a gateway image upgrade or gateway deployment can be performed. The update of the available patches is required to be done one time per Controller unless a Controller upgrade or a Controller migration is performed.
+
+|imagecontroller-patch-update|
+
+2. Whenever a Controller software upgrade (Platform Upgrade) is performed, you are required to **Update Available Patches** again before performing an image upgrade or gateway deployment. Please go to **Aviatrix Controller > Settings > Maintenance > Software Patches** and click on **UPDATE AVAILABLE PATCHES**.
+
+3. Whenever a Controller Migration is performed, once the backup restore completes on the new Controller and all gateways are connected to it, you are required to **Update Available Patches*** again before performing an image upgrade or gateway deployment. Please go to **Aviatrix Controller > Settings > Maintenance > Software Patches** and click on **UPDATE AVAILABLE PATCHES**.
+
+**How to fix the issue if you have already hit it.**
+**How to fix the issue if you have already hit it.**
+
+Perform **Step 1** in the previous **How to fix and avoid the issue** section, then perform a gateway image upgrade.
  
 42. Field Notice
 ------------------------------------------------
@@ -571,6 +624,20 @@ If you have any questions about your Aviatrix network, please open a `support ti
 .. |imagefn14| image:: field_notices_media/fn14.png 
    :width: 600
 
-.. |imagefn37| image:: field_notices_media/fn37.png 
+.. |imagefn37| image:: field_notices_media/fn37.png
    :width: 400
 
+.. |imagecontroller-patch-update| image:: field_notices_media/controller-patch-update.png
+   :width: 600
+
+.. |imagedisplay-log-warning| image:: field_notices_media/display-log-warning.png
+   :width: 600
+
+.. |imagegateway-image-config-fail| image:: field_notices_media/gateway-image-config-fail.png
+   :width: 600
+
+.. |imagestatus-partly-patched| image:: field_notices_media/status-partly-patched.png
+   :width: 600
+
+.. |imagestatus-patched| image:: field_notices_media/status-patched.png
+   :width: 600
