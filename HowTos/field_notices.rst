@@ -6,6 +6,53 @@ Field Notices
 
  These field notices are provided as a service to our customers to proactively update them on major issues. This service is provided without any changes in our SLA. The information in this field notice will be updated as we learn more.
 
+46. Field Notice
+------------------------------------------------
+
+**Date**: 02 Nov 2023
+
+**Issue Description**:
+
+**Extension of End-of-Support and End-of-Life Dates for Aviatrix Software Releases**
+
+To better serve our customers, Aviatrix has decided to provide a one-time extension to the End-of-Support (EoS) and End-of-Life (EoL) dates for Controllers running release 6.9, 7.0, and 7.1.   
+
+Related to this extension, we will also be releasing an additional patch for releases 6.9 and 7.0 before they reach EoL.  This patch will provide extended time outside of the 2023 holiday window to support our customers in upgrading to our latest releases.  
+
+The previous EoS/EoL timeline was as follows: 
+
++--------------+------------------+-----------------+----------------+
+|Release       | GA Date          | EOL Date        |EOS Date        |
++==============+==================+=================+================+
+| 6.8          | AUG 09 2022      | AUG 09 2023     | NOV 09 2023    |
++--------------+------------------+-----------------+----------------+
+| 6.9          | SEP 09 2022      | SEP 09 2023     | DEC 09 2023    |
++--------------+------------------+-----------------+----------------+
+| 7.0          | DEC 08 2022      | DEC 08 2023     | MAR 08 2024    | 
++--------------+------------------+-----------------+----------------+
+| 7.1          | MAY 11 2023      | MAY 11 2024     | AUG 11 2024    |
++--------------+------------------+-----------------+----------------+
+
+The updated EoS/EoL Timeframe is as follows:  
+
++--------------+------------------+-----------------+----------------+
+|Release       | GA Date          | EOL Date        |EOS Date        |
++==============+==================+=================+================+
+| 6.8          | AUG 09 2022      | AUG 09 2023     | NOV 09 2023    |
++--------------+------------------+-----------------+----------------+
+| 6.9          | SEPT 09 2022     | JAN 09 2023*    | APR 09 2023*   |
++--------------+------------------+-----------------+----------------+
+| 7.0          | DEC 08 2022      | APR 08 2023*    | JUL 08 2024*   | 
++--------------+------------------+-----------------+----------------+
+| 7.1          | MAY 11 2023      | SEPT 11 2024*   | DEC 11 2024*   |
++--------------+------------------+-----------------+----------------+
+
+Dates with an asterisk have been adjusted by this Field Notice.
+
+Always reference the Aviatrix EoS/EoL policy for the most up-to-date information. The EoS/EoL policy is 'here <https://support.aviatrix.com/Aviatrix-EOL-Policy>'. 
+
+For any clarifications on this Field Notice or for upgrade assistance, please contact 'Aviatrix Support <https://support.aviatrix.com/>'. 
+
 45. Field Notice
 ------------------------------------------------
 
