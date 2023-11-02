@@ -47,7 +47,7 @@ The updated EoS/EoL Timeframe is as follows:
 | 7.1          | MAY 11 2023      | SEPT 11 2024*   | DEC 11 2024*   |
 +--------------+------------------+-----------------+----------------+
 
-* *Dates with an asterisk (*) have been adjusted by this Field Notice*.
+Dates with an asterisk have been adjusted by this Field Notice.
 
 Always reference the Aviatrix EoS/EoL policy for the most up-to-date information. The EoS/EoL policy is 'here <https://support.aviatrix.com/Aviatrix-EOL-Policy>'. 
 
