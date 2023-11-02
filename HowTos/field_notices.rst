@@ -9,12 +9,11 @@ Field Notices
 46. Field Notice
 ------------------------------------------------
 
+**Date**: 02 Nov 2023
 
-*Date*: 02 Nov 2023
+**Issue Description**:
 
-== Issue Description:
-
-=== Extension of End-of-Support and End-of-Life Dates for Aviatrix Software Releases
+**Extension of End-of-Support and End-of-Life Dates for Aviatrix Software Releases**
 
 To better serve our customers, Aviatrix has decided to provide a one-time extension to the End-of-Support (EoS) and End-of-Life (EoL) dates for Controllers running release 6.9, 7.0, and 7.1.   
 
@@ -48,11 +47,11 @@ The updated EoS/EoL Timeframe is as follows:
 | 7.1          | MAY 11 2023      | SEPT 11 2024*   | DEC 11 2024*   |
 +--------------+------------------+-----------------+----------------+
 
-* _Dates with an asterisk have been adjusted by this Field Notice._
+*Dates with an asterisk have been adjusted by this Field Notice.
 
-Always reference the Aviatrix EoS/EoL policy for the most up-to-date information. The EoS/EoL policy is https://support.aviatrix.com/Aviatrix-EOL-Policy[here]. 
+Always reference the Aviatrix EoS/EoL policy for the most up-to-date information. The EoS/EoL policy is 'here <https://support.aviatrix.com/Aviatrix-EOL-Policy>'. 
 
-For any clarifications on this Field Notice or for upgrade assistance, please contact https://support.aviatrix.com/[Aviatrix Support]. 
+For any clarifications on this Field Notice or for upgrade assistance, please contact 'Aviatrix Support <https://support.aviatrix.com/>'. 
 
 45. Field Notice
 ------------------------------------------------
