@@ -60,6 +60,8 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
   * number_of_retries - (Optional) Number of retries for save or synchronize. (Set to at least 1, default is 0)
   * retry_interval - (Optional) Retry interval in seconds for save or synchronize. Example: 900. Default value: 300. Recommended: 900.
 
+* **AVX-48199* - (GCP) Controllers that manage GCP resources may run into errors when a new Controller instance is started (via Controller High Availability or Controller Migration)  or when a new GCP account is onboarded.
+
 **Known Issues in Aviatrix Release 6.9.733**
 
 * **AVX-45156** - On an AEP Dell device, when you configure a Transit Gateway attachment with HPE (High Performance Encryption) mode, you could not set the tunnel count to more than 2.
@@ -103,6 +105,8 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-45684** - This issue occurs when you try to do a dry run for a Controller software version upgrade with more than one version in the pending list for upgrading. When you choose “latest” as the default version for the upgrade, the Controller incorrectly runs the dry run for the last version to upgrade to instead of the next upgrade version. For example, if you are running a dry run for 6.8 > 6.9 > 7.0 > 7.1, the Controller ran the dry run for 7.1 instead of 6.9.
 
   To resolve this issue, when you do a dry run, make sure to manually enter the next upgrade version instead of leaving the default, “latest.” For example, when you upgrade from 6.8 > 6.9 > 7.0 > 7.1, enter “6.9” as the version for the dry run.
+
+* **AVX-48199* - (GCP) Controllers that manage GCP resources may run into errors when a new Controller instance is started (via Controller High Availability or Controller Migration)  or when a new GCP account is onboarded.
 
 6.7.1601 Release Notes (06/14/23)
 =========================================
