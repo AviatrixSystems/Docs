@@ -1064,7 +1064,7 @@ The following Private Preview Features are available in this release:
 - **AVX-26419** - If you are connecting to another Aviatrix device, using IKEv2 is preferred. IKEv2 support started in version 5.0.2667. If you configure IKEv1 in a Site2Cloud connection that uses certificate-based authentication and is connecting to another Aviatrix device, you must add the intermediate CA's in addition to the root CA. When an intermediate CA is renewed and re-authentication is attempted, the Site2Cloud connection will go down until you add the new certificate.
 - **AVX-27653** - If you are using software version 6.8.1148 on an outdated gateway image, your Controller could have a memory limitation issue. `Upgrade <https://docs.aviatrix.com/HowTos/gateway-image-migration.html>`_ your gateway images to avoid this issue.
 - **AVX-35490** - After a Controller software upgrade or a CloudXD restart, the Controller migrates BGP routes, automatically triggering an “Approve New Routes” email for existing pending CIDRs on gateways with learned CIDRs approval enabled. This issue has no functional impact. Approved CIDRs remain intact and no routes are changed.
-- **AVX-46969** - You may see a high rate of packet drops for your transit Gateways. If you experience this issue, please contact Aviatrix Support and ask for guidance in upgrading to release 6.9.128.
+- **AVX-46969** - You may see a high rate of packet drops for your Transit Gateways. If you experience this issue, please contact Aviatrix Support and ask for guidance in upgrading to release 6.9.128.
 
 **Features Deprecated in Aviatrix Release 6.8.1148**
 
