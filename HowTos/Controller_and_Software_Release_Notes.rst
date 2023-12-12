@@ -885,6 +885,7 @@ Error while trying to migrate from MongoDB to Etcd: Invalid IP address 1."
 **Known Issues in Aviatrix Release 6.9.128**
 
 * **AVX-35490** - After a Controller software upgrade or a CloudXD restart, the Controller migrates BGP routes, automatically triggering an “Approve New Routes” email for existing pending CIDRs on gateways with learned CIDRs approval enabled. This issue has no functional impact. Approved CIDRs remain intact and no routes are changed.
+* **AVX-43180** - If your Controller is using an outdated image, a software upgrade may fail. If your Controller software upgrade fails, please contact the Aviatrix Support team for assistance.
 
 6.8.1149 (08/17/2022)
 =====================
