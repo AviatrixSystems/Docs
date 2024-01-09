@@ -57,7 +57,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
   * D4ds_v5
   * D8ds_v5
 
-* **AVX-49589** - Domain type Webgroups for Distributed Cloud Firewall are now GA. Webgroups are now the preferred mechanism for implementing Egress firewalling.
+* **AVX-49589** - Domain type WebGroups for Distributed Cloud Firewall are now GA. WebGroups are now the preferred mechanism for implementing Egress firewalling.
 
 **Issues Corrected in Aviatrix Release 6.9.k**
 
