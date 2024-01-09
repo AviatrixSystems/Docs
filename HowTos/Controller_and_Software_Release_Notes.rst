@@ -38,10 +38,10 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   For the release notes of Controller and Gateway software versions 7.0 and later, click `here <https://docs.aviatrix.com/documentation/latest/release-notes/software-release-notes/software-release-notes.html>`_. The content below is a list of release notes for software versions 6.9 and earlier.
 
-6.9.k Release Notes (MM/DD/YYYY)
+6.9.822 Release Notes (01/10/2024)
 ==========================================
 
-**Enhanced Features in Aviatrix Release 6.9.k**
+**Enhanced Features in Aviatrix Release 6.9.822**
 
 * **AVX-37725** - (Azure) During subnet inspection, added the ability to inspect secondary/extra CIDRs in a VNet. When you use this enhancement, subnet inspection extends to cover all CIDR ranges associated with a VNet.
 * **AVX-43958** - 
@@ -59,7 +59,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 * **AVX-49589** - Domain type WebGroups for Distributed Cloud Firewall are now GA. WebGroups are now the preferred mechanism for implementing Egress firewalling.
 
-**Issues Corrected in Aviatrix Release 6.9.k**
+**Issues Corrected in Aviatrix Release 6.9.822**
 
 * **AVX-26567** - A FireNet Egress FQDN gateway was dropping traffic.
 * **AVX-36054** - A gateway created in a newer Controller software version might have been rolled back to an older software version if:
@@ -98,7 +98,7 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-48931** - When you detached and reattached a CloudN attachment to an Aviatrix Transit Gateway that had any Stateful Firewall rules that used Stateful Firewall Tags, the BGP configuration incorrectly remained on the gateways.
 * **AVX-49236** - (OCI) After an OCI gateway image upgrade, several routing tables within several VCNs were missing the default route, 0.0.0.0/0.
 
-**Known Issues in Aviatrix Release 6.9.k**
+**Known Issues in Aviatrix Release 6.9.822**
 
 * **AVX-38433** - If you see error messages like “MemoryUsageLimitExceeded” or “RequestLimitExceeded” when you try to access the Controller, this may be caused by high memory usage. You can verify memory usage from Aviatrix Copilot > Monitor > the Performance tab.
 
