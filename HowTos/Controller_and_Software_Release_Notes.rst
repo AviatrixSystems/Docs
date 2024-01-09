@@ -51,7 +51,6 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 * **AVX-44146** - (AWS) You can now create c6in instance gateways for all AWS regions.
 * **AVX-45898** - (Azure) The Qatar Central region has been included in the supported regions for Azure Gateways and VPCs.
-* **AVX-45899** - (Azure) Added support for Azure China East 3 region.
 * **AVX-48416** - (Azure) The Aviatrix platform now supports new instance sizes for Azure FireNet Check Point Firewall deployment:
 
   * D2ds_v5
@@ -69,6 +68,10 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
   * That gateway was deleted before upgrading to the present Controller version.
 
 * **AVX-36996** - (Azure) After an Azure FireNet FQDN Egress gateway image upgrade, the gateway goes into the “config_fail” state. To resolve this issue, try restarting the gateway. If the gateway state does not change, please contact Aviatrix Support.
+* **AVX-38843** - In a Site2Cloud connection with a single IP HA Gateway, the standby gateway continuously sent out an IPsec connection requests to a remote peer even though the connection would never get established. This issue created a stale state in the CSP underlay, which may have caused IPsec tunnel flaps between the active gateway and remote peer.
+
+  This issue has been resolved by blocking the HA gateway from sending IPsec connection requests to remote peers for these Site2Cloud connections.
+
 * **AVX-39477** - When you tried to do an image upgrade or a software rollback for a BGP-enabled gateway on which you applied the “remove-unnecessary-packages-from-gateway” software patch, the operation may have failed.
 * **AVX-39662** - (GCP) Upgrading a GCP Transit Gateway with BGPoLAN and Firenet features enabled might have resulted in the loss of direct connectivity to the on-site firewall appliance.
 * **AVX-41361** - If a domain name used in an Egress FQDN tag had a long DNS record, attaching that FQDN tag to a gateway could fail. The error given was “command hostname_filter failed due to exception errors invalid IPNetwork.” An email notification was sent.
@@ -86,11 +89,9 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-44812** - Deployments with a Utility license were unable to view some license details.
 * **AVX-44974** - (Azure) When Transit Gateways had Active-Standby enabled and the Active Transit Gateway was down, the attached Azure Native Spoke VNet route tables failed to switchover routes.
 * **AVX-45676** - Uploading a certificate and private key at Settings > Controller > Certificate failed if the key was an elliptic curve type.
-* **AVX-45853** - A Controller web page loading issue occurred when you tried to edit any FQDN tag other than the first one in the row table.
 * **AVX-45873** - When you used a link local address as an IPSec peer address, a Controller upgrade to release 6.8.1148 would drop traffic.
 * **AVX-45897** - On the Site2Cloud Details page in the Controller, the message “Authentication Type: null” was displayed for Site2Cloud connections even though there was a PSK authentication. Now, the page correctly displays “Authentication Type: psk” where PSK is the Authentication Type.
 * **AVX-46098** - When an Egress Filtering Gateway had a base Stateful Firewall policy of DENY, the gateway added the DROP rule from the base policy instead of letting the packets flow to the egress filter. The Egress Filtering Gateway should not have the DROP rule from the Stateful Firewall base policy. Instead, the packets should be allowed to flow to the egress filter.
-* **AVX-46462** - An HPE gateway resize could fail if the gateway had a peering with a gateway from release 6.7.1148 or earlier, as the new peering had additional fields in the structure.
 * **AVX-46788** - The Controller would not disable the Access Security feature during a Controller restore if the feature was not enabled in the backup configuration.
 * **AVX-47234** - Previously, the S2C RX Balancing feature was supported only on AWS C5 and C5n gateway sizes. S2C RX Balancing now supports AWS C6in instances. Now, you can upgrade your gateway instance size to C6in and enable S2C RX Balancing. See xref:bgp-connection-settings.adoc#s2c-rx-balancing.
 * **AVX-47764** - (AWS) When a VPC was attached to an AWS Transit Gateway (TGW), if you deleted one of the Spoke VPC Advertised CIDRs, the routes in associated transit gateways were not correctly updated.
