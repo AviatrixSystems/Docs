@@ -111,14 +111,6 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   To resolve this issue: Delete the endpoint group associated with the Load Balancer from the Global Accelerator configuration through the Cloud Service Provider console. Then, re-associate the Load Balancer with the Global Accelerator through the Aviatrix Controller UI.
 
-* **AVX-48456** - When you use network segmentation on an Edge site with multiple gateways using VLAN, you must use the same VLAN value for all gateways. A bug is preventing the addition of new gateways to an existing network segmentation even when the VLAN value matches the VLANs of the other gateways.
-
-  To add a new gateway to an existing network segmentation:
-
-  #. Remove the network segmentation association from all gateways.
-  #. Make sure the new gateway has a VLAN identical with the rest of the gateways.
-  #. Re-associate all the gateways in the network segmentation.
-
 * **AVX-49375** - When you try to create a GCP Palo Alto firewall instance using a certain version of a Palo Alto image, the instance creation fails. The affected versions are versions of the Palo Alto Networks Next-Generation Firewall BUNDLE that contain the letter “h,” such as “8.1.25-h1.”
 
   If you experience this issue, choose a Palo Alto Networks image version that does not contain the letter “h.” New Check Point and FortiGate Fortinet instance deployments are unaffected.
