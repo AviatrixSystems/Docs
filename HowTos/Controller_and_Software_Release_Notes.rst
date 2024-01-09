@@ -115,7 +115,6 @@ To resolve this issue, use the following two attributes in Terraform to provide 
 
   To resolve this issue: Delete the endpoint group associated with the Load Balancer from the Global Accelerator configuration through the Cloud Service Provider console. Then, re-associate the Load Balancer with the Global Accelerator through the Aviatrix Controller UI.
 
-* **AVX-47437** - The traceroute for an Edge Gateway may display an incorrect value for the Edge Gateway Interface.
 * **AVX-48456** - When you use network segmentation on an Edge site with multiple gateways using VLAN, you must use the same VLAN value for all gateways. A bug is preventing the addition of new gateways to an existing network segmentation even when the VLAN value matches the VLANs of the other gateways.
 
   To add a new gateway to an existing network segmentation:
