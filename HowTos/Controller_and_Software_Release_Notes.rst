@@ -111,10 +111,6 @@ To resolve this issue, use the following two attributes in Terraform to provide 
   * number_of_retries - (Optional) Number of retries for save or synchronize. Set to at least 1; the default is 0 (zero).
   * retry_interval - (Optional) Retry interval in seconds for save or synchronize. Example: 900. Default value: 300. Recommended: 900.
 
-* **AVX-45386** - On a gateway with multiple mapped Site2Cloud connects with Forward To Transit (FTT) enabled, after a successful gateway image upgrade, some of these connections may not work. 
-  
-  To resolve this issue, go to Controller > Site2Cloud > disable and re-enable FTT for each impacted S2C connection.
-
 * **AVX-45598** - (AWS) When you add a UserVPN Load Balancer to the UserVPN User Accelerator in the Aviatrix Controller before the Load Balancer state becomes active in the Cloud Service Provider, the Controller may throw an exception: *“command vpn_user_xlr failed due to exception errors 'HealthState'<p></p>*. An email notification with exception reason and trace log has been sent to exceptions@aviatrix.com for troubleshooting. Please feel free to contact Aviatrix Support.
 
   To resolve this issue: Delete the endpoint group associated with the Load Balancer from the Global Accelerator configuration through the Cloud Service Provider console. Then, re-associate the Load Balancer with the Global Accelerator through the Aviatrix Controller UI.
