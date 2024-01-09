@@ -102,11 +102,11 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
 * **AVX-38433** - If you see error messages like “MemoryUsageLimitExceeded” or “RequestLimitExceeded” when you try to access the Controller, this may be caused by high memory usage. You can verify memory usage from Aviatrix Copilot > Monitor > the Performance tab.
 
-To resolve this issue, please contact Aviatrix Support.
+  To resolve this issue, please contact Aviatrix Support.
 
 * **AVX-44298** - Bootstrap configuration for a firewall takes longer than expected, causing a traffic loss from the Transit Gateway.
 
-To resolve this issue, use the following two attributes in Terraform to provide sufficient time for the firewalls to be configured via Bootstrap so that the configuration is applied to the firewalls. Note that the specific values for these attributes need to be used when using Terraform for firewall bootstrap configuration:
+  To resolve this issue, use the following two attributes in Terraform to provide sufficient time for the firewalls to be configured via Bootstrap so that the configuration is applied to the firewalls. Note that the specific values for these attributes need to be used when using Terraform for firewall bootstrap configuration:
 
   * number_of_retries - (Optional) Number of retries for save or synchronize. Set to at least 1; the default is 0 (zero).
   * retry_interval - (Optional) Retry interval in seconds for save or synchronize. Example: 900. Default value: 300. Recommended: 900.
