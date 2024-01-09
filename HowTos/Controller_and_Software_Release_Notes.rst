@@ -119,6 +119,10 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
   #. Make sure the new gateway has a VLAN identical with the rest of the gateways.
   #. Re-associate all the gateways in the network segmentation.
 
+* **AVX-49375** - When you try to create a GCP Palo Alto firewall instance using a certain version of a Palo Alto image, the instance creation fails. The affected versions are versions of the Palo Alto Networks Next-Generation Firewall BUNDLE that contain the letter “h,” such as “8.1.25-h1.”
+
+  If you experience this issue, choose a Palo Alto Networks image version that does not contain the letter “h.” New Check Point and FortiGate Fortinet instance deployments are unaffected.
+
 6.9.733 Release Notes (08/29/23)
 ==========================================
 
