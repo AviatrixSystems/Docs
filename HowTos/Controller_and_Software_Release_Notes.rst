@@ -86,13 +86,13 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 * **AVX-44812** - Deployments with a Utility license were unable to view some license details.
 * **AVX-44974** - (Azure) When Transit Gateways had Active-Standby enabled and the Active Transit Gateway was down, the attached Azure Native Spoke VNet route tables failed to switchover routes.
 * **AVX-45676** - Uploading a certificate and private key at Settings > Controller > Certificate failed if the key was an elliptic curve type.
-* **AVX-45853 - A Controller web page loading issue occurred when you tried to edit any FQDN tag other than the first one in the row table.
+* **AVX-45853** - A Controller web page loading issue occurred when you tried to edit any FQDN tag other than the first one in the row table.
 * **AVX-45873** - When you used a link local address as an IPSec peer address, a Controller upgrade to release 6.8.1148 would drop traffic.
 * **AVX-45897** - On the Site2Cloud Details page in the Controller, the message “Authentication Type: null” was displayed for Site2Cloud connections even though there was a PSK authentication. Now, the page correctly displays “Authentication Type: psk” where PSK is the Authentication Type.
 * **AVX-46098** - When an Egress Filtering Gateway had a base Stateful Firewall policy of DENY, the gateway added the DROP rule from the base policy instead of letting the packets flow to the egress filter. The Egress Filtering Gateway should not have the DROP rule from the Stateful Firewall base policy. Instead, the packets should be allowed to flow to the egress filter.
 * **AVX-46462** - An HPE gateway resize could fail if the gateway had a peering with a gateway from release 6.7.1148 or earlier, as the new peering had additional fields in the structure.
 * **AVX-46788** - The Controller would not disable the Access Security feature during a Controller restore if the feature was not enabled in the backup configuration.
-* **AVX-47234 - Previously, the S2C RX Balancing feature was supported only on AWS C5 and C5n gateway sizes. S2C RX Balancing now supports AWS C6in instances. Now, you can upgrade your gateway instance size to C6in and enable S2C RX Balancing. See xref:bgp-connection-settings.adoc#s2c-rx-balancing.
+* **AVX-47234** - Previously, the S2C RX Balancing feature was supported only on AWS C5 and C5n gateway sizes. S2C RX Balancing now supports AWS C6in instances. Now, you can upgrade your gateway instance size to C6in and enable S2C RX Balancing. See xref:bgp-connection-settings.adoc#s2c-rx-balancing.
 * **AVX-47764** - (AWS) When a VPC was attached to an AWS Transit Gateway (TGW), if you deleted one of the Spoke VPC Advertised CIDRs, the routes in associated transit gateways were not correctly updated.
 * **AVX-48931** - When you detached and reattached a CloudN attachment to an Aviatrix Transit Gateway that had any Stateful Firewall rules that used Stateful Firewall Tags, the BGP configuration incorrectly remained on the gateways.
 * **AVX-49236** - (OCI) After an OCI gateway image upgrade, several routing tables within several VCNs were missing the default route, 0.0.0.0/0.
@@ -110,8 +110,11 @@ To resolve this issue, use the following two attributes in Terraform to provide 
   * number_of_retries - (Optional) Number of retries for save or synchronize. Set to at least 1; the default is 0 (zero).
   * retry_interval - (Optional) Retry interval in seconds for save or synchronize. Example: 900. Default value: 300. Recommended: 900.
 
-* **AVX-45386** - On a gateway with multiple mapped Site2Cloud connects with Forward To Transit (FTT) enabled, after a successful gateway image upgrade, some of these connections may not work. To resolve this issue, go to Controller > Site2Cloud > disable and re-enable FTT for each impacted S2C connection.
-* **AVX-45598** - (AWS) When you add a UserVPN Load Balancer to the UserVPN User Accelerator in the Aviatrix Controller before the Load Balancer state becomes active in the Cloud Service Provider, the Controller may throw an exception: “command vpn_user_xlr failed due to exception errors 'HealthState'<p></p> An email notification with exception reason and trace log has been sent to exceptions@aviatrix.com for troubleshooting. Please feel free to contact Aviatrix Support.
+* **AVX-45386** - On a gateway with multiple mapped Site2Cloud connects with Forward To Transit (FTT) enabled, after a successful gateway image upgrade, some of these connections may not work. 
+  
+  To resolve this issue, go to Controller > Site2Cloud > disable and re-enable FTT for each impacted S2C connection.
+
+* **AVX-45598** - (AWS) When you add a UserVPN Load Balancer to the UserVPN User Accelerator in the Aviatrix Controller before the Load Balancer state becomes active in the Cloud Service Provider, the Controller may throw an exception: *“command vpn_user_xlr failed due to exception errors 'HealthState'<p></p>*. An email notification with exception reason and trace log has been sent to exceptions@aviatrix.com for troubleshooting. Please feel free to contact Aviatrix Support.
 
   To resolve this issue: Delete the endpoint group associated with the Load Balancer from the Global Accelerator configuration through the Cloud Service Provider console. Then, re-associate the Load Balancer with the Global Accelerator through the Aviatrix Controller UI.
 
