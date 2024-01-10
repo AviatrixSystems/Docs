@@ -38,6 +38,83 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   For the release notes of Controller and Gateway software versions 7.0 and later, click `here <https://docs.aviatrix.com/documentation/latest/release-notes/software-release-notes/software-release-notes.html>`_. The content below is a list of release notes for software versions 6.9 and earlier.
 
+6.9.822 Release Notes (01/10/2024)
+==========================================
+
+**Enhanced Features in Aviatrix Release 6.9.822**
+
+* **AVX-37725** - (Azure) During subnet inspection, added the ability to inspect secondary/extra CIDRs in a VNet. When you use this enhancement, subnet inspection extends to cover all CIDR ranges associated with a VNet.
+* **AVX-43958** - 
+
+  * Added the ability to select multiple Access Accounts at once and audit them simultaneously.
+  * Added Last Audit Timestamp column on the Access Accounts page and Account Audit page.
+
+* **AVX-44146** - (AWS) You can now create c6in instance gateways for all AWS regions.
+* **AVX-45898** - (Azure) The Qatar Central region has been included in the supported regions for Azure Gateways and VPCs.
+* **AVX-48416** - (Azure) The Aviatrix platform now supports new instance sizes for Azure FireNet Check Point Firewall deployment:
+
+  * D2ds_v5
+  * D4ds_v5
+  * D8ds_v5
+
+* **AVX-49589** - Domain type WebGroups for Distributed Cloud Firewall are now GA. WebGroups are now the preferred mechanism for implementing Egress firewalling.
+
+**Issues Corrected in Aviatrix Release 6.9.822**
+
+* **AVX-26567** - A FireNet Egress FQDN gateway was dropping traffic.
+* **AVX-36054** - A gateway created in a newer Controller software version might have been rolled back to an older software version if:
+
+  * A gateway with the same name existed in an older Controller version.
+  * That gateway was deleted before upgrading to the present Controller version.
+
+* **AVX-36996** - (Azure) After an Azure FireNet FQDN Egress gateway image upgrade, the gateway goes into the “config_fail” state. To resolve this issue, try restarting the gateway. If the gateway state does not change, please contact Aviatrix Support.
+* **AVX-38843** - In a Site2Cloud connection with a single IP HA Gateway, the standby gateway continuously sent out an IPsec connection requests to a remote peer even though the connection would never get established. This issue created a stale state in the CSP underlay, which may have caused IPsec tunnel flaps between the active gateway and remote peer.
+
+  This issue has been resolved by blocking the HA gateway from sending IPsec connection requests to remote peers for these Site2Cloud connections.
+
+* **AVX-39477** - When you tried to do an image upgrade or a software rollback for a BGP-enabled gateway on which you applied the “remove-unnecessary-packages-from-gateway” software patch, the operation may have failed.
+* **AVX-39662** - (GCP) Upgrading a GCP Transit Gateway with BGPoLAN and Firenet features enabled might have resulted in the loss of direct connectivity to the on-site firewall appliance.
+* **AVX-41361** - If a domain name used in an Egress FQDN tag had a long DNS record, attaching that FQDN tag to a gateway could fail. The error given was “command hostname_filter failed due to exception errors invalid IPNetwork.” An email notification was sent.
+* **AVX-41693** - Linux auditd logs filled the disk space of some instances.
+* **AVX-42706** - FortiGate Firewalls failed to launch due to using an incorrect template on the Controller.
+* **AVX-42789** - Increased the length of time before an attempt to Encrypt Existing Gateways times out. This improvement helps avoid an encryption failure you would receive if the encryption timed out too soon. The warning message for that encryption failure was: Encryption failed. Waiter SnapshotCompleted failed: Max attempts exceeded.
+* **AVX-43028** - On a newly registered CloudN, users could not create attachments to multiple transits from a single CloudN Gateway.
+* **AVX-43144** - After a Transit Gateway Keepalive failed, the Transit Gateway lost all learned routes from the on-prem environment.
+* **AVX-43362** - Aviatrix’s Single AZ HA (Availability Zone High Availability HA) feature would restart a gateway if it found that the gateway had gone down. Due to a timing issue between the process handling the feature and detecting the gateway state, it was possible for the gateway to go into a repeated stop-and-start loop. Disabling the Single AZ HA feature would break the loop.
+* **AVX-43663** - There was a memory leak in a firewall monitoring task. The memory leak was proportional to the number of firewalls in the network.
+* **AVX-43461** - Simultaneous, multiple GCP gateway image upgrades in the same GCP project might have failed.
+* **AVX-44255** - When you tried to do a dry run for a Controller software version upgrade with more than one version in the pending list for upgrading and chose “latest” as the default version for the upgrade, the Controller incorrectly ran the dry run for the last version to upgrade to instead of the next upgrade version. For example, if you ran a dry run for 6.9 > 7.0 > 7.1, the Controller ran the dry run for 7.1 instead of 7.0.
+* **AVX-44526** - VPN NAT for gateway traffic didn’t work as expected due to a NAT-related misconfiguration in the Iptable rules.
+  Action required: If you experience a VPN NAT issue after upgrading to this software version, disable and reenable your UserVPN NAT configuration.
+* **AVX-44812** - Deployments with a Utility license were unable to view some license details.
+* **AVX-44974** - (Azure) When Transit Gateways had Active-Standby enabled and the Active Transit Gateway was down, the attached Azure Native Spoke VNet route tables failed to switchover routes.
+* **AVX-45676** - Uploading a certificate and private key at Settings > Controller > Certificate failed if the key was an elliptic curve type.
+* **AVX-45873** - When you used a link local address as an IPSec peer address, a Controller upgrade to release 6.8.1148 would drop traffic.
+* **AVX-45897** - On the Site2Cloud Details page in the Controller, the message “Authentication Type: null” was displayed for Site2Cloud connections even though there was a PSK authentication. Now, the page correctly displays “Authentication Type: psk” where PSK is the Authentication Type.
+* **AVX-46098** - When an Egress Filtering Gateway had a base Stateful Firewall policy of DENY, the gateway added the DROP rule from the base policy instead of letting the packets flow to the egress filter. The Egress Filtering Gateway should not have the DROP rule from the Stateful Firewall base policy. Instead, the packets should be allowed to flow to the egress filter.
+* **AVX-46788** - The Controller would not disable the Access Security feature during a Controller restore if the feature was not enabled in the backup configuration.
+* **AVX-47234** - Previously, the S2C RX Balancing feature was supported only on AWS C5 and C5n gateway sizes. S2C RX Balancing now supports AWS C6in instances. Now, you can upgrade your gateway instance size to C6in and enable S2C RX Balancing. See xref:bgp-connection-settings.adoc#s2c-rx-balancing.
+* **AVX-47764** - (AWS) When a VPC was attached to an AWS Transit Gateway (TGW), if you deleted one of the Spoke VPC Advertised CIDRs, the routes in associated transit gateways were not correctly updated.
+* **AVX-48931** - When you detached and reattached a CloudN attachment to an Aviatrix Transit Gateway that had any Stateful Firewall rules that used Stateful Firewall Tags, the BGP configuration incorrectly remained on the gateways.
+* **AVX-49236** - (OCI) After an OCI gateway image upgrade, several routing tables within several VCNs were missing the default route, 0.0.0.0/0.
+
+**Known Issues in Aviatrix Release 6.9.822**
+
+* **AVX-44298** - Bootstrap configuration for a firewall takes longer than expected, causing a traffic loss from the Transit Gateway.
+
+  To resolve this issue, use the following two attributes in Terraform to provide sufficient time for the firewalls to be configured via Bootstrap so that the configuration is applied to the firewalls. Note that the specific values for these attributes need to be used when using Terraform for firewall bootstrap configuration:
+
+  * number_of_retries - (Optional) Number of retries for save or synchronize. Set to at least 1; the default is 0 (zero).
+  * retry_interval - (Optional) Retry interval in seconds for save or synchronize. Example: 900. Default value: 300. Recommended: 900.
+
+* **AVX-45598** - (AWS) When you add a UserVPN Load Balancer to the UserVPN User Accelerator in the Aviatrix Controller before the Load Balancer state becomes active in the Cloud Service Provider, the Controller may throw an exception: *“command vpn_user_xlr failed due to exception errors 'HealthState'<p></p>*. An email notification with exception reason and trace log has been sent to exceptions@aviatrix.com for troubleshooting. Please feel free to contact Aviatrix Support.
+
+  To resolve this issue: Delete the endpoint group associated with the Load Balancer from the Global Accelerator configuration through the Cloud Service Provider console. Then, re-associate the Load Balancer with the Global Accelerator through the Aviatrix Controller UI.
+
+* **AVX-49375** - When you try to create a GCP Palo Alto firewall instance using a certain version of a Palo Alto image, the instance creation fails. The affected versions are versions of the Palo Alto Networks Next-Generation Firewall BUNDLE that contain the letter “h,” such as “8.1.25-h1.”
+
+  If you experience this issue, choose a Palo Alto Networks image version that does not contain the letter “h.” New Check Point and FortiGate Fortinet instance deployments are unaffected.
+
 6.9.733 Release Notes (08/29/23)
 ==========================================
 
