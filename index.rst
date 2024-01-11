@@ -360,7 +360,7 @@ While all content is searchable, the site is organized into the following sectio
 
    Downloads/samlclient
 
-.. _Release Notes
+.. _Release Notes:
 
 .. toctree::
    :maxdepth: 1
@@ -372,7 +372,7 @@ While all content is searchable, the site is organized into the following sectio
    HowTos/copilot_release_notes_images
    HowTos/Aviatrix_VPN_Client_Release_Notes
 
-.. _Upgrade Aviatrix
+.. _Upgrade Aviatrix:
 
 .. toctree::
    :maxdepth: 2
