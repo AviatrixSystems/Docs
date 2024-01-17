@@ -115,6 +115,8 @@ Aviatrix releases features in private preview mode to offer you the opportunity 
 
   If you experience this issue, choose a Palo Alto Networks image version that does not contain the letter “h.” New Check Point and FortiGate Fortinet instance deployments are unaffected.
 
+* **AVX-50076** - The Aviatrix Controller now only displays the metrics for the last hour, in Dashboard > Controller Metrics or Gateway Metrics. For detailed Gateway metrics, please use Aviatrix CoPilot.
+
 6.9.733 Release Notes (08/29/23)
 ==========================================
 
