@@ -4,7 +4,10 @@
 Account Audit 
 =================================
 
-The Aviatrix Controller periodically checks the accounts it manages to make sure they are intact:
+The Aviatrix Controller periodically checks the accounts it manages to make sure they are intact. 
+
+For AWS Account Audit
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
  1. The Controller instance's IAM role aviatrix-role-ec2 is attached to the instance. 
  #. The Controller instance's IAM role aviatrix-role-app exists.
@@ -43,3 +46,9 @@ If you need help, please open a support ticket at the `Aviatrix Support Portal <
    :scale: 50%
 
 .. disqus::
+
+For Azure Account Audit
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+For the Azure account audit, the process audits the authentication details against the established Azure account credential setups. If the account audit fails, check the account authentication setups. See details in `Azure Account Credential Setup <https://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html>`_.
