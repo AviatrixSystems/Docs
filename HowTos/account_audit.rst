@@ -52,3 +52,10 @@ For Azure Account Audit
 
 
 For the Azure account audit, the process audits the authentication details against the established Azure account credential setups. If the account audit fails, check the account authentication setups. See details in `Azure Account Credential Setup <https://docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html>`_.
+
+
+
+For GCP Account Audit
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For the GCP account audit, the process audits the authentication details against the established GCP account credential setups. If the account audit fails, check the account authentication setups. See details in `GCP Account Credential Setup <https://docs.aviatrix.com/HowTos/CreateGCloudAccount.html>`_.
