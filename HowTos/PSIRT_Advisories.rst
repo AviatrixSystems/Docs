@@ -12,7 +12,7 @@ Please note the below Aviatrix Security recommendations and communication plans:
 
 - All known software vulnerabilities are submitted to Mitre for CVE-ID references by Aviatrix Systems
 
-- Aviatrix publish Field Notices and send alerts to Controller Admin in the Controller console when security related issues are published
+- Aviatrix publishes Field Notices and send alerts to Controller Admin in the Controller console when security related issues are published
 
 25. Aviatrix Egress FQDN Firewall Security Misconfiguration
 -------------------------------------------------------------
@@ -29,7 +29,7 @@ Aviatrix discovered a security issue related to the Aviatrix Egress FQDN Firewal
 
 The current release will change the default behavior to DENY for non-TLS traffic or TLS traffic without SNI data on the TLS port (tcp/443).
 
-This is a breaking change from prior releases, so to be sure to see the Solutions section of this advisory if this functionality must be preserved.
+This is a breaking change from prior releases, so be sure to see the Solutions section of this advisory if this functionality must be preserved.
 
 **Impact**
 
@@ -65,7 +65,7 @@ Since the non-TLS traffic using HTTPS port (tcp/443) is not logged in the syslog
 
 **Description**
 
-If an Aviatrix Egress FQDN HA gateway is launched after an Egress FQDN tag is attached to the main gateway, then the HA gateway is launched in non-enforcing mode. The non-enforcing setting is clearly visible on Controller UI. In this configuration, when the primary drops, the secondary will not enforce as expected.
+If an Aviatrix Egress FQDN HA gateway is launched after an Egress FQDN tag is attached to the main gateway, then the HA gateway is launched in non-enforcing mode. The non-enforcing setting is clearly visible on the Controller UI. In this configuration, when the primary drops, the secondary will not enforce as expected.
 
 **Impact**
 
