@@ -2,7 +2,7 @@
 PSIRT Advisories
 =======================================
 
-The Aviatrix Product Security Team continually tests the software product, looking for vulnerabilities and weaknesses. If you have a security issue to report, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_. Any such findings are fed back to Aviatrix's development teams and serious issues are described along with protective solutions in the advisories below.
+Aviatrix Product Security Team continually tests the software product, looking for vulnerabilities and weaknesses. If you have a security issue to report, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_. Any such findings are fed back to Aviatrix's development teams and serious issues are described along with protective solutions in the advisories below.
 
 Please note the below Aviatrix Security recommendations and communication plans:
 
@@ -12,7 +12,7 @@ Please note the below Aviatrix Security recommendations and communication plans:
 
 - All known software vulnerabilities are submitted to Mitre for CVE-ID references by Aviatrix Systems
 
-- Aviatrix publishes Field Notices and send alerts to Controller Admin in the Controller console when security related issues are published
+- Aviatrix publish Field Notices and send alerts to Controller Admin in the Controller console when security related issues are published
 
 25. Aviatrix Egress FQDN Firewall Security Misconfiguration
 -------------------------------------------------------------
@@ -29,7 +29,7 @@ Aviatrix discovered a security issue related to the Aviatrix Egress FQDN Firewal
 
 The current release will change the default behavior to DENY for non-TLS traffic or TLS traffic without SNI data on the TLS port (tcp/443).
 
-This is a breaking change from prior releases, so be sure to see the Solutions section of this advisory if this functionality must be preserved.
+This is a breaking change from prior releases, so to be sure to see the Solutions section of this advisory if this functionality must be preserved.
 
 **Impact**
 
@@ -49,13 +49,13 @@ All versions before:
 If you require allowing non-TLS traffic egress over HTTPS port, perform the following:
 
 - Aviatrix Controller > Security > Egress Control > 3. Egress FQDN Filer > Global Config (CLICK)
-- ENABLE "non-TLS traffic over HTTPS port" under Global Settings. For release 7.0.2239 and 7.1.3006 this can done from the Controller UI. For release 6.9.822 or 6.8.1826 this cannot be done from the UI.
-- If you choose to revert back to the old default behavior in release 6.9.822 or 6.8.1826, please contact Aviatrix Support who can help you toggle to ALLOW for this feature (Figure-1.2).
+- ENABLE "non-TLS traffic over HTTPS port" under Global Settings. For release 7.0.2239 and 7.1.3006 this can be done from the Controller UI. For release 6.9.822 or 6.8.1826 this cannot be done from the UI.
+- If you choose to revert back to the Old default behavior in release 6.9.822 or 6.8.1826, please contact Aviatrix Support who can help you toggle to ALLOW for this feature.
 
 Since the non-TLS traffic using HTTPS port (tcp/443) is not logged in the syslog messages, there is no way to detect (in prior releases) this kind of traffic on the Aviatrix Controller/CoPilot UI.
 
 24. Aviatrix Egress FQDN Firewall High-Availability Security Misconfiguration
-------------------------------------------------------------------------------
+-------------------------------------------------------------
 
 **Date** 04/02/2024
 
@@ -85,6 +85,7 @@ All versions before:
 - If you are running affected Aviatrix software releases and have existing HA Egress Firewall Gateways, temporarily remove the Egress FQDN Filter tag from the primary gateway and then re-add it.
 - If you are running affected Aviatrix software releases and creating new HA Egress Firewall Gateways, create the HA gateway before assigning an Egress FQDN Filter tag.
 - The latest Aviatrix software revisions have resolved this issue and no action is needed.
+
 
 23. Aviatrix Controller and Gateways - Unauthorized Access
 ----------------------------------------------------------
