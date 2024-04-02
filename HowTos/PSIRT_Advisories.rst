@@ -55,7 +55,7 @@ If you require allowing non-TLS traffic egress over HTTPS port, perform the foll
 Since the non-TLS traffic using HTTPS port (tcp/443) is not logged in the syslog messages, there is no way to detect (in prior releases) this kind of traffic on the Aviatrix Controller/CoPilot UI.
 
 24. Aviatrix Egress FQDN Firewall High-Availability Security Misconfiguration
-------------------------------------------------------------------------------
+-------------------------------------------------------------
 
 **Date** 04/02/2024
 
@@ -65,7 +65,7 @@ Since the non-TLS traffic using HTTPS port (tcp/443) is not logged in the syslog
 
 **Description**
 
-If an Aviatrix Egress FQDN HA gateway is launched after an Egress FQDN tag is attached to the main gateway, then the HA gateway is launched in non-enforcing mode. The non-enforcing setting is clearly visible on Controller UI. In this configuration, when the primary drops, the secondary will not enforce as expected.
+If an Aviatrix Egress FQDN HA gateway is launched after an Egress FQDN tag is attached to the main gateway, then the HA gateway is launched in non-enforcing mode. The non-enforcing setting is clearly visible on the Controller UI. In this configuration, when the primary drops, the secondary will not enforce as expected.
 
 **Impact**
 
@@ -85,6 +85,7 @@ All versions before:
 - If you are running affected Aviatrix software releases and have existing HA Egress Firewall Gateways, temporarily remove the Egress FQDN Filter tag from the primary gateway and then re-add it.
 - If you are running affected Aviatrix software releases and creating new HA Egress Firewall Gateways, create the HA gateway before assigning an Egress FQDN Filter tag.
 - The latest Aviatrix software revisions have resolved this issue and no action is needed.
+
 
 23. Aviatrix Controller and Gateways - Unauthorized Access
 ----------------------------------------------------------
