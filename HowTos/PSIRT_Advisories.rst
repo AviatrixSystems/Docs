@@ -49,8 +49,8 @@ All versions before:
 If you require allowing non-TLS traffic egress over HTTPS port, perform the following:
 
 - Aviatrix Controller > Security > Egress Control > 3. Egress FQDN Filer > Global Config (CLICK)
-- ENABLE "non-TLS traffic over HTTPS port" under Global Settings. For release 7.0.2239 and 7.1.3006 this can done from the Controller UI. For release 6.9.822 or 6.8.1826 this cannot be done from the UI.
-- If you choose to revert back to the Old default behavior in release 6.9.822 or 6.8.1826, please contact Aviatrix Support who can help you toggle to ALLOW for this feature (Figure-1.2).
+- ENABLE "non-TLS traffic over HTTPS port" under Global Settings. For release 7.0.2239 and 7.1.3006 this can be done from the Controller UI. For release 6.9.822 or 6.8.1826 this cannot be done from the UI.
+- If you choose to revert back to the Old default behavior in release 6.9.822 or 6.8.1826, please contact Aviatrix Support who can help you toggle to ALLOW for this feature.
 
 Since the non-TLS traffic using HTTPS port (tcp/443) is not logged in the syslog messages, there is no way to detect (in prior releases) this kind of traffic on the Aviatrix Controller/CoPilot UI.
 
