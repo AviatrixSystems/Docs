@@ -6,13 +6,13 @@ Aviatrix Product Security Team continually tests the software product, looking f
 
 Please note the below Aviatrix Security recommendations and communication plans:
 
-- Aviatrix strongly recommend customers to stay on the latest release to resolve features and bug issues. All fixes are in the new release; we do not patch older release versions.
+- Aviatrix strongly recommends customers stay on the latest release to resolve features and bug issues. All fixes are in the new release; we do not patch older release versions.
 
-- Customers are strongly recommended to perform image migration 2x a year. The migration process provides the latest system level security patch
+- Customers are strongly recommended to perform image migration 2x a year. The migration process provides the latest system-level security patch
 
 - All known software vulnerabilities are submitted to Mitre for CVE-ID references by Aviatrix Systems
 
-- Aviatrix publish Field Notices and send alerts to Controller Admin in the Controller console when security related issues are published
+- Aviatrix publishes Field Notices and sends alerts to the Controller Admin in the Controller console when security-related issues are published
 
 25. Aviatrix Egress FQDN Firewall Security Misconfiguration
 -------------------------------------------------------------
