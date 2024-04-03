@@ -23,7 +23,7 @@ jobs:
       - name: Git push
         run: |
           git remote add prod-doc git@github.com:AviatrixSystems/Docs.git
-          git push --force prod-doc main
+          git push --force prod-doc main-copy
         env:
           KEY_FILE : ${{secrets.DOCS_PRIVATE_KEY}}
 
