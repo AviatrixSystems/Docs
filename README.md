@@ -5,7 +5,7 @@ This repository contains documentation for Aviatrix written using the [reStructu
 HTML documentation is generated using [Sphinx](http://www.sphinx-doc.org/).  Shortly after a commit is pushed to this repository, the latest source is turned into HTML files and published to [docs.aviatrix.com](https://docs.aviatrix.com).
 
 ## How To Generate
-If you'd like to generate the documentation yourself, follow the steps outlined below.
+If you'd like to generate the documentation yourself, follow the steps outlined below:
 
 ### Install Sphinx
 1. Install the latest version of [Sphinx](http://www.sphinx-doc.org/en/stable/install.html)
