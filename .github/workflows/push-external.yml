@@ -12,11 +12,11 @@ jobs:
     if: (${{github.repository}} == "AviatrixDev/Documentation")
     steps:
       - name: Install SSH key
-        uses: shimataro/ssh-key-action@v2
+        uses: shimataro/ssh-key-action@d4fffb50872869abe2d9a9098a6d9c5aa7d16be4
         with:
           key: ${{ secrets.DOCS_PRIVATE_KEY }}
           known_hosts: ${{ secrets.DOCS_KNOWN_HOSTS }}
-      - uses: actions/checkout@d4fffb50872869abe2d9a9098a6d9c5aa7d16be4
+      - uses: actions/checkout@v2
         with:
           ref: 'main'
           fetch-depth: 0
