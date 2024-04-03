@@ -16,7 +16,7 @@ jobs:
         with:
           key: ${{ secrets.DOCS_PRIVATE_KEY }}
           known_hosts: ${{ secrets.DOCS_KNOWN_HOSTS }}
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@d4fffb50872869abe2d9a9098a6d9c5aa7d16be4
         with:
           ref: 'main'
           fetch-depth: 0
