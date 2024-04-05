@@ -9,6 +9,7 @@ jobs:
   push:
     runs-on: ubuntu-latest
     name: Push to AviatrixSystems Docs
+    environment: aviatrixsystems-docs
     if: (${{github.repository}} == "AviatrixDev/Documentation")
     steps:
       - name: Install SSH key
@@ -16,16 +17,25 @@ jobs:
         with:
           key: ${{ secrets.DOCS_PRIVATE_KEY }}
           known_hosts: ${{ secrets.DOCS_KNOWN_HOSTS }}
-      - uses: actions/checkout@v2
+
+      - name: Get Token
+        id: get_workflow_token
+        uses: peter-murray/workflow-application-token-action@8e1ba3bf1619726336414f1014e37f17fbadf1db # v2.1.0
+        with:
+          organization: AviatrixSystems
+          permissions: "contents:write"
+          application_id: ${{ secrets.AVIATRIXSYSTEMS_DOCS_RELASE_TOKEN_APP_ID }}
+          application_private_key: ${{ secrets.AVIATRIXSYSTEMS_DOCS_RELASE_TOKEN_PRIVATE_KEY }}
+
+      - uses: actions/checkout@v4
         with:
           ref: 'main'
           fetch-depth: 0
+          token: ${{ steps.get_workflow_token.outputs.token }}
+
       - name: Git push
         run: |
           git remote add prod-doc git@github.com:AviatrixSystems/Docs.git
           git push --force prod-doc main-copy
         env:
           KEY_FILE : ${{secrets.DOCS_PRIVATE_KEY}}
-
-
-
