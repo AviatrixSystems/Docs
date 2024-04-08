@@ -34,6 +34,6 @@ jobs:
 
       - name: Git remote add
         run: git fetch prod-doc
-        
+
       - name: Git remote add
-        run: git push --force prod-doc main
+        run: git push --force prod-doc main:main-copy
