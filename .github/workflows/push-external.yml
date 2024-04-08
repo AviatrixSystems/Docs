@@ -32,8 +32,8 @@ jobs:
       - name: Git remote add
         run: git remote add prod-doc https://${{ steps.get_workflow_token.outputs.token }}@github.com/AviatrixSystems/Docs.git
 
-      - name: Git remote add
+      - name: Git fetch
         run: git fetch prod-doc
-        
-      - name: Git remote add
-        run: git push --force prod-doc main
+
+      - name: Git push
+        run: git push --force prod-doc main:main-copy
