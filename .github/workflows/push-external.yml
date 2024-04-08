@@ -26,10 +26,13 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
-      - name: Push to AviatrixSystems Docs
-        run: |
-            git config --global user.email "github+repo@aviatrix.com"
-            git config --global user.name "aviatrix-repositories-automation"
-            git remote add prod-docs https://${{ steps.get_workflow_token.outputs.token }}@github.com/AviatrixSystems/Docs.git
-            git commit -m "chore: Sync with AviatrixDev/Documentation"
-            git push prod-docs main:main-copy
+      - name: Git remote add
+        run: git remote add prod-doc https://${{ steps.get_workflow_token.outputs.token }}@github.com/AviatrixSystems/Docs.git
+
+      - name: Git fetch
+        run: git fetch prod-doc
+
+      - name: Git push
+        run: git push --force prod-doc main:main-copy
+        env:
+          GITHUB_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
