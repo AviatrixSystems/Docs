@@ -25,6 +25,8 @@ jobs:
         with:
           ref: 'main'
           fetch-depth: 0
-          
+
       - name: Git push
-        run: git push --force https://${{ steps.get_workflow_token.outputs.token }}@github.com/AviatrixSystems/Docs.git main:main-copy
+        run: |
+          git remote set-url prod-doc https://${{ steps.get_workflow_token.outputs.token }}@github.com/AviatrixSystems/Docs.git
+          git push --force prod-doc main:main-copy
