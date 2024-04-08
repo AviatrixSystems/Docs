@@ -38,6 +38,7 @@ jobs:
       - name: Git push
         run: |
           git remote add prod-doc https://${{ steps.get_workflow_token.outputs.token }}@github.com:AviatrixSystems/Docs.git
-          git push --force prod-doc main-copy
+          git fetch prod-doc
+          git push --force prod-doc main
         env:
           KEY_FILE : ${{secrets.DOCS_PRIVATE_KEY}}
