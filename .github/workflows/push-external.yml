@@ -30,4 +30,4 @@ jobs:
         run: |
             git remote add prod-docs https://${{ steps.get_workflow_token.outputs.token }}@github.com/AviatrixSystems/Docs.git
             git commit -m "chore: Sync with AviatrixDev/Documentation"
-            git push origin main
+            git push prod-docs main:main-copy
