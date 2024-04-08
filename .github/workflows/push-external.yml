@@ -27,7 +27,7 @@ jobs:
           fetch-depth: 0
 
       - name: Git remote add
-        run: git remote add prod-doc https://${{ steps.get_workflow_token.outputs.token }}@github.com/AviatrixSystems/Docs.git
+        run: git remote add prod-doc https://aviatrix:${{ steps.get_workflow_token.outputs.token }}@github.com/AviatrixSystems/Docs.git
 
       - name: Git fetch
         run: git fetch prod-doc
