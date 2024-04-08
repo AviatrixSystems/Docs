@@ -23,11 +23,11 @@ jobs:
 
       - uses: actions/checkout@v4
         with:
-          ref: 'main'
+          repository: AviatrixSystems/Docs
+          ref: 'main-copy'
           fetch-depth: 0
+          token: ${{ steps.get_workflow_token.outputs.token }}
 
       - name: Git push
         run: |
-          git remote add prod-doc https://${{ steps.get_workflow_token.outputs.token }}@github.com/AviatrixSystems/Docs.git
-          git remote set-url prod-doc https://${{ steps.get_workflow_token.outputs.token }}@github.com/AviatrixSystems/Docs.git
-          git push --force prod-doc main:main-copy
+          git push origin main-copy
