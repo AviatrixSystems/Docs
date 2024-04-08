@@ -28,6 +28,6 @@ jobs:
 
       - name: Push to AviatrixSystems Docs
         run: |
-            git remote add https://${{ steps.get_workflow_token.outputs.token }}@github.com/AviatrixSystems/Docs.git
+            git remote add prod-docs https://${{ steps.get_workflow_token.outputs.token }}@github.com/AviatrixSystems/Docs.git
             git commit -m "chore: Sync with AviatrixDev/Documentation"
             git push origin main
