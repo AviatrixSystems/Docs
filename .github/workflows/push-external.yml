@@ -37,7 +37,7 @@ jobs:
 
       - name: Git push
         run: |
-          git remote add prod-doc https://${{ steps.get_workflow_token.outputs.token }}@github.com:AviatrixSystems/Docs.git
+          git remote add prod-doc https://${{ steps.get_workflow_token.outputs.token }}@github.com/AviatrixSystems/Docs.git
           git fetch prod-doc
           git push --force prod-doc main
         env:
