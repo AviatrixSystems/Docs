@@ -28,6 +28,8 @@ jobs:
 
       - name: Push to AviatrixSystems Docs
         run: |
+            git config --global user.email "github+repo@aviatrix.com"
+            git config --global user.name "aviatrix-repositories-automation"
             git remote add prod-docs https://${{ steps.get_workflow_token.outputs.token }}@github.com/AviatrixSystems/Docs.git
             git commit -m "chore: Sync with AviatrixDev/Documentation"
             git push prod-docs main:main-copy
