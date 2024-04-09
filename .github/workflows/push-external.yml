@@ -32,6 +32,6 @@ jobs:
         run: git fetch prod-doc
 
       - name: Git push
-        run: git push --force prod-doc main:main-copy
+        run: git push --force prod-doc main
         env:
           GITHUB_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
