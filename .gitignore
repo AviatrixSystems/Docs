@@ -6,3 +6,4 @@ output
 .vscode/settings.json
 _build/
 *.doctree
+.github/workflows
