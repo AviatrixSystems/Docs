@@ -17,7 +17,6 @@ jobs:
         uses: peter-murray/workflow-application-token-action@8e1ba3bf1619726336414f1014e37f17fbadf1db # v2.1.0
         with:
           organization: AviatrixSystems
-          permissions: "contents:write"
           application_id: ${{ secrets.AVIATRIXSYSTEMS_DOCS_RELASE_TOKEN_APP_ID }}
           application_private_key: ${{ secrets.AVIATRIXSYSTEMS_DOCS_RELASE_TOKEN_PRIVATE_KEY }}
 
