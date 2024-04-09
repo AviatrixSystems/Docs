@@ -6,13 +6,14 @@ Aviatrix Product Security Team continually tests the software product, looking f
 
 Please note the below Aviatrix Security recommendations and communication plans:
 
-- Aviatrix strongly recommend customers to stay on the latest release to resolve features and bug issues. All fixes are in the new release; we do not patch older release versions.
+- Aviatrix strongly recommends customers stay on the latest release to resolve features and bug issues. All fixes are in the new release; we do not patch older release versions.
 
-- Customers are strongly recommended to perform image migration 2x a year. The migration process provides the latest system level security patch
+- Customers are strongly recommended to perform image migration 2x a year. The migration process provides the latest system-level security patch
 
 - All known software vulnerabilities are submitted to Mitre for CVE-ID references by Aviatrix Systems
 
-- Aviatrix publish Field Notices and send alerts to Controller Admin in the Controller console when security related issues are published
+- Aviatrix publishes Field Notices and sends alerts to the Controller Admin in the Controller console when security-related issues are published
+
 
 25. Aviatrix Egress FQDN Firewall Security Misconfiguration
 -------------------------------------------------------------
@@ -50,7 +51,9 @@ If you require allowing non-TLS traffic egress over HTTPS port, perform the foll
 
 - Aviatrix Controller > Security > Egress Control > 3. Egress FQDN Filer > Global Config (CLICK)
 - ENABLE "non-TLS traffic over HTTPS port" under Global Settings. For release 7.0.2239 and 7.1.3006 this can be done from the Controller UI. For release 6.9.822 or 6.8.1826 this cannot be done from the UI.
-- If you choose to revert back to the Old default behavior in release 6.9.822 or 6.8.1826, please contact Aviatrix Support who can help you toggle to ALLOW for this feature.
+
+- If you choose to revert back to the old default behavior in release 6.9.822 or 6.8.1826, please contact Aviatrix Support who can help you toggle to ALLOW for this feature.
+
 
 Since the non-TLS traffic using HTTPS port (tcp/443) is not logged in the syslog messages, there is no way to detect (in prior releases) this kind of traffic on the Aviatrix Controller/CoPilot UI.
 
