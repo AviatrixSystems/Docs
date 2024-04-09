@@ -25,6 +25,14 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
+      - name: Create and Checkout Temp Branch
+        run: |
+          git checkout -b temp-branch
+
+          git rm --cached .github/workflows/push-external.yml
+          git commit -m "Remove push-external.yml for push operation"
+        
+
       - name: Git remote add
         run: git remote add prod-doc https://aviatrix:${{ steps.get_workflow_token.outputs.token }}@github.com/AviatrixSystems/Docs.git
 
@@ -32,6 +40,6 @@ jobs:
         run: git fetch prod-doc
 
       - name: Git push
-        run: git push --force prod-doc main
+        run: git push --force prod-doc temp-branch:main-copy
         env:
           GITHUB_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
