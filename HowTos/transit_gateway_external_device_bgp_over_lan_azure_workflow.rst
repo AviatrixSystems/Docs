@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ==========================================================================================
 Azure Multi-Cloud Transit BGP over LAN Workflow
@@ -251,4 +254,3 @@ Additional read can be found in this short blog, `Need of conventional BGP suppo
    :scale: 30%
    
 .. disqus::
-

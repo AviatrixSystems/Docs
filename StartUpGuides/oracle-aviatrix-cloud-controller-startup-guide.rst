@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 ﻿
 
 
@@ -106,5 +109,3 @@ Enjoy!
 .. |startup_version| image:: OCIAviatrixCloudControllerStartupGuide_media/startup_version.png
 .. |startup_first_login| image:: OCIAviatrixCloudControllerStartupGuide_media/startup_first_login.png
 .. |startup_login| image:: OCIAviatrixCloudControllerStartupGuide_media/startup_login.png
-
-

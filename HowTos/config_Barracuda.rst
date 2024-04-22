@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 ﻿
 
 **Some notes before deployment:**
@@ -235,4 +238,3 @@ Additional Firewall instances can be added to the FireNet as needed, and load ba
     :width: 100%
 .. |image18| image:: ./barracuda_images/image18.png
     :width: 100%
-

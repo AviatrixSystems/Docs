@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ==================================================================
 Multi-Cloud Transit Integration with Azure VNG
@@ -155,4 +158,3 @@ By design routes advertised to VNG to onprem are limited only to native spoke VN
 
 
 .. disqus::
-

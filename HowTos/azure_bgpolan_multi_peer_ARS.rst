@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ================================================================================
 Configuring Azure Multi-Peer BGP over LAN with Azure Route Server Integration 

@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ======================================================================
 Azure Controller Security for SAML Based Authentication VPN Deployment
@@ -174,5 +177,3 @@ The objective is to limit access to Aviatrix Controller port 443 to authorized I
 11. Verify that when accessing through App GW, the VPN user is not able to access paths other than ‘/flask*’.
 
 .. disqus::
-
-

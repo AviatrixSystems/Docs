@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 .. meta::
   :description: Rescure PKI Agent Certificate
   :keywords: PKI, X509, SPIRE, agent, SVID, certificate, attestation, re-attestation, unattested, expiring, expired

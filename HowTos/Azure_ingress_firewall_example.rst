@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 
 =========================================================
@@ -314,4 +317,3 @@ To view the client IP address in the access log, follow the instructions in `How
    :scale: 50%
 
 .. disqus::
-

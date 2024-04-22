@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 
 
@@ -480,7 +483,7 @@ Since Sumo agents on the controller and gateways tend to consume a lot of cpu/me
 
  .. code-block:: json
 
-<%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [ADD_YOUR_SUMO_TOKEN_HERE] %msg%\\n
+<%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [ADD_YOUR_SUMO_TOKEN_HERE] %msg%\n
 
  .. note:: 
 	The Aviatrix Controller expects certificates in PEM format. Attempting to upload the wrong format may return an Exception Error. To convert the DigiCert certificate downloaded from SumoLogic's documentation into PEM format, use the following command: openssl x509 -in DigiCertHighAssuranceEVRootCA.crt -inform der -outform pem -out DigiCertHighAssuranceEVRootCA.pem
@@ -499,7 +502,7 @@ Using Rsyslog to send logs to Datadog
   #. Protocol: TCP
   #. For Optional Custom Template, copy the following string and replace the string DATADOG_API_KEY with your own key.
 
- .. note:: DATADOG_API_KEY <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - - %msg%\\n
+ .. note:: DATADOG_API_KEY <%pri%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% - - - %msg%\n
 
 
 Using Rsyslog to send logs to Splunk

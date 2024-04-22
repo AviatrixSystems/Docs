@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 =========================================================
 Transit Connection to FortiGate over the internet.
 =========================================================
@@ -286,11 +289,3 @@ Transit Connection to FortiGate over the internet.
     :height: 5.00000 in
 .. |image21| image:: ./Transit_ExternalDevice_FortiGate/bgp.png
     :width: 100%
-
-
-
-
-
-
-
-

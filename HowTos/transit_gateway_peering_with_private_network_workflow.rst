@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ==================================================================
 Multi-cloud Transit Gateway Peering over Private Network Workflow
@@ -295,4 +298,3 @@ Now you are able to send traffic over Aviatrix Transit Gateway Peering with Priv
    :scale: 50% 
 
 .. disqus::
-

@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ###################################
 Troubleshoot - Diagnostic Result
@@ -130,7 +133,7 @@ Diagnostic Result
 |         "nameserver 8.8.8.8",                                                                |
 |     ],                                                                                       |
 |     "/etc/hosts": [                                                                          |
-|         "127.0.0.1\tlocalhost",                                                              |
+|         "127.0.0.1	localhost",                                                              |
 |         "::1 ip6-localhost ip6-loopback",                                                    |
 |         "fe00::0 ip6-localnet",                                                              |
 |         "ff00::0 ip6-mcastprefix",                                                           |
@@ -171,18 +174,30 @@ Diagnostic Result
 |                                                                                              |
 | "NTP config": {                                                                              |
 |     "/etc/ntp.conf": [                                                                       |
-|         "driftfile /var/lib/ntp/ntp.drift\n",                                                |
-|         "leapfile /usr/share/zoneinfo/leap-seconds.list\n",                                  |
-|         "statistics loopstats peerstats clockstats\n",                                       |
-|         "filegen loopstats file loopstats type day enable\n",                                |
-|         "filegen peerstats file peerstats type day enable\n",                                |
-|         "filegen clockstats file clockstats type day enable\n",                              |
-|         "restrict -4 default kod notrap nomodify nopeer noquery limited\n",                  |
-|         "restrict -6 default kod notrap nomodify nopeer noquery limited\n",                  |
-|         "restrict 127.0.0.1\n",                                                              |
-|         "restrict ::1\n",                                                                    |
-|         "restrict source notrap nomodify noquery\n",                                         |
-|         "server 169.254.169.123 prefer iburst\n"                                             |
+|         "driftfile /var/lib/ntp/ntp.drift
+",                                                |
+|         "leapfile /usr/share/zoneinfo/leap-seconds.list
+",                                  |
+|         "statistics loopstats peerstats clockstats
+",                                       |
+|         "filegen loopstats file loopstats type day enable
+",                                |
+|         "filegen peerstats file peerstats type day enable
+",                                |
+|         "filegen clockstats file clockstats type day enable
+",                              |
+|         "restrict -4 default kod notrap nomodify nopeer noquery limited
+",                  |
+|         "restrict -6 default kod notrap nomodify nopeer noquery limited
+",                  |
+|         "restrict 127.0.0.1
+",                                                              |
+|         "restrict ::1
+",                                                                    |
+|         "restrict source notrap nomodify noquery
+",                                         |
+|         "server 169.254.169.123 prefer iburst
+"                                             |
 |     ]                                                                                        |
 | },                                                                                           |
 |                                                                                              |
@@ -239,15 +254,23 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "supervisorctl status": [                                                                    |
-|     "fqdn_stats                       RUNNING   pid 2121, uptime 16:39:29\n",                |
-|     "gwmon                            RUNNING   pid 2117, uptime 16:39:29\n",                |
-|     "local_launch                     EXITED    Mar 25 08:47 AM\n",                          |
-|     "openvpn                          RUNNING   pid 2123, uptime 16:39:29\n",                |
-|     "perfmon                          RUNNING   pid 2119, uptime 16:39:29\n",                |
+|     "fqdn_stats                       RUNNING   pid 2121, uptime 16:39:29
+",                |
+|     "gwmon                            RUNNING   pid 2117, uptime 16:39:29
+",                |
+|     "local_launch                     EXITED    Mar 25 08:47 AM
+",                          |
+|     "openvpn                          RUNNING   pid 2123, uptime 16:39:29
+",                |
+|     "perfmon                          RUNNING   pid 2119, uptime 16:39:29
+",                |
 |     "rtmon                            FATAL     Exited too quickly (process log may have     |
-|                                                 details)\n",                                 |
-|     "sw-wdt4perfmon                   RUNNING   pid 2124, uptime 16:39:29\n",                |
-|     "time_action                      RUNNING   pid 2118, uptime 16:39:29\n"                 |
+|                                                 details)
+",                                 |
+|     "sw-wdt4perfmon                   RUNNING   pid 2124, uptime 16:39:29
+",                |
+|     "time_action                      RUNNING   pid 2118, uptime 16:39:29
+"                 |
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
@@ -317,14 +340,22 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "route": [                                                                                   |
-|     "Kernel IP routing table\n",                                                             |
-|     "Destination     Gateway         Genmask         Flags Metric Ref    Use Iface\n",       |
-|     "0.0.0.0         10.187.64.1     0.0.0.0         UG    0      0        0 eth0\n",        |
-|     "10.187.64.0     0.0.0.0         255.255.240.0   U     0      0        0 eth0\n",        |
-|     "192.168.43.0    192.168.43.2    255.255.255.0   UG    0      0        0 tun0\n",        |
-|     "192.168.43.2    0.0.0.0         255.255.255.255 UH    0      0        0 tun0\n",        |
-|     "10.20.0.0       0.0.0.0         255.255.0.0     U     100    0        0 tun-xxx\n"      |
-|     "10.20.51.91     0.0.0.0         255.255.255.255 U     100    0        0 tun-xxx\n"      |
+|     "Kernel IP routing table
+",                                                             |
+|     "Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+",       |
+|     "0.0.0.0         10.187.64.1     0.0.0.0         UG    0      0        0 eth0
+",        |
+|     "10.187.64.0     0.0.0.0         255.255.240.0   U     0      0        0 eth0
+",        |
+|     "192.168.43.0    192.168.43.2    255.255.255.0   UG    0      0        0 tun0
+",        |
+|     "192.168.43.2    0.0.0.0         255.255.255.255 UH    0      0        0 tun0
+",        |
+|     "10.20.0.0       0.0.0.0         255.255.0.0     U     100    0        0 tun-xxx
+"      |
+|     "10.20.51.91     0.0.0.0         255.255.255.255 U     100    0        0 tun-xxx
+"      |
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
@@ -342,9 +373,12 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "ip rule":  [                                                                                |
-|     "0:\tfrom all lookup local \n",                                                          |
-|     "32766:\tfrom all lookup main \n",                                                       |
-|     "32767:\tfrom all lookup default \n"                                                     |
+|     "0:	from all lookup local 
+",                                                          |
+|     "32766:	from all lookup main 
+",                                                       |
+|     "32767:	from all lookup default 
+"                                                     |
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
@@ -358,10 +392,14 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "ip route main": [                                                                           |
-|     "default via 10.187.64.1 dev eth0 \n",                                                   |
-|     "10.187.64.0/20 dev eth0 proto kernel scope link src 10.187.77.1xx \n",                  |
-|     "192.168.43.0/24 via 192.168.43.2 dev tun0 \n",                                          |
-|     "192.168.43.2 dev tun0 proto kernel scope link src 192.168.43.1 \n"                      |
+|     "default via 10.187.64.1 dev eth0 
+",                                                   |
+|     "10.187.64.0/20 dev eth0 proto kernel scope link src 10.187.77.1xx 
+",                  |
+|     "192.168.43.0/24 via 192.168.43.2 dev tun0 
+",                                          |
+|     "192.168.43.2 dev tun0 proto kernel scope link src 192.168.43.1 
+"                      |
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
@@ -375,19 +413,30 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "iptables rules": [                                                                          |
-|     "-P INPUT ACCEPT\n",                                                                     |
-|     "-P FORWARD ACCEPT\n",                                                                   |
-|     "-P OUTPUT ACCEPT\n",                                                                    |
-|     "-N RULE-LOG-ACCEPT\n",                                                                  |
-|     "-N RULE-LOG-DROP\n",                                                                    |
-|     "-A FORWARD -m state --state ESTABLISHED -j ACCEPT\n",                                   |
-|     "-A FORWARD -s 192.168.43.6/32 -i tun0 -j ACCEPT\n",                                     |
+|     "-P INPUT ACCEPT
+",                                                                     |
+|     "-P FORWARD ACCEPT
+",                                                                   |
+|     "-P OUTPUT ACCEPT
+",                                                                    |
+|     "-N RULE-LOG-ACCEPT
+",                                                                  |
+|     "-N RULE-LOG-DROP
+",                                                                    |
+|     "-A FORWARD -m state --state ESTABLISHED -j ACCEPT
+",                                   |
+|     "-A FORWARD -s 192.168.43.6/32 -i tun0 -j ACCEPT
+",                                     |
 |     "-A RULE-LOG-ACCEPT -m limit --limit 2/sec -j LOG --log-prefix \"AvxRl gw1               |
-|                                                     A:\" --log-level 7\n",                   |
-|     "-A RULE-LOG-ACCEPT -j ACCEPT\n",                                                        |
+|                                                     A:\" --log-level 7
+",                   |
+|     "-A RULE-LOG-ACCEPT -j ACCEPT
+",                                                        |
 |     "-A RULE-LOG-DROP -m limit --limit 2/sec -j LOG --log-prefix \"AvxRl gw1                 |
-|                                                     D:\" --log-level 7\n",                   |
-|     "-A RULE-LOG-DROP -j DROP\n"                                                             |
+|                                                     D:\" --log-level 7
+",                   |
+|     "-A RULE-LOG-DROP -j DROP
+"                                                             |
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
@@ -403,14 +452,22 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "iptables nat rules": [                                                                      |
-|     "-P PREROUTING ACCEPT\n",                                                                |
-|     "-P INPUT ACCEPT\n",                                                                     |
-|     "-P OUTPUT ACCEPT\n",                                                                    |
-|     "-P POSTROUTING ACCEPT\n",                                                               |
-|     "-N CLOUDN-LOG-natVPN\n",                                                                |
-|     "-A POSTROUTING -s 192.168.43.0/24 -j CLOUDN-LOG-natVPN\n",                              |
-|     "-A CLOUDN-LOG-natVPN -j LOG --log-prefix \"AviatrixUser: \"\n",                         |
-|     "-A CLOUDN-LOG-natVPN -j MASQUERADE\n"                                                   |
+|     "-P PREROUTING ACCEPT
+",                                                                |
+|     "-P INPUT ACCEPT
+",                                                                     |
+|     "-P OUTPUT ACCEPT
+",                                                                    |
+|     "-P POSTROUTING ACCEPT
+",                                                               |
+|     "-N CLOUDN-LOG-natVPN
+",                                                                |
+|     "-A POSTROUTING -s 192.168.43.0/24 -j CLOUDN-LOG-natVPN
+",                              |
+|     "-A CLOUDN-LOG-natVPN -j LOG --log-prefix \"AviatrixUser: \"
+",                         |
+|     "-A CLOUDN-LOG-natVPN -j MASQUERADE
+"                                                   |
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
@@ -426,14 +483,22 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "iptables mangle rules": [                                                                   |
-|     "-P PREROUTING ACCEPT\n",                                                                |
-|     "-P INPUT ACCEPT\n",                                                                     |
-|     "-P FORWARD ACCEPT\n",                                                                   |
-|     "-P OUTPUT ACCEPT\n",                                                                    |
-|     "-P POSTROUTING ACCEPT\n",                                                               |
-|     "-N MSSCLAMPING\n",                                                                      |
-|     "-A FORWARD -j MSSCLAMPING\n",                                                           |
-|     "-A MSSCLAMPING -p tcp -m tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1370\n"        |
+|     "-P PREROUTING ACCEPT
+",                                                                |
+|     "-P INPUT ACCEPT
+",                                                                     |
+|     "-P FORWARD ACCEPT
+",                                                                   |
+|     "-P OUTPUT ACCEPT
+",                                                                    |
+|     "-P POSTROUTING ACCEPT
+",                                                               |
+|     "-N MSSCLAMPING
+",                                                                      |
+|     "-A FORWARD -j MSSCLAMPING
+",                                                           |
+|     "-A MSSCLAMPING -p tcp -m tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1370
+"        |
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
@@ -449,19 +514,31 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "ipset rules": [                                                                             |
-|     "Name: avx_hnf_ipset_d_accept\n",                                                        |
-|     "Type: hash:ip,port\n",                                                                  |
-|     "Revision: 5\n",                                                                         |
+|     "Name: avx_hnf_ipset_d_accept
+",                                                        |
+|     "Type: hash:ip,port
+",                                                                  |
+|     "Revision: 5
+",                                                                         |
 |     "Header: family inet hashsize ... (the rest is omitted.)                                 |
-|     "Size in memory: 4564\n",                                                                |
-|     "References: 1\n",                                                                       |
-|     "Number of entries: 36\n",                                                               |
-|     "Members:\n",                                                                            |
-|     "64.233.181.108,tcp:25 comment \"smtp.gmail.com\"\n",                                    |
-|     "108.177.111.109,tcp:25 comment \"smtp.gmail.com\"\n",                                   |
-|     "108.177.121.108,tcp:25 comment \"smtp.gmail.com\"\n",                                   |
-|     "173.194.198.109,tcp:25 comment \"smtp.gmail.com\"\n",                                   |
-|     "209.85.144.109,tcp:25 comment \"smtp.gmail.com\"\n"                                     |
+|     "Size in memory: 4564
+",                                                                |
+|     "References: 1
+",                                                                       |
+|     "Number of entries: 36
+",                                                               |
+|     "Members:
+",                                                                            |
+|     "64.233.181.108,tcp:25 comment \"smtp.gmail.com\"
+",                                    |
+|     "108.177.111.109,tcp:25 comment \"smtp.gmail.com\"
+",                                   |
+|     "108.177.121.108,tcp:25 comment \"smtp.gmail.com\"
+",                                   |
+|     "173.194.198.109,tcp:25 comment \"smtp.gmail.com\"
+",                                   |
+|     "209.85.144.109,tcp:25 comment \"smtp.gmail.com\"
+"                                     |
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
@@ -476,17 +553,25 @@ Diagnostic Result
 |                                                                                              |
 | "ip link display": [                                                                         |
 |     "1: lo: <LOOPBACK,MULTICAST,UP,LOWER_UP> mtu 65536 qdisc noqueue state                   |
-|                                UNKNOWN mode DEFAULT group default qlen 1000\n",              |
-|     "    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00\n",                           |
+|                                UNKNOWN mode DEFAULT group default qlen 1000
+",              |
+|     "    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+",                           |
 |     "2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc mq state UP                   |
-|                                mode DEFAULT group default qlen 1000\n",                      |
-|     "    link/ether 06:b3:ec:15:fe:bc brd ff:ff:ff:ff:ff:ff\n",                              |
+|                                mode DEFAULT group default qlen 1000
+",                      |
+|     "    link/ether 06:b3:ec:15:fe:bc brd ff:ff:ff:ff:ff:ff
+",                              |
 |     "3: tun0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc fq_codel              |
-|                                ztate UNKNOWN mode DEFAULT group default qlen 100\n",         |
-|     "    link/none \n",                                                                      |
+|                                ztate UNKNOWN mode DEFAULT group default qlen 100
+",         |
+|     "    link/none 
+",                                                                      |
 |     "4: cxm0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode                      |
-|                                DEFAULT group default qlen 1000\n",                           |
-|     "    link/ether b2:9a:79:d7:68:a8 brd ff:ff:ff:ff:ff:ff\n"                               |
+|                                DEFAULT group default qlen 1000
+",                           |
+|     "    link/ether b2:9a:79:d7:68:a8 brd ff:ff:ff:ff:ff:ff
+"                               |
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
@@ -511,7 +596,8 @@ Diagnostic Result
 |      "        RX errors 0  dropped 0... (the rest is omitted.)                               |
 |      "        TX packets 185361  byt... (the rest is omitted.)                               |
 |      "        TX errors 0  dropped 0... (the rest is omitted.)                               |
-|      "\n",                          ... (the rest is omitted.)                               |
+|      "
+",                          ... (the rest is omitted.)                               |
 |      "lo: flags=4169<UP,LOOPBACK,RUN... (the rest is omitted.)                               |
 |      "        inet 127.0.0.1  netmas... (the rest is omitted.)                               |
 |      "        inet6 ::1  prefixlen 1... (the rest is omitted.)                               |
@@ -520,7 +606,8 @@ Diagnostic Result
 |      "        RX errors 0  dropped 0... (the rest is omitted.)                               |
 |      "        TX packets 396  bytes ... (the rest is omitted.)                               |
 |      "        TX errors 0  dropped 0... (the rest is omitted.)                               |
-|      "\n",                          ... (the rest is omitted.)                               |
+|      "
+",                          ... (the rest is omitted.)                               |
 |      "tun0: flags=4305<UP,POINTOPOIN... (the rest is omitted.)                               |
 |      "        inet 192.168.43.1  net... (the rest is omitted.)                               |
 |      "        inet6 fe80::30ff:994a:... (the rest is omitted.)                               |
@@ -529,7 +616,8 @@ Diagnostic Result
 |      "        RX errors 0  dropped 0... (the rest is omitted.)                               |
 |      "        TX packets 4  bytes 30... (the rest is omitted.)                               |
 |      "        TX errors 0  dropped 0... (the rest is omitted.)                               |
-|      "\n"                                                                                    |
+|      "
+"                                                                                    |
 |  ],                                                                                          |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
@@ -549,15 +637,24 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "Processes": [                                                                               |
-|     "top - 01:27:05 up 16:39,  0 users,  load average: 0.15, 0.03, 0.01\n",                  |
-|     "Tasks: 114 total,   1 running,  74 sleeping,   0 stopped,   0 zombie\n",                |
-|     "%Cpu(s):  0.3 us,  0.1 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st\n",     |
-|     "KiB Mem :  3907116 total,  2590900 free,   325604 used,   990612 buff/cache\n",         |
-|     "KiB Swap:        0 total,        0 free,        0 used.  3295864 avail Mem \n",         |
-|     "\n",                                                                                    |
-|     "  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND\n",         |
-|     "    1 root      20   0  159868   9120   6680 S   0.0  0.2   0:03.61 /sbin/init\n",      |
-|     "    2 root      20   0       0      0      0 S   0.0  0.0   0:00.00 [kthreadd]\n",      | 
+|     "top - 01:27:05 up 16:39,  0 users,  load average: 0.15, 0.03, 0.01
+",                  |
+|     "Tasks: 114 total,   1 running,  74 sleeping,   0 stopped,   0 zombie
+",                |
+|     "%Cpu(s):  0.3 us,  0.1 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+",     |
+|     "KiB Mem :  3907116 total,  2590900 free,   325604 used,   990612 buff/cache
+",         |
+|     "KiB Swap:        0 total,        0 free,        0 used.  3295864 avail Mem 
+",         |
+|     "
+",                                                                                    |
+|     "  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+",         |
+|     "    1 root      20   0  159868   9120   6680 S   0.0  0.2   0:03.61 /sbin/init
+",      |
+|     "    2 root      20   0       0      0      0 S   0.0  0.0   0:00.00 [kthreadd]
+",      | 
 |     ... (the rest is omitted.)                                                               |
 | ]                                                                                            |
 |                                                                                              |
@@ -592,10 +689,14 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "top mem processes": [                                                                       |
-|     " 2.2  0.2 1320032 2117 python -W ignore /home/ubuntu/cloudx-aws/gwmon.py info\n",       |
-|     " 1.4  0.0 141076   431 /lib/systemd/systemd-journald\n",                                |
-|     " 1.3  0.2 267644  2118 python -W ignore /home/ubuntu/cloudx-aws/timer_action.py\n",     |
-|     " 1.0  0.0 387132  2011 /usr/sbin/apache2 -k start\n",                                   |
+|     " 2.2  0.2 1320032 2117 python -W ignore /home/ubuntu/cloudx-aws/gwmon.py info
+",       |
+|     " 1.4  0.0 141076   431 /lib/systemd/systemd-journald
+",                                |
+|     " 1.3  0.2 267644  2118 python -W ignore /home/ubuntu/cloudx-aws/timer_action.py
+",     |
+|     " 1.0  0.0 387132  2011 /usr/sbin/apache2 -k start
+",                                   |
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
@@ -615,14 +716,22 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "SysInfo": [                                                                                 |
-|     "***CPU***\n",                                                                           |
-|     "Architecture:        x86_64\n",                                                         |
-|     "CPU op-mode(s):      32-bit, 64-bit\n",                                                 |
-|     "Byte Order:          Little Endian\n",                                                  |
-|     "CPU(s):              2\n",                                                              |
-|     "On-line CPU(s) list: 0,1\n",                                                            |
-|     "Thread(s) per core:  1\n",                                                              |
-|     "Core(s) per socket:  2\n",                                                              |
+|     "***CPU***
+",                                                                           |
+|     "Architecture:        x86_64
+",                                                         |
+|     "CPU op-mode(s):      32-bit, 64-bit
+",                                                 |
+|     "Byte Order:          Little Endian
+",                                                  |
+|     "CPU(s):              2
+",                                                              |
+|     "On-line CPU(s) list: 0,1
+",                                                            |
+|     "Thread(s) per core:  1
+",                                                              |
+|     "Core(s) per socket:  2
+",                                                              |
 |     ... (the rest is omitted.)                                                               |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
@@ -635,7 +744,8 @@ Diagnostic Result
 +-----------------------------+----------------------------------------------------------------+
 |::                                                                                            |
 |                                                                                              |
-| "***Kernel***\n",                                                                            |
+| "***Kernel***
+",                                                                            |
 | "Linux ip-10-187-77-159 4.15.0-1044-aws #46 SMP Sun Dec 8 00:42:58 UTC 2019 x86_64           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
@@ -648,8 +758,10 @@ Diagnostic Result
 +-----------------------------+----------------------------------------------------------------+
 |::                                                                                            |
 |                                                                                              |
-| "***Uptime***\n",                                                                            |
-| " 01:27:05 up 16:39,  0 users,  load average: 0.14, 0.03, 0.01\n",                           |
+| "***Uptime***
+",                                                                            |
+| " 01:27:05 up 16:39,  0 users,  load average: 0.14, 0.03, 0.01
+",                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates Uptime of the gateway.                                                              |
@@ -663,14 +775,22 @@ Diagnostic Result
 +-----------------------------+----------------------------------------------------------------+
 |::                                                                                            |
 |                                                                                              |
-| "***Reboot History***\n",                                                                    |
-| "reboot   system boot  4.15.0-1044-aws  Wed Mar 25 08:47   still running\n",                 |
-| "shutdown system down  4.15.0-1044-aws  Wed Mar 25 08:45 - 08:47  (00:01)\n",                |
-| "reboot   system boot  4.15.0-1044-aws  Tue Mar 24 01:30 - 08:45 (1+07:14)\n",               |
-| "shutdown system down  4.15.0-1044-aws  Mon Mar 23 10:06 - 01:30  (15:24)\n",                |
-| "reboot   system boot  4.15.0-1044-aws  Thu Mar 19 10:41 - 10:06 (3+23:24)\n",               |
-| "\n",                                                                                        |
-| "wtmp begins Thu Mar 19 10:41:57 2020\n",                                                    |
+| "***Reboot History***
+",                                                                    |
+| "reboot   system boot  4.15.0-1044-aws  Wed Mar 25 08:47   still running
+",                 |
+| "shutdown system down  4.15.0-1044-aws  Wed Mar 25 08:45 - 08:47  (00:01)
+",                |
+| "reboot   system boot  4.15.0-1044-aws  Tue Mar 24 01:30 - 08:45 (1+07:14)
+",               |
+| "shutdown system down  4.15.0-1044-aws  Mon Mar 23 10:06 - 01:30  (15:24)
+",                |
+| "reboot   system boot  4.15.0-1044-aws  Thu Mar 19 10:41 - 10:06 (3+23:24)
+",               |
+| "
+",                                                                                        |
+| "wtmp begins Thu Mar 19 10:41:57 2020
+",                                                    |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Indicates Reboot History of the gateway.                                                      |
@@ -684,9 +804,12 @@ Diagnostic Result
 +-----------------------------+----------------------------------------------------------------+
 |::                                                                                            |
 |                                                                                              |
-| "              total        used        free      shared  buff/cache   available\n"          |
-| "Mem:           3.7G        318M        2.5G         25M        967M        3.1G\n"          |
-| "Swap:            0B          0B          0B\n",                                             |
+| "              total        used        free      shared  buff/cache   available
+"          |
+| "Mem:           3.7G        318M        2.5G         25M        967M        3.1G
+"          |
+| "Swap:            0B          0B          0B
+",                                             |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |Shows current memory usage                                                                    |
@@ -704,13 +827,20 @@ Diagnostic Result
 +-----------------------------+----------------------------------------------------------------+
 |::                                                                                            |
 |                                                                                              |
-| "***Disk Usage***\n",                                                                        |
-| "5.4G\t/\n",                                                                                 |
-| "2.9G\t/usr\n",                                                                              |
-| "1.9G\t/var\n",                                                                              |
-| "1.6G\t/var/log\n",                                                                          |
-| "1.3G\t/usr/src\n",                                                                          |
-| "863M\t/usr/lib\n",                                                                          |
+| "***Disk Usage***
+",                                                                        |
+| "5.4G	/
+",                                                                                 |
+| "2.9G	/usr
+",                                                                              |
+| "1.9G	/var
+",                                                                              |
+| "1.6G	/var/log
+",                                                                          |
+| "1.3G	/usr/src
+",                                                                          |
+| "863M	/usr/lib
+",                                                                          |
 |                                                                                              |
 | ... (the rest is omitted.)                                                                   |
 |                                                                                              |
@@ -730,15 +860,24 @@ Diagnostic Result
 +-----------------------------+----------------------------------------------------------------+
 |::                                                                                            |
 |                                                                                              |
-| "***File System***\n",                                                                       |
-| "Filesystem      Size  Used Avail Use% Mounted on\n",                                        |
-| "udev            1.9G     0  1.9G   0% /dev\n",                                              |
-| "tmpfs           382M  7.1M  375M   2% /run\n",                                              |
-| "/dev/xvda1       16G  5.7G  9.8G  37% /\n",                                                 |
-| "tmpfs           1.9G     0  1.9G   0% /dev/shm\n",                                          |
-| "tmpfs           5.0M     0  5.0M   0% /run/lock\n",                                         |
-| "tmpfs           1.9G     0  1.9G   0% /sys/fs/cgroup\n",                                    |
-| "tmpfs           382M     0  382M   0% /run/user/1000\n",                                    |
+| "***File System***
+",                                                                       |
+| "Filesystem      Size  Used Avail Use% Mounted on
+",                                        |
+| "udev            1.9G     0  1.9G   0% /dev
+",                                              |
+| "tmpfs           382M  7.1M  375M   2% /run
+",                                              |
+| "/dev/xvda1       16G  5.7G  9.8G  37% /
+",                                                 |
+| "tmpfs           1.9G     0  1.9G   0% /dev/shm
+",                                          |
+| "tmpfs           5.0M     0  5.0M   0% /run/lock
+",                                         |
+| "tmpfs           1.9G     0  1.9G   0% /sys/fs/cgroup
+",                                    |
+| "tmpfs           382M     0  382M   0% /run/user/1000
+",                                    |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |N/A                                                                                           |
@@ -750,10 +889,14 @@ Diagnostic Result
 +-----------------------------+----------------------------------------------------------------+
 |::                                                                                            |
 |                                                                                              |
-| "***Virtual Memory statistics***\n",                                                         |
-| "procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----\n",        |
-| " r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st\n",        |
-| " 0  0      0 2220768 181288 1178804    0    0     6    23   85  128  0  0 100  0  0\n",     |
+| "***Virtual Memory statistics***
+",                                                         |
+| "procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+",        |
+| " r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+",        |
+| " 0  0      0 2220768 181288 1178804    0    0     6    23   85  128  0  0 100  0  0
+",     |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |N/A                                                                                           |
@@ -765,15 +908,24 @@ Diagnostic Result
 +-----------------------------+----------------------------------------------------------------+
 |::                                                                                            |
 |                                                                                              |
-| "***Software Version***\n",                                                                  |
-| "================================================================================\n",        |
-| "Branch: UserConnect-5.3\n",                                                                 |
-| "Commit: commit d02bf8434\n",                                                                |
-| "Commit Date:   Tue Mar 10 11:15:11 2020 -0700\n",                                           |
-| "Build Date: Tue Mar 10 11:31:16 PDT 2020\n",                                                |
-| "Built By: Reyweng\n",                                                                       |
-| "================================================================================\n",        |
-| "\n",                                                                                        |
+| "***Software Version***
+",                                                                  |
+| "================================================================================
+",        |
+| "Branch: UserConnect-5.3
+",                                                                 |
+| "Commit: commit d02bf8434
+",                                                                |
+| "Commit Date:   Tue Mar 10 11:15:11 2020 -0700
+",                                           |
+| "Build Date: Tue Mar 10 11:31:16 PDT 2020
+",                                                |
+| "Built By: Reyweng
+",                                                                       |
+| "================================================================================
+",        |
+| "
+",                                                                                        |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
 |N/A                                                                                           |
@@ -785,30 +937,52 @@ Diagnostic Result
 +-----------------------------+----------------------------------------------------------------+
 |::                                                                                            |
 |                                                                                              |
-| "***EC2 Instance Metadata***\n",                                                             |
-| "{\n",                                                                                       |
-| "  \"architecture\" : \"x86_64\",\n",                                                        |
-| "  \"availabilityZone\" : \"ca-central-1b\",\n",                                             |
-| "  \"billingProducts\" : null,\n",                                                           |
-| "  \"devpayProductCodes\" : null,\n",                                                        |
-| "  \"imageId\" : \"ami-01axxxxxxxxxxxxxx\",\n",                                              |
-| "  \"instanceId\" : \"i-046xxxxxxxxxxxxxx\",\n",                                             |
-| "  \"instanceType\" : \"t2.medium\",\n",                                                     |
-| "  \"kernelId\" : null,\n",                                                                  |
-| "  \"pendingTime\" : \"2020-03-25T08:47:05Z\",\n",                                           |
-| "  \"privateIp\" : \"10.187.77.159\",\n",                                                    |
-| "  \"ramdiskId\" : null,\n",                                                                 |
-| "  \"region\" : \"ca-central-1\",\n",                                                        |
-| "  \"version\" : \"2017-09-30\"\n",                                                          |
-| "}{\n",                                                                                      |
-| "  \"Code\" : \"Success\",\n",                                                               |
-| "  \"LastUpdated\" : \"2020-03-26T00:47:40Z\",\n",                                           |
+| "***EC2 Instance Metadata***
+",                                                             |
+| "{
+",                                                                                       |
+| "  \"architecture\" : \"x86_64\",
+",                                                        |
+| "  \"availabilityZone\" : \"ca-central-1b\",
+",                                             |
+| "  \"billingProducts\" : null,
+",                                                           |
+| "  \"devpayProductCodes\" : null,
+",                                                        |
+| "  \"imageId\" : \"ami-01axxxxxxxxxxxxxx\",
+",                                              |
+| "  \"instanceId\" : \"i-046xxxxxxxxxxxxxx\",
+",                                             |
+| "  \"instanceType\" : \"t2.medium\",
+",                                                     |
+| "  \"kernelId\" : null,
+",                                                                  |
+| "  \"pendingTime\" : \"2020-03-25T08:47:05Z\",
+",                                           |
+| "  \"privateIp\" : \"10.187.77.159\",
+",                                                    |
+| "  \"ramdiskId\" : null,
+",                                                                 |
+| "  \"region\" : \"ca-central-1\",
+",                                                        |
+| "  \"version\" : \"2017-09-30\"
+",                                                          |
+| "}{
+",                                                                                      |
+| "  \"Code\" : \"Success\",
+",                                                               |
+| "  \"LastUpdated\" : \"2020-03-26T00:47:40Z\",
+",                                           |
 | "  \"InstanceProfileArn\" : \"arn:aws:iam::xxxxxxxxxxxx:instance-profile/                    |
 |                                                           aviatrix-role-ec2\",               |
-| "  \"InstanceProfileId\" : \"XXXXXXXXXXXXXXXXXXXXX\"\n",                                     |
-| "}{\n",                                                                                      |
-| "  \"Code\" : \"Success\",\n",                                                               |
-| "  \"LastUpdated\" : \"2020-03-26T00:53:47Z\",\n",                                           |
+| "  \"InstanceProfileId\" : \"XXXXXXXXXXXXXXXXXXXXX\"
+",                                     |
+| "}{
+",                                                                                      |
+| "  \"Code\" : \"Success\",
+",                                                               |
+| "  \"LastUpdated\" : \"2020-03-26T00:53:47Z\",
+",                                           |
 | "}"                                                                                          |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
@@ -914,15 +1088,21 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "FQDN service": [                                                                            |
-|     " avx-nfq.service - Aviatrix NFQ\n",                                                     |
+|     " avx-nfq.service - Aviatrix NFQ
+",                                                     |
 |                                                                                              |
 |     "   Loaded: loaded (/lib/systemd/system/avx-nf... (the rest is omitted.)                 |
 |     "   Active: active (running) since Wed 2018-12... (the rest is omitted.)                 |
-|     " Main PID: 8495 (avx-nfq)\n",                                                           |
-|     "    Tasks: 1 (limit: 1149)\n",                                                          |
-|     "   CGroup: /system.slice/avx-nfq.service\n",                                            |
-|     "           └─8495 /home/ubuntu/cloudx-aws/nfq-module/avx-nfq\n",                        |
-|     "\n",                                                                                    |
+|     " Main PID: 8495 (avx-nfq)
+",                                                           |
+|     "    Tasks: 1 (limit: 1149)
+",                                                          |
+|     "   CGroup: /system.slice/avx-nfq.service
+",                                            |
+|     "           └─8495 /home/ubuntu/cloudx-aws/nfq-module/avx-nfq
+",                        |
+|     "
+",                                                                                    |
 |     "Dec 19 13:23:30 ip-10-10-0-182 avx-nfq[8495]:... (the rest is omitted.)                 |
 |    ... (the rest is omitted.)                                                                |
 | ],                                                                                           |
@@ -942,16 +1122,26 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "Hostname-filter Report": [                                                                  |
-|     "{\n",                                                                                   |
-|     "  \"smtp.gmail.com\": {\n",                                                             |
-|     "    \"ip_list\": [\n",                                                                  |
-|     "      \"74.125.126.109\", \n",                                                          |
-|     "      \"74.125.126.108\", \n",                                                          |
-|     "      \"173.194.194.109\", \n",                                                         |
-|     "      \"173.194.205.109\"\n",                                                           |
-|     "    ], \n",                                                                             |
-|     "    \"thread_state\": \"ALIVE\"\n",                                                     |
-|     "  }\n",                                                                                 |
+|     "{
+",                                                                                   |
+|     "  \"smtp.gmail.com\": {
+",                                                             |
+|     "    \"ip_list\": [
+",                                                                  |
+|     "      \"74.125.126.109\", 
+",                                                          |
+|     "      \"74.125.126.108\", 
+",                                                          |
+|     "      \"173.194.194.109\", 
+",                                                         |
+|     "      \"173.194.205.109\"
+",                                                           |
+|     "    ], 
+",                                                                             |
+|     "    \"thread_state\": \"ALIVE\"
+",                                                     |
+|     "  }
+",                                                                                 |
 |     "}"                                                                                      |
 | ],                                                                                           |
 |                                                                                              |
@@ -966,10 +1156,13 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "Hostname-filter Status": [                                                                  |
-|     "● avx-hostname-filter.service - Aviatrix Hostname Filter\n",                            |
+|     "● avx-hostname-filter.service - Aviatrix Hostname Filter
+",                            |
 |     "   Loaded: loaded (/lib/systemd/system/avx-hostname-filter.service;                     |
-|                                    disabled; vendor preset: enabled)\n",                     |
-|     "   Active: inactive (dead)\n"                                                           |
+|                                    disabled; vendor preset: enabled)
+",                     |
+|     "   Active: inactive (dead)
+"                                                           |
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
@@ -1000,7 +1193,8 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "Ulimit": [                                                                                  |
-|     "65536\n"                                                                                |
+|     "65536
+"                                                                                |
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
@@ -1048,12 +1242,12 @@ Diagnostic Result
 | "mpm_prefork config": {                                                                      |
 |     "/etc/apache2/mods-enabled/mpm_prefork.conf": [                                          |
 |         "<IfModule mpm_prefork_module>",                                                     |
-|         "\tStartServers\t\t   5",                                                            |
-|         "\tMinSpareServers\t\t   5",                                                         |
-|         "\tMaxSpareServers\t\t  10",                                                         |
-|         "\tMaxRequestWorkers\t3000",                                                         |
-|         "\tServerLimit             3000",                                                    |
-|         "\tMaxConnectionsPerChild     0",                                                    |
+|         "	StartServers		   5",                                                            |
+|         "	MinSpareServers		   5",                                                         |
+|         "	MaxSpareServers		  10",                                                         |
+|         "	MaxRequestWorkers	3000",                                                         |
+|         "	ServerLimit             3000",                                                    |
+|         "	MaxConnectionsPerChild     0",                                                    |
 |         "</IfModule>",                                                                       |
 |         ""                                                                                   |
 |     ]                                                                                        |
@@ -1142,8 +1336,10 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "rp_filter": [                                                                               |
-|     "net.ipv4.conf.all.rp_filter = 0\n",                                                     |
-|     "net.ipv4.conf.eth0.rp_filter = 0\n"                                                     |
+|     "net.ipv4.conf.all.rp_filter = 0
+",                                                     |
+|     "net.ipv4.conf.eth0.rp_filter = 0
+"                                                     |
 | ],                                                                                           |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+
@@ -1157,7 +1353,8 @@ Diagnostic Result
 |::                                                                                            |
 |                                                                                              |
 | "FQDN stats service": [                                                                      |
-|     "fqdn_stats                       RUNNING   pid 2121, uptime 16:39:45\n"                 |
+|     "fqdn_stats                       RUNNING   pid 2121, uptime 16:39:45
+"                 |
 | ]                                                                                            |
 |                                                                                              |
 +-----------------------------+----------------------------------------------------------------+

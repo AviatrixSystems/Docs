@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 .. image:: ./media/image1.png
    :width: 3.5in
    :height: 0.5in
@@ -307,5 +310,3 @@ Aviatrix for Hybrid Cloud eliminates the complexity of connecting to and
 across public clouds with a simple mesh architecture, and is fully
 integrated with Amazon Web Services (AWS), Microsoft Azure and Google
 Cloud Platform.
-
-

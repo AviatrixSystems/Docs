@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 Enable SAML App for a group of users in G-Suite using Organization
 -------------------------------------------------------------------

@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 =============================================================
 Migrating a CSR Transit Solution to Aviatrix Transit Solution

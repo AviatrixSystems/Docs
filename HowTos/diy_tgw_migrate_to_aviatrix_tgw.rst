@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ==================================================================
 Migrating a DIY TGW to Aviatrix Managed TGW Deployment 
