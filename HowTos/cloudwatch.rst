@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 
 =================================
@@ -141,5 +144,3 @@ Logs from CloudWatch can be exported to S3 buckets. Please follow `AWS Documenta
 .. add in the disqus tag
 
 .. disqus::
-
-

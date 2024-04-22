@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 .. toctree::
    :numbered:
@@ -87,7 +90,7 @@ Step 2. Create a Centrify SAML App for Aviatrix
 
    Also, the custom logic needs to be set for the attributes to work
 
-   setAttribute("exampleAttr", "DOMAIN\\user");
+   setAttribute("exampleAttr", "DOMAIN\user");
 
    |image6|
 

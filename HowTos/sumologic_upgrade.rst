@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 ====================================================================================================================================================================================
 Steps to check the version of SumoLogic Collectors on the Sumologic Servers(UI) and also Upgrade/Downgrade the version of the Collectors from the WebUI of Sumologic Servers
 ====================================================================================================================================================================================

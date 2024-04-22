@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ==================================================================
 Migrating TGW Orchestrator to Multi-Cloud Transit 

@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 
 
@@ -181,6 +184,3 @@ Done.
    :scale: 40%
 
 .. disqus::
-
-
-

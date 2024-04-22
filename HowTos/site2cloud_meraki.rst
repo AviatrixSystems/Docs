@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 =====================================================================
 Aviatrix Gateway to Meraki MX64
@@ -110,5 +113,3 @@ Configuring Site-to-site VPN in Meraki MX64
 .. |meraki05| image:: site2cloud_meraki_media/meraki05.png
 
 .. disqus::
-
-

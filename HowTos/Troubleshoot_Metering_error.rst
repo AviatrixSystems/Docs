@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 =====================
 Resolve the AWS billing issue
@@ -44,6 +47,3 @@ You may also need to click on Troubleshoot->Diagnostics->Services->Restart cloud
 ------------------------------------------------
 Check the firewall and ACL rules of yor controller's VPC. You will need to ensure that the controller has valid internet access. 
 This could also be a temporary network failure issue and might resolve by itself
-
-
-

@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 .. toctree::
    :numbered:
@@ -237,4 +240,3 @@ You can quickly validate that the configuration is complete by clicking on the *
 .. |imageOLAddAppsMenu| image:: onelogin_saml_media/onelogin_select_add_apps.png
 .. |imageOLSSOTab| image:: onelogin_saml_media/onelogin_issuer_url.png\
 .. |imageConfiguration| image:: onelogin_saml_media/onelogin_configuration.png
-

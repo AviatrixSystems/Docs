@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ===============================================================
 Setting up PingOne for Customers Web SAML App with Profile Attribute

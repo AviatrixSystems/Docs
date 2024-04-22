@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ============================================================================
 Configuration Example for Multi-Cloud Transit Integration Azure VNG VPN 
@@ -531,4 +534,3 @@ Once traffic reach to VNG, we can verify that now VNG routing table is showing t
 
 
 .. disqus::
-

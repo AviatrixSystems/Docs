@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 =====================================================================
 Aviatrix Gateway to Meraki vMX100
@@ -130,5 +133,3 @@ Configuring Site-to-site VPN in Meraki vMX100
 .. |meraki_vmx08| image:: site2cloud_meraki_vmx100_media/meraki_vmx08.png
 
 .. disqus::
-
-

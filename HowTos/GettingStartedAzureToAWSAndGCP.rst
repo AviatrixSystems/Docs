@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 .. _AWS billing: https://console.aws.amazon.com/billing/home?#/account
 

@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ###################################
 Security Patches
@@ -181,5 +184,3 @@ SAML XML signature wrapping vulnerability                                       
 
                                                                                                         Applicable to Aviatrix Controller only.
 =================================================================             ====================      =======================================================
-
-

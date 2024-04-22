@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 
 =========================================================
@@ -60,4 +63,3 @@ TGW VPN has a total 100 BGP prefix. In addition, a TGW cannot summarize Spoke VP
 .. add in the disqus tag
 
 .. disqus::
-

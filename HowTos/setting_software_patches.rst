@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 
 ###################################
@@ -75,4 +78,3 @@ To apply a patch:
 5) Backup your Aviatrix Controller again to save the new configuration.
 
 .. disqus::
-

@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 .. |win| image:: AVPNC_img/Win.png
 
@@ -261,4 +264,3 @@ LDAP + Duo Security Two-Factor Authentication:
 The username and password windows is shown
 
 |LDAPAuth|
-

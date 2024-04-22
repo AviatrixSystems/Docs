@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ========================================================================
 Migrating an Aviatrix Transit Network to AWS Transit Gateway (TGW)

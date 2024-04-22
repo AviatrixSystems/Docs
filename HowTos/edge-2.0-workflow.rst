@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ===============================
 Deploying Aviatrix Secure Edge
@@ -769,5 +772,3 @@ If the connectivity to the CSP is over a public network:
 
 .. |edge-kvm-new-vm-7| image:: CloudN_workflow_media/edge-kvm-new-vm-7.png
    :scale: 40%
-
-

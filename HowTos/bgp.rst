@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ========
 BGP
@@ -50,4 +53,3 @@ If you wish to limit the size of your network (for example, if you have a comple
 =======
 
 .. disqus::
-

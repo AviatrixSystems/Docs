@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ==========================================================================================
 AWS Multi-Cloud Transit BGP over LAN Workflow
@@ -316,4 +319,3 @@ The existing Terraform module aviatrix_transit_external_device_conn supports BGP
    :scale: 50%
    
 .. disqus::
-

@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ==================================================================
 Multi-cloud Transit Gateway Peering over Public Network Workflow
@@ -61,5 +64,3 @@ To establish transit gateway peering across cloud service providers over the int
    :scale: 30%
 
 .. disqus::
-
-
