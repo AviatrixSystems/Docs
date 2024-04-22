@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ==========================================================================================
 Aviatrix BGP over LAN with Cisco Meraki in AWS
@@ -461,4 +464,3 @@ At this point, run connectivity and performance test to ensure everything is wor
    :scale: 50%   
 
 .. disqus::
-

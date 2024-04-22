@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 
 ==========================================
@@ -192,10 +195,11 @@ Use the following `Optional Custom Template`:
 .. code:: shell
 
      constant(value="tenant-identifier")
-     constant(value="\t")
+     constant(value="	")
      property(name="timereported")
-     constant(value="\t")
+     constant(value="	")
      property(name="msg")
-     constant(value="\n")
+     constant(value="
+")
 
 .. |imageOverview| image:: log_forwarder_media/overview.png

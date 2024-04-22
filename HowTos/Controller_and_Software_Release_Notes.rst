@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 ==============================================
 Aviatrix Controller and Gateway Release Notes
 ==============================================
@@ -2157,7 +2160,7 @@ R6.4.2672 (06/11/2021)
 - **Bug fix** Intermittent connectivity issues from CoPilot to Controller.
 - **Bug fix** Enabling FQDN Discovery fails, some configuration changes are not removed, and the network connection breaks.
 - **Bug fix** Upgrade fails when upgrades from 6.3 to 6.4 using the upgrade to latest release feature.
-- **Bug fix** Cannot add certificates to LDAP configuration, error C:\fakepath\user.crt does not exist.
+- **Bug fix** Cannot add certificates to LDAP configuration, error C:akepath\user.crt does not exist.
 - **Enhancement** Aviatrix Controller blocks multiple simultaneous logins from one account.
 
 R6.4.2618 (05/30/2021)

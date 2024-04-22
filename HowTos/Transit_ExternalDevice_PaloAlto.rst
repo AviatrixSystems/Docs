@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 =========================================================
 External Device to Palo Alto VM-Series 
 =========================================================
@@ -241,9 +244,3 @@ Configuration WorkFlow:
 .. |image23| image:: ./Transit_ExternalDevice_PaloAlto_media/14.png
     :width: 5.55625 in
     :height: 1.50000 in
-
-
-
-
-
-

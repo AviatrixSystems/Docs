@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 ﻿
 
 .. toctree::
@@ -70,7 +73,7 @@ Configuration Steps:
 	
 	Also, the custom logic needs to be set for the attributes to work
 	
-		setAttribute("exampleAttr", "DOMAIN\\user");
+		setAttribute("exampleAttr", "DOMAIN\user");
 	
 	|image6|
 	

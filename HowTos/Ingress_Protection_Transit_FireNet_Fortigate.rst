@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
   
 ==============================================================
 Ingress Protection via Aviatrix Transit FireNet with Fortigate

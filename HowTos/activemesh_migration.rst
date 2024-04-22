@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 
 ==================================================================================================
@@ -55,11 +58,3 @@ The steps are documented in detail below.
     :width: 100%
 .. |image4| image:: ./activemesh_migration_media/image4.png
     :width: 100%
-
-
-
-
-
-
-
-

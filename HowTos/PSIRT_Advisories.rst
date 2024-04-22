@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 =======================================
 PSIRT Advisories
 =======================================
@@ -5,6 +8,7 @@ PSIRT Advisories
 Aviatrix Product Security Team continually tests the software product, looking for vulnerabilities and weaknesses. If you have a security issue to report, please open a support ticket at `Aviatrix Support Portal <https://support.aviatrix.com>`_. Any such findings are fed back to Aviatrix's development teams and serious issues are described along with protective solutions in the advisories below.
 
 Please note the below Aviatrix Security recommendations and communication plans:
+
 
 
 - Aviatrix strongly recommends customers stay on the latest release to resolve features and bug issues. All fixes are in the new release; we do not patch older release versions.
@@ -55,7 +59,9 @@ If you require allowing non-TLS traffic egress over HTTPS port, perform the foll
 - ENABLE "non-TLS traffic over HTTPS port" under Global Settings. For release 7.0.2239 and 7.1.3006 this can be done from the Controller UI. For release 6.9.822 or 6.8.1826 this cannot be done from the UI.
 
 
+
 - If you choose to revert back to the old default behavior in release 6.9.822 or 6.8.1826, please contact Aviatrix Support who can help you toggle to ALLOW for this feature.
+
 
 
 

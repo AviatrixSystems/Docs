@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ==========================================================================================
 GCP Multi-Peer BGP over LAN Workflow
@@ -229,4 +232,3 @@ At this point, run connectivity and performance test to ensure everything is wor
    :scale: 30%
 
 .. disqus::
-

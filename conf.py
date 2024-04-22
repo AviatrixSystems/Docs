@@ -136,6 +136,7 @@ html_static_path = ['_static']
 html_js_files = [
     'js/chatbot.js',
     'js/notice.js',
+    'js/metatag.js',
 ]
 
 

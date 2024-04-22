@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
    
 .. |win| image:: AVPNC_img/Win.png
@@ -340,5 +343,3 @@ OpenVPN is a registered trademark of OpenVPN Inc.
 
 
 .. disqus::
-
-

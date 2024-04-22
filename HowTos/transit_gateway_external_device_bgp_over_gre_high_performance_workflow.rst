@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 
 ==========================================================================================
 GRE Tunneling for Multi-cloud Transit Gateway to On-Prem Workflow
@@ -484,4 +487,3 @@ Single flow result by using iperf3 tool with TCP 1 connection:
    :scale: 30%    
 
 .. disqus::
-

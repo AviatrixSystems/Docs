@@ -1,3 +1,6 @@
+.. raw:: html
+
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, notranslate, noimageindex">
 ﻿
 
 **A few important notes before we launch the instance:**
@@ -99,5 +102,3 @@ r.  For more information on the Firewall network solution, please refer to this 
     :width: 100%
 .. |image14| image:: ./config_Checkpoint_media/image14.png
     :width: 100%
-
-
