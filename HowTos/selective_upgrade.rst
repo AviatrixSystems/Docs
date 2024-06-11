@@ -2,13 +2,8 @@
     :description: Upgrade Aviatrix Controller and Gateways
     :keywords: Style Guide, Documentation
 
-
 .. raw:: html
   
-
-
-
-
 =============================================
 Upgrade Aviatrix Controller and Gateways
 =============================================
