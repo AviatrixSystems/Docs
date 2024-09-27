@@ -26,7 +26,7 @@ The transit VNET will then have a firewall of supported vendors (Check Point, Pa
 
 Once the infrastructure is in place you create a policy to inspect the east-west and north-south traffic.
 
-|avx_tr_firenet_topology_az|
+|avx_tr_firenet_topology_az|       This diagram is incorrect
 
 Create Transit VNet
 ********************
