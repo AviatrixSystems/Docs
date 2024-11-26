@@ -32,7 +32,7 @@ Adding a Site2Cloud Tunnel in Aviatrix Controller
 3. Click on **+ Add New** near the top of the Site2Cloud tab.
 4. Under Add a New Connection, enter the following:
 
-    +-------------------------------+------------------------------------------+
+  +-------------------------------+------------------------------------------+
   | Field                         | Expected Value                           |
   +===============================+==========================================+
   | VPC ID / VNet Name            | Select the VPC/VNet where this tunnel    |
@@ -52,7 +52,7 @@ Adding a Site2Cloud Tunnel in Aviatrix Controller
   | Algorithms                    | Unmark this checkbox                     |
   +-------------------------------+------------------------------------------+
   | Encryption over ExpressRoute/ | Unmark this checkbox                     |
-  | Direct Connect                 |                                         |
+  | Direct Connect                |                                          |
   +-------------------------------+------------------------------------------+
   | Enable HA                     | Unmark this checkbox                     |
   +-------------------------------+------------------------------------------+
