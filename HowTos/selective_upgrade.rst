@@ -220,7 +220,7 @@ Prepare for the Aviatrix Upgrade
 ===========================================================================
 
 
-Aviatrix recommends you perform the tasks in the Operations Checklist before upgrading your deployment of the Aviatrix network platform. Taking the time perform dry runs and backing up your Aviatrix Platform configuration reduces the potential for issues during the upgrade and allows you to easily restore your configuration if there are issues after the upgrade. Correct any issues you find during your preparation before proceeding with an Aviatrix upgrade.
+Aviatrix recommends you perform the tasks in the Operations Checklist before upgrading your deployment of the Aviatrix network platform. Taking the time to perform dry runs and backing up your Aviatrix Platform configuration reduces the potential for issues during the upgrade and allows you to easily restore your configuration if there are issues after the upgrade. Correct any issues you find during your preparation before proceeding with an Aviatrix upgrade.
 
 Before you perform the Aviatrix Upgrade, perform the following tasks:
 
@@ -461,7 +461,7 @@ To perform a platform software upgrade dry run:
 Upgrade your Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Perform the following steps to upgrade your Controller to a desired version:
+Perform the following steps to upgrade your Controller to the desired version:
 
 #. Log in to your Controller UI.
 #. Go to *SETTINGS > Maintenance*, and click *Upgrade* to open the upgrade panel.
@@ -521,7 +521,7 @@ When upgrading from one minor version of a major release to another or from one 
 Before Upgrade
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Before you upgrade your Controller and Gateways, it is highly recommend to check the xref:controller-upgrade-workflow.adoc[General Controller and Gateways Upgrade Guidance].
+Before you upgrade your Controller and Gateways, it is highly recommended to check the xref:controller-upgrade-workflow.adoc[General Controller and Gateways Upgrade Guidance].
 
 - Before proceeding with the upgrade in the production environment, perform the upgrade in a testing environment.
 
@@ -568,7 +568,7 @@ Log into your cloud provider to check your license information and Controller im
   #.  If your Controller did not have a fixed EIP, go to **Controller UI > SETTINGS > CoPilot Association** to update your CoPilot Association to point to the new EIP of the Controller.
 * If your Controller is already using a BYOL license but does not have an ABUP (Aviatrix Bring Your Own Support) customer ID:
 
-  #. Subscribe to the *Aviatrix Secure Networking Platform 2208-Universal 24x7 Support* subscription offer license .
+  #. Subscribe to the *Aviatrix Secure Networking Platform 2208-Universal 24x7 Support* subscription offer license.
   #. Apply your new Customer ID on the **Controller UI > SETTINGS > License** page.
 
 
@@ -757,12 +757,11 @@ Upgrading the Gateway Image
 
 Traffic is briefly disrupted during the image upgrade in cluster configurations.
 
-**Note:** If ActiveMesh mode is not enabled or you are or running ActiveMesh 1.0, please open an Aviatrix Support ticket before attempting an upgrade.
+**Note:** If ActiveMesh mode is not enabled or you are running ActiveMesh 1.0, please open an Aviatrix Support ticket before attempting an upgrade.
 
 To perform a gateway image upgrade:
-
 #. Click on Settings in the Aviatrix Controller main menu and select Maintenance.
-#. In the Selective Gateway Upgrade window, select the gateways to be upgraded.  The system automatically selects the platform controller current software version and the compatible gateway image version for that software version.
+#. In the Selective Gateway Upgrade window, select the gateways to be upgraded. The system automatically selects the Platform Controller's current software version and the compatible gateway image version for that software version.
 #. Click on Image Upgrade. You can follow the status in the progress window.
 #. Verify the gateway upgrade by reviewing the gateway information in the Current Image Version column.
 
@@ -795,15 +794,15 @@ After you have completed the upgrade, you can:
 Rolling Back Gateway Software
 ===========================================================================
 
-You can roll back gateway software upgrades to the previous version. However, you cannot roll back platform Controller, CA Access Gateway (CAAG), or CloudN upgrades.
+You can roll back the gateway software upgrades to the previous version. However, you cannot roll back Platform Controller, CA Access Gateway (CAAG), or CloudN upgrades.
 
-Gateway software rollbacks are briefly disruptive because the gateway is replaced. The gateway image version may also change during the software rollback. If the gateway to be rolled back is running the same image version before and after upgrading, when you roll back to the older software version the system creates a new gateway with the same image and the older software version.
+Gateway software rollbacks are briefly disruptive because the gateway is replaced. The gateway image version may also change during the software rollback. If the gateway to be rolled back is running the same image version before and after upgrading, when you roll back to the older software version, the system creates a new gateway with the same image and the older software version.
 
 
 Gateway software rollbacks are briefly disruptive. You can only roll back the gateway software to the previous platform controller version running on the gateway. To perform a gateway software rollback:
 
 #. Click on Settings in the Aviatrix Controller main menu and select Maintenance.
-#. In the Selective Gateway Upgrade window, select the gateways to be rolled back. The system automatically selects the platform controller previous version for the rollback target.
+#. In the Selective Gateway Upgrade window, select the gateways to be rolled back. The system automatically selects the Platform Controller's previous version for the rollback target.
 #. Click on Software Rollback. You can follow the status in the progress window.
 #. Verify the gateway software rollback by reviewing the gateway information in the Current Version column.
 
