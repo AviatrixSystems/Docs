@@ -757,12 +757,11 @@ Upgrading the Gateway Image
 
 Traffic is briefly disrupted during the image upgrade in cluster configurations.
 
-**Note:** If ActiveMesh mode is not enabled or you arerunning ActiveMesh 1.0, please open an Aviatrix Support ticket before attempting an upgrade.
+**Note:** If ActiveMesh mode is not enabled or you are running ActiveMesh 1.0, please open an Aviatrix Support ticket before attempting an upgrade.
 
 To perform a gateway image upgrade:
-
 #. Click on Settings in the Aviatrix Controller main menu and select Maintenance.
-#. In the Selective Gateway Upgrade window, select the gateways to be upgraded.  The system automatically selects the platform Controller current software version and the compatible gateway image version for that software version.
+#. In the Selective Gateway Upgrade window, select the gateways to be upgraded. The system automatically selects the Platform Controller's current software version and the compatible gateway image version for that software version.
 #. Click on Image Upgrade. You can follow the status in the progress window.
 #. Verify the gateway upgrade by reviewing the gateway information in the Current Image Version column.
 
@@ -795,7 +794,7 @@ After you have completed the upgrade, you can:
 Rolling Back Gateway Software
 ===========================================================================
 
-You can roll back gateway software upgrades to the previous version. However, you cannot roll back Platform Controller, CA Access Gateway (CAAG), or CloudN upgrades.
+You can roll back the gateway software upgrades to the previous version. However, you cannot roll back Platform Controller, CA Access Gateway (CAAG), or CloudN upgrades.
 
 Gateway software rollbacks are briefly disruptive because the gateway is replaced. The gateway image version may also change during the software rollback. If the gateway to be rolled back is running the same image version before and after upgrading, when you roll back to the older software version, the system creates a new gateway with the same image and the older software version.
 
@@ -803,7 +802,7 @@ Gateway software rollbacks are briefly disruptive because the gateway is replace
 Gateway software rollbacks are briefly disruptive. You can only roll back the gateway software to the previous platform controller version running on the gateway. To perform a gateway software rollback:
 
 #. Click on Settings in the Aviatrix Controller main menu and select Maintenance.
-#. In the Selective Gateway Upgrade window, select the gateways to be rolled back. The system automatically selects the platform controller previous version for the rollback target.
+#. In the Selective Gateway Upgrade window, select the gateways to be rolled back. The system automatically selects the Platform Controller's previous version for the rollback target.
 #. Click on Software Rollback. You can follow the status in the progress window.
 #. Verify the gateway software rollback by reviewing the gateway information in the Current Version column.
 
