@@ -79,7 +79,7 @@ version.
 
 **Upgrading Build Version**
 
-When you upgrade from one build version of a minor release to another build of the same minor release, the available version may skip over previously released build numbers. For example, you could upgrade from 6.6.100 to the latest build 6.6.900 and the system skips any intermediate builds.
+When you upgrade from one build version of a minor release to another build of the same minor release, the available version may skip over previously released build numbers. For example, you could upgrade from 6.6.100 to the latest build 6.6.900, and the system skips any intermediate builds.
 
 
 
@@ -110,7 +110,7 @@ Upgrade Parameter Definitions
 - **Previous Version** Previous version of the controller.
 - **Current Version** Current version of the controller.
 - **Kernel Version** Version of the controller's Linux kernel.
-- **Release Versions** The upgrade option between the currently running version of the controller and the latest release available on the Aviatrix release server. For example, if you are running Aviatrix Platform 6.4.321 and the latest release available on the release server is 6.6.123 the Release Version field displays: UserConnect-6.6.123 (6.5,6.6). This indicates you must successively upgrade to 6.5 then upgrade to 6.6 to bring the platform up to the latest available version.
+- **Release Versions** The upgrade option between the currently running version of the controller and the latest release available on the Aviatrix release server. For example, if you are running Aviatrix Platform 6.4.321 and the latest release available on the release server is 6.6.123 the Release Version field displays: UserConnect-6.6.123 (6.5,6.6). This indicates you must successively upgrade to 6.5, then upgrade to 6.6 to bring the Platform up to the latest available version.
 - **Target Release Version** New version of the Aviatrix Platform to which you are upgrading. If you do not specify a release number, the system automatically selects the latest build of the major and minor release currently running on the platform controller. The version cannot be a version earlier than the release currently running on the platform controller.
 
 
@@ -700,7 +700,7 @@ Traffic is briefly disrupted during the image upgrade in cluster configurations.
 To perform a gateway image upgrade:
 
 #. Click on Settings in the Aviatrix Controller main menu and select Maintenance.
-#. In the Selective Gateway Upgrade window, select the gateways to be upgraded.  The system automatically selects the platform controller current software version and the compatible gateway image version for that software version.
+#. In the Selective Gateway Upgrade window, select the gateways to be upgraded.  The system automatically selects the Platform Controller's current software version and the compatible gateway image version for that software version.
 #. Click on Image Upgrade. You can follow the status in the progress window.
 #. Verify the gateway upgrade by reviewing the gateway information in the Current Image Version column.
 
@@ -722,7 +722,6 @@ If the above conditions are met, it means that your Controller upgrade has been 
 Verify Gateway Upgrade Status
 --------------------------------------------------------
 After you have completed the upgrade, you can:
-
 #. Go to **Controller UI > Settings > Maintenance > Selective Gateway Upgrade** to check the gateway upgrade status. Alternatively, you can also go to *CoPilot UI > Gateways >  Gateway Management > Upgrade Controller* to check the gateway upgrade status.
 #. Look for the **Update Status** field.
 
@@ -738,7 +737,7 @@ You can roll back the gateway software upgrades to the previous version. However
 Gateway software rollbacks are briefly disruptive because the gateway is replaced. The gateway image version may also change during the software rollback. If the gateway to be rolled back is running the same image version before and after upgrading, when you roll back to the older software version, the system creates a new gateway with the same image and the older software version.
 
 
-Gateway software rollbacks are briefly disruptive. You can only roll back the gateway software to the previous platform controller version running on the gateway. To perform a gateway software rollback:
+Gateway software rollbacks are briefly disruptive. You can only roll back the gateway software to the previous Platform Controller version running on the gateway. To perform a gateway software rollback:
 
 #. Click on Settings in the Aviatrix Controller main menu and select Maintenance.
 #. In the Selective Gateway Upgrade window, select the gateways to be rolled back. The system automatically selects the platform Controller's previous version for the rollback target.
@@ -755,7 +754,7 @@ For example:
 * A controller and gateways are running version 6.5.200.
 * You upgrade the controller and a subset of gateways to 6.5.300.
 * You rollback the gateways to 6.5.200 because of a bug in the 6.5.300 software.
-* Now the controller is running 6.5.300 and all gateways are running 6.5.200, and the gateways cannot be upgraded to 6.5.300 because of the bug.
+* Now the controller is running 6.5.300, and all gateways are running 6.5.200, and the gateways cannot be upgraded to 6.5.300 because of the bug.
 * The bug is resolved in controller version 6.5.400, so you want to upgrade to 6.5.400 to resolve the issue. However, this is not supported because the controller and gateways must be running the same software version before the controller can be upgraded.
 * In this corner case, you must contact Aviatrix Support to upgrade the controller to the newer version. Support will diagnose the issue and provide the API operation required to perform the Controller upgrade.
 
