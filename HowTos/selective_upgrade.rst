@@ -339,13 +339,13 @@ General Controller and Gateways Upgrade Guidance
    * - 1
      -    Back up Copilot and the Controller
    * - 2
-     -    Upgrade Controller to the latest release version of the current release.
+     -    Upgrade the Controller to the latest release version of the current release.
    * - 3
      -    Upgrade HA Gateways to the latest release version of the current release.
    * - 4
      -    Upgrade primary gateways to the latest release version of the current release.
    * - 5
-     -    Upgrade Controller from current release (for example, version N) to a higher release (N+1 release).
+     -    Upgrade Controller from the current release (for example, version N) to a higher release (N+1 release).
    * - 6
      -    Upgrade HA Gateways from the current release (for example, version N) to a higher release (N+1 release).
    * - 7
@@ -355,7 +355,7 @@ General Controller and Gateways Upgrade Guidance
 Single-Version Upgrade for Controller and Gateways
 --------------------------------------------------------
 
-A single-version Controller and Gateway upgrade refer to:
+A single-version Controller and Gateway upgrade refers to:
 
 * Upgrade from the current version to the latest release version within the current release.
 
@@ -371,7 +371,7 @@ Before you upgrade your Controller and Gateways, it is highly recommended to che
 
 
 
-This section instructs on how to perform single-version Controller and Gateway upgrade.
+This section instructs on how to perform a single-version Controller and Gateway upgrade.
 
 
 
@@ -399,7 +399,7 @@ To perform a platform software upgrade dry run:
 Upgrade your Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Perform the following steps to upgrade your Controller to a desired version:
+Perform the following steps to upgrade your Controller to the desired version:
 
 #. Log in to your Controller UI.
 #. Go to *SETTINGS > Maintenance*, and click *Upgrade* to open the upgrade panel.
@@ -459,7 +459,7 @@ When upgrading from one minor version of a major release to another or from one 
 Before Upgrade
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Before you upgrade your Controller and Gateways, it is highly recommend to check the xref:controller-upgrade-workflow.adoc[General Controller and Gateways Upgrade Guidance].
+Before you upgrade your Controller and Gateways, it is highly recommended to check the xref:controller-upgrade-workflow.adoc[General Controller and Gateways Upgrade Guidance].
 
 - Before proceeding with the upgrade in the production environment, perform the upgrade in a testing environment.
 
@@ -498,7 +498,7 @@ Determine the Controller version you are running:
 
 Determine your Controller License and Image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Log into your cloud provider to check your license information and Controller image information.
+Log in to your cloud provider to check your license information and Controller image information.
 
 * If your Controller is not using the Bring Your Own License  (BYOL) license or your Controller image is 2021 or earlier:
 
@@ -506,7 +506,7 @@ Log into your cloud provider to check your license information and Controller im
   #.  If your Controller did not have a fixed EIP, go to **Controller UI > SETTINGS > CoPilot Association** to update your CoPilot Association to point to the new EIP of the Controller.
 * If your Controller is already using a BYOL license but does not have an ABUP (Aviatrix Bring Your Own Support) customer ID:
 
-  #. Subscribe to the *Aviatrix Secure Networking Platform 2208-Universal 24x7 Support* subscription offer license .
+  #. Subscribe to the *Aviatrix Secure Networking Platform 2208-Universal 24x7 Support* subscription offer license.
   #. Apply your new Customer ID on the **Controller UI > SETTINGS > License** page.
 
 
@@ -554,7 +554,7 @@ Multiple-Version Upgrade Starting from Version 6.5
 
 .. note::
 
-   .. [Note1] Image upgrade required if the gateways are not running the latest released image for that version. See table below.
+   .. [Note1] Image upgrade required if the gateways are not running the latest released image for that version. See the table below.
 
 
    .. [Note2] Image upgrade required for raccoon to strongswan gateway migration, gateway pull mode migration, and active-mesh migration.
@@ -733,15 +733,15 @@ After you have completed the upgrade, you can:
 Rolling Back Gateway Software
 ===========================================================================
 
-You can roll back gateway software upgrades to the previous version. However, you cannot roll back platform Controller, CA Access Gateway (CAAG), or CloudN upgrades.
+You can roll back the gateway software upgrades to the previous version. However, you cannot roll back Platform Controller, CA Access Gateway (CAAG), or CloudN upgrades.
 
-Gateway software rollbacks are briefly disruptive because the gateway is replaced. The gateway image version may also change during the software rollback. If the gateway to be rolled back is running the same image version before and after upgrading, when you roll back to the older software version the system creates a new gateway with the same image and the older software version.
+Gateway software rollbacks are briefly disruptive because the gateway is replaced. The gateway image version may also change during the software rollback. If the gateway to be rolled back is running the same image version before and after upgrading, when you roll back to the older software version, the system creates a new gateway with the same image and the older software version.
 
 
 Gateway software rollbacks are briefly disruptive. You can only roll back the gateway software to the previous platform controller version running on the gateway. To perform a gateway software rollback:
 
 #. Click on Settings in the Aviatrix Controller main menu and select Maintenance.
-#. In the Selective Gateway Upgrade window, select the gateways to be rolled back. The system automatically selects the platform controller previous version for the rollback target.
+#. In the Selective Gateway Upgrade window, select the gateways to be rolled back. The system automatically selects the platform Controller's previous version for the rollback target.
 #. Click on Software Rollback. You can follow the status in the progress window.
 #. Verify the gateway software rollback by reviewing the gateway information in the Current Version column.
 
@@ -749,7 +749,7 @@ Gateway software rollbacks are briefly disruptive. You can only roll back the ga
 Troubleshooting
 ===========================================================================
 
-In rare cases where the controller and a group of gateways are selected for upgrade and a fatal bug is discovered in the new software, a situation where the controller and gateways are stuck running different versions could develop. If this condition occurs assistance from Aviatrix Support is required.
+In rare cases where the controller and a group of gateways are selected for upgrade and a fatal bug is discovered in the new software, a situation where the controller and gateways are stuck running different versions could develop. If this condition occurs, assistance from Aviatrix Support is required.
 For example:
 
 * A controller and gateways are running version 6.5.200.
